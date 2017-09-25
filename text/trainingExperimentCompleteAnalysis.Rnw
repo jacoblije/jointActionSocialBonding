@@ -395,7 +395,14 @@ xtable(corstarsl(tlcGroupBonding))
 @
 
 
-\subsubsection{Team Click and Social Bonding to the team}
+
+
+
+%team click
+% "teamClickPictorial_1"  # TEAM CLICK post not measured
+% [94] "reliabilityForOthers_1" # TEAM RELIABILITY - i don't ask about the team as a whole post-experiment...
+% [95] "reliabilityOfOthers_1"
+\subsubsection{Social Bonding to the team}
 
 
 <<dataReductionTeamBonding, eval=TRUE, echo=FALSE>>=
@@ -439,19 +446,65 @@ guttLambdaTeamBonding <- reliabilityTeamBonding$total[,3]
 @
 
 
-Items concerning bonding to the team (emotional support, shared goal, fusion pictorial, fusion verbal, and group identification) were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(groupBondingMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:groupBondingCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOgroupBondingMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettGroupBonding$df}, N = \Sexpr{groupBondingSampleSize}) = \Sexpr{bartlettGroupBonding$chisq}, p = \Sexpr{round(bartlettGroupBonding$p.value, digits = 2)). One factor, labelled ``Group Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.groupBondingFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupBondingFA}). $Guttmans \lambda = \Sexpr{round(reliabilityGroupBonding$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityGroupBonding$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
+Items concerning bonding to the team (emotional support, shared goal, fusion pictorial, fusion verbal, and group identification) were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(teamBondingMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamBondingCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOteamBondingMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettTeamBonding$df}, N = \Sexpr{teamBondingSampleSize}) = \Sexpr{bartlettTeamBonding$chisq}, p = \Sexpr{round(bartlettTeamBonding$p.value, digits = 2)). One factor, labelled ``Team Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.teamBondingFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamBondingFA}). $Guttmans \lambda = \Sexpr{round(reliabilityTeamBonding$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityTeamBonding$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
 
 <<teamBondingCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
 corstarsl(tlcTeamBonding)
 xtable(corstarsl(tlcTeamBonding))
-# label = tab:groupBondingCorrTable
+# label = tab:teamBondingCorrTable
 @
 
 
+\myparagraph{Arousal}
+
+<<dataReductionArousal, eval=TRUE, echo=FALSE>>=
+#ArousalVariablesSubset: exclude effectivenessInContact (not relvant)
+tlcArousal <- subset(tlc, select = c(aroused, relaxed, excited))
+tlcArousal.pca <- princomp(na.omit(tlcArousal))
+summary(tlcArousal.pca)
+plot(tlcArousal.pca)
+
+tlcArousal.fa <- factanal(~ aroused + relaxed + excited, 1, data = tlc, rotation =        "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+
+#-----------------------------SS Loadings----------------------#
+SSLoadings.ArousalFA <- round(sum(tlcArousal.fa$loadings[,1]^2), digits = 2)
+#------------------Proportion of Variance----------------------#
+prVar.ArousalFA <-  round((colSums(tlcArousal.fa$loadings*tlcArousal.fa$loadings)/dim(tlcArousal.fa$loadings)[1]*100), digits = 1)
+
+head(tlcArousal.fa$scores)
+tlc <- cbind(tlc, tlcArousal.fa$scores)
+names(tlc)[names(tlc) == "Factor1"] <- "arousalFactor"
+arousalMatrix <- cor(tlcArousal, use = "complete")
+
+#---------suitability measures (KMO & Bartlett)----------------#
+library(psych)
+KMOarousalMatrix <- KMO(arousalMatrix)
+# KMOarousalMatrix$MSA is the colum in which the overal KMO is stored
+bartlettArousal <- cortest.bartlett(arousalMatrix, n = 116) # what is the sample size here?
+# ls(BartlettArousal)
+# BartlettArousal$chisq, BartlettArousal$df, BartlettArousal$p.value
+# sample size? length(unique(tlc$englishName)*2)
+arousalSampleSize <- length(unique(tlc$englishName))*2 # values for each participant measured attwo time points
+
+#----------reliability measures--------------------------------#
+# Cronbach's Alpha and Guttman's Lambda using psych::alpha()
+#Cronbach's Alpha is located reliabilityObject$total[,2]
+#Guttman's Lambda is located reliabilityObject$total[,3]
+reliabilityArousal <- psych::alpha(arousalMatrix)
+cronAlphaArousal <- reliabilityArousal$total[,2]
+guttLambdaArousal <- reliabilityArousal$total[,3]
+@
 
 
+Items concerning team discipline (attendance at meals, team curfew, general team conduct, punctuality to team engagements), measured at baseline and after the experiment, were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(arousalMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:arousalCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOarousalMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettarousal$df}, N = \Sexpr{arousalSampleSize}) = \Sexpr{bartlettArousal$chisq}, p = \Sexpr{round(bartlettArousal$p.value, digits = 2)). One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.ArousalFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.arousalFA}). $Guttmans \lambda = \Sexpr{round(reliabilityArousal$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityArousal$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
 
+<<arousalCor, echo = TRUE>>=
+# be sure to import the variable subset data frame, not the correlation matrix
+corstarsl(tlcArousal)
+xtable(corstarsl(tlcArousal))
+# label = tab:arousalCorrTable
+@
 
 
 
@@ -503,7 +556,7 @@ prVar.subjectiveCompetenceFA <- prVar.technicalCompetenceFA[2,1]
 head(tlcTechnicalCompetence.fa$scores)
 tlc <- cbind(tlc, tlcTechnicalCompetence.fa$scores)
 names(tlc)[names(tlc) == "Factor1"] <- "objectiveCompetenceFactor"
-names(tlc)[names(tlc) == "Factor1"] <- "subjectiveCompetenceFactor"
+names(tlc)[names(tlc) == "Factor2"] <- "subjectiveCompetenceFactor"
 technicalCompetenceMatrix <- cor(tlcTechnicalCompetence, use = "complete")
 objectiveCompetenceMatrix <- cor(subset(tlcTechnicalCompetence, select = c(yearsTeam, trainingAge, teamStatus, athleteStatus)))
 subjectiveCompetenceMatrix <- cor(subset(tlcTechnicalCompetence, select = c(indAbilityTeammates_1, indAbilityChina_1, indAbilityInternational_1)))
@@ -542,10 +595,63 @@ xtable(corstarsl(tlcTechnicalCompetence))
 # label = tab:technicalCompetenceCorrTable
 @
 
-\myparagraph{Fatigue}
+\subsubsection{Team Discipline}
 
 
 
+<<dataReductionTeamDiscipline, eval=TRUE, echo=FALSE>>=
+#TeamDisciplineVariablesSubset: exclude effectivenessInContact (not relvant)
+tlcTeamDiscipline <- subset(tlc, select = c(teamAttendanceMeals, teamCurfew, teamGeneralConduct, teamPunctuality))
+tlcTeamDiscipline.pca <- princomp(na.omit(tlcTeamDiscipline))
+summary(tlcTeamDiscipline.pca)
+plot(tlcTeamDiscipline.pca)
+
+tlcTeamDiscipline.fa <- factanal(~ teamAttendanceMeals + teamCurfew + teamGeneralConduct +
+                                      teamPunctuality, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+
+#-----------------------------SS Loadings----------------------#
+SSLoadings.teamDisciplineFA <- round(sum(tlcTeamDiscipline.fa$loadings[,1]^2), digits = 2)
+#------------------Proportion of Variance----------------------#
+prVar.teamDisciplineFA <-  round((colSums(tlcTeamDiscipline.fa$loadings*tlcTeamDiscipline.fa$loadings)/dim(tlcTeamDiscipline.fa$loadings)[1]*100), digits = 1)
+
+head(tlcTeamDiscipline.fa$scores)
+tlc <- cbind(tlc, tlcTeamDiscipline.fa$scores)
+names(tlc)[names(tlc) == "Factor1"] <- "teamDisciplineFactor"
+teamDisciplineMatrix <- cor(tlcTeamDiscipline, use = "complete")
+
+#---------suitability measures (KMO & Bartlett)----------------#
+library(psych)
+KMOteamDisciplineMatrix <- KMO(teamDisciplineMatrix)
+# KMOTeamDisciplineMatrix$MSA is the colum in which the overal KMO is stored
+bartlettTeamDiscipline <- cortest.bartlett(teamDisciplineMatrix, n = 116) # what is the sample size here?
+# ls(BartlettTeamDiscipline)
+# BartlettTeamDiscipline$chisq, BartlettTeamDiscipline$df, BartlettTeamDiscipline$p.value
+# sample size? length(unique(tlc$englishName)*2)
+teamDisciplineSampleSize <- length(unique(tlc$englishName))*2 # values for each participant measured attwo time points
+
+#----------reliability measures--------------------------------#
+# Cronbach's Alpha and Guttman's Lambda using psych::alpha()
+#Cronbach's Alpha is located reliabilityObject$total[,2]
+#Guttman's Lambda is located reliabilityObject$total[,3]
+reliabilityTeamDiscipline <- psych::alpha(teamDisciplineMatrix)
+cronAlphaTeamDiscipline <- reliabilityTeamDiscipline$total[,2]
+guttLambdaTeamDiscipline <- reliabilityTeamDiscipline$total[,3]
+@
+
+
+Items concerning team discipline (attendance at meals, team curfew, general team conduct, punctuality to team engagements), measured at baseline and after the experiment, were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(teamDisciplineMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamDisciplineCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOteamDisciplineMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettTeamDiscipline$df}, N = \Sexpr{teamDisciplineSampleSize}) = \Sexpr{bartlettTeamDiscipline$chisq}, p = \Sexpr{round(bartlettTeamDiscipline$p.value, digits = 2)). One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.teamDisciplineFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamDisciplineFA}). $Guttmans \lambda = \Sexpr{round(reliabilityTeamDiscipline$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityTeamDiscipline$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
+
+<<teamDisciplineCor, echo = TRUE>>=
+# be sure to import the variable subset data frame, not the correlation matrix
+corstarsl(tlcTeamDiscipline)
+xtable(corstarsl(tlcDiscipline))
+# label = tab:teamDisciplineCorrTable
+@
+
+
+
+
+% \myparagraph{Fatigue} - fatigue is measured pre and post experiment, but mental and prpe are measured only post-experiment, so no need for EFA
 
 <<factorsAttachWide, echo = FALSE, eval = TRUE >>=
 #attach factors to wide-format variable:
@@ -561,117 +667,53 @@ twc$groupClickFactorPre <- tlc$groupClickFactor[tlc$time == 2]
 # groupBonding
 twc$groupBondingFactorPost <- tlc$groupBondingFactor[tlc$time == 3]
 twc$groupBondingFactorPre <- tlc$groupBondingFactor[tlc$time == 2]
+#arousalFactor
+twc$arousalFactorPre <- tlc$arousalFactor[tlc$time == 2]
+twc$arousalFactorPost <- tlc$arousalFactor[tlc$time == 3]
 #objectiveCompetence:
 twc$objectiveCompetenceFactor <- tlc$objectiveCompetenceFactor[tlc$time == 1]
 #subjectiveCompetence:
 twc$subjectiveCompetenceFactor <- tlc$subjectiveCompetenceFactor[tlc$time == 1]
+#teamBondingFactor:
+twc$teamBondingFactor <- tlc$teamBondingFactor[tlc$time == 1]
+#teamDisciplineFactor:
+twc$teamDisciplineFactor <- tlc$teamDisciplineFactor[tlc$time == 1]
 @
 
 
 
-
-
-
-
-
-
-#----------------------FACTOR ANALYSIS: TEAM -------------------------#
-
-head(tlc)
-boxplot(rankFamily ~ tlc$time, data = tlc)
-
-
-#BONDING: emoSupport, sharedGoal, fusionPictor
-# Run PCA to determine number of factors
-tlcTeamBonding <- subset(tlc, select = c(emotionalSupport, sharedGoal, fusionPictorialTeam))
-# excluding: fusionPictorialCountry, fusionPictorialFamily, fusionVerbal, groupId
-tlcTeamBonding.pca <- princomp(na.omit(tlcTeamBonding))
-summary(tlcTeamBonding.pca)  #<- looks like 1 or 2 factors
-plot(tlcTeamBonding.pca)
-# Run EFA for TeamBonding
-
-tlcTeamBonding.fa <- factanal(~ emotionalSupport + sharedGoal + fusionPictorialTeam, 1,
-                                       data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
-# + fusionPictorialCountry + fusionPictorialFamily +
-tlcTeamBonding.fa
-head(tlcTeamBonding.fa$scores)
-
-tlc <- cbind(tlc, tlcTeamBonding.fa$scores)
-names(tlc)[names(tlc) == "Factor1"] <- "teamBondingFactor"
-teamBondingMatrix <- cor(tlcTeamBonding, use = "complete")
-KMO(teamBondingMatrix)
-cortest.bartlett(teamBondingMatrix, n = 116)
-
-
-
-# CLICK:  reliabilityForOthers, reliabilityOfOthers, abilityExtended, clickPictorial, unspokenUnderstanding, generalAtmosphere
-
-
-tlcTeamClick <- subset(tlc, select = c(abilityExtended, unspokenUnderstanding, generalAtmosphere))
-
-tlcTeamClick.pca <- princomp(na.omit(tlcTeamClick))
-summary(tlcTeamClick.pca)  #<- looks like 1 or 2 factors
-plot(tlcTeamClick.pca)
-# Run EFA for teamClick
-
-tlcTeamClick.fa <- factanal(~ abilityExtended + unspokenUnderstanding + generalAtmosphere, 1,
-                                     data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
-tlcTeamClick.fa
-head(tlcTeamClick.fa$scores)
-
-tlc <- cbind(tlc, tlcTeamClick.fa$scores)
-names(tlc)[names(tlc) == "Factor1"] <- "teamClickFactor"
-teamClickMatrix <- cor(tlcTeamClick, use = "complete")
-KMO(teamClickMatrix)
-cortest.bartlett(teamClickMatrix, n = 117)
-
-
-
-
-
-
-# DISCIPLINE:  teamAttendanceMeals	teamCurfew	teamGeneralConduct	teamPunctuality
-
-
-tlcTeamDiscipline <- subset(tlc, select = c(teamAttendanceMeals, teamCurfew, teamGeneralConduct, teamPunctuality))
-
-tlcTeamDiscipline.pca <- princomp(na.omit(tlcTeamDiscipline))
-summary(tlcTeamDiscipline.pca)  #<- looks like 1 or 2 factors
-plot(tlcTeamDiscipline.pca)
-# Run EFA for teamDiscipline
-
-tlcTeamDiscipline.fa <- factanal(~ teamAttendanceMeals + teamCurfew + teamGeneralConduct + teamPunctuality, 1,
-                                          data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
-tlcTeamDiscipline.fa
-head(tlcTeamDiscipline.fa$scores)
-
-tlc <- cbind(tlc, tlcTeamDiscipline.fa$scores)
-names(tlc)[names(tlc) == "Factor1"] <- "teamDisciplineFactor"
-teamDisciplineMatrix <- cor(tlcTeamDiscipline, use = "complete")
-KMO(teamDisciplineMatrix)
-cortest.bartlett(teamDisciplineMatrix, n = 117)
-
-write.csv(tlc, "tlc.csv", na = "")
-write.csv(training, "training.csv", na = "")
-@
+\subsection{Manipulation Checks}
 
 <<manipulationChecks>>=
 #--------------------------Manipulation Checks-------------------------------------------#
 
-#condition differences in: groupConfidentTechnicalChallenges
+#condition differences in:
+# 1. groupConfidentTechnicalChallenges,
+# 2. indConfidenceChallenges,
+# 3. arousal
+
+#confidence in challenges
+boxplot(groupConfidentTechnicalChallenges_2 ~ condition, data = twc)
+boxplot(indConfidenceChallenges_2 ~ condition, data = twc)
+groupConfidencePre <- summary(lm(twc$groupConfidentTechnicalChallenges_2 ~ twc$condition + twc$indConfidenceChallenges_2))
+
+#arousal
+boxplot(arousalFactorPre ~ condition, data = twc)
+  arousalPre <- summary(lm(twc$arousalFactorPre ~ twc$condition))
+
 
 #groupConfidentTechnicalChallenges
-hist(trainingLong$groupConfidentTechnicalChallenges[trainingLong$condition == "low"])
-hist(trainingLong$groupConfidentTechnicalChallenges[trainingLong$condition == "high"])
-t.test(trainingLong$groupConfidentTechnicalChallenges[trainingLong$condition == "high"], trainingLong$groupConfidentTechnicalChallenges[trainingLong$condition == "low"], paired = T)
+hist(tlc$groupConfidentTechnicalChallenges[tlc$condition == "low"])
+hist(tlc$groupConfidentTechnicalChallenges[tlc$condition == "high"])
+t.test(tlc$groupConfidentTechnicalChallenges[tlc$condition == "high"], tlc$groupConfidentTechnicalChallenges[tlc$condition == "low"], paired = T)
 
 #indConfidenceChallenges
-hist(trainingLong$indConfidenceChallenges[trainingLong$condition == "low" & trainingLong$time == 2])
-hist(trainingLong$indConfidenceChallenges[trainingLong$condition == "low" & trainingLong$time == 3])
-hist(trainingLong$indConfidenceChallenges[trainingLong$condition == "high"])
-hist(trainingLong$indConfidenceChallenges[trainingLong$condition == "high" & trainingLong$time == 2])
-hist(trainingLong$indConfidenceChallenges[trainingLong$condition == "high" & trainingLong$time == 3])
-t.test(trainingLong$indConfidenceChallenges[trainingLong$condition == "high"], trainingLong$groupConfidentTechnicalChallenges[trainingLong$condition == "low"], paired = T)
+hist(tlc$indConfidenceChallenges[tlc$condition == "low" & tlc$time == 2])
+hist(tlc$indConfidenceChallenges[tlc$condition == "low" & tlc$time == 3])
+hist(tlc$indConfidenceChallenges[tlc$condition == "high"])
+hist(tlc$indConfidenceChallenges[tlc$condition == "high" & tlc$time == 2])
+hist(tlc$indConfidenceChallenges[tlc$condition == "high" & tlc$time == 3])
+t.test(tlc$indConfidenceChallenges[tlc$condition == "high"], tlc$groupConfidentTechnicalChallenges[tlc$condition == "low"], paired = T)
 @
 
 
