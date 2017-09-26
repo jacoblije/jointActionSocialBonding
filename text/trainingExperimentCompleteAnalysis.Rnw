@@ -286,7 +286,7 @@ xtable(corstarsl(tlcIndPerformance))
 
 
 
-\myparagraph{Feelings of ``team click'' within training group}
+\myparagraph{Feelings of team click within training group}
 
 <<dataReductionGroupClick, eval=TRUE, echo=FALSE>>=
 #GroupClickVariablesSubset: exclude effectivenessInContact (not relvant)
@@ -497,7 +497,7 @@ guttLambdaArousal <- reliabilityArousal$total[,3]
 @
 
 
-Items concerning team discipline (attendance at meals, team curfew, general team conduct, punctuality to team engagements), measured at baseline and after the experiment, were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(arousalMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:arousalCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOarousalMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettarousal$df}, N = \Sexpr{arousalSampleSize}) = \Sexpr{bartlettArousal$chisq}, p = \Sexpr{round(bartlettArousal$p.value, digits = 2)). One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.ArousalFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.arousalFA}). $Guttmans \lambda = \Sexpr{round(reliabilityArousal$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityArousal$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
+Items associated with team discipline (attendance at meals, team curfew, general team conduct, punctuality to team engagements), measured at baseline and after the experiment, were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(arousalMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:arousalCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOarousalMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettarousal$df}, N = \Sexpr{arousalSampleSize}) = \Sexpr{bartlettArousal$chisq}, p = \Sexpr{round(bartlettArousal$p.value, digits = 2)). One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.ArousalFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.arousalFA}). $Guttmans \lambda = \Sexpr{round(reliabilityArousal$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityArousal$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
 
 <<arousalCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
@@ -683,10 +683,11 @@ twc$teamDisciplineFactor <- tlc$teamDisciplineFactor[tlc$time == 1]
 
 
 \subsection{Manipulation Checks}
+Athletes were asked two questions before the experiment to gauge their confidence in individual and group ability to handle the technical challenges of the training drill. These measures were used as an indication of the effectiveness of the experimental manipulation.
 
-<<manipulationChecks>>=
-#--------------------------Manipulation Checks-------------------------------------------#
+Neither group () nor individual confidence in ability to meet technical challenges differed significantly by condition.  The average
 
+<<manipulationChecks, echo = FALSE, eval = TRUE>>=
 #condition differences in:
 # 1. groupConfidentTechnicalChallenges,
 # 2. indConfidenceChallenges,
@@ -694,18 +695,26 @@ twc$teamDisciplineFactor <- tlc$teamDisciplineFactor[tlc$time == 1]
 
 #confidence in challenges
 boxplot(groupConfidentTechnicalChallenges_2 ~ condition, data = twc)
+install.packages("vioplot")
+library(vioplot)
+vioplot(twc$groupConfidentTechnicalChallenges_2, twc$condition, horizontal=F, col="gray")
+
+library(Hmisc)
+describe(groupConfidentTechnicalChallenges_2[condition == ``low''], data = twc, na.action = na.omit)
+
 boxplot(indConfidenceChallenges_2 ~ condition, data = twc)
 groupConfidencePre <- summary(lm(twc$groupConfidentTechnicalChallenges_2 ~ twc$condition + twc$indConfidenceChallenges_2))
 
 #arousal
 boxplot(arousalFactorPre ~ condition, data = twc)
   arousalPre <- summary(lm(twc$arousalFactorPre ~ twc$condition))
-
+SD(twc$arousalFactorPre[twc$condition == ``low''] )
+sd(na.rm(twc$arousalFactorPre[twc$condition == ``high'']))
 
 #groupConfidentTechnicalChallenges
 hist(tlc$groupConfidentTechnicalChallenges[tlc$condition == "low"])
 hist(tlc$groupConfidentTechnicalChallenges[tlc$condition == "high"])
-t.test(tlc$groupConfidentTechnicalChallenges[tlc$condition == "high"], tlc$groupConfidentTechnicalChallenges[tlc$condition == "low"], paired = T)
+t.test(tlc$groupConfidentTechnicalChallenges[tlc$condition == "high"], tlc$groupConfidentTechnicalChallenges[tlc$condition == "low"], paired = F)
 
 #indConfidenceChallenges
 hist(tlc$indConfidenceChallenges[tlc$condition == "low" & tlc$time == 2])
@@ -719,10 +728,6 @@ t.test(tlc$indConfidenceChallenges[tlc$condition == "high"], tlc$groupConfidentT
 
 
 
-
-
-\subsection{Manipulation Checks}
-A final preliminary issue is whether the manipulation was successful. This is where you would report the results of any manipulation checks.
 
 
 
