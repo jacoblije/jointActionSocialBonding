@@ -71,18 +71,24 @@ twc <- read.csv("trainingWideComplete.csv", na.strings = c("", "NA", "n/a"))
 
 
 \section{Abstract}
-This study was designed to further test the hypothesised relationship between joint action, team click, and social bonding.  58 Professional Chinese rugby players (men = 30) participated in a between-subjects design involving two manipulations of a common rugby training drill known as ``invasion drill'' \citep{Passos2011}.  In the ``low uncertainty'' condition, athletes were primed with information to suggest that the training drill would be very easy to complete (2/10 difficulty rating).  In the ``high uncertainty'' condition, athletes were primed to expect the training drill to be relatively difficult (8/10 difficulty).
-Pre and post survey measures were recorded, along with video footage of each experimental trial.  It was predicted that those athletes in the high-uncertainty condition would experience higher levels of team click and social bonding owing to higher than expected positive violation of expectations around group performance.
-Athletes in the ``low uncertainty'' condition would on average experience less positive violations of expectations, and thus would feel less strongly the phenomenon of ``team click'' and flow-on feelings of social bonding.  Video footage was analysed for evidence of dynamic coupling between co-actors as well as defenders \citep{Schmidt2011,Richardson2012,Passos2012}, and these data were compared to psychological measures.  Results are yet to be fully analysed.
+This study further tested the hypothesised relationship between joint action, team click, and social bonding in a controlled experimental environment.  58 Professional Chinese rugby players (men = 30) participated in a between-subjects design involving two manipulations of a common rugby training drill known as ``invasion drill'' \citep{Passos2011}.  In the ``low uncertainty'' condition, were primed with information to suggest that the training drill would be very easy to complete (2/10 difficulty rating).  In the ``high uncertainty'' condition, athletes were primed to expect the training drill to be relatively difficult (8/10 difficulty).
+Pre and post survey measures were recorded, along with video footage of each experimental trial.  It was predicted that athletes in the high-uncertainty condition would experience higher levels of team click and social bonding owing to higher than expected positive violation of expectations around group performance.
+Athletes in the ``low uncertainty'' condition would on average experience less positive violations of expectations, and thus would feel less strongly the phenomenon of ``team click'' and flow-on feelings of social bonding.  Further, it was predicted that athletes who experienced higher quality joint action would also experience higher levels of team click and social bonding.  Video footage was analysed for evidence of dynamic coupling between co-actors as well as defenders \citep{Schmidt2011,Richardson2012,Passos2012}, and these data were compared to psychological measures in order to explore a potential relationship between objective measures of coordination in joint action and psychological correlates.
 
 \section{Introduction}
-The Opening:
-The opening introduces the research question and explains why it is interesting.  The opening, which is usually a paragraph or two in length, introduces the research question and explains why it is interesting. To capture the reader’s attention, researcher Daryl Bem recommends starting with general observations about the topic under study, expressed in ordinary language (not technical jargon)—observations that are about people and their behavior (not about researchers or their research; Bem, 2003).Bem, D. J. (2003).
-
-``The individual who holds two beliefs that are inconsistent with one another may feel uncomfortable. For example, the person who knows that he or she enjoys smoking but believes it to be unhealthy may experience discomfort arising from the inconsistency or disharmony between these two thoughts or cognitions. This feeling of discomfort was called cognitive dissonance by social psychologist Leon Festinger (1957), who suggested that individuals will be motivated to remove this dissonance in whatever way they can (p. 191).''  After capturing the reader’s attention, the opening should go on to introduce the research question and explain why it is interesting. Will the answer fill a gap in the literature? Will it provide a test of an important theory? Does it have practical implications? Giving readers a clear sense of what the research is about and why they should care about it will motivate them to continue reading the literature review—and will help them make sense of it.
+This dissertation explores the proposition that when athletes coordinate their behaviours they do so by making predictions about the state of the world.  In the case of joint action, the accuracy of these predictions rely on the behaviours of
+of others---team mates and opposition. The previous chapter demonstrated a relationship between perceptions of joint action success and social bonding, fully mediated by the phenomenon of ``team click.'' A relationship between violation of expectations surrounding team performance and feelings of team click was also observed, but a model of the relationship between team performance expectation vioaltion and social bonding did not reliably fit the data.  The results of this naturalistic \textit{in situ} study are noteworthy and encouraging, but controlled experimental research is needed in order to more directly access causal mechanisms that underpin the relationship between joint action and social bonding.  How is it possible to manipulate conditions conducive to  perceived joint action success and team performance expectation violation?
 
 The Lit Review:
-Immediately after the opening comes the literature review, which describes relevant previous research on the topic and can be anywhere from several paragraphs to several pages in length. However, the literature review is not simply a list of past studies. Instead, it constitutes a kind of argument for why the research question is worth addressing. By the end of the literature review, readers should be convinced that the research question makes sense and that the present study is a logical next step in the ongoing research process.  begin by describing a phenomenon in a general way along with several studies that demonstrate it, then describing two or more competing theories of the phenomenon, and finally presenting a hypothesis to test one or more of the theories. it is extremely important to start with an outline of the main points that you want to make, organized in the order that you want to make them. Or if you are proposing a new theory, then of course you should discuss findings that are consistent with that theory. However, if there are other findings that are inconsistent with it, again, you should discuss them too.
+%begin by describing a phenomenon in a general way along with several studies that demonstrate it, then describing two or more competing theories of the phenomenon, and finally presenting a hypothesis to test one or more of the theories.
+Priming literature
+
+
+%Immediately after the opening comes the literature review, which describes relevant previous research on the topic and can be anywhere from several paragraphs to several pages in length. However, the literature review is not simply a list of past studies. Instead, it constitutes a kind of argument for why the research question is worth addressing.
+
+%By the end of the literature review, readers should be convinced that the research question makes sense and that the present study is a logical next step in the ongoing research process.   it is extremely important to start with an outline of the main points that you want to make, organized in the order that you want to make them. Or if you are proposing a new theory, then of course you should discuss findings that are consistent with that theory. However, if there are other findings that are inconsistent with it, again, you should discuss them too.
+
+By manipulating the level of uncertainty of information regarding the expectation
 
 
 The Closing:
@@ -644,7 +650,7 @@ Items concerning team discipline (attendance at meals, team curfew, general team
 <<teamDisciplineCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
 corstarsl(tlcTeamDiscipline)
-xtable(corstarsl(tlcDiscipline))
+xtable(corstarsl(tlcTeamDiscipline))
 # label = tab:teamDisciplineCorrTable
 @
 
@@ -682,47 +688,71 @@ twc$teamDisciplineFactor <- tlc$teamDisciplineFactor[tlc$time == 1]
 
 
 
+
 \subsection{Manipulation Checks}
 Athletes were asked two questions before the experiment to gauge their confidence in individual and group ability to handle the technical challenges of the training drill. These measures were used as an indication of the effectiveness of the experimental manipulation.
 
-Neither group () nor individual confidence in ability to meet technical challenges differed significantly by condition.  The average
+Neither group nor individual confidence in ability to meet technical challenges differed significantly by condition.  The variance of the confidence in individual and group confidence appeared to be higher in the high uncertainty condition,
 
 <<manipulationChecks, echo = FALSE, eval = TRUE>>=
 #condition differences in:
 # 1. groupConfidentTechnicalChallenges,
 # 2. indConfidenceChallenges,
 # 3. arousal
+#subset df according to condition:
+low <- subset(twc, condition == "low")
+high <- subset(twc, condition == "high")
 
-#confidence in challenges
-boxplot(groupConfidentTechnicalChallenges_2 ~ condition, data = twc)
-install.packages("vioplot")
-library(vioplot)
-vioplot(twc$groupConfidentTechnicalChallenges_2, twc$condition, horizontal=F, col="gray")
+# group confidence in technical challenges:
+boxplot(groupConfidentTechnicalChallenges_2 ~ condition, data = twc) #this is only measured at time = 2!
+#standard deviation seems to be bigger in high uncertainty condition:
+#groupConfidenceHighSd <- sd(high$groupConfidentTechnicalChallenges_2, na.rm = TRUE)
+#groupConfidenceLowSd <- sd(low$groupConfidentTechnicalChallenges_2, na.rm = TRUE)
+hist(high$groupConfidentTechnicalChallenges_2)
+hist(low$groupConfidentTechnicalChallenges_2)
+library(car)
+leveneTest(groupConfidentTechnicalChallenges_2 ~ condition, data = twc)
+fligner.test(groupConfidentTechnicalChallenges_2 ~ condition, data = twc)
+bartlett.test(groupConfidentTechnicalChallenges_2 ~ condition, data = twc)
+library(stats)
+var.test(high$groupConfidentTechnicalChallenges_2, low$groupConfidentTechnicalChallenges_2)
+# variance does not appear to differ significantly
 
-library(Hmisc)
-describe(groupConfidentTechnicalChallenges_2[condition == ``low''], data = twc, na.action = na.omit)
 
-boxplot(indConfidenceChallenges_2 ~ condition, data = twc)
-groupConfidencePre <- summary(lm(twc$groupConfidentTechnicalChallenges_2 ~ twc$condition + twc$indConfidenceChallenges_2))
+# individual confidence in technical challenges:
+boxplot(indConfidenceChallenges_2 ~ condition, data = twc) #this is only measured at time = 2!
+#standard deviation seems to be bigger in high uncertainty condition:
+#indConfidenceHighSd <- sd(high$indConfidenceChallenges_2, na.rm = TRUE)
+#indConfidenceLowSd <- sd(low$indConfidenceChallenges_2, na.rm = TRUE)
+hist(high$indConfidenceChallenges_2)
+hist(low$indConfidenceChallenges_2)
+library(car)
+leveneTest(indConfidenceChallenges_2 ~ condition, data = twc)
+fligner.test(indConfidenceChallenges_2 ~ condition, data = twc)
+bartlett.test(indConfidenceChallenges_2 ~ condition, data = twc)
+library(stats) # variance appears to differ significantly
+var.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
+# variance appears to differ significantly
+
+
 
 #arousal
 boxplot(arousalFactorPre ~ condition, data = twc)
-  arousalPre <- summary(lm(twc$arousalFactorPre ~ twc$condition))
-SD(twc$arousalFactorPre[twc$condition == ``low''] )
-sd(na.rm(twc$arousalFactorPre[twc$condition == ``high'']))
+# high uncertainty condition looks like higher arousal annd higher variance
+t.test(high$arousalFactorPre, low$arousalFactorPre, na.rm = T) # n.s.
+leveneTest(arousalFactorPre ~ condition, data = twc)
+fligner.test(arousalFactorPre ~ condition, data = twc)
+bartlett.test(arousalFactorPre ~ condition, data = twc) # all n.s.
 
-#groupConfidentTechnicalChallenges
-hist(tlc$groupConfidentTechnicalChallenges[tlc$condition == "low"])
-hist(tlc$groupConfidentTechnicalChallenges[tlc$condition == "high"])
-t.test(tlc$groupConfidentTechnicalChallenges[tlc$condition == "high"], tlc$groupConfidentTechnicalChallenges[tlc$condition == "low"], paired = F)
+# what about secondary indicators that manipulation worked?
+# in particular, team performance expectations and jointActionSuccess
+boxplot(jointActionSuccessPre ~ condition, data = twc) # looks like no difference
+boxplot(jointActionSuccessPost ~ condition, data = twc)
 
-#indConfidenceChallenges
-hist(tlc$indConfidenceChallenges[tlc$condition == "low" & tlc$time == 2])
-hist(tlc$indConfidenceChallenges[tlc$condition == "low" & tlc$time == 3])
-hist(tlc$indConfidenceChallenges[tlc$condition == "high"])
-hist(tlc$indConfidenceChallenges[tlc$condition == "high" & tlc$time == 2])
-hist(tlc$indConfidenceChallenges[tlc$condition == "high" & tlc$time == 3])
-t.test(tlc$indConfidenceChallenges[tlc$condition == "high"], tlc$groupConfidentTechnicalChallenges[tlc$condition == "low"], paired = T)
+# performanceExpectations:
+boxplot(groupPerformance_3 ~ condition, data = twc) # measured at t3 only
+t.test(high$groupPerformance_3, low$groupPerformance_3, na.rm = T)
+
 @
 
 
