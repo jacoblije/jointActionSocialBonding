@@ -101,17 +101,81 @@ These considerations lead to the hypothesis that the more bystanders to an emerg
 
 
 \subsection{Participants}
-number of women and men, some indication of their age, other demographics that may be relevant to the study, and how they were recruited, including any incentives given for participation.
+\Sexpr{length(unique(twc$englishName))} professional Chinese rugby players from two provincial programs participated in the study (men = \Sexpr{length(which(twc$sex == 0))} M(age) = \Sexpr{mean(twc$age, na.rm = TRUE)} (SD = \Sexpr{sd(twc$age, na.rm = T))}, range = 16-29). Athletes were recruited from two provincial rugby programs,  \Sexpr{length(which(twc$team == "sdw" | twc$team == "sdm"))} participants were athletes from Shandong province (men = \Sexpr{length(which(twc$team == "sdm"))}, M(age) = \Sexpr{mean(twc$age[twc$team == "sdm" | twc$team == "sdw"], na.rm = T)}) and the remaining \Sexpr{length(which(twc$team == "bjm" | twc$team == "bjw"))} athletes were from Beijing province (men = \Sexpr{length(which(twc$team == "bjm"))}, M(age) = \Sexpr{mean(twc$age[twc$team == "bjm" | twc$team == "bjw"], na.rm = T)})).
+
+This study was approved by the University of Oxford’s Central University Research Ethics Committee (SAME/CUREC1A/15-059).
+
 
 \subsection{Materials}
-This might mean multiple questionnaires, written vignettes that participants read and respond to, perceptual stimuli, and so on. The heading of this subsection can be modified to reflect its content. Instead of “Materials,” it can be “Questionnaires,” “Stimuli,” and so on.
 
-Video recording protocol
+\subsubsection{Experimental Paradigm: Invasion Drill}
+This study required athletes to participate in a common rugby training drill, which was preceeded by one of two experimental primes—--a ``high uncertainty'' condition, or a ``low uncertainty'' condition.  The training drill, known as ``invasion drill,'' requires eight athletes, one sub-group of four attackers and two sub-groups of two defenders.  The   The primary aim of the drill is for the sub-group of 4 attacking players to successfully penetrate two consecutive lines of two defenders (also commonly known as a ``4 on 2 + 2'' drill).  The drill was conducted within a 22 x 15m rectangle marked by plastic cones (see ~\ref{fig:invasionDrill}).
+
+In the invasion drill, The aim of the two defending sub-groups is to stop the attacking team from achieving the primary goal, by interfering with their coordination by halting the ball-carrier, or the ball in flight between attacking players.  One trial consisted of one attempt by the attacking sub-group to penetrate two defending sub-groups, and carrying the ball over the try line table
+
+ This drill contains typical components of a game play “sub-phase,” requiring interpersonal coordination between both attacking and defending sub-groups.
+
+\begin{figure}[htbp]
+  \includegraphics[width = \linewidth]{images/invasionDrill.png}
+  \caption{The Invasion Drill from Passos (2011)}
+  \label{fig:invasionDrill}
+\end{figure}
+
+\subsubsection{Experimental Conditions: high and low uncertainty}
+
+Two different cover stories were developed for the same training drill in order to manipulate athletes’ expectations around the uncertainty of the impending joint-action task.
+
+ by either over- or under-rating the difficulty of the impending training drill. One hour priorAthletes learned that the  a) very high amounts of uncertainty (for example, a value of 8 on a scale of 1 to 10), or alternatively b) very low amounts of uncertainty (a value of 2 on a scale of 1 to 10).   
+
+In a pilot of the 4on2+2 training drill with junior athletes from the Beijing provincial team, n=10, athletes rated the drill on average 4.7/10, range = 3 to 7.  This difficulty rating was recorded following a training session that involved two other main training drills, a 2on1+1 attacking drill (avg. rating=2, range=1-4), and a 6on4 continuous attacking drill (avg. rating = 5.8, range=4-10).
+
+APPENDIX:  Experiment primes
+1. High uncertainty script (8/10)
+The drill you will be participating in today involves four attackers and two phases of two defenders in a 15m x 25m channel.   International coaches have assessed this drill based on a number of different factors (including drill complexity, coordination, intensity, skill requirement, etc.), and a sample of professional rugby players from all over the world, including China, have rated this drill based on its difficulty.  World Rugby has combined these two measures and concluded that it is a very difficult drill for players to perform together successfully.  This drill was given a score of 77.5/100, which translates to a difficulty rating of about 8/10.  So the requirements of this drill—in coordinating both attack and defense—are quite high.
+
+2. Low uncertainty script (2/10)
+The drill you will be participating in today involves four attackers and two phases of two defenders in a 15m x 25m channel.   International coaches have assessed this drill based on a number of different factors (including drill complexity, coordination, intensity, skill requirement, etc.), and a sample of professional rugby players from all over the world, including China, have rated this drill based on its difficulty.  World Rugby has combined both of these measures and concluded that it is a very easy drill for players to perform together successfully.  This drill was given a score of 22.5/100, which translates to a difficulty rating of about 2/10.  So the requirements of this drill—in coordinating both attack and defense—are quite low.
+
+Drill explanation – (constant across both conditions):
+The drill will work as follows:  when I blow the whistle, the first group of four attackers will assemble on the diamond pattern of four cones and prepare to attack, while two lines of two defenders each will assemble on the assigned cones, 10m apart from each other.  When I blow the whistle a second time, the ball carrier at the top of the attacking diamond will tap the ball on his/her foot and proceed to engage the attack in a 4on2 scenario.  The goal of the attacking group is to penetrate both lines of defense without being held by the defenders.  After participating in the first line of defense, the first two defenders must stay put, and cannot follow the play and participate in the second line of defense.
+
+Defenders can “hold/hug” attackers in order to hold the attack, but the drill is not a full-contact drill.  Attackers can offload the ball at the first opportunity after making contact with a defender, if they are not fully held by the defenders.  If the attacker does not unload the ball immediately, then the play is dead and the drill will be reset.
+
+After every phase I will ask athletes to rotate clockwise around the drill, such that the ball carrier at the top of the diamond goes on to become a defender on the top right side of the square of defenders. Each individual athlete should attack a total of 8 rounds, and defend a total of 8 rounds, performing every position in the drill twice.
+
+The drill will be recorded using a digital video camera, and individual athletes will be assessed based on their performance in attack and defense, using special video analysis software. I am particularly interested in how well players are able to coordinate with others in attack and defense.
+
+
+
+\subsubsection{Surveys}
+
+Athletes completed survey questionnaires at three time points: 1) one day before the experiment, 2) immediately before the experiment after receiving the experimental prime (high or low uncertainty), and 3) once immediately following the completion of the experiment (TABLE).  At time 1 (baseline) athletes were asked about their impressions of recent individual and team performance, as well as their feelings of team click and social bonding (to the team as a whole).  At time 2 (post-manipulation, pre-experiment), athletes were asked questions about their expectations around their individual performance and the performance of their specific training group in the impending training drill.  At time 3 (post-experiment), athletes completed questions concerning their impression of their own performance and the performance of their specific training group, as well as their feelings of team click and social bonding to the team as a whole.
+
+SURVEY ITEMS:
+In the baseline survey, athletes answered questions on how they felt about:
+
+In the post-manipulation, pre-experiment survey, athletes answered questions how they felt about:
+
+In the post-experiment survey, athletes answered how they felt about:
+
+
+
+\subsubsection{Video Analysis}
+recording protocol
+
 
 \subsection{Design}
 The design of a study is its overall structure. What were the independent and dependent variables? Was the independent variable manipulated, and if so, was it manipulated between or within subjects? How were the variables operationally defined?
 
 \subsection{Proceedure}
+
+Permission was sought from the head coach of each team, who subsequently nominated athletes who were fit and able to complete the session without compromising existing training schedules.  The experimental sessions were scheduled to occur directly before a scheduled training session.
+
+Following 4 practices attempts at the drill,  athletes will rotate through the 16 positions of the drill (4 attacking, 4 defending) over a total of 16 test trials of the drill.
+Once permission was obtained from the head coach of each team, athletes were nominated for the study
+
+
+and experimental sessions were scheduled to take place directly before scheduled training session.
 The procedure is how the study was carried out. It often works well to describe the procedure in terms of what the participants did rather than what the researchers did. For example, the participants gave their informed consent, read a set of instructions, completed a block of four practice trials, completed a block of 20 test trials, completed two questionnaires, and were debriefed and excused.
 
 
