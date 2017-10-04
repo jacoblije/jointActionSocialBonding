@@ -193,6 +193,348 @@ The digital camera and tripod were positioned on a platform 2m above the level o
 
 A total of 8 experimental sessions were conducted, with two of these sessions involving only six athletes (rather than eight), and a further two sessions involving a dummy participant who did not participate in the survey responses before or after the session.  The survey and video data of the remaining 58 athletes were analysed.
 
+
+
+
+\subsection{Descriptives}
+
+<<descriptivesPreFactor, echo = FALSE, eval = TRUE>>=
+
+##subset data for renaming
+twcAthleteInfo <- subset(twc, select = c(age, sex, condition, team, startingReserve,
+                                    trainingAge, yearsTeam, athleteStatus, teamStatus))
+
+## rename values for factors:
+twcAthleteInfo$sex <- ifelse(!is.na(twcAthleteInfo$sex) & twcAthleteInfo$sex == 0, "male",
+                                    ifelse(!is.na(twcAthleteInfo$sex) & twcAthleteInfo$sex == 1, "female", NA))
+
+
+twcAthleteInfo$athleteStatus <- ifelse(!is.na(twcAthleteInfo$athleteStatus) &
+                                    twcAthleteInfo$athleteStatus == 3, "Master",
+                                      ifelse(!is.na(twcAthleteInfo$athleteStatus) & twcAthleteInfo$athleteStatus == 2, "1st Level",
+                                        ifelse(!is.na(twcAthleteInfo$athleteStatus) & twcAthleteInfo$athleteStatus == 1, "2nd Level", NA)))
+
+twcAthleteInfo$teamStatus <- ifelse(!is.na(twcAthleteInfo$teamStatus) &
+                                    twcAthleteInfo$teamStatus == 5, "Full time employee",
+                                      ifelse(!is.na(twcAthleteInfo$teamStatus) & twcAthleteInfo$teamStatus == 4, "Fully contracted",
+                                        ifelse(!is.na(twcAthleteInfo$teamStatus) & twcAthleteInfo$teamStatus == 3, "Training contract",
+                                        ifelse(!is.na(twcAthleteInfo$teamStatus) & twcAthleteInfo$teamStatus == 2, "Student contract",
+                                        ifelse(!is.na(twcAthleteInfo$teamStatus) & twcAthleteInfo$teamStatus == 1, "Trial",
+                                         NA)))))
+
+twcAthleteInfo$team <ifelse(twcAthleteInfo$team == "bjm", "Beijing Men",
+                                    ifelse(twcAthleteInfo$team == "bjw", "Beijing Women",
+                                    ifelse(twcAthleteInfo$team == "sdm", "Shandong Men",
+                                    ifelse(twcAthleteInfo$team == "sdm", "Shandong Women", NA)))
+
+
+
+##rename columns for tables:
+library(dplyr)
+twcAthleteInfo <- rename(twcAthleteInfo, Position = startingReserve, TrainingAge = trainingAge, YearsInTeam = yearsTeam, AthleteLevel = athleteStatus, ContractStatus = teamStatus, Team = team, Condition = condition, Sex = sex, Age = age)
+
+
+## create a variable list which we want in table one
+listVars <- c("Age", "Sex", "Condition", "Team", "Position",  "TrainingAge" , "YearsInTeam", "AthleteLevel", "ContractStatus")
+
+## define categorical variables
+catVars <- c("Sex", "Condition", "AthleteLevel", "Position", "ContractStatus", "Team")
+
+## create table one
+table1 <- CreateTableOne(vars = listVars,
+                         data = twcAthleteInfo,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+table1_overall <- print(table1,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(table1_overall, type="latex", caption = "Overview of experimental sample"),
+      file="athleteDescriptivesTraining.tex")
+@
+
+
+
+<<descriptivesIndividualPerformance, echo = FALSE, eval = TRUE>>=
+
+##subset data for renaming
+tlcIndPerformance <- subset(tlc, select = c(englishName, condition, sex, time, team,
+                                indPerformance, indConfidenceChallenges, indDefense, passingTechnique, supportPlay, decisionMaking, effectivenessInContact))
+## Change indPerformance @ time = 3 to another variable, and delete values at time = 3
+tlcIndPerformance$indPerformanceExp <- tlcIndPerformance$indPerformance
+tlcIndPerformance$indPerformanceExp[tlcIndPerformance$time == 1] <- NA
+tlcIndPerformance$indPerformanceExp[tlcIndPerformance$time == 2] <- NA
+tlcIndPerformance$indPerformance[tlcIndPerformance$time == 3] <- NA
+#rescale indPerformaneExp to (0,100)
+library(scales)
+tlcIndPerformance$indPerformanceExp[tlcIndPerformance$time == 3] <- rescale(tlcIndPerformance$indPerformanceExp[tlcIndPerformance$time == 3], to = c(0, 100), from = c(-50, 50))
+
+## rename values for factors:
+tlcIndPerformance$sex <- ifelse(!is.na(tlcIndPerformance$sex) &
+                                tlcIndPerformance$sex == 0, "male", ifelse(!is.na(tlcIndPerformance$sex) & tlcIndPerformance$sex == 1, "female", NA))
+
+tlcIndPerformance$time <- ifelse(!is.na(tlcIndPerformance$time) &
+                                  tlcIndPerformance$time == 3, "Post",
+                                ifelse(!is.na(tlcIndPerformance$time) &     tlcIndPerformance$time == 2, "Pre",
+                                ifelse(!is.na(tlcIndPerformance$time) & tlcIndPerformance$time == 1, "Baseline", NA)))
+tlcIndPerformance$time <- factor(tlcIndPerformance$time, levels = c("Baseline", "Pre",
+                                  "Post"), ordered = is.ordered(tlcIndPerformance$time))
+
+##rename columns for tables:
+library(dplyr)
+tlcIndPerformance <- rename(tlcIndPerformance, Name = englishName, Sex = sex, Team = team,
+                                Condition = condition, Time = time, OverallPerformance = indPerformance, ConfidenceInAbility = indConfidenceChallenges, PerformanceVsExpectations = indPerformanceExp, Defence = indDefense, Passing = passingTechnique, SupportPlay = supportPlay, DecisionMaking = decisionMaking, Contact = effectivenessInContact)
+
+# create high and low condition dfs:
+tlcIndPerformanceHigh <- subset(tlcIndPerformance, Condition == "high")
+
+tlcIndPerformanceLow <- subset(tlcIndPerformance, Condition == "low")
+
+## create a variable list which we want in table one
+listVars <- c("OverallPerformance", "ConfidenceInAbility", "PerformanceVsExpectations", "Defence", "Passing", "SupportPlay", "DecisionMaking", "Contact")
+
+
+## define categorical variables
+catVars <- c("Sex", "Condition", "Time")
+
+## create table one (high difficulty condition)
+tableIndPerfHigh_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcIndPerformanceHigh,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableIndPerformHighTime <- print(tableIndPerfHigh_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableIndPerformHighTime, type="latex", caption = "Athlete perceptions of \n individual performance (high difficulty condition)"), file="indPerfTimeHighTraining.tex")
+
+
+## create table one (low difficulty condition)
+tableIndPerfLow_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcIndPerformanceLow,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableIndPerformLowTime <- print(tableIndPerfLow_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableIndPerformLowTime, type="latex", caption = "Athlete perceptions of \n individual performance (low difficulty condition)"), file="indPerfTimeLowTraining.tex")
+@
+
+\input{.../images/indPerfTimeLowTraining.tex}
+\input{.../images/indPerfTimeHighTraining.tex}
+
+
+<<descriptivesIndividualPerformanceSubjective, echo = FALSE, eval = TRUE>>=
+## IND PERFORMANCE SUBJECTIVE:
+tlcCompPerfSubj <- subset(tlc, select = c(englishName, condition, sex, time, team,
+                                indAbilityTeammates_1, indAbilityChina_1, indAbilityInternational_1, indPerformanceOnConfidence_1, indPerformanceOnMood_1))
+
+tlcCompPerfSubj$sex <- ifelse(!is.na(tlcCompPerfSubj$sex) &
+                                tlcCompPerfSubj$sex == 0, "male", ifelse(!is.na(tlcCompPerfSubj$sex) & tlcCompPerfSubj$sex == 1, "female", NA))
+
+tlcCompPerfSubj$time <- ifelse(!is.na(tlcCompPerfSubj$time) &
+                                  tlcCompPerfSubj$time == 3, "Post",
+                                ifelse(!is.na(tlcCompPerfSubj$time) &     tlcCompPerfSubj$time == 2, "Pre",
+                                ifelse(!is.na(tlcCompPerfSubj$time) & tlcCompPerfSubj$time == 1, "Baseline", NA)))
+tlcCompPerfSubj$time <- factor(tlcCompPerfSubj$time, levels = c("Baseline", "Pre",
+                                  "Post"), ordered = is.ordered(tlcCompPerfSubj$time))
+
+##rename columns for tables:
+#library(dplyr)
+tlcCompPerfSubj <- rename(tlcCompPerfSubj, Name = englishName, Sex = sex, Team = team,
+                                Condition = condition, Time = time, CompetenceVsTeammates = indAbilityTeammates_1, CompetenceVsChinesePros = indAbilityChina_1, CompetenceVsInternationalPros = indAbilityInternational_1, IndPerformanceConfidence =  indPerformanceOnConfidence_1, IndPerformanceMood = indPerformanceOnMood_1)
+
+
+# create high and low condition dfs:
+tlcCompPerfSubjHigh <- subset(tlcCompPerfSubj, Condition == "high")
+
+tlcCompPerfSubjLow <- subset(tlcCompPerfSubj, Condition == "low")
+
+## create a variable list which we want in table one
+listVars <- c("CompetenceVsTeammates", "CompetenceVsChinesePros",
+                "CompetenceVsInternationalPros", "IndPerformanceConfidence", "IndPerformanceMood")
+
+
+
+## define categorical variables
+catVars <- c("Sex", "Condition", "Time")
+
+## create table one (high difficulty condition)
+tableTlcCompPerfSubj <- CreateTableOne(vars = listVars,
+                         strata = "Condition",
+                         data = tlcCompPerfSubj,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableTlcCompPerfSubj.condition <- print(tableTlcCompPerfSubj,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableTlcCompPerfSubj.condition, type="latex", caption = "Athlete subjective perceptions of \n individual technical competence by condition"), file="compPerfSubjTraining.tex")
+
+@
+
+\input{.../images/compPerfSubjTraining.tex}
+
+
+## create table one (low difficulty condition)
+tableIndPerfLow_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcCompPerfSubjLow,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableIndPerformLowTime <- print(tableIndPerfLow_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableIndPerformLowTime, type="latex", caption = "Athlete perceptions of \n individual performance (low difficulty condition)"), file="indPerfTimeLowTraining.tex")
+
+
+
+
+
+
+@
+
+
+
+
+
+
+
+
+GROUP PERFRORMANCE:
+ [25] "groupAttackingLine"       "groupDefensiveLine"
+ "groupSupportPlay"
+
+  [29] "groupConfidentTechnicalChallenges"
+
+  [35] "groupOnfieldCommunication"         "groupPerformance"
+  [37] "groupPerformanceFactor"
+
+TEAM PERFORMANCE:
+        [87] "teamPerformance_1"
+  "teamAbilityChina_1"
+[11]
+    "teamSupportPlay_1"
+
+        [77] "teamAttackLine_1"
+        "teamOnfieldCommunication_1"
+        [83] "teamDefensiveLine_1"
+
+
+
+
+        GROUP CLICK:
+         [27] "groupClickFactor"
+          "groupClickPictorial"
+           [43] "groupUnspokenUnderstanding"
+                       [65] "reliabilityForOthers_1"            "reliabilityOfOthers_1"
+                [33] "groupGeneralAtmosphere"
+                "groupReliabilityForOthers"
+                [39] "groupReliabilityOfOthers"
+
+        GROUP BONDING:
+                       "groupBondingFactor"
+          [31] "groupEmotionalSupport"     "groupFusionPictorial"   "groupSharedGoal"
+        "groupId"
+                         [41] "groupStayChange"
+
+         [17] "fullOutcomeAvg"                    "fullOutcomeSd"
+         [61] "rankCountry"                       "rankFamily"
+         [63] "rankTeam"
+
+
+
+
+AROUSAL / FATIGUE
+  [3] "aroused"
+       [15] "excited"
+     "fatigue"
+     [53] "injury"
+     [55] "mental_3"
+     "prpe_3"
+                          "relaxed"
+
+
+TEAM CLICK
+[23] "generalAtmosphere"
+ "groupAbilitiesExtended"
+   [1] "abilityExtended"
+        "unspokenUnderstanding"
+         [81] "teamClickPictorial_1"
+
+           "teamClickFactor"
+
+TEAM  BONDING:
+     [13] "emotionalSupport"        "sharedGoal"
+     [19] "fusionPictorialCountry"            "fusionPictorialFamily"
+     [21] "fusionPictorialTeam"               "fusionVerbal"
+ [79] "teamBondingFactor"
+
+
+
+TEAM DISCIPLINE:
+"teamPunctuality"
+                "teamAttendanceMeals"
+                [85] "teamGeneralConduct"
+                "teamCurfew"
+                  "teamDisciplineFactor"
+
+PERSONALITY:
+                             "tipiAgreeableness"
+ [93] "tipiConscientiousness"             "tipiEmotionalStability"
+ [95] "tipiExtraverted"                   "tipiOpenness"
+
+
+>
+
+
+
+2. performance  (including performance on mood)
+3. click
+
+4. Bonding
+
+
+
+
+
+
+
+
 \subsection{Data Reduction}
 Exploratory factor analysis was used to reduce multicolinearity between variables while retaining as much variance as possible in the observed data \citep{Yong2013} (EFA, appendix ~\ref{appendix:EFA}).  Data reduction was performed on the main variables of interest, including components of individual and training group performance, team click, social bonding, and technical competence (objective and subjective). In addition, team click and social bonding measures directed at the team as a whole (and not just the specific training group) were reduced to factors, in order to assess pre- to post-experiment variation in generalised bonding to the team.
 Procedure for data reduction followed the method outlined in the previous empirical chapter ~\ref{subsection:dataReduction}.
@@ -280,7 +622,7 @@ xtable(corstarsl(tlcGroupPerformance)) #label = ``tab:jointActionSuccessCorrTabl
 
 \myparagraph{Perceptions of Individual Component Performance}
 <<dataReductionIndPerformance, eval=TRUE, echo=FALSE>>=
-#indPerformanceVariablesSubset: exclude effectivenessInContact (not relvant)
+#indPerformanceVariablesSubset: exclude effectivenessInContact (not relevant)
 tlcIndPerformance <- subset(tlc, select = c(indDefense, passingTechnique, supportPlay,
                                                   decisionMaking))
 tlcIndPerformance.pca <- princomp(na.omit(tlcIndPerformance))
