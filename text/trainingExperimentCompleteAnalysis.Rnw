@@ -1,4 +1,4 @@
-% File name: trainingExperimentFinalAnalysis.R
+Group% File name: trainingExperimentFinalAnalysis.R
 % Author: Jacob Taylor
 % Date: 20/09/2017
 % Description: A script for analysing complete data from trainingExperiment in Weihai and Beijing during August 2016.
@@ -259,6 +259,71 @@ print(xtable(table1_overall, type="latex", caption = "Overview of experimental s
       file="athleteDescriptivesTraining.tex")
 @
 
+\input{.../images/athleteDescriptivesTraining.tex}
+
+<<descriptivesIndividualPerformanceSubjective, echo = FALSE, eval = TRUE>>=
+## IND PERFORMANCE SUBJECTIVE:
+tlcCompPerfSubj <- subset(tlc, select = c(englishName, condition, sex, time, team,
+                                indAbilityTeammates_1, indAbilityChina_1, indAbilityInternational_1, indPerformanceOnConfidence_1, indPerformanceOnMood_1))
+
+tlcCompPerfSubj$sex <- ifelse(!is.na(tlcCompPerfSubj$sex) &
+                                tlcCompPerfSubj$sex == 0, "male", ifelse(!is.na(tlcCompPerfSubj$sex) & tlcCompPerfSubj$sex == 1, "female", NA))
+
+tlcCompPerfSubj$time <- ifelse(!is.na(tlcCompPerfSubj$time) &
+                                  tlcCompPerfSubj$time == 3, "Post",
+                                ifelse(!is.na(tlcCompPerfSubj$time) &     tlcCompPerfSubj$time == 2, "Pre",
+                                ifelse(!is.na(tlcCompPerfSubj$time) & tlcCompPerfSubj$time == 1, "Baseline", NA)))
+tlcCompPerfSubj$time <- factor(tlcCompPerfSubj$time, levels = c("Baseline", "Pre",
+                                  "Post"), ordered = is.ordered(tlcCompPerfSubj$time))
+
+##rename columns for tables:
+#library(dplyr)
+tlcCompPerfSubj <- rename(tlcCompPerfSubj, Name = englishName, Sex = sex, Team = team,
+                                Condition = condition, Time = time, CompetenceVsTeammates = indAbilityTeammates_1, CompetenceVsChinesePros = indAbilityChina_1, CompetenceVsInternationalPros = indAbilityInternational_1, IndPerformanceConfidence =  indPerformanceOnConfidence_1, IndPerformanceMood = indPerformanceOnMood_1)
+
+
+# create high and low condition dfs:
+tlcCompPerfSubjHigh <- subset(tlcCompPerfSubj, Condition == "high")
+
+tlcCompPerfSubjLow <- subset(tlcCompPerfSubj, Condition == "low")
+
+## create a variable list which we want in table one
+listVars <- c("CompetenceVsTeammates", "CompetenceVsChinesePros",
+                "CompetenceVsInternationalPros", "PerfomanceImpactOnConfidence", "PerformanceImpactOnMood")
+
+
+
+## define categorical variables
+catVars <- c("Sex", "Condition", "Time")
+
+## create table one (high difficulty condition)
+tableTlcCompPerfSubj <- CreateTableOne(vars = listVars,
+                         strata = "Condition",
+                         data = tlcCompPerfSubj,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableTlcCompPerfSubj.condition <- print(tableTlcCompPerfSubj,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableTlcCompPerfSubj.condition, type="latex", caption = "Athlete subjective perceptions of \n individual technical competence by condition"), file="compPerfSubjTraining.tex")
+
+@
+
+\input{.../images/compPerfSubjTraining.tex}
+
+
+
+
+
+
+
 
 
 <<descriptivesIndividualPerformance, echo = FALSE, eval = TRUE>>=
@@ -345,50 +410,57 @@ print(xtable(tableIndPerformLowTime, type="latex", caption = "Athlete perception
 \input{.../images/indPerfTimeHighTraining.tex}
 
 
-<<descriptivesIndividualPerformanceSubjective, echo = FALSE, eval = TRUE>>=
-## IND PERFORMANCE SUBJECTIVE:
-tlcCompPerfSubj <- subset(tlc, select = c(englishName, condition, sex, time, team,
-                                indAbilityTeammates_1, indAbilityChina_1, indAbilityInternational_1, indPerformanceOnConfidence_1, indPerformanceOnMood_1))
+<<descriptivesGroupPerformance, echo = FALSE, eval = TRUE>>=
+##subset data for renaming
+tlcGroupPerformance <- subset(tlc, select = c(englishName, condition, sex, time, team,
+                                groupPerformance, groupConfidentTechnicalChallenges, groupAttackingLine, groupDefensiveLine,  groupOnfieldCommunication, groupSupportPlay))
+## groupPerformance is only @ time = 3, and is in terms of expectations...rescale.
+tlcGroupPerformance$groupPerformanceExp <- tlcGroupPerformance$groupPerformance
+#tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 1] <- NA
+#tlcGroupPerformance$groupPerformanceExp[tlcIndPerformance$time == 2] <- NA
+#tlcGroupPerformance$groupPerformance[tlcGroupPerformance$time == 3] <- NA
+#rescale groupPerformaneExp to (0,100)
+library(scales)
+tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3], to = c(0, 100), from = c(-50, 50))
 
-tlcCompPerfSubj$sex <- ifelse(!is.na(tlcCompPerfSubj$sex) &
-                                tlcCompPerfSubj$sex == 0, "male", ifelse(!is.na(tlcCompPerfSubj$sex) & tlcCompPerfSubj$sex == 1, "female", NA))
 
-tlcCompPerfSubj$time <- ifelse(!is.na(tlcCompPerfSubj$time) &
-                                  tlcCompPerfSubj$time == 3, "Post",
-                                ifelse(!is.na(tlcCompPerfSubj$time) &     tlcCompPerfSubj$time == 2, "Pre",
-                                ifelse(!is.na(tlcCompPerfSubj$time) & tlcCompPerfSubj$time == 1, "Baseline", NA)))
-tlcCompPerfSubj$time <- factor(tlcCompPerfSubj$time, levels = c("Baseline", "Pre",
-                                  "Post"), ordered = is.ordered(tlcCompPerfSubj$time))
+## rename values for factors:
+tlcGroupPerformance$sex <- ifelse(!is.na(tlcGroupPerformance$sex) &
+                                tlcGroupPerformance$sex == 0, "male", ifelse(!is.na(tlcGroupPerformance$sex) & tlcGroupPerformance$sex == 1, "female", NA))
+
+tlcGroupPerformance$time <- ifelse(!is.na(tlcGroupPerformance$time) &
+                                  tlcGroupPerformance$time == 3, "Post",
+                                ifelse(!is.na(tlcGroupPerformance$time) &     tlcGroupPerformance$time == 2, "Pre",
+                                ifelse(!is.na(tlcGroupPerformance$time) & tlcGroupPerformance$time == 1, "Baseline", NA)))
+tlcGroupPerformance$time <- factor(tlcGroupPerformance$time, levels = c("Baseline", "Pre",
+                                  "Post"), ordered = is.ordered(tlcGroupPerformance$time))
 
 ##rename columns for tables:
-#library(dplyr)
-tlcCompPerfSubj <- rename(tlcCompPerfSubj, Name = englishName, Sex = sex, Team = team,
-                                Condition = condition, Time = time, CompetenceVsTeammates = indAbilityTeammates_1, CompetenceVsChinesePros = indAbilityChina_1, CompetenceVsInternationalPros = indAbilityInternational_1, IndPerformanceConfidence =  indPerformanceOnConfidence_1, IndPerformanceMood = indPerformanceOnMood_1)
-
+library(dplyr)
+tlcGroupPerformance <- rename(tlcGroupPerformance, Name = englishName, Sex = sex,
+                                Team = team, Condition = condition, Time = time, PerformanceVsExpectations = groupPerformanceExp, ConfidenceInGroupAbility = groupConfidentTechnicalChallenges, GroupAttack = groupAttackingLine, GroupDefence = groupDefensiveLine, GroupCommunication = groupOnfieldCommunication, GroupSupportPlay = groupSupportPlay)
 
 # create high and low condition dfs:
-tlcCompPerfSubjHigh <- subset(tlcCompPerfSubj, Condition == "high")
+tlcGroupPerformanceHigh <- subset(tlcGroupPerformance, Condition == "high")
 
-tlcCompPerfSubjLow <- subset(tlcCompPerfSubj, Condition == "low")
+tlcGroupPerformanceLow <- subset(tlcGroupPerformance, Condition == "low")
 
 ## create a variable list which we want in table one
-listVars <- c("CompetenceVsTeammates", "CompetenceVsChinesePros",
-                "CompetenceVsInternationalPros", "IndPerformanceConfidence", "IndPerformanceMood")
-
+listVars <- c("ConfidenceInGroupAbility", "GroupPerformanceVsExpectations", "GroupAttack", "GroupDefence", "GroupCommunication", "GroupSupportPlay")
 
 
 ## define categorical variables
 catVars <- c("Sex", "Condition", "Time")
 
 ## create table one (high difficulty condition)
-tableTlcCompPerfSubj <- CreateTableOne(vars = listVars,
-                         strata = "Condition",
-                         data = tlcCompPerfSubj,
+tableGroupPerfHigh_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcGroupPerformanceHigh,
                          factorVars = catVars
                          )
 
 ## create table which is printable
-tableTlcCompPerfSubj.condition <- print(tableTlcCompPerfSubj,
+tableGroupPerformHighTime <- print(tableGroupPerfHigh_time,
                             quote = FALSE,
                             noSpaces = FALSE,
                             printToggle = FALSE
@@ -396,22 +468,18 @@ tableTlcCompPerfSubj.condition <- print(tableTlcCompPerfSubj,
 
 ## print to latex file in wd
 ## this latex file will later be inputted
-print(xtable(tableTlcCompPerfSubj.condition, type="latex", caption = "Athlete subjective perceptions of \n individual technical competence by condition"), file="compPerfSubjTraining.tex")
-
-@
-
-\input{.../images/compPerfSubjTraining.tex}
+print(xtable(tableGroupPerformHighTime, type="latex", caption = "Athlete perceptions of \n group performance (high difficulty condition)"), file="groupPerfTimeHighTraining.tex")
 
 
 ## create table one (low difficulty condition)
-tableIndPerfLow_time <- CreateTableOne(vars = listVars,
+tableGroupPerfLow_time <- CreateTableOne(vars = listVars,
                          strata = "Time",
-                         data = tlcCompPerfSubjLow,
+                         data = tlcGroupPerformanceLow,
                          factorVars = catVars
                          )
 
 ## create table which is printable
-tableIndPerformLowTime <- print(tableIndPerfLow_time,
+tableGroupPerformLowTime <- print(tableGroupPerfLow_time,
                             quote = FALSE,
                             noSpaces = FALSE,
                             printToggle = FALSE
@@ -419,63 +487,368 @@ tableIndPerformLowTime <- print(tableIndPerfLow_time,
 
 ## print to latex file in wd
 ## this latex file will later be inputted
-print(xtable(tableIndPerformLowTime, type="latex", caption = "Athlete perceptions of \n individual performance (low difficulty condition)"), file="indPerfTimeLowTraining.tex")
+print(xtable(tableGroupPerformLowTime, type="latex", caption = "Athlete perceptions of \n group performance (low difficulty condition)"), file="groupPerfTimeLowTraining.tex")
+
+@
+
+\input{.../images/groupPerfTimeLowTraining.tex}
+\input{.../images/groupPerfTimeHighTraining.tex}
 
 
 
+%TEAM PERFORMANCE:
+%"teamPerformance_1"
+%"teamAbilityChina_1"
+%"teamSupportPlay_1"
+%"teamAttackLine_1"
+%"teamOnfieldCommunication_1"
+%"teamDefensiveLine_1"
+
+GROUP CLICK:
+<<descriptivesGroupClick, echo = FALSE, eval = TRUE>>=
+##subset data for renaming
+tlcGroupClick <- subset(tlc, select = c(englishName, condition, sex, time, team,
+                                groupClickPictorial, groupUnspokenUnderstanding, groupGeneralAtmosphere, groupAbilitiesExtended, groupReliabilityForOthers,
+                                groupReliabilityOfOthers))
+## groupClick is only @ time = 3, and is in terms of expectations...rescale.
+#tlcGroupClick$groupClick <- tlcGroupClick$groupClick
+#tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 1] <- NA
+#tlcGroupPerformance$groupPerformanceExp[tlcIndPerformance$time == 2] <- NA
+#tlcGroupPerformance$groupPerformance[tlcGroupPerformance$time == 3] <- NA
+#rescale groupPerformaneExp to (0,100)
+#library(scales)
+#tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3], to = c(0, 100), from = c(-50, 50))
+
+
+## rename values for factors:
+tlcGroupClick$sex <- ifelse(!is.na(tlcGroupClick$sex) &
+                                tlcGroupClick$sex == 0, "male", ifelse(!is.na(tlcGroupClick$sex) & tlcGroupClick$sex == 1, "female", NA))
+
+tlcGroupClick$time <- ifelse(!is.na(tlcGroupClick$time) &
+                                  tlcGroupClick$time == 3, "Post",
+                                ifelse(!is.na(tlcGroupClick$time) &     tlcGroupClick$time == 2, "Pre",
+                                ifelse(!is.na(tlcGroupClick$time) & tlcGroupClick$time == 1, "Baseline", NA)))
+tlcGroupClick$time <- factor(tlcGroupClick$time, levels = c("Baseline", "Pre",
+                                  "Post"), ordered = is.ordered(tlcGroupClick$time))
+
+##rename columns for tables:
+library(dplyr)
+tlcGroupClick <- rename(tlcGroupClick, Name = englishName, Sex = sex,
+                                Team = team, Condition = condition, Time = time,
+                                ClickPictorial = groupClickPictorial, UnspokenUnderstanding = groupUnspokenUnderstanding, GeneralAtmosphere = groupGeneralAtmosphere,
+                                AbilitiesExtended = groupAbilitiesExtended, ReliabilityForOthers = groupReliabilityForOthers,
+                                ReliabilityOfOthers = groupReliabilityOfOthers)
+
+
+# create high and low condition dfs:
+tlcGroupClickHigh <- subset(tlcGroupClick, Condition == "high")
+
+tlcGroupClickLow <- subset(tlcGroupClick, Condition == "low")
+
+## create a variable list which we want in table one
+listVars <- c("ClickPictorial", "UnspokenUnderstanding", "GeneralAtmosphere", "AbilitiesExtended", "ReliabilityForOthers", "ReliabilityOfOthers")
+
+
+## define categorical variables
+catVars <- c("Sex", "Condition", "Time")
+
+## create table one (high difficulty condition)
+tableGroupClickHigh_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcGroupClickHigh,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableGroupClickHighTime <- print(tableGroupClickHigh_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableGroupClickHighTime, type= "latex", caption = "Athlete perceptions of \n group click (high difficulty condition)"), file="groupClickTimeHighTraining.tex")
+
+
+## create table one (low difficulty condition)
+tableGroupClickLow_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcGroupClickLow,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableGroupClickLowTime <- print(tableGroupClickLow_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableGroupClickLowTime, type="latex", caption = "Athlete perceptions of \n group click (low difficulty condition)"), file="groupClickTimeLowTraining.tex")
+@
+
+\input{.../images/groupClickTimeHighTraining.tex}
+\input{.../images/groupClickTimeLowTraining.tex}
+
+
+GROUP BONDING:
+<<descriptivesGroupBonding, echo = FALSE, eval = TRUE>>=
+##subset data for renaming
+tlcGroupBonding <- subset(tlc, select = c(englishName, condition, sex, time, team,
+                                groupEmotionalSupport, groupSharedGoal, groupFusionPictorial, groupStayChange))
+## groupBonding is only @ time = 3, and is in terms of expectations...rescale.
+#tlcGroupBonding$groupBonding <- tlcGroupBonding$groupBonding
+#tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 1] <- NA
+#tlcGroupPerformance$groupPerformanceExp[tlcIndPerformance$time == 2] <- NA
+#tlcGroupPerformance$groupPerformance[tlcGroupPerformance$time == 3] <- NA
+#rescale groupPerformaneExp to (0,100)
+#library(scales)
+#tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3], to = c(0, 100), from = c(-50, 50))
+
+## Need to reverse group Stay Change and locate it correctly at Post-Tournament:
+## First locate @ t = 3:
+tlcGroupBonding$groupStayChange[tlc$time == 3] <- tlcGroupBonding$groupStayChange[tlc$time == 1]
+tlcGroupBonding$groupStayChange[tlc$time == 1] <- NA
+## Now reverse the scores, so that higher values are more pro-group:
+tlcGroupBonding$groupStayChangeRev <- 100 - tlcGroupBonding$groupStayChange
+
+## rename values for factors:
+tlcGroupBonding$sex <- ifelse(!is.na(tlcGroupBonding$sex) &
+                                tlcGroupBonding$sex == 0, "male", ifelse(!is.na(tlcGroupBonding$sex) & tlcGroupBonding$sex == 1, "female", NA))
+
+tlcGroupBonding$time <- ifelse(!is.na(tlcGroupBonding$time) &
+                                  tlcGroupBonding$time == 3, "Post",
+                                ifelse(!is.na(tlcGroupBonding$time) &     tlcGroupBonding$time == 2, "Pre",
+                                ifelse(!is.na(tlcGroupBonding$time) & tlcGroupBonding$time == 1, "Baseline", NA)))
+tlcGroupBonding$time <- factor(tlcGroupBonding$time, levels = c("Baseline", "Pre",
+                                  "Post"), ordered = is.ordered(tlcGroupBonding$time))
+
+##rename columns for tables:
+library(dplyr)
+tlcGroupBonding <- rename(tlcGroupBonding, Name = englishName, Sex = sex,
+                                Team = team, Condition = condition, Time = time,
+                                EmotionalSupport = groupEmotionalSupport, SharedGoal = groupSharedGoal, FusionPictorial = groupFusionPictorial,
+                                StayOrChange = groupStayChangeRev)
+
+# create high and low condition dfs:
+tlcGroupBondingHigh <- subset(tlcGroupBonding, Condition == "high")
+
+tlcGroupBondingLow <- subset(tlcGroupBonding, Condition == "low")
+
+## create a variable list which we want in table one
+listVars <- c("EmotionalSupport", "SharedGoal", "FusionPictorial", "StayOrChange")
+
+
+## define categorical variables
+catVars <- c("Sex", "Condition", "Time")
+
+## create table one (high difficulty condition)
+tableGroupBondingHigh_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcGroupBondingHigh,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableGroupBondingHighTime <- print(tableGroupBondingHigh_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableGroupBondingHighTime, type= "latex", caption = "Athlete perceptions of \n group bonding (high difficulty condition)"), file="groupBondingTimeHighTraining.tex")
+
+
+## create table one (low difficulty condition)
+tableGroupBondingLow_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcGroupBondingLow,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableGroupBondingLowTime <- print(tableGroupBondingLow_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableGroupBondingLowTime, type="latex", caption = "Athlete perceptions of \n group bonding (low difficulty condition)"), file="groupBondingTimeLowTraining.tex")
+@
 
 
 
+TEAM  BONDING:
+
+<<descriptivesTeamBonding, echo = FALSE, eval = TRUE>>=
+##subset data for renaming
+tlcTeamBonding <- subset(tlc, select = c(englishName, condition, sex, time, team,
+                                emotionalSupport, sharedGoal, fusionVerbal, groupId, fusionPictorialTeam, fusionPictorialFamily, fusionPictorialCountry, rankTeam, rankFamily, rankCountry))
+
+
+## Need to reverse rank scores:
+tlcTeamBonding$rankTeamRev <- 3 - tlcTeamBonding$rankTeam
+tlcTeamBonding$rankFamilyRev <- 3 - tlcTeamBonding$rankFamily
+tlcTeamBonding$rankCountryRev <- 3 - tlcTeamBonding$rankCountry
+
+
+## rename values for factors:
+tlcTeamBonding$sex <- ifelse(!is.na(tlcTeamBonding$sex) &
+                                tlcTeamBonding$sex == 0, "male", ifelse(!is.na(tlcTeamBonding$sex) & tlcTeamBonding$sex == 1, "female", NA))
+
+tlcTeamBonding$time <- ifelse(!is.na(tlcTeamBonding$time) &
+                                  tlcTeamBonding$time == 3, "Post",
+                                ifelse(!is.na(tlcTeamBonding$time) &     tlcTeamBonding$time == 2, "Pre",
+                                ifelse(!is.na(tlcTeamBonding$time) & tlcTeamBonding$time == 1, "Baseline", NA)))
+tlcTeamBonding$time <- factor(tlcTeamBonding$time, levels = c("Baseline", "Pre",
+                                  "Post"), ordered = is.ordered(tlcTeamBonding$time))
+
+
+
+##rename columns for tables:
+library(dplyr)
+tlcTeamBonding <- rename(tlcTeamBonding, Name = englishName, Sex = sex,
+                                Team = team, Condition = condition, Time = time,
+                                EmotionalSupport = emotionalSupport, SharedGoal = sharedGoal, FusionVerbalTeam = fusionVerbal, GroupIdentification = groupId,
+                                FusionPictorialTeam = fusionPictorialTeam,
+                                FusionPictorialFamily = fusionPictorialFamily, FusionPictorialCountry = fusionPictorialCountry, TeamRank = rankTeamRev, FamilyRank = rankFamilyRev, CountryRank = rankCountryRev)
+
+# create high and low condition dfs:
+tlcTeamBondingHigh <- subset(tlcTeamBonding, Condition == "high")
+
+tlcTeamBondingLow <- subset(tlcTeamBonding, Condition == "low")
+
+## create a variable list which we want in table one
+listVars <- c("EmotionalSupport", "SharedGoal", "FusionVerbalTeam",
+                "GroupIdentification", "FusionPictorialTeam", "FusionPictorialFamily", "FusionPictorialCountry", "TeamRank", "FamilyRank", "CountryRank")
+
+
+## define categorical variables
+catVars <- c("Sex", "Condition", "Time")
+
+## create table one (high difficulty condition)
+tableTeamBondingHigh_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcTeamBondingHigh,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableTeamBondingHighTime <- print(tableTeamBondingHigh_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableTeamBondingHighTime, type= "latex", caption = "Athlete perceptions of \n team bonding (high difficulty condition)"), file="teamBondingTimeHighTraining.tex")
+
+
+## create table one (low difficulty condition)
+tableTeamBondingLow_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcTeamBondingLow,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableTeamBondingLowTime <- print(tableTeamBondingLow_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableTeamBondingLowTime, type="latex", caption = "Athlete perceptions of \n team bonding (low difficulty condition)"), file="teamBondingTimeLowTraining.tex")
 @
 
 
 
 
 
+<<descriptivesTeamDiscipline, echo = FALSE, eval = TRUE>>=
+##subset data for renaming
+tlcTeamDiscipline <- subset(tlc, select = c(englishName, condition, sex, time, team,
+                                teamPunctuality, teamAttendanceMeals, teamGeneralConduct, teamCurfew))
+
+## rename values for factors:
+tlcTeamDiscipline$sex <- ifelse(!is.na(tlcTeamDiscipline$sex) &
+                                tlcTeamDiscipline$sex == 0, "male", ifelse(!is.na(tlcTeamDiscipline$sex) & tlcTeamDiscipline$sex == 1, "female", NA))
+
+tlcTeamDiscipline$time <- ifelse(!is.na(tlcTeamDiscipline$time) &
+                                  tlcTeamDiscipline$time == 3, "Post",
+                                ifelse(!is.na(tlcTeamDiscipline$time) &     tlcTeamDiscipline$time == 2, "Pre",
+                                ifelse(!is.na(tlcTeamDiscipline$time) & tlcTeamDiscipline$time == 1, "Baseline", NA)))
+tlcTeamDiscipline$time <- factor(tlcTeamDiscipline$time, levels = c("Baseline", "Pre",
+                                  "Post"), ordered = is.ordered(tlcTeamDiscipline$time))
 
 
+teamPunctuality, teamAttendanceMeals, teamGeneralConduct, teamCurfew
+##rename columns for tables:
+library(dplyr)
+tlcTeamDiscipline <- rename(tlcTeamDiscipline, Name = englishName, Sex = sex,
+                                Team = team, Condition = condition, Time = time,
+                                Punctuality = teamPunctuality, MealAttendance = teamAttendanceMeals,  GeneralConduct = teamGeneralConduct, Curfew = teamCurfew)
 
-GROUP PERFRORMANCE:
- [25] "groupAttackingLine"       "groupDefensiveLine"
- "groupSupportPlay"
+# create high and low condition dfs:
+tlcTeamDisciplineHigh <- subset(tlcTeamDiscipline, Condition == "high")
 
-  [29] "groupConfidentTechnicalChallenges"
+tlcTeamDisciplineLow <- subset(tlcTeamDiscipline, Condition == "low")
 
-  [35] "groupOnfieldCommunication"         "groupPerformance"
-  [37] "groupPerformanceFactor"
-
-TEAM PERFORMANCE:
-        [87] "teamPerformance_1"
-  "teamAbilityChina_1"
-[11]
-    "teamSupportPlay_1"
-
-        [77] "teamAttackLine_1"
-        "teamOnfieldCommunication_1"
-        [83] "teamDefensiveLine_1"
+## create a variable list which we want in table one
+listVars <- c("Punctuality", "MealAttendance", "GeneralConduct",
+                "Curfew")
 
 
+## define categorical variables
+catVars <- c("Sex", "Condition", "Time")
+
+## create table one (high difficulty condition)
+tableTeamDisciplineHigh_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcTeamDisciplineHigh,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableTeamDisciplineHighTime <- print(tableTeamDisciplineHigh_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableTeamDisciplineHighTime, type= "latex", caption = "Athlete perceptions of \n team discipline (high difficulty condition)"), file="teamDisciplineTimeHighTraining.tex")
 
 
-        GROUP CLICK:
-         [27] "groupClickFactor"
-          "groupClickPictorial"
-           [43] "groupUnspokenUnderstanding"
-                       [65] "reliabilityForOthers_1"            "reliabilityOfOthers_1"
-                [33] "groupGeneralAtmosphere"
-                "groupReliabilityForOthers"
-                [39] "groupReliabilityOfOthers"
+## create table one (low difficulty condition)
+tableTeamDisciplineLow_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcTeamDisciplineLow,
+                         factorVars = catVars
+                         )
 
-        GROUP BONDING:
-                       "groupBondingFactor"
-          [31] "groupEmotionalSupport"     "groupFusionPictorial"   "groupSharedGoal"
-        "groupId"
-                         [41] "groupStayChange"
+## create table which is printable
+tableTeamDisciplineLowTime <- print(tableTeamDisciplineLow_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
 
-         [17] "fullOutcomeAvg"                    "fullOutcomeSd"
-         [61] "rankCountry"                       "rankFamily"
-         [63] "rankTeam"
-
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableTeamDisciplineLowTime, type="latex", caption = "Athlete perceptions of \n team discipine (low difficulty condition)"), file="teamDisciplineTimeLowTraining.tex")
+@
 
 
 
@@ -486,47 +859,109 @@ AROUSAL / FATIGUE
      [53] "injury"
      [55] "mental_3"
      "prpe_3"
-                          "relaxed"
+      "relaxed"
+
+<<descriptivesArousal, echo = FALSE, eval = FALSE>>=
+
+tlcArousalExertion <- subset(tlc, select = c(englishName, age, sex, condition, team,
+                                time, aroused, excited, relaxed, fatigue, prpe_3, mental_3, injury))
+
+## rename values for factors:
+tlcArousalExertion$sex <- ifelse(!is.na(tlcArousalExertion$sex) &
+                                tlcArousalExertion$sex == 0, "male", ifelse(!is.na(tlcArousalExertion$sex) & tlcArousalExertion$sex == 1, "female", NA))
+
+tlcArousalExertion$time <- ifelse(!is.na(tlcArousalExertion$time) &
+                                  tlcArousalExertion$time == 3, "Post",
+                                ifelse(!is.na(tlcArousalExertion$time) &     tlcArousalExertion$time == 2, "Pre",
+                                ifelse(!is.na(tlcArousalExertion$time) & tlcArousalExertion$time == 1, "Baseline", NA)))
+tlcArousalExertion$time <- factor(tlcArousalExertion$time, levels = c("Baseline", "Pre",
+                                  "Post"), ordered = is.ordered(tlcArousalExertion$time))
 
 
-TEAM CLICK
-[23] "generalAtmosphere"
- "groupAbilitiesExtended"
-   [1] "abilityExtended"
-        "unspokenUnderstanding"
-         [81] "teamClickPictorial_1"
+##rename columns for tables:
+library(dplyr)
+tlcArousalExertion <- rename(tlcArousalExertion, Name = englishName, Sex = sex,
+                                Team = team, Condition = condition, Time = time,
+                                Excited = excited, Relaxed = relaxed, Fatigue = fatigue, PhysicalExertion= prpe_3, MentalExertion = mental_3, InjuryStatus = injury)
 
-           "teamClickFactor"
+# create high and low condition dfs:
+tlcArousalExertionHigh <- subset(tlcArousalExertion, Condition == "high")
 
-TEAM  BONDING:
-     [13] "emotionalSupport"        "sharedGoal"
-     [19] "fusionPictorialCountry"            "fusionPictorialFamily"
-     [21] "fusionPictorialTeam"               "fusionVerbal"
- [79] "teamBondingFactor"
+tlcArousalExertionLow <- subset(tlcArousalExertion, Condition == "low")
 
-
-
-TEAM DISCIPLINE:
-"teamPunctuality"
-                "teamAttendanceMeals"
-                [85] "teamGeneralConduct"
-                "teamCurfew"
-                  "teamDisciplineFactor"
-
-PERSONALITY:
-                             "tipiAgreeableness"
- [93] "tipiConscientiousness"             "tipiEmotionalStability"
- [95] "tipiExtraverted"                   "tipiOpenness"
+## create a variable list which we want in table one
+listVars <- c("Excited", "Relaxed", "Fatigue",
+                "PhysicalExertion", "MentalExertion", "InjuryStatus")
 
 
->
+## define categorical variables
+catVars <- c("Sex", "Condition", "Time")
+
+## create table one (high difficulty condition)
+tableArousalExertionHigh_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcArousalExertionHigh,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableArousalExertionHighTime <- print(tableArousalExertionHigh_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableTeamDisciplineHighTime, type= "latex", caption = "Athlete arousal \n (high difficulty condition)"), file="arousalExertionTimeHighTraining.tex")
+
+
+## create table one (low difficulty condition)
+tableArousalExertionLow_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcArousalExertionLow,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+tableArousalExertionLowTime <- print(tableArousalExertionLow_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableTeamDisciplineLowTime, type="latex", caption = "Athlete arousal and exertion \n (low difficulty condition)"), file="arousalExertionTimeLowTraining.tex")
+@
 
 
 
-2. performance  (including performance on mood)
-3. click
 
-4. Bonding
+
+
+
+                      PERSONALITY:
+                                                       "tipiAgreeableness"
+                           [93] "tipiConscientiousness"             "tipiEmotionalStability"
+                           [95] "tipiExtraverted"                   "tipiOpenness"
+
+
+                          >
+
+
+
+
+
+                          TEAM CLICK
+                          [23] "generalAtmosphere"
+                           "groupAbilitiesExtended"
+                             [1] "abilityExtended"
+                                  "unspokenUnderstanding"
+                                   [81] "teamClickPictorial_1"
+
+                                     "teamClickFactor"
+
 
 
 
