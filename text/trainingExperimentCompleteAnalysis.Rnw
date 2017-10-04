@@ -71,9 +71,11 @@ twc <- read.csv("trainingWideComplete.csv", na.strings = c("", "NA", "n/a"))
 
 
 \section{Abstract}
-This study further tested the hypothesised relationship between joint action, team click, and social bonding in a controlled experimental environment.  58 Professional Chinese rugby players (Men = \Sexpr{length(which(twc$sex == 0)}) participated in a between-subjects design involving two manipulations of a common rugby training drill known as ``invasion drill'' \citep{Passos2011}.  In the ``low difficulty'' condition, were primed with information to suggest that the training drill would be very easy to complete (2/10 difficulty rating).  In the ``high difficulty'' condition, athletes were primed to expect the training drill to be relatively difficult (8/10 difficulty).
-Pre and post survey measures were recorded, along with video footage of each experimental trial.  It was predicted that athletes in the high-uncertainty condition would experience higher levels of team click and social bonding owing to higher than expected positive violation of expectations around group performance.
-Athletes in the ``low difficulty'' condition would on average experience less positive violations of expectations, and thus would feel less strongly the phenomenon of ``team click'' and flow-on feelings of social bonding.  Further, it was predicted that athletes who experienced higher quality joint action would also experience higher levels of team click and social bonding.  Video footage was analysed for evidence of dynamic coupling between co-actors as well as defenders \citep{Schmidt2011,Richardson2012,Passos2012}, and these data were compared to psychological measures in order to explore a potential relationship between objective measures of coordination in joint action and psychological correlates.
+This study further tested the relationship, hypothesised in this dissertation, between joint action, team click, and social bonding in a controlled experimental environment.  An experiment was designed to test the prediction, partly confirmed in an in situ survey study, that athletes who experienced higher quality joint action would also experience higher levels of team click and social bonding.  58 Professional Chinese rugby players (Men = \Sexpr{length(which(twc$sex == 0)}) participated in a between-subjects design
+in which athletes' expectations for joint action training drill \citep[``Invasion drill''][]{Passos2011}) were manipulated in one of two conditions.  Athletes in the ``low difficulty'' condition were primed with information to suggest that the training drill would require minimal rugby-sepcific individual and joint-action competence (i.e., 2/10 difficulty rating).  By contrast, in the ``high difficulty'' condition, athletes were primed to expect the training drill to be relatively difficult (8/10 difficulty rating). Pre- and post-experiment surveys were conducted, measuring athletes' perceptions of main variables of interest (individual and group performance, team click, and social bonding (both to the training group and the team more generally)), as well as athlete personality type and states of athlete states of arousal, fatigue, and injury.  Video footage of each experimental session was also recorded to derive an objective measure of interpersonal coordination not reliant on self-report.
+
+It was predicted that athletes in the high-uncertainty condition would experience higher levels of team click and social bonding for two reasons: 1) athletes with expectations of higher difficulty would pay greater attention to coordinating action with others, and 2) athletes expecting higher difficulty in the experiment would experience higher positive violation of expectations around group performance.  Athletes in the ``low difficulty'' condition would on average experience less strongly the phenomenon of ``team click'' and flow-on feelings of social bonding, because they were not primed to attend less closely to joint-action with co-actors, and they would not experience the same level of positive violations of expectations around group performance.   Video footage was analysed for evidence of dynamic coupling between co-actors as well as defenders \citep{Schmidt2011,Richardson2012,Passos2012}, and these data were compared to psychological measures in order to explore psychological correlates of effective  interpersonal movement coordination in joint action.
+
 
 \section{Introduction}
 When athletes coordinate their behaviours they do so by making predictions about the state of the world.  In the case of joint action, in which there are many moving parts, predictions rely on the behaviours of
@@ -174,11 +176,10 @@ Once athletes were assembled at the designated training field, the difficulty pr
 
 Athletes were then administered with the time 2 survey (pre-experiment, post-manipulation), which took approximately 3-5 minutes to complete.  After every athlete had finished the survey, athletes participated in a ~10 minute standard warm up routine, including slow jogging and dynamic stretching.  Athletes were instructed not to use the rugby ball during this period.  Once atheltes had completed the warm up, the researcher assembled the group within the training drill area, with one athlete standing on each of the 8 available plastic markers.  In this position, athletes were told once more about the structure and procedure for the training drill, in particular the way in which athletes were expected to rotate clockwise after every trial of the drill so that athletes did not habituate to certain positions or alliances in the drill (see fig Passos 2nd picture).
 
-To begin the drill, the ball-carier at the front and centre of the attack sub-group was instructed to tap the ball with his / her foot, before initiating the attacking sub-phase by advancing forward towards the defence sub-units.  In the case that the ball was immediately fumbled during the inition of the trial, the training group was instructed to restart that trial and the trial in which the mistake was made was not counted.  Following a block of 4 practice trials, athletes were told by the researcher that the formal test was beginning. The group of athletes then completed 16 trials of the drill, which allowed each athlete to complete four trials of attack and four trials of defence, in different positions.
+To begin the drill, the ball-carier at the front and centre of the attack sub-group was instructed to tap the ball with his / her foot, before initiating the attacking sub-phase by advancing forward towards the defence sub-units.  In the case that the ball was immediately fumbled during the inition of the trial, the training group was instructed to restart that trial and the trial in which the mistake was made was not counted.  Following a block of 4 practice trials, athletes were told by the researcher that the formal test was beginning. The group of athletes then completed 16 trials of the drill, which allowed each athlete to complete four trials of attack and four trials of defence, in different positions.  Following completion of all 16 test trials, athletes were assembled by the researcher and thanked for their participation, before being sent the sideline to complete the final post-experiment survey on their mobile devices.  Following the completion of this final survey, athletes were told that they would be informed within two days about the next experiment trial (in fact no more experiments were taking place).
 
-In the case that athletes were unable to participate in their assigned condition for reasons of injury (2) or unannounced unavailability (2), a dummy athlete, naive to the details of the study, was used to fill in as part of the 8 person drill.  In the two experimental conditions involving the Beijing women's team, two athletes in one drill and three athletes in another drill were unable to complete the experiment due to injury and sickness, and as such the drill was modified to be a 3 on 2 + 1 Invasion drill requiring only 6 athletes, instead of the 4 on 2 + 2 drill, which requied 8.  In the drill in which three athletes were missing, one dummy participant athlete stood in to make the 3 on 2 + 1 drill possible.
+In the case that athletes were unable to participate in their assigned condition for reasons of injury (2), a dummy athlete naive to the details of the study was used to fill in as part of the 8 person drill.  In the two experimental conditions involving the Beijing women's team, two athletes each session were unable to complete the experiment due to injury and sickness, and as such the drill was modified to a 3 on 2 + 1 Invasion drill requiring only 6 athletes, instead of the 4 on 2 + 2 drill, which requied 8.
 
-Following completion of all 16 test trials, athletes were assembled by the researcher and thanked for their participation, before being sent the sideline to complete the final post-experiment survey on their mobile devices.  Following the completion of this final survey, athletes were told that they would be informed within two days about the next experiment trial (in fact no more experiments were taking place).
 
 \myparagraph{Video Analysis Procedure}
 The digital camera and tripod were positioned on a platform 2m above the level of the playing field, approximately 10-15m from the bottom try-line corner of the Invasion Drill perimeter (see figure ~\ref{fig:invasionDrill}).  The experimenter began video recording before the athletes arrived, and ceased recording after all athletes had left the training field following the experiment.  Digital video images of action were acquired by a computer, using a USB2.0 cable, and files were saved on an encrypted external hard disk in .AVI format. For image treatment, TACTO 8.0 software was used for digitizing at 25 frames per second.
@@ -190,18 +191,13 @@ The digital camera and tripod were positioned on a platform 2m above the level o
 
 \section{Results}
 
-1. Preliminary Issues:
-%Typically it begins with certain preliminary issues. One is whether any participants or responses were excluded from the analyses and why. The rationale for excluding data should be described clearly so that other researchers can decide whether it is appropriate.
-
-%Describe the data here?
+A total of 8 experimental sessions were conducted, with two of these sessions involving only six athletes (rather than eight), and a further two sessions involving a dummy participant who did not participate in the survey responses before or after the session.  The survey and video data of the remaining 58 athletes were analysed.
 
 \subsection{Data Reduction}
-Exploratory factor analysis was used to reduce multicolinearity between variables while retaining as much variance as possible in the observed data \citep{Yong2013} (EFA, appendix ~\ref{appendix:EFA}).  Data reduction was performed of the main variables of interest relating to training group performance: jointActionSuccess, individualComponentPerformance, teamClick, socialBonding, technicalCompetence (objective and subjective). In addition, team click and social bonding measures directed at the team as a whole (and not just the specific training group) were reduced, in order to assess pre- to post-experiment variation in generalised bonding to the team.
-Procedure for data reduction followed method outlined in ~\ref{subsection:dataReduction}.
+Exploratory factor analysis was used to reduce multicolinearity between variables while retaining as much variance as possible in the observed data \citep{Yong2013} (EFA, appendix ~\ref{appendix:EFA}).  Data reduction was performed on the main variables of interest, including components of individual and training group performance, team click, social bonding, and technical competence (objective and subjective). In addition, team click and social bonding measures directed at the team as a whole (and not just the specific training group) were reduced to factors, in order to assess pre- to post-experiment variation in generalised bonding to the team.
+Procedure for data reduction followed the method outlined in the previous empirical chapter ~\ref{subsection:dataReduction}.
 
 \subsubsection{Variables relevant to the specific training group}
-
-
 
 \myparagraph{Perceptions of Training Group Joint Action Success}
 
@@ -283,7 +279,6 @@ xtable(corstarsl(tlcGroupPerformance)) #label = ``tab:jointActionSuccessCorrTabl
 
 
 \myparagraph{Perceptions of Individual Component Performance}
-
 <<dataReductionIndPerformance, eval=TRUE, echo=FALSE>>=
 #indPerformanceVariablesSubset: exclude effectivenessInContact (not relvant)
 tlcIndPerformance <- subset(tlc, select = c(indDefense, passingTechnique, supportPlay,
@@ -406,7 +401,8 @@ cronAlphaGroupClick <- reliabilityGroupClick$total[,2]
 guttLambdaGroupClick <- reliabilityGroupClick$total[,3]
 @
 
-Items relating to group team click (emotional support, shared goal, unspoken understanding, general atmosphere, click pictorial, reliability of others, reliability for others, ability extended by the group) were subjected to EFA.  The variable ``reliability for others'' was removed from the matrix because it did not significantly correlate with other variables (all r's <= .16).  Correlations between the remaining were very high (all $r's > \Sexpr{round(min(groupClickMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:groupClickCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOgroupClickMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettGroupClick$df}, N = \Sexpr{groupClickSampleSize}) = \Sexpr{bartlettGroupClick$chisq}, p = \Sexpr{round(bartlettGroupClick$p.value, digits = 2)). One factor, labelled ``Group Click'' was imposed on the data, which explained \Sexpr{prVar.groupClickFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupClickFA}). $Guttmans \lambda = \Sexpr{round(reliabilityGroupClick$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityGroupClick$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
+Items relating to training group team click (unspoken understanding, general atmosphere, click pictorial, reliability of others, reliability for others, ability extended by the group) were subjected to EFA.  The variable ``reliability for others'' was removed from the matrix because it did not significantly correlate with other variables (all r's <= .16).  Correlations between the remaining were very high (all $r's > \Sexpr{round(min(groupClickMatrix), digits = 2)}>$), which suggested that one factor was appropriate (see Table ee Table ~\ref{tab:groupClickCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOgroupClickMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettGroupClick$df}, N = \Sexpr{groupClickSampleSize}) = \Sexpr{bartlettGroupClick$chisq}, p = \Sexpr{round(bartlettGroupClick$p.value, digits = 2)}).
+  One factor, labelled ``Group Click'' was imposed on the data, which explained \Sexpr{prVar.groupClickFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupClickFA}). Guttmans \lambda = \Sexpr{round(reliabilityGroupClick$total[,3], digits = 2)} and Cronbachs \alpha = \Sexpr{round(reliabilityGroupClick$total[,2], digits = 2)} indicated that the data reduction was appropriate and reliable.
 
 <<groupClickCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
@@ -416,11 +412,7 @@ xtable(corstarsl(tlcGroupClick))
 @
 
 
-
-
 \myparagraph{Feelings of Social Bonding to the training group}
-
-
 <<dataReductionGroupBonding, eval=TRUE, echo=FALSE>>=
 #GroupBondingVariablesSubset: exclude effectivenessInContact (not relvant)
 tlcGroupBonding <- subset(tlc, select = c(groupEmotionalSupport, groupSharedGoal,
@@ -462,7 +454,8 @@ guttLambdaGroupBonding <- reliabilityGroupBonding$total[,3]
 @
 
 
-Items concerning bonding to the training group (emotional support, shared goal, fusion pictorial) were subjected to EFA.  Correlations between items were high (all $r's > \Sexpr{round(min(groupBondingMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:groupBondingCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOgroupBondingMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettGroupBonding$df}, N = \Sexpr{groupBondingSampleSize}) = \Sexpr{bartlettGroupBonding$chisq}, p = \Sexpr{round(bartlettGroupBonding$p.value, digits = 2)). One factor, labelled ``Group Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.groupBondingFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupBondingFA}). $Guttmans \lambda = \Sexpr{round(reliabilityGroupBonding$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityGroupBonding$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
+Items concerning bonding to the training group (emotional support, shared goal, fusion pictorial) were subjected to EFA.  Correlations between items were high (all r's > \Sexpr{round(min(groupBondingMatrix), digits = 2)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:groupBondingCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOgroupBondingMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettGroupBonding$df}, N = \Sexpr{groupBondingSampleSize}) = \Sexpr{bartlettGroupBonding$chisq}, p = \Sexpr{round(bartlettGroupBonding$p.value, digits = 2)}).
+  One factor, labelled ``Group Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.groupBondingFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupBondingFA}). Guttmans \lambda = \Sexpr{round(reliabilityGroupBonding$total[,3], digits = 2)} and Cronbachs \alpha = \Sexpr{round(reliabilityGroupBonding$total[,2], digits = 2)} indicated that the data reduction was appropriate and reliable.
 
 <<groupBondingCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
@@ -523,7 +516,8 @@ guttLambdaTeamBonding <- reliabilityTeamBonding$total[,3]
 @
 
 
-Items concerning bonding to the team (emotional support, shared goal, fusion pictorial, fusion verbal, and group identification) were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(teamBondingMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamBondingCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOteamBondingMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettTeamBonding$df}, N = \Sexpr{teamBondingSampleSize}) = \Sexpr{bartlettTeamBonding$chisq}, p = \Sexpr{round(bartlettTeamBonding$p.value, digits = 2)). One factor, labelled ``Team Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.teamBondingFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamBondingFA}). $Guttmans \lambda = \Sexpr{round(reliabilityTeamBonding$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityTeamBonding$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
+Items concerning bonding to the team (emotional support, shared goal, fusion pictorial, fusion verbal, and group identification) were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(teamBondingMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamBondingCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOteamBondingMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettTeamBonding$df}, N = \Sexpr{teamBondingSampleSize}) = \Sexpr{bartlettTeamBonding$chisq}, p = \Sexpr{round(bartlettTeamBonding$p.value, digits = 2)}).
+One factor, labelled ``Team Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.teamBondingFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamBondingFA}). Guttmans \lambda = \Sexpr{round(reliabilityTeamBonding$total[,3], digits = 2)} and Cronbachs \alpha = \Sexpr{round(reliabilityTeamBonding$total[,2], digits = 2)} indicated that the data reduction was appropriate and reliable.
 
 <<teamBondingCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
@@ -534,7 +528,6 @@ xtable(corstarsl(tlcTeamBonding))
 
 
 \myparagraph{Arousal}
-
 <<dataReductionArousal, eval=TRUE, echo=FALSE>>=
 #ArousalVariablesSubset: exclude effectivenessInContact (not relvant)
 tlcArousal <- subset(tlc, select = c(aroused, relaxed, excited))
@@ -574,7 +567,8 @@ guttLambdaArousal <- reliabilityArousal$total[,3]
 @
 
 
-Items associated with team discipline (attendance at meals, team curfew, general team conduct, punctuality to team engagements), measured at baseline and after the experiment, were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(arousalMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:arousalCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOarousalMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettarousal$df}, N = \Sexpr{arousalSampleSize}) = \Sexpr{bartlettArousal$chisq}, p = \Sexpr{round(bartlettArousal$p.value, digits = 2)). One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.ArousalFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.arousalFA}). $Guttmans \lambda = \Sexpr{round(reliabilityArousal$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityArousal$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
+Items associated with team discipline (punctuality, observing bed times and curfews, attendance at meals, general team conduct), measured at baseline and after the experiment, were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(arousalMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:arousalCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOarousalMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettarousal$df}, N = \Sexpr{arousalSampleSize}) = \Sexpr{bartlettArousal$chisq}, p = \Sexpr{round(bartlettArousal$p.value, digits = 2)}).
+One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.ArousalFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.arousalFA}).  Guttmans \lambda = \Sexpr{round(reliabilityArousal$total[,3], digits = 2)}  and  Cronbachs \alpha = \Sexpr{round(reliabilityArousal$total[,2], digits = 2)}  indicated that the data reduction was appropriate and reliable.
 
 <<arousalCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
@@ -716,7 +710,8 @@ guttLambdaTeamDiscipline <- reliabilityTeamDiscipline$total[,3]
 @
 
 
-Items concerning team discipline (attendance at meals, team curfew, general team conduct, punctuality to team engagements), measured at baseline and after the experiment, were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(teamDisciplineMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamDisciplineCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOteamDisciplineMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettTeamDiscipline$df}, N = \Sexpr{teamDisciplineSampleSize}) = \Sexpr{bartlettTeamDiscipline$chisq}, p = \Sexpr{round(bartlettTeamDiscipline$p.value, digits = 2)). One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.teamDisciplineFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamDisciplineFA}). $Guttmans \lambda = \Sexpr{round(reliabilityTeamDiscipline$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityTeamDiscipline$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
+Items concerning team discipline (attendance at meals, team curfew, general team conduct, punctuality to team engagements), measured at baseline and after the experiment, were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(teamDisciplineMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamDisciplineCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOteamDisciplineMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettTeamDiscipline$df}, N = \Sexpr{teamDisciplineSampleSize}) = \Sexpr{bartlettTeamDiscipline$chisq}, p = \Sexpr{round(bartlettTeamDiscipline$p.value, digits = 2)}).
+One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.teamDisciplineFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamDisciplineFA}).  Guttmans \lambda = \Sexpr{round(reliabilityTeamDiscipline$total[,3], digits = 2)}  and  Cronbachs \alpha = \Sexpr{round(reliabilityTeamDiscipline$total[,2], digits = 2)}  indicated that the data reduction was appropriate and reliable.
 
 <<teamDisciplineCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
@@ -730,7 +725,7 @@ xtable(corstarsl(tlcTeamDiscipline))
 
 % \myparagraph{Fatigue} - fatigue is measured pre and post experiment, but mental and prpe are measured only post-experiment, so no need for EFA
 
-<<factorsAttachWide, echo = FALSE, eval = TRUE >>=
+<<factorsAttachWideFormat, echo = FALSE, eval = TRUE >>=
 #attach factors to wide-format variable:
 # jointActionSuccess:
 twc$jointActionSuccessPost <- tlc$jointActionSuccess[tlc$time == 3]
@@ -761,11 +756,12 @@ twc$teamDisciplineFactor <- tlc$teamDisciplineFactor[tlc$time == 1]
 
 
 \subsection{Manipulation Checks}
-Athletes were asked two questions before the experiment to gauge their confidence in individual and group ability to handle the technical challenges of the training drill. These measures were used as an indication of the effectiveness of the experimental manipulation.
+Athletes were asked two questions before the experiment to gauge their confidence in individual and group ability to handle the technical challenges of the training drill. Athlete responses to these items were expected to vary according to condition, such that athletes in the high difficulty condition were less confident about their own and their group's ability to meet the technical challenges of the training session. In addition, it was predicted that athlete arousal, measured in the survey immediately prior to each experiment session, would also vary according to condition, such that athletes in the high difficulty condition were more aroused than athtletes in the low difficulty condition.  Meaningful variation in these variables could be used as evidence that the experimental manipulation was successful.
 
 Neither group nor individual confidence in ability to meet technical challenges differed significantly by condition.  The variance of the confidence in individual and group confidence appeared to be higher in the high difficulty condition,
 
-<<manipulationChecks, echo = FALSE, eval = TRUE>>=
+
+<<manipulationChecks1, echo = FALSE, eval = TRUE>>=
 #condition differences in:
 # 1. groupConfidentTechnicalChallenges,
 # 2. indConfidenceChallenges,
@@ -775,29 +771,58 @@ low <- subset(twc, condition == "low")
 high <- subset(twc, condition == "high")
 
 # group confidence in technical challenges:
-boxplot(groupConfidentTechnicalChallenges_2 ~ condition, data = twc) #this is only measured at time = 2!
-#standard deviation seems to be bigger in high difficulty condition:
-#groupConfidenceHighSd <- sd(high$groupConfidentTechnicalChallenges_2, na.rm = TRUE)
-#groupConfidenceLowSd <- sd(low$groupConfidentTechnicalChallenges_2, na.rm = TRUE)
-hist(high$groupConfidentTechnicalChallenges_2)
-hist(low$groupConfidentTechnicalChallenges_2)
-library(car)
-leveneTest(groupConfidentTechnicalChallenges_2 ~ condition, data = twc)
-fligner.test(groupConfidentTechnicalChallenges_2 ~ condition, data = twc)
-bartlett.test(groupConfidentTechnicalChallenges_2 ~ condition, data = twc)
+groupConfCondition.BoxPlot <- boxplot(groupConfidentTechnicalChallenges_2 ~ condition,
+                                        varwidth = TRUE,
+                                        width = c(.5,.5),
+                                        notch = F,
+                                        main = "Confidence in group to \n meet technical challenges",
+                                        xlab = "Condition",
+                                        ylab = "Confidence",
+                                        data = twc)
+histHighGroupConfidence <- hist(high$groupConfidentTechnicalChallenges_2,
+                                        main =  "Histogram of confidence in group to \n meet technical challenges (high difficulty)",
+                                        xlab = "Confidence",
+                                        xlim = c(0, 100))
+histLowGroupConfidence <- hist(low$groupConfidentTechnicalChallenges_2,
+                                        main =  "Histogram of confidence in group to \n meet technical challenges (low difficulty)",
+                                        xlab = "Confidence",
+                                        xlim = c(0, 100))
+
+library(car)                                        leveneTest(groupConfidentTechnicalChallenges_2 ~ condition,
+                                                      data = twc)
+fligner.test(groupConfidentTechnicalChallenges_2 ~ condition,
+                                                       data = twc)
+bartlett.test(groupConfidentTechnicalChallenges_2 ~ condition,
+                                                        data = twc)
 library(stats)
-var.test(high$groupConfidentTechnicalChallenges_2, low$groupConfidentTechnicalChallenges_2)
-# variance does not appear to differ significantly
+var.test(high$groupConfidentTechnicalChallenges_2,
+                              low$groupConfidentTechnicalChallenges_2)
+                                        # variance does not appear to differ significantly
 
 
-# individual confidence in technical challenges:
-boxplot(indConfidenceChallenges_2 ~ condition, data = twc) #this is only measured at time = 2!
-#standard deviation seems to be bigger in high difficulty condition:
-#indConfidenceHighSd <- sd(high$indConfidenceChallenges_2, na.rm = TRUE)
-#indConfidenceLowSd <- sd(low$indConfidenceChallenges_2, na.rm = TRUE)
-hist(high$indConfidenceChallenges_2)
-hist(low$indConfidenceChallenges_2)
-library(car)
+# CONFIDENCE IN INDIVIDUAL ABILITY
+indConfCondition.BoxPlot <- boxplot(indConfidenceChallenges_2 ~ condition,
+                                        varwidth = TRUE,
+                                        width = c(.5,.5),
+                                        notch = F,
+                                        main = "Confidence in individual ability \n to meet technical challenges",
+                                        xlab = "Condition",
+                                        ylab = "Confidence",
+                                        data = twc)
+
+histHighIndConfidence <- hist(high$indConfidenceChallenges_2,
+                                        main =  "Histogram of confidence in individual \n ability to meet technical challenges \n (high difficulty)",
+                                        xlab = "Confidence",
+                                        xlim = c(0, 100),
+                                        ylim = c(0, 20))
+histLowIndConfidence <- hist(low$indConfidenceChallenges_2, main =
+                                        "Histogram of condifence in in individual \n ability to meet technical challenges \n (low difficulty)",
+                                        xlab = "Confidence",
+                                        xlim = c(0, 100),
+                                        ylim = c(0, 20))
+# t.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
+
+#library(car)
 leveneTest(indConfidenceChallenges_2 ~ condition, data = twc)
 fligner.test(indConfidenceChallenges_2 ~ condition, data = twc)
 bartlett.test(indConfidenceChallenges_2 ~ condition, data = twc)
@@ -806,26 +831,162 @@ var.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
 # variance appears to differ significantly
 
 
+# Arousal:
+arousalFactorPre.BoxPlot <- boxplot(arousalFactorPre ~ condition,
+                                        varwidth = TRUE,
+                                        width = c(.5,.5),
+                                        notch = F,
+                                        main = "Athlete arousal prior to experiment",
+                                        xlab = "Condition",
+                                        ylab = "Arousal",
+                                        data = twc)
+histArousalFactorPreHigh <- hist(high$arousalFactorPre,
+                                        main =  "Histogram of athlete arousal \n prior to experiment (high difficulty)",
+                                        xlab = "Arousal",
+                                        xlim = c(-3, 2))
+histArousalFactorPreLow <- hist(low$arousalFactorPre,
+                                        main =  "Histogram of athlete arousal \n prior to experiment (low difficulty)",
+                                        xlab = "Arousal",
+                                        xlim = c(-3, 2))
 
-#arousal
-boxplot(arousalFactorPre ~ condition, data = twc)
-# high difficulty condition looks like higher arousal annd higher variance
 t.test(high$arousalFactorPre, low$arousalFactorPre, na.rm = T) # n.s.
 leveneTest(arousalFactorPre ~ condition, data = twc)
 fligner.test(arousalFactorPre ~ condition, data = twc)
 bartlett.test(arousalFactorPre ~ condition, data = twc) # all n.s.
 
+
+#this is only measured at time = 2!
+#standard deviation seems to be bigger in high difficulty condition:
+#groupConfidenceHighSd <- sd(high$groupConfidentTechnicalChallenges_2, na.rm = TRUE)
+#groupConfidenceLowSd <- sd(low$groupConfidentTechnicalChallenges_2, na.rm = TRUE)
+#hist(high$groupConfidentTechnicalChallenges_2)
+#hist(low$groupConfidentTechnicalChallenges_2)
+
+# individual confidence in technical challenges:
+#boxplot(indConfidenceChallenges_2 ~ condition, data = twc) #this is only measured at time = 2!
+#standard deviation seems to be bigger in high difficulty condition:
+#indConfidenceHighSd <- sd(high$indConfidenceChallenges_2, na.rm = TRUE)
+#indConfidenceLowSd <- sd(low$indConfidenceChallenges_2, na.rm = TRUE)
+#hist(high$indConfidenceChallenges_2)
+#hist(low$indConfidenceChallenges_2)
+#arousal
+
+#boxplot(arousalFactorPre ~ condition, data = twc)
+# high difficulty condition looks like higher arousal annd higher variance
+
 # what about secondary indicators that manipulation worked?
 # in particular, team performance expectations and jointActionSuccess
+@
+
+<<manipulationChecks2, echo = FALSE, eval = TRUE>>=
+
+#jointActionSuccess
 boxplot(jointActionSuccessPre ~ condition, data = twc) # looks like no difference
 boxplot(jointActionSuccessPost ~ condition, data = twc)
+
+
+jointActionSuccessPre.BoxPlot <- boxplot(jointActionSuccessPre ~ condition,
+                                        varwidth = TRUE,
+                                        width = c(.5,.5),
+                                        notch = F,
+                                        main = "Athlete perceptions of recent Joint \n Action Success with training group \n (pre-experiment)",
+                                        xlab = "Condition",
+                                        ylab = "Joint Action Success",
+                                        data = twc)
+histJointActionSuccessPrePreHigh <- hist(high$jointActionSuccessPre,
+                                        main =  "Histogram of pre-experiment \n Joint Action Succcess \n (high difficulty)",
+                                        xlab = "Joint Action Success",
+                                        ylim = c(0, 20),
+                                        xlim = c(-3, 2))
+histjointActionSuccessPreLow <- hist(low$jointActionSuccessPre,
+                                        main =  "Histogram of \n pre-experiment Joint Action Succcess \n (low difficulty)",
+                                        xlab = "Joint Action Success",
+                                        ylim = c(0, 20),
+                                        xlim = c(-3, 2))
+
+
+#groupPerformanceExpectationsPost:
+groupPerformance_3.BoxPlot <- boxplot(groupPerformance_3 ~ condition,
+                                        varwidth = TRUE,
+                                        width = c(.5,.5),
+                                        notch = F,
+                                        main = "Athlete perception of group performance relative to prior expectations",
+                                        xlab = "Condition",
+                                        ylab = "Group Performance",
+                                        data = twc)
+
+histGroupPerformanceExpHigh <- hist(high$groupPerformance_3,
+                                        main =  "Histogram of athlete perception \n of group performance relative to \n prior expectations (high difficulty)",
+                                        xlab = "Group Performance",
+                                        ylim = c(0, 15),
+                                        xlim = c(0, 100))
+
+histGroupPerformanceExpLow <- hist(low$groupPerformance_3,
+                                        main =  "Histogram of athlete perception \n of group performance relative to \n prior expectations \n (low difficulty)",
+                                        xlab = "Group Performance",
+                                        ylim = c(0, 15),
+                                        xlim = c(0, 100))
+
+#indvidualPerformanceExpectations:
+indPerformance_3.BoxPlot <- boxplot(indPerformance_3 ~ condition,
+                                        varwidth = TRUE,
+                                        width = c(.5,.5),
+                                        notch = F,
+                                        main = "Athlete perception of individual performance relative to prior expectations",
+                                        xlab = "Condition",
+                                        ylab = "Individual Performance",
+                                        data = twc)
+t.test(high$indPerformance_3, low$indPerformance_3)
+
+histIndPerformanceExpHigh <- hist(high$indPerformance_3,
+                                        main =  "Histogram of athlete perception \n of individual performance relative to \n prior expectations (high difficulty)",
+                                        xlab = "Individual Performance",
+                                        ylim = c(0, 15),
+                                        xlim = c(0, 100))
+
+histIndPerformanceExpLow <- hist(low$indPerformance_3,
+                                        main =  "Histogram of athlete perception \n of individual performance relative to \n prior expectations \n (low difficulty)",
+                                        xlab = "Individual Performance",
+                                        ylim = c(0, 15),
+                                        xlim = c(0, 100))
+
+
+groupPerformanceFactor.BoxPlot <- boxplot(groupPerformanceFactor[condition == "low"] ~
+                                        time[condition == "low"],
+                                        varwidth = TRUE,
+                                        width = c(.5,.5),
+                                        notch = F,
+                                        main = "Athlete pre versus post \n perceptions of joint action success \n (low difficulty)",
+                                        xlab = "Time",
+                                        ylab = "Joint Action Success",
+                                        data = tlc)
+t.test(twc$jointActionSuccessPre[twc$condition == "high"], twc$jointActionSuccessPost[twc$condition == "high"], paired = T)
+
+groupPerformanceFactor.BoxPlot <- boxplot(groupPerformanceFactor[condition == "high"] ~
+                                        time[condition == "high"],
+                                        varwidth = TRUE,
+                                        width = c(.5,.5),
+                                        notch = F,
+                                        main = "Athlete pre versus post \n perceptions of joint action success \n (high difficulty)",
+                                        xlab = "Time",
+                                        ylab = "Joint Action Success",
+                                        data = tlc)
+t.test(twc$jointActionSuccessPre[twc$condition == "low"], twc$jointActionSuccessPost[twc$condition == "low"], paired = T)
+
+summary(lm(tlc$jointActionSuccess ~ tlc$time:tlc$condition))
 
 # performanceExpectations:
 boxplot(groupPerformance_3 ~ condition, data = twc) # measured at t3 only
 t.test(high$groupPerformance_3, low$groupPerformance_3, na.rm = T)
-
 @
 
+
+<<manipulationChecks3, echo = FALSE, eval = TRUE>>=
+#check if there are any meaningful changes in pre-post performance:
+t.test(high$)
+
+
+@
 
 
 
