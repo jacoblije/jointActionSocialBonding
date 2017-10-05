@@ -346,37 +346,36 @@ print(xtable(tableTlcCompPerfSubj.condition, type="latex",
 
 @
 
-The central tendencies of subjective measures of individual technical competence compared to teammates, other Chinese professional rugby players, and International professionals, were all above the mid-point of the zero-centred scale (min = -50, max = 50, see Table ~\ref{tab:compPerfSubjTraining}).  The central tendencies for items concerning the impact of individual performance on mood and confidence were also well above the mid-point of the scale (100 point scale, min = 0, max = 100). Likewise, average athlete perceptions of individual (Table ~\ref{}), group (Table ~\ref{}), and team (Table ~\ref{}) performance were well above the mid-point of the scale for both conditions at all time points. Variables measuring athletes' perceptions of group and team click, and feelings of bonding to the training group and the team as a whole were also highly negatively skewed (see Tables:~\ref{tab:performanceOverallSummary}\nobreakdash--\ref{tab:fatigueOverallSummary})
+The central tendencies of subjective measures of individual technical competence compared to teammates, other Chinese professional rugby players, and International professionals, were all above the mid-point of the zero-centred scale (min = -50, max = 50, see Table ~\ref{tab:compPerfSubjTraining}).  The central tendencies for items concerning the impact of individual performance on mood and confidence were also well above the mid-point of the scale (100 point scale, min = 0, max = 100). Likewise, average athlete perceptions of individual (Tables ~\ref{tab:indPerfTimeLowTraining} and ~\ref{tab:indPerfTimeHighTraining}), group (Tables ~\ref{tab:groupPerfTimeLowTraining} and ~\ref{tab:groupPerfTimeHighTraining}), and team (measured at Baseline only, see Table ~\ref{tab:teamPerfTimeBaselineTraining}) performance were above the mid-point of the scale for both conditions at all time points.
+Variables measuring athletes' perceptions of group and team click, and feelings of bonding to the training group and the team as a whole also showed high negative skew above the mid-point of each respective scale (see Tables ~\ref{tab:groupClickTimeHighTraining}\nobreakdash--\ref{tab:teamBondingTimeHighTraining}).
+
 
 %Among these measures, perceived technical competence relative to international rugby players differed significantly by cont
 
-\input{.../images/compPerfSubjTraining.tex}
-
-\input{.../images/indPerfTimeLowTraining.tex}
-\input{.../images/indPerfTimeHighTraining.tex}
-
-\input{.../images/groupPerfTimeLowTraining.tex}
-\input{.../images/groupPerfTimeHighTraining.tex}
-
-\input{.../images/teamPerfTimeBaselineTraining.tex}
-
-
-\input{.../images/groupClickTimeHighTraining.tex}
-\input{.../images/groupClickTimeLowTraining.tex}
-
-\input{.../images/groupBondingTimeHighTraining.tex}
-\input{.../images/groupBondingTimeLowTraining.tex}
-
-
-\input{.../images/teamBondingTimeLowTraining.tex}
-\input{.../images/teamBondingTimeHighTraining.tex}
-
-
-
-\input{.../images/teamDisciplineTimeLowTraining.tex}
-
-\input{...images/arousalExertionTimeLowTraining.tex}
-\input{.../images/personalityTraining.tex}
+%\input{.../images/compPerfSubjTraining.tex}
+%%IndPerforamnce:
+%\input{.../images/indPerfTimeLowTraining.tex}
+%\input{.../images/indPerfTimeHighTraining.tex}
+%% groupPerformance:
+%\input{.../images/groupPerfTimeLowTraining.tex}
+%\input{.../images/groupPerfTimeHighTraining.tex}
+%% teamPerformance:
+%\input{.../images/teamPerfTimeBaselineTraining.tex}
+%% groupClick:
+%\input{.../images/groupClickTimeHighTraining.tex}
+%\input{.../images/groupClickTimeLowTraining.tex}
+%% groupBonding:
+%\input{.../images/groupBondingTimeHighTraining.tex}
+%\input{.../images/groupBondingTimeLowTraining.tex}
+%% teamBonding:
+%\input{.../images/teamBondingTimeLowTraining.tex}
+%\input{.../images/teamBondingTimeHighTraining.tex}
+%%teamDiscipline
+%\input{.../images/teamDisciplineTimeLowTraining.tex}
+%%ArousalExertion:
+%\input{...images/arousalExertionTimeLowTraining.tex}
+%%Personality:
+%\input{.../images/personalityTraining.tex}
 
 
 
@@ -1161,30 +1160,6 @@ print(xtable(tableTlcPersonality.condition, type="latex", caption = "Athlete per
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \subsection{Data Reduction}
 Exploratory factor analysis was used to reduce multicolinearity between variables while retaining as much variance as possible in the observed data \citep{Yong2013} (EFA, appendix ~\ref{appendix:EFA}).  Data reduction was performed on the main variables of interest, including components of individual and training group performance, team click, social bonding, and technical competence (objective and subjective). In addition, team click and social bonding measures directed at the team as a whole (and not just the specific training group) were reduced to factors, in order to assess pre- to post-experiment variation in generalised bonding to the team.
 Procedure for data reduction followed the method outlined in the previous empirical chapter ~\ref{subsection:dataReduction}.
@@ -1263,11 +1238,16 @@ corstarsl <- function(x){
 
 Items concerning components of group performance in the invasion drill (defence, attack, support play, and on field communication) were subjected to EFA.  Correlations between group component performance items was very high (all r's > \Sexpr{round(min(groupPerformanceMatrix), digits = 2)}), which suggested that one factor was appropriate (see Table ~\ref{tab:jointActionSuccessCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOgroupPerformanceMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettGroupPerformance$df}, N = \Sexpr{groupPerformanceSampleSize}) = \Sexpr{bartlettGroupPerformance$chisq}, p = \Sexpr{round(bartlettGroupPerformance$p.value, digits = 2)). One factor, labelled ``Joint Action Success'' was imposed on the data, which explained \Sexpr{prVar.group PerformanceFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupPerformanceFA}). $Guttmans \lambda = \Sexpr{round(reliabilityGroupPerformance$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityGroupPerformance$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
 
-<<groupPerformanceCor, echo = TRUE>>=
+<<groupPerformanceCor, echo = FALSE, eval = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
 corstarsl(tlcGroupPerformance)
-xtable(corstarsl(tlcGroupPerformance)) #label = ``tab:jointActionSuccessCorrTable''
+print(xtable(corstarsl(tlcGroupPerformance), type="latex",
+                    caption = "Correlations between components of group performance",
+                    label = "tab:jointActionSuccessCorrTable"),
+                    file = "jointActionSuccessCorrTable.tex")
 @
+
+
 
 
 \myparagraph{Perceptions of Individual Component Performance}
@@ -1313,19 +1293,21 @@ guttLambdaIndPerformance <- reliabilityIndPerformance$total[,3]
 @
 
 
-Items concerning components of individual components of performance in the invasion drill (1-on-1 defence, passing technique, support play in attack, decision making in attack, and effectiveness in contact) were subjected to EFA.  The variable ``effectiveness in contact'' was removed from analysis as the invasion drill was predominantly a non-contact training drill, and so this item was not relevant to athletes' performance.  Correlations between individual component performance items was very high (all r's > \Sexpr{round(min(indPerformanceMatrix), digits = 2)}), which suggested that one factor was appropriate (see Table ~\ref{tab:indComponentPerformanceCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOindPerformanceMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettIndPerformance$df}, N = \Sexpr{indPerformanceSampleSize}) = \Sexpr{bartlettIndPerformance$chisq}, p = \Sexpr{round(bartlettIndPerformance$p.value, digits = 2)). One factor, labelled ``Individual Performance Components'' was imposed on the data, which explained \Sexpr{prVar.indPerformanceFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.indPerformanceFA}). $Guttmans \lambda = \Sexpr{round(reliabilityIndPerformance$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityIndPerformance$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
+Items concerning components of individual components of performance in the invasion drill (1-on-1 defence, passing technique, support play in attack, decision making in attack, and effectiveness in contact) were subjected to EFA.  The variable ``effectiveness in contact'' was removed from analysis as the invasion drill was predominantly a non-contact training drill, and so this item was not relevant to athletes' performance.  Correlations between individual component performance items was very high (all r's > \Sexpr{round(min(indPerformanceMatrix), digits = 2)}), which suggested that one factor was appropriate (see Table ~\ref{tab:tab:indComponentPerfCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOindPerformanceMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettIndPerformance$df}, N = \Sexpr{indPerformanceSampleSize}) = \Sexpr{bartlettIndPerformance$chisq}, p = \Sexpr{round(bartlettIndPerformance$p.value, digits = 2)). One factor, labelled ``Individual Performance Components'' was imposed on the data, which explained \Sexpr{prVar.indPerformanceFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.indPerformanceFA}). $Guttmans \lambda = \Sexpr{round(reliabilityIndPerformance$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityIndPerformance$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
 
 <<indComponentsPerformanceCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
 corstarsl(tlcIndPerformance)
-xtable(corstarsl(tlcIndPerformance))
+print(xtable(corstarsl(tlcIndPerformance), type="latex",
+                    caption = "Correlations between components of individual performance",
+                    label = "tab:indComponentPerfCorrTable"),
+                    file = "indComponengtPerfCorrTable.tex")
 # label = tab:indComponentPerformanceCorrTable
 @
 
 
-
 %Appendix
-% This is a follow-up EFA with individual and group performance in one matrix.
+%% This is a follow-up EFA with individual and group performance in one matrix.
 %<<dataReductionPerformanceAll, eval=TRUE, echo=FALSE>>=
 %min(competenceMatrix)
 
@@ -1347,11 +1329,7 @@ xtable(corstarsl(tlcIndPerformance))
 
 
 
-
-
-
 \myparagraph{Feelings of team click within training group}
-
 <<dataReductionGroupClick, eval=TRUE, echo=FALSE>>=
 #GroupClickVariablesSubset: exclude effectivenessInContact (not relvant)
 tlcGroupClick <- subset(tlc, select = c(groupReliabilityOfOthers,
@@ -1399,9 +1377,15 @@ Items relating to training group team click (unspoken understanding, general atm
 <<groupClickCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
 corstarsl(tlcGroupClick)
-xtable(corstarsl(tlcGroupClick))
+print(xtable(corstarsl(tlcGroupClick), type= "latex",
+                    caption = "Correlations between variables of group click",
+                    label = "tab:groupClickCorrTable"),
+                    file = "groupClickCorrTable.tex")
 # label = tab:groupClickCorrTable
 @
+
+
+
 
 
 \myparagraph{Feelings of Social Bonding to the training group}
@@ -1452,11 +1436,17 @@ Items concerning bonding to the training group (emotional support, shared goal, 
 <<groupBondingCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
 corstarsl(tlcGroupBonding)
-xtable(corstarsl(tlcGroupBonding))
+print(xtable(corstarsl(tlcGroupBonding), type="latex",
+                    caption = "Correlations between group bonding variables",
+                    label = "tab:groupBondingCorrTable"),
+                    file = "groupBondingCorrTable.tex")
 # label = tab:groupBondingCorrTable
 @
 
-
+print(xtable(corstarsl(tlcIndPerformance), type="latex",
+                    caption = "Correlations between components of individual performance",
+                    label = "tab:indComponentPerfCorrTable"),
+                    file = "indComponengtPerfCorrTable.tex")
 
 
 
@@ -1514,9 +1504,13 @@ One factor, labelled ``Team Social Bonding'' was imposed on the data, which expl
 <<teamBondingCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
 corstarsl(tlcTeamBonding)
-xtable(corstarsl(tlcTeamBonding))
+print(xtable(corstarsl(tlcTeamBonding), type="latex",
+                    caption = "Correlations between team bonding variables",
+                    label = "tab:teamBondingCorrTable"),
+                    file = "teamBondingCorrTable.tex")
 # label = tab:teamBondingCorrTable
 @
+
 
 
 \myparagraph{Arousal}
@@ -1565,25 +1559,13 @@ One factor, labelled ``Team Discipline'' was imposed on the data, which explaine
 <<arousalCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
 corstarsl(tlcArousal)
-xtable(corstarsl(tlcArousal))
+print(xtable(corstarsl(tlcArousal), type="latex",
+                    caption = "Correlations between variables measuring arousal",
+                    label = "tab:arousalCorrTable"),
+                    file = "arousalCorrTable.tex")
+)
 # label = tab:arousalCorrTable
 @
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1654,14 +1636,20 @@ $Guttmans \lambda = \Sexpr{round(reliabilityTechnicalCompetence$total[,3], digit
 <<technicalCompetenceCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
 corstarsl(tlcTechnicalCompetence)
-xtable(corstarsl(tlcTechnicalCompetence))
+print(xtable(corstarsl(tlcTechnicalCompetence), type="latex",
+                    caption = "Correlations between measures of technical competence",
+                    label = "tab:technicalCompetenceCorrTable"),
+                    file = "technicalCompetenceCorrTable.tex")
 # label = tab:technicalCompetenceCorrTable
 @
 
+
+
+
+
+
+
 \subsubsection{Team Discipline}
-
-
-
 <<dataReductionTeamDiscipline, eval=TRUE, echo=FALSE>>=
 #TeamDisciplineVariablesSubset: exclude effectivenessInContact (not relvant)
 tlcTeamDiscipline <- subset(tlc, select = c(teamAttendanceMeals, teamCurfew, teamGeneralConduct, teamPunctuality))
@@ -1708,10 +1696,12 @@ One factor, labelled ``Team Discipline'' was imposed on the data, which explaine
 <<teamDisciplineCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
 corstarsl(tlcTeamDiscipline)
-xtable(corstarsl(tlcTeamDiscipline))
+print(xtable(corstarsl(tlcTeamDiscipline), type="latex",
+                    caption = "Correlations between variables measuring team discipline",
+                    label = "tab:teamDisciplineCorrTable"),
+                    file = "teamDisciplineCorrTable.tex")
 # label = tab:teamDisciplineCorrTable
 @
-
 
 
 
@@ -1747,11 +1737,21 @@ twc$teamDisciplineFactor <- tlc$teamDisciplineFactor[tlc$time == 1]
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Manipulation Checks}
-Athletes were asked two questions before the experiment to gauge their confidence in individual and group ability to handle the technical challenges of the training drill. Athlete responses to these items were expected to vary according to condition, such that athletes in the high difficulty condition were less confident about their own and their group's ability to meet the technical challenges of the training session. In addition, it was predicted that athlete arousal, measured in the survey immediately prior to each experiment session, would also vary according to condition, such that athletes in the high difficulty condition were more aroused than athtletes in the low difficulty condition.  Meaningful variation in these variables could be used as evidence that the experimental manipulation was successful.
-
-Neither group nor individual confidence in ability to meet technical challenges differed significantly by condition.  The variance of the confidence in individual and group confidence appeared to be higher in the high difficulty condition,
-
+Athletes were asked two questions in the post-manipulation pre-experiment survey gauge their confidence in individual and group ability to handle the technical challenges of the training drill. Due to the fact that athletes had been primed to expect either a difficult or simple training drill, athlete responses to these items were expected to vary according to condition.  It was expected that athletes in the high difficulty condition would be less confident about their own and their group's ability to meet the technical challenges of the training session. In addition, it was predicted that athlete arousal, measured in the survey immediately prior to each experiment session, would also vary according to condition, such that athletes in the high difficulty condition were more aroused than athtletes in the low difficulty condition.  Meaningful variation in these variables could be used as evidence that the experimental manipulation was successful.
 
 <<manipulationChecks1, echo = FALSE, eval = TRUE>>=
 #condition differences in:
@@ -1814,14 +1814,18 @@ histLowIndConfidence <- hist(low$indConfidenceChallenges_2, main =
                                         ylim = c(0, 20))
 # t.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
 
-#library(car)
+library(car)
 leveneTest(indConfidenceChallenges_2 ~ condition, data = twc)
 fligner.test(indConfidenceChallenges_2 ~ condition, data = twc)
 bartlett.test(indConfidenceChallenges_2 ~ condition, data = twc)
-library(stats) # variance appears to differ significantly
-var.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
-# variance appears to differ significantly
 
+library(stats) # variance appears to differ significantly
+indPerfBartlett <- var.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
+# variance appears to differ significantly
+install.packages("apa")
+library(apa)
+cohens_d(indPerfBartlett, format = ``latex'')
+apa(indPerfBartlett)
 
 # Arousal:
 arousalFactorPre.BoxPlot <- boxplot(arousalFactorPre ~ condition,
@@ -1846,7 +1850,6 @@ leveneTest(arousalFactorPre ~ condition, data = twc)
 fligner.test(arousalFactorPre ~ condition, data = twc)
 bartlett.test(arousalFactorPre ~ condition, data = twc) # all n.s.
 
-
 #this is only measured at time = 2!
 #standard deviation seems to be bigger in high difficulty condition:
 #groupConfidenceHighSd <- sd(high$groupConfidentTechnicalChallenges_2, na.rm = TRUE)
@@ -1866,11 +1869,65 @@ bartlett.test(arousalFactorPre ~ condition, data = twc) # all n.s.
 #boxplot(arousalFactorPre ~ condition, data = twc)
 # high difficulty condition looks like higher arousal annd higher variance
 
-# what about secondary indicators that manipulation worked?
-# in particular, team performance expectations and jointActionSuccess
 @
 
+<<manipulationCheckTable, echo = FALSE, eval = TRUE>>=
+
+##subset data for table: groupConfidentTechnicalChallenges_2,indConfidenceChallenges_2, arousalFactorPre:
+twcManipulationCheck <- subset(twc, select = c(age, sex, condition, team,
+                                    groupConfidentTechnicalChallenges_2, indConfidenceChallenges_2, arousalFactorPre))
+##rename columns for tables:
+library(dplyr)
+twcManipulationCheck <- rename(twcManipulationCheck, Condition = condition,
+                                    ConfidenceInGroupAbility = groupConfidentTechnicalChallenges_2, ConfidenceIndividualAbility = indConfidenceChallenges_2, Arousal = arousalFactorPre)
+
+
+## create a variable list which we want in table one
+listVars <- c("ConfidenceInGroupAbility", "ConfidenceIndividualAbility", "Arousal")
+
+## define categorical variables
+catVars <- c("Condition")
+
+
+## Create overall table:
+table1 <- CreateTableOne(vars = listVars,
+                         strata = "Condition",
+                         data = twcManipulationCheck,
+                         factorVars = catVars
+                         )
+
+## create table which is printable
+table1_overall <- print(table1,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(table1_overall, type="latex",
+      caption = "Pre-experiment manipulation check variables",
+      label = "tab:manipulationCheckTable"),
+      file="manipulationCheckTable.tex")
+@
+
+
+Neither group nor individual confidence in ability to meet technical challenges differed significantly by condition.  The variance of the confidence in individual and group confidence appeared to be higher in the high difficulty condition, however this variance was not significantly
+
+tab:manipulationCheckTable
+
+
+
+
+
+
+
+
 <<manipulationChecks2, echo = FALSE, eval = TRUE>>=
+# what about secondary indicators that manipulation worked?
+# in particular, team performance expectations and jointActionSuccess
+
 
 #jointActionSuccess
 boxplot(jointActionSuccessPre ~ condition, data = twc) # looks like no difference
