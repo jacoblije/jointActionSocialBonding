@@ -346,14 +346,37 @@ print(xtable(tableTlcCompPerfSubj.condition, type="latex",
 
 @
 
-The central tendencies of subjective measures of individual technical competence compared to teammates, other Chinese professional rugby players, and International professionals, were all above the mid-point of the zero-centred scale (min = -50, max = 50, see Table ~\ref{tab:compPerfSubjTraining}).  The central tendencies for items concerning the impact of individual performance on mood and confidence were also high (100 point scale, min = 0, max = 100). Likewise, athlete perceptions of individual (Table ~\ref{}) and group performance
+The central tendencies of subjective measures of individual technical competence compared to teammates, other Chinese professional rugby players, and International professionals, were all above the mid-point of the zero-centred scale (min = -50, max = 50, see Table ~\ref{tab:compPerfSubjTraining}).  The central tendencies for items concerning the impact of individual performance on mood and confidence were also well above the mid-point of the scale (100 point scale, min = 0, max = 100). Likewise, average athlete perceptions of individual (Table ~\ref{}), group (Table ~\ref{}), and team (Table ~\ref{}) performance were well above the mid-point of the scale for both conditions at all time points. Variables measuring athletes' perceptions of group and team click, and feelings of bonding to the training group and the team as a whole were also highly negatively skewed (see Tables:~\ref{tab:performanceOverallSummary}\nobreakdash--\ref{tab:fatigueOverallSummary})
 
 %Among these measures, perceived technical competence relative to international rugby players differed significantly by cont
 
 \input{.../images/compPerfSubjTraining.tex}
 
+\input{.../images/indPerfTimeLowTraining.tex}
+\input{.../images/indPerfTimeHighTraining.tex}
+
+\input{.../images/groupPerfTimeLowTraining.tex}
+\input{.../images/groupPerfTimeHighTraining.tex}
+
+\input{.../images/teamPerfTimeBaselineTraining.tex}
 
 
+\input{.../images/groupClickTimeHighTraining.tex}
+\input{.../images/groupClickTimeLowTraining.tex}
+
+\input{.../images/groupBondingTimeHighTraining.tex}
+\input{.../images/groupBondingTimeLowTraining.tex}
+
+
+\input{.../images/teamBondingTimeLowTraining.tex}
+\input{.../images/teamBondingTimeHighTraining.tex}
+
+
+
+\input{.../images/teamDisciplineTimeLowTraining.tex}
+
+\input{...images/arousalExertionTimeLowTraining.tex}
+\input{.../images/personalityTraining.tex}
 
 
 
@@ -534,13 +557,6 @@ print(xtable(tableGroupPerformLowTime, type="latex", caption = "Athlete percepti
 
 
 
-%TEAM PERFORMANCE:
-%"teamPerformance_1"
-%""
-%""
-%""
-%"t"
-%""
 
 
 <<descriptivesTeamPerformance, echo = FALSE, eval = TRUE>>=
@@ -592,11 +608,6 @@ tlcTeamPerformance <- rename(tlcTeamPerformance, Name = englishName, Sex = sex,
 
 
 
-# create high and low condition dfs:
-tlcTeamPerformanceHigh <- subset(tlcTeamPerformance, Condition == "high")
-
-tlcTeamPerformanceLow <- subset(tlcTeamPerformance, Condition == "low")
-
 ## create a variable list which we want in table one
 listVars <- c("TeamPerformance", "TeamCompetenceInChina", "TeamAttack", "TeamDefence", "TeamCommunication", "TeamSupportPlay")
 
@@ -605,14 +616,14 @@ listVars <- c("TeamPerformance", "TeamCompetenceInChina", "TeamAttack", "TeamDef
 catVars <- c("Sex", "Condition", "Time")
 
 ## create table one (high difficulty condition)
-tableTeamPerfHigh_time <- CreateTableOne(vars = listVars,
-                         strata = "Time",
-                         data = tlcTeamPerformanceHigh,
+tableTeamPerf_condition <- CreateTableOne(vars = listVars,
+                         strata = "Condition",
+                         data = tlcTeamPerformance,
                          factorVars = catVars
                          )
 
 ## create table which is printable
-tableTeamPerformHighTime <- print(tableTeamPerfHigh_time,
+tableTeamPerformCondition <- print(tableTeamPerf_condition,
                             quote = FALSE,
                             noSpaces = FALSE,
                             printToggle = FALSE
@@ -620,38 +631,12 @@ tableTeamPerformHighTime <- print(tableTeamPerfHigh_time,
 
 ## print to latex file in wd
 ## this latex file will later be inputted
-print(xtable(tableTeamPerformHighTime, type="latex",
-                          label = "tab:teamPerfTimeLowTraining",
-                          caption = "Athlete perceptions of \n team performance (high difficulty condition)"), file="teamPerfTimeHighTraining.tex")
+print(xtable(tableTeamPerformCondition, type="latex",
+                          label = "tab:teamPerfBaselineTraining",
+                          caption = "Athlete perceptions of team performance \n at Baseline, by condition"), file="teamPerfTimeBaselineTraining.tex")
+@
 
-
-## create table one (low difficulty condition)
-tableTeamPerfLow_time <- CreateTableOne(vars = listVars,
-                         strata = "Time",
-                         data = tlcTeamPerformanceLow,
-                         factorVars = catVars
-                         )
-
-## create table which is printable
-tableTeamPerformLowTime <- print(tableTeamPerfLow_time,
-                            quote = FALSE,
-                            noSpaces = FALSE,
-                            printToggle = FALSE
-                            )
-
-## print to latex file in wd
-## this latex file will later be inputted
-print(xtable(tableTeamPerformLowTime, type="latex",
-                          label = "tab:teamPerfTimeLowTraining",
-                          caption = "Athlete perceptions of \n group performance (low difficulty condition)"), file="teamPerfTimeLowTraining.tex")
-
-
-
-
-
-
-
-
+\input{.../images/teamPerfTimeBaselineTraining.tex}
 
 
 
@@ -751,14 +736,7 @@ GROUP BONDING:
 ##subset data for renaming
 tlcGroupBonding <- subset(tlc, select = c(englishName, condition, sex, time, team,
                                 groupEmotionalSupport, groupSharedGoal, groupFusionPictorial, groupStayChange))
-## groupBonding is only @ time = 3, and is in terms of expectations...rescale.
-#tlcGroupBonding$groupBonding <- tlcGroupBonding$groupBonding
-#tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 1] <- NA
-#tlcGroupPerformance$groupPerformanceExp[tlcIndPerformance$time == 2] <- NA
-#tlcGroupPerformance$groupPerformance[tlcGroupPerformance$time == 3] <- NA
-#rescale groupPerformaneExp to (0,100)
-#library(scales)
-#tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3], to = c(0, 100), from = c(-50, 50))
+
 
 ## Need to reverse group Stay Change and locate it correctly at Post-Tournament:
 ## First locate @ t = 3:
@@ -925,8 +903,8 @@ tableTeamBondingLowTime <- print(tableTeamBondingLow_time,
 print(xtable(tableTeamBondingLowTime, type="latex", caption = "Athlete perceptions of \n team bonding (low difficulty condition)"), file="teamBondingTimeLowTraining.tex")
 @
 
-
-
+\input{.../images/teamBondingTimeLowTraining.tex}
+\input{.../images/teamBondingTimeHighTraining.tex}
 
 
 <<descriptivesTeamDiscipline, echo = FALSE, eval = TRUE>>=
@@ -1003,6 +981,8 @@ tableTeamDisciplineLowTime <- print(tableTeamDisciplineLow_time,
 ## this latex file will later be inputted
 print(xtable(tableTeamDisciplineLowTime, type="latex", caption = "Athlete perceptions of \n team discipine (low difficulty condition)"), file="teamDisciplineTimeLowTraining.tex")
 @
+
+\input{.../images/teamDisciplineTimeLowTraining.tex}
 
 
 
@@ -1091,6 +1071,8 @@ tableArousalExertionLowTime <- print(tableArousalExertionLow_time,
 print(xtable(tableArousalExertionLowTime, type="latex", caption = "Athlete arousal and exertion \n (low difficulty condition)"), file="arousalExertionTimeLowTraining.tex")
 @
 
+\input{...images/arousalExertionTimeLowTraining.tex}
+
 
 
 <<descriptivesPersonality, echo = FALSE, eval = TRUE>>=
@@ -1165,6 +1147,40 @@ print(xtable(tableTlcPersonality.condition, type="latex", caption = "Athlete per
                                   "unspokenUnderstanding"
                                    [81] "teamClickPictorial_1"
                                      "teamClickFactor"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
