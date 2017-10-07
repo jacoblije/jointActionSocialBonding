@@ -53,6 +53,7 @@ library(xtable) # to make Latex tables
 install.packages("tableone")
 library(tableone)
 library(apa)
+library(ggplot2)
 @
 
 <<dataInput, eval=TRUE, echo=FALSE, results='hide'>>=
@@ -1352,10 +1353,11 @@ prVar.groupClickFA <-  round((colSums(tlcGroupClick.fa$loadings*tlcGroupClick.fa
 head(tlcGroupClick.fa$scores)
 tlcGroupClick.fa$scores <- unclass(tlcGroupClick.fa$scores)
 
-tlc <- cbind(tlc, tlcGroupClick.fa$scores
-colnames(tlc)[which(names(tlc) == "Factor1")] <- "groupClickFactor"
-tlc$groupClickFactor <- unlist(tlc$groupClickFactor)
-tlc$groupClickFactor <- as.vector(tlc$groupClickFactor)
+tlc <- cbind(tlc, tlcGroupClick.fa$scores)
+colnames(tlc)[which(names(tlc) == "Factor1")] <- "groupClickFactor1"
+tlc$groupClickFactor1 <- unlist(tlc$groupClickFactor1)
+tlc$groupClickFactor1 <- as.vector(tlc$groupClickFactor1)
+#colnames(tlc)[which(names(tlc) == "groupClickFactor1")] <- "groupClickFactor"
 #tlc$groupClickFactor
 #names(tlc)[names(tlc) == "Factor1"] <- "groupClickFactor"
 
@@ -1769,8 +1771,9 @@ twc$jointActionSuccessPre <- tlc$jointActionSuccess[tlc$time == 2]
 twc$indPerformanceComponentsPost <- tlc$indPerformanceComponents[tlc$time == 3]
 twc$indPerformanceComponentsPre <- tlc$indPerformanceComponents[tlc$time == 2]
 # groupClick
-twc$groupClickFactorPost <- tlc$groupClickFactor[tlc$time == 3]
-twc$groupClickFactorPre <- tlc$groupClickFactor[tlc$time == 2]
+twc$groupClickFactorPost <- tlc$groupClickFactor1[tlc$time == 3]
+twc$groupClickFactorPre <- tlc$groupClickFactor1[tlc$time == 2]
+twc$groupClickPostFactor <- tlc$groupClickPost[tlc$time == 3]
 # groupBonding
 twc$groupBondingFactorPost <- tlc$groupBondingFactor[tlc$time == 3]
 twc$groupBondingFactorPre <- tlc$groupBondingFactor[tlc$time == 2]
@@ -1782,7 +1785,8 @@ twc$objectiveCompetenceFactor <- tlc$objectiveCompetenceFactor[tlc$time == 1]
 #subjectiveCompetence:
 twc$subjectiveCompetenceFactor <- tlc$subjectiveCompetenceFactor[tlc$time == 1]
 #teamBondingFactor:
-twc$teamBondingFactor <- tlc$teamBondingFactor[tlc$time == 1]
+twc$teamBondingFactorBaseline <- tlc$teamBondingFactor[tlc$time == 1]
+twc$teamBondingFactorPost <- tlc$teamBondingFactor[tlc$time == 3]
 #teamDisciplineFactor:
 twc$teamDisciplineFactor <- tlc$teamDisciplineFactor[tlc$time == 1]
 @
@@ -2044,6 +2048,7 @@ print(xtable(table1_overall, type="latex",
                     file="performanceConditionPost.tex"
 @
 
+\input{.../images/performanceConditionPost.tex}
 
 
 
@@ -2099,7 +2104,7 @@ indPerfExpPost.BoxPlot <- boxplot(indPerformance_3 ~ condition,
 @
 
 
-As Table ~\ref{tab:performanceConditionPost} shows, there were no observable significant differences between conditions in athlete perceptions of joint action success, individual component performance, group performance relative to prior expectations, or individual performance relative to prior expectations (see also box plots comparing these factors by condition, Figures ~\ref{fig:groupJointActionSuccessPost.BoxPlot}\nobreakdash~\ref{indPerfExpPost.BoxPlot}). These results hold when controlling for an athlete's confidence in individual and group performance reported at time 2 prior to the experiment (see APPENDIX for detailed results).
+As Table ~\ref{tab:performanceConditionPost} shows, there were no observable significant differences between conditions in athlete perceptions of joint action success, individual component performance, group performance relative to prior expectations, or individual performance relative to prior expectations (see also box plots comparing these factors by condition, Figures ~\ref{fig:groupJointActionSuccessPost.BoxPlot}\nobreakdash~\ref{indPerfExpPost.BoxPlot}).These results hold when controlling for an athlete's confidence in individual and group performance reported at time 2 prior to the experiment (see APPENDIX for detailed results).
 
 
 <<postExperimentPerformanceControls, echo=F,eval=T>>=
@@ -2112,6 +2117,52 @@ summary(lm(twc$groupPerformance_3 ~ twc$condition + twc$groupConfidentTechnicalC
 summary(lm(twc$indPerformance_3 ~ twc$condition + twc$indPerformance_2 + twc$indConfidenceChallenges_2))
 @
 
+
+
+
+
+
+
+<<manipulationChecks3, echo = FALSE, eval = TRUE>>=
+#check if there are any meaningful changes in post-Experiment click and bonding
+@
+<<clickBondConditionPostTable, echo = FALSE, eval = TRUE>>=
+##subset data for renaming
+twcClickBondPost <- subset(twc, select = c(age, sex, condition, team,
+                                    groupClickPostFactor, groupBondingFactorPost, teamBondingFactorPost))
+
+##rename columns for tables:
+library(dplyr)
+twcClickBondPost <- rename(twcClickBondPost, Team = team, Condition = condition,
+                                    Sex = sex, Age = age, GroupClickPost = groupClickPostFactor, GroupBondingPost =  groupBondingFactorPost, TeamBondingPost = teamBondingFactorPost)
+
+## create a variable list which we want in table one
+listVars <- c("GroupClickPost", "GroupBondingPost", "TeamBondingPost")
+
+## define categorical variables
+catVars <- c("Condition")
+
+## Create overall table:
+table1 <- CreateTableOne(vars = listVars,
+                         strata = "Condition",
+                         data = twcClickBondPost,
+                         factorVars = catVars
+                         )
+## create table which is printable
+table1_overall <- print(table1,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(table1_overall, type="latex",
+                    caption = "Athlete perceptions of click and bonding \n post-experiment",
+                    label = "tab:clickBondConditionPost"),
+                    file="clickBondConditionPost.tex")
+@
+
+\input{.../images/clickBondConditionPost.tex}
 %%
 %%Table of all factors of interest by condition:
 % Performance: individual & group
@@ -2153,7 +2204,7 @@ tlc$indPerformanceExpectations[tlc$time == 3] <- scales::rescale(tlc$indPerforma
 tlc$indPerformance[tlc$time == 3] <- NA
 
 tlcFactors <- subset(tlc, select = c(age, sex, condition, team, time, jointActionSuccess,
-                                        indPerformanceFactor, groupPerformanceExpectations, indPerformanceExpectations, groupClickFactor, groupClickPostFactor, groupBondingFactor, arousalFactor))
+                                        indPerformanceFactor, groupPerformanceExpectations, indPerformanceExpectations, groupClickFactor1, groupClickPostFactor, groupBondingFactor, teamBondingFactor, arousalFactor))
 
 ## rename values for factors:
 tlcFactors$sex <- ifelse(!is.na(tlcFactors$sex) & tlcFactors$sex == 0, "male",
@@ -2175,7 +2226,7 @@ library(dplyr)
 tlcFactors <- rename(tlcFactors, Team = team, Condition = condition, Sex = sex,
                                     Time = time,
                                     Age = age, JointActionSuccess = jointActionSuccess,
-                                    IndividualComponentPerformance = indPerformanceFactor, GroupPerformanceVsExpectations = groupPerformanceExpectations, IndividualPerformanceExpectations = indPerformanceExpectations, GroupClick = groupClickFactor, GroupClickPost = groupClickPostFactor, GroupBonding = groupBondingFactor, Arousal = arousalFactor)
+                                    IndividualComponentPerformance = indPerformanceFactor, GroupPerformanceVsExpectations = groupPerformanceExpectations, IndividualPerformanceExpectations = indPerformanceExpectations, GroupClick = groupClickFactor1, GroupClickPost = groupClickPostFactor, GroupBonding = groupBondingFactor, TeamBondingFactor = teamBondingFactor, Arousal = arousalFactor)
 ## subset high and low conditions:
 
 tlcFactorsHigh <- subset(tlcFactors, Condition == "high")
@@ -2185,9 +2236,7 @@ t.test(tlcFactorsHigh$GroupClick, tlcFactorsLow$GroupClick, na.rm=T)
 
 ## create a variable list which we want in table one
 listVars <- c("JointActionSuccess", "IndividualComponentPerformance",
-                                    "GroupPerformanceVsExpectations", "IndividualPerformanceExpectations", "GroupClick", "GroupBonding", "GroupClickPost", "Arousal")
-
-
+                                    "GroupPerformanceVsExpectations", "IndividualPerformanceExpectations", "GroupClick", "GroupBonding", "GroupClickPost", "TeamBondingFactor", "Arousal")
 
 ## define categorical variables
 catVars <- c("Sex", "Team", "Time")
@@ -2239,37 +2288,222 @@ print(xtable(table1_overall, type="latex",
 @
 
 
+\input{.../images/factorsHigh.tex}
+\input{.../images/factorsTimeLow.tex}
 
 
 
 
 
+There were also no observable differences in group click, group bonding, or bonding to team following the experiment (see Tables ~\ref{tab:clickBondConditionPost}\nobreakdash~\ref{tab:factorsTimeLow}).  These results suggest that there was no observable variaiton in athlete self-report according to condition.  Given these results, the entire experiment sample was collapsed into one group and study predictions were tested in this group as a whole.
 
 
+<<collapseSampleByTime, eval=T,echo=F>>=
 
-<<manipulationChecks3, echo = FALSE, eval = TRUE>>=
-#check if there are any meaningful changes in pre-post performance:
-t.test(high$)
+## Create high difficulty condition table table:
+tableFactors <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcFactors,
+                         factorVars = catVars,
+                         smd = T,
+                         )
 
-t.test(tlcFactorsHigh$GroupBonding, tlcFactorsLow$GroupBonding, na.rm=T)
+## create table which is printable
+table_overall <- print(tableFactors,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
 
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(table_overall, type="latex",
+                    caption = "Variables of interest over time \n for entire sample",
+                    label = "tab:factorsTime"),
+                    file="factorsTime.tex")
 
 @
 
+\input{.../images/factorsTime.tex}
+
+Table ~\ref{tab:factorsTime} shows that factors relating to group Joint Action Success, Group Click reduced between pre- and post-Experiment measurements.  Group Bonding also appeared to reduce, but this change was not significant.  Athlete reports of arousal significantly increased following the experiment, as would be expected due to the moderate to high levels of physiological exertion associated with the training drill.  Athlete perceptions of components of individual performance and bonding to the team as a whole did not vary significantly acrross time points.
+
+
+\subsubsection{post-Experiment Survey Data}
+
+Study predictions were first tested using the post-Experiment survey data.
+
+\myparagraph{Prediction 1.a: higher perceptions of Joint Action Success will correlate with higher feelings of team click with the training group}
+
+<<jASClickScatter, fig.cap=''>>=
+
+apatheme=theme_bw()+
+  theme(panel.grid.major=element_blank(),
+        panel.grid.minor=element_blank(),
+        panel.border=element_blank(),
+        axis.line=element_line(),
+        text=element_text(family='Times'))
+
+jASClickScatter <- ggplot(twc, aes(x=jointActionSuccessPost, y=groupClickPostFactor,
+                            color=condition)) + geom_point(shape = 1) +
+                            geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
+jASClickScatter +
+            ggtitle("Joint Action Success predicts Group Click") +
+            theme(plot.title = element_text(hjust=0, size=12)) +
+            xlab("Joing Action Success") +
+            ylab("Group Click") +
+            apatheme
+@
+
+Figure ~\ref{fig:jASClickScatter} shows a strong positive correlation between perceived joint action success and feelings of ``team click'' with the training group post-Experiment.
+
+MODEL:
+
+
+\myparagraph{Prediction 1.b: More positive violations of expectations around team performance will correlate with higer feelings of team click with the training group}
+
+<<teamPerfExpClickScatter, fig.cap=''>>=
+groupPerfExpClickScatter <- ggplot(twc, aes(x=groupPerformance_3, y=groupClickPostFactor,
+                            color=condition)) + geom_point(shape = 1) +
+                            geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
+groupPerfExpClickScatter +
+            ggtitle("Positive violation of Team Performance Expectations \n predicts Group Click") +
+            theme(plot.title = element_text(size=12)) +
+            xlab("Team Performance vs Expectations") +
+            ylab("Group Click") +
+            apatheme
+@
+
+Figure ~\ref{fig:teamPerfExpClickScatter} shows a strong positive correlation between violations of expectations around team performance and feelings of ``team click'' with the training group post-Experiment.
+
+MODEL:
 
 
 
+\myparagraph{Prediction 1.c: More positive violations of expectations around team performance will correlate with higer feelings of team click with the training group}
+
+<<jASGroupPerfExpClickScatter, fig.cap=''>>=
+twc$groupPerformance_3 <- scale(twc$groupPerformance_3)
+jASPerfExpCLick <- lm(groupClickPostFactor ~ jointActionSuccessPost*groupPerformance_3, data = twc)
+## use vcov() to get parameter variances and covariances for Kris’s interaction utility
+vcov(jASPerfExpCLick)
+## degrees of freedom for the model from the summary of the regression model
+summary(jASPerfExpCLick)
+## used the psych package’s describe function to get the mean and standard deviation of groupClick
+psych::describe(twc$groupClickPostFactor)
+min(twc$jointActionSuccessPost, na.rm=T)
+max(twc$jointActionSuccessPost, na.rm=T)
+##OUTPUT##
+#Simple Intercepts and Slopes at Conditional Values of Z
+#=======================================================
+#At Z = cv1... (-1SD)
+#  simple intercept = 0.16(0.1267), t=1.2626, p=0.2123
+#  simple slope     = 0.7371(0.0851), t=8.6581, p=0
+#At Z = cv2... (Mean)
+#  simple intercept = 0.2242(0.0737), t=3.0419, p=0.0037
+#  simple slope     = 0.6815(0.0894), t=7.6199, p=0
+#At Z = cv3... (+1SD)
+#  simple intercept = 0.2885(0.0931), t=3.0988, p=0.0031
+#  simple slope     = 0.6259(0.12), t=5.2164, p=0
+jASGroupPerfExpClickScatter <- ggplot(twc, aes(x=jointActionSuccessPost,
+                                      y=groupClickPostFactor, size=groupPerformance_3)) + geom_point()
+jASGroupPerfExpClickScatter +
+            ggtitle("Positive violation of Team Performance Expectations \n predicts Group Click") +
+            theme(plot.title = element_text(size=12)) +
+            xlab("Joint Action Success") +
+            ylab("Group Click") +
+            scale_size_continuous(guide = FALSE)+
+            geom_abline(aes(intercept=0.16, slope=0.7371, linetype='-1SD TeamPerformanceExpectation'))+
+            geom_abline(aes(intercept=0.2242, slope=0.6815, linetype='Mean TeamPerformanceExpectation'))+
+            geom_abline(aes(intercept=0.2885, slope=0.6259, linetype='+1SDTeamPerformanceExpectation'))+
+            scale_linetype_manual(values=c('dotted','dashed','solid'),
+            breaks=c('-1SD Gear','Mean Gear','+1SD Gear'),name='Simple\nSlope')+
+            apatheme
+@
+
+Figure ~\ref{fig:jASGroupPerfExpClickScatter} displays the relationship between perceptions of Joint Action Success and Group Click, moderated by perceptions of Team Performance expectations.  There does not appear to be a strong moderating effect of team performance expectation violation on the relationship between these two variables.
+
+MODEL:
+
+\myparagraph{Prediction 2.a: Feelings of group click will positively correlate with feelings of social bonding to the group}
+
+<<groupClickBondScatter, fig.cap=''>>=
+groupClickBondScatter <- ggplot(twc, aes(x=groupClickPostFactor, y=groupBondingFactorPost,
+                            color=condition)) + geom_point(shape = 1) +
+                            geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
+groupClickBondScatter +
+            ggtitle("Perceptions of Group Click \n predict feelings of Social Bonding to training group") +
+            theme(plot.title = element_text(size=12)) +
+            xlab("Group Click") +
+            ylab("Social Bonding") +
+            apatheme
+@
+
+Figure ~\ref{fig:groupClickBondScatter} shows a clear relationship between Group Click and Social Bonding to the training group following the training group.
+
+
+MODEL:
 
 
 
+\myparagraph{Prediction 3.a: Perceptions of higher Joint Action Success will predict higher levels of Social Bonding to the training group}
+
+
+<<jASBondScatter, fig.cap=''>>=
+jASBondScatter <- ggplot(twc, aes(x=jointActionSuccessPost, y=groupBondingFactorPost,
+                            color=condition)) + geom_point(shape = 1) +
+                            geom_smooth(method=lm, se=FALSE)
+jASBondScatter +
+            ggtitle("Perceptions of Joint Action Success \n predict feelings of Social Bonding to training group") +
+            theme(plot.title = element_text(size=12)) +
+            xlab("Joint Action Success") +
+            ylab("Social Bonding") +
+            apatheme
+@
+
+Figure ~\ref{fig:jASBondScatter} shows a strong positive relationship between Joint Action Success and Social Bonding to the training group, suggesting that athletes who perceived greater success in components of joint action also felt higher levels of social bonding to their co-actors in the training drill.
+
+MODEL:
 
 
 
+\myparagraph{Prediction 3.a: Perceptions of higher Joint Action Success will predict higher levels of Social Bonding to the training group}
 
 
+<<teamPerfExpBondScatter, fig.cap=''>>=
+teamPerfExpBondScatter <- ggplot(twc, aes(x=groupPerformance_3, y=groupBondingFactorPost,
+                            color=condition)) + geom_point(shape = 1) +
+                            geom_smooth(method=lm, se=FALSE)
+teamPerfExpBondScatter +
+            ggtitle("Perceptions of Team Performance (vs prior expectations) \n predict feelings of Social Bonding to training group") +
+            theme(plot.title = element_text(size=12)) +
+            xlab("Team Performance vs Prior Expectations") +
+            ylab("Social Bonding") +
+            apatheme
+@
+
+<<teamPerfExpBondScatter1, fig.cap=''>>=
+teamPerfExpBondScatter1 <- ggplot(twc, aes(x=groupPerformance_3, y=groupBondingFactorPost)) + geom_point(shape = 1) +
+                            geom_smooth(method=lm, se=FALSE)
+teamPerfExpBondScatter1 +
+            ggtitle("Perceptions of Team Performance (vs prior expectations) \n predict feelings of Social Bonding to training group") +
+            theme(plot.title = element_text(size=12)) +
+            xlab("Team Performance vs Prior Expectations") +
+            ylab("Social Bonding") +
+            apatheme
+@
 
 
+Figure ~\ref{fig:teamPerfExpBondScatter1} shows an overall positive correlation between perceptions of Joint Action Success and Social Bonding to the training group.  When this relationship is moderated by condition, as shown in Figure ~\ref{fig:teamPerfExpBondScatter}, it appears that the positive relationship is being driven by results in the high difficulty condition.
 
+MODEL: the interaction between group performance and condition was not significant.
+
+<<teamPerfExpBond.lm, eval=T,echo=F>>=
+twc$condition <- factor(twc$condition, levels = c("low", "high"),
+                                ordered = is.ordered(twc$condition))
+teamPerfExpBond.lm <- lm(groupBondingFactorPost ~ condition*groupPerformance_3, data=twc)
+summary(teamPerfExpBond.lm)
+@
 
 
 
