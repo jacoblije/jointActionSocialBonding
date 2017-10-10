@@ -51,6 +51,12 @@
 
 % setting global settings and loading useful libraries
 
+\title{Field Experiment}
+\date{}
+\author{Jacob Taylor & Emma Cohen \\ Institute of Cognitive \and Evolutionary Anthropology, University of Oxford}
+
+
+
 
 \begin{document}
 
@@ -66,7 +72,8 @@ library(ggplot2)
 library(lme4)
 library(optimx)
 library(mediation)
-
+library(car)
+library(HLMdiag)
 @
 
 <<dataInput, eval=TRUE, echo=FALSE, results='hide'>>=
@@ -78,11 +85,7 @@ twc <- read.csv("trainingWideComplete.csv", na.strings = c("", "NA", "n/a"))
 @
 
 
-\title{Field Experiment}
-\date{}
-\author{Jacob Taylor & Emma Cohen \\ Institute of Cognitive \and Evolutionary Anthropology, University of Oxford}
-
-
+\maketitle
 
 \section{Abstract}
 This study further tested the relationship, hypothesised in this dissertation, between joint action, team click, and social bonding in a controlled experimental environment.  An experiment was designed to test the prediction, partly confirmed in an in situ survey study, that athletes who experienced higher quality joint action would also experience higher levels of team click and social bonding.  58 Professional Chinese rugby players (Men = \Sexpr{length(which(twc$sex == 0))}) participated in a between-subjects design in which athletes' expectations for joint action training drill \citep[``Invasion drill''][]{Passos2011}) were manipulated in one of two conditions.  Athletes in the ``low difficulty'' condition were primed with information to suggest that the training drill would require minimal rugby-sepcific individual and joint-action competence (i.e., 2/10 difficulty rating).  By contrast, in the ``high difficulty'' condition, athletes were primed to expect the training drill to be relatively difficult (8/10 difficulty rating). Pre- and post-experiment surveys were conducted, measuring athletes' perceptions of main variables of interest (individual and group performance, team click, and social bonding (both to the training group and the team more generally)), as well as athlete personality type and states of athlete states of arousal, fatigue, and injury.  Video footage of each experimental session was also recorded to derive an objective measure of interpersonal coordination not reliant on self-report.
@@ -2433,7 +2436,41 @@ summary(jASClick.controls)
 # control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)
 @
 
+#ASSUMPTIONS:
+<<jASClickAssumptionsHist, fig.cap='',echo=F,eval=T>>=
+#1.historgram with density line
+jASClickResid <- resid(jASClick.controls, type = "pearson")
+hist(jASClickResid , freq = FALSE, main = "Residuals: \n M1.a Joint Action Success \n predicts Group Click", xlab = "Residuals")
+lines(density(jASClickResid, na.rm = TRUE))
+#dev.copy(pdf, "TE1aHist.pdf")
+#dev.off()
+#non-normality
+shapiro.test(jASClickResid)
+psych::describe(jASClickResid)
+@
 
+<<jASClickAssumptionsScatter, fig.cap='',echo=F,eval=T>>=
+#2.scatterPlot
+plot(jASClick.controls, main = "Residuals: \n M1.a Joint Action Success predicts \n Group Click")
+#dev.copy(pdf, "MLM3bScatter.pdf")
+#dev.off()
+@
+
+<<jASClickAssumptionsQQNorm, fig.cap='',echo=F,eval=T>>=
+#3.qqNorm
+qqnorm(residuals(jASClick.controls), main = "Norm QQ Plot: \n M1.a Joint Action Success \n predicts Group Click")
+qqline(residuals(jASClick.controls))
+#dev.copy(pdf, "MLM3bQQNorm.pdf")
+#dev.off()
+@
+
+<<jASClickAssumptionsCooksD, fig.cap='',echo=F,eval=T>>=
+#indluential cases
+#cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+plot(cooks.distance(jASClick.controls), main = "Cook's Distance: \n M1.a Joint Action Success \n predicts Group Click", ylab = "cooks.distance")
+#dev.copy(pdf, "MLM3bCooksD.pdf")
+#dev.off()
+@
 
 
 
@@ -2487,6 +2524,49 @@ groupPerfExpClick.controls <- lmer(groupClickPostFactor ~ groupPerformance_3Norm
 
 summary(groupPerfExpClick.controls)
 @
+
+#ASSUMPTIONS:
+<<groupPerfExpClickAssumptionsHist, fig.cap='',echo=F,eval=T>>=
+#1.historgram with density line
+groupPerfExpClickResid <- resid(groupPerfExpClick.controls, type = "pearson")
+hist(groupPerfExpClickResid , freq = FALSE, main = "Residuals: \n M1.a  Positive Team Performance Expectation Violation \n predicts Group Click", xlab = "Residuals")
+lines(density(groupPerfExpClickResid, na.rm = TRUE))
+#dev.copy(pdf, "TE1aHist.pdf")
+#dev.off()
+#non-normality
+shapiro.test(groupPerfExpClickResid)
+psych::describe(groupPerfExpClickResid)
+@
+
+<<groupPerfExpClickAssumptionsScatter, fig.cap='',echo=F,eval=T>>=
+#2.scatterPlot
+plot(groupPerfExpClick.controls, main = "Residuals: \n M1.a  Positive Team Performance \n Expectation Violation predicts \n Group Click")
+#dev.copy(pdf, "MLM3bScatter.pdf")
+#dev.off()
+@
+
+<<groupPerfExpClickAssumptionsQQNorm, fig.cap='',echo=F,eval=T>>=
+#3.qqNorm
+qqnorm(residuals(groupPerfExpClick.controls), main = "Norm QQ Plot: \n M1.a Positive Team Performance \n Expectation Violation predicts \n Group Click")
+qqline(residuals(groupPerfExpClick.controls))
+#dev.copy(pdf, "MLM3bQQNorm.pdf")
+#dev.off()
+@
+
+<<groupPerfExpClickAssumptionsCooksD, fig.cap='',echo=F,eval=T>>=
+#indluential cases
+#cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+plot(cooks.distance(groupPerfExpClick.controls), main = "Cook's Distance: \n M1.a Joint Action Success \n predicts Group Click", ylab = "cooks.distance")
+#dev.copy(pdf, "MLM3bCooksD.pdf")
+#dev.off()
+@
+
+
+
+
+
+
+
 
 
 
@@ -2585,10 +2665,6 @@ jASGroupPerfExpClickScatter +
 
 
 
-
-
-
-
 Figure ~\ref{fig:jASGroupPerfExpClickScatter} displays the relationship between perceptions of Joint Action Success and Group Click, moderated by perceptions of Team Performance expectations.  There does not appear to be a strong moderating effect of team performance expectation violation on the relationship between these two variables.
 
 MODEL:
@@ -2616,8 +2692,52 @@ groupPerfExpJASClick.int.controls <- lmer(groupClickPostFactor ~
                                             data = twc,
                                             REML = F)
 summary(groupPerfExpJASClick.int.controls)
-
 @
+
+#ASSUMPTIONS:
+<<groupPerfExpJASClickIntAssumptionsHist, fig.cap='',echo=F,eval=T>>=
+#1.historgram with density line
+groupPerfExpJASClickIntResid <- resid(groupPerfExpJASClick.int.controls, type = "pearson")
+hist(groupPerfExpJASClickIntResid, freq = FALSE, main = "Residuals: \n M2.a Click Bonding", xlab = "Residuals")
+lines(density(groupPerfExpJASClickIntResid, na.rm = TRUE))
+#dev.copy(pdf, "TE1aHist.pdf")
+#dev.off()
+#non-normality
+shapiro.test(groupPerfExpJASClickIntResid)
+psych::describe(groupPerfExpJASClickIntResid)
+@
+
+<<groupPerfExpJASClickIntAssumptionsScatter, fig.cap='',echo=F,eval=T>>=
+#2.scatterPlot
+plot(groupPerfExpJASClick.int.controls, main = "Residuals: \n M2.a Click Bonding")
+#dev.copy(pdf, "MLM3bScatter.pdf")
+#dev.off()
+@
+
+<<groupPerfExpJASClickIntAssumptionsQQNorm, fig.cap='',echo=F,eval=T>>=
+#3.qqNorm
+qqnorm(residuals(groupPerfExpJASClick.int.controls), main = "Norm QQ Plot: \n M1.c")
+qqline(residuals(groupPerfExpJASClick.int.controls))
+#dev.copy(pdf, "MLM3bQQNorm.pdf")
+#dev.off()
+@
+
+<<groupPerfExpJASClick.intAssumptionsCooksD, fig.cap='',echo=F,eval=T>>=
+#indluential cases
+#cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+plot(cooks.distance(groupPerfExpJASClick.int.controls), main = "Cook's Distance: \n M1.c", ylab = "cooks.distance")
+#dev.copy(pdf, "MLM3bCooksD.pdf")
+#dev.off()
+@
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2662,6 +2782,43 @@ clickBonding.controls <- lmer(groupBondingFactorPost ~ groupClickPostFactor +
                             REML = F)
 
 summary(clickBonding.controls)
+@
+
+
+#ASSUMPTIONS:
+<<clickBondingAssumptionsHist, fig.cap='',echo=F,eval=T>>=
+#1.historgram with density line
+clickBondingResid <- resid(clickBonding.controls, type = "pearson")
+hist(clickBondingResid, freq = FALSE, main = "Residuals: \n M2.a Click Bonding", xlab = "Residuals")
+lines(density(clickBondingResid, na.rm = TRUE))
+#dev.copy(pdf, "TE1aHist.pdf")
+#dev.off()
+#non-normality
+shapiro.test(clickBondingResid)
+psych::describe(clickBondingResid)
+@
+
+<<clickBondingAssumptionsScatter, fig.cap='',echo=F,eval=T>>=
+#2.scatterPlot
+plot(clickBonding.controls, main = "Residuals: \n M2.a Click Bonding")
+#dev.copy(pdf, "MLM3bScatter.pdf")
+#dev.off()
+@
+
+<<clickBondingAssumptionsQQNorm, fig.cap='',echo=F,eval=T>>=
+#3.qqNorm
+qqnorm(residuals(clickBonding.controls), main = "Norm QQ Plot: \n M2.a")
+qqline(residuals(clickBonding.controls))
+#dev.copy(pdf, "MLM3bQQNorm.pdf")
+#dev.off()
+@
+
+<<clickBondingAssumptionsCooksD, fig.cap='',echo=F,eval=T>>=
+#indluential cases
+#cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+plot(cooks.distance(clickBonding.controls), main = "Cook's Distance: \n M2.a", ylab = "cooks.distance")
+#dev.copy(pdf, "MLM3bCooksD.pdf")
+#dev.off()
 @
 
 
