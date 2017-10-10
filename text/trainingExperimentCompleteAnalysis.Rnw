@@ -65,6 +65,7 @@ library(apa)
 library(ggplot2)
 library(lme4)
 library(optimx)
+library(mediation)
 
 @
 
@@ -2410,15 +2411,12 @@ Figure ~\ref{fig:jASClickScatter} shows a strong positive correlation between pe
 
 
 
-MODEL:
-
-
 <<jASClickModel, echo=F,eval=T>>=
 
-jASClick.intercept <- lmer(groupClickPostFactor ~ 1 + ( 1 |sessionNumber),
+jASClick.intercept <- lmer(groupClickPostFactor ~ 1 + ( 1 |sessionName),
                             data = twc,
                             REML = F)
-jASClick.main <- lmer(groupClickPostFactor ~ jointActionSuccessPost + ( 1 |sessionNumber),
+jASClick.main <- lmer(groupClickPostFactor ~ jointActionSuccessPost + ( 1 |sessionName),
                             data = twc,
                             REML = F)
 #summary(jASClick.main)
@@ -2426,7 +2424,7 @@ jASClick.main <- lmer(groupClickPostFactor ~ jointActionSuccessPost + ( 1 |sessi
 jASClick.controls <- lmer(groupClickPostFactor ~ jointActionSuccessPost +
                             indPerformancePost + arousalFactorPost + fullOutcomeAvg +
                             subjectiveCompetenceFactor + objectiveCompetenceFactor +
-                            ( jointActionSuccessPost |sessionNumber),
+                            ( jointActionSuccessPost |sessionName),
                             data = twc,
                             REML = F)
 
@@ -2471,11 +2469,11 @@ MODEL:
 twc$groupPerformance_3Norm <- scale(twc$groupPerformance_3)
 twc$indPerformance_3Norm <- scale(twc$indPerformance_3)
 
-groupPerfExpClick.intercept <- lmer(groupClickPostFactor ~ 1 + ( 1 |sessionNumber),
+groupPerfExpClick.intercept <- lmer(groupClickPostFactor ~ 1 + ( 1 |sessionName),
                             data = twc,
                             REML = F)
 groupPerfExpClick.main <- lmer(groupClickPostFactor ~ groupPerformance_3Norm +
-                            ( 1 |sessionNumber),
+                            ( 1 |sessionName),
                             data = twc,
                             REML = F)
 #summary(groupPerfExpClick.main)
@@ -2483,7 +2481,7 @@ groupPerfExpClick.main <- lmer(groupClickPostFactor ~ groupPerformance_3Norm +
 groupPerfExpClick.controls <- lmer(groupClickPostFactor ~ groupPerformance_3Norm +
                             indPerformance_3Norm + arousalFactorPost + fullOutcomeAvg +
                             subjectiveCompetenceFactor + objectiveCompetenceFactor +
-                            (groupPerformance_3Norm|sessionNumber),
+                            (groupPerformance_3Norm|sessionName),
                             data = twc,
                             REML = F)
 
@@ -2600,7 +2598,7 @@ MODEL:
 jASgroupPerfExpClick.int.controls <- lmer(groupClickPostFactor ~
                                             jointActionSuccessPost*groupPerformance_3Norm +
                                             indPerformancePost + arousalFactorPost + fullOutcomeAvg +
-                                            (jointActionSuccessPost |sessionNumber),
+                                            (jointActionSuccessPost |sessionName),
                                             data = twc,
                                             REML = F)
 
@@ -2614,7 +2612,7 @@ summary(jASgroupPerfExpClick.int.controls)
 <<groupPerfExpJASClick, eval=T,echo=F>>=
 groupPerfExpJASClick.int.controls <- lmer(groupClickPostFactor ~
                                             groupPerformance_3Norm*jointActionSuccessPost +
-                                            (groupPerformance_3Norm |sessionNumber),
+                                            (groupPerformance_3Norm |sessionName),
                                             data = twc,
                                             REML = F)
 summary(groupPerfExpJASClick.int.controls)
@@ -2647,11 +2645,11 @@ Figure ~\ref{fig:groupClickBondScatter} shows a clear relationship between Group
 MODEL:
 
 <<clickBondingModel, eval=T,echo=F>>=
-clickBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionNumber),
+clickBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionName),
                             data = twc,
                             REML = F)
 clickBonding.main <- lmer(groupBondingFactorPost ~ groupClickPostFactor +
-                            (1 |sessionNumber),
+                            (1 |sessionName),
                             data = twc,
                             REML = F)
 summary(clickBonding.main)
@@ -2659,7 +2657,7 @@ summary(clickBonding.main)
 clickBonding.controls <- lmer(groupBondingFactorPost ~ groupClickPostFactor +
                             indPerformancePost + arousalFactorPost + fullOutcomeAvg +
                             subjectiveCompetenceFactor + objectiveCompetenceFactor +
-                            (groupClickPostFactor|sessionNumber),
+                            (groupClickPostFactor|sessionName),
                             data = twc,
                             REML = F)
 
@@ -2696,11 +2694,11 @@ Figure ~\ref{fig:jASBondScatter} shows a strong positive relationship between Jo
 
 <<jASBondingModel, eval=T,echo=F>>=
 
-jASBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionNumber),
+jASBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionName),
                             data = twc,
                             REML = F)
 jASBonding.main <- lmer(groupBondingFactorPost ~ jointActionSuccessPost +
-                            (jointActionSuccessPost|sessionNumber),
+                            (jointActionSuccessPost|sessionName),
                             data = twc,
                             control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
                             REML = F)
@@ -2710,14 +2708,26 @@ summary(jASBonding.main)
 jASBonding.controls <- lmer(groupBondingFactorPost ~ jointActionSuccessPost +
                             indPerformancePost + arousalFactorPost + fullOutcomeAvg +
                             subjectiveCompetenceFactor + objectiveCompetenceFactor +
-                            (jointActionSuccessPost|sessionNumber),
+                            (jointActionSuccessPost|sessionName),
                             control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
                             data = twc,
                             REML = F)
 
 summary(groupPerfExpClick.controls)
 
+jASBonding.condition.controls <- lmer(groupBondingFactorPost ~
+                            jointActionSuccessPost*condition +
+                            indPerformancePost + arousalFactorPost + fullOutcomeAvg +
+                            subjectiveCompetenceFactor + objectiveCompetenceFactor +
+                            (jointActionSuccessPost|sessionName),
+                            control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
+                            data = twc,
+                            REML = F)
+
+summary(jASBonding.condition.controls)
 @
+
+
 
 
 
@@ -2758,11 +2768,11 @@ MODEL:
 
 <<groupPerfExpBondingModel, eval=T,echo=F>>=
 
-groupPerfExpBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionNumber),
+groupPerfExpBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionName),
                             data = twc,
                             REML = F)
 groupPerfExpBonding.main <- lmer(groupBondingFactorPost ~ groupPerformance_3Norm +
-                            (groupPerformance_3Norm |sessionNumber),
+                            (groupPerformance_3Norm |sessionName),
                             data = twc,
                             control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
                             REML = F)
@@ -2772,19 +2782,20 @@ summary(groupPerfExpBonding.main)
 groupPerfExpBonding.controls <- lmer(groupBondingFactorPost ~ groupPerformance_3Norm  +
                             indPerformance_3Norm + arousalFactorPost + fullOutcomeAvg +
                             subjectiveCompetenceFactor + objectiveCompetenceFactor +
-                            (groupPerformance_3Norm |sessionNumber),
+                            (groupPerformance_3Norm |sessionName),
                             control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
                             data = twc,
                             REML = F)
 
 summary(groupPerfExpBonding.controls)
 
-
+twc$condition <- factor(twc$condition, levels = c("low", "high"),
+                                ordered = is.ordered(twc$condition))
 groupPerfExpBonding.Condition.controls <- lmer(groupBondingFactorPost ~
                                                 groupPerformance_3Norm*condition  +
                                                 indPerformance_3Norm + arousalFactorPost + fullOutcomeAvg +
                                                 subjectiveCompetenceFactor + objectiveCompetenceFactor +
-                                                (groupPerformance_3Norm |sessionNumber),
+                                                (groupPerformance_3Norm |sessionName),
                                                 control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
                                                 data = twc,
                                                 REML = F)
@@ -2796,11 +2807,114 @@ summary(groupPerfExpBonding.Condition.controls)
 
 
 <<teamPerfExpBond.lm, eval=T,echo=F>>=
-twc$condition <- factor(twc$condition, levels = c("low", "high"),
-                                ordered = is.ordered(twc$condition))
-teamPerfExpBond.lm <- lm(groupBondingFactorPost ~ condition*groupPerformance_3, data=twc)
+
+teamPerfExpBond.lm <- lm(groupBondingFactorPost ~ condition*groupPerformance_3Norm, data=twc)
 summary(teamPerfExpBond.lm)
 @
+
+
+
+\myparagraph{Prediction 4.a: Feelings of group click will mediate a relationship between joint action success and social bonding to the group}
+
+
+<<jASClickBondMediationModel, eval=T,echo=F>>=
+#library(lme4)
+#library(lmerTest)
+## Direct relationship X->Y: fit model and show summary
+summary(m1 <- lmer(groupBondingFactorPost ~ jointActionSuccessPost +
+                            indPerformancePost + arousalFactorPost + fullOutcomeAvg +
+                            subjectiveCompetenceFactor + objectiveCompetenceFactor +
+                            (jointActionSuccessPost|sessionName),
+                            control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
+                            data = twc,
+                            REML = F))
+
+## X->M fit model and show summary
+summary(m2 <- lmer(groupClickPostFactor ~ jointActionSuccessPost +
+                                          indPerformancePost + arousalFactorPost + fullOutcomeAvg +
+                                          subjectiveCompetenceFactor + objectiveCompetenceFactor +
+                                          (jointActionSuccessPost|sessionName),
+                                          data = twc,
+                                          REML = F))
+
+#install.packages("optimx")
+#library("optimx")
+## M->Y fit model and show summary
+summary(m3 <- lmer(groupBondingFactorPost ~ jointActionSuccessPost*groupClickPostFactor +
+                                            arousalFactorPost + fullOutcomeAvg +
+                                            subjectiveCompetenceFactor + objectiveCompetenceFactor + (1 + jointActionSuccessPost + groupClickPostFactor | sessionName),
+                                            data = twc, REML = FALSE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))))
+
+library(mediation)
+med.out <- mediate(m2, m3, treat = "jointActionSuccessPost", mediator = "groupClickPostFactor")
+summary(med.out)
+
+
+@
+
+
+
+
+
+
+
+Mediation analyses were conducted using linear mixed effects regressions in the Causal Mediation Analysis package in R (Version 4.4.5).  To make inferences concerning the average indirect and total effects, quasi-Bayesian Markov Chain Monte Carlo (MCMC) method based on normal approximation and 1000 simulations was used to estimate the 95\% Confidence Intervals \citep{Tofighi2016a,Imai2010}. MCMC estimation is a form of non-parametric bootstrapping whereby the sampling distribution for the effect of interest is not assumed to be normal but is instead simulated from the model estimates and their asymptotic variances and covariances \cite{Preacher2008}.
+
+Results of the mediation analysis revealed significant average indirect effect of Joint Action Success on Social Bonding attributable to Team Click, $\beta = .37, 95\% CI = 0.20 , 0.59, p < .001$.  When controlling for the effect of team click on social bonding, the average direct effect between Joint Action Success and Social Bonding was no longer significant, $\beta = -.006, 95\% CI = -.27 , .23, p = .96 $ (see Figure ~\ref{fig:MLM4aMediationAnalysis}). The direct effect diminished such that including Joint Action Success in the model produced a total effect that was marginally \textit{smaller} than the indirect effect alone, $\beta = .36, 95\% CI = .13 , .61, p = .01$. These results suggest that feelings of team click fully mediate the relationship between perceptions of joint-action success and social bonding.
+
+
+
+
+
+
+
+\myparagraph{Prediction 4.b: Feelings of group click will mediate a relationship between more positive violations of expectations around group performance and social bonding to the group}
+
+groupPerfExpClick.controls <- lmer(groupClickPostFactor ~ groupPerformance_3Norm +
+                            indPerformance_3Norm + arousalFactorPost + fullOutcomeAvg +
+                            subjectiveCompetenceFactor + objectiveCompetenceFactor +
+                            (groupPerformance_3Norm|sessionName),
+                            data = twc,
+                            REML = F)
+
+<<groupPerfExpClickBondMediationModel, eval=T,echo=F>>=
+#library(lme4)
+#library(lmerTest)
+## Direct relationship X->Y: fit model and show summary
+summary(m1 <- lmer(groupBondingFactorPost ~ groupPerformance_3Norm +
+                                            indPerformancePost + arousalFactorPost + fullOutcomeAvg +
+                                            subjectiveCompetenceFactor + objectiveCompetenceFactor +
+                                            (jointActionSuccessPost|sessionName),
+                                            control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
+                                            data = twc,
+                                            REML = F))
+
+## X->M fit model and show summary
+summary(m2 <- lmer(groupClickPostFactor ~ groupPerformance_3Norm +
+                                          indPerformance_3Norm + arousalFactorPost + fullOutcomeAvg +
+                                          subjectiveCompetenceFactor + objectiveCompetenceFactor +
+                                          (groupPerformance_3Norm|sessionName),
+                                          data = twc,
+                                          REML = F))
+
+#install.packages("optimx")
+#library("optimx")
+## M->Y fit model and show summary
+summary(m3 <- lmer(groupBondingFactorPost ~ groupPerformance_3Norm*groupClickPostFactor +
+                                            arousalFactorPost + fullOutcomeAvg +
+                                            subjectiveCompetenceFactor + objectiveCompetenceFactor + (1 + groupPerformance_3Norm + groupClickPostFactor | sessionName),
+                                            data = twc, REML = FALSE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))))
+
+library(mediation)
+med.out.groupPerfExp <- mediate(m2, m3, treat = "groupPerformance_3Norm",
+                                        mediator = "groupClickPostFactor")
+summary(med.out.groupPerfExp)
+plot(med.out.groupPerfExp, main = "Group Click partially mediates the \n relationship
+                                  between team performance \n expectation violation and social bonding")
+@
+
+
+
 
 
 
