@@ -74,6 +74,7 @@ library(optimx)
 library(mediation)
 library(car)
 library(HLMdiag)
+library(dplyr)
 @
 
 <<dataInput, eval=TRUE, echo=FALSE, results='hide'>>=
@@ -88,14 +89,14 @@ twc <- read.csv("trainingWideComplete.csv", na.strings = c("", "NA", "n/a"))
 \maketitle
 
 \section{Abstract}
-This study further tested the relationship, hypothesised in this dissertation, between joint action, team click, and social bonding in a controlled experimental environment.  An experiment was designed to test the prediction, partly confirmed in an in situ survey study, that athletes who experienced higher quality joint action would also experience higher levels of team click and social bonding.  58 Professional Chinese rugby players (Men = \Sexpr{length(which(twc$sex == 0))}) participated in a between-subjects design in which athletes' expectations for joint action training drill \citep[``Invasion drill''][]{Passos2011}) were manipulated in one of two conditions.  Athletes in the ``low difficulty'' condition were primed with information to suggest that the training drill would require minimal rugby-sepcific individual and joint-action competence (i.e., 2/10 difficulty rating).  By contrast, in the ``high difficulty'' condition, athletes were primed to expect the training drill to be relatively difficult (8/10 difficulty rating). Pre- and post-experiment surveys were conducted, measuring athletes' perceptions of main variables of interest (individual and group performance, team click, and social bonding (both to the training group and the team more generally)), as well as athlete personality type and states of athlete states of arousal, fatigue, and injury.  Video footage of each experimental session was also recorded to derive an objective measure of interpersonal coordination not reliant on self-report.
+This study further tested the relationship, hypothesised in this dissertation, between joint action, team click, and social bonding in a controlled experimental environment.  An experiment was designed to test the prediction, partly confirmed in an in situ survey study, that athletes who experienced higher quality joint action would also experience higher levels of team click and social bonding.  58 Professional Chinese rugby players (Men = \Sexpr{length(which(twc$sex == 0))}) participated in a between-subjects design in which athletes' expectations for joint action training drill \citep[``Invasion drill''][]{Passos2011}) were manipulated in one of two conditions.  Athletes in the ``low difficulty'' condition were primed with information to suggest that the training drill would require minimal rugby-sepcific individual and joint-action competence (i.e., 2/10 difficulty rating).  By contrast, in the ``high difficulty'' condition, athletes were primed to expect the training drill to be relatively difficult (8/10 difficulty rating). Pre- and post-experiment surveys were conducted, measuring athletes' perceptions of main variables of interest (individual and group performance, team click, and social bonding (both to the training group and the team more generally)), as well as athlete personality type and states of athlete states of arousal, fatigue, and injury.  Video footage of each experimental session was also recorded to derive an objective measure of interpersonal coordination not reliant on self-report. It was predicted that athletes in the high-uncertainty condition would experience higher levels of team click and social bonding becuase athletes expecting higher technical difficulty would experience higher positive violation of expectations around group performance.  Athletes in the ``low difficulty'' condition would on average experience less strongly the phenomenon of ``team click'' and flow-on feelings of social bonding because they would not experience the same level of positive violations of expectations around group performance.
+%Video footage was analysed for evidence of dynamic coupling between co-actors as well as defenders \citep{Schmidt2011,Richardson2012,Passos2012}, and these data were compared to psychological measures in order to explore psychological correlates of effective  interpersonal movement coordination in joint action.
 
-It was predicted that athletes in the high-uncertainty condition would experience higher levels of team click and social bonding for two reasons: 1) athletes with expectations of higher difficulty would pay greater attention to coordinating action with others, and 2) athletes expecting higher difficulty in the experiment would experience higher positive violation of expectations around group performance.  Athletes in the ``low difficulty'' condition would on average experience less strongly the phenomenon of ``team click'' and flow-on feelings of social bonding, because they were not primed to attend less closely to joint-action with co-actors, and they would not experience the same level of positive violations of expectations around group performance.   Video footage was analysed for evidence of dynamic coupling between co-actors as well as defenders \citep{Schmidt2011,Richardson2012,Passos2012}, and these data were compared to psychological measures in order to explore psychological correlates of effective  interpersonal movement coordination in joint action.
-
+%for two reasons: 1) athletes with expectations of higher difficulty would pay greater attention to coordinating action with others, and
+%
 
 \section{Introduction}
-When athletes coordinate their behaviours they do so by making predictions about the state of the world.  In the case of joint action, in which there are many moving parts, predictions rely on the behaviours of
-of others for their accuracy. Annecdote and observation in team sport and other joint activities involving complex realtime coordination of behaviours around technically demanding tasks, suggests that the phenomenology associated with co-actors' predictions clicking into place is an extremely powerful social bonding agent.
+When athletes coordinate their behaviours they do so by making predictions about the state of the world.  In the case of joint action, in which there are many moving parts, predictions rely on the behaviours of others for their accuracy. Annecdote and observation in team sport and other joint activities involving complex realtime coordination of behaviours around technically demanding tasks, suggests that the phenomenology associated with co-actors' predictions clicking into place is an extremely powerful social bonding agent.
 
 The previous chapter presented empirical evidence of a relationship between perceptions of joint action success and social bonding, fully mediated by the phenomenon of ``team click.'' A relationship between violation of expectations surrounding team performance and feelings of team click was also observed, but a model of the relationship between team performance expectation vioaltion and social bonding did not reliably fit the data.  The results of this naturalistic \textit{in situ} study are noteworthy as they provide evidence for the prediction that perceptions of joint action influence psychological processes of affiliation and connection with teammates, possibly via the mediating phenomenon of ``team click.''  Controlled experimental research is needed in order to more directly access causal mechanisms that underpin the relationship between joint action and social bonding.  If perceived joint action success and positive violation of expectation around team performance are the two candidate predictors of team click and social bonding, how is it possible to experimentally manipulate conditions conducive to maximising these two factors in joint action? In addition, how is it possible to isolate joint action from other potential sources of information regarding the team and its performance such as explicit feedback from coaches and other players surrounding performance and joint action outcome? This experimental study was designed with these considerations in mind.
 
@@ -116,6 +117,16 @@ By manipulating the level of uncertainty of information regarding the expectatio
 
 The Closing:
 These considerations lead to the hypothesis that higher levels of uncertainty, and expectations of higher levels of technical challenge in joint action will lead to higher levels of social bonding, due to the likelihood that athletes will experience more positive violations of expectations around team performance in the high-uncertainty prime than in a low difficulty prime.
+
+
+\myparagraph{Prediction 1.b: More positive violations of expectations around team performance will correlate with higer feelings of team click with the training group}
+\myparagraph{Prediction 1.c: More positive violations of expectations around team performance will correlate with higer feelings of team click with the training group}
+\myparagraph{Prediction 2.a: Feelings of group click will positively correlate with feelings of social bonding to the group}
+\myparagraph{Prediction 3.b: More positive violations of team performance expectations will predict higher levels of Social Bonding to the training group}
+\myparagraph{Prediction 4.b: Feelings of group click will mediate a relationship between more positive violations of expectations around group performance and social bonding to the group}
+
+A between-subjects experimental design was used, in which expectations of technical difficulty was manipulated in one of two conditions, ``high difficulty'' and ``low difficulty'' condition.  Surveys measuring athletes' perceptions of joint action success relative to prior expectations, team click, and feelings of social bonding to the specific training group were recorded both before and after the experiment.
+
 %The closing of the introduction—typically the final paragraph or two—usually includes two important elements. The first is a clear statement of the main research question or hypothesis. This statement tends to be more formal and precise than in the opening and is often expressed in terms of operational definitions of the key variables. The second is a brief overview of the method and some comment on its appropriateness.
 
 
@@ -129,13 +140,10 @@ These considerations lead to the hypothesis that higher levels of uncertainty, a
 
 This study was approved by the University of Oxford’s Central University Research Ethics Committee (SAME/CUREC1A/15-059).
 
-
 \subsection{Materials}
 
 \subsubsection{Cover Story}
-
-Athletes were notified (first via WeChat and then in a team meeting) that my research purpose was to trial a number of different rugby training drills selected from a recent report by World Rugby concerning training methods for rugby sevens.  Athletes were told that the training drills had been previously rated by a selection of international level coaches and players from all over the world (including Asia and China).  Athletes were informed that I planned to assess the ratings provided by World Rugby by replicating these drills with more rugby athletes in China.  Athletes were told that survey measures and video footage would be collected, which would be later analysed to assess individual performance of athletes in each training drill.  It was also explained to athletes that there would be a second round of drills also requiring groups of eight athletes, but the makeup of these groups may reshuffle depending on athletes preferences.  This detail allowed for the includion of a post-experiment bonding measure, in which athletes were asked to what extent they wished to continue to work with the same 8-athlete team in a subsequent round of drills.
-
+Athletes were notified (first via WeChat and then in a team meeting) that my research purpose was to trial a number of different rugby training drills selected from a recent report by World Rugby concerning training methods for rugby sevens.  Athletes were told that the training drills had been previously rated by a selection of international level coaches and players from all over the world (including Asia and China).  Athletes were informed that I planned to assess the ratings provided by World Rugby by replicating these drills with more rugby athletes in China.  Athletes were told that survey measures and video footage would be collected, which would be later analysed to assess individual performance of athletes in each training drill.  It was also explained to athletes that there would be a second round of drills also requiring groups of eight athletes, but the makeup of these groups may reshuffle depending on athletes preferences.  This detail allowed for the includion of a post-experiment bonding measure, in which athletes were asked to what extent they wished to continue to train with the same 8-athlete team in a subsequent round of drills.
 
 \begin{figure}[htbp]
   \includegraphics[width = \linewidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/invasionDrill.png}
@@ -144,22 +152,17 @@ Athletes were notified (first via WeChat and then in a team meeting) that my res
 \end{figure}
 
 \subsubsection{Experimental Paradigm: Invasion Drill}
-This study required athletes to participate in a common rugby training drill, which was preceeded by one of two experimental primes—--a ``high difficulty'' condition, or a ``low difficulty'' condition.   Replicating \textcite{Passos2011}, a common training drill known as ``invasion drill'' \citep{Biscombe1998} was selected as it was representative of a typical subphase of rugby union.  In this drill a group of four rugby players formed an attacking group and two pairs of opponents formed a first and second defensive line.  There were two performance aims of this drill: (a) attackers were asked carry the ball into the try area, and (b) defenders were asked to stop the attacker’s progression toward the try line.  One trial consisted of one attempt by the attacking sub-group to penetrate two defending sub-groups, and carry the ball over the try line. The drill was conducted on a regulation multipurpose 110m x 70m grass or artificial turf training field within a 22m x 15m rectangle area marked by plastic cones (see ~\ref{fig:invasionDrill}). The ball used was size 5, as recommended by World Rugby for this age group of athletes.
+This study required athletes to participate in a common rugby training drill, which was preceeded by one of two experimental primes—--a ``high difficulty'' condition, or a ``low difficulty'' condition.   Replicating \textcite{Passos2011}, a common training drill known as ``invasion drill'' \citep{Biscombe1998} was selected as it was representative of a typical subphase of rugby union.  In this drill, a group of four rugby players form an attacking group and two pairs of opponents form a first and second defensive line.  There were two performance aims of this drill: (a) attackers were asked carry the ball into the try area, and (b) defenders were asked to stop the attacker’s progression toward the try line.  One trial consisted of one attempt by the attacking sub-group to penetrate two defending sub-groups, and carry the ball over the try line. The drill was conducted on a regulation multipurpose 110m x 70m grass or artificial turf training field within a 22m x 15m rectangle area marked by plastic cones (see Figure ~\ref{fig:invasionDrill}). The ball used was size 5, as recommended by World Rugby for this age group of athletes.
 
 %The training drill, known as ``invasion drill,'' requires eight athletes, one sub-grouof four attackers and two sub-groups of two defenders.  The primary aim of the drill is for the sub-group of 4 attacking players to successfully penetrate two consecutive lines of two defenders (also commonly known as a ``4 on 2 + 2'' drill). The aim of the two defending sub-groups is to stop the attacking team from achieving the primary goal, by interfering with their coordination by halting the ball-carrier, or the ball in flight between attacking players.
 
 
-
-
 \subsubsection{Experimental Conditions: high and low difficulty}
-
 Two different pre-experiment introductions were developed for the same training drill in order to manipulate athletes’ expectations around the technical difficulty of the impending joint-action task.  Athletes in the ``high difficulty'' condition learned that the overall average difficulty rating for the training drill provided by World Rugby coaches and athletes was 77.5/100, or approximately 8 out of 10.  Athletes were told that the drill would require an extension of their abilities as individuals and as a training group (see appendix for full script).  Athletes in the ``low difficulty'' condition, by contrast, learned that they would be participating in an ostensibly different drill with an overall average difficulty rating (provided by World Rugby coaches and athletes) of 22.5/100, or approximately 2 out of 10.  In reality, the training drill was exactly the same for each experimental session, and the relative difficulty of this drill was estimated in a pilot study to be approximately 5/10, see APPENDIX).  By either over- or under-rating the difficulty of the impending training drill, it was hoped that athletes' expectations around certainty of performance would be altered, such that athletes in the high difficulty condition would experience on average higher positive violation of expectations around team performance, whereas athletes in the low difficulty condition would experience less positive violations of expectations around team performance.
 
 
-\subsubsection{Surveys}
+\subsubsection{Measures}
 Athletes completed survey questionnaires via WeChat using their personal mobile devices and internet connection. Surveys were administered at three time points: 1) one day before the experiment (Baseline), 2) immediately before the experiment after receiving the experimental prime (Pre-Experiment), and 3) once immediately following the completion of the experiment (Post-Experiment)(see TABLE).  At time 1 (baseline) athletes were asked about their impressions of recent individual performance and the performance of their procinvial team, including their feelings of team click and social bonding with their provincial team as a whole.  At time 2 (post-manipulation, pre-experiment), athletes were asked questions about their expectations concerning their individual performance and the performance of their specific training group in the impending training drill.  At time 3 (post-experiment), athletes completed questions concerning their impression of their own performance and the performance of their specific training group in the training drill. In addition, athletes were also asked about their feelings of team click and social bonding to the team as a whole (the same set of items that were asked one day earlier at time 1 (Baseline)).
-
-\subsubsection{Survey Items}
 
 The survey at time 1 (baseline) including items regarding recent individual and team performance, subjective and objective measures of technical competence in rugby, perceptions of team click, and social bonding to the team as a whole.  In addition, the time 1 survey also included items concerning basic personal information, current injury status, and personality type.
 
@@ -180,25 +183,21 @@ The final survey, administered at time 3 immediately post-experiment, consisted 
 In order to produce quantitative measures of interpersonal coordination between co-actors, athletes’ motion was captured by a single digital video camera (Sony FDR-AX700 4K HDR Camcorder) mounted on a 1.2m high tripod. Digital video images of action were acquired by a computer, using a USB2.0 cable, and files were saved on an encrypted external hard disk in .AVI format. For image treatment, TACTO 8.0 software was used for digitizing at 25 frames per second.
 
 \subsection{Design}
-A between-subjects experimental design was used, in which expectations of technical difficulty was manipulated in one of two conditions, ``high difficulty'' and ``low difficulty'' condition.  Surveys measuring athletes' perceptions of joint action success, team click, and feelings of social bonding to the specific training group and the entire provincial team were recorded both before and after the experiment.
 
 %The design of a study is its overall structure. What were the independent and dependent variables? Was the independent variable manipulated, and if so, was it manipulated between or within subjects? How were the variables operationally defined?
 
-\subsection{Proceedure}
+\subsection{procedure}
 Permission to run the study was sought from the head coach of each of the four teams (Beijing men's, Beijing women's, Shandong men's, Shandong women's).  These coaches nominated athletes who were fit and able to complete the session without compromising their existing training schedules.  Athletes were randomly assigned to one of two conditions, and athletes in each condition were matched as much as possible according to average training age.
 
-Once athletes were assigned to an experimental group, they were then added to a WeChat group populated by other training group members and the researcher. Atheltes were provided with the initial cover story for the experiment via ths WeChat group.  Athletes were told that the aim of the researcher was to trial a number of different rugby training drills selected from a recent report by World Rugby concerning training methods for rugby sevens.  These training drills had been previously rated by a selection of international level coaches and players from all over the world (including Asia and China), and the researcher planned to assess these ratings by testing by analysing how athletes react physiologically and psychologically to the demands of each drill.  Athletes were informed that data would be collected in the form of pre- and post-experiment surveys and video footage of the training drill (for full script, see APPENDIX).
+Once athletes were assigned to an experimental group, they were then added to a WeChat group populated by other training group members and the researcher. Atheltes were provided with the initial cover story for the experiment via ths WeChat group. (for full script, see APPENDIX).
 
-Approximately 24 hours before the each experiment, athletes were instructed to complete the baseline survey by openning a link provided in the WeChat group.  This survey included written consent for the study. Approximately 1 hour before the experiment was due to take place, athletes were administered with an experimental prime via Wechat.  In the ``high difficulty'' condition, athletes were primed to believe that they were about to participate in a very difficult training drill (on the upper end of their individual and gorup technical abilities), whereas athletes in the ``low difficulty'' condition were primed to believe that they were about to participate in an easy training drill well within their tehcnical abilities (see APPENDIX for full script). All athletes were lead to believe that athletes in the other experiemntal groups were performing different drills to their assigned drill. (In reality, the training drill for each condition was identical, the only thing that varied was the pre-experiment prime).
+Approximately 24 hours before the experiment session, athletes were instructed to complete the baseline survey by opening a link provided in the WeChat group.  This survey included written consent for the study. Approximately 1 hour before the experiment was due to take place, athletes were administered with an experimental prime via WeChat.  In the ``high difficulty'' condition, athletes were primed to believe that they were about to participate in a very difficult training drill (on the upper end of their individual and group technical abilities), whereas athletes in the ``low difficulty'' condition were primed to believe that they were about to participate in an easy training drill well within their tehcnical abilities (see APPENDIX for full script). All athletes were lead to believe that athletes in the other experiemntal groups were performing different drills to their assigned drill. In reality, the training drill for each condition was identical, the only thing that varied was the pre-experiment prime.
 
-Once athletes were assembled at the designated training field, the difficulty prime that had been sent via WeChat an hour earlier was verbally re-administered to the athletes. In addition, athletes were told in more detail about the requirements of the Invasion Drill (see APPENDIX for full details).  Athletes were told that assessment of performance in the experiment would be based on video analysis of an individual's performance in attack and defense, including an athlete's ability to coordinate attack and defense with others. Besides this outcome, athletes were provided with no other explicit information regarding performance goals, besides completing the experimental drill to the best of their ability within the rules of rugby union.
+Once athletes were assembled at the designated training field, the difficulty prime that had been sent via WeChat an hour earlier was verbally re-administered to the athletes. In addition, athletes were told in more detail about the requirements of the Invasion Drill (see APPENDIX for full details).  Athletes were told that assessment of performance in the experiment would be based on video analysis of an individual's performance in attack and defense, including an athlete's ability to coordinate attack and defense with others. Athletes were provided with no other explicit information regarding performance goals, besides completing the experimental drill to the best of their ability within the rules of rugby union.
 
-Athletes were then administered with the time 2 survey (pre-experiment, post-manipulation), which took approximately 3-5 minutes to complete.  After every athlete had finished the survey, athletes participated in a ~10 minute standard warm up routine, including slow jogging and dynamic stretching.  Athletes were instructed not to use the rugby ball during this period.  Once atheltes had completed the warm up, the researcher assembled the group within the training drill area, with one athlete standing on each of the 8 available plastic markers.  In this position, athletes were told once more about the structure and procedure for the training drill, in particular the way in which athletes were expected to rotate clockwise after every trial of the drill so that athletes did not habituate to certain positions or alliances in the drill (see fig Passos 2nd picture).
+Athletes were then administered with the time 2 survey (pre-experiment, post-manipulation), which took approximately 3-5 minutes to complete.  After every athlete had finished the survey, athletes participated in a ~10 minute standard warm up routine, including slow jogging and dynamic stretching.  Athletes were instructed not to use the rugby ball during this period.  Once athletes had completed the warm up, the researcher assembled the group within the training drill area, with one athlete randomly assigned to stand at one of 8 available plastic markers (6 in the case of the modified drills).  In this position, athletes were told once more about the structure and procedure for the training drill, in particular the way in which athletes were expected to rotate clockwise after every trial of the drill so that athletes did not habituate to certain positions or alliances in the drill.
 
-To begin the drill, the ball-carier at the front and centre of the attack sub-group was instructed to tap the ball with his / her foot, before initiating the attacking sub-phase by advancing forward towards the defence sub-units.  In the case that the ball was immediately fumbled during the inition of the trial, the training group was instructed to restart that trial and the trial in which the mistake was made was not counted.  Following a block of 4 practice trials, athletes were told by the researcher that the formal test was beginning. The group of athletes then completed 16 trials of the drill, which allowed each athlete to complete four trials of attack and four trials of defence, in different positions.  Following completion of all 16 test trials, athletes were assembled by the researcher and thanked for their participation, before being sent the sideline to complete the final post-experiment survey on their mobile devices.  Following the completion of this final survey, athletes were told that they would be informed within two days about the next experiment trial (in fact no more experiments were taking place).
-
-In the case that athletes were unable to participate in their assigned condition for reasons of injury (2), a dummy athlete naive to the details of the study was used to fill in as part of the 8 person drill.  In the two experimental conditions involving the Beijing women's team, two athletes each session were unable to complete the experiment due to injury and sickness, and as such the drill was modified to a 3 on 2 + 1 Invasion drill requiring only 6 athletes, instead of the 4 on 2 + 2 drill, which requied 8.
-
+To begin the drill, the ball-carrier at the front and centre of the attack sub-group was instructed to tap the ball with his / her foot, before initiating the attacking sub-phase by advancing forward towards the defence sub-units.  In the case that the ball was immediately fumbled during the initiation of the trial, the training group was instructed to restart that trial and the trial in which the mistake was made was not counted.  Following a block of 4 practice trials, athletes were told by the researcher that the formal test was beginning.  The group of athletes then completed 16 trials of the drill, which allowed each athlete to complete four trials of attack and four trials of defence, in different positions.  Following completion of all 16 test trials, athletes were assembled by the researcher and thanked for their participation, before being sent to the sideline of the training field to complete the final post-experiment survey using their mobile devices.  Following the completion of this final survey, athletes were told that they would be informed within two days about the next experiment trial (in fact no more experiments were taking place).
 
 \myparagraph{Video Analysis Procedure}
 The digital camera and tripod were positioned on a platform 2m above the level of the playing field, approximately 10-15m from the bottom try-line corner of the Invasion Drill perimeter (see figure ~\ref{fig:invasionDrill}).  The experimenter began video recording before the athletes arrived, and ceased recording after all athletes had left the training field following the experiment.  Digital video images of action were acquired by a computer, using a USB2.0 cable, and files were saved on an encrypted external hard disk in .AVI format. For image treatment, TACTO 8.0 software was used for digitizing at 25 frames per second.
@@ -210,10 +209,9 @@ The digital camera and tripod were positioned on a platform 2m above the level o
 
 \section{Results}
 
-A total of \Sexpr{length(unique(twc$englishName))} athletes participated in \Sexpr{length(unique(twc$sessionNumber))} experimental sessions. In one session (Shandong men's high difficulty condition) a dummy participant stood in for an athlete could not participate due to injury.  In the two sessions with Beijing women's team, due to failure of athletes to take part due to injury (3) or illness (2) the training drill was modfied to a ``3 on 2 + 1'' drill, requiring only 6 athletes to complete. In one of these experimental sessions, a female dummy participant was also required to fill in to make up a total of 6 athletes for the modified drill.  In both cases, dummy participants were competent ex-athletes naive to the predictions of the study and they did not participate in the survey responses before or after the session.  The survey and video data of the remaining 58 athletes were analysed.
+A total of \Sexpr{length(unique(twc$englishName))} athletes participated in \Sexpr{length(unique(twc$sessionNumber))} experimental sessions. In one session (Shandong men's high difficulty condition) a dummy participant stood in for an athlete could not participate due to injury.  In the two sessions with Beijing women's team, due to failure of athletes to take part due to injury (3) or illness (2) the training drill was modified to a ``3 on 2 + 1'' drill, requiring only 6 athletes to complete. In one of these experimental sessions, a female dummy participant was also required to fill in to make up a total of 6 athletes for the modified drill.  In both cases, dummy participants were competent ex-athletes naive to the predictions of the study who did not participate in the survey responses before or after the session.  The survey and video data of the remaining 58 athletes were analysed.
 
 \subsection{Survey Data}
-
 <<descriptivesPreFactor, echo = FALSE, eval = TRUE>>=
 low <- subset(twc, condition == "low")
 high <- subset(twc, condition == "high")
@@ -243,7 +241,6 @@ twcAthleteInfo$team <- ifelse(!is.na(twcAthleteInfo$team) & twcAthleteInfo$team 
                                         "bjm","Beijing Men", ifelse(!is.na(twcAthleteInfo$team) & twcAthleteInfo$team == "bjw", "Beijing Women", ifelse(!is.na(twcAthleteInfo$team) & twcAthleteInfo$team == "sdm", "Shandong Men", ifelse(!is.na(twcAthleteInfo$team) & twcAthleteInfo$team == "sdw", "Shandong Women", NA))))
 
 ##rename columns for tables:
-library(dplyr)
 twcAthleteInfo <- rename(twcAthleteInfo, Position = startingReserve,
                               TrainingAge = trainingAge, YearsInTeam = yearsTeam, AthleteLevel = athleteStatus, ContractStatus = teamStatus, Team = team, Condition = condition, Sex = sex, Age = age)
 
@@ -258,7 +255,8 @@ catVars <- c("Sex", "Condition", "AthleteLevel", "Position", "ContractStatus", "
 ## Create overall table:
 table1 <- CreateTableOne(vars = listVars,
                          data = twcAthleteInfo,
-                         factorVars = catVars
+                         factorVars = catVars,
+                         test = F
                          )
 
 ## create table which is printable
@@ -278,7 +276,8 @@ print(xtable(table1_overall, type="latex", caption = "Overview of experiment sam
 table1 <- CreateTableOne(vars = listVars,
                          strata = "Condition",
                          data = twcAthleteInfo,
-                         factorVars = catVars
+                         factorVars = catVars,
+                         test = F
                          )
 
 ## create table which is printable
@@ -290,9 +289,10 @@ table1_overall <- print(table1,
 
 ## print to latex file in wd
 ## this latex file will later be inputted
-print(xtable(table1_overall, type="latex", caption = "Overview of experiment sample by condition",
-      label = "tab:athleteDescriptivesConditionTraining"),
-      file="athleteDescriptivesConditionTraining.tex")
+print(xtable(table1_overall, type="latex",
+                              caption = "Overview of experiment sample by condition",
+                              label = "tab:athleteDescriptivesConditionTraining"),
+                        file="athleteDescriptivesConditionTraining.tex")
 @
 
 \input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/athleteDescriptivesTraining.tex}
@@ -304,6 +304,8 @@ The attributes of the overall sample of athletes are displayed in Table ~\ref{ta
 ((\Sexpr{round(length(which(twc$teamStatus == 2)/length(unique(twc$englishName)))*100, digits = 0)}\%))), or on a short-term trial basis ((\Sexpr{round(length(which(twc$teamStatus == 1)/length(unique(twc$englishName)))*100, digits = 0)}\%))).  Only \Sexpr{length(which(twc$startingReserve == "Starting Team"))} of \Sexpr{length(unique(twc$englishName))} (\Sexpr{round(length(which(twc$startingReserve == "Starting Team"))/length(unique(twc$englishName))*100, digits = 0)}\%) of athletes declared that there were in the starting team of their respective provincial teams.  Attributes of athletes in the high and low difficulty conditions were evenly matched (see Table ~\ref{tab:athleteDescriptivesConditionTraining}), with only a marginally significant difference in average age between conditions (high difficulty condition = \Sexpr{mean(high$age,na.rm=T)}(\Sexpr{sd(high$age,na.rm=T)}), low difficulty condition = \Sexpr{mean(low$age,na.rm=T)}(\Sexpr{sd(low$age,na.rm=T)}).
 
 
+
+\subsubsection{Technical Competence (objective and subjective)}
 <<descriptivesIndividualPerformanceSubjective, echo = FALSE, eval = TRUE>>=
 ## IND PERFORMANCE SUBJECTIVE:
 tlcCompPerfSubj <- subset(tlc, select = c(englishName, condition, sex, time, team,
@@ -318,9 +320,6 @@ tlcCompPerfSubj$indPerformanceOnConfidence[tlcCompPerfSubj$time == 3] <- NA
 tlcCompPerfSubj$indPerformanceOnMood <- tlcCompPerfSubj$indPerformanceOnMood_1
 tlcCompPerfSubj$indPerformanceOnMood[tlcCompPerfSubj$time == 2] <- NA
 tlcCompPerfSubj$indPerformanceOnMood[tlcCompPerfSubj$time == 3] <- NA
-
-
-
 
 tlcCompPerfSubj$sex <- ifelse(!is.na(tlcCompPerfSubj$sex) &
                                 tlcCompPerfSubj$sex == 0, "male", ifelse(!is.na(tlcCompPerfSubj$sex) & tlcCompPerfSubj$sex == 1, "female", NA))
@@ -349,7 +348,8 @@ catVars <- c("Sex", "Condition", "Time")
 tableTlcCompPerfSubj <- CreateTableOne(vars = listVars,
                          strata = "Condition",
                          data = tlcCompPerfSubj,
-                         factorVars = catVars
+                         factorVars = catVars,
+                         test = F
                          )
 
 ## create table which is printable
@@ -367,12 +367,13 @@ print(xtable(tableTlcCompPerfSubj.condition, type="latex",
                           file="compPerfSubjTraining.tex")
 @
 
-The central tendencies of subjective measures of individual technical competence compared to teammates, other Chinese professional rugby players, and International professionals, were all above the mid-point of the zero-centred scale (min = -50, max = 50, see Table ~\ref{tab:compPerfSubjTraining}).  The central tendencies for items concerning the impact of individual performance on mood and confidence were also well above the mid-point of the scale (100 point scale, min = 0, max = 100). Likewise, average athlete perceptions of individual (Tables ~\ref{tab:indPerfTimeLowTraining} and ~\ref{tab:indPerfTimeHighTraining}), group (Tables ~\ref{tab:groupPerfTimeLowTraining} and ~\ref{tab:groupPerfTimeHighTraining}), and team (measured at Baseline only, see Table ~\ref{tab:teamPerfTimeBaselineTraining}) performance were above the mid-point of the scale for both conditions at all time points.
-Variables measuring athletes' perceptions of group and team click, and feelings of bonding to the training group and the team as a whole also showed high negative skew above the mid-point of each respective scale (see Tables ~\ref{tab:groupClickTimeHighTraining}\nobreakdash--\ref{tab:teamBondingTimeHighTraining}).
+The central tendencies of subjective measures of individual technical competence compared to teammates, other Chinese professional rugby players, and International professionals, were all above the mid-point of the zero-centred scale (min = -50, max = 50, see Appendix Table ~\ref{tab:compPerfSubjTraining}).  The central tendencies for items concerning the impact of individual performance on mood and confidence were also well above the mid-point of the scale (100 point scale, min = 0, max = 100).
+Average athlete perceptions of individual (Appendix Tables ~\ref{tab:indPerfTimeLowTraining} and ~\ref{tab:indPerfTimeHighTraining}), group (Appendix Tables ~\ref{tab:groupPerfTimeLowTraining} and ~\ref{tab:groupPerfTimeHighTraining}), and team (measured at Baseline only, see Table ~\ref{tab:teamPerfTimeBaselineTraining}) performance were above the mid-point of the scale for both conditions at all time points.
+Variables measuring athletes' perceptions of group and team click, and feelings of bonding to the training group and the team as a whole also showed high negative skew above the mid-point of each respective scale (see Appendix Tables ~\ref{tab:groupClickTimeHighTraining}\nobreakdash--\ref{tab:teamBondingTimeHighTraining}).
 
 
-%Among these measures, perceived technical competence relative to international rugby players differed significantly by cont
 
+%Tables included as appendices:
 %\input{.../images/compPerfSubjTraining.tex}
 %%IndPerforamnce:
 %\input{.../images/indPerfTimeLowTraining.tex}
@@ -397,7 +398,6 @@ Variables measuring athletes' perceptions of group and team click, and feelings 
 %\input{...images/arousalExertionTimeLowTraining.tex}
 %%Personality:
 %\input{.../images/personalityTraining.tex}
-
 
 
 \subsubsection{Athlete perceptions of performance}
@@ -1186,12 +1186,16 @@ print(xtable(tableTlcPersonality.condition, type="latex", caption = "Athlete per
 \subsection{Data Reduction}
 Exploratory factor analysis was used to reduce multicolinearity between variables while retaining as much variance as possible in the observed data \citep{Yong2013}.
 %(EFA, appendix ~\ref{appendix:EFA})
-Data reduction was performed on the main variables of interest, including components of individual and training group performance, team click, social bonding, and technical competence (objective and subjective). In addition, team click and social bonding measures directed at the team as a whole (and not just the specific training group) were reduced to factors, in order to assess pre- to post-experiment variation in generalised bonding to the team.
-Procedure for data reduction followed the method outlined in the previous empirical chapter (tournamentSurveyChapter).
+Data reduction was performed on the survey items related to the main outcome variables of interest, namely team click and social bonding directed at the training group. The procedure for data reduction followed the method outlined in the previous empirical chapter (tournamentSurveyChapter).  Moderator variables---technical competence (objective and subjective), components of individual and training group performance, arousal, exertion, and athlete perception of team discipline---were also reduced to factors (see APPENDIX for full method).  In addition, items relating to team click and social bonding directed at the provincial team as a whole (and not just the specific training group) were reduced to factors, in order to assess pre- to post-experiment variation in generalised bonding to the team.
+
+The main predictor variable of interest, perceptions of team performance relative to prior expectations, was a single item measure, and did not require data reduction.  Given that the outcome variables of interest were transformed to standardized z-scores (mean = 0, SD = 1), perceptions of team performance relative to prior expectation was also standardised (mean = 0, SD = 1) for the purposes of subsequent linear mixed effects modelling.
+
+%DATA REDUCTION: only display click, bonding to group, the rest go in the appendix!
+
+%Not displayed:
 \subsubsection{Variables relevant to the specific training group}
 
 \myparagraph{Perceptions of Training Group Joint Action Success}
-
 <<dataReductionGroupPerformance, eval=TRUE, echo=FALSE>>=
 #groupPerformanceVariablesSubset:
 tlcGroupPerformance <- subset(tlc, select = c(groupDefensiveLine, groupAttackingLine,
@@ -1270,9 +1274,9 @@ print(xtable(corstarsl(tlcGroupPerformance), type="latex",
                     label = "tab:jointActionSuccessCorrTable"),
                     file = "jointActionSuccessCorrTable.tex")
 @
-
+8
 Items concerning components of group performance in the invasion drill (defence, attack, support play, and on field communication) were subjected to EFA.
-Correlations between group component performance items was very high (all r's > \Sexpr{round(min(groupPerformanceMatrix), digits = 2)}), which suggested that one factor was appropriate (see Table ~\ref{tab:jointActionSuccessCorrTable}).
+Correlations between group component performance items was very high (all r's > \Sexpr{round(min(groupPerformanceMatrix), digits = 2)}), which suggested that one factor was appropriate (see Appendix Table ~\ref{tab:jointActionSuccessCorrTable}).
 The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOgroupPerformanceMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettGroupPerformance$df}, N = \Sexpr{groupPerformanceSampleSize}) = \Sexpr{bartlettGroupPerformance$chisq}, p = \Sexpr{round(bartlettGroupPerformance$p.value, digits = 2)}. One factor, labelled ``Joint Action Success'' was imposed on the data, which explained \Sexpr{prVar.GroupPerformanceFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupPerformanceFA}).
 Guttmans \lambda = \Sexpr{round(reliabilityGroupPerformance$total[,3], digits = 2)} and Cronbachs \alpha = \Sexpr{round(reliabilityGroupPerformance$total[,2], digits = 2)} indicated that the data reduction was appropriate and reliable.
 
@@ -1829,6 +1833,7 @@ twc$teamDisciplineFactor <- tlc$teamDisciplineFactor[tlc$time == 1]
 
 
 
+
 \subsection{Manipulation Checks}
 The effectiveness of the experimental manipulation was assesed based on a comparison of athletes responses to three survey items immediately following the high or low difficulty prime and immediately before the training drill.  Athletes were asked about their confidence in their individual and training group's ability to handle the technical challenges of the training drill.  Due to the fact that athletes had been primed to expect either a difficult or simple training drill, it was expected that athletes in the high difficulty condition would be less confident about their own and their group's ability to meet the technical challenges of the training session. In addition to self-reported confidence, it was also predicted that athlete self-reports of arousal, measured measured at the same time as the previous questions regarding confidence, would also vary according to condition.  It was predicted that that athletes in the high difficulty condition would be more aroused than athtletes in the low difficulty condition.  Meaningful variation in these variables could be used to check that the experimental manipulation was successful.
 
@@ -2034,9 +2039,7 @@ arousalFactorPreBartlett <- bartlett.test(arousalFactorPre ~ condition, data = t
 @
 
 %\Sexpr{t_apa(arousalCondition.ttest)}
-An analysis of arousal by condition also failed to reveal meaningful variation by condition, (see Table ~\ref{tab:manipulationCheckTable} and Figure ~\ref{fig:arousalFactorPreBoxPlot}). Judging by the boxplot and histogram of each condition (see Figures ~\ref{fig:histArousalFactorPreHigh} and ~\ref{fig:histArousalFactorPreLow} variance of arousal in the high difficulty condition did appear to be higher than the low difficulty condition, however a Bartlett's test for homogeneity of variance revealed that the difference was not significant, \Sexpr{arousalFactorPreBartlett}.
-
-These results suggested that the experimental prime was not successful in modulating athlete self-reported confidence in individuala and group ability to meet the technical challenges associated with the training drill. There was also no evidence that self-reported arousal differed significantly according to condition.  It was still possible, however, that the experimental primes influenced dimensions of athlete behaviour dimensions inaccessible through self-report.
+An analysis of arousal by condition also failed to reveal meaningful variation by condition, (see Table ~\ref{tab:manipulationCheckTable} and Figure ~\ref{fig:arousalFactorPreBoxPlot}). Judging by the boxplot and histogram of each condition (see Figures ~\ref{fig:histArousalFactorPreHigh} and ~\ref{fig:histArousalFactorPreLow} variance of arousal in the high difficulty condition did appear to be higher than the low difficulty condition, however a Bartlett's test for homogeneity of variance revealed that the difference was not significant, \Sexpr{arousalFactorPreBartlett}. These results suggested that the experimental prime was not successful in modulating athlete self-reported confidence in individuala and group ability to meet the technical challenges associated with the training drill. There was also no evidence that self-reported arousal differed significantly according to condition.  It was still possible, however, that the experimental primes influenced dimensions of athlete behaviour dimensions inaccessible through self-report.
 
 
 \subsection{Results by condition}
@@ -2374,9 +2377,9 @@ Table ~\ref{tab:factorsTime} shows that factors relating to group Joint Action S
 
 Study predictions were first tested using the post-Experiment survey data.
 
-\myparagraph{Prediction 1.a: higher perceptions of Joint Action Success will correlate with higher feelings of team click with the training group}
+%\myparagraph{Prediction 1.a: higher perceptions of Joint Action Success will correlate with higher feelings of team click with the training group}
 
-<<jASClickScatter, fig.cap='', results='hide'>>=
+%<<jASClickScatter, fig.cap='', results='hide'>>=
 
 apatheme=theme_bw()+
   theme(panel.grid.major=element_blank(),
