@@ -109,7 +109,7 @@ In this particular Tournament, seven women's teams and eight men's teams partici
 
 
 \subsection{Participants}
-174 Chinese professional adult rugby players from 8 men’s provincial teams and 7 women’s provincial teams were surveyed  (mean athletes per team = 11.6 ($SD =1.06$), $male = 93$, $M(age) = 21.67$ ($SD = 3.67$, $range = 16 - 32$))---once before (2-4 days before, $n = 120$), twice during (once each day of the two day tournament, following the 2nd or 3rd game of each day, $n = 164$), and once after the Tournament ($n = 118$).  The University of Oxford’s Central University Research Ethics Committee approved this study (CUREC1A: ).
+174 Chinese professional adult rugby players from 8 men’s provincial teams and 7 women’s provincial teams were surveyed  (mean athletes per team = 11.6 ($SD =1.06$), $male = 93$, $M(age) = 21.67$ ($SD = 3.67$, $range = 16 - 32$))---once before (2-4 days before, $n = 120$), twice during (once each day of the two day tournament, following the 2nd or 3rd game of each day, $n = 164$), and once after the Tournament ($n = 118$).  The University of Oxford’s Central University Research Ethics Committee approved this study (SAME/CUREC1A/15-059).
 
 \subsection{Surveys}
 Surveys were generated using Qualtrics software (Qualtrics version 9, Provo, UT). Surveys were translated into Chinese and then back translated by two independent native Chinese speaking translators from Beijing Sports University.  Pre- and post-Tournament surveys were administered online using the social networking software WeChat. WeChat is an online messaging and social networking platform that has become a near-universal means of electronic communication in Mainland China (an English language/Western equivalent would be something of a cross between Facebook and WhatsApp Messenger). The surveys administered before and after the Tournament were completed by athletes within the WeChat application, using their personal mobile phone devices and Internet access.
@@ -1236,6 +1236,19 @@ Tables~\ref{tab:performanceOverallSummary}\nobreakdash--\ref{tab:fatigueOverallS
 \input{images/bondingOverallSummary}
 \input{images/fatigueOverallSummary}
 
+%<<surveyMeasureSummaryTable, fig.cap =''>>=
+%#create all columns:
+%Items <- c(IndPerformance, GroupPerformance, TeamPerformance, GroupClick, TeamClick, GroupBonding, TeamBonding, Arousal, Exertion)
+%Baseline <- c("*","","*","","*","","*","","")
+%Pre <- c("*","*","","*","","*","","*","")
+%Post <- c("*","*","","*","*","*","*","*","*")
+
+%surveyMeasureSummary <- data.frame(Variable, Baseline, Pre, Post, stringsAsFactors = FALSE)
+
+%summaryTable <- xtable(surveyMeasureSummary)
+%align(summaryTable) <- xalign(summaryTable)
+%summaryTable
+%@
 
 
 
