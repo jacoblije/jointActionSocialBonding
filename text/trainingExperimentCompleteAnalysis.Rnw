@@ -135,15 +135,15 @@ A between-subjects experimental design was used, in which expectations of techni
 
 \section{Method}
 
+%\subsection{Design}
+%The design of a study is its overall structure. What were the independent and dependent variables? Was the independent variable manipulated, and if so, was it manipulated between or within subjects? How were the variables operationally defined?
+
 \subsection{Participants}
 \Sexpr{length(unique(twc$englishName))} professional Chinese rugby players from two provincial programs participated in the study (men = \Sexpr{length(which(twc$sex == 0))} M(age) = \Sexpr{mean(twc$age, na.rm = TRUE)} (SD = \Sexpr{sd(twc$age, na.rm = T)}, range = 16-29). Athletes were recruited from two provincial rugby programs,  \Sexpr{length(which(twc$team == "sdw" | twc$team == "sdm"))} participants were athletes from Shandong province (men = \Sexpr{length(which(twc$team == "sdm"))}, M(age) = \Sexpr{mean(twc$age[twc$team == "sdm" | twc$team == "sdw"], na.rm = T)}) and the remaining \Sexpr{length(which(twc$team == "bjm" | twc$team == "bjw"))} athletes were from Beijing province (men = \Sexpr{length(which(twc$team == "bjm"))}, M(age) = \Sexpr{mean(twc$age[twc$team == "bjm" | twc$team == "bjw"], na.rm = T)})).
 
 This study was approved by the University of Oxford’s Central University Research Ethics Committee (SAME/CUREC1A/15-059).
 
 \subsection{Materials}
-
-\subsubsection{Cover Story}
-Athletes were notified (first via WeChat and then in a team meeting) that my research purpose was to trial a number of different rugby training drills selected from a recent report by World Rugby concerning training methods for rugby sevens.  Athletes were told that the training drills had been previously rated by a selection of international level coaches and players from all over the world (including Asia and China).  Athletes were informed that I planned to assess the ratings provided by World Rugby by replicating these drills with more rugby athletes in China.  Athletes were told that survey measures and video footage would be collected, which would be later analysed to assess individual performance of athletes in each training drill.  It was also explained to athletes that there would be a second round of drills also requiring groups of eight athletes, but the makeup of these groups may reshuffle depending on athletes preferences.  This detail allowed for the includion of a post-experiment bonding measure, in which athletes were asked to what extent they wished to continue to train with the same 8-athlete team in a subsequent round of drills.
 
 \begin{figure}[htbp]
   \includegraphics[width = \linewidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/invasionDrill.png}
@@ -152,7 +152,7 @@ Athletes were notified (first via WeChat and then in a team meeting) that my res
 \end{figure}
 
 \subsubsection{Experimental Paradigm: Invasion Drill}
-This study required athletes to participate in a common rugby training drill, which was preceeded by one of two experimental primes—--a ``high difficulty'' condition, or a ``low difficulty'' condition.   Replicating \textcite{Passos2011}, a common training drill known as ``invasion drill'' \citep{Biscombe1998} was selected as it was representative of a typical subphase of rugby union.  In this drill, a group of four rugby players form an attacking group and two pairs of opponents form a first and second defensive line.  There were two performance aims of this drill: (a) attackers were asked carry the ball into the try area, and (b) defenders were asked to stop the attacker’s progression toward the try line.  One trial consisted of one attempt by the attacking sub-group to penetrate two defending sub-groups, and carry the ball over the try line. The drill was conducted on a regulation multipurpose 110m x 70m grass or artificial turf training field within a 22m x 15m rectangle area marked by plastic cones (see Figure ~\ref{fig:invasionDrill}). The ball used was size 5, as recommended by World Rugby for this age group of athletes.
+This study required athletes to participate in a common rugby training drill, which was preceeded by one of two experimental primes—--a ``high difficulty'' condition, or a ``low difficulty'' condition.   Replicating \textcite{Passos2011}, a common training drill known as ``invasion drill'' \citep{Biscombe1998} was selected as it was representative of a typical subphase of joint action in rugby union.  In this drill, a group of four rugby players form an attacking group and two pairs of opponents form a first and second defensive line.  There were two performance aims of this drill: (a) attackers were asked carry the ball into the try area, and (b) defenders were asked to stop the attacker’s progression toward the try line.  One trial consisted of one attempt by the attacking sub-group to penetrate two defending sub-groups, and carry the ball over the try line. The drill was conducted on a regulation multipurpose 110m x 70m grass or artificial turf training field within a 22m x 15m rectangle area marked by plastic cones (see Figure ~\ref{fig:invasionDrill}). The ball used was size 5, as recommended by World Rugby for this age group of athletes.
 
 %The training drill, known as ``invasion drill,'' requires eight athletes, one sub-grouof four attackers and two sub-groups of two defenders.  The primary aim of the drill is for the sub-group of 4 attacking players to successfully penetrate two consecutive lines of two defenders (also commonly known as a ``4 on 2 + 2'' drill). The aim of the two defending sub-groups is to stop the attacking team from achieving the primary goal, by interfering with their coordination by halting the ball-carrier, or the ball in flight between attacking players.
 
@@ -166,45 +166,33 @@ Athletes completed survey questionnaires via WeChat using their personal mobile 
 
 At Baseline, athletes were asked about their impressions of recent individual performance and the performance of their province team as a whole.  Athletes also responded to questions about feelings of team click and social bonding with their team as a whole. In addition, the Baseline survey also included items concerning basic personal information, current injury status, subjective and objective measures of tehcnical competence, and personality type.  At time 2, Pre-Experiment, athletes were asked questions about their current feelings and expectations concerning their individual performance and the performance of their specific training group in the impending training drill. For example,  athletes were asked ``How do you feel right now about your individual performance (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'').  Athletes were also asked about feelings of team click and social bonding to their specific training group, for example: ``How emotionally supportive does your training group feel right now?'' (100 point scale, 0 = ``Extremely weak'', 100 = ``Extremely strong''. For a full explanation of Pre-Experiment survey items, see Appendix ~\ref{}).  At time 3, Post-Experiment, athletes completed questions concerning their impression of their own performance and the performance of their specific training group in the training drill, relative to their prior expectations. Athletes were also asked about their feelings of team click and social bonding to the training group as well as the provincial team as a whole (team-focussed questons mirrored the survey items that were asked one day earlier at Baseline).
 
-
 <<surveyMeasureSummaryTable, fig.cap =''>>=
 #create all columns:
-Items <- c(IndPerformance, GroupPerformance, TeamPerformance, GroupClick, TeamClick, GroupBonding, TeamBonding, Arousal, Exertion)
+Items <- c("IndPerformance", "GroupPerformance", "TeamPerformance",
+           "GroupClick", "TeamClick", "GroupBonding", "TeamBonding", "Arousal", "Exertion")
 Baseline <- c("*","","*","","*","","*","","")
 Pre <- c("*","*","","*","","*","","*","")
 Post <- c("*","*","","*","*","*","*","*","*")
 
-surveyMeasureSummary <- data.frame(Variable, Baseline, Pre, Post, stringsAsFactors = FALSE)
+surveyMeasureSummary <- data.frame(Items, Baseline, Pre, Post, stringsAsFactors = FALSE)
 
-summaryTable <- xtable(surveyMeasureSummary)
-align(summaryTable) <- xalign(summaryTable)
-summaryTable
+summaryTable <- xtable(surveyMeasureSummary,
+                              caption = "Survey items measured at each time point"
+                              label = "tab:athleteDescriptivesTrainingOverall")
+align(summaryTable) <- "llccc"
+print(summaryTable, file="athleteDescriptivesTrainingOverall.tex")
 @
 
-%survey items included questions regarding individual and team performance, including how athletes felt about their 1) overall individual performance, 2) specific components of individual performance (passing technique, support play in attack, 1on1 defense, effectiveness in contact, and decision making in game-play), 3) overall team performance and 4) specific components of team perfomance (coordination of the defensive line and attacking line, support play, and onfield communication) throughout the past month of training and competition.  All these items were recorded on a 100 point scale, 0 - ``Extremely poor'', 100 - ``Extremely good.''  Athletes were also asked about their individual technical competence relative to teammates and other Chinese and international athletes, as well perceived competence of their team relative to other Chinese provincial teams.
-%Athletes were also asked if their perception of recent performance influences their 1) mood and 2) confidence regarding future performance (All these items were measured with a zero-centred 100 point scale, -50 - ``Extremely weak'', 0 - ``Average'', 50 - ``Extremely strong'').
-
-%Athletes were also asked about their feelings concerning team click over the past month.  These items included: feelings about the unspoken understanding between athletes, the general atmosphere of the team (100 point scale, 0 - ``Extremely poor'', 100 - ``Extremely strong''), the extent to which they agree that their on-field abilities have been extended by other athletes (100 point scale, 0 - ``Completely disagree'', 100 - ``Completely agree''), and the reliability of other athletes to perform on-field roles and their own reliability in performing on-field roles for other athletes (100 point scale, 0 - ``Extremely unreliable'', 100 - ``Extremely reliable''), and a pictorial ``team click" measure (a visual item with five responses, ranging from less to more coordinated arrangements of dots (representing 12 athletes in a sevens tournament squad).
-%In addition, athletes were asked about their feelings regarding their team's commitment to aspects of discipline over the past month (punctuality, observing bed times and curfews, attendance at meals, general team conduct) (100 point scale, 0 - ``Extremely poor'', 100 - ``Extremely strong'')).
-
-%Athletes were asked about their feelings of social bonding to their team over the past month, including perceived emotional support and shared goal (100 point scale, 0 - ``Exrtremely weak'', 100 - ``Extremely strong''), identity fusion (pictorial scale and 7 item verbal scale, see APPENDIX), and group identification (six-item scale, see APPENDIX). In addition, athletes were also asked about identity fusion to country and family, measured using the pictorial fusion scale, and were then asked to rank their level of fusion to team, country, and family in order of most fused to least fused.  Athletes were also asked about their personality type using a common ten-item personality measure \citep[Ten Item Personality Index - TIPI][see APPENDIX]{Gosling2003}.
-
-The survey administered at time 2, following the experimental manipulation and immediately prior to the experimnent, was designed to measure athletes' expectations regarding individual and group performance in light of the experimental prime. It also included items designed to measure athletes' perceptions of team click and social bonding to the training group (but not the team as a whole beyond the immediate training group).
-In addition to these items, the time 2 survey also asked about current injury status, and state of arousal and fatigue (see APPENDIX for full details).
-
-The final survey, administered at time 3 immediately post-experiment, consisted of items designed to assess athlete perceptions of individual and group performance in the experiment relative to prior expectations, as well as feelings of team click and social bonding to the training group. In addition to items already described above, athletes were asked if they would prefer to stay with their existing group or change to a new group for subsequent training experiments.  In addition to these group-specific items, the time 3 survey also included items regarding social bonding to the team as a whole (beyond an athlete's specific training group), in order to assess any change in these measures due to their experience of joint action in the experiment.  Finally, the time 3 survey also asked about current injury status and state of arousal and fatigue (see APPENDIX for full details).
-
-\subsubsection{Video Analysis}
+\subsubsection{Video analysis of training group performance in training drill}
 In order to produce quantitative measures of interpersonal coordination between co-actors, athletes’ motion was captured by a single digital video camera (Sony FDR-AX700 4K HDR Camcorder) mounted on a 1.2m high tripod. Digital video images of action were acquired by a computer, using a USB2.0 cable, and files were saved on an encrypted external hard disk in .AVI format. For image treatment, TACTO 8.0 software was used for digitizing at 25 frames per second.
 
-\subsection{Design}
+Video footage from all 8 experiment sessions was analysed by an hypothesis blind research assistant.  Each experimental trial of the Invasion Drill (16 in total) was coded according to the quality of performance relative to the primary (attacking) goal of the drill, i.e. scoring a try by carrying the ball over the try line.  A maximum value of 6 was awarded to a ``clear try'' (trials in which a clear unobstructed try was scored by the attacking sub-unit); 5 to a ``rough try'' (the ball-carrier crossed the try-line following some minimal level of physical contact or obstruction from the defence that did not halt the momentum of the attacking phase); 4 to an ``Obstructed try'' (a trial in which a try is scored, but the momentum of the attacking sub-unit was clearly interrupted); 3 to a ``no try - defence''  (a trial in which a ball carrier is completely obstructed by a defender, and the trial is unsuccessful largely due to the effecticeness of the defence); 2 to a ``no try - defence forced error'' (unsuccessful trial due to a combination of the defence and error in attack); 1 to a ``no try - unforced error '' (a failed trial due to an unforced error in attack).  For each experiment session, an average performance outcome (``Trial Outcome Average'') and the standard deviation of this outcome (``Trial Outcome SD'') was calculated in order to capture the central tendency and variability of performance for each training group.
 
-%The design of a study is its overall structure. What were the independent and dependent variables? Was the independent variable manipulated, and if so, was it manipulated between or within subjects? How were the variables operationally defined?
+\subsection{Procedure}
+Permission to run the study was sought from the head coach of each of the four teams (Beijing men's, Beijing women's, Shandong men's, Shandong women's).  These coaches nominated athletes who were fit and able to complete the session without compromising their existing training schedules.  Athletes were randomly assigned to one of two conditions, and athletes in each condition were matched as much as possible according to average training age. Once athletes were assigned to an experimental group, they were then added to a WeChat group populated by other training group members and the researcher.
 
-\subsection{procedure}
-Permission to run the study was sought from the head coach of each of the four teams (Beijing men's, Beijing women's, Shandong men's, Shandong women's).  These coaches nominated athletes who were fit and able to complete the session without compromising their existing training schedules.  Athletes were randomly assigned to one of two conditions, and athletes in each condition were matched as much as possible according to average training age.
-
-Once athletes were assigned to an experimental group, they were then added to a WeChat group populated by other training group members and the researcher. Atheltes were provided with the initial cover story for the experiment via ths WeChat group. (for full script, see APPENDIX).
+%\subsubsection{Cover Story}
+Athletes were notified (first via WeChat and then in a team meeting) that they were participating in a trial of a number of different rugby training drills selected from a recent report by World Rugby concerning training methods for rugby sevens.  Athletes were told that the training drills had been previously rated by a selection of international level coaches and players from all over the world (including Asia and China).  Athletes were informed that I planned to assess the ratings provided by World Rugby by replicating these drills with more rugby athletes in China.  Athletes were told that survey measures and video footage would be collected, which would be later analysed to assess individual performance of athletes in each training drill.  It was also explained to athletes that there would be a second round of drills also requiring groups of eight athletes, but the makeup of these groups may reshuffle depending on athletes preferences.  This detail allowed for the includion of a post-experiment bonding measure, in which athletes were asked to what extent they wished to continue to train with the same 8-athlete team in a subsequent round of drills.
 
 Approximately 24 hours before the experiment session, athletes were instructed to complete the baseline survey by opening a link provided in the WeChat group.  This survey included written consent for the study. Approximately 1 hour before the experiment was due to take place, athletes were administered with an experimental prime via WeChat.  In the ``high difficulty'' condition, athletes were primed to believe that they were about to participate in a very difficult training drill (on the upper end of their individual and group technical abilities), whereas athletes in the ``low difficulty'' condition were primed to believe that they were about to participate in an easy training drill well within their tehcnical abilities (see APPENDIX for full script). All athletes were lead to believe that athletes in the other experiemntal groups were performing different drills to their assigned drill. In reality, the training drill for each condition was identical, the only thing that varied was the pre-experiment prime.
 
@@ -221,42 +209,57 @@ The digital camera and tripod were positioned on a platform 2m above the level o
 
 
 
-
 \section{Results}
-
 A total of \Sexpr{length(unique(twc$englishName))} athletes participated in \Sexpr{length(unique(twc$sessionNumber))} experimental sessions. In one session (Shandong men's high difficulty condition) a dummy participant stood in for an athlete could not participate due to injury.  In the two sessions with Beijing women's team, due to failure of athletes to take part due to injury (3) or illness (2) the training drill was modified to a ``3 on 2 + 1'' drill, requiring only 6 athletes to complete. In one of these experimental sessions, a female dummy participant was also required to fill in to make up a total of 6 athletes for the modified drill.  In both cases, dummy participants were competent ex-athletes naive to the predictions of the study who did not participate in the survey responses before or after the session.  The survey and video data of the remaining 58 athletes were analysed.
 
-\subsection{Survey Data}
-<<descriptivesPreFactor, echo = FALSE, eval = TRUE>>=
-low <- subset(twc, condition == "low")
-high <- subset(twc, condition == "high")
-##subset data for renaming
+\subsection{Descriptive Statistics}
+
+\subsubsection{Participant Sample}
+
+<<dfAthleteSummary, echo = FALSE, eval = TRUE>>=
 twcAthleteInfo <- subset(twc, select = c(age, sex, condition, team, startingReserve,
                                     trainingAge, yearsTeam, athleteStatus, teamStatus))
+##subset a master df to create a table strata by condition (Overall, High, Low)
+#df1:
+dfAthleteSummary <- twcAthleteInfo
+#df2:
+dfAthleteSummaryOverall <- dfAthleteSummary
+dfAthleteSummaryOverall <- dfAthleteSummaryOverall %>%
+                              mutate(condition = recode(condition, "high" = "Overall"),
+                                     condition = recode(condition, "low" = "Overall")
+                                     )
+
+dfAthleteSummary <- bind_rows(dfAthleteSummary, dfAthleteSummaryOverall)
+summary(dfAthleteSummary)
+
+dfAthleteSummary$condition <- factor(dfAthleteSummary$condition,
+                                      levels = c("Overall", "high", "low"), ordered = is.ordered(dfAthleteSummary$condition))
+
 
 ## rename values for factors:
-twcAthleteInfo$sex <- ifelse(!is.na(twcAthleteInfo$sex) & twcAthleteInfo$sex == 0, "male",
-                                    ifelse(!is.na(twcAthleteInfo$sex) & twcAthleteInfo$sex == 1, "female", NA))
+dfAthleteSummary$sex <- ifelse(!is.na(dfAthleteSummary$sex) & dfAthleteSummary$sex == 0,
+                                    "male",
+                                    ifelse(!is.na(dfAthleteSummary$sex) & dfAthleteSummary$sex == 1, "female", NA))
 
 
-twcAthleteInfo$athleteStatus <- ifelse(!is.na(twcAthleteInfo$athleteStatus) &
-                                    twcAthleteInfo$athleteStatus == 3, "Master",
-                                      ifelse(!is.na(twcAthleteInfo$athleteStatus) & twcAthleteInfo$athleteStatus == 2, "1st Level",
-                                        ifelse(!is.na(twcAthleteInfo$athleteStatus) & twcAthleteInfo$athleteStatus == 1, "2nd Level", NA)))
+dfAthleteSummary$athleteStatus <- ifelse(!is.na(dfAthleteSummary$athleteStatus) &
+                                    dfAthleteSummary$athleteStatus == 3, "Master",
+                                      ifelse(!is.na(dfAthleteSummary$athleteStatus) & dfAthleteSummary$athleteStatus == 2, "1st Level",
+                                        ifelse(!is.na(dfAthleteSummary$athleteStatus) & dfAthleteSummary$athleteStatus == 1, "2nd Level", NA)))
 
-twcAthleteInfo$teamStatus <- ifelse(!is.na(twcAthleteInfo$teamStatus) &
-                                    twcAthleteInfo$teamStatus == 5, "Full time employee",
-                                      ifelse(!is.na(twcAthleteInfo$teamStatus) & twcAthleteInfo$teamStatus == 4, "Full time contract",
-                                        ifelse(!is.na(twcAthleteInfo$teamStatus) & twcAthleteInfo$teamStatus == 3, "Training contract",
-                                        ifelse(!is.na(twcAthleteInfo$teamStatus) & twcAthleteInfo$teamStatus == 2, "Student contract",
-                                        ifelse(!is.na(twcAthleteInfo$teamStatus) & twcAthleteInfo$teamStatus == 1, "Trial",
+dfAthleteSummary$teamStatus <- ifelse(!is.na(dfAthleteSummary$teamStatus) &
+                                    dfAthleteSummary$teamStatus == 5, "Full time employee",
+                                      ifelse(!is.na(dfAthleteSummary$teamStatus) & dfAthleteSummary$teamStatus == 4, "Full time contract",
+                                        ifelse(!is.na(dfAthleteSummary$teamStatus) & dfAthleteSummary$teamStatus == 3, "Training contract",
+                                        ifelse(!is.na(dfAthleteSummary$teamStatus) & dfAthleteSummary$teamStatus == 2, "Student contract",
+                                        ifelse(!is.na(dfAthleteSummary$teamStatus) & dfAthleteSummary$teamStatus == 1, "Trial",
                                          NA)))))
 
-twcAthleteInfo$team <- ifelse(!is.na(twcAthleteInfo$team) & twcAthleteInfo$team ==
-                                        "bjm","Beijing Men", ifelse(!is.na(twcAthleteInfo$team) & twcAthleteInfo$team == "bjw", "Beijing Women", ifelse(!is.na(twcAthleteInfo$team) & twcAthleteInfo$team == "sdm", "Shandong Men", ifelse(!is.na(twcAthleteInfo$team) & twcAthleteInfo$team == "sdw", "Shandong Women", NA))))
+dfAthleteSummary$team <- ifelse(!is.na(dfAthleteSummary$team) & dfAthleteSummary$team ==
+                                        "bjm","Beijing Men", ifelse(!is.na(dfAthleteSummary$team) & dfAthleteSummary$team == "bjw", "Beijing Women", ifelse(!is.na(dfAthleteSummary$team) & dfAthleteSummary$team == "sdm", "Shandong Men", ifelse(!is.na(dfAthleteSummary$team) & dfAthleteSummary$team == "sdw", "Shandong Women", NA))))
 
 ##rename columns for tables:
-twcAthleteInfo <- rename(twcAthleteInfo, Position = startingReserve,
+dfAthleteSummary <- rename(dfAthleteSummary, Position = startingReserve,
                               TrainingAge = trainingAge, YearsInTeam = yearsTeam, AthleteLevel = athleteStatus, ContractStatus = teamStatus, Team = team, Condition = condition, Sex = sex, Age = age)
 
 
@@ -269,28 +272,8 @@ catVars <- c("Sex", "Condition", "AthleteLevel", "Position", "ContractStatus", "
 
 ## Create overall table:
 table1 <- CreateTableOne(vars = listVars,
-                         data = twcAthleteInfo,
-                         factorVars = catVars,
-                         test = F
-                         )
-
-## create table which is printable
-table1_overall <- print(table1,
-                            quote = FALSE,
-                            noSpaces = FALSE,
-                            printToggle = FALSE
-                            )
-
-## print to latex file in wd
-## this latex file will later be inputted
-print(xtable(table1_overall, type="latex", caption = "Overview of experiment sample",
-                    label = "tab:athleteDescriptivesTraining"),
-                    file="athleteDescriptivesTraining.tex")
-
-## create table one, strata = Condition
-table1 <- CreateTableOne(vars = listVars,
+                         data = dfAthleteSummary,
                          strata = "Condition",
-                         data = twcAthleteInfo,
                          factorVars = catVars,
                          test = F
                          )
@@ -305,86 +288,27 @@ table1_overall <- print(table1,
 ## print to latex file in wd
 ## this latex file will later be inputted
 print(xtable(table1_overall, type="latex",
-                              caption = "Overview of experiment sample by condition",
-                              label = "tab:athleteDescriptivesConditionTraining"),
-                        file="athleteDescriptivesConditionTraining.tex")
+                    caption = "Overview of experiment sample by condition",
+                    label = "tab:athleteDescriptivesTrainingOverall"),
+                    file="athleteDescriptivesTrainingOverall.tex")
 @
 
-\input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/athleteDescriptivesTraining.tex}
-\input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/athleteDescriptivesConditionTraining.tex}
 
+\input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/athleteDescriptivesTrainingOverall.tex}
 
-The attributes of the overall sample of athletes are displayed in Table ~\ref{tab:athleteDescriptivesTraining}. The average training age of athletes was \Sexpr{mean(twc$trainingAge,na.rm=T)} years (\Sexpr{sd(twc$trainingAge,na.rm=T)}), with athletes having spent on average over \Sexpr{round(mean(twc$years,na.rm=T),digits=0)} years in the team. \Sexpr{round(length(which(twc$teamStatus == 5))/length(unique(twc$englishName))*100, digits = 0)}\% of the sample were full-time employees of their provincial team, with the rest either being employed on a full-time (but fixed term) contract
+The attributes of the overall sample of athletes are displayed in Table ~\ref{tab:athleteDescriptivesTrainingOverall}. The average training age of athletes was \Sexpr{mean(twc$trainingAge,na.rm=T)} years (\Sexpr{sd(twc$trainingAge,na.rm=T)}), with athletes having spent on average over \Sexpr{mean(twc$years,na.rm=T)} years in the team. \Sexpr{round(length(which(twc$teamStatus == 5))/length(unique(twc$englishName))*100, digits = 0)}\% of the sample were full-time employees of their provincial team, with the rest either being employed on a full-time (but fixed term) contract
 (\Sexpr{round(length(which(twc$teamStatus == 4)/length(unique(twc$englishName)))*100, digits = 0)}\%)), a ``student contract'' ((\Sexpr{round(length(which(twc$teamStatus == 3)/length(unique(twc$englishName)))*100, digits = 0)}\%))), a short term training contract
-((\Sexpr{round(length(which(twc$teamStatus == 2)/length(unique(twc$englishName)))*100, digits = 0)}\%))), or on a short-term trial basis ((\Sexpr{round(length(which(twc$teamStatus == 1)/length(unique(twc$englishName)))*100, digits = 0)}\%))).  Only \Sexpr{length(which(twc$startingReserve == "Starting Team"))} of \Sexpr{length(unique(twc$englishName))} (\Sexpr{round(length(which(twc$startingReserve == "Starting Team"))/length(unique(twc$englishName))*100, digits = 0)}\%) of athletes declared that there were in the starting team of their respective provincial teams.  Attributes of athletes in the high and low difficulty conditions were evenly matched (see Table ~\ref{tab:athleteDescriptivesConditionTraining}), with only a marginally significant difference in average age between conditions (high difficulty condition = \Sexpr{mean(high$age,na.rm=T)}(\Sexpr{sd(high$age,na.rm=T)}), low difficulty condition = \Sexpr{mean(low$age,na.rm=T)}(\Sexpr{sd(low$age,na.rm=T)}).
+((\Sexpr{round(length(which(twc$teamStatus == 2)/length(unique(twc$englishName)))*100, digits = 0)}\%))), or on a short-term trial basis ((\Sexpr{round(length(which(twc$teamStatus == 1)/length(unique(twc$englishName)))*100, digits = 0)}\%))).
+Only \Sexpr{length(which(twc$startingReserve == "Starting Team"))} of \Sexpr{length(unique(twc$englishName))} (\Sexpr{round(length(which(twc$startingReserve == "Starting Team"))/length(unique(twc$englishName))*100, digits = 0)}\%) of athletes declared that there were in the starting team of their respective provincial teams.
+Attributes of athletes in the high and low difficulty conditions were evenly matched (see Table ~\ref{tab:athleteDescriptivesTrainingOverall}), with only a marginally significant difference in average age between conditions (high difficulty condition = \Sexpr{mean(high$age,na.rm=T)}(\Sexpr{sd(high$age,na.rm=T)}), low difficulty condition = \Sexpr{mean(low$age,na.rm=T)}(\Sexpr{sd(low$age,na.rm=T)}).
+
+\subsubsection{Survey Responses}
+
+The central tendencies of subjective measures of individual technical competence compared to teammates, other Chinese professional rugby players, and International professionals, were all above the mid-point of the zero-centred scale, with average scores ranging from  (min = -50, max = 50, see Appendix Table ~\ref{tab:compPerfSubjTraining}).  The central tendencies for items concerning the impact of individual performance on mood and confidence were also well above the mid-point of the scale (100 point scale, min = 0, max = 100).
 
 
-
-\subsubsection{Technical Competence (objective and subjective)}
-<<descriptivesIndividualPerformanceSubjective, echo = FALSE, eval = TRUE>>=
-## IND PERFORMANCE SUBJECTIVE:
-tlcCompPerfSubj <- subset(tlc, select = c(englishName, condition, sex, time, team,
-                                indAbilityTeammates_1, indAbilityChina_1, indAbilityInternational_1, indPerformanceOnConfidence_1, indPerformanceOnMood_1))
-
-## Need to remove values of confidence and mood from t 2 & 3:
-
-tlcCompPerfSubj$indPerformanceOnConfidence <- tlcCompPerfSubj$indPerformanceOnConfidence_1
-tlcCompPerfSubj$indPerformanceOnConfidence[tlcCompPerfSubj$time == 2] <- NA
-tlcCompPerfSubj$indPerformanceOnConfidence[tlcCompPerfSubj$time == 3] <- NA
-
-tlcCompPerfSubj$indPerformanceOnMood <- tlcCompPerfSubj$indPerformanceOnMood_1
-tlcCompPerfSubj$indPerformanceOnMood[tlcCompPerfSubj$time == 2] <- NA
-tlcCompPerfSubj$indPerformanceOnMood[tlcCompPerfSubj$time == 3] <- NA
-
-tlcCompPerfSubj$sex <- ifelse(!is.na(tlcCompPerfSubj$sex) &
-                                tlcCompPerfSubj$sex == 0, "male", ifelse(!is.na(tlcCompPerfSubj$sex) & tlcCompPerfSubj$sex == 1, "female", NA))
-
-tlcCompPerfSubj$time <- ifelse(!is.na(tlcCompPerfSubj$time) &
-                                  tlcCompPerfSubj$time == 3, "Post",
-                                ifelse(!is.na(tlcCompPerfSubj$time) &     tlcCompPerfSubj$time == 2, "Pre",
-                                ifelse(!is.na(tlcCompPerfSubj$time) & tlcCompPerfSubj$time == 1, "Baseline", NA)))
-tlcCompPerfSubj$time <- factor(tlcCompPerfSubj$time, levels = c("Baseline", "Pre",
-                                  "Post"), ordered = is.ordered(tlcCompPerfSubj$time))
-
-##rename columns for tables:
-#library(dplyr)
-tlcCompPerfSubj <- rename(tlcCompPerfSubj, Name = englishName, Sex = sex, Team = team,
-                                Condition = condition, Time = time, CompetenceVsTeammates = indAbilityTeammates_1, CompetenceVsChinesePros = indAbilityChina_1, CompetenceVsInternationalPros = indAbilityInternational_1, PerfomanceImpactOnConfidence =  indPerformanceOnConfidence, PerformanceImpactOnMood = indPerformanceOnMood)
-
-
-## create a variable list which we want in table one
-listVars <- c("CompetenceVsTeammates", "CompetenceVsChinesePros",
-                "CompetenceVsInternationalPros", "PerfomanceImpactOnConfidence", "PerformanceImpactOnMood")
-
-## define categorical variables
-catVars <- c("Sex", "Condition", "Time")
-
-## create table one (high difficulty condition)
-tableTlcCompPerfSubj <- CreateTableOne(vars = listVars,
-                         strata = "Condition",
-                         data = tlcCompPerfSubj,
-                         factorVars = catVars,
-                         test = F
-                         )
-
-## create table which is printable
-tableTlcCompPerfSubj.condition <- print(tableTlcCompPerfSubj,
-                            quote = FALSE,
-                            noSpaces = FALSE,
-                            printToggle = FALSE
-                            )
-
-## print to latex file in wd
-## this latex file will later be inputted
-print(xtable(tableTlcCompPerfSubj.condition, type="latex",
-                          label = "tab:indPerfTimeHighTraining",
-                          caption = "Athlete subjective perceptions of \n individual technical competence by condition"),
-                          file="compPerfSubjTraining.tex")
-@
-
-The central tendencies of subjective measures of individual technical competence compared to teammates, other Chinese professional rugby players, and International professionals, were all above the mid-point of the zero-centred scale (min = -50, max = 50, see Appendix Table ~\ref{tab:compPerfSubjTraining}).  The central tendencies for items concerning the impact of individual performance on mood and confidence were also well above the mid-point of the scale (100 point scale, min = 0, max = 100).
-Average athlete perceptions of individual (Appendix Tables ~\ref{tab:indPerfTimeLowTraining} and ~\ref{tab:indPerfTimeHighTraining}), group (Appendix Tables ~\ref{tab:groupPerfTimeLowTraining} and ~\ref{tab:groupPerfTimeHighTraining}), and team (measured at Baseline only, see Table ~\ref{tab:teamPerfTimeBaselineTraining}) performance were above the mid-point of the scale for both conditions at all time points.
-Variables measuring athletes' perceptions of group and team click, and feelings of bonding to the training group and the team as a whole also showed high negative skew above the mid-point of each respective scale (see Appendix Tables ~\ref{tab:groupClickTimeHighTraining}\nobreakdash--\ref{tab:teamBondingTimeHighTraining}).
+Average athlete perceptions of individual (Appendix Tables ~\ref{tab:indPerfTimeLowTraining} and ~\ref{tab:indPerfTimeHighTraining}), group (Appendix Tables ~\ref{tab:groupPerfTimeLowTraining} and ~\ref{tab:groupPerfTimeHighTraining}), and team (measured at Baseline only, see Appendix Table ~\ref{tab:teamPerfTimeBaselineTraining}) performance were above the mid-point of the scale for both conditions at all time points.
+Variables measuring athletes' perceptions of group and team click, and feelings of bonding to the training group and the team as a whole also showed high negative skew, with scores above the mid-point of each respective scale (see Appendix Tables ~\ref{tab:groupClickTimeHighTraining}\nobreakdash--\ref{tab:teamBondingTimeHighTraining}).
 
 
 
@@ -415,9 +339,91 @@ Variables measuring athletes' perceptions of group and team click, and feelings 
 %\input{.../images/personalityTraining.tex}
 
 
-\subsubsection{Athlete perceptions of performance}
 
-\myparagraph{Individual performance}
+%%GROUP PERFORMANCE:
+<<descriptivesGroupPerformance, echo = FALSE, eval = TRUE>>=
+##subset data for renaming
+tlcGroupPerformance <- subset(tlc, select = c(englishName, condition, sex, time, team,
+                                groupPerformance, groupConfidentTechnicalChallenges, groupAttackingLine, groupDefensiveLine,  groupOnfieldCommunication, groupSupportPlay))
+## groupPerformance is only @ time = 3, and is in terms of expectations...rescale.
+tlcGroupPerformance$groupPerformanceExp <- tlcGroupPerformance$groupPerformance
+#tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 1] <- NA
+#tlcGroupPerformance$groupPerformanceExp[tlcIndPerformance$time == 2] <- NA
+#tlcGroupPerformance$groupPerformance[tlcGroupPerformance$time == 3] <- NA
+#rescale groupPerformaneExp to (0,100)
+library(scales)
+tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3], to = c(0, 100), from = c(-50, 50))
+
+
+## rename values for factors:
+tlcGroupPerformance$sex <- ifelse(!is.na(tlcGroupPerformance$sex) &
+                                tlcGroupPerformance$sex == 0, "male", ifelse(!is.na(tlcGroupPerformance$sex) & tlcGroupPerformance$sex == 1, "female", NA))
+
+tlcGroupPerformance$time <- ifelse(!is.na(tlcGroupPerformance$time) &
+                                  tlcGroupPerformance$time == 3, "Post",
+                                ifelse(!is.na(tlcGroupPerformance$time) &     tlcGroupPerformance$time == 2, "Pre",
+                                ifelse(!is.na(tlcGroupPerformance$time) & tlcGroupPerformance$time == 1, "Baseline", NA)))
+tlcGroupPerformance$time <- factor(tlcGroupPerformance$time, levels = c("Baseline", "Pre",
+                                  "Post"), ordered = is.ordered(tlcGroupPerformance$time))
+
+##rename columns for tables:
+library(dplyr)
+tlcGroupPerformance <- rename(tlcGroupPerformance, Name = englishName, Sex = sex,
+                                Team = team, Condition = condition, Time = time, PerformanceVsExpectations = groupPerformanceExp, ConfidenceInGroupAbility = groupConfidentTechnicalChallenges, GroupAttack = groupAttackingLine, GroupDefence = groupDefensiveLine, GroupCommunication = groupOnfieldCommunication, GroupSupportPlay = groupSupportPlay)
+
+# create high and low condition dfs:
+tlcGroupPerformanceHigh <- subset(tlcGroupPerformance, Condition == "high")
+
+tlcGroupPerformanceLow <- subset(tlcGroupPerformance, Condition == "low")
+
+## create a variable list which we want in table one
+listVars <- c("GroupPerformVsExpected", "ConfidenceInGroupAbility", "GroupAttack", "GroupDefence", "GroupCommunication", "GroupSupportPlay")
+
+## define categorical variables
+catVars <- c("Sex", "Condition", "Time")
+
+## create table one (high difficulty condition)
+tableGroupPerfHigh_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcGroupPerformanceHigh,
+                         factorVars = catVars,
+                         test = F
+                         )
+
+## create table which is printable
+tableGroupPerformHighTime <- print(tableGroupPerfHigh_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableGroupPerformHighTime, type="latex", caption = "Athlete perceptions of \n group performance (high difficulty condition)"), file="groupPerfTimeHighTraining.tex")
+
+
+## create table one (low difficulty condition)
+tableGroupPerfLow_time <- CreateTableOne(vars = listVars,
+                         strata = "Time",
+                         data = tlcGroupPerformanceLow,
+                         factorVars = catVars,
+                         test = F
+                         )
+
+## create table which is printable
+tableGroupPerformLowTime <- print(tableGroupPerfLow_time,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableGroupPerformLowTime, type="latex", caption = "Athlete perceptions of \n group performance (low difficulty condition)"), file="groupPerfTimeLowTraining.tex")
+
+@
+
+%%IND PERFORMANCE
 <<descriptivesIndividualPerformance, echo = FALSE, eval = TRUE>>=
 
 ##subset data for renaming
@@ -454,7 +460,7 @@ tlcIndPerformanceHigh <- subset(tlcIndPerformance, Condition == "high")
 tlcIndPerformanceLow <- subset(tlcIndPerformance, Condition == "low")
 
 ## create a variable list which we want in table one
-listVars <- c("OverallPerformance", "ConfidenceInAbility", "PerformanceVsExpectations", "Defence", "Passing", "SupportPlay", "DecisionMaking", "Contact")
+listVars <- c("PerformanceVsExpectations", "ConfidenceInAbility", "Defence", "Passing", "SupportPlay", "DecisionMaking", "Contact", "OverallPerformance")
 
 
 ## define categorical variables
@@ -504,185 +510,18 @@ print(xtable(tableIndPerformLowTime, type="latex",
                           caption = "Athlete perceptions of \n individual performance (low difficulty condition)"), file="indPerfTimeLowTraining.tex")
 @
 
-\input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/indPerfTimeLowTraining.tex}
-\input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/indPerfTimeHighTraining.tex}
-
-
-
-
-<<descriptivesGroupPerformance, echo = FALSE, eval = TRUE>>=
-##subset data for renaming
-tlcGroupPerformance <- subset(tlc, select = c(englishName, condition, sex, time, team,
-                                groupPerformance, groupConfidentTechnicalChallenges, groupAttackingLine, groupDefensiveLine,  groupOnfieldCommunication, groupSupportPlay))
-## groupPerformance is only @ time = 3, and is in terms of expectations...rescale.
-tlcGroupPerformance$groupPerformanceExp <- tlcGroupPerformance$groupPerformance
-#tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 1] <- NA
-#tlcGroupPerformance$groupPerformanceExp[tlcIndPerformance$time == 2] <- NA
-#tlcGroupPerformance$groupPerformance[tlcGroupPerformance$time == 3] <- NA
-#rescale groupPerformaneExp to (0,100)
-library(scales)
-tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3], to = c(0, 100), from = c(-50, 50))
-
-
-## rename values for factors:
-tlcGroupPerformance$sex <- ifelse(!is.na(tlcGroupPerformance$sex) &
-                                tlcGroupPerformance$sex == 0, "male", ifelse(!is.na(tlcGroupPerformance$sex) & tlcGroupPerformance$sex == 1, "female", NA))
-
-tlcGroupPerformance$time <- ifelse(!is.na(tlcGroupPerformance$time) &
-                                  tlcGroupPerformance$time == 3, "Post",
-                                ifelse(!is.na(tlcGroupPerformance$time) &     tlcGroupPerformance$time == 2, "Pre",
-                                ifelse(!is.na(tlcGroupPerformance$time) & tlcGroupPerformance$time == 1, "Baseline", NA)))
-tlcGroupPerformance$time <- factor(tlcGroupPerformance$time, levels = c("Baseline", "Pre",
-                                  "Post"), ordered = is.ordered(tlcGroupPerformance$time))
-
-##rename columns for tables:
-library(dplyr)
-tlcGroupPerformance <- rename(tlcGroupPerformance, Name = englishName, Sex = sex,
-                                Team = team, Condition = condition, Time = time, PerformanceVsExpectations = groupPerformanceExp, ConfidenceInGroupAbility = groupConfidentTechnicalChallenges, GroupAttack = groupAttackingLine, GroupDefence = groupDefensiveLine, GroupCommunication = groupOnfieldCommunication, GroupSupportPlay = groupSupportPlay)
-
-# create high and low condition dfs:
-tlcGroupPerformanceHigh <- subset(tlcGroupPerformance, Condition == "high")
-
-tlcGroupPerformanceLow <- subset(tlcGroupPerformance, Condition == "low")
-
-## create a variable list which we want in table one
-listVars <- c("ConfidenceInGroupAbility", "GroupPerformVsExpected", "GroupAttack", "GroupDefence", "GroupCommunication", "GroupSupportPlay")
-
-
-## define categorical variables
-catVars <- c("Sex", "Condition", "Time")
-
-## create table one (high difficulty condition)
-tableGroupPerfHigh_time <- CreateTableOne(vars = listVars,
-                         strata = "Time",
-                         data = tlcGroupPerformanceHigh,
-                         factorVars = catVars,
-                         test = F
-                         )
-
-## create table which is printable
-tableGroupPerformHighTime <- print(tableGroupPerfHigh_time,
-                            quote = FALSE,
-                            noSpaces = FALSE,
-                            printToggle = FALSE
-                            )
-
-## print to latex file in wd
-## this latex file will later be inputted
-print(xtable(tableGroupPerformHighTime, type="latex", caption = "Athlete perceptions of \n group performance (high difficulty condition)"), file="groupPerfTimeHighTraining.tex")
-
-
-## create table one (low difficulty condition)
-tableGroupPerfLow_time <- CreateTableOne(vars = listVars,
-                         strata = "Time",
-                         data = tlcGroupPerformanceLow,
-                         factorVars = catVars,
-                         test = F
-                         )
-
-## create table which is printable
-tableGroupPerformLowTime <- print(tableGroupPerfLow_time,
-                            quote = FALSE,
-                            noSpaces = FALSE,
-                            printToggle = FALSE
-                            )
-
-## print to latex file in wd
-## this latex file will later be inputted
-print(xtable(tableGroupPerformLowTime, type="latex", caption = "Athlete perceptions of \n group performance (low difficulty condition)"), file="groupPerfTimeLowTraining.tex")
-
-@
-
-\input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/groupPerfTimeLowTraining.tex}
-\input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/groupPerfTimeHighTraining.tex}
 
 
 
 
 
-<<descriptivesTeamPerformance, echo = FALSE, eval = TRUE>>=
-##subset data for renaming
-tlcTeamPerformance <- subset(tlc, select = c(englishName, condition, sex, time, team,
-                                teamPerformance_1, teamAbilityChina_1, teamDefensiveLine_1, teamAttackLine_1,  teamOnfieldCommunication_1, teamSupportPlay_1))
-
-## TeamPerformance variables are only @ time = 3, and is in terms of expectations...rescale.
-tlcTeamPerformance$teamPerformance <- tlcTeamPerformance$teamPerformance_1
-tlcTeamPerformance$teamPerformance[tlcTeamPerformance$time == 2] <- NA
-tlcTeamPerformance$teamPerformance[tlcTeamPerformance$time == 3] <- NA
-
-tlcTeamPerformance$teamAbilityChina <- tlcTeamPerformance$teamAbilityChina_1
-tlcTeamPerformance$teamAbilityChina[tlcTeamPerformance$time == 2] <- NA
-tlcTeamPerformance$teamAbilityChina[tlcTeamPerformance$time == 3] <- NA
-
-tlcTeamPerformance$teamDefensiveLine <- tlcTeamPerformance$teamDefensiveLine_1
-tlcTeamPerformance$teamDefensiveLine[tlcTeamPerformance$time == 2] <- NA
-tlcTeamPerformance$teamDefensiveLine[tlcTeamPerformance$time == 3] <- NA
-
-tlcTeamPerformance$teamAttackLine <- tlcTeamPerformance$teamAttackLine_1
-tlcTeamPerformance$teamAttackLine[tlcTeamPerformance$time == 2] <- NA
-tlcTeamPerformance$teamAttackLine[tlcTeamPerformance$time == 3] <- NA
-
-tlcTeamPerformance$teamOnfieldCommunication <- tlcTeamPerformance$teamOnfieldCommunication_1
-tlcTeamPerformance$teamOnfieldCommunication[tlcTeamPerformance$time == 2] <- NA
-tlcTeamPerformance$teamOnfieldCommunication[tlcTeamPerformance$time == 3] <- NA
-
-tlcTeamPerformance$teamSupportPlay <- tlcTeamPerformance$teamSupportPlay_1
-tlcTeamPerformance$teamSupportPlay[tlcTeamPerformance$time == 2] <- NA
-tlcTeamPerformance$teamSupportPlay[tlcTeamPerformance$time == 3] <- NA
-
-
-## rename values for factors:
-tlcTeamPerformance$sex <- ifelse(!is.na(tlcTeamPerformance$sex) &
-                                tlcTeamPerformance$sex == 0, "male", ifelse(!is.na(tlcTeamPerformance$sex) & tlcTeamPerformance$sex == 1, "female", NA))
-
-tlcTeamPerformance$time <- ifelse(!is.na(tlcTeamPerformance$time) &
-                                  tlcTeamPerformance$time == 3, "Post",
-                                ifelse(!is.na(tlcTeamPerformance$time) &     tlcTeamPerformance$time == 2, "Pre",
-                                ifelse(!is.na(tlcTeamPerformance$time) & tlcTeamPerformance$time == 1, "Baseline", NA)))
-tlcTeamPerformance$time <- factor(tlcTeamPerformance$time, levels = c("Baseline", "Pre",
-                                  "Post"), ordered = is.ordered(tlcTeamPerformance$time))
-
-##rename columns for tables:
-library(dplyr)
-tlcTeamPerformance <- rename(tlcTeamPerformance, Name = englishName, Sex = sex,
-                                Team = team, Condition = condition, Time = time, TeamPerformance = teamPerformance, TeamCompetenceInChina = teamAbilityChina, TeamAttack = teamAttackLine, TeamDefence = teamDefensiveLine, TeamCommunication = teamOnfieldCommunication, TeamSupportPlay = teamSupportPlay)
-
-
-
-## create a variable list which we want in table one
-listVars <- c("TeamPerformance", "TeamCompetenceInChina", "TeamAttack", "TeamDefence", "TeamCommunication", "TeamSupportPlay")
-
-
-## define categorical variables
-catVars <- c("Sex", "Condition", "Time")
-
-## create table one (high difficulty condition)
-tableTeamPerf_condition <- CreateTableOne(vars = listVars,
-                         strata = "Condition",
-                         data = tlcTeamPerformance,
-                         factorVars = catVars,
-                         test = F
-                         )
-
-## create table which is printable
-tableTeamPerformCondition <- print(tableTeamPerf_condition,
-                            quote = FALSE,
-                            noSpaces = FALSE,
-                            printToggle = FALSE
-                            )
-
-## print to latex file in wd
-## this latex file will later be inputted
-print(xtable(tableTeamPerformCondition, type="latex",
-                          label = "tab:teamPerfBaselineTraining",
-                          caption = "Athlete perceptions of team performance \n at Baseline, by condition"), file="teamPerfTimeBaselineTraining.tex")
-@
 
 
 
 
 
-GROUP CLICK:
+
+%GROUP CLICK:
 <<descriptivesGroupClick, echo = FALSE, eval = TRUE>>=
 ##subset data for renaming
 tlcGroupClick <- subset(tlc, select = c(englishName, condition, sex, time, team,
@@ -859,8 +698,6 @@ print(xtable(tableGroupBondingLowTime, type="latex", caption = "Athlete percepti
 
 
 
-
-
 <<descriptivesTeamBonding, echo = FALSE, eval = TRUE>>=
 ##subset data for renaming
 tlcTeamBonding <- subset(tlc, select = c(englishName, condition, sex, time, team,
@@ -948,6 +785,68 @@ print(xtable(tableTeamBondingLowTime, type="latex", caption = "Athlete perceptio
 @
 
 
+%%%%%The following descriptives will be relegated to the appendix%%%%%%%%%%%
+<<descriptivesIndividualPerformanceSubjective, echo = FALSE, eval = TRUE>>=
+## IND PERFORMANCE SUBJECTIVE:
+tlcCompPerfSubj <- subset(tlc, select = c(englishName, condition, sex, time, team,
+                                indAbilityTeammates_1, indAbilityChina_1, indAbilityInternational_1, indPerformanceOnConfidence_1, indPerformanceOnMood_1))
+
+## Need to remove values of confidence and mood from t 2 & 3:
+
+tlcCompPerfSubj$indPerformanceOnConfidence <- tlcCompPerfSubj$indPerformanceOnConfidence_1
+tlcCompPerfSubj$indPerformanceOnConfidence[tlcCompPerfSubj$time == 2] <- NA
+tlcCompPerfSubj$indPerformanceOnConfidence[tlcCompPerfSubj$time == 3] <- NA
+
+tlcCompPerfSubj$indPerformanceOnMood <- tlcCompPerfSubj$indPerformanceOnMood_1
+tlcCompPerfSubj$indPerformanceOnMood[tlcCompPerfSubj$time == 2] <- NA
+tlcCompPerfSubj$indPerformanceOnMood[tlcCompPerfSubj$time == 3] <- NA
+
+tlcCompPerfSubj$sex <- ifelse(!is.na(tlcCompPerfSubj$sex) &
+                                tlcCompPerfSubj$sex == 0, "male", ifelse(!is.na(tlcCompPerfSubj$sex) & tlcCompPerfSubj$sex == 1, "female", NA))
+
+tlcCompPerfSubj$time <- ifelse(!is.na(tlcCompPerfSubj$time) &
+                                  tlcCompPerfSubj$time == 3, "Post",
+                                ifelse(!is.na(tlcCompPerfSubj$time) &     tlcCompPerfSubj$time == 2, "Pre",
+                                ifelse(!is.na(tlcCompPerfSubj$time) & tlcCompPerfSubj$time == 1, "Baseline", NA)))
+tlcCompPerfSubj$time <- factor(tlcCompPerfSubj$time, levels = c("Baseline", "Pre",
+                                  "Post"), ordered = is.ordered(tlcCompPerfSubj$time))
+
+##rename columns for tables:
+#library(dplyr)
+tlcCompPerfSubj <- rename(tlcCompPerfSubj, Name = englishName, Sex = sex, Team = team,
+                                Condition = condition, Time = time, CompetenceVsTeammates = indAbilityTeammates_1, CompetenceVsChinesePros = indAbilityChina_1, CompetenceVsInternationalPros = indAbilityInternational_1, PerfomanceImpactOnConfidence =  indPerformanceOnConfidence, PerformanceImpactOnMood = indPerformanceOnMood)
+
+
+## create a variable list which we want in table one
+listVars <- c("CompetenceVsTeammates", "CompetenceVsChinesePros",
+                "CompetenceVsInternationalPros", "PerfomanceImpactOnConfidence", "PerformanceImpactOnMood")
+
+## define categorical variables
+catVars <- c("Sex", "Condition", "Time")
+
+## create table one (high difficulty condition)
+tableTlcCompPerfSubj <- CreateTableOne(vars = listVars,
+                         strata = "Condition",
+                         data = tlcCompPerfSubj,
+                         factorVars = catVars,
+                         test = F
+                         )
+
+## create table which is printable
+tableTlcCompPerfSubj.condition <- print(tableTlcCompPerfSubj,
+                            quote = FALSE,
+                            noSpaces = FALSE,
+                            printToggle = FALSE
+                            )
+
+## print to latex file in wd
+## this latex file will later be inputted
+print(xtable(tableTlcCompPerfSubj.condition, type="latex",
+                          label = "tab:indPerfTimeHighTraining",
+                          caption = "Athlete subjective perceptions of \n individual technical competence by condition"),
+                          file="compPerfSubjTraining.tex")
+@
+
 
 
 <<descriptivesTeamDiscipline, echo = FALSE, eval = TRUE>>=
@@ -1026,6 +925,10 @@ tableTeamDisciplineLowTime <- print(tableTeamDisciplineLow_time,
 ## this latex file will later be inputted
 print(xtable(tableTeamDisciplineLowTime, type="latex", caption = "Athlete perceptions of \n team discipine (low difficulty condition)"), file="teamDisciplineTimeLowTraining.tex")
 @
+
+
+
+
 
 
 
@@ -1204,6 +1107,10 @@ print(xtable(tableTlcPersonality.condition, type="latex", caption = "Athlete per
 
 
 
+
+
+
+
 \subsection{Data Reduction}
 Exploratory factor analysis was used to reduce multicolinearity between variables while retaining as much variance as possible in the observed data \citep{Yong2013}.
 %(EFA, appendix ~\ref{appendix:EFA})
@@ -1297,9 +1204,9 @@ print(xtable(corstarsl(tlcGroupPerformance), type="latex",
 @
 8
 Items concerning components of group performance in the invasion drill (defence, attack, support play, and on field communication) were subjected to EFA.
-Correlations between group component performance items was very high (all r's > \Sexpr{round(min(groupPerformanceMatrix), digits = 2)}), which suggested that one factor was appropriate (see Appendix Table ~\ref{tab:jointActionSuccessCorrTable}).
-The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOgroupPerformanceMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettGroupPerformance$df}, N = \Sexpr{groupPerformanceSampleSize}) = \Sexpr{bartlettGroupPerformance$chisq}, p = \Sexpr{round(bartlettGroupPerformance$p.value, digits = 2)}. One factor, labelled ``Joint Action Success'' was imposed on the data, which explained \Sexpr{prVar.GroupPerformanceFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupPerformanceFA}).
-Guttmans \lambda = \Sexpr{round(reliabilityGroupPerformance$total[,3], digits = 2)} and Cronbachs \alpha = \Sexpr{round(reliabilityGroupPerformance$total[,2], digits = 2)} indicated that the data reduction was appropriate and reliable.
+Correlations between group component performance items was very high (all r's > \Sexpr{min(groupPerformanceMatrix)}), which suggested that one factor was appropriate (see Appendix Table ~\ref{tab:jointActionSuccessCorrTable}).
+The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOgroupPerformanceMatrix$MSA}, \chi^2(\Sexpr{bartlettGroupPerformance$df}, N = \Sexpr{groupPerformanceSampleSize}) = \Sexpr{bartlettGroupPerformance$chisq}, p = \Sexpr{bartlettGroupPerformance$p.value}. One factor, labelled ``Joint Action Success'' was imposed on the data, which explained \Sexpr{prVar.GroupPerformanceFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupPerformanceFA}).
+Guttmans \lambda = \Sexpr{reliabilityGroupPerformance$total[,3]} and Cronbachs \alpha = \Sexpr{(reliabilityGroupPerformance$total[,2]} indicated that the data reduction was appropriate and reliable.
 
 
 \myparagraph{Perceptions of Individual Component Performance}
@@ -1346,8 +1253,8 @@ cronAlphaIndPerformance <- reliabilityIndPerformance$total[,2]
 guttLambdaIndPerformance <- reliabilityIndPerformance$total[,3]
 @
 
-Items concerning components of individual components of performance in the invasion drill (1-on-1 defence, passing technique, support play in attack, decision making in attack, and effectiveness in contact) were subjected to EFA.  The variable ``effectiveness in contact'' was removed from analysis as the invasion drill was predominantly a non-contact training drill, and so this item was not relevant to athletes' performance.  Correlations between individual component performance items was very high (all r's > \Sexpr{round(min(indPerformanceMatrix), digits = 2)}), which suggested that one factor was appropriate (see Table ~\ref{tab:indComponentPerfCorrTable}).
-The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOindPerformanceMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettIndPerformance$df}, N = \Sexpr{indPerformanceSampleSize}) = \Sexpr{bartlettIndPerformance$chisq}, p = \Sexpr{round(bartlettIndPerformance$p.value, digits = 2)}. One factor, labelled ``Individual Performance Components'' was imposed on the data, which explained \Sexpr{prVar.indPerformanceFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.indPerformanceFA}).  Guttmans \lambda = \Sexpr{round(reliabilityIndPerformance$total[,3], digits = 2)}  and  Cronbachs \alpha = \Sexpr{round(reliabilityIndPerformance$total[,2], digits = 2)}  indicated that the data reduction was appropriate and reliable.
+Items concerning components of individual components of performance in the invasion drill (1-on-1 defence, passing technique, support play in attack, decision making in attack, and effectiveness in contact) were subjected to EFA.  The variable ``effectiveness in contact'' was removed from analysis as the invasion drill was predominantly a non-contact training drill, and so this item was not relevant to athletes' performance.  Correlations between individual component performance items was very high (all r's > \Sexpr{min(indPerformanceMatrix)}), which suggested that one factor was appropriate (see Table ~\ref{tab:indComponentPerfCorrTable}).
+The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{(KMOindPerformanceMatrix$MSA}, \chi^2(\Sexpr{bartlettIndPerformance$df}, N = \Sexpr{indPerformanceSampleSize}) = \Sexpr{bartlettIndPerformance$chisq}, p = \Sexpr{bartlettIndPerformance$p.value}. One factor, labelled ``Individual Performance Components'' was imposed on the data, which explained \Sexpr{prVar.indPerformanceFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.indPerformanceFA}).  Guttmans \lambda = \Sexpr{reliabilityIndPerformance$total[,3]}  and  Cronbachs \alpha = \Sexpr{reliabilityIndPerformance$total[,2]}  indicated that the data reduction was appropriate and reliable.
 
 <<indComponentsPerformanceCor, echo = TRUE>>=
 # be sure to import the variable subset data frame, not the correlation matrix
@@ -1398,7 +1305,7 @@ tlcGroupClick.fa <- factanal(~ groupAbilitiesExtended + groupClickPictorial +
                                       groupUnspokenUnderstanding + groupGeneralAtmosphere, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
 
 #-----------------------------SS Loadings----------------------#
-SSLoadings.groupClickFA <- round(sum(tlcGroupClick.fa$loadings[,1]^2), digits = 2)
+SSLoadings.groupClickFA <- round(sum(tlcGroupClick.fa$loadings[,1]^2)
 #------------------Proportion of Variance----------------------#
 prVar.groupClickFA <-  round((colSums(tlcGroupClick.fa$loadings*tlcGroupClick.fa$loadings)/dim(tlcGroupClick.fa$loadings)[1]*100), digits = 1)
 
@@ -1478,8 +1385,8 @@ guttLambdaGroupClickPost <- reliabilityGroupClickPost$total[,3]
 @
 
 
-Items relating to training group team click (unspoken understanding, general atmosphere, click pictorial, and ability extended by the group) were subjected to EFA.    Correlations between the remaining were very high (all r's > \Sexpr{round(min(groupClickMatrix), digits = 2)}), which suggested that one factor was appropriate (see Table ee Table ~\ref{tab:groupClickCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOgroupClickMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettGroupClick$df}, N = \Sexpr{groupClickSampleSize}) = \Sexpr{bartlettGroupClick$chisq}, p = \Sexpr{round(bartlettGroupClick$p.value, digits = 2)}).
-One factor, labelled ``Group Click'' was imposed on the data, which explained \Sexpr{prVar.groupClickFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupClickFA}). Guttmans \lambda = \Sexpr{round(reliabilityGroupClick$total[,3], digits = 2)} and Cronbachs \alpha = \Sexpr{round(reliabilityGroupClick$total[,2], digits = 2)} indicated that the data reduction was appropriate and reliable.
+Items relating to training group team click (unspoken understanding, general atmosphere, click pictorial, and ability extended by the group) were subjected to EFA.    Correlations between the remaining were very high (all r's > \Sexpr{min(groupClickMatrix)}), which suggested that one factor was appropriate (see Table ee Table ~\ref{tab:groupClickCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOgroupClickMatrix$MSA}, \chi^2(\Sexpr{bartlettGroupClick$df}, N = \Sexpr{groupClickSampleSize}) = \Sexpr{bartlettGroupClick$chisq}, p = \Sexpr{bartlettGroupClick$p.value}).
+One factor, labelled ``Group Click'' was imposed on the data, which explained \Sexpr{prVar.groupClickFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupClickFA}). Guttmans \lambda = \Sexpr{reliabilityGroupClick$total[,3]} and Cronbachs \alpha = \Sexpr{reliabilityGroupClick$total[,2]} indicated that the data reduction was appropriate and reliable.
 
 
 In addition to the four variables common to both pre- and post-experiment surveys, athletes were also asked in the post-experiment survey about their own reliability and the reliability of other athletes to perform their role on the field specifically. These two variables, ``Reliability For Others'' and ``Reliability Of Others'' were included in an EFA involving only the post-experiment measures.
@@ -1556,8 +1463,8 @@ print(xtable(corstarsl(tlcGroupBonding), type="latex",
 # label = tab:groupBondingCorrTable
 @
 
-Items concerning bonding to the training group (emotional support, shared goal, fusion pictorial) were subjected to EFA.  Correlations between items were high (all r's > \Sexpr{round(min(groupBondingMatrix), digits = 2)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:groupBondingCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOgroupBondingMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettGroupBonding$df}, N = \Sexpr{groupBondingSampleSize}) = \Sexpr{bartlettGroupBonding$chisq}, p = \Sexpr{round(bartlettGroupBonding$p.value, digits = 2)}).
-One factor, labelled ``Group Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.groupBondingFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupBondingFA}). Guttmans \lambda = \Sexpr{round(reliabilityGroupBonding$total[,3], digits = 2)} and Cronbachs \alpha = \Sexpr{round(reliabilityGroupBonding$total[,2], digits = 2)} indicated that the data reduction was appropriate and reliable.
+Items concerning bonding to the training group (emotional support, shared goal, fusion pictorial) were subjected to EFA.  Correlations between items were high (all r's > \Sexpr{min(groupBondingMatrix)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:groupBondingCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOgroupBondingMatrix$MSA}, \chi^2(\Sexpr{bartlettGroupBonding$df}, N = \Sexpr{groupBondingSampleSize}) = \Sexpr{bartlettGroupBonding$chisq}, p = \Sexpr{bartlettGroupBonding$p.value}).
+One factor, labelled ``Group Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.groupBondingFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupBondingFA}). Guttmans \lambda = \Sexpr{reliabilityGroupBonding$total[,3]} and Cronbachs \alpha = \Sexpr{reliabilityGroupBonding$total[,2]} indicated that the data reduction was appropriate and reliable.
 
 
 
@@ -1619,9 +1526,9 @@ print(xtable(corstarsl(tlcTeamBonding), type="latex",
 
 
 
-Items concerning bonding to the team (emotional support, shared goal, fusion pictorial, fusion verbal, and group identification) were subjected to EFA.  Correlations between items were all reasonably high (all r's > \Sexpr{round(min(teamBondingMatrix), digits = 2)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamBondingCorrTable}).
-The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOteamBondingMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettTeamBonding$df}, N = \Sexpr{teamBondingSampleSize}) = \Sexpr{bartlettTeamBonding$chisq}, p = \Sexpr{round(bartlettTeamBonding$p.value, digits = 2)}).
-One factor, labelled ``Team Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.teamBondingFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamBondingFA}). Guttmans \lambda = \Sexpr{round(reliabilityTeamBonding$total[,3], digits = 2)} and Cronbachs \alpha = \Sexpr{round(reliabilityTeamBonding$total[,2], digits = 2)} indicated that the data reduction was appropriate and reliable.
+Items concerning bonding to the team (emotional support, shared goal, fusion pictorial, fusion verbal, and group identification) were subjected to EFA.  Correlations between items were all reasonably high (all r's > \Sexpr{min(teamBondingMatrix)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamBondingCorrTable}).
+The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOteamBondingMatrix$MSA}, \chi^2(\Sexpr{bartlettTeamBonding$df}, N = \Sexpr{teamBondingSampleSize}) = \Sexpr{bartlettTeamBonding$chisq}, p = \Sexpr{bartlettTeamBonding$p.value}).
+One factor, labelled ``Team Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.teamBondingFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamBondingFA}). Guttmans \lambda = \Sexpr{reliabilityTeamBonding$total[,3]} and Cronbachs \alpha = \Sexpr{reliabilityTeamBonding$total[,2]} indicated that the data reduction was appropriate and reliable.
 
 
 
@@ -1677,8 +1584,8 @@ print(xtable(corstarsl(tlcArousal), type="latex",
 @
 
 Items associated with team discipline (punctuality, observing bed times and curfews, attendance at meals, general team conduct), measured at baseline and after the experiment, were subjected to EFA.
-Correlations between items were all reasonably high (all r's > \Sexpr{round(min(arousalMatrix), digits = 2)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:arousalCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOarousalMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettArousal$df}, N = \Sexpr{arousalSampleSize}) = \Sexpr{bartlettArousal$chisq}, p = \Sexpr{round(bartlettArousal$p.value, digits = 2)}).
-One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.ArousalFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.ArousalFA}).  Guttmans \lambda = \Sexpr{round(reliabilityArousal$total[,3], digits = 2)}  and  Cronbachs \alpha = \Sexpr{round(reliabilityArousal$total[,2], digits = 2)}  indicated that the data reduction was appropriate and reliable.
+Correlations between items were all reasonably high (all r's > \Sexpr{min(arousalMatrix)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:arousalCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOarousalMatrix$MSA}, \chi^2(\Sexpr{bartlettArousal$df}, N = \Sexpr{arousalSampleSize}) = \Sexpr{bartlettArousal$chisq}, p = \Sexpr{bartlettArousal$p.value}).
+One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.ArousalFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.ArousalFA}).  Guttmans \lambda = \Sexpr{reliabilityArousal$total[,3]}  and  Cronbachs \alpha = \Sexpr{reliabilityArousal$total[,2]}  indicated that the data reduction was appropriate and reliable.
 
 
 
@@ -1749,11 +1656,11 @@ print(xtable(corstarsl(tlcTechnicalCompetence), type="latex",
 
 
 
-All eight items relevant to technical competence were analysed in a correlation matrix to assess relatedness (see Table ~\ref{tab:technicalCompetenceCorrTable}). All measures of objective competence were highly correlated all r's >= \Sexpr{round(min(objectiveCompetenceMatrix), digits = 2)}),  and among measures of subjective competence (all items except for the team competence measure correlated at $> \Sexpr{round(min(subjectiveCompetenceMatrix), digits = 2)})$) suggested that the data could be explained by two underlying factors. Team Ability Chinese Provinces was dropped from analysis due to low correlation with other competence variables, possibly because the item did not ask about an individual athlete’s competence (it referred instead to an athlete’s opinion of the competence of the team of which they were a member).
+All eight items relevant to technical competence were analysed in a correlation matrix to assess relatedness (see Table ~\ref{tab:technicalCompetenceCorrTable}). All measures of objective competence were highly correlated all r's >= \Sexpr{min(objectiveCompetenceMatrix)}),  and among measures of subjective competence (all items except for the team competence measure correlated at $> \Sexpr{min(subjectiveCompetenceMatrix)})$) suggested that the data could be explained by two underlying factors. Team Ability Chinese Provinces was dropped from analysis due to low correlation with other competence variables, possibly because the item did not ask about an individual athlete’s competence (it referred instead to an athlete’s opinion of the competence of the team of which they were a member).
 
 An EFA of technical competence variables revealed that items of interest loaded on two factors. Measures of objective competence (Years Team, Training Age, Team Status, Athlete Status) loaded on the first factor, which was labelled ``Objective Competence'' because the measures were all objective markers of an athlete's competence.
 Objective Competence explained \Sexpr{prVar.objectiveCompetenceFA}\% of the total variance (\Sexpr{SSLoadings.objectiveCompetenceFA}). The remaining measures of subjective competence (Ability Teammates, Ability Chinese Pros, Ability International Pros) loaded on the remaining factor.  The second factor was labelled ``Subjective Competence'', due to the fact that all measures were the product of athlete self-report.  Subjective competence explained \Sexpr{prVar.objectiveCompetenceFA}\% of the variance (\Sexpr{SSLoadings.subjectiveCompetenceFA}).
-$Guttmans \lambda = \Sexpr{round(reliabilityTechnicalCompetence$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityTechnicalCompetence$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
+$Guttmans \lambda = \Sexpr{reliabilityTechnicalCompetence$total[,3]}$ and $Cronbachs \alpha = \Sexpr{reliabilityTechnicalCompetence$total[,2]}$ indicated that the data reduction was appropriate and reliable.
 
 
 
@@ -1815,9 +1722,9 @@ print(xtable(corstarsl(tlcTeamDiscipline), type="latex",
 # label = tab:teamDisciplineCorrTable
 @
 
-Items concerning team discipline (attendance at meals, team curfew, general team conduct, punctuality to team engagements), measured at baseline and after the experiment, were subjected to EFA.  Correlations between items were all reasonably high (all r's > \Sexpr{round(min(teamDisciplineMatrix), digits = 2)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamDisciplineCorrTable}).
-The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOteamDisciplineMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettTeamDiscipline$df}, N = \Sexpr{teamDisciplineSampleSize}) = \Sexpr{bartlettTeamDiscipline$chisq}, p = \Sexpr{round(bartlettTeamDiscipline$p.value, digits = 2)}).
-One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.teamDisciplineFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamDisciplineFA}).  Guttmans \lambda = \Sexpr{round(reliabilityTeamDiscipline$total[,3], digits = 2)}  and  Cronbachs \alpha = \Sexpr{round(reliabilityTeamDiscipline$total[,2], digits = 2)}  indicated that the data reduction was appropriate and reliable.
+Items concerning team discipline (attendance at meals, team curfew, general team conduct, punctuality to team engagements), measured at baseline and after the experiment, were subjected to EFA.  Correlations between items were all reasonably high (all r's > \Sexpr{min(teamDisciplineMatrix)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamDisciplineCorrTable}).
+The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOteamDisciplineMatrix$MSA}, \chi^2(\Sexpr{bartlettTeamDiscipline$df}, N = \Sexpr{teamDisciplineSampleSize}) = \Sexpr{bartlettTeamDiscipline$chisq}, p = \Sexpr{bartlettTeamDiscipline$p.value}).
+One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.teamDisciplineFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamDisciplineFA}).  Guttmans \lambda = \Sexpr{reliabilityTeamDiscipline$total[,3]}  and  Cronbachs \alpha = \Sexpr{reliabilityTeamDiscipline$total[,2]}  indicated that the data reduction was appropriate and reliable.
 
 
 % \myparagraph{Fatigue} - fatigue is measured pre and post experiment, but mental and prpe are measured only post-experiment, so no need for EFA
