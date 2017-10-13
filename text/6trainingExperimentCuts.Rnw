@@ -1,0 +1,50 @@
+\myparagraph{Team Click}
+
+<<dataReductionTeamClick, eval=TRUE, echo=FALSE>>=
+#TeamClickVariablesSubset: exclude effectivenessInContact (not relvant)
+tlcTeamClick <- subset(tlc, select = c(reliabilityOfOthers_1, reliabilityForOthers_1,
+                                            abilityExtended, teamClickPictorial_1, unspokenUnderstanding, generalAtmosphere))
+tlcTeamClick.pca <- princomp(na.omit(tlcTeamClick))
+summary(tlcTeamClick.pca)
+plot(tlcTeamClick.pca)
+
+tlcTeamClick.fa <- factanal(~ reliabilityOfOthers_1 + reliabilityForOthers_1 +
+                                            abilityExtended + teamClickPictorial_1 + unspokenUnderstanding + generalAtmosphere, 2, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+
+#-----------------------------SS Loadings----------------------#
+SSLoadings.teamClickFA <- round(sum(tlcTeamClick.fa$loadings[,1]^2), digits = 2)
+#------------------Proportion of Variance----------------------#
+prVar.teamClickFA <-  round((colSums(tlcTeamClick.fa$loadings*tlcTeamClick.fa$loadings)/dim(tlcTeamClick.fa$loadings)[1]*100), digits = 1)
+
+head(tlcTeamClick.fa$scores)
+tlc <- cbind(tlc, tlcTeamClick.fa$scores)
+names(tlc)[names(tlc) == "Factor1"] <- "teamClickFactor"
+teamClickMatrix <- cor(tlcTeamClick, use = "complete")
+
+#---------suitability measures (KMO & Bartlett)----------------#
+library(psych)
+KMOteamClickMatrix <- KMO(teamClickMatrix)
+# KMOTeamClickMatrix$MSA is the colum in which the overal KMO is stored
+bartlettTeamClick <- cortest.bartlett(teamClickMatrix, n = 116) # what is the sample size here?
+# ls(BartlettTeamClick)
+# BartlettTeamClick$chisq, BartlettTeamClick$df, BartlettTeamClick$p.value
+# sample size? length(unique(tlc$englishName)*2)
+teamClickSampleSize <- length(unique(tlc$englishName))*2 # values for each participant measured attwo time points
+
+#----------reliability measures--------------------------------#
+# Cronbach's Alpha and Guttman's Lambda using psych::alpha()
+#Cronbach's Alpha is located reliabilityObject$total[,2]
+#Guttman's Lambda is located reliabilityObject$total[,3]
+reliabilityTeamClick <- psych::alpha(teamClickMatrix)
+cronAlphaTeamClick <- reliabilityTeamClick$total[,2]
+guttLambdaTeamClick <- reliabilityTeamClick$total[,3]
+@
+
+Items concerning team click (emotional support, shared goal, fusion pictorial, fusion verbal, and group identification) were subjected to EFA.  Correlations between items were all reasonably high (all $r's > \Sexpr{round(min(groupClickMatrix), digits = 2)}>$), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamClickCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{round(KMOteamClickMatrix$MSA, digits = 2)}, \chi^2(\Sexpr{bartlettTeamClick$df}, N = \Sexpr{teamClickSampleSize}) = \Sexpr{bartletTeamClick$chisq}, p = \Sexpr{round(bartlettTeamClick$p.value, digits = 2)). One factor, labelled ``Team Click'' was imposed on the data, which explained \Sexpr{prVar.teamClickFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamClickFA}). $Guttmans \lambda = \Sexpr{round(reliabilityteamClick$total[,3], digits = 2)}$ and $Cronbachs \alpha = \Sexpr{round(reliabilityteamClick$total[,2], digits = 2)}$ indicated that the data reduction was appropriate and reliable.
+
+<<teamClickCor, echo = TRUE>>=
+# be sure to import the variable subset data frame, not the correlation matrix
+corstarsl(tlcTeamClick)
+xtable(corstarsl(tlcTeamClick))
+# label = tab:groupClickCorrTable
+@

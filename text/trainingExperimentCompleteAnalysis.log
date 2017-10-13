@@ -1,0 +1,2450 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.30)  9 OCT 2017 11:38
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**trainingExperimentCompleteAnalysis.tex
+(./trainingExperimentCompleteAnalysis.tex
+LaTeX2e <2017-04-15>
+Babel <3.10> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/04/14 v1.1b Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 147.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip43
+\fb@frw=\dimen105
+\fb@frh=\dimen106
+\FrameRule=\dimen107
+\FrameSep=\dimen108
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/alltt.sty
+Package: alltt 1997/06/16 v2.0g defines alltt environment
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks15
+\inpenc@posthook=\toks16
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2017/01/28 v1.1t UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+0232 (decimal 562)
+   defining Unicode char U+0233 (decimal 563)
+   defining Unicode char U+1E02 (decimal 7682)
+   defining Unicode char U+1E03 (decimal 7683)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2010 (decimal 8208)
+   defining Unicode char U+2011 (decimal 8209)
+   defining Unicode char U+2012 (decimal 8210)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2015 (decimal 8213)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+   defining Unicode char U+1E20 (decimal 7712)
+   defining Unicode char U+1E21 (decimal 7713)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2017/01/28 v1.1t UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count88
+\Gm@cntv=\count89
+\c@Gm@tempcnt=\count90
+\Gm@bindingoffset=\dimen109
+\Gm@wd@mp=\dimen110
+\Gm@odd@mp=\dimen111
+\Gm@even@mp=\dimen112
+\Gm@layoutwidth=\dimen113
+\Gm@layoutheight=\dimen114
+\Gm@layouthoffset=\dimen115
+\Gm@layoutvoffset=\dimen116
+\Gm@dimlist=\toks17
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2017/05/19 3.10 The Babel package
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2017/01/24 v3.3q English support from the babel system
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2017/05/19 3.10 Babel common definitions
+\babel@savecnt=\count91
+\U@D=\dimen117
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2017/03/11 v5.2b context-sensitive quotations (JAW)
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2017/01/02 v2.4 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count92
+)
+\csq@reset=\count93
+\csq@gtype=\count94
+\csq@glevel=\count95
+\csq@qlevel=\count96
+\csq@maxlvl=\count97
+\csq@tshold=\count98
+\csq@ltx@everypar=\toks18
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2017/03/11 v5.2b csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen118
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen119
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count99
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count100
+\leftroot@=\count101
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count102
+\DOTSCASE@=\count103
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen120
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count104
+\c@MaxMatrixCols=\count105
+\dotsspace@=\muskip10
+\c@parentequation=\count106
+\dspbrk@lvl=\count107
+\tag@help=\toks20
+\row@=\count108
+\column@=\count109
+\maxfields@=\count110
+\andhelp@=\toks21
+\eqnshift@=\dimen121
+\alignsep@=\dimen122
+\tagshift@=\dimen123
+\tagwidth@=\dimen124
+\totwidth@=\dimen125
+\lineht@=\dimen126
+\@envbody=\toks22
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2015/03/04 v2.20.2
+\thm@style=\toks24
+\thm@bodyfont=\toks25
+\thm@headfont=\toks26
+\thm@notefont=\toks27
+\thm@headpunct=\toks28
+\thm@preskip=\skip47
+\thm@postskip=\skip48
+\thm@headsep=\skip49
+\dth@everypar=\toks29
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2016/12/05 v3.7 programmable bibliographies (PK/JW/AB)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count111
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2017/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2017/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2017/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write3
+\integerpart=\count112
+\decimalpart=\count113
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\c@tabx@nest=\count114
+\c@listtotal=\count115
+\c@listcount=\count116
+\c@liststart=\count117
+\c@liststop=\count118
+\c@citecount=\count119
+\c@citetotal=\count120
+\c@multicitecount=\count121
+\c@multicitetotal=\count122
+\c@instcount=\count123
+\c@maxnames=\count124
+\c@minnames=\count125
+\c@maxitems=\count126
+\c@minitems=\count127
+\c@citecounter=\count128
+\c@savedcitecounter=\count129
+\c@uniquelist=\count130
+\c@uniquename=\count131
+\c@refsection=\count132
+\c@refsegment=\count133
+\c@maxextratitle=\count134
+\c@maxextratitleyear=\count135
+\c@maxextrayear=\count136
+\c@maxextraalpha=\count137
+\c@abbrvpenalty=\count138
+\c@highnamepenalty=\count139
+\c@lownamepenalty=\count140
+\c@maxparens=\count141
+\c@parenlevel=\count142
+\blx@tempcnta=\count143
+\blx@tempcntb=\count144
+\blx@tempcntc=\count145
+\blx@maxsection=\count146
+\blx@maxsegment@0=\count147
+\blx@notetype=\count148
+\blx@parenlevel@text=\count149
+\blx@parenlevel@foot=\count150
+\blx@sectionciteorder@0=\count151
+\labelnumberwidth=\skip50
+\labelalphawidth=\skip51
+\biblabelsep=\skip52
+\bibitemsep=\skip53
+\bibnamesep=\skip54
+\bibinitsep=\skip55
+\bibparsep=\skip56
+\bibhang=\skip57
+\blx@bcfin=\read1
+\blx@bcfout=\write4
+\c@mincomprange=\count152
+\c@maxcomprange=\count153
+\c@mincompwidth=\count154
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex/blx-dm.def)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'apa.dbx' found.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex-apa/apa.dbx
+File: apa.dbx 2017/01/06 v7.4 APA biblatex style data model
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count155
+\c@savedafterword=\count156
+\c@annotator=\count157
+\c@savedannotator=\count158
+\c@author=\count159
+\c@savedauthor=\count160
+\c@bookauthor=\count161
+\c@savedbookauthor=\count162
+\c@commentator=\count163
+\c@savedcommentator=\count164
+\c@editor=\count165
+\c@savededitor=\count166
+\c@editora=\count167
+\c@savededitora=\count168
+\c@editorb=\count169
+\c@savededitorb=\count170
+\c@editorc=\count171
+\c@savededitorc=\count172
+\c@foreword=\count173
+\c@savedforeword=\count174
+\c@holder=\count175
+\c@savedholder=\count176
+\c@introduction=\count177
+\c@savedintroduction=\count178
+\c@namea=\count179
+\c@savednamea=\count180
+\c@nameb=\count181
+\c@savednameb=\count182
+\c@namec=\count183
+\c@savednamec=\count184
+\c@translator=\count185
+\c@savedtranslator=\count186
+\c@shortauthor=\count187
+\c@savedshortauthor=\count188
+\c@shorteditor=\count189
+\c@savedshorteditor=\count190
+\c@with=\count191
+\c@savedwith=\count192
+\c@writer=\count193
+\c@savedwriter=\count194
+\c@producer=\count195
+\c@savedproducer=\count196
+\c@execproducer=\count197
+\c@savedexecproducer=\count198
+\c@director=\count199
+\c@saveddirector=\count266
+\c@labelname=\count267
+\c@savedlabelname=\count268
+\c@institution=\count269
+\c@savedinstitution=\count270
+\c@lista=\count271
+\c@savedlista=\count272
+\c@listb=\count273
+\c@savedlistb=\count274
+\c@listc=\count275
+\c@savedlistc=\count276
+\c@listd=\count277
+\c@savedlistd=\count278
+\c@liste=\count279
+\c@savedliste=\count280
+\c@listf=\count281
+\c@savedlistf=\count282
+\c@location=\count283
+\c@savedlocation=\count284
+\c@organization=\count285
+\c@savedorganization=\count286
+\c@origlocation=\count287
+\c@savedoriglocation=\count288
+\c@origpublisher=\count289
+\c@savedorigpublisher=\count290
+\c@publisher=\count291
+\c@savedpublisher=\count292
+\c@language=\count293
+\c@savedlanguage=\count294
+\c@pageref=\count295
+\c@savedpageref=\count296
+\shorthandwidth=\skip58
+\shortjournalwidth=\skip59
+\shortserieswidth=\skip60
+\shorttitlewidth=\skip61
+\shortauthorwidth=\skip62
+\shorteditorwidth=\skip63
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2016/12/05 v3.7 biblatex compatibility (PK/JW/AB)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2016/12/05 v3.7 biblatex compatibility (PK/JW/AB)
+\c@textcitecount=\count297
+\c@textcitetotal=\count298
+\c@textcitemaxnames=\count299
+\c@biburlnumpenalty=\count300
+\c@biburlucpenalty=\count301
+\c@biburllcpenalty=\count302
+\c@smartand=\count303
+)
+Package biblatex Info: Trying to load natbib compatibility...
+Package biblatex Info: ... file 'blx-natbib.def' found.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex/blx-natbib.def
+File: blx-natbib.def 2016/12/05 v3.7 biblatex compatibility (PK/JW/AB)
+)
+Package biblatex Info: Trying to load bibliography style 'apa'...
+Package biblatex Info: ... file 'apa.bbx' found.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex-apa/apa.bbx
+File: apa.bbx 2017/01/06 v7.4 APA biblatex references style
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2016/12/05 v3.7 biblatex bibliography style (PK/JW/AB)
+\c@bbx:relatedcount=\count304
+\c@bbx:relatedtotal=\count305
+))
+Package biblatex Info: Trying to load citation style 'apa'...
+Package biblatex Info: ... file 'apa.cbx' found.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex-apa/apa.cbx
+File: apa.cbx 2017/01/06 v7.4 APA biblatex citation style
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\fullcite'.
+Package biblatex Info: Redefining '\citeyear'.
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\citeauthor'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+))
+(/usr/local/texlive/2017/texmf-dist/tex/latex/upquote/upquote.sty
+Package: upquote 2012/04/19 v1.3 upright-quote and grave-accent glyphs in verba
+tim
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'english'.
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
+)
+(./trainingExperimentCompleteAnalysis.aux
+
+LaTeX Warning: Label `tab:indPerfTimeHighTraining' multiply defined.
+
+)
+\openout1 = `trainingExperimentCompleteAnalysis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 104.
+LaTeX Font Info:    ... okay on input line 104.
+ (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count306
+\scratchdimen=\dimen127
+\scratchbox=\box28
+\nofMPsegments=\count307
+\nofMParguments=\count308
+\everyMPshowfont=\toks30
+\MPscratchCnt=\count309
+\MPscratchDim=\dimen128
+\MPnumerator=\count310
+\makeMPintoPDFobject=\count311
+\everyMPtoPDFconversion=\toks31
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(51.21504pt, 495.07779pt, 51.21504pt)
+* v-part:(T,H,B)=(51.21504pt, 742.61676pt, 51.21504pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=495.07779pt
+* \textheight=742.61676pt
+* \oddsidemargin=-21.05495pt
+* \evensidemargin=-21.05495pt
+* \topmargin=-58.05495pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=65.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout4 = `trainingExperimentCompleteAnalysis.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file 'trainingExperimentCompleteAnalysis.bbl' found.
+
+(./trainingExperimentCompleteAnalysis.bbl)
+Package biblatex Info: Reference section=0 on input line 104.
+Package biblatex Info: Reference segment=0 on input line 104.
+Package color Info: Redefining color shadecolor on input line 107.
+
+
+LaTeX Warning: Citation 'Passos2011' on page 1 undefined on input line 127.
+
+
+LaTeX Warning: Citation 'Schmidt2011' on page 1 undefined on input line 129.
+
+
+LaTeX Warning: Citation 'Richardson2012' on page 1 undefined on input line 129.
+
+
+
+LaTeX Warning: Citation 'Passos2012' on page 1 undefined on input line 129.
+
+[1
+
+{/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (61.78424pt too wide) in paragraph at lines 166--167
+[]\OT1/cmr/m/n/10 This study was ap-proved by the Uni-ver-sity of Ox-ford's Cen
+-tral Uni-ver-sity Re-search Ethics Com-mit-tee (SAME/CUREC1A/15-
+ []
+
+
+</Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/invasionDrill.png, id=11, 284.262pt x 243.7908pt>
+File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
+ointActionSocialBonding/images/invasionDrill.png Graphic file (type png)
+
+<use /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jo
+intActionSocialBonding/images/invasionDrill.png>
+Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
+on/finalDocuments/jointActionSocialBonding/images/invasionDrill.png used on inp
+ut line 177.
+(pdftex.def)             Requested size: 495.07779pt x 424.60548pt.
+
+
+LaTeX Warning: Citation 'Passos2011' on page 2 undefined on input line 183.
+
+
+LaTeX Warning: Citation 'Biscombe1998' on page 2 undefined on input line 183.
+
+[2] [3 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments
+/jointActionSocialBonding/images/invasionDrill.png>] [4]
+Package color Info: Redefining color shadecolor on input line 254.
+ [5]
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/athleteDescriptivesTraining.tex
+LaTeX Font Info:    Try loading font information for U+msa on input line 5.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 5.
+
+(/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/athleteDescriptivesConditionTraining.tex)
+
+LaTeX Warning: Reference `tab:compPerfSubjTraining' on page 6 undefined on inpu
+t line 277.
+
+
+LaTeX Warning: Reference `tab:indPerfTimeLowTraining' on page 6 undefined on in
+put line 277.
+
+
+LaTeX Warning: Reference `tab:groupPerfTimeLowTraining' on page 6 undefined on 
+input line 277.
+
+
+LaTeX Warning: Reference `tab:groupPerfTimeHighTraining' on page 6 undefined on
+ input line 277.
+
+
+LaTeX Warning: Reference `tab:teamPerfTimeBaselineTraining' on page 6 undefined
+ on input line 277.
+
+
+LaTeX Warning: Reference `tab:groupClickTimeHighTraining' on page 6 undefined o
+n input line 278.
+
+
+LaTeX Warning: Reference `tab:teamBondingTimeHighTraining' on page 6 undefined 
+on input line 278.
+
+Package color Info: Redefining color shadecolor on input line 314.
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 335--336
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 337--338
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 339--340
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 357--358
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 359--360
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 361--361
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+[6]
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/indPerfTimeLowTraining.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/indPerfTimeHighTraining.tex)
+Package color Info: Redefining color shadecolor on input line 371.
+
+Overfull \hbox (87.66713pt too wide) in paragraph at lines 374--375
+[]\OT1/cmtt/m/n/10 ## Warning in ModuleReturnVarsExist(vars, data): The data fr
+ame does not have: GroupPerformanceVsExpectations
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 400--401
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 402--403
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 404--405
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 406--407
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 408--409
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (87.66713pt too wide) in paragraph at lines 410--411
+[]\OT1/cmtt/m/n/10 ## Warning in ModuleReturnVarsExist(vars, data): The data fr
+ame does not have: GroupPerformanceVsExpectations
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 436--437
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 438--439
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 440--441
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 442--443
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 444--444
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+[7] [8]
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/groupPerfTimeLowTraining.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/groupPerfTimeHighTraining.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/teamPerfTimeBaselineTraining.tex)
+Package color Info: Redefining color shadecolor on input line 463.
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 498--499
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 500--501
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 502--503
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 504--505
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 506--507
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 508--509
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 542--543
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 544--545
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 546--547
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 548--549
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 550--551
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 552--552
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+[9]
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/groupClickTimeHighTraining.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/groupClickTimeLowTraining.tex)
+Package color Info: Redefining color shadecolor on input line 561.
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 584--585
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 586--587
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 588--589
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 590--591
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 612--613
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 614--615
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 616--617
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 618--618
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+[10]
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/groupBondingTimeHighTraining.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/groupBondingTimeLowTraining.tex)
+Package color Info: Redefining color shadecolor on input line 628.
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 671--672
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 673--674
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 675--676
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 677--678
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 679--680
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 681--682
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 683--684
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 685--686
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 687--688
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 689--690
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 731--732
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 733--734
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 735--736
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 737--738
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 739--740
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 741--742
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 743--744
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 745--746
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 747--748
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 749--749
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+[11] [12]
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/teamBondingTimeLowTraining.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/teamBondingTimeHighTraining.tex)
+Package color Info: Redefining color shadecolor on input line 757.
+LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OT1/cmtt/m/n' tried instead on input line 760.
+
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/teamDisciplineTimeLowTraining.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/arousalExertionTimeLowTraining.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/personalityTraining.tex)
+
+LaTeX Warning: Citation 'Yong2013' on page 13 undefined on input line 801.
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 807--808
+
+ []
+
+Package color Info: Redefining color shadecolor on input line 810.
+<figure/dataReductionGroupPerformance-1.pdf, id=53, 252.945pt x 252.945pt>
+File: figure/dataReductionGroupPerformance-1.pdf Graphic file (type pdf)
+
+<use figure/dataReductionGroupPerformance-1.pdf>
+Package pdftex.def Info: figure/dataReductionGroupPerformance-1.pdf used on inp
+ut line 812.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 829.
+ [14 <./figure/dataReductionGroupPerformance-1.pdf>]
+
+LaTeX Warning: Reference `tab:jointActionSuccessCorrTable' on page 15 undefined
+ on input line 854.
+
+./trainingExperimentCompleteAnalysis.tex:855: Missing $ inserted.
+<inserted text> 
+                $
+l.855 ...igh sampling adequacy, (KMO =  0.83, \chi
+                                                  ^2(6, N = 116) = 379.27931...
+
+? s
+OK, entering \scrollmode...
+./trainingExperimentCompleteAnalysis.tex:857: Missing $ inserted.
+<inserted text> 
+                $
+l.857 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (47.5731pt too wide) in paragraph at lines 853--857
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :Onefactor; labelled\OT1/cmr/m/n/10 \\OML/cmm
+/m/it/10 JointActionSuccess[]wasimposedonthedata; whichexplained\OT1/cmr/m/n/10
+ 77%\OML/cmm/m/it/10 oftheoverallvariance\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 SSLo
+ading \OT1/cmr/m/n/10 =
+ []
+
+Package color Info: Redefining color shadecolor on input line 861.
+<figure/dataReductionIndPerformance-1.pdf, id=63, 252.945pt x 252.945pt>
+File: figure/dataReductionIndPerformance-1.pdf Graphic file (type pdf)
+
+<use figure/dataReductionIndPerformance-1.pdf>
+Package pdftex.def Info: figure/dataReductionIndPerformance-1.pdf used on input
+ line 863.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+
+LaTeX Warning: Reference `tab:indComponentPerfCorrTable' on page 15 undefined o
+n input line 871.
+
+./trainingExperimentCompleteAnalysis.tex:872: Missing $ inserted.
+<inserted text> 
+                $
+l.872 ...igh sampling adequacy, (KMO =  0.83, \chi
+                                                  ^2(6, N = 116) = 280.69917...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./trainingExperimentCompleteAnalysis.tex:873: Missing $ inserted.
+<inserted text> 
+                $
+l.873 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (286.55258pt too wide) in paragraph at lines 871--873
+\OML/cmm/m/it/10 ^^_[]\OT1/cmr/m/n/10 (6\OML/cmm/m/it/10 ; N \OT1/cmr/m/n/10 = 
+116) = 280\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 6991709\OML/cmm/m/it/10 ; p \OT1/cm
+r/m/n/10 = 0\OML/cmm/m/it/10 :Onefactor; labelled\OT1/cmr/m/n/10 \\OML/cmm/m/it
+/10 IndividualPerformanceComponents[]wasimposedonthedata; whichexplained\OT1/cm
+r/m/n/10 69\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1%\OML/cmm/m/it/10 oftheoverallvar
+iance\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 SSLoading \OT1/cmr/m/n/10 =
+ []
+
+[15 <./figure/dataReductionIndPerformance-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 875.
+
+Underfull \hbox (badness 10000) in paragraph at lines 912--913
+
+ []
+
+Package color Info: Redefining color shadecolor on input line 915.
+<figure/dataReductionGroupClick-1.pdf, id=76, 252.945pt x 252.945pt>
+File: figure/dataReductionGroupClick-1.pdf Graphic file (type pdf)
+
+<use figure/dataReductionGroupClick-1.pdf>
+Package pdftex.def Info: figure/dataReductionGroupClick-1.pdf used on input lin
+e 917.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 927.
+
+<figure/dataReductionGroupClickPost-1.pdf, id=77, 252.945pt x 252.945pt>
+File: figure/dataReductionGroupClickPost-1.pdf Graphic file (type pdf)
+
+<use figure/dataReductionGroupClickPost-1.pdf>
+Package pdftex.def Info: figure/dataReductionGroupClickPost-1.pdf used on input
+ line 929.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+
+LaTeX Warning: Reference `tab:groupClickCorrTable' on page 16 undefined on inpu
+t line 938.
+
+./trainingExperimentCompleteAnalysis.tex:938: Missing $ inserted.
+<inserted text> 
+                $
+l.938 ...igh sampling adequacy, (KMO =  0.72, \chi
+                                                  ^2(6, N = 116) = 127.85670...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./trainingExperimentCompleteAnalysis.tex:940: Missing $ inserted.
+<inserted text> 
+                $
+l.940 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (22.56587pt too wide) in paragraph at lines 938--940
+\OT1/cmr/m/n/10 0)\OML/cmm/m/it/10 :Onefactor; labelled\OT1/cmr/m/n/10 \\OML/cm
+m/m/it/10 GroupClick[]wasimposedonthedata; whichexplained\OT1/cmr/m/n/10 47\OML
+/cmm/m/it/10 :\OT1/cmr/m/n/10 7%\OML/cmm/m/it/10 oftheoverallvariance\OT1/cmr/m
+/n/10 (\OML/cmm/m/it/10 SSLoading \OT1/cmr/m/n/10 =
+ []
+
+[16 <./figure/dataReductionGroupClick-1.pdf> <./figure/dataReductionGroupClickP
+ost-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 950.
+Package color Info: Redefining color shadecolor on input line 969.
+
+<figure/dataReductionGroupBonding-1.pdf, id=93, 252.945pt x 252.945pt>
+File: figure/dataReductionGroupBonding-1.pdf Graphic file (type pdf)
+
+<use figure/dataReductionGroupBonding-1.pdf>
+Package pdftex.def Info: figure/dataReductionGroupBonding-1.pdf used on input l
+ine 971.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 982.
+
+
+LaTeX Warning: Reference `tab:groupBondingCorrTable' on page 17 undefined on in
+put line 995.
+
+./trainingExperimentCompleteAnalysis.tex:995: Missing $ inserted.
+<inserted text> 
+                $
+l.995 ...igh sampling adequacy, (KMO =  0.65, \chi
+                                                  ^2(3, N = 116) = 54.230569...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./trainingExperimentCompleteAnalysis.tex:997: Missing $ inserted.
+<inserted text> 
+                $
+l.997 
+      
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (206.3069pt too wide) in paragraph at lines 995--997
+\OML/cmm/m/it/10 ^^_[]\OT1/cmr/m/n/10 (3\OML/cmm/m/it/10 ; N \OT1/cmr/m/n/10 = 
+116) = 54\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2305691\OML/cmm/m/it/10 ; p \OT1/cmr
+/m/n/10 = 0)\OML/cmm/m/it/10 :Onefactor; labelled\OT1/cmr/m/n/10 \\OML/cmm/m/it
+/10 GroupSocialBonding[]wasimposedonthedata; whichexplained\OT1/cmr/m/n/10 42%\
+OML/cmm/m/it/10 oftheoverallvariance\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 SSLoading
+ \OT1/cmr/m/n/10 =
+ []
+
+Package color Info: Redefining color shadecolor on input line 1009.
+[17 <./figure/dataReductionGroupBonding-1.pdf>]
+
+LaTeX Warning: Reference `tab:teamBondingCorrTable' on page 18 undefined on inp
+ut line 1024.
+
+./trainingExperimentCompleteAnalysis.tex:1025: Missing $ inserted.
+<inserted text> 
+                $
+l.1025 ...igh sampling adequacy, (KMO =  0.7, \chi
+                                                  ^2(10, N = 116) = 172.5861...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./trainingExperimentCompleteAnalysis.tex:1027: Missing $ inserted.
+<inserted text> 
+                $
+l.1027 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (62.4412pt too wide) in paragraph at lines 1024--1027
+\OT1/cmr/m/n/10 0)\OML/cmm/m/it/10 :Onefactor; labelled\OT1/cmr/m/n/10 \\OML/cm
+m/m/it/10 TeamSocialBonding[]wasimposedonthedata; whichexplained\OT1/cmr/m/n/10
+ 39\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2%\OML/cmm/m/it/10 oftheoverallvariance\OT
+1/cmr/m/n/10 (\OML/cmm/m/it/10 SSLoading \OT1/cmr/m/n/10 =
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1030--1031
+
+ []
+
+Package color Info: Redefining color shadecolor on input line 1036.
+
+LaTeX Warning: Reference `tab:arousalCorrTable' on page 18 undefined on input l
+ine 1050.
+
+./trainingExperimentCompleteAnalysis.tex:1050: Missing $ inserted.
+<inserted text> 
+                $
+l.1050 ...gh sampling adequacy, (KMO =  0.64, \chi
+                                                  ^2(3, N = 116) = 116.12108...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./trainingExperimentCompleteAnalysis.tex:1052: Missing $ inserted.
+<inserted text> 
+                $
+l.1052 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (150.51613pt too wide) in paragraph at lines 1049--1052
+\OT1/cmr/m/n/10 116) = 116\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1210816\OML/cmm/m/i
+t/10 ; p \OT1/cmr/m/n/10 = 0)\OML/cmm/m/it/10 :Onefactor; labelled\OT1/cmr/m/n/
+10 \\OML/cmm/m/it/10 TeamDiscipline[]wasimposedonthedata; whichexplained\OT1/cm
+r/m/n/10 58\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 7%\OML/cmm/m/it/10 oftheoverallvar
+iance\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 SSLoading \OT1/cmr/m/n/10 =
+ []
+
+Package color Info: Redefining color shadecolor on input line 1060.
+
+LaTeX Warning: Reference `tab:technicalCompetenceCorrTable' on page 18 undefine
+d on input line 1075.
+
+Package color Info: Redefining color shadecolor on input line 1095.
+[18]
+
+LaTeX Warning: Reference `tab:teamDisciplineCorrTable' on page 19 undefined on 
+input line 1108.
+
+./trainingExperimentCompleteAnalysis.tex:1109: Missing $ inserted.
+<inserted text> 
+                $
+l.1109 ...gh sampling adequacy, (KMO =  0.78, \chi
+                                                  ^2(6, N = 116) = 362.74881...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./trainingExperimentCompleteAnalysis.tex:1111: Missing $ inserted.
+<inserted text> 
+                $
+l.1111 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (113.29395pt too wide) in paragraph at lines 1108--1111
+\OT1/cmr/m/n/10 362\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 748819\OML/cmm/m/it/10 ; p
+ \OT1/cmr/m/n/10 = 0)\OML/cmm/m/it/10 :Onefactor; labelled\OT1/cmr/m/n/10 \\OML
+/cmm/m/it/10 TeamDiscipline[]wasimposedonthedata; whichexplained\OT1/cmr/m/n/10
+ 73\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 9%\OML/cmm/m/it/10 oftheoverallvariance\OT
+1/cmr/m/n/10 (\OML/cmm/m/it/10 SSLoading \OT1/cmr/m/n/10 =
+ []
+
+Package color Info: Redefining color shadecolor on input line 1132.
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 113
+8.
+LaTeX Font Info:    No file OMScmtt.fd. on input line 1138.
+
+LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbackslash' on input line 1138.
+
+
+Overfull \hbox (34.91765pt too wide) in paragraph at lines 1138--1138
+[]                                        []\OT1/cmtt/m/n/10 main[] []=[] []"Co
+nfidence in group to \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n meet technical challe
+nges"[][],[][] 
+ []
+
+<figure/groupConfChallengesBoxplot-1.pdf, id=106, 252.945pt x 252.945pt>
+File: figure/groupConfChallengesBoxplot-1.pdf Graphic file (type pdf)
+
+<use figure/groupConfChallengesBoxplot-1.pdf>
+Package pdftex.def Info: figure/groupConfChallengesBoxplot-1.pdf used on input 
+line 1145.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1155.
+
+Overfull \hbox (202.91618pt too wide) in paragraph at lines 1158--1158
+[]                                        []\OT1/cmtt/m/n/10 main[] []=[]  []"H
+istogram of confidence in group to \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n meet te
+chnical challenges (high difficulty)"[][],[][] 
+ []
+
+<figure/histHighGroupConfidence-1.pdf, id=107, 252.945pt x 252.945pt>
+File: figure/histHighGroupConfidence-1.pdf Graphic file (type pdf)
+
+<use figure/histHighGroupConfidence-1.pdf>
+Package pdftex.def Info: figure/histHighGroupConfidence-1.pdf used on input lin
+e 1164.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1174.
+
+Overfull \hbox (197.66623pt too wide) in paragraph at lines 1177--1177
+[]                                        []\OT1/cmtt/m/n/10 main[] []=[]  []"H
+istogram of confidence in group to \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n meet te
+chnical challenges (low difficulty)"[][],[][] 
+ []
+
+<figure/histLowGroupConfidence-1.pdf, id=108, 252.945pt x 252.945pt>
+File: figure/histLowGroupConfidence-1.pdf Graphic file (type pdf)
+
+<use figure/histLowGroupConfidence-1.pdf>
+Package pdftex.def Info: figure/histLowGroupConfidence-1.pdf used on input line
+ 1183.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1193.
+Package color Info: Redefining color shadecolor on input line 1208.
+
+Overfull \hbox (103.16705pt too wide) in paragraph at lines 1214--1214
+[]                                        []\OT1/cmtt/m/n/10 main[] []=[] []"Co
+nfidence in individual ability \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n to meet tec
+hnical challenges"[][],[][] 
+ []
+
+[19] [20 <./figure/groupConfChallengesBoxplot-1.pdf> <./figure/histHighGroupCon
+fidence-1.pdf>]
+<figure/indConfChallengesBoxplot-1.pdf, id=129, 252.945pt x 252.945pt>
+File: figure/indConfChallengesBoxplot-1.pdf Graphic file (type pdf)
+
+<use figure/indConfChallengesBoxplot-1.pdf>
+Package pdftex.def Info: figure/indConfChallengesBoxplot-1.pdf used on input li
+ne 1221.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1231.
+
+Overfull \hbox (286.66551pt too wide) in paragraph at lines 1234--1234
+[]                                        []\OT1/cmtt/m/n/10 main[] []=[]  []"H
+istogram of confidence in individual \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n abili
+ty to meet technical challenges \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n (high diff
+iculty)"[][],[][] 
+ []
+
+<figure/histHighIndConfidence-1.pdf, id=130, 252.945pt x 252.945pt>
+File: figure/histHighIndConfidence-1.pdf Graphic file (type pdf)
+
+<use figure/histHighIndConfidence-1.pdf>
+Package pdftex.def Info: figure/histHighIndConfidence-1.pdf used on input line 
+1241.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1251.
+
+Overfull \hbox (255.16579pt too wide) in paragraph at lines 1254--1254
+[]                                        []\OT1/cmtt/m/n/10 "Histogram of cond
+ifence in in individual \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n ability to meet te
+chnical challenges \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n (low difficulty)"[][],[
+][] 
+ []
+
+<figure/histLowIndConfidence-1.pdf, id=131, 252.945pt x 252.945pt>
+File: figure/histLowIndConfidence-1.pdf Graphic file (type pdf)
+
+<use figure/histLowIndConfidence-1.pdf>
+Package pdftex.def Info: figure/histLowIndConfidence-1.pdf used on input line 1
+261.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1275.
+
+Overfull \hbox (42.7275pt too wide) in paragraph at lines 1280--1281
+[]\OT1/cmtt/m/n/10 ## Error in cohens[]d.htest(indPerfBartlett, format = "latex
+"): ttest must be a call to either `t[]test`
+ []
+
+
+LaTeX Warning: Reference `tab:manipulationCheckTable' on page 21 undefined on i
+nput line 1287.
+
+
+LaTeX Warning: Reference `fig:groupConfChallengesBoxplot' on page 21 undefined 
+on input line 1287.
+
+
+LaTeX Warning: Reference `fig:indConfChallengesBoxplot' on page 21 undefined on
+ input line 1287.
+
+
+LaTeX Warning: Reference `fig:groupConfChallengesBoxplot' on page 21 undefined 
+on input line 1288.
+
+
+LaTeX Warning: Reference `fig:histHighGroupConfidence' on page 21 undefined on 
+input line 1288.
+
+
+LaTeX Warning: Reference `fig:histLowIndConfidence' on page 21 undefined on inp
+ut line 1288.
+
+./trainingExperimentCompleteAnalysis.tex:1289: Missing $ inserted.
+<inserted text> 
+                $
+l.1289 ...8935, groupConfidentTechnicalChallenges_
+                                                  2 by condition, Bartlett t...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./trainingExperimentCompleteAnalysis.tex:1289: Missing $ inserted.
+<inserted text> 
+                $
+l.1289 ...variances, high$indConfidenceChallenges_
+                                                  2 and low$indConfidenceCha...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./trainingExperimentCompleteAnalysis.tex:1289: Missing $ inserted.
+<inserted text> 
+                $
+l.1289 ...enges_2 and low$indConfidenceChallenges_
+                                                  2.
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./trainingExperimentCompleteAnalysis.tex:1290: Missing $ inserted.
+<inserted text> 
+                $
+l.1290 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (1595.86488pt too wide) in paragraph at lines 1287--1290
+\OT1/cmr/m/n/10 ity (2.39556133520555, 1, 0.12168006558935, groupConfidentTechn
+icalChallenges$[]\OML/cmm/m/it/10 bycondition; Bartletttestofhomogeneityofvaria
+nces\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :Thesametestappliedtoathleteconfidenceini
+ndividualabilityaccordingtoconditiondid; however; revealasignificantdifference;
+ \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 17299490056626\OML/cmm/m/it
+/10 ; c\OT1/cmr/m/n/10 (28\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 28)\OML/cmm/m/it/1
+0 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0443622290888093\OML/cmm
+/m/it/10 ; c\OT1/cmr/m/n/10 (1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 02022166316948\
+OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 4\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 6283146186
+2671)\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1729
+9490056626\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 ; two:sided; Fte
+sttocomparetwovariances; high$\OT1/cmr/m/n/10 indConfidenceChallenges$[]\OML/cm
+m/m/it/10 andlow$\OT1/cmr/m/n/10 indConfidenceChallenges$[]\OML/cmm/m/it/10 :$ 
+
+ []
+
+Package color Info: Redefining color shadecolor on input line 1294.
+[21 <./figure/histLowGroupConfidence-1.pdf>] [22 <./figure/indConfChallengesBox
+plot-1.pdf> <./figure/histHighIndConfidence-1.pdf>]
+<figure/arousalFactorPreBoxPlot-1.pdf, id=156, 252.945pt x 252.945pt>
+File: figure/arousalFactorPreBoxPlot-1.pdf Graphic file (type pdf)
+
+<use figure/arousalFactorPreBoxPlot-1.pdf>
+Package pdftex.def Info: figure/arousalFactorPreBoxPlot-1.pdf used on input lin
+e 1307.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1318.
+
+Overfull \hbox (134.66678pt too wide) in paragraph at lines 1321--1321
+[]                                        []\OT1/cmtt/m/n/10 main[] []=[]  []"H
+istogram of athlete arousal \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n prior to exper
+iment (high difficulty)"[][],[][] 
+ []
+
+<figure/histArousalFactorPreHigh-1.pdf, id=157, 252.945pt x 252.945pt>
+File: figure/histArousalFactorPreHigh-1.pdf Graphic file (type pdf)
+
+<use figure/histArousalFactorPreHigh-1.pdf>
+Package pdftex.def Info: figure/histArousalFactorPreHigh-1.pdf used on input li
+ne 1328.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1338.
+
+<figure/histArousalFactorPreLow-1.pdf, id=158, 252.945pt x 252.945pt>
+File: figure/histArousalFactorPreLow-1.pdf Graphic file (type pdf)
+
+<use figure/histArousalFactorPreLow-1.pdf>
+Package pdftex.def Info: figure/histArousalFactorPreLow-1.pdf used on input lin
+e 1348.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+
+LaTeX Warning: Reference `tab:manipulationCheckTable' on page 23 undefined on i
+nput line 1360.
+
+
+LaTeX Warning: Reference `fig:arousalFactorPreBoxPlot' on page 23 undefined on 
+input line 1360.
+
+
+LaTeX Warning: Reference `fig:histArousalFactorPreHigh' on page 23 undefined on
+ input line 1360.
+
+
+LaTeX Warning: Reference `fig:histArousalFactorPreLow' on page 23 undefined on 
+input line 1360.
+
+
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/performanceConditionPost.tex)
+Package color Info: Redefining color shadecolor on input line 1379.
+ [23 <./figure/histLowIndConfidence-1.pdf>] [24 <./figure/arousalFactorPreBoxPl
+ot-1.pdf> <./figure/histArousalFactorPreHigh-1.pdf>]
+Overfull \hbox (176.41647pt too wide) in paragraph at lines 1385--1385
+[]                                        []\OT1/cmtt/m/n/10 main[] []=[] []"At
+hlete post-experiment perceptions of \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n joint
+ action success by condition \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n"[][],[][] 
+ []
+
+
+<figure/groupJointActionSuccessPostBoxPlot-1.pdf, id=184, 252.945pt x 252.945pt
+>
+File: figure/groupJointActionSuccessPostBoxPlot-1.pdf Graphic file (type pdf)
+ <use figure/groupJointActionSuccessPostBoxPlot-1.pdf>
+Package pdftex.def Info: figure/groupJointActionSuccessPostBoxPlot-1.pdf used o
+n input line 1392.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1402.
+
+Overfull \hbox (186.91638pt too wide) in paragraph at lines 1408--1408
+[]                                        []\OT1/cmtt/m/n/10 main[] []=[] []"At
+hlete post-experiment perceptions of \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n indiv
+idual performance by condition \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n"[][],[][] 
+ []
+
+
+<figure/indComponentPerformancePostBoxPlot-1.pdf, id=185, 252.945pt x 252.945pt
+>
+File: figure/indComponentPerformancePostBoxPlot-1.pdf Graphic file (type pdf)
+ <use figure/indComponentPerformancePostBoxPlot-1.pdf>
+Package pdftex.def Info: figure/indComponentPerformancePostBoxPlot-1.pdf used o
+n input line 1415.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1426.
+
+Overfull \hbox (291.91547pt too wide) in paragraph at lines 1432--1432
+[]                                        []\OT1/cmtt/m/n/10 main[] []=[] []"At
+hlete post-experiment perceptions of \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n group
+ performance relative to expectations \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n by c
+ondition"[][],[][] 
+ []
+
+<figure/groupPerfExpPostBoxPlot-1.pdf, id=186, 252.945pt x 252.945pt>
+File: figure/groupPerfExpPostBoxPlot-1.pdf Graphic file (type pdf)
+
+<use figure/groupPerfExpPostBoxPlot-1.pdf>
+Package pdftex.def Info: figure/groupPerfExpPostBoxPlot-1.pdf used on input lin
+e 1439.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1449.
+
+Overfull \hbox (318.16524pt too wide) in paragraph at lines 1455--1455
+[]                                        []\OT1/cmtt/m/n/10 main[] []=[] []"At
+hlete post-experiment perceptions of \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n indiv
+idual performance relative to expectations \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n
+ by condition"[][],[][] 
+ []
+
+[25 <./figure/histArousalFactorPreLow-1.pdf>] [26 <./figure/groupJointActionSuc
+cessPostBoxPlot-1.pdf> <./figure/indComponentPerformancePostBoxPlot-1.pdf>]
+<figure/indPerfExpPostBoxPlot-1.pdf, id=212, 252.945pt x 252.945pt>
+File: figure/indPerfExpPostBoxPlot-1.pdf Graphic file (type pdf)
+
+<use figure/indPerfExpPostBoxPlot-1.pdf>
+Package pdftex.def Info: figure/indPerfExpPostBoxPlot-1.pdf used on input line 
+1462.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+
+LaTeX Warning: Reference `fig:groupJointActionSuccessPostBoxPlot' on page 27 un
+defined on input line 1475.
+
+
+LaTeX Warning: Reference `fig:indPerfExpPostBoxPlot' on page 27 undefined on in
+put line 1475.
+
+
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/clickBondConditionPost.tex)
+Package color Info: Redefining color shadecolor on input line 1498.
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1545--1546
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1547--1548
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1549--1550
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1551--1552
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1553--1554
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1555--1556
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1557--1558
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1559--1560
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1605--1606
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1607--1608
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1609--1610
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1611--1612
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1613--1614
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1615--1616
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1617--1618
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1619--1619
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+[27 <./figure/groupPerfExpPostBoxPlot-1.pdf>] [28 <./figure/indPerfExpPostBoxPl
+ot-1.pdf>]
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/factorsTimeHigh.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/factorsTimeLow.tex)
+Package color Info: Redefining color shadecolor on input line 1634.
+ [29]
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1681--1682
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1683--1684
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1685--1686
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1687--1688
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1689--1690
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1691--1692
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1693--1694
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1695--1695
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/factorsTime.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 1707--1708
+
+ []
+
+[30]
+Package color Info: Redefining color shadecolor on input line 1710.
+
+Overfull \hbox (26.4038pt too wide) in paragraph at lines 1721--1721
+[]                            []\OT1/cmtt/m/n/10 geom_smooth[][]([][]method[][]
+=lm,[] []se[][]=[][]FALSE[][])[]   []\OT1/cmtt/m/it/10 # Don^^Mt add shaded con
+fidence region[][] 
+ []
+
+<figure/jASClickScatter-1.pdf, id=237, 252.945pt x 252.945pt>
+File: figure/jASClickScatter-1.pdf Graphic file (type pdf)
+
+<use figure/jASClickScatter-1.pdf>
+Package pdftex.def Info: figure/jASClickScatter-1.pdf used on input line 1735.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+
+LaTeX Warning: Reference `fig:jASClickScatter' on page 31 undefined on input li
+ne 1744.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1749--1750
+
+ []
+
+Package color Info: Redefining color shadecolor on input line 1752.
+
+Overfull \hbox (26.4038pt too wide) in paragraph at lines 1756--1756
+[]                            []\OT1/cmtt/m/n/10 geom_smooth[][]([][]method[][]
+=lm,[] []se[][]=[][]FALSE[][])[]   []\OT1/cmtt/m/it/10 # Don^^Mt add shaded con
+fidence region[][] 
+ []
+
+
+Overfull \hbox (29.6677pt too wide) in paragraph at lines 1758--1758
+[]            []\OT1/cmtt/m/n/10 ggtitle[][]([][]"Positive violation of Team Pe
+rformance Expectations \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n predicts Group Clic
+k"[][])[] []+[][] 
+ []
+
+[31 <./figure/jASClickScatter-1.pdf>]
+<figure/teamPerfExpClickScatter-1.pdf, id=247, 252.945pt x 252.945pt>
+File: figure/teamPerfExpClickScatter-1.pdf Graphic file (type pdf)
+
+<use figure/teamPerfExpClickScatter-1.pdf>
+Package pdftex.def Info: figure/teamPerfExpClickScatter-1.pdf used on input lin
+e 1770.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+
+LaTeX Warning: Reference `fig:teamPerfExpClickScatter' on page 32 undefined on 
+input line 1779.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1785--1786
+
+ []
+
+Package color Info: Redefining color shadecolor on input line 1788.
+
+Overfull \hbox (24.66768pt too wide) in paragraph at lines 1791--1791
+[][]\OT1/cmtt/m/n/10 jASPerfExpCLick[] []<-[] []lm[][](groupClickPostFactor[] [
+]~[] []jointActionSuccessPost[][]*[][]groupPerformance_3,[] []data[] []= twc)[]
+[] 
+ []
+
+
+Overfull \hbox (21.15384pt too wide) in paragraph at lines 1796--1796
+[][]\OT1/cmtt/m/it/10 ## used the psych package's describe function to get the 
+mean and standard deviation of groupClick[][] 
+ []
+
+
+Overfull \hbox (40.41754pt too wide) in paragraph at lines 1813--1813
+[]                                      []\OT1/cmtt/m/n/10 y[][]=groupClickPost
+Factor,[] []size[][]=groupPerformance_3))[] []+[] []geom_point[][]()[][] 
+ []
+
+
+Overfull \hbox (29.6677pt too wide) in paragraph at lines 1815--1815
+[]            []\OT1/cmtt/m/n/10 ggtitle[][]([][]"Positive violation of Team Pe
+rformance Expectations \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n predicts Group Clic
+k"[][])[] []+[][] 
+ []
+
+
+Overfull \hbox (45.6675pt too wide) in paragraph at lines 1820--1820
+[]            []\OT1/cmtt/m/n/10 geom_abline[][]([][]aes[][]([][]intercept[][]=
+[][]0.16[][],[] []slope[][]=[][]0.7371[][],[] []linetype[][]=[][]^^M-1SD TeamPe
+rformanceExpectation^^M[][]))[][]+[][] 
+ []
+
+
+Overfull \hbox (56.1674pt too wide) in paragraph at lines 1821--1821
+[]            []\OT1/cmtt/m/n/10 geom_abline[][]([][]aes[][]([][]intercept[][]=
+[][]0.2242[][],[] []slope[][]=[][]0.6815[][],[] []linetype[][]=[][]^^MMean Team
+PerformanceExpectation^^M[][]))[][]+[][] 
+ []
+
+
+Overfull \hbox (50.91745pt too wide) in paragraph at lines 1822--1822
+[]            []\OT1/cmtt/m/n/10 geom_abline[][]([][]aes[][]([][]intercept[][]=
+[][]0.2885[][],[] []slope[][]=[][]0.6259[][],[] []linetype[][]=[][]^^M+1SDTeamP
+erformanceExpectation^^M[][]))[][]+[][] 
+ []
+
+[32 <./figure/teamPerfExpClickScatter-1.pdf>]
+<figure/jASGroupPerfExpClickScatter-1.pdf, id=256, 252.945pt x 252.945pt>
+File: figure/jASGroupPerfExpClickScatter-1.pdf Graphic file (type pdf)
+
+<use figure/jASGroupPerfExpClickScatter-1.pdf>
+Package pdftex.def Info: figure/jASGroupPerfExpClickScatter-1.pdf used on input
+ line 1831.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+
+LaTeX Warning: Reference `fig:jASGroupPerfExpClickScatter' on page 33 undefined
+ on input line 1840.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1844--1845
+
+ []
+
+Package color Info: Redefining color shadecolor on input line 1847.
+
+Overfull \hbox (26.4038pt too wide) in paragraph at lines 1851--1851
+[]                            []\OT1/cmtt/m/n/10 geom_smooth[][]([][]method[][]
+=lm,[] []se[][]=[][]FALSE[][])[]   []\OT1/cmtt/m/it/10 # Don^^Mt add shaded con
+fidence region[][] 
+ []
+
+
+Overfull \hbox (66.41737pt too wide) in paragraph at lines 1853--1853
+[]            []\OT1/cmtt/m/n/10 ggtitle[][]([][]"Perceptions of Group Click \O
+MS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n predict feelings of Social Bonding to traini
+ng group"[][])[] []+[][] 
+ []
+
+<figure/groupClickBondScatter-1.pdf, id=257, 252.945pt x 252.945pt>
+File: figure/groupClickBondScatter-1.pdf Graphic file (type pdf)
+
+<use figure/groupClickBondScatter-1.pdf>
+Package pdftex.def Info: figure/groupClickBondScatter-1.pdf used on input line 
+1865.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+
+LaTeX Warning: Reference `fig:groupClickBondScatter' on page 33 undefined on in
+put line 1874.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1881--1882
+
+ []
+
+[33 <./figure/jASGroupPerfExpClickScatter-1.pdf>]
+Package color Info: Redefining color shadecolor on input line 1885.
+
+Overfull \hbox (113.66696pt too wide) in paragraph at lines 1891--1891
+[]            []\OT1/cmtt/m/n/10 ggtitle[][]([][]"Perceptions of Joint Action S
+uccess \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n predict feelings of Social Bonding 
+to training group"[][])[] []+[][] 
+ []
+
+<figure/jASBondScatter-1.pdf, id=266, 252.945pt x 252.945pt>
+File: figure/jASBondScatter-1.pdf Graphic file (type pdf)
+
+<use figure/jASBondScatter-1.pdf>
+Package pdftex.def Info: figure/jASBondScatter-1.pdf used on input line 1903.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+
+LaTeX Warning: Reference `fig:jASBondScatter' on page 34 undefined on input lin
+e 1912.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1918--1919
+
+ []
+
+Package color Info: Redefining color shadecolor on input line 1922.
+
+Overfull \hbox (218.66605pt too wide) in paragraph at lines 1928--1928
+[]            []\OT1/cmtt/m/n/10 ggtitle[][]([][]"Perceptions of Team Performan
+ce (vs prior expectations) \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n predict feeling
+s of Social Bonding to training group"[][])[] []+[][] 
+ []
+
+<figure/teamPerfExpBondScatter-1.pdf, id=267, 252.945pt x 252.945pt>
+File: figure/teamPerfExpBondScatter-1.pdf Graphic file (type pdf)
+
+<use figure/teamPerfExpBondScatter-1.pdf>
+Package pdftex.def Info: figure/teamPerfExpBondScatter-1.pdf used on input line
+ 1940.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+Package color Info: Redefining color shadecolor on input line 1950.
+ [34 <./figure/groupClickBondScatter-1.pdf>] [35 <./figure/jASBondScatter-1.pdf
+> <./figure/teamPerfExpBondScatter-1.pdf>]
+Overfull \hbox (119.16685pt too wide) in paragraph at lines 1952--1952
+[][]\OT1/cmtt/m/n/10 teamPerfExpBondScatter1[] []<-[] []ggplot[][](twc,[] []aes
+[][]([][]x[][]=groupPerformance_3,[] []y[][]=groupBondingFactorPost))[] []+[] [
+]geom_point[][]([][]shape[] []=[] []1[][])[] []+[][] 
+ []
+
+
+Overfull \hbox (218.66605pt too wide) in paragraph at lines 1955--1955
+[]            []\OT1/cmtt/m/n/10 ggtitle[][]([][]"Perceptions of Team Performan
+ce (vs prior expectations) \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n predict feeling
+s of Social Bonding to training group"[][])[] []+[][] 
+ []
+
+<figure/teamPerfExpBondScatter1-1.pdf, id=289, 252.945pt x 252.945pt>
+File: figure/teamPerfExpBondScatter1-1.pdf Graphic file (type pdf)
+
+<use figure/teamPerfExpBondScatter1-1.pdf>
+Package pdftex.def Info: figure/teamPerfExpBondScatter1-1.pdf used on input lin
+e 1967.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+
+LaTeX Warning: Reference `fig:teamPerfExpBondScatter1' on page 36 undefined on 
+input line 1977.
+
+
+LaTeX Warning: Reference `fig:teamPerfExpBondScatter' on page 36 undefined on i
+nput line 1977.
+
+Package color Info: Redefining color shadecolor on input line 1997.
+Package color Info: Redefining color shadecolor on input line 2017.
+<figure/predictionsTest-1.pdf, id=290, 252.945pt x 252.945pt>
+File: figure/predictionsTest-1.pdf Graphic file (type pdf)
+
+<use figure/predictionsTest-1.pdf>
+Package pdftex.def Info: figure/predictionsTest-1.pdf used on input line 2019.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+ [36 <./figure/teamPerfExpBondScatter1-1.pdf>] <figure/predictionsTest-2.pdf, i
+d=299, 252.945pt x 252.945pt>
+File: figure/predictionsTest-2.pdf Graphic file (type pdf)
+
+<use figure/predictionsTest-2.pdf>
+Package pdftex.def Info: figure/predictionsTest-2.pdf used on input line 2026.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+<figure/predictionsTest-3.pdf, id=300, 252.945pt x 252.945pt>
+File: figure/predictionsTest-3.pdf Graphic file (type pdf)
+
+<use figure/predictionsTest-3.pdf>
+Package pdftex.def Info: figure/predictionsTest-3.pdf used on input line 2033.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+ [37 <./figure/predictionsTest-1.pdf> <./figure/predictionsTest-2.pdf>]
+<figure/predictionsTest-4.pdf, id=316, 252.945pt x 252.945pt>
+File: figure/predictionsTest-4.pdf Graphic file (type pdf)
+
+<use figure/predictionsTest-4.pdf>
+Package pdftex.def Info: figure/predictionsTest-4.pdf used on input line 2040.
+(pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
+
+
+LaTeX Warning: Empty bibliography on input line 2078.
+
+[38 <./figure/predictionsTest-3.pdf> <./figure/predictionsTest-4.pdf>]
+(./trainingExperimentCompleteAnalysis.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                trainingExperimentCompleteAnalysis
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'trainingExperimentCompleteAnalysis.ru
+n.xml'.
+\openout1 = `trainingExperimentCompleteAnalysis.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 11254 strings out of 493004
+ 194162 string characters out of 6133230
+ 672372 words of memory out of 5000000
+ 14556 multiletter control sequences out of 15000+600000
+ 7539 words of font info for 30 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 35i,8n,32p,1579b,1473s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmitt10.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/
+local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/l
+ocal/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/loc
+al/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/loca
+l/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on trainingExperimentCompleteAnalysis.pdf (38 pages, 458444 byte
+s).
+PDF statistics:
+ 365 PDF objects out of 1000 (max. 8388607)
+ 252 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 151 words of extra memory for PDF output out of 10000 (max. 10000000)
+

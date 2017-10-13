@@ -1,0 +1,9 @@
+[0] Config.pm:343> INFO - This is Biber 2.5
+[0] Config.pm:346> INFO - Logfile is '4results.blg'
+[55] biber-darwin:290> INFO - === Wed May  3, 2017, 22:06:55
+[81] Biber.pm:351> INFO - Reading '4results.bcf'
+[215] Biber.pm:776> INFO - Found 0 citekeys in bib section 0
+[228] Utils.pm:149> WARN - The file '4results.bcf' does not contain any citations!
+[236] bbl.pm:526> INFO - Writing '4results.bbl' with encoding 'UTF-8'
+[237] bbl.pm:619> INFO - Output to 4results.bbl
+[238] Biber.pm:108> INFO - WARNINGS: 1

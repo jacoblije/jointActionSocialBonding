@@ -1,0 +1,810 @@
+
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\usepackage{geometry}
+\usepackage{pdflscape}
+\usepackage{mathtools}
+\usepackage{amsmath}
+
+\usepackage[british]{babel}
+\usepackage[backend=biber,style=apa,natbib=true]{biblatex}
+\addbibresource{references.bib}
+
+\title{
+{Tournament Survey}\\
+{Analysis & Results}
+}
+
+\begin{document}
+
+\maketitle{}
+
+\section{Overview}
+
+Return to the intuition:
+We're trying to understand the causal mechanisms of bonding, so the question is what mechanisms lie below the surface of explicit bonding? There is something going on with this pre-reflective vibe or ``click'' that is important...underneath this may be basal socio-cognitive tendenceies for coordinating movement with others.
+
+1. two components of performance lead to bonding, and can be explained by this sensation of action ``clicking'' - this implicit sense of coordination.
+
+
+\section{Predictions}
+
+I made the following predictions regarding the relationship between performance, team coordination, and social bonding:
+
+\begin{enumerate}
+  \item Athletes that perceive greater success in joint-action will experience higher levels of ``team click.''
+  \item Athletes who experience more positive violation of expectation around team performance will experience higher levels of team click.
+  \item Athletes who experience higher levels of team click will report higher levels of social bonding.
+  \item Higher perceived success in joint-action will predict higher levels of social bonding.
+  \item Greter positive violation of expectations around team performance will predict higher leves of social bonding.
+  \item Team click will mediate the positive relationship between joint-action success and social bonding.
+\end{enumerate}
+
+%In terms of fatigue??  Something specific about technical attenuating fatigue?
+
+\section{Analysis}
+
+\subsection{Overview of Analysis}
+I decided to begin to look for evidence of these predictions in the post-Tournament survey responses.  Following the completion of a high-level professional rugby Tournament, and after controlling for measures of objective performance and individual performance, was there any statistical evidence for a relationship between perceived quality of joint-action, feelings of ``team click,'' and social bonding?  Following a close analysis of the post-Tournament data, I will proceed to an anlaysis of these same relationships throughout the entire data set.  In particular, I am interested in evidence of pre-post Tournament changes in outcome variables (click, social bonding), and their possible predictors (performance, coordination, click), as well as evidence for significant overall relationships between these variables throughout the tournament.
+
+\subsection{Analysis of Post-Tournament Survey}
+
+
+\subsubsection{Summary Statistics}
+% competence:
+\begin{table}[!htbp] \centering
+  \caption{post-Tournament measures of technical competence (objective and subjective)}
+  \label{}
+\begin{tabular}{@{\extracolsep{5pt}}lccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\
+\hline \\[-1.8ex]
+yearsTeam & 120 & 3.167 & 2.124 & 0 & 7 \\
+trainingAge & 120 & 4.400 & 2.346 & 0 & 13 \\
+startingAvg & 171 & 0.566 & 0.367 & 0.000 & 1.000 \\
+age & 121 & 21.669 & 3.264 & 16 & 32 \\
+abilityTeammates & 120 & 19.450 & 20.136 & $-$40 & 50 \\
+abilityChinesePros & 120 & 15.783 & 19.592 & $-$35 & 50 \\
+abilityInternationalPros & 120 & 18.458 & 26.187 & $-$44 & 50 \\
+teamAbilityChineseProvinces & 120 & 22.475 & 22.903 & $-$40 & 50 \\
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+
+% performance
+\begin{table}[!htbp] \centering
+  \caption{post-Tournament measures of performance (individual and team)}
+  \label{}
+\begin{tabular}{@{\extracolsep{5pt}}lccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\
+\hline \\[-1.8ex]
+indPerformanceExpected & 118 & 56.356 & 23.474 & 0 & 100 \\
+passingTech & 118 & 58.407 & 24.255 & 0 & 100 \\
+supportAttack & 118 & 62.619 & 22.704 & 0 & 100 \\
+indDefense & 118 & 57.644 & 23.570 & 0 & 100 \\
+effectContact & 118 & 62.153 & 24.810 & 0 & 100 \\
+decisionAttack & 118 & 61.220 & 21.432 & 0 & 100 \\
+\\
+teamPerformanceExpected & 118 & 64.364 & 23.610 & 0 & 100 \\
+teamDefense & 118 & 62.424 & 22.501 & 0 & 100 \\
+teamAttack & 118 & 65.331 & 20.260 & 0 & 100 \\
+teamSupportPlay & 118 & 65.754 & 19.716 & 0 & 100 \\
+teamCommunication & 118 & 65.254 & 21.260 & 0 & 100 \\
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+
+%click:
+\begin{table}[!htbp] \centering
+  \caption{post-Tournament measures team click}
+  \label{}
+\begin{tabular}{@{\extracolsep{5pt}}lccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\
+\hline \\[-1.8ex]
+unspokenUnderstanding & 118 & 72.720 & 19.946 & 0 & 100 \\
+generalAtmosphere & 118 & 78.449 & 21.339 & 0 & 100 \\
+clickPictorial & 118 & 3.932 & 1.036 & 1 & 5 \\
+reliabilityOfOthers & 118 & 68.000 & 23.093 & 0 & 100 \\
+reliabilityForOthers & 118 & 63.449 & 25.798 & 0 & 100 \\
+abilityExtendedByTeammates & 118 & 72.254 & 19.266 & 0 & 100 \\
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+
+% bonding
+
+\begin{table}[!htbp] \centering
+  \caption{post-Tournament measures social bonding}
+  \label{}
+\begin{tabular}{@{\extracolsep{5pt}}lccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\
+\hline \\[-1.8ex]
+emotionalSupport & 118 & 79.669 & 18.839 & 0 & 100 \\
+sharedGoal & 118 & 86.000 & 15.560 & 29 & 100 \\
+groupIdentification & 118 & 4.292 & 0.672 & 1.500 & 5.000 \\
+fusionVerbal & 118 & 4.004 & 0.709 & 1.429 & 5.000 \\
+fusionPictorialTeam & 118 & 4.331 & 1.192 & 0 & 5 \\
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+
+% fatigue
+\begin{table}[!htbp] \centering
+  \caption{post-Tournament measures fatigue and exertion}
+  \label{}
+\begin{tabular}{@{\extracolsep{5pt}}lccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\
+\hline \\[-1.8ex]
+fatigue & 118 & 69.271 & 21.241 & 0 & 100 \\
+physical rpe & 118 & 14.966 & 2.663 & 6 & 20 \\
+mental rpe & 118 & 6.076 & 2.467 & $-$4 & 10 \\
+injuryStatus & 118 & 76.144 & 26.910 & 0 & 100 \\
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+
+
+
+
+\newgeometry{margin=1cm} % modify this if you need even more space
+\begin{landscape}
+
+\subsubsection{Correlation Matrices}
+
+  % competence
+  \begin{table}[!htbp] \centering
+    \caption{Correlation Matrix: post-Tournament Technical Competence}
+    \label{}
+  \scriptsize
+  \begin{tabular}{@{\extracolsep{5pt}} ccccccccc}
+  \\[-1.8ex]\hline
+  \hline \\[-1.8ex]
+   & yearsTeam & trainingAge & startingAvg & age & abilityTeammates & abilityChinesePros & abilityInternationalPros & teamAbilityChineseProvinces \\
+  \hline \\[-1.8ex]
+  yearsTeam & $1$ & $0.527$ & $0.145$ & $0.580$ & $0.046$ & $0.102$ & $0.105$ & $0.243$ \\
+  trainingAge & $0.527$ & $1$ & $0.258$ & $0.687$ & $0.104$ & $0.200$ & $0.199$ & $0.208$ \\
+  startingAvg & $0.145$ & $0.258$ & $1$ & $0.157$ & $0.018$ & $0.086$ & $0.024$ & $0.110$ \\
+  age & $0.580$ & $0.687$ & $0.157$ & $1$ & $0.124$ & $0.099$ & $0.148$ & $0.217$ \\
+  \\
+  abilityTeammates & $0.046$ & $0.104$ & $0.018$ & $0.124$ & $1$ & $0.432$ & $0.396$ & $0.432$ \\
+  abilityChinesePros & $0.102$ & $0.200$ & $0.086$ & $0.099$ & $0.432$ & $1$ & $0.702$ & $0.271$ \\
+  abilityInternationalPros & $0.105$ & $0.199$ & $0.024$ & $0.148$ & $0.396$ & $0.702$ & $1$ & $0.221$ \\
+  teamAbilityChineseProvinces & $0.243$ & $0.208$ & $0.110$ & $0.217$ & $0.432$ & $0.271$ & $0.221$ & $1$ \\
+  \hline \\[-1.8ex]
+  \end{tabular}
+  \end{table}
+
+% Individual Performance
+
+  \begin{table}[!htbp] \centering
+    \caption{Correlation Matrix: Individual Performance}
+    \label{}
+  \footnotesize
+  \begin{tabular}{@{\extracolsep{5pt}} ccccccc}
+  \\[-1.8ex]\hline
+  \hline \\[-1.8ex]
+   & indPerformance & passingTech & supportAttack & indDefense & effectContact & decisionAttack \\
+  \hline \\[-1.8ex]
+  indPerformanceExpected & $1$ & $0.412$ & $0.375$ & $0.311$ & $0.263$ & $0.286$ \\
+  \\
+  passingTech & $0.412$ & $1$ & $0.658$ & $0.510$ & $0.508$ & $0.607$ \\
+  supportAttack & $0.375$ & $0.658$ & $1$ & $0.658$ & $0.641$ & $0.734$ \\
+  indDefense & $0.311$ & $0.510$ & $0.658$ & $1$ & $0.590$ & $0.525$ \\
+  effectContact & $0.263$ & $0.508$ & $0.641$ & $0.590$ & $1$ & $0.713$ \\
+  decisionAttack & $0.286$ & $0.607$ & $0.734$ & $0.525$ & $0.713$ & $1$ \\
+  \hline \\[-1.8ex]
+  \end{tabular}
+  \end{table}
+
+% teamPerformance
+
+\begin{table}[!htbp] \centering
+  \caption{Correlation Matrix: Team Performance}
+  \label{}
+\footnotesize
+\begin{tabular}{@{\extracolsep{5pt}} cccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & teamPerformance & teamDefense & teamAttack & teamSupportPlay & teamCommunication \\
+\hline \\[-1.8ex]
+teamPerformanceExpected & $1$ & $0.643$ & $0.619$ & $0.469$ & $0.540$ \\
+\\
+teamDefense & $0.643$ & $1$ & $0.834$ & $0.643$ & $0.721$ \\
+teamAttack & $0.619$ & $0.834$ & $1$ & $0.740$ & $0.713$ \\
+teamSupportPlay & $0.469$ & $0.643$ & $0.740$ & $1$ & $0.715$ \\
+teamCommunication & $0.540$ & $0.721$ & $0.713$ & $0.715$ & $1$ \\
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+
+% click
+\begin{table}[!htbp] \centering
+  \caption{Correlation Matrix: post-Tournament Team Click}
+  \label{}
+\footnotesize
+\begin{tabular}{@{\extracolsep{5pt}} ccccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & unspokenUnderstanding & generalAtmosphere & clickPictorial & reliabilityOfOthers & reliabilityForOthers & abilityExtended \\
+\hline \\[-1.8ex]
+unspokenUnderstanding & $1$ & $0.626$ & $0.508$ & $0.275$ & $0.230$ & $0.375$ \\
+generalAtmosphere & $0.626$ & $1$ & $0.385$ & $0.301$ & $0.276$ & $0.265$ \\
+clickPictorial & $0.508$ & $0.385$ & $1$ & $0.282$ & $0.021$ & $0.213$ \\
+reliabilityOfOthers & $0.275$ & $0.301$ & $0.282$ & $1$ & $0.276$ & $0.544$ \\
+reliabilityForOthers & $0.230$ & $0.276$ & $0.021$ & $0.276$ & $1$ & $0.375$ \\
+abilityExtended & $0.375$ & $0.265$ & $0.213$ & $0.544$ & $0.375$ & $1$ \\
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+
+% bonding
+
+\begin{table}[!htbp] \centering
+  \caption{Correlation Matrix: post-Tournament Social Bonding}
+  \label{}
+\footnotesize
+\begin{tabular}{@{\extracolsep{5pt}} cccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & emotionalSupport & sharedGoal & groupId & fusionVerbal & fusionPictorialTeam \\
+\hline \\[-1.8ex]
+emotionalSupport & $1$ & $0.619$ & $0.079$ & $0.331$ & $0.349$ \\
+sharedGoal & $0.619$ & $1$ & $0.061$ & $0.246$ & $0.395$ \\
+groupId & $0.079$ & $0.061$ & $1$ & $0.358$ & $0.081$ \\
+fusionVerbal & $0.331$ & $0.246$ & $0.358$ & $1$ & $0.220$ \\
+fusionPictorialTeam & $0.349$ & $0.395$ & $0.081$ & $0.220$ & $1$ \\
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+
+% fatigue
+
+\begin{table}[!htbp] \centering
+  \caption{Correlation Matrix: post-Tournament Fatigue}
+  \label{}
+\footnotesize
+\begin{tabular}{@{\extracolsep{5pt}} ccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & fatigue & prpe & mental & injury \\
+\hline \\[-1.8ex]
+fatigue & $1$ & $0.665$ & $0.510$ & $$-$0.090$ \\
+prpe & $0.665$ & $1$ & $0.523$ & $$-$0.009$ \\
+mental & $0.510$ & $0.523$ & $1$ & $0.040$ \\
+injury & $$-$0.090$ & $$-$0.009$ & $0.040$ & $1$ \\
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+
+
+
+\end{landscape}
+\restoregeometry
+
+
+
+
+\subsubsection{Data Reduction via Exploratory Factor Analysis}
+
+Data reduction was required to reduce survey items to key variables of interest.  Exploratory Factor Analysis (EFA) was performed for survey items relating to technical competence, component performance, team click, social bonding, and fatigue.  [Explain EFA - ``varimax'' rotation (oblique)]
+
+\paragraph{Technical Competence}
+
+All eight items relavent to technical competence were analysed in a correlation matrix to assess relatedness.  High correlations among measures of objective competence (three out of four items correlated at > .3) and among measures of subjective competence (all items except for team competence measure correlated at > .3) suggested that the data could be explained by two underlying factors.  teamAbilityChineseProvinces was dropped from analysis due to low correlation with related variables, and due to the fact that the item did not ask directly about an individual's technical competence.
+
+An EFA revealed that items of interest loaded on two factors, except for startingReserve, which failed to load on either factor.  startingAvg was thus dropped from analysis.  Measures of objective competence (yearsTeam, trainingAge, and Age) loaded on the first factor, labelled ``objective competence,'' and explained 26.4\% of the total variance. The remaining measures of subjective competence (abilityTeammates, abilityChinesePros, abilityInternationalPros) loaded on the remaining factor, labelled ``subjective competence'', and explained 23.8\% of the variance.   Various statistics, including KMO = .67, corrtest Bartlett: $\chi^2 = 239.71$, $p < .001$ and $G6\alpha =.74$ and $Cronbach's \alpha = (.67)$ indicated that the data reduction was appropriate.
+
+\paragraph{Component Performance}
+
+First, items concerning component performance were isolated from perceptions of overall performance relative to prior individual expectations for further data reduction.
+Given that the predictions of this dissertation concentrate in particular on athlete  perceptions of joint-action, individual and team components of performance were separately analysed so that perceptions of individual component performance could be used as a statistical control for feelings about team component performance.
+
+team component performance:
+Items concerning team component performance (team defense, team attack, team support play, and onfield communication) were subjected to EFA.  Correlations between team component performance items was very high (all > .5), which suggested that one factor would be appropriate.  One factor, labelled ``teamComponentPerformance'' was appropriate, $\chi^2 (df=2) = 14.81$, $p < .001$, and explained 72.8\% of the overall variance.  Various statistics, including $KMO = 0.79$, corrtest Bartlett: $\chi^2 = 342.14$, $p < .001$ and $G6\alpha =.9$ and $Cronbach's \alpha = (.91)$ indicated that the data reduction was appropriate.
+
+team component performance:
+Items concerning individual component performance (passing technique, suport play in attack, 1on1 defense, and decision making in attack) were subjected to an EFA.  Correlations between individual component performance items was also very high (all > .5), which suggested that one factor would be appropriate.  One factor, labelled ``indComponentPerformance'' was appropriate, $\chi^2 (df=5) = 15.47$, $p < .01$, and explained 62.1\% of the overall variance.  Various statistics, including $KMO =  0.84$, corrtest Bartlett: $\chi^2 =  326.38$, $p < .001$ and $G6\alpha =.88$ and $Cronbach's \alpha = .89$ indicated that the data reduction was appropriate.
+
+\paragraph{Team Click}
+Survey items related to perceptions of ``team click'' were separately analysed for the purposes of data reduction.  EFA was performed on click items, imposing one factor labelled ``teamClick'', and which explained 34.5\% of the overall variance ($\chi^2 (df=9) = 46.36$, $p < .001$).  Various statistics, including $KMO =  0.69$, corrtest Bartlett: $\chi^2 =  182.73$, $p < .001$ and $G6\alpha =.76$ and $Cronbach's \alpha = .75$ indicated that the data reduction was appropriate.
+
+%Interestingly, when click and bonding measures were analysed together, the following loading were observed:
+%Loadings:
+%                       Factor1 Factor2
+%unspokenUnderstanding7  0.710
+%generalAtmosphere7      0.713
+%clickPictorial7         0.672  -0.106
+%reliabilityOfOthers7    0.128   0.539
+%reliabilityForOthers7           0.424
+%abilityExtended7       -0.110   0.956
+%emotionalSupport7       0.656   0.131
+%sharedGoal7             0.838
+%fusionPictorialTeam7    0.424
+%fusionVerbal7           0.138   0.281
+
+
+\paragraph{Social Bonding}
+
+Survey items related to perceptions of social bonding to the target in-group were separately analysed for the purposes of data reduction.  Group Identification was excluded from factor analysis due to low correlations with other variables except for the (related) item of fusionVerbal. Thus,  EFA was performed on 6 remaining items, imposing one factor labelled ``teamClick'', and which explained 34.5\% of the overall variance.  Various statistics, including $KMO =  0.65$, corrtest Bartlett: $\chi^2 =   108.22$, $p < .001$ and $G6\alpha =.66$ and $Cronbach's \alpha = .65$ indicated that the data reduction was appropriate.
+%not including hypothesis test for 1 factor as sufficient
+
+
+\paragraph{Fatigue}
+Finally, survey items related to perceptions of fatigue and exertion were separately analysed for the purposes of data reduction.  Due to difficulty completing questions related to arousal in the online and in-person surveys, mood-related items were excluded from analysis.  In addition, it was clear from correlation values that injury did not strongly corerlate with other items relevant to fatigue and exertion, and was excluded from subsequent analysis. Thus, an EFA was performed on 3 remaining items (fatigue, physical perceived exertion, and mental perceived exertion), imposing one factor   Correlations labelled ``fatigue'', which explained 57.8\% of the overall variance.  Various statistics, including $KMO =  0.69$, corrtest Bartlett: $\chi^2 =    111.93$, $p < .001$ and $G6\alpha =.73$ and $Cronbach's \alpha = .80$ indicated that the data reduction was appropriate.
+
+
+
+\newgeometry{margin=1cm} % modify this if you need even more space
+\begin{landscape}
+
+\subsubsection{Summary Statistics of Post-Tournament Variables}
+
+% Descriptives:
+
+\begin{table}[!htbp] \centering
+  \caption{Post Tournament Variables }
+  \label{}
+\footnotesize
+\begin{tabular}{@{\extracolsep{5pt}}lccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+Statistic & \multicolumn{1}{c}{N} & \multicolumn{1}{c}{Mean} & \multicolumn{1}{c}{St. Dev.} & \multicolumn{1}{c}{Min} & \multicolumn{1}{c}{Max} \\
+\hline \\[-1.8ex]
+objectiveCompetence & 118 & $-$0.001 & 0.945 & $-$2.002 & 2.940 \\
+subjectiveCompetence & 118 & $-$0.010 & 0.958 & $-$2.588 & 1.795 \\
+indPerformance & 118 & 56.356 & 23.474 & 0 & 100 \\
+indPerformanceComponents & 118 & 0.000 & 0.951 & $-$2.956 & 1.695 \\
+teamPerformance & 118 & 64.364 & 23.610 & 0 & 100 \\
+teamPerformanceComponents & 118 & $-$0.000 & 0.964 & $-$3.278 & 1.792 \\
+teamClick& 118 & $-$0.000 & 0.901 & $-$3.056 & 1.424 \\
+socialBonding & 118 & 0.000 & 0.887 & $-$3.077 & 1.077 \\
+fatigue & 118 & $-$0.000 & 0.907 & $-$3.401 & 1.674 \\
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+
+% Correlation matrix:
+
+\begin{table}[!htbp] \centering
+  \caption{Post Tournament Variables Correlation Matrix}
+  \label{}
+\footnotesize
+\begin{tabular}{@{\extracolsep{5pt}} cccccccccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & objComp & subjComp & indPerf & indPerfComp & teamPerf & teamPerfComp & teamClick & socBond & fat \\
+\hline \\[-1.8ex]
+objectiveCompetence & $1$ & $$-$0.229$ & $$-$0.045$ & $$-$0.091$ & $0.069$ & $$-$0.134$ & $$-$0.141$ & $$-$0.077$ & $$-$0.058$ \\
+subjectiveCompetence & $$-$0.229$ & $1$ & $$-$0.064$ & $$-$0.148$ & $$-$0.029$ & $$-$0.049$ & $0.173$ & $0.195$ & $0.059$ \\
+indPerformance & $$-$0.045$ & $$-$0.064$ & $1$ & $0.456$ & $0.508$ & $0.351$ & $0.329$ & $0.239$ & $0.291$ \\
+indPerformanceComponents & $$-$0.091$ & $$-$0.148$ & $0.456$ & $1$ & $0.422$ & $0.490$ & $0.378$ & $0.194$ & $0.282$ \\
+teamPerformance & $0.069$ & $$-$0.029$ & $0.508$ & $0.422$ & $1$ & $0.665$ & $0.578$ & $0.354$ & $0.311$ \\
+teamPerformanceComponents & $$-$0.134$ & $$-$0.049$ & $0.351$ & $0.490$ & $0.665$ & $1$ & $0.686$ & $0.424$ & $0.261$ \\
+teamClick & $$-$0.141$ & $0.173$ & $0.329$ & $0.378$ & $0.578$ & $0.686$ & $1$ & $0.711$ & $0.277$ \\
+socialBonding & $$-$0.077$ & $0.195$ & $0.239$ & $0.194$ & $0.354$ & $0.424$ & $0.711$ & $1$ & $0.180$ \\
+fatigue & $$-$0.058$ & $0.059$ & $0.291$ & $0.282$ & $0.311$ & $0.261$ & $0.277$ & $0.180$ & $1$ \\
+\hline \\[-1.8ex]
+\end{tabular}
+\end{table}
+
+
+
+\end{landscape}
+\restoregeometry
+
+
+
+\subsubsection{Models}
+Once variables of interest were reduced to factors, it was possible to use these variables to test the specific predictions of this study.  Statistical modeling was conducted to further understand the relationship between perceptions of joint-action (component performance and performance relative to prior expectations), outcome variables of social bonding and fatigue, and the extent to which this relationship was conditioned by feelings of ``team click'' and/or technical competence (objective and subjective measures).
+
+\paragraph{Data Structure}
+The multilevel structure of the data (athletes are nested within teams; teams in turn are nested within the men's and women's competitions) suggests dependency in the data, whereby residuals of within-group observations could be correlated.  In addition, the data available for analysis were unbalanced, meaning that there were an uneven number of observations for each of the 15 teams.  As such,  intra-class correlations (ICC) were calculated to compare within-group variance and between-group variance and thus determine the suitability of a hierarchical analysis.
+
+Initial analysis of the data revealed team-level differences in
+1.COMPETENCE: no differences
+2.PERFORMANCE:
+- team and individual component performance showed significant group-level variance
+- team performance relative to prior expectations was significant by team, but indPerformance7 did not vary significantly accross teams.
+CLICK:
+team level differences in click, no sex level differences
+BONDING:
+FATIGUE:
+
+Sex-differences were also identifiable in rating of individual performance, but otherwise there were no clear dependencies in the outcome variables relating to variables of click, bonding, or fatigue.
+
+It was decided that, due to the dependency in the data, where it appeared that there was clustering by group for variables relating to performance, click, bonding, and fatigue, a two-level structure would be used to account for this group-level variance, with  individual observations nested within team.
+the prevalence of missing values lent itself to a multilevel approach.\\
+
+For the following analyses,  multilevel general linear models were fit using the lme4 package in R.  Maximum Likelihood parameter estimation method and first order autoregressive AR(1) covariance structure were used. Team (and the predictor variables of interest were included as random effects, and their slopes and intercepts were allowed to vary in order to  more accurately account for the residual variance in the model. Control and moderator variables were introduced into the model in a stepwise fashion, and model fit was judged on the Akaike Information Criteria (AIC), using a chi-squared test based on -2Log Likelihood results for each model.
+
+
+\paragraph{1.a: jointActionSuccess predicts team Click}
+
+\begin{align*}
+ teamClick =  & jointActionSuccess  \\
+           &+ objectiveCompetence + subjectiveCompetence  \\
+           &+ individualComponentPerformance \\
+           &+ objective performance measures \\
+\end{align*}
+
+
+\begin{table}[!htbp] \centering
+  \caption{teamClick $\sim$ jointActionSuccess}
+  \label{}
+\begin{tabular}{@{\extracolsep{5pt}}lccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\
+\cline{2-4}
+\\[-1.8ex] & \multicolumn{3}{c}{teamClick} \\
+\\[-1.8ex] & (1) & (2) & (3)\\
+\hline \\[-1.8ex]
+ Constant & $-$0.04 & 0.02 & $-$0.87$^{**}$ \\
+  & (0.15) & (0.07) & (0.44) \\
+  & & & \\
+ jointActionSuccess &  & 0.65$^{***}$ & 0.69$^{***}$ \\
+  &  & (0.10) & (0.11) \\
+  & & & \\
+ objectiveCompetence &  &  & 0.05 \\
+  &  &  & (0.08) \\
+  & & & \\
+ subjectiveCompetence &  &  & 0.10 \\
+  &  &  & (0.07) \\
+  & & & \\
+ indPerformanceComponents &  &  & $-$0.02 \\
+  &  &  & (0.09) \\
+  & & & \\
+ finalRank &  &  & 0.12 \\
+  &  &  & (0.09) \\
+  & & & \\
+ minutesTotal &  &  & 0.01$^{*}$ \\
+  &  &  & (0.003) \\
+  & & & \\
+ totalWL &  &  & $-$0.07 \\
+  &  &  & (0.06) \\
+  & & & \\
+ pointsTotal &  &  & 0.01 \\
+  &  &  & (0.01) \\
+  & & & \\
+\hline \\[-1.8ex]
+Observations & 118 & 118 & 97 \\
+Log Likelihood & $-$146.53 & $-$112.76 & $-$92.11 \\
+Akaike Inf. Crit. & 299.06 & 237.51 & 210.22 \\
+Bayesian Inf. Crit. & 307.37 & 254.14 & 243.69 \\
+\hline
+\hline \\[-1.8ex]
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+\paragraph{1.b teamPerformanceExpectations predict teamClick}
+
+\begin{align*}
+ teamClick =  & teamPerformanceExpectations \\
+           &+ objectiveCompetence + subjectiveCompetence  \\
+           &+ individualPerformanceExpectations \\
+           &+ objective performance measures \\
+\end{align*}
+
+
+
+\begin{table}[!htbp] \centering
+  \caption{teamClick ~ teamPerformanceExpectations}
+  \label{}
+\begin{tabular}{@{\extracolsep{5pt}}lccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\
+\cline{2-4}
+\\[-1.8ex] & \multicolumn{3}{c}{clickPostFactor} \\
+\\[-1.8ex] & (1) & (2) & (3)\\
+\hline \\[-1.8ex]
+ Constant & $-$0.04 & $-$1.30$^{***}$ & $-$2.18$^{***}$ \\
+  & (0.15) & (0.22) & (0.61) \\
+  & & & \\
+ teamPerformance7 &  & 0.02$^{***}$ & 0.02$^{***}$ \\
+  &  & (0.003) & (0.004) \\
+  & & & \\
+ objectiveCompetenceFactor &  &  & 0.03 \\
+  &  &  & (0.09) \\
+  & & & \\
+ subjectiveCompetenceFactor &  &  & 0.13$^{*}$ \\
+  &  &  & (0.08) \\
+  & & & \\
+ indPerformance7 &  &  & $-$0.0002 \\
+  &  &  & (0.003) \\
+  & & & \\
+ finalRank &  &  & 0.11 \\
+  &  &  & (0.11) \\
+  & & & \\
+ minutesTotal &  &  & 0.003 \\
+  &  &  & (0.004) \\
+  & & & \\
+ totalWL &  &  & $-$0.02 \\
+  &  &  & (0.08) \\
+  & & & \\
+ pointsTotal &  &  & 0.002 \\
+  &  &  & (0.01) \\
+  & & & \\
+\hline \\[-1.8ex]
+Observations & 118 & 118 & 97 \\
+Log Likelihood & $-$146.53 & $-$131.43 & $-$105.55 \\
+Akaike Inf. Crit. & 299.06 & 270.85 & 233.11 \\
+Bayesian Inf. Crit. & 307.37 & 281.94 & 261.43 \\
+\hline
+\hline \\[-1.8ex]
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+\end{tabular}
+\end{table}
+
+
+
+
+\paragraph{1.c teamPerformanceExpectations moderates the effect of jointActionSuccess on team Click}
+
+Note: interaction not significant
+
+\begin{table}[!htbp] \centering
+  \caption{teamClick $\sim$ jointActionSuccess * teamPerformanceExpectations}
+  \label{}
+\begin{tabular}{@{\extracolsep{5pt}}lc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
+\cline{2-2}
+\\[-1.8ex] & clickPostFactor \\
+\hline \\[-1.8ex]
+ Constant & $-$1.42$^{***}$ \\
+  & (0.50) \\
+  & \\
+ teamPerformanceComponentsFactorPost & 0.60$^{***}$ \\
+  & (0.20) \\
+  & \\
+ teamPerformance7 & 0.01 \\
+  & (0.004) \\
+  & \\
+ objectiveCompetenceFactor & 0.07 \\
+  & (0.09) \\
+  & \\
+ subjectiveCompetenceFactor & 0.11 \\
+  & (0.07) \\
+  & \\
+ indPerformance7 & $-$0.001 \\
+  & (0.003) \\
+  & \\
+ indPerformanceComponentsFactorPost & $-$0.03 \\
+  & (0.10) \\
+  & \\
+ finalRank & 0.16$^{*}$ \\
+  & (0.09) \\
+  & \\
+ minutesTotal & 0.005 \\
+  & (0.004) \\
+  & \\
+ totalWL & $-$0.09 \\
+  & (0.06) \\
+  & \\
+ pointsTotal & 0.01 \\
+  & (0.01) \\
+  & \\
+ teamPerformanceComponentsFactorPost:teamPerformance7 & $-$0.0004 \\
+  & (0.003) \\
+  & \\
+\hline \\[-1.8ex]
+Observations & 97 \\
+Log Likelihood & $-$92.15 \\
+Akaike Inf. Crit. & 212.31 \\
+Bayesian Inf. Crit. & 248.36 \\
+\hline
+\hline \\[-1.8ex]
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+\end{tabular}
+\end{table}
+
+
+
+
+\paragraph{2.a teamClick predicts socialBonding}
+
+
+\begin{table}[!htbp] \centering
+  \caption{socialBonding ~ teamCLick}
+  \label{}
+\begin{tabular}{@{\extracolsep{5pt}}lccc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{3}{c}{\textit{Dependent variable:}} \\
+\cline{2-4}
+\\[-1.8ex] & \multicolumn{3}{c}{bondingPostFactor} \\
+\\[-1.8ex] & (1) & (2) & (3)\\
+\hline \\[-1.8ex]
+ Constant & $-$0.01 & 0.00 & $-$0.16 \\
+  & (0.10) & (0.06) & (0.54) \\
+  & & & \\
+ clickPostFactor &  & 0.65$^{***}$ & 0.75$^{***}$ \\
+  &  & (0.07) & (0.11) \\
+  & & & \\
+ objectiveCompetenceFactor &  &  & 0.02 \\
+  &  &  & (0.09) \\
+  & & & \\
+ subjectiveCompetenceFactor &  &  & 0.10 \\
+  &  &  & (0.07) \\
+  & & & \\
+ teamPerformance7 &  &  & $-$0.004 \\
+  &  &  & (0.005) \\
+  & & & \\
+ indPerformance7 &  &  & 0.003 \\
+  &  &  & (0.003) \\
+  & & & \\
+ teamPerformanceComponentsFactorPost &  &  & $-$0.04 \\
+  &  &  & (0.13) \\
+  & & & \\
+ indPerformanceComponentsFactorPost &  &  & 0.003 \\
+  &  &  & (0.10) \\
+  & & & \\
+ finalRank &  &  & 0.11 \\
+  &  &  & (0.09) \\
+  & & & \\
+ minutesTotal &  &  & $-$0.005 \\
+  &  &  & (0.004) \\
+  & & & \\
+ totalWL &  &  & $-$0.08 \\
+  &  &  & (0.07) \\
+  & & & \\
+ pointsTotal &  &  & $-$0.002 \\
+  &  &  & (0.01) \\
+  & & & \\
+\hline \\[-1.8ex]
+Observations & 118 & 118 & 97 \\
+Log Likelihood & $-$151.95 & $-$119.15 & $-$95.80 \\
+Akaike Inf. Crit. & 309.90 & 246.29 & 219.60 \\
+Bayesian Inf. Crit. & 318.21 & 257.38 & 255.65 \\
+\hline
+\hline \\[-1.8ex]
+\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+\end{tabular}
+\end{table}
+
+
+
+\paragraph{3.a jointActionSuccess predicts socialBonding}
+
+
+\begin{table}[!htbp] \centering
+  \caption{socialBonding ~ jointActionSuccess}
+  \label{}
+\begin{tabular}{@{\extracolsep{5pt}}lc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
+\cline{2-2}
+\\[-1.8ex] & bondingPostFactor \\
+\hline \\[-1.8ex]
+ Constant & $-$0.54 \\
+  & (0.48) \\
+  & \\
+ teamPerformanceComponentsFactorPost & 0.39$^{***}$ \\
+  & (0.13) \\
+  & \\
+ indPerformanceComponentsFactorPost & 0.08 \\
+  & (0.10) \\
+  & \\
+ minutesTotal & 0.002 \\
+  & (0.004) \\
+  & \\
+ totalWL & $-$0.06 \\
+  & (0.07) \\
+  & \\
+ pointsTotal & $-$0.001 \\
+  & (0.01) \\
+  & \\
+ finalRank & 0.10 \\
+  & (0.09) \\
+  & \\
+\hline \\[-1.8ex]
+Observations & 116 \\
+Log Likelihood & $-$133.05 \\
+Akaike Inf. Crit. & 288.10 \\
+Bayesian Inf. Crit. & 318.39 \\
+\hline
+\hline \\[-1.8ex]
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+\end{tabular}
+\end{table}
+
+
+\paragraph{3.b teamPerformanceExpectations -> socialBonding} % very small effect
+
+
+\begin{table}[!htbp] \centering
+  \caption{socialBonding ~ teamPerformanceExpectations}
+  \label{}
+\begin{tabular}{@{\extracolsep{5pt}}lc}
+\\[-1.8ex]\hline
+\hline \\[-1.8ex]
+ & \multicolumn{1}{c}{\textit{Dependent variable:}} \\
+\cline{2-2}
+\\[-1.8ex] & bondingPostFactor \\
+\hline \\[-1.8ex]
+ Constant & $-$1.43$^{**}$ \\
+  & (0.62) \\
+  & \\
+ teamPerformance7 & 0.01$^{*}$ \\
+  & (0.01) \\
+  & \\
+ indPerformance7 & 0.004 \\
+  & (0.004) \\
+  & \\
+ minutesTotal & 0.001 \\
+  & (0.004) \\
+  & \\
+ totalWL & $-$0.04 \\
+  & (0.07) \\
+  & \\
+ pointsTotal & $-$0.001 \\
+  & (0.01) \\
+  & \\
+ finalRank & 0.10 \\
+  & (0.10) \\
+  & \\
+\hline \\[-1.8ex]
+Observations & 116 \\
+Log Likelihood & $-$138.62 \\
+Akaike Inf. Crit. & 299.23 \\
+Bayesian Inf. Crit. & 329.52 \\
+\hline
+\hline \\[-1.8ex]
+\textit{Note:}  & \multicolumn{1}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+\paragraph{Mediation analysis: jointActionSuccess predicts socialBonding, moderated by teamClick}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+5. Pre-post measures
+
+6.  Overall relationships? Deal with toys out of the pram, the mid-Tournament drop in performance.
+
+
+
+
+
+\end{document}
+
+
+Athletes who were surveyed at t3 and t4 were combined into one time point, t3. \\  %<- post-hoc statistical justification needed here? (t.tests for DVs/mods?)

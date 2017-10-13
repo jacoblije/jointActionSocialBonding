@@ -1,0 +1,795 @@
+%   Report on survey
+
+%---------1. JOINT-ACTION SUCCESS -> PERCEIVED CLICK -> BONDING (POST-TOURNAMENT SURVEY)--------------%
+%     1.1 Joint-Action Success -> Perceived Click: Does joint-action success predict perceived click in post-tournament survey?
+%       1.1.1 Do violations of expectations around team performance interact with joint-action success to predict perceived click (when controlling for violations of expectations around ind performance)?
+%       1.1.2 Control for violations of expectations around ind performance and objective performance measures.
+%
+%     1.2 Perceived Click -> Bonding: Does perceived click predict bonding in post-tournament survey?
+%       1.2.1 Do violations of expectations around team performance interact with perceived click to predict bonding   (controlling for violations of expectations around individual performance)?
+%       1.2.2 Control for objective performance measures
+%
+%     1.3 Joint-Action Success -> Click -> Bonding: Does click mediate the relationship between joint-action success and social bonding?
+%       1.3.1 Include performance violations in the model?
+%       1.3.2 Control for indPerformance and objective performance measures
+%
+%    1.4 Run 1.2-1.3 with fatigue as outcome variable
+%
+%    1.5 Test assumptions of final models for bonding and fatigue
+%       1.5.1 Normality of residuals
+%       1.5.2 Linearity of each variable
+%       1.5.3 Independence
+%       1.5.4 Outliers / Influential Cases
+%
+%---------2.PRE-POST changes in BONDING & FATIGUE-----------%
+%
+%   2.1 Does $\Delta$ -> $\Delta$ Bonding?
+%    2.1.1 Does teamPerformance violations interact with click to predict change in bonding?
+%    2.1.2 Control for indPerformance violations and objective perofrmance
+%
+%   2.2 Repeat model for fatigue
+%
+%   2.3 Check model assumptions
+%
+%----------3. TOURNAMENT-WIDE RELATIONSHIPS: performance, click, competence, bonding & fatigue -------%
+%
+%
+%
+# File name: surveyLongModelScript.R
+# Author: Jacob Taylor
+# Date: 15/03/2017
+# Description: A script for analysing survey data collected at the Chinese National Rugby Sevens Championship, Qianan, July 16-17 2016
+# Aim: investigate specific questions based on EC's feedback 15/03/17
+# Tasks:
+#         1) Analyse relationships in post-tournament measures
+#                1.1 Performance -> click: feelings of successful joint-action predict higher levels of click
+#                1.2 performance vioaltion -> click: violations of expectations interact with performance to predict click?
+#                1.3 click -> bonding:
+#                1.4
+#         2) Account for changes in bonding and fatigue pre-post tournament
+#         3) Run regression diagnostics on model parameters
+#         4) Consider a structural equation model
+
+#   set working directory
+setwd("/Users/jacob1/Documents/2017/Research/DPhil/Survey/Data")
+
+#   read .csv file
+surLong1 <- read.csv("surLong2.csv", na.strings = c("", "  ", "   "))  #<-identify all blank values as missing values <NA>
+survey <- read.csv("surveyWideComplete.csv", na.strings = "")  #<-identify all blank values as missing values <NA>
+
+
+
+
+
+
+# 0.1  Perform EFAs for variables of interest:  teamPerformance & indPerformance (components), click, bonding, & fatigue
+
+
+# 0.1.1 TEAM PERFORMANCE COMPONENTS
+# Run PCA to determine number of factors
+surveyTeamPerformance <- subset(survey, select = c(teamDefense7, teamAttack7, teamSupportPlay7, teamCommunication7))
+surveyTeamPerformance.pca <- princomp(na.omit(surveyTeamPerformance))
+summary(surveyTeamPerformance.pca)  #<- looks like 1 factor
+plot(surveyTeamPerformance.pca)
+# teamPunctuality7, teamCurfew7, teamMealAttendance7, teamGeneralConduct7
+
+# Run EFA for performance components post-tournament
+
+surveyTeamPerformance.fa <- factanal(~ teamDefense7 + teamAttack7 + teamSupportPlay7 + teamCommunication7, 1,
+                                     data = survey, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+# + teamPunctuality7 + teamCurfew7 + teamMealAttendance7 +teamGeneralConduct7
+surveyTeamPerformance.fa
+head(surveyTeamPerformance.fa$scores)
+survey <- cbind(survey, surveyTeamPerformance.fa$scores)
+names(survey)[names(survey) == "Factor1"] <- "teamPerformanceComponentsFactorPost"
+
+teamPerformanceMatrix <- cor(surveyTeamPerformance, use = "complete")
+KMO(teamPerformanceMatrix)
+cortest.bartlett(teamPerformanceMatrix, n = 118) # what is the sample size here?
+psych::alpha(teamPerformanceMatrix)
+
+# TEAM PERFORMANCE @ Baseline / t1
+surveyTeamPerformanceBaseline <- subset(survey, select = c(teamDefense1, teamAttack1, teamSupportPlay1, teamCommunication1))
+surveyTeamPerformanceBaseline.fa <- factanal(~ teamDefense0 + teamAttack0 + teamSupportPlay0 + teamCommunication0, 1,
+                                     data = survey, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+# + teamPunctuality7 + teamCurfew7 + teamMealAttendance7 +teamGeneralConduct7
+surveyTeamPerformanceBaseline.fa
+head(surveyTeamPerformanceBaseline.fa$scores)
+survey <- cbind(survey, surveyTeamPerformanceBaseline.fa$scores)
+names(survey)[names(survey) == "Factor1"] <- "teamPerformanceComponentsFactorBaseline"
+hist(survey$teamPerformanceComponentsFactorBaseline)
+
+teamPerformanceMatrix <- cor(surveyTeamPerformance, use = "complete")
+KMO(teamPerformanceMatrix)
+cortest.bartlett(teamPerformanceMatrix, n = 118) # what is the sample size here?
+psych::alpha(teamPerformanceMatrix)
+
+
+# 0.1.2 IND PERFORMANCE COMPONENTS
+# Run PCA to determine number of factors
+surveyIndPerformance <- subset(survey, select = c(passingTech7, supportAttack7, indDefense7, effectContact7, decisionAttack7))
+surveyIndPerformance.pca <- princomp(na.omit(surveyIndPerformance))
+summary(surveyIndPerformance.pca)  #<- looks like 1 factor
+plot(surveyIndPerformance.pca)
+
+
+# Run EFA for ind performance components post-tournament
+surveyIndPerformance.fa <- factanal(~ passingTech7 + supportAttack7 + indDefense7 + effectContact7 + decisionAttack7, 1,
+                                     data = survey, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+# + teamPunctuality7 + teamCurfew7 + teamMealAttendance7 +teamGeneralConduct7
+surveyIndPerformance.fa
+head(surveyIndPerformance.fa$scores)
+survey <- cbind(survey, surveyIndPerformance.fa$scores)
+names(survey)[names(survey) == "Factor1"] <- "indPerformanceComponentsFactorPost"
+
+indPerformanceMatrix <- cor(surveyIndPerformance, use = "complete")
+KMO(teamPerformanceMatrix)
+cortest.bartlett(teamPerformanceMatrix, n = 118) # what is the sample size here?
+psych::alpha(indPerformanceMatrix)
+
+
+# 0.2 CLICK
+# Run PCA to determine number of factors
+surveyClickPost <- subset(survey, select = c(unspokenUnderstanding7, generalAtmosphere7, clickPictorial7, reliabilityOfOthers7, reliabilityForOthers7, abilityExtended7))
+surveyClickPost.pca <- princomp(na.omit(surveyClickPost))
+summary(surveyClickPost.pca)  #<- looks like 1 factor
+plot(surveyClickPost.pca)
+
+
+# CLICK EFA post-tournament
+surveyClickPost.fa <- factanal(~ unspokenUnderstanding7 + generalAtmosphere7 + clickPictorial7 + reliabilityOfOthers7 + reliabilityForOthers7 + abilityExtended7, 1,
+                                    data = survey, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+surveyClickPost.fa
+head(surveyClickPost.fa$scores)
+survey <- cbind(survey, surveyClickPost.fa$scores)
+names(survey)[names(survey) == "Factor1"] <- "clickPostFactor"
+
+surveyClickPostMatrix <- cor(surveyClickPost, use = "complete")
+KMO(surveyClickPostMatrix)
+cortest.bartlett(surveyClickPostMatrix, n = 118) # what is the sample size here?
+psych::alpha(surveyClickPostMatrix)
+
+# 0.3 BONDING EFA post-tournament
+# Run PCA to determine number of factors
+surveyBondingPost <- subset(survey, select = c(emotionalSupport7, sharedGoal7, fusionPictorialTeam7, fusionVerbal7))
+surveyBondingPost.pca <- princomp(na.omit(surveyBondingPost))
+summary(surveyBondingPost.pca)  #<- looks like 1 factor
+plot(surveyBondingPost.pca)
+# fusionVerbal7, groupId7
+
+surveyBondingPost.fa <- factanal(~ emotionalSupport7 + sharedGoal7 + fusionPictorialTeam7 + fusionVerbal7, 1,
+                                    data = survey, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+
+surveyBondingPost.fa
+head(surveyBondingPost.fa$scores)
+survey <- cbind(survey, surveyBondingPost.fa$scores)
+names(survey)[names(survey) == "Factor1"] <- "bondingPostFactor"
+
+bondingPostMatrix <- cor(surveyBondingPost, use = "complete")
+KMO(bondingPostMatrix)
+cortest.bartlett(bondingPostMatrix, n = 118) # what is the sample size here?
+psych::alpha(bondingPostMatrix)
+
+# 0.3.1 BONDING EFA PRE-TOURNAMENT
+
+surveyBondingBaseline <- subset(survey, select = c(emotionalSupport0, sharedGoal0, fusionPictorialTeam0, fusionVerbal0))
+surveyBondingBaseline.pca <- princomp(na.omit(surveyBondingBaseline))
+summary(surveyBondingBaseline.pca)  #<- looks like 1 factor
+plot(surveyBondingBaseline.pca)
+# fusionVerbal7, groupId7
+
+surveyBondingBaseline.fa <- factanal(~ emotionalSupport0 + sharedGoal0 + fusionPictorialTeam0 + fusionVerbal0, 1,
+                                 data = survey, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+
+surveyBondingBaseline.fa
+head(surveyBondingBaseline.fa$scores)
+survey <- cbind(survey, surveyBondingBaseline.fa$scores)
+names(survey)[names(survey) == "Factor1"] <- "bondingBaselineFactor"
+
+
+
+# 0.4 FATIGUE
+# Run PCA to determine number of factors
+surveyFatiguePost <- subset(survey, select = c(fatigue7, prpe7, mental7))
+surveyFatiguePost.pca <- princomp(na.omit(surveyFatiguePost))
+summary(surveyFatiguePost.pca)  #<- looks like 1 factor
+plot(surveyFatiguePost.pca)
+
+
+surveyFatiguePost.fa <- factanal(~ fatigue7 + prpe7 + mental7, 1,
+                                 data = survey, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+
+surveyFatiguePost.fa
+head(surveyFatiguePost.fa$scores)
+survey <- cbind(survey, surveyFatiguePost.fa$scores)
+names(survey)[names(survey) == "Factor1"] <- "fatiguePostFactor"
+
+fatiguePostMatrix <- cor(surveyFatiguePost, use = "complete")
+KMO(fatiguePostMatrix)
+cortest.bartlett(fatiguePostMatrix, n = 118) # what is the sample size here?
+psych::alpha(fatiguePostMatrix)
+
+
+
+
+
+
+#---------------1. JOINT-ACTION SUCCESS -> PERCEIVED CLICK -> BONDING (POST-TOURNAMENT SURVEY)-----------------------------#
+#
+#
+# 1.1 Joint-Action Success -> Perceived Click: Does joint-action success predict perceived click in post-tournament survey?
+#
+#     1.1.1 test performance -> click relationship
+plot(survey$teamPerformanceComponentsFactorPost, survey$clickPostFactor)
+summary(lm(survey$clickPostFactor ~ survey$teamPerformanceComponentsFactorPost))
+abline(lm(survey$clickPostFactor ~ survey$teamPerformanceComponentsFactorPost))
+summary(lm(survey$clickPostFactor ~ survey$teamPerformanceComponentsFactorPost + survey$indPerformanceComponentsFactorPost + survey$team)) #<- appears to be differences by team here
+summary(lm(survey$clickPostFactor ~ survey$teamPerformanceComponentsFactorPost + survey$teamPerformanceComponentsChangePrePost + survey$indPerformanceComponentsFactorPost + survey$cumulativeMinutes6 + survey$cumulativeWL6 + survey$pointsTotal))
+
+# explore group-level differences:
+
+#PERFORMANCE-team & ind
+
+# team
+plot(survey$team, survey$teamPerformanceComponentsFactorPost)
+summary(lm(survey$teamPerformanceComponentsFactorPost ~ survey$team))
+teamPerformanceTeam <- data.table(survey)
+teamPerformanceTeam[,list(mean = mean(teamPerformanceComponentsFactorPost, na.rm = TRUE),sd=sd(teamPerformanceComponentsFactorPost, na.rm = TRUE)), by = team]
+
+plot(survey$finalRank, survey$teamPerformanceComponentsFactorPost)
+abline(lm(survey$teamPerformanceComponentsFactorPost ~ survey$finalRank))
+summary(lm(survey$teamPerformanceComponentsFactorPost ~ survey$finalRank))
+
+plot(survey$sex, survey$teamPerformanceComponentsFactorPost)
+summary(lm(survey$teamPerformanceComponentsFactorPost ~ survey$sex))
+
+#indPerformance
+plot(survey$team, survey$indPerformanceComponentsFactorPost)
+summary(lm(survey$indPerformanceComponentsFactorPost ~ survey$team))
+indPerformanceTeam <- data.table(survey)
+indPerformanceTeam[,list(mean = mean(indPerformanceComponentsFactorPost, na.rm = TRUE),sd=sd(indPerformanceComponentsFactorPost, na.rm = TRUE)), by = team]
+
+plot(survey$finalRank, survey$indPerformanceComponentsFactorPost)
+abline(lm(survey$indPerformanceComponentsFactorPost ~ survey$finalRank))
+summary(lm(survey$indPerformanceComponentsFactorPost ~ survey$finalRank))
+
+plot(survey$sex, survey$indPerformanceComponentsFactorPost)
+summary(lm(survey$indPerformanceComponentsFactorPost ~ survey$sex))
+
+
+
+#CLICK
+summary(lm(survey$clickPostFactor ~ survey$team))
+plot(survey$team, survey$clickPostFactor)
+#install.packages("data.table")
+#library(data.table)
+clickTeam <- data.table(survey)
+clickTeam[,list(mean = mean(clickPostFactor, na.rm = TRUE),sd=sd(clickPostFactor, na.rm = TRUE)), by = team]
+#sex
+plot(survey$sex, survey$clickPostFactor)
+summary(lm(survey$clickPostFactor ~ survey$sex))
+
+#rank
+plot(survey$finalRank, survey$clickPostFactor)
+abline(lm(survey$clickPostFactor ~ survey$finalRank))
+clickRank <- lm(survey$clickPostFactor ~ survey$finalRank)
+summary(clickRank)
+
+
+
+
+# re-code teamPerformance @ time 7
+mean(survey$teamPerformance7, na.rm = TRUE)
+survey$teamPerformance7PosNeg <- ifelse(!is.na(survey$teamPerformance7) & survey$teamPerformance7 >= 50, 1,
+                                  ifelse(!is.na(survey$teamPerformance7) & survey$teamPerformance7 < 50, 0, NA))
+survey$teamPerformance7mean <- ifelse(!is.na(survey$teamPerformance7) & survey$teamPerformance7 >= 56.35593, 1,
+                                      ifelse(!is.na(survey$teamPerformance7) & survey$teamPerformance7 < 56.35593, 0, NA))  # this is the mean score of teamPerformance @t7
+survey$teamPerformance7less40 <- ifelse(!is.na(survey$teamPerformance7) & survey$teamPerformance7 >= 40, 1,
+                                        ifelse(!is.na(survey$teamPerformance7) & survey$teamPerformance7 < 40, 0, NA)) # see hist(survey$teamPerformance7) <- huge drop off at 40
+
+# average teamPerformance t2,t4,t7 tournament:
+survey$teamPerformanceOverall <- (survey$teamPerformance2 + survey$teamPerformance4 + survey$teamPerformance7)/3
+hist(survey$teamPerformanceOverall)
+# average teamPerformance during tournament:
+survey$teamPerformanceMidTournament <- (survey$teamPerformance2 + survey$teamPerformance4)/2
+hist(survey$teamPerformanceMidTournament)
+# average teamPerformanceEntire (t0, t2, t4, t7):
+survey$teamPerformanceEntire <- (survey$teamPerformance0 + survey$teamPerformance2 + survey$teamPerformance4 + survey$teamPerformance7)/4
+hist(survey$teamPerformanceEntire)
+
+#re-code teamPerformance overall (posNeg / mean)
+survey$teamPerformanceOverallPosNeg <- ifelse(!is.na(survey$teamPerformanceOverall) & survey$teamPerformanceOverall >= 50, 1,
+                                        ifelse(!is.na(survey$teamPerformanceOverall) & survey$teamPerformanceOverall < 50, 0, NA))
+
+# change in teamPerformanceComponents pre/post
+survey$teamPerformanceComponentsChangePrePost <- (survey$teamPerformanceComponentsFactorPost - survey$teamPerformanceComponentsFactorBaseline)
+mean(survey$teamPerformanceComponentsChangePrePost, na.rm = TRUE)
+hist(survey$teamPerformanceComponentsChangePrePost)
+t.test(survey$teamPerformanceComponentsFactorPost, survey$teamPerformanceComponentsFactorBaseline, paired = TRUE)
+plot(survey$teamPerformanceComponentsChangePrePost, survey$clickPostFactor)
+abline(lm(survey$clickPostFactor ~ survey$teamPerformanceComponentsChangePrePost))
+summary(lm(survey$clickPostFactor ~ survey$teamPerformanceComponentsChangePrePost))
+
+
+#     1.1.2 Build a MLM according to this relationship betwen teamPerformance and Click, with team as level <- there are some team-level differences in this relationship
+
+#             1.1.2.1 Baseline
+install.packages("nlme")
+library(nlme)
+#baseline
+teamPerformanceClick.baseline <- lme(clickPostFactor ~ 1, data = survey, random = ~ 1|team,  na.action = na.exclude)
+teamPerformanceClick.baseline1 <- lme(clickPostFactor ~ 1, random = ~ 1 | team/teamPerformanceComponentsFactorPost,
+                                     data = survey, na.action = na.exclude, method = "ML")
+summary(teamPerformanceClick.baseline)
+anova(teamPerformanceClick.baseline, teamPerformanceClick.baseline1)
+
+#             1.1.2.2 click ~ teamPerformanceComponents
+teamPerformanceClick.1 <- lme(clickPostFactor ~ teamPerformanceComponentsFactorPost, random = ~ 1 | team/teamPerformanceComponentsFactorPost,
+                        data = survey, na.action = na.exclude, method = "ML")
+summary(teamPerformanceClick.1)
+anova(teamPerformanceClick.baseline1, teamPerformanceClick.1)
+
+#             1.1.2.3 clickPost ~ teamPerformanceComponents + indPerformanceComponents
+teamPerformanceClick.2 <- lme(clickPostFactor ~ teamPerformanceComponentsFactorPost +  indPerformanceComponentsFactorPost, random = ~ 1 | team/teamPerformanceComponentsFactorPost,
+                              data = survey, na.action = na.exclude, method = "ML")
+summary(teamPerformanceClick.2)
+anova(teamPerformanceClick.baseline1, teamPerformanceClick.1, teamPerformanceClick.2)
+
+#             1.1.2.4 Do violations of expectations around team performance interact with joint-action success to predict perceived click (when controlling for violations of expectations around ind performance)?
+
+teamPerformanceClick.3 <- lme(clickPostFactor ~ teamPerformanceComponentsFactorPost*teamPerformance7 +  indPerformanceComponentsFactorPost, random = ~ 1 | team/teamPerformanceComponentsFactorPost,
+                              data = survey, na.action = na.exclude, method = "ML")
+summary(teamPerformanceClick.3) # <- Results indicate that violation of expectations around teamPerformance do not interact with teamPerformanceComponents
+#                           1.1.2.4.1 Try instead teamPerformance::Overall/Entire/
+teamPerformanceClick.3.1 <- lme(clickPostFactor ~ teamPerformanceComponentsFactorPost*teamPerformanceEntire +  indPerformanceComponentsFactorPost, random = ~ 1 | team/teamPerformanceComponentsFactorPost,
+                              data = survey, na.action = na.exclude, method = "ML")  #<- no interaction at all
+summary(teamPerformanceClick.3.1)
+teamPerformanceClick.3.2 <- lme(clickPostFactor ~ teamPerformanceComponentsFactorPost*teamPerformanceOverall +  indPerformanceComponentsFactorPost, random = ~ 1 | team/teamPerformanceComponentsFactorPost,
+                                data = survey, na.action = na.exclude, method = "ML")
+summary(teamPerformanceClick.3.2)  #<- no interaction, and teamPerformance no longer significant!
+#indPerformanceExpectations
+teamPerformanceClick.3.3 <- lme(clickPostFactor ~ teamPerformanceComponentsFactorPost + indPerformance7 +  indPerformanceComponentsFactorPost, random = ~ 1 | team/teamPerformanceComponentsFactorPost,
+                                data = survey, na.action = na.exclude, method = "ML")
+summary(teamPerformanceClick.3.3) #<- not significant
+
+
+
+
+#             1.1.2.5 Control for violations of expectations around ind performance and objective performance measures.
+teamPerformanceClick.4 <- lme(clickPostFactor ~ teamPerformanceComponentsFactorPost  +  indPerformanceComponentsFactorPost + minutesTotal + totalWL + pointsTotal + finalRank,
+                              random = ~ 1 | team/teamPerformanceComponentsFactorPost, data = survey, na.action = na.exclude, method = "ML")
+summary(teamPerformanceClick.4)  #<- finalRank predicts click
+
+# finalRank is a significant predictor of CLICK, in addition to teamPerformanceComponents
+plot(survey$finalRank, survey$clickPostFactor)
+abline(lm(survey$clickPostFactor ~ survey$finalRank))
+summary(lm(survey$clickPostFactor ~ survey$finalRank))
+
+#              1.1.4.1 Interaction between teamPerformanceComponentsFactorPost and finalRank?
+teamPerformanceClick.4.1 <- lme(clickPostFactor ~ teamPerformanceComponentsFactorPost*finalRank + indPerformanceComponentsFactorPost + minutesTotal + totalWL + pointsTotal,
+                              random = ~ team | team/teamPerformanceComponentsFactorPost, data = survey, na.action = na.exclude, method = "ML")
+summary(teamPerformanceClick.4.1)
+
+#         1.1.3 teamPerformanceClick.4.1 Diagnostics:
+#             1.1.3.1 Plot Residuals
+plot(teamPerformanceClick.4.1)
+qqnorm(teamPerformanceClick.4.1)
+qqline(teamPerformanceClick.4.1)
+#             1.1.3.2 Linearity in each variable:
+#install.packages("ggplot2")
+#library(ggplot2)
+#x1: teamPerformanceComponentsFactorPost
+ggplot(data.frame(x1 = survey$teamPerformanceComponentsFactorPost, pearson = residuals(teamPerformanceClick.4.1, type = "pearson")),
+       aes(x = x1,y = pearson)) +
+  geom_point() +
+  theme_bw()
+#x2: finalRank
+ggplot(data.frame(x2 = survey$finalRank, pearson = residuals(teamPerformanceClick.4.1, type = "pearson")),
+       aes(x = x2 ,y = pearson)) +
+  geom_point() +
+  theme_bw()
+#               1.1.3.3 Influential Cases
+
+
+
+
+
+
+
+
+
+
+
+
+#     1.2 Perceived Click -> Bonding: Does perceived click predict bonding in post-tournament survey?
+
+#             1.2.1 Explore click -> bonding relationship
+plot(survey$clickPostFactor, survey$bondingPostFactor)
+abline(lm(survey$bondingPostFactor ~ survey$clickPostFactor)) #<- clear significant relationship between click and bonding
+summary(lm(survey$bondingPostFactor ~ survey$clickPostFactor + survey$team )) # appear to be team-level effects here
+summary(lm(survey$bondingPostFactor ~ survey$clickPostFactor + survey$sex))  # also sex differences in bonding (women higher than men)
+
+# investigate group-level differences
+#install.packages("data.table")
+#library(data.table)
+#team  <- significant predictor
+plot(survey$team, survey$bondingPostFactor)
+clickBonding <- data.table(survey)
+clickBonding[,list(mean = mean(bondingPostFactor, na.rm = TRUE),sd=sd(bondingPostFactor, na.rm = TRUE)), by = team]
+# sex  <- significant predictor
+plot(survey$sex, survey$bondingPostFactor)
+summary(lm(survey$bondingPostFactor ~ survey$sex))
+# are sex-differnces consistent pre-tournament?
+plot(survey$sex, survey$bondingBaselineFactor)
+summary(lm(survey$bondingBaselineFactor ~ survey$sex))  #<- no sex differences pre-tournament
+
+
+#     1.2.2 Build MLM to account for relationship between click and bonding, taking into account group-level effects
+
+
+#       1.2.2.1 baseline
+clickBonding.baseline <- lme(bondingPostFactor ~ 1, data = survey, random = ~ 1|team,  na.action = na.exclude, method = "ML")
+summary(clickBonding.baseline)
+
+#     bondingPost ~ clickPost
+clickBonding.1 <- lme(bondingPostFactor ~ clickPostFactor, random = ~ 1 | team/clickPostFactor,
+                              data = survey, na.action = na.exclude, method = "ML")
+summary(clickBonding.1)
+anova(clickBonding.baseline, clickBonding.1)
+
+#       1.2.3 Do violations of expectations around team performance interact with click to predict bonding? (controlling for violations of expectations around individual performance)?
+
+# bondingPost ~ clickPost*teamPerformance7  #<- this result is not significant, and does not improve model fit
+clickBonding.2 <- lme(bondingPostFactor ~ clickPostFactor*teamPerformance7, random = ~ 1 | team/clickPostFactor,
+                              data = survey, na.action = na.exclude, method = "ML")
+summary(clickBonding.2)
+anova(clickBonding.baseline, clickBonding.1, clickBonding.2)
+#               1.2.3.1 Try instead teamPerformance::Overall/Entire/
+clickBonding.3.1 <- lme(bondingPostFactor ~ clickPostFactor*teamPerformanceEntire, random = ~ 1 | team/clickPostFactor,
+                                data = survey, na.action = na.exclude, method = "ML")  #<- no interaction at all
+summary(clickBonding.3.1)  #<- weakly significant interaction: beta = -0.0099061 t =  -1.915429  p = 0.0589
+clickBonding.3.2 <- lme(bondingPostFactor ~ clickPostFactor*teamPerformanceOverall, random = ~ 1 | team/clickPostFactor,
+                                data = survey, na.action = na.exclude, method = "ML")
+summary(clickBonding.3.2)  #<- no interaction
+
+#individual Performance expectations?
+clickBonding.3.3 <- lme(bondingPostFactor ~ clickPostFactor*indPerformance7, random = ~ 1 | team/clickPostFactor,
+                      data = survey, na.action = na.exclude, method = "ML")
+summary(clickBonding.3.3)  #<- no result
+
+
+#       1.2.4      1.2.2 Control for objective performance measures
+clickBonding.4 <- lme(bondingPostFactor ~ clickPostFactor + minutesTotal + totalWL + pointsTotal + finalRank,
+                              random = ~ 1 | team/clickPostFactor, data = survey, na.action = na.exclude, method = "ML")
+summary(clickBonding.4)  #<- finalRank does not predict bonding!
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#
+
+#
+#     1.3 Joint-Action Success -> Click -> Bonding: Does click mediate the relationship between joint-action success
+
+
+
+# 1.2.3 test team performance -> bonding
+plot(survey$teamPerformanceComponentsFactorPost, survey$bondingPostFactor)
+abline(lm(survey$bondingPostFactor ~ survey$teamPerformanceComponentsFactorPost))
+m1 <- lm(survey$bondingPostFactor ~ survey$teamPerformanceComponentsFactorPost)
+m2 <- lm(survey$bondingPostFactor ~ survey$teamPerformanceComponentsFactorPost*survey$clickPostFactor)
+anova(m1, m2)
+anova(m2)
+
+
+
+# 1.3.1 test performance -> click -> fatigue
+
+# 1.3.2 performance -> fatigue
+plot(survey$teamPerformanceComponentsFactorPost, survey$fatiguePostFactor)
+summary(lm(survey$fatiguePostFactor ~ survey$teamPerformanceComponentsFactorPost))
+abline(lm(survey$fatiguePostFactor ~ survey$teamPerformanceComponentsFactorPost))
+summary(lm(survey$fatiguePostFactor ~ survey$teamPerformanceComponentsFactorPost*survey$indPerformanceComponentsFactorPost))
+summary(lm(survey$fatiguePostFactor ~ survey$teamPerformanceComponentsFactorPost*survey$teamPerformanceMidTournament + survey$indPerformanceComponentsFactorPost + survey$cumulativeMinutes6 + survey$cumulativeWL6 + survey$pointsTotal))
+# 1.3.3 click -> fatigue
+plot(survey$clickPostFactor, survey$fatiguePostFactor)
+summary(lm(survey$fatiguePostFactor ~ survey$clickPostFactor))
+abline(lm(survey$fatiguePostFactor ~ survey$clickPostFactor))
+summary(lm(survey$fatiguePostFactor ~ survey$clickPostFactor*survey$indPerformanceComponentsFactorPost))
+summary(lm(survey$fatiguePostFactor ~ survey$clickPostFactor*survey$teamPerformanceMidTournament + survey$indPerformanceComponentsFactorPost + survey$cumulativeMinutes6 + survey$cumulativeWL6 + survey$pointsTotal))
+
+
+
+
+
+# 2. Examine pre-post changes in outcome variables: bonding, fatigue, click
+
+# 2.1 Look for change in Dvs over time
+
+# fatigue
+t.test(surLong1$fatigueFactor[surLong1$time == 8], surLong1$fatigueFactor[surLong1$time == 3], paired = TRUE)
+
+
+
+#t.test(survey$fatigue7, survey$fatigue2)
+#t.test(survey$prpe7, survey$prpe2)
+#t.test(survey$mental7, survey$mental2)
+t.test(survey$injury7,survey$injury0, paired = TRUE)
+
+# bonding
+#t.test(survey$emotionalSupport7, survey$emotionalSupport0)
+#t.test(survey$sharedGoal7, survey$sharedGoal0)
+#t.test(survey$generalAtmosphere7, survey$generalAtmosphere0)
+t.test(surLong1$bondingFactor3[surLong1$time == 8], surLong1$bondingFactor3[surLong1$time == 1], paired = TRUE)
+
+#t.test(survey$fusionVerbal7, survey$fusionVerbal0, paired = TRUE)
+#t.test(survey$groupId7, survey$groupId0, paired = TRUE)
+#t.test(survey$fusionPictorialTeam7,survey$fusionPictorialTeam0, paired = TRUE)
+t.test(survey$fusionPictorialFamily7, survey$fusionPictorialFamily0, paired = TRUE)
+#t.test(survey$fusionPictorialCountry7, survey$fusionPictorialCountry0, paired = TRUE)
+
+#t.test(survey$rankCountry7, survey$rankCountry0)
+#t.test(survey$rankTeam7, survey$rankTeam0)
+#t.test(survey$rankFamily7, survey$rankFamily0)
+
+# click  -- click does not change over time pre/post
+t.test(surLong1$clickFactor3[surLong1$time == 8], surLong1$clickFactor3[surLong1$time == 1])
+
+
+# 2.2 Create variables: change in bonding and exertion/fatuge over time
+
+# day1/post change in fatigueFactor
+surLong1$fatigueFactorChangePrePost <- surLong1$fatigueFactor[surLong1$time == 8] - surLong1$fatigueFactor[surLong1$time == 3]
+head(surLong1)
+
+# pre/post change in bondingFactor3
+surLong1$bondingFactorChangePrePost <- surLong1$bondingFactor3[surLong1$time == 8] - surLong1$bondingFactor3[surLong1$time == 1]
+surLong1$fusionPictorialFamilyChangePrePost <- surLong1$fusionPictorialFamily[surLong1$time == 8] - surLong1$fusionPictorialFamily[surLong1$time == 1]
+
+# pre/post change in clickFactor3
+surLong1$clickFactor3ChangePrePost <- surLong1$clickFactor3[surLong1$time == 8] - surLong1$clickFactor3[surLong1$time == 1]
+
+
+#survey$emotionalSupportChangePrePost <- as.numeric(survey$emotionalSupport7 - survey$emotionalSupport0)
+#survey$sharedGoalChangePrePost <- as.numeric(survey$sharedGoal7 - survey$sharedGoal0)
+#survey$generalAtmosphereChangePrePost <- as.numeric(survey$generalAtmosphere7 - survey$generalAtmosphere0)
+#survey$fusionVerbalChangePrePost <- as.numeric(survey$fusionVerbal7 - survey$fusionVerbal0)
+#survey$groupIdChangePrePost <- as.numeric(survey$groupId7 - survey$groupId0)
+#survey$fusionPictorialTeamChangePrePost <- as.numeric(survey$fusionPictorialTeam7 - survey$fusionPictorialTeam0)
+#survey$fusionPictorialFamilyChangePrePost <- as.numeric(survey$fusionPictorialFamily7 - survey$fusionPictorialFamily0)
+#survey$fusionPictorialCountryChangePrePost <- as.numeric(survey$fusionPictorialCountry7 - survey$fusionPictorialCountry0)
+
+
+# 2.3 what predicts change in bonding/fatigue?
+write.csv(surLong1, "surLong3.csv", na = "")
+
+# 2.3.1 click?
+plot(surLong1$clickFactor3[surLong1$time == 8], surLong1$bondingFactorChangePrePost[surLong1$time == 8])
+abline(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$clickFactor3[surLong1$time == 8]))
+summary(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$clickFactor3[surLong1$time == 8]))
+
+plot(surLong1$clickFactor3[surLong1$time == 8], surLong1$fusionPictorialFamilyChangePrePost[surLong1$time == 8])
+abline(lm(surLong1$fusionPictorialFamilyChangePrePost[surLong1$time == 8] ~ surLong1$clickFactor3[surLong1$time == 8]))
+summary(lm(surLong1$fusionPictorialFamilyChangePrePost[surLong1$time == 8] ~ surLong1$clickFactor3[surLong1$time == 8]))
+
+# objective performance: cumulative minutes
+plot(surLong1$cumulativeMinutes[surLong1$time == 7], surLong1$bondingFactorChangePrePost[surLong1$time == 8])
+abline(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$cumulativeMinutes[surLong1$time == 7]))
+summary(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$cumulativeMinutes[surLong1$time == 7]))
+# objective performance: cumulativeWL
+plot(surLong1$cumulativeWL[surLong1$time == 7], surLong1$bondingFactorChangePrePost[surLong1$time == 8])
+abline(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$cumulativeWL[surLong1$time == 7]))
+summary(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$cumulativeWL[surLong1$time == 7]))
+# objective performance: totalPoints
+plot(surLong1$pointsTotal[surLong1$time == 7], surLong1$bondingFactorChangePrePost[surLong1$time == 8])
+abline(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$pointsTotal[surLong1$time == 7]))
+summary(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$pointsTotal[surLong1$time == 7]))
+
+#personality: openness/agreeableness
+plot(surLong1$tipiAgreeableness[surLong1$time == 7], surLong1$bondingFactorChangePrePost[surLong1$time == 8])
+abline(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$tipiAgreeableness[surLong1$time == 7]))
+summary(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$tipiAgreeableness[surLong1$time == 7]))
+#personality:
+plot(surLong1$tipiExtraverted[surLong1$time == 7], surLong1$bondingFactorChangePrePost[surLong1$time == 8])
+abline(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$tipiExtraverted[surLong1$time == 7]))
+summary(lm(surLong1$bondingFactorChangePrePost[surLong1$time == 8] ~ surLong1$tipiExtraverted[surLong1$time == 7]))
+
+
+ctrl <- lmeControl(opt='optim')
+bondingChange <- lme(bondingFactor3[time == 1 & 8] ~ time[time == 1 & 8] + clickFactor3[time == 1 & 8], data = surLong1, random = ~ time + clickFactor3 | englishName, method = "ML", na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+summary(bondingChange)
+anova(bondingChange)
+
+#------------------2. PRE-POST Changes in Bonding & Fatigue-------------------#
+
+
+# subset data
+bondingPrePost <- subset(surLong1, time == 1 | time == 8, select = X.1:indPerformancePosNeg)
+fatiguePrePost <- subset(surLong1, time == 3 | time == 8, select = X.1:indPerformancePosNeg)
+bondingPrePost$time <- as.factor(bondingPrePost$time)
+fatiguePrePost$time <- as.factor(fatiguePrePost$time)
+
+#change in click variable:
+#create variables for average click mid-tournament, postMid, post tournament, and overall average
+bondingPrePost$clickMidTournament <- (surLong1$clickFactor3[surLong1$time == 3] + surLong1$clickFactor3[surLong1$time == 5])/ 2
+bondingPrePost$clickMidPostTournament <- (surLong1$clickFactor3[surLong1$time == 3] + surLong1$clickFactor3[surLong1$time == 5] + surLong1$clickFactor3[surLong1$time == 8] )/ 3
+bondingPrePost$clickPost <- surLong1$clickFactor3[surLong1$time == 8]
+bondingPrePost$clickOverall <- (surLong1$clickFactor3[surLong1$time == 1] + surLong1$clickFactor3[surLong1$time == 3] + surLong1$clickFactor3[surLong1$time == 5] + surLong1$clickFactor3[surLong1$time == 8] )/ 4
+
+
+# create variable of average team performance violation mid-tournament
+#mid-tournament
+bondingPrePost$teamPerformanceMidTournament <- (survey$teamPerformance2 + survey$teamPerformance4)/ 2
+#mid- and post-tournament
+bondingPrePost$teamPerformanceMidPostTournament <- (survey$teamPerformance2 + survey$teamPerformance4 + survey$teamPerformance7)/ 3
+#compare means
+mean(bondingPrePost$teamPerformanceMidPostTournament, na.rm = TRUE)
+mean(bondingPrePost$teamPerformanceMidTournament, na.rm = TRUE)
+# binary performance violation positive/negative
+surLong1$teamPerformancePosNeg <- ifelse(!is.na(surLong1$teamPerformanceExpectations) & surLong1$teamPerformanceExpectations >= 50, 1,
+                                         ifelse(!is.na(surLong1$teamPerformanceExpectations) & surLong1$teamPerformanceExpectations < 50, 0, NA))
+surLong1$indPerformancePosNeg <- ifelse(!is.na(surLong1$indPerformanceExpectations) & surLong1$indPerformanceExpectations >= 50, 1,
+                                        ifelse(!is.na(surLong1$indPerformanceExpectations) & surLong1$indPerformanceExpectations < 50, 0, NA))
+
+surLong1$teamPerformancePosNeg <- as.integer(surLong1$teamPerformancePosNeg)
+surLong1$indPerformancePosNeg <- as.factor(surLong1$indPerformancePosNeg)
+
+
+
+
+
+
+
+#-------------------Change in BONDING over time-----------------------------#
+# set contrasts for time:
+PrePost <- c(-1, 1)
+contrasts(bondingPrePost$time) <- cbind(prePost)
+
+#baseline: bonding ~ 1
+bondingChangeBaseline <- lme(bondingFactor3 ~ 1, random = ~ 1 | englishName/time, data = bondingPrePost, method = "ML",
+                na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+
+#bondingChange ~ time
+bondingChangeTime <- lme(bondingFactor3 ~ time, random = ~ 1 | englishName/time, data = bondingPrePost, method = "ML",
+                        na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+summary(bondingChangeTime)
+
+#bondingChange ~ time + clickFactor3changePrePost
+bondingChangeTimeClick <- lme(bondingFactor3 ~ time + clickFactor3ChangePrePost, random = ~ 1 + time + clickFactor3ChangePrePost  | englishName/time, data = bondingPrePost, method = "ML",
+                     na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+summary(bondingChangeTimeClick)
+# + time + clickFactor3
+
+anova(bondingChangeBaseline, bondingChangeTime, bondingChangeTimeClick)
+
+#bondingChange ~ time*click clickFactor3changePrePost
+bondingChangeTimeClickInt <- lme(bondingFactor3 ~ time*clickFactor3ChangePrePost, random = ~ 1 + time  | englishName/time, data = bondingPrePost, method = "ML",
+                              na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+summary(bondingChangeTimeClickInt)
+anova(bondingChangeTimeClickInt)
+
+#bondingChange ~ time*clickFactor3ChangePrePost + controls
+bondingChangeTimeClickIntControl <- update(bondingChangeTimeClickInt, .~. + teamPerformancePosNeg)
+summary(bondingChangeTimeClickIntControl)
+# + pointsTotal + totalWL + minutesTotal +
+
+anova(bondingChangeBaseline, bondingChangeTime, bondingChangeTimeClick, bondingChangeTimeClickInt)
+
+#change click variables
+# 1. post-Tournament click   <- this works
+#bondingChange ~ time + clickPost
+bondingChangeTimeClickPost <- lme(bondingFactor3 ~ time + clickPost + teamPerformanceExpectations, random = ~ 1 + time + clickPost  | englishName/time, data = bondingPrePost, method = "ML",
+                              na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+summary(bondingChangeTimeClickPost)
+
+#bondingChange ~ time*clickPost
+bondingChangeTimeClickPostInt <- lme(bondingFactor3 ~ time*clickPost, random = ~ 1 + time + clickPost | englishName/time, data = bondingPrePost, method = "ML",
+                                 na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+summary(bondingChangeTimeClickPostInt)
+anova(bondingChangeTimeClickPostInt)
+
+
+
+#RESIDUALS
+plot(bondingChangeTimeClickPostInt)
+# residuals plotted on the link scale, η, instead of the response scale:
+ggplot(data.frame(eta=predict(bondingChangeTimeClickPostInt,type="link"),pearson=residuals(bondingChangeTimeClickPostInt,type="pearson")),
+       aes(x=eta,y=pearson)) +
+  geom_point() +
+  theme_bw()
+
+# Linearity in each variable: time, click
+qqnorm(bondingChangeTimeClickPostInt, ~ranef(., level=2))
+
+
+ggplot(data.frame(x1 = bondingPrePost$time, pearson = residuals(bondingChangeTimeClickPostInt, type = "pearson")),
+       aes(x = x1,y = pearson)) +
+  geom_point() +
+  theme_bw()
+
+ggplot(data.frame(x2 = bondingPrePost$clickPost, pearson = residuals(bondingChangeTimeClickPostInt, type = "pearson")),
+       aes(x = x2 ,y = pearson)) +
+  geom_point() +
+  theme_bw()
+
+bondingPrePost$time <- ifelse(!is.na(bondingPrePost$time) & bondingPrePost$time == 1, 0,
+                                     ifelse(!is.na(bondingPrePost$time) & bondingPrePost$time == 8, 1, NA))
+bondingPrePost$time <- as.integer(bondingPrePost$time)
+
+#Independence: check if group means (time and clickPost) are correlated with englishName variable
+means <- aggregate(bondingPrePost[,c("clickPost")], by = list(bondingPrePost$englishName), FUN = mean)
+lmcoefs <- summary(lm(bondingFactor3 ~ clickPost + englishName, data = bondingPrePost))$coefficients[,"Estimate"]
+means$effects <- c(0,lmcoefs[substr(names(lmcoefs),1,2) == "englishName"])
+means$effects <- means$effects - mean(means$effects, na.rm = TRUE)
+
+cor(means[,c("clickPost","effects")])
+
+
+
+  hist(bondingPrePost$bondingChangeTimeClickPostInt.residualsStandardised)
+hist(bondingPrePost$bondingChangeTimeClickPostInt.residuals)
+hist(residuals(bondingChangeTimeClickPostInt))
+
+#VIF/multicollinearity (Field pg293)
+mean(vif(bondingChangeTimeClickPostInt))
+#tolerance (Field pg293)
+1/vif(bondingChangeTimeClickPostInt)
+
+
+#Influential Cases (Cook's)
+
+(bondingChangeTimeClickPostInt)
+
+bondingPrePost$bondingChangeTimeClickPostInt.residuals <- residuals(bondingChangeTimeClickPostInt)
+bondingPrePost$bondingChangeTimeClickPostInt.residualsStandardised <- residuals(bondingChangeTimeClickPostInt, type = "pearson")
+
+
+#bondingChange ~ time*clickPost + teamPerformPosNeg
+bondingChangeTimeClickPostIntPerformance <- lme(bondingFactor3 ~ time*clickPost, random = ~ 1 + time | englishName/time, data = bondingPrePost, method = "ML",
+                                                                                 na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+
+# #bondingChange ~ time*clickPost
+
+
+
+# 2. overall click <- this works but doesn't converge in the interaction model when click is a random slope
+#bondingChange ~ time + clickOverall
+bondingChangeTimeClickOverall <- lme(bondingFactor3 ~ time + clickOverall, random = ~ 1 + time  | englishName/time, data = bondingPrePost, method = "ML",
+                                  na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+summary(bondingChangeTimeClickOverall)
+
+#bondingChange ~ time*clickOverall
+bondingChangeTimeClickOverallInt <- lme(bondingFactor3 ~ time*clickOverall, random = ~ 1 + time  | englishName/time, data = bondingPrePost, method = "ML",
+                                     na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+summary(bondingChangeTimeClickOverallInt)
+anova(bondingChangeTimeClickOverall, bondingChangeTimeClickOverallInt)
+
+# 3. mid-Tournament click
+#bondingChange ~ time + clickMidTournament
+bondingChangeTimeClickMidTournament <- lme(bondingFactor3 ~ time + clickMidTournament, random = ~ 1 + time + clickMidTournament  | englishName/time, data = bondingPrePost, method = "ML",
+                                     na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+summary(bondingChangeTimeClickMidTournament)
+
+#bondingChange ~ time*clickMidTournament
+bondingChangeTimeClickMidTournamentInt <- lme(bondingFactor3 ~ time*clickMidTournament, random = ~ 1 + time + clickMidTournament | englishName/time, data = bondingPrePost, method = "ML",
+                                        na.action = na.exclude, correlation = corCAR1(form = ~ time | englishName), control = ctrl)
+summary(bondingChangeTimeClickMidTournamentInt)
+anova(bondingChangeTimeClickMidTournament, bondingChangeTimeClickMidTournamentInt)
+
+
+
+
+
+
+#----Change in FATIGUE over time

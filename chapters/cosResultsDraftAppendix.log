@@ -1,0 +1,2161 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.26)  23 JUN 2017 14:40
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**cosResultsDraftAppendix.tex
+(./cosResultsDraftAppendix.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+1E02 (decimal 7682)
+   defining Unicode char U+1E03 (decimal 7683)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2010 (decimal 8208)
+   defining Unicode char U+2011 (decimal 8209)
+   defining Unicode char U+2012 (decimal 8210)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2015 (decimal 8213)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 96.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
+\lst@mode=\count89
+\lst@gtempboxa=\box26
+\lst@token=\toks17
+\lst@length=\count90
+\lst@currlwidth=\dimen105
+\lst@column=\count91
+\lst@pos=\count92
+\lst@lostspace=\dimen106
+\lst@width=\dimen107
+\lst@newlines=\count93
+\lst@lineno=\count94
+\lst@maxwidth=\dimen108
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count95
+\lst@skipnumbers=\count96
+\lst@framebox=\box27
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2016/04/23 3.9r The Babel package
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count97
+\U@D=\dimen109
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2016/01/31 v5.1g context-sensitive quotations (JAW)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count98
+)
+\csq@reset=\count99
+\csq@gtype=\count100
+\csq@glevel=\count101
+\csq@qlevel=\count102
+\csq@maxlvl=\count103
+\csq@tshold=\count104
+\csq@ltx@everypar=\toks18
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2016/01/31 v5.1g csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count105
+\Gm@cntv=\count106
+\c@Gm@tempcnt=\count107
+\Gm@bindingoffset=\dimen110
+\Gm@wd@mp=\dimen111
+\Gm@odd@mp=\dimen112
+\Gm@even@mp=\dimen113
+\Gm@layoutwidth=\dimen114
+\Gm@layoutheight=\dimen115
+\Gm@layouthoffset=\dimen116
+\Gm@layoutvoffset=\dimen117
+\Gm@dimlist=\toks19
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'british'.
+
+(./cosResultsDraftAppendix.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `default' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+)
+\openout1 = `cosResultsDraftAppendix.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+ (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count108
+\scratchdimen=\dimen118
+\scratchbox=\box28
+\nofMPsegments=\count109
+\nofMParguments=\count110
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count111
+\MPscratchDim=\dimen119
+\MPnumerator=\count112
+\makeMPintoPDFobject=\count113
+\everyMPtoPDFconversion=\toks21
+) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\c@lstlisting=\count114
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<../images/mediation_image.jpg, id=1, 325.96782pt x 249.18094pt>
+File: ../images/mediation_image.jpg Graphic file (type jpg)
+
+<use ../images/mediation_image.jpg>
+Package pdftex.def Info: ../images/mediation_image.jpg used on input line 22.
+(pdftex.def)             Requested size: 130.38481pt x 99.6706pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 26.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 26.
+ (../images/ICCsummarySex.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 8.
+)
+(../images/ICCsummaryTeam.tex) [1
+
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <../imag
+es/mediation_image.jpg>]
+(../images/1competenceDescriptives.tex)
+(../images/2performancePostDescriptives.tex)
+(../images/3clickPostDescriptives.tex) (../images/4bondingPostDescriptives.tex)
+(../images/5fatiguePostDescriptives.tex)
+(../images/6objectiveTournamentDescriptives.tex) [2
+
+] [3]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(14.22636pt, 585.84227pt, 14.22636pt)
+* v-part:(T,H,B)=(14.22636pt, 766.51726pt, 14.22636pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=585.84227pt
+* \textheight=766.51726pt
+* \oddsidemargin=-58.04362pt
+* \evensidemargin=-58.04362pt
+* \topmargin=-95.04362pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+<../images/orthogonalObliqueRotationExample.jpg, id=17, 640.3925pt x 480.79625p
+t>
+File: ../images/orthogonalObliqueRotationExample.jpg Graphic file (type jpg)
+ <use ../images/orthogonalObliqueRotationExample.jpg>
+Package pdftex.def Info: ../images/orthogonalObliqueRotationExample.jpg used on
+ input line 68.
+(pdftex.def)             Requested size: 320.19547pt x 240.39752pt.
+
+Overfull \hbox (34.50932pt too wide) in paragraph at lines 68--70
+[] \OT1/cmr/m/n/12 https://image.slidesharecdn.com/factoranalysisfa-15033005444
+9-conversion-gate01/95/factor-
+ []
+
+(../images/1competenceCorr.tex) (../images/21indPerformancePostCorr.tex
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 8.
+)
+(../images/22teamPerformancePostCorr.tex) (../images/3clickPostCorr.tex)
+[4
+
+
+ <../images/orthogonalObliqueRotationExample.jpg>] [5]
+(../images/4bondingPostCorr.tex) (../images/5fatiguePostCorr.tex)
+(../images/6tournamentPerformanceCorr.tex) [6
+
+]
+(../images/postTournamentFactorDescriptives.tex)
+(../images/postTournamentFactorDescriptives1.tex)
+(../images/postTournamentFactorCorr.tex) [7
+
+]
+(../images/indPerformancePrePostSummary.tex)
+(../images/teamPerformancePrePostSummary.tex)
+(../images/clickPrePostSummary.tex) (../images/bondingPrePostSummary.tex)
+(../images/fatiguePrePostSummary.tex) [8
+
+] [9]
+(../images/factorsPrePostSummary.tex) [10
+
+]
+(../images/MLM1aJointActionSuccessClick.tex) [11
+
+
+]
+<../images/MLM1aHist.pdf, id=48, 505.89pt x 505.89pt>
+File: ../images/MLM1aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM1aHist.pdf>
+Package pdftex.def Info: ../images/MLM1aHist.pdf used on input line 128.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1aScatter.pdf, id=49, 505.89pt x 505.89pt>
+File: ../images/MLM1aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM1aScatter.pdf>
+Package pdftex.def Info: ../images/MLM1aScatter.pdf used on input line 129.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1aQQPlot.pdf, id=50, 505.89pt x 505.89pt>
+File: ../images/MLM1aQQPlot.pdf Graphic file (type pdf)
+
+<use ../images/MLM1aQQPlot.pdf>
+Package pdftex.def Info: ../images/MLM1aQQPlot.pdf used on input line 130.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1aCooksD.pdf, id=51, 505.89pt x 505.89pt>
+File: ../images/MLM1aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM1aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM1aCooksD.pdf used on input line 131.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [12 <../images/MLM1aHist.pdf> <../images/MLM1aScatter.pdf> <../images/MLM1aQQP
+lot.pdf> <../images/MLM1aCooksD.pdf>]
+(../images/MLM1bteamExpectationsClick.tex) [13]
+<../images/MLM1bHist.pdf, id=86, 505.89pt x 505.89pt>
+File: ../images/MLM1bHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM1bHist.pdf>
+Package pdftex.def Info: ../images/MLM1bHist.pdf used on input line 139.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1bScatter.pdf, id=87, 505.89pt x 505.89pt>
+File: ../images/MLM1bScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM1bScatter.pdf>
+Package pdftex.def Info: ../images/MLM1bScatter.pdf used on input line 140.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1bQQNorm.pdf, id=88, 505.89pt x 505.89pt>
+File: ../images/MLM1bQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM1bQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM1bQQNorm.pdf used on input line 141.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1bCooksD.pdf, id=89, 505.89pt x 505.89pt>
+File: ../images/MLM1bCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM1bCooksD.pdf>
+Package pdftex.def Info: ../images/MLM1bCooksD.pdf used on input line 142.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [14 <../images/MLM1bHist.pdf> <../images/MLM1bScatter.pdf> <../images/MLM1bQQN
+orm.pdf> <../images/MLM1bCooksD.pdf>]
+(../images/MLM1cPerformanceClickInteraction.tex
+
+LaTeX Warning: Float too large for page by 0.29013pt on input line 59.
+
+) [15] [16] <../images/MLM1cHist.pdf, id=126, 505.89pt x 505.89pt>
+File: ../images/MLM1cHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM1cHist.pdf>
+Package pdftex.def Info: ../images/MLM1cHist.pdf used on input line 150.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1cScatter.pdf, id=127, 505.89pt x 505.89pt>
+File: ../images/MLM1cScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM1cScatter.pdf>
+Package pdftex.def Info: ../images/MLM1cScatter.pdf used on input line 151.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1cQQNorm.pdf, id=128, 505.89pt x 505.89pt>
+File: ../images/MLM1cQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM1cQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM1cQQNorm.pdf used on input line 152.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1cCooksD.pdf, id=129, 505.89pt x 505.89pt>
+File: ../images/MLM1cCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM1cCooksD.pdf>
+Package pdftex.def Info: ../images/MLM1cCooksD.pdf used on input line 153.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [17 <../images/MLM1cHist.pdf> <../images/MLM1cScatter.pdf> <../images/MLM1cQQN
+orm.pdf> <../images/MLM1cCooksD.pdf>]
+(../images/MLM2aTeamClickBonding.tex) [18]
+<../images/MLM2aHist.pdf, id=166, 505.89pt x 505.89pt>
+File: ../images/MLM2aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM2aHist.pdf>
+Package pdftex.def Info: ../images/MLM2aHist.pdf used on input line 162.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM2aScatter.pdf, id=167, 505.89pt x 505.89pt>
+File: ../images/MLM2aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM2aScatter.pdf>
+Package pdftex.def Info: ../images/MLM2aScatter.pdf used on input line 163.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM2aQQNorm.pdf, id=168, 505.89pt x 505.89pt>
+File: ../images/MLM2aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM2aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM2aQQNorm.pdf used on input line 164.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM2aCooksD.pdf, id=169, 505.89pt x 505.89pt>
+File: ../images/MLM2aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM2aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM2aCooksD.pdf used on input line 165.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [19 <../images/MLM2aHist.pdf> <../images/MLM2aScatter.pdf> <../images/MLM2aQQN
+orm.pdf> <../images/MLM2aCooksD.pdf>]
+(../images/MLM3aJointActionSuccessBonding.tex
+Overfull \hbox (27.96854pt too wide) in paragraph at lines 8--52
+ [][] 
+ []
+
+) [20] <../images/MLM3aHist.pdf, id=204, 505.89pt x 505.89pt>
+File: ../images/MLM3aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aHist.pdf>
+Package pdftex.def Info: ../images/MLM3aHist.pdf used on input line 174.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aScatter.pdf, id=205, 505.89pt x 505.89pt>
+File: ../images/MLM3aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aScatter.pdf>
+Package pdftex.def Info: ../images/MLM3aScatter.pdf used on input line 175.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aQQNorm.pdf, id=206, 505.89pt x 505.89pt>
+File: ../images/MLM3aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM3aQQNorm.pdf used on input line 176.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aCooksD.pdf, id=207, 505.89pt x 505.89pt>
+File: ../images/MLM3aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM3aCooksD.pdf used on input line 177.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [21 <../images/MLM3aHist.pdf> <../images/MLM3aScatter.pdf> <../images/MLM3aQQN
+orm.pdf> <../images/MLM3aCooksD.pdf>]
+<../images/MLM3aOutHist.pdf, id=238, 505.89pt x 505.89pt>
+File: ../images/MLM3aOutHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aOutHist.pdf>
+Package pdftex.def Info: ../images/MLM3aOutHist.pdf used on input line 181.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aOutScatter.pdf, id=239, 505.89pt x 505.89pt>
+File: ../images/MLM3aOutScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aOutScatter.pdf>
+Package pdftex.def Info: ../images/MLM3aOutScatter.pdf used on input line 182.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aOutQQNorm.pdf, id=240, 505.89pt x 505.89pt>
+File: ../images/MLM3aOutQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aOutQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM3aOutQQNorm.pdf used on input line 183.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aOutCooksD.pdf, id=241, 505.89pt x 505.89pt>
+File: ../images/MLM3aOutCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aOutCooksD.pdf>
+Package pdftex.def Info: ../images/MLM3aOutCooksD.pdf used on input line 184.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [22 <../images/MLM3aOutHist.pdf> <../images/MLM3aOutScatter.pdf> <../images/ML
+M3aOutQQNorm.pdf> <../images/MLM3aOutCooksD.pdf>] <../images/MLM3aLogHist.pdf, 
+id=272, 505.89pt x 505.89pt>
+File: ../images/MLM3aLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aLogHist.pdf>
+Package pdftex.def Info: ../images/MLM3aLogHist.pdf used on input line 189.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aLogScatter.pdf, id=273, 505.89pt x 505.89pt>
+File: ../images/MLM3aLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM3aLogScatter.pdf used on input line 190.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aLogQQNorm.pdf, id=274, 505.89pt x 505.89pt>
+File: ../images/MLM3aLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM3aLogQQNorm.pdf used on input line 191.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aLogCooksD.pdf, id=275, 505.89pt x 505.89pt>
+File: ../images/MLM3aLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM3aLogCooksD.pdf used on input line 192.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [23 <../images/MLM3aLogHist.pdf> <../images/MLM3aLogScatter.pdf> <../images/ML
+M3aLogQQNorm.pdf> <../images/MLM3aLogCooksD.pdf>] (../images/MLM3bExpectationsB
+onding.tex
+Overfull \hbox (82.21875pt too wide) in paragraph at lines 8--55
+ [][] 
+ []
+
+) [24] <../images/MLM3bHist.pdf, id=310, 505.89pt x 505.89pt>
+File: ../images/MLM3bHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bHist.pdf>
+Package pdftex.def Info: ../images/MLM3bHist.pdf used on input line 202.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bScatter.pdf, id=311, 505.89pt x 505.89pt>
+File: ../images/MLM3bScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bScatter.pdf>
+Package pdftex.def Info: ../images/MLM3bScatter.pdf used on input line 203.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bQQNorm.pdf, id=312, 505.89pt x 505.89pt>
+File: ../images/MLM3bQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM3bQQNorm.pdf used on input line 204.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bCooksD.pdf, id=313, 505.89pt x 505.89pt>
+File: ../images/MLM3bCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bCooksD.pdf>
+Package pdftex.def Info: ../images/MLM3bCooksD.pdf used on input line 205.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [25 <../images/MLM3bHist.pdf> <../images/MLM3bScatter.pdf> <../images/MLM3bQQN
+orm.pdf> <../images/MLM3bCooksD.pdf>]
+<../images/MLM3bLogHist.pdf, id=346, 505.89pt x 505.89pt>
+File: ../images/MLM3bLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bLogHist.pdf>
+Package pdftex.def Info: ../images/MLM3bLogHist.pdf used on input line 209.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bLogScatter.pdf, id=347, 505.89pt x 505.89pt>
+File: ../images/MLM3bLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM3bLogScatter.pdf used on input line 210.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bLogQQNorm.pdf, id=348, 505.89pt x 505.89pt>
+File: ../images/MLM3bLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM3bLogQQNorm.pdf used on input line 211.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bLogCooksD.pdf, id=349, 505.89pt x 505.89pt>
+File: ../images/MLM3bLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM3bLogCooksD.pdf used on input line 212.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [26 <../images/MLM3bLogHist.pdf> <../images/MLM3bLogScatter.pdf> <../images/ML
+M3bLogQQNorm.pdf> <../images/MLM3bLogCooksD.pdf>] <../images/mediationPT_plot.p
+df, id=380, 273.02pt x 383.4325pt>
+File: ../images/mediationPT_plot.pdf Graphic file (type pdf)
+
+<use ../images/mediationPT_plot.pdf>
+Package pdftex.def Info: ../images/mediationPT_plot.pdf used on input line 220.
+
+(pdftex.def)             Requested size: 430.00462pt x 603.94449pt.
+
+Overfull \vbox (70.55124pt too high) has occurred while \output is active []
+
+
+[27 <../images/mediationPT_plot.pdf>] [28]
+(../images/MLM21acJointActionSuccesscClick.tex)
+<../images/MLM21aHist.pdf, id=392, 505.89pt x 505.89pt>
+File: ../images/MLM21aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM21aHist.pdf>
+Package pdftex.def Info: ../images/MLM21aHist.pdf used on input line 236.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21aScatter.pdf, id=393, 505.89pt x 505.89pt>
+File: ../images/MLM21aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM21aScatter.pdf>
+Package pdftex.def Info: ../images/MLM21aScatter.pdf used on input line 237.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21aQQNorm.pdf, id=394, 505.89pt x 505.89pt>
+File: ../images/MLM21aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM21aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM21aQQNorm.pdf used on input line 238.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21aCooksD.pdf, id=395, 505.89pt x 505.89pt>
+File: ../images/MLM21aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM21aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM21aCooksD.pdf used on input line 239.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [29 <../images/MLM21aHist.pdf> <../images/MLM21aScatter.pdf> <../images/MLM21a
+QQNorm.pdf> <../images/MLM21aCooksD.pdf>]
+[30] (../images/MLM21acJointActionSuccesscClick.tex) [31] [32]
+(../images/MLM21bcTeamPerfExpcClick.tex
+
+LaTeX Warning: Float too large for page by 0.18929pt on input line 50.
+
+) (../images/MLM21bcTeamPerfExpcClickAdjusted.tex
+Overfull \hbox (10.16628pt too wide) in paragraph at lines 7--51
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 16.02264pt on input line 51.
+
+) <../images/MLM21bHist.pdf, id=436, 505.89pt x 505.89pt>
+File: ../images/MLM21bHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bHist.pdf>
+Package pdftex.def Info: ../images/MLM21bHist.pdf used on input line 256.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bScatter.pdf, id=437, 505.89pt x 505.89pt>
+File: ../images/MLM21bScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bScatter.pdf>
+Package pdftex.def Info: ../images/MLM21bScatter.pdf used on input line 257.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bQQNorm.pdf, id=438, 505.89pt x 505.89pt>
+File: ../images/MLM21bQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM21bQQNorm.pdf used on input line 258.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bCooksD.pdf, id=439, 505.89pt x 505.89pt>
+File: ../images/MLM21bCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bCooksD.pdf>
+Package pdftex.def Info: ../images/MLM21bCooksD.pdf used on input line 259.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [33 <../images/MLM21bHist.pdf> <../images/MLM21bScatter.pdf> <../images/MLM21b
+QQNorm.pdf> <../images/MLM21bCooksD.pdf>]
+[34] [35] <../images/MLM21bLogHist.pdf, id=477, 505.89pt x 505.89pt>
+File: ../images/MLM21bLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bLogHist.pdf>
+Package pdftex.def Info: ../images/MLM21bLogHist.pdf used on input line 263.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bLogScatter.pdf, id=478, 505.89pt x 505.89pt>
+File: ../images/MLM21bLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM21bLogScatter.pdf used on input line 264.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bLogQQNorm.pdf, id=479, 505.89pt x 505.89pt>
+File: ../images/MLM21bLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM21bLogQQNorm.pdf used on input line 265.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bLogCooksD.pdf, id=480, 505.89pt x 505.89pt>
+File: ../images/MLM21bLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM21bLogCooksD.pdf used on input line 266.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [36 <../images/MLM21bLogHist.pdf> <../images/MLM21bLogScatter.pdf> <../images/
+MLM21bLogQQNorm.pdf> <../images/MLM21bLogCooksD.pdf>] <../images/MLM21bOutHist.
+pdf, id=511, 505.89pt x 505.89pt>
+File: ../images/MLM21bOutHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bOutHist.pdf>
+Package pdftex.def Info: ../images/MLM21bOutHist.pdf used on input line 271.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bOutScatter.pdf, id=512, 505.89pt x 505.89pt>
+File: ../images/MLM21bOutScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bOutScatter.pdf>
+Package pdftex.def Info: ../images/MLM21bOutScatter.pdf used on input line 272.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bOutQQNorm.pdf, id=513, 505.89pt x 505.89pt>
+File: ../images/MLM21bOutQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bOutQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM21bOutQQNorm.pdf used on input line 273.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bOutCooksD.pdf, id=514, 505.89pt x 505.89pt>
+File: ../images/MLM21bOutCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bOutCooksD.pdf>
+Package pdftex.def Info: ../images/MLM21bOutCooksD.pdf used on input line 274.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [37 <../images/MLM21bOutHist.pdf> <../images/MLM21bOutScatter.pdf> <../images/
+MLM21bOutQQNorm.pdf> <../images/MLM21bOutCooksD.pdf>] (../images/MLM21acJointAc
+tionSuccesscClick.tex)
+(../images/MLM21ccTeamPerfExpcClickInt.tex
+
+LaTeX Warning: Float too large for page by 17.20683pt on input line 60.
+
+) [38] [39] [40] [41] (../images/MLM22acClickcBonding.tex) [42]
+<../images/MLM22aHist.pdf, id=561, 505.89pt x 505.89pt>
+File: ../images/MLM22aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM22aHist.pdf>
+Package pdftex.def Info: ../images/MLM22aHist.pdf used on input line 292.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM22aScatter.pdf, id=562, 505.89pt x 505.89pt>
+File: ../images/MLM22aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM22aScatter.pdf>
+Package pdftex.def Info: ../images/MLM22aScatter.pdf used on input line 293.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM22aQQNorm.pdf, id=563, 505.89pt x 505.89pt>
+File: ../images/MLM22aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM22aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM22aQQNorm.pdf used on input line 294.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM22aCooksD.pdf, id=564, 505.89pt x 505.89pt>
+File: ../images/MLM22aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM22aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM22aCooksD.pdf used on input line 295.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [43 <../images/MLM22aHist.pdf> <../images/MLM22aScatter.pdf> <../images/MLM22a
+QQNorm.pdf> <../images/MLM22aCooksD.pdf>]
+[44] (../images/MLM23acJointActionSuccesscBonding.tex) [45]
+<../images/MLM23aHist.pdf, id=603, 505.89pt x 505.89pt>
+File: ../images/MLM23aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM23aHist.pdf>
+Package pdftex.def Info: ../images/MLM23aHist.pdf used on input line 307.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23aScatter.pdf, id=604, 505.89pt x 505.89pt>
+File: ../images/MLM23aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM23aScatter.pdf>
+Package pdftex.def Info: ../images/MLM23aScatter.pdf used on input line 308.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23aQQNorm.pdf, id=605, 505.89pt x 505.89pt>
+File: ../images/MLM23aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM23aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM23aQQNorm.pdf used on input line 309.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23aCooksD.pdf, id=606, 505.89pt x 505.89pt>
+File: ../images/MLM23aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM23aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM23aCooksD.pdf used on input line 310.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [46 <../images/MLM23aHist.pdf> <../images/MLM23aScatter.pdf> <../images/MLM23a
+QQNorm.pdf> <../images/MLM23aCooksD.pdf>]
+[47] (../images/MLM23bcBondingteamPerfExp.tex
+Overfull \hbox (23.38522pt too wide) in paragraph at lines 8--51
+ [][] 
+ []
+
+) [48] <../images/MLM23bHist.pdf, id=643, 505.89pt x 505.89pt>
+File: ../images/MLM23bHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM23bHist.pdf>
+Package pdftex.def Info: ../images/MLM23bHist.pdf used on input line 322.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23bScatter.pdf, id=644, 505.89pt x 505.89pt>
+File: ../images/MLM23bScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM23bScatter.pdf>
+Package pdftex.def Info: ../images/MLM23bScatter.pdf used on input line 323.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23bQQNorm.pdf, id=645, 505.89pt x 505.89pt>
+File: ../images/MLM23bQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM23bQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM23bQQNorm.pdf used on input line 324.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23bCooksD.pdf, id=646, 505.89pt x 505.89pt>
+File: ../images/MLM23bCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM23bCooksD.pdf>
+Package pdftex.def Info: ../images/MLM23bCooksD.pdf used on input line 325.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [49 <../images/MLM23bHist.pdf> <../images/MLM23bScatter.pdf> <../images/MLM23b
+QQNorm.pdf> <../images/MLM23bCooksD.pdf>]
+<../images/MLM23bLogHist.pdf, id=678, 505.89pt x 505.89pt>
+File: ../images/MLM23bLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM23bLogHist.pdf>
+Package pdftex.def Info: ../images/MLM23bLogHist.pdf used on input line 329.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23bLogScatter.pdf, id=679, 505.89pt x 505.89pt>
+File: ../images/MLM23bLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM23bLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM23bLogScatter.pdf used on input line 330.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23bLogQQNorm.pdf, id=680, 505.89pt x 505.89pt>
+File: ../images/MLM23bLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM23bLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM23bLogQQNorm.pdf used on input line 331.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23bLogCooksD.pdf, id=681, 505.89pt x 505.89pt>
+File: ../images/MLM23bLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM23bLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM23bLogCooksD.pdf used on input line 332.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [50 <../images/MLM23bLogHist.pdf> <../images/MLM23bLogScatter.pdf> <../images/
+MLM23bLogQQNorm.pdf> <../images/MLM23bLogCooksD.pdf>] [51]
+<../images/MLM24aMediationAnalysis.pdf, id=715, 505.89pt x 505.89pt>
+File: ../images/MLM24aMediationAnalysis.pdf Graphic file (type pdf)
+
+<use ../images/MLM24aMediationAnalysis.pdf>
+Package pdftex.def Info: ../images/MLM24aMediationAnalysis.pdf used on input li
+ne 341.
+(pdftex.def)             Requested size: 430.00462pt x 430.01624pt.
+ [52 <../images/MLM24aMediationAnalysis.pdf>] [53] (../images/MLM25acFusioncJoi
+ntAction.tex) [54]
+<../images/MLM25aHist.pdf, id=733, 505.89pt x 505.89pt>
+File: ../images/MLM25aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM25aHist.pdf>
+Package pdftex.def Info: ../images/MLM25aHist.pdf used on input line 354.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM25aScatter.pdf, id=734, 505.89pt x 505.89pt>
+File: ../images/MLM25aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM25aScatter.pdf>
+Package pdftex.def Info: ../images/MLM25aScatter.pdf used on input line 355.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM25aQQNorm.pdf, id=735, 505.89pt x 505.89pt>
+File: ../images/MLM25aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM25aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM25aQQNorm.pdf used on input line 356.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM25aCooksD.pdf, id=736, 505.89pt x 505.89pt>
+File: ../images/MLM25aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM25aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM25aCooksD.pdf used on input line 357.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [55 <../images/MLM25aHist.pdf> <../images/MLM25aScatter.pdf> <../images/MLM25a
+QQNorm.pdf> <../images/MLM25aCooksD.pdf>]
+<../images/MLM25aOutHist.pdf, id=768, 505.89pt x 505.89pt>
+File: ../images/MLM25aOutHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM25aOutHist.pdf>
+Package pdftex.def Info: ../images/MLM25aOutHist.pdf used on input line 362.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM25aOutScatter.pdf, id=769, 505.89pt x 505.89pt>
+File: ../images/MLM25aOutScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM25aOutScatter.pdf>
+Package pdftex.def Info: ../images/MLM25aOutScatter.pdf used on input line 363.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM25aOutQQNorm.pdf, id=770, 505.89pt x 505.89pt>
+File: ../images/MLM25aOutQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM25aOutQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM25aOutQQNorm.pdf used on input line 364.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM25aOutCooksD.pdf, id=771, 505.89pt x 505.89pt>
+File: ../images/MLM25aOutCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM25aOutCooksD.pdf>
+Package pdftex.def Info: ../images/MLM25aOutCooksD.pdf used on input line 365.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [56 <../images/MLM25aOutHist.pdf> <../images/MLM25aOutScatter.pdf> <../images/
+MLM25aOutQQNorm.pdf> <../images/MLM25aOutCooksD.pdf>] [57] [58] <../images/MLM2
+5cHist.pdf, id=808, 505.89pt x 505.89pt>
+File: ../images/MLM25cHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM25cHist.pdf>
+Package pdftex.def Info: ../images/MLM25cHist.pdf used on input line 378.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM25cScatter.pdf, id=809, 505.89pt x 505.89pt>
+File: ../images/MLM25cScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM25cScatter.pdf>
+Package pdftex.def Info: ../images/MLM25cScatter.pdf used on input line 379.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM25cQQNorm.pdf, id=810, 505.89pt x 505.89pt>
+File: ../images/MLM25cQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM25cQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM25cQQNorm.pdf used on input line 380.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM25cCooksD.pdf, id=811, 505.89pt x 505.89pt>
+File: ../images/MLM25cCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM25cCooksD.pdf>
+Package pdftex.def Info: ../images/MLM25cCooksD.pdf used on input line 381.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [59 <../images/MLM25cHist.pdf> <../images/MLM25cScatter.pdf> <../images/MLM25c
+QQNorm.pdf> <../images/MLM25cCooksD.pdf>]
+(../images/performanceOverallSummary.tex
+Overfull \hbox (15.89558pt too wide) in paragraph at lines 8--19
+ [][] 
+ []
+
+) (../images/clickOverallSummary.tex) (../images/bondingOverallSummary.tex)
+(../images/fatigueOverallSummary.tex) [60]
+<../images/distTeamPerformancePre.pdf, id=845, 505.89pt x 505.89pt>
+File: ../images/distTeamPerformancePre.pdf Graphic file (type pdf)
+
+<use ../images/distTeamPerformancePre.pdf>
+Package pdftex.def Info: ../images/distTeamPerformancePre.pdf used on input lin
+e 405.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distTeamPerfExpDay1.pdf, id=846, 505.89pt x 505.89pt>
+File: ../images/distTeamPerfExpDay1.pdf Graphic file (type pdf)
+
+<use ../images/distTeamPerfExpDay1.pdf>
+Package pdftex.def Info: ../images/distTeamPerfExpDay1.pdf used on input line 4
+06.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distTeamPerfExpDay2.pdf, id=847, 505.89pt x 505.89pt>
+File: ../images/distTeamPerfExpDay2.pdf Graphic file (type pdf)
+
+<use ../images/distTeamPerfExpDay2.pdf>
+Package pdftex.def Info: ../images/distTeamPerfExpDay2.pdf used on input line 4
+07.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distTeamPerfExpPost.pdf, id=848, 505.89pt x 505.89pt>
+File: ../images/distTeamPerfExpPost.pdf Graphic file (type pdf)
+
+<use ../images/distTeamPerfExpPost.pdf>
+Package pdftex.def Info: ../images/distTeamPerfExpPost.pdf used on input line 4
+08.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [61
+
+ <../images/distTeamPerformancePre.pdf> <../images/distTeamPerfExpDay1.pdf> <..
+/images/distTeamPerfExpDay2.pdf> <../images/distTeamPerfExpPost.pdf>]
+<../images/distIndPerformancePre.pdf, id=878, 505.89pt x 505.89pt>
+File: ../images/distIndPerformancePre.pdf Graphic file (type pdf)
+
+<use ../images/distIndPerformancePre.pdf>
+Package pdftex.def Info: ../images/distIndPerformancePre.pdf used on input line
+ 411.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distIndPerfExpDay1.pdf, id=879, 505.89pt x 505.89pt>
+File: ../images/distIndPerfExpDay1.pdf Graphic file (type pdf)
+
+<use ../images/distIndPerfExpDay1.pdf>
+Package pdftex.def Info: ../images/distIndPerfExpDay1.pdf used on input line 41
+2.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distIndPerfExpDay2.pdf, id=880, 505.89pt x 505.89pt>
+File: ../images/distIndPerfExpDay2.pdf Graphic file (type pdf)
+
+<use ../images/distIndPerfExpDay2.pdf>
+Package pdftex.def Info: ../images/distIndPerfExpDay2.pdf used on input line 41
+3.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distIndPerfExpPost.pdf, id=881, 505.89pt x 505.89pt>
+File: ../images/distIndPerfExpPost.pdf Graphic file (type pdf)
+
+<use ../images/distIndPerfExpPost.pdf>
+Package pdftex.def Info: ../images/distIndPerfExpPost.pdf used on input line 41
+4.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [62
+
+ <../images/distIndPerformancePre.pdf> <../images/distIndPerfExpDay1.pdf> <../i
+mages/distIndPerfExpDay2.pdf> <../images/distIndPerfExpPost.pdf>]
+<../images/distUnspokenUnderstandingPre.pdf, id=909, 505.89pt x 505.89pt>
+File: ../images/distUnspokenUnderstandingPre.pdf Graphic file (type pdf)
+
+<use ../images/distUnspokenUnderstandingPre.pdf>
+Package pdftex.def Info: ../images/distUnspokenUnderstandingPre.pdf used on inp
+ut line 419.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distUnspokenUnderstandingDay1.pdf, id=910, 505.89pt x 505.89pt>
+File: ../images/distUnspokenUnderstandingDay1.pdf Graphic file (type pdf)
+
+<use ../images/distUnspokenUnderstandingDay1.pdf>
+Package pdftex.def Info: ../images/distUnspokenUnderstandingDay1.pdf used on in
+put line 420.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distUnspokenUnderstandingDay2.pdf, id=911, 505.89pt x 505.89pt>
+File: ../images/distUnspokenUnderstandingDay2.pdf Graphic file (type pdf)
+
+<use ../images/distUnspokenUnderstandingDay2.pdf>
+Package pdftex.def Info: ../images/distUnspokenUnderstandingDay2.pdf used on in
+put line 421.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distUnspokenUnderstandingPost.pdf, id=912, 505.89pt x 505.89pt>
+File: ../images/distUnspokenUnderstandingPost.pdf Graphic file (type pdf)
+
+<use ../images/distUnspokenUnderstandingPost.pdf>
+Package pdftex.def Info: ../images/distUnspokenUnderstandingPost.pdf used on in
+put line 422.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [63
+
+ <../images/distUnspokenUnderstandingPre.pdf> <../images/distUnspokenUnderstand
+ingDay1.pdf> <../images/distUnspokenUnderstandingDay2.pdf> <../images/distUnspo
+kenUnderstandingPost.pdf>] <../images/distGeneralAtmospherePre.pdf, id=940, 505
+.89pt x 505.89pt>
+File: ../images/distGeneralAtmospherePre.pdf Graphic file (type pdf)
+
+<use ../images/distGeneralAtmospherePre.pdf>
+Package pdftex.def Info: ../images/distGeneralAtmospherePre.pdf used on input l
+ine 426.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distGeneralAtmosphereDay1.pdf, id=941, 505.89pt x 505.89pt>
+File: ../images/distGeneralAtmosphereDay1.pdf Graphic file (type pdf)
+
+<use ../images/distGeneralAtmosphereDay1.pdf>
+Package pdftex.def Info: ../images/distGeneralAtmosphereDay1.pdf used on input 
+line 427.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distGeneralAtmosphereDay2.pdf, id=942, 505.89pt x 505.89pt>
+File: ../images/distGeneralAtmosphereDay2.pdf Graphic file (type pdf)
+
+<use ../images/distGeneralAtmosphereDay2.pdf>
+Package pdftex.def Info: ../images/distGeneralAtmosphereDay2.pdf used on input 
+line 428.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distGeneralAtmospherePost.pdf, id=943, 505.89pt x 505.89pt>
+File: ../images/distGeneralAtmospherePost.pdf Graphic file (type pdf)
+
+<use ../images/distGeneralAtmospherePost.pdf>
+Package pdftex.def Info: ../images/distGeneralAtmospherePost.pdf used on input 
+line 429.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [64
+
+ <../images/distGeneralAtmospherePre.pdf> <../images/distGeneralAtmosphereDay1.
+pdf> <../images/distGeneralAtmosphereDay2.pdf> <../images/distGeneralAtmosphere
+Post.pdf>]
+<../images/distClickPictorialPre.pdf, id=971, 505.89pt x 505.89pt>
+File: ../images/distClickPictorialPre.pdf Graphic file (type pdf)
+
+<use ../images/distClickPictorialPre.pdf>
+Package pdftex.def Info: ../images/distClickPictorialPre.pdf used on input line
+ 432.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distClickPictorialDay1.pdf, id=972, 505.89pt x 505.89pt>
+File: ../images/distClickPictorialDay1.pdf Graphic file (type pdf)
+
+<use ../images/distClickPictorialDay1.pdf>
+Package pdftex.def Info: ../images/distClickPictorialDay1.pdf used on input lin
+e 433.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distClickPictorialDay2.pdf, id=973, 505.89pt x 505.89pt>
+File: ../images/distClickPictorialDay2.pdf Graphic file (type pdf)
+
+<use ../images/distClickPictorialDay2.pdf>
+Package pdftex.def Info: ../images/distClickPictorialDay2.pdf used on input lin
+e 434.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distClickPictorialPost.pdf, id=974, 505.89pt x 505.89pt>
+File: ../images/distClickPictorialPost.pdf Graphic file (type pdf)
+
+<use ../images/distClickPictorialPost.pdf>
+Package pdftex.def Info: ../images/distClickPictorialPost.pdf used on input lin
+e 435.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [65
+
+ <../images/distClickPictorialPre.pdf> <../images/distClickPictorialDay1.pdf> <
+../images/distClickPictorialDay2.pdf> <../images/distClickPictorialPost.pdf>]
+<../images/distEmotionalSupportPre.pdf, id=1002, 505.89pt x 505.89pt>
+File: ../images/distEmotionalSupportPre.pdf Graphic file (type pdf)
+
+<use ../images/distEmotionalSupportPre.pdf>
+Package pdftex.def Info: ../images/distEmotionalSupportPre.pdf used on input li
+ne 440.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distEmotionalSupportDay1.pdf, id=1003, 505.89pt x 505.89pt>
+File: ../images/distEmotionalSupportDay1.pdf Graphic file (type pdf)
+
+<use ../images/distEmotionalSupportDay1.pdf>
+Package pdftex.def Info: ../images/distEmotionalSupportDay1.pdf used on input l
+ine 441.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distEmotionalSupportDay2.pdf, id=1004, 505.89pt x 505.89pt>
+File: ../images/distEmotionalSupportDay2.pdf Graphic file (type pdf)
+
+<use ../images/distEmotionalSupportDay2.pdf>
+Package pdftex.def Info: ../images/distEmotionalSupportDay2.pdf used on input l
+ine 442.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distEmotionalSupportPost.pdf, id=1005, 505.89pt x 505.89pt>
+File: ../images/distEmotionalSupportPost.pdf Graphic file (type pdf)
+
+<use ../images/distEmotionalSupportPost.pdf>
+Package pdftex.def Info: ../images/distEmotionalSupportPost.pdf used on input l
+ine 443.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [66
+
+ <../images/distEmotionalSupportPre.pdf> <../images/distEmotionalSupportDay1.pd
+f> <../images/distEmotionalSupportDay2.pdf> <../images/distEmotionalSupportPost
+.pdf>]
+<../images/distSharedGoalPre.pdf, id=1034, 505.89pt x 505.89pt>
+File: ../images/distSharedGoalPre.pdf Graphic file (type pdf)
+
+<use ../images/distSharedGoalPre.pdf>
+Package pdftex.def Info: ../images/distSharedGoalPre.pdf used on input line 447
+.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distSharedGoalDay1.pdf, id=1035, 505.89pt x 505.89pt>
+File: ../images/distSharedGoalDay1.pdf Graphic file (type pdf)
+
+<use ../images/distSharedGoalDay1.pdf>
+Package pdftex.def Info: ../images/distSharedGoalDay1.pdf used on input line 44
+8.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distSharedGoalDay2.pdf, id=1036, 505.89pt x 505.89pt>
+File: ../images/distSharedGoalDay2.pdf Graphic file (type pdf)
+
+<use ../images/distSharedGoalDay2.pdf>
+Package pdftex.def Info: ../images/distSharedGoalDay2.pdf used on input line 44
+9.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distSharedGoalPost.pdf, id=1037, 505.89pt x 505.89pt>
+File: ../images/distSharedGoalPost.pdf Graphic file (type pdf)
+
+<use ../images/distSharedGoalPost.pdf>
+Package pdftex.def Info: ../images/distSharedGoalPost.pdf used on input line 45
+0.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [67
+
+ <../images/distSharedGoalPre.pdf> <../images/distSharedGoalDay1.pdf> <../image
+s/distSharedGoalDay2.pdf> <../images/distSharedGoalPost.pdf>]
+<../images/distFusionPictorialTeamPre.pdf, id=1066, 505.89pt x 505.89pt>
+File: ../images/distFusionPictorialTeamPre.pdf Graphic file (type pdf)
+
+<use ../images/distFusionPictorialTeamPre.pdf>
+Package pdftex.def Info: ../images/distFusionPictorialTeamPre.pdf used on input
+ line 454.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distFusionPictorialTeamDay1.pdf, id=1067, 505.89pt x 505.89pt>
+File: ../images/distFusionPictorialTeamDay1.pdf Graphic file (type pdf)
+
+<use ../images/distFusionPictorialTeamDay1.pdf>
+Package pdftex.def Info: ../images/distFusionPictorialTeamDay1.pdf used on inpu
+t line 455.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distFusionPictorialTeamDay2.pdf, id=1068, 505.89pt x 505.89pt>
+File: ../images/distFusionPictorialTeamDay2.pdf Graphic file (type pdf)
+
+<use ../images/distFusionPictorialTeamDay2.pdf>
+Package pdftex.def Info: ../images/distFusionPictorialTeamDay2.pdf used on inpu
+t line 456.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distFusionPictorialTeamPost.pdf, id=1069, 505.89pt x 505.89pt>
+File: ../images/distFusionPictorialTeamPost.pdf Graphic file (type pdf)
+
+<use ../images/distFusionPictorialTeamPost.pdf>
+Package pdftex.def Info: ../images/distFusionPictorialTeamPost.pdf used on inpu
+t line 457.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [68
+
+ <../images/distFusionPictorialTeamPre.pdf> <../images/distFusionPictorialTeamD
+ay1.pdf> <../images/distFusionPictorialTeamDay2.pdf> <../images/distFusionPicto
+rialTeamPost.pdf>]
+<../images/distFatigueDay1.pdf, id=1097, 505.89pt x 505.89pt>
+File: ../images/distFatigueDay1.pdf Graphic file (type pdf)
+
+<use ../images/distFatigueDay1.pdf>
+Package pdftex.def Info: ../images/distFatigueDay1.pdf used on input line 464.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distFatigueDay2.pdf, id=1098, 505.89pt x 505.89pt>
+File: ../images/distFatigueDay2.pdf Graphic file (type pdf)
+
+<use ../images/distFatigueDay2.pdf>
+Package pdftex.def Info: ../images/distFatigueDay2.pdf used on input line 465.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distFatiguePost.pdf, id=1099, 505.89pt x 505.89pt>
+File: ../images/distFatiguePost.pdf Graphic file (type pdf)
+
+<use ../images/distFatiguePost.pdf>
+Package pdftex.def Info: ../images/distFatiguePost.pdf used on input line 466.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [69
+
+ <../images/distFatigueDay1.pdf> <../images/distFatigueDay2.pdf> <../images/dis
+tFatiguePost.pdf>]
+<../images/distPrpeDay1.pdf, id=1121, 505.89pt x 505.89pt>
+File: ../images/distPrpeDay1.pdf Graphic file (type pdf)
+
+<use ../images/distPrpeDay1.pdf>
+Package pdftex.def Info: ../images/distPrpeDay1.pdf used on input line 471.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distPrpeDay2.pdf, id=1122, 505.89pt x 505.89pt>
+File: ../images/distPrpeDay2.pdf Graphic file (type pdf)
+
+<use ../images/distPrpeDay2.pdf>
+Package pdftex.def Info: ../images/distPrpeDay2.pdf used on input line 472.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distPrpePost.pdf, id=1123, 505.89pt x 505.89pt>
+File: ../images/distPrpePost.pdf Graphic file (type pdf)
+
+<use ../images/distPrpePost.pdf>
+Package pdftex.def Info: ../images/distPrpePost.pdf used on input line 473.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [70
+
+ <../images/distPrpeDay1.pdf> <../images/distPrpeDay2.pdf> <../images/distPrpeP
+ost.pdf>]
+<../images/distMentalDay1.pdf, id=1145, 505.89pt x 505.89pt>
+File: ../images/distMentalDay1.pdf Graphic file (type pdf)
+
+<use ../images/distMentalDay1.pdf>
+Package pdftex.def Info: ../images/distMentalDay1.pdf used on input line 478.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distMentalDay2.pdf, id=1146, 505.89pt x 505.89pt>
+File: ../images/distMentalDay2.pdf Graphic file (type pdf)
+
+<use ../images/distMentalDay2.pdf>
+Package pdftex.def Info: ../images/distMentalDay2.pdf used on input line 479.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distMentalPost.pdf, id=1147, 505.89pt x 505.89pt>
+File: ../images/distMentalPost.pdf Graphic file (type pdf)
+
+<use ../images/distMentalPost.pdf>
+Package pdftex.def Info: ../images/distMentalPost.pdf used on input line 480.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ (../images/clickMidResultDay1.tex
+Overfull \hbox (23.10735pt too wide) in paragraph at lines 8--32
+ [][] 
+ []
+
+) (../images/clickMidResultDay2.tex
+Overfull \hbox (23.10735pt too wide) in paragraph at lines 8--32
+ [][] 
+ []
+
+) (../images/bondingMidResultDay1.tex) (../images/bondingMidResultDay2.tex)
+(../images/fatigueMidResultDay1.tex) (../images/fatigueMidResultDay2.tex)
+[71
+
+ <../images/distMentalDay1.pdf> <../images/distMentalDay2.pdf> <../images/distM
+entalPost.pdf>] [72] [73] [74] [75]
+(../images/MLM31ateamPerfClickTournament.tex) [76]
+<../images/MLM31aHist.pdf, id=1187, 505.89pt x 505.89pt>
+File: ../images/MLM31aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM31aHist.pdf>
+Package pdftex.def Info: ../images/MLM31aHist.pdf used on input line 515.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31aScatter.pdf, id=1188, 505.89pt x 505.89pt>
+File: ../images/MLM31aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM31aScatter.pdf>
+Package pdftex.def Info: ../images/MLM31aScatter.pdf used on input line 516.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31aQQNorm.pdf, id=1189, 505.89pt x 505.89pt>
+File: ../images/MLM31aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM31aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM31aQQNorm.pdf used on input line 517.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31aCooksD.pdf, id=1190, 505.89pt x 505.89pt>
+File: ../images/MLM31aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM31aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM31aCooksD.pdf used on input line 518.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [77 <../images/MLM31aHist.pdf> <../images/MLM31aScatter.pdf> <../images/MLM31a
+QQNorm.pdf> <../images/MLM31aCooksD.pdf>]
+[78] (../images/MLM31bclickBondingTournament.tex) [79]
+(../images/MLM31bclickBondingTournamentModelComparison.tex
+Overfull \hbox (68.42326pt too wide) in paragraph at lines 8--56
+ [][] 
+ []
+
+) [80] <../images/MLM31bHist.pdf, id=1233, 505.89pt x 505.89pt>
+File: ../images/MLM31bHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bHist.pdf>
+Package pdftex.def Info: ../images/MLM31bHist.pdf used on input line 532.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bScatter.pdf, id=1234, 505.89pt x 505.89pt>
+File: ../images/MLM31bScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bScatter.pdf>
+Package pdftex.def Info: ../images/MLM31bScatter.pdf used on input line 533.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bQQNorm.pdf, id=1235, 505.89pt x 505.89pt>
+File: ../images/MLM31bQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM31bQQNorm.pdf used on input line 534.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bCooksD.pdf, id=1236, 505.89pt x 505.89pt>
+File: ../images/MLM31bCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bCooksD.pdf>
+Package pdftex.def Info: ../images/MLM31bCooksD.pdf used on input line 535.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [81 <../images/MLM31bHist.pdf> <../images/MLM31bScatter.pdf> <../images/MLM31b
+QQNorm.pdf> <../images/MLM31bCooksD.pdf>]
+<../images/MLM31bOutLogHist.pdf, id=1264, 505.89pt x 505.89pt>
+File: ../images/MLM31bOutLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bOutLogHist.pdf>
+Package pdftex.def Info: ../images/MLM31bOutLogHist.pdf used on input line 539.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bOutLogScatter.pdf, id=1265, 505.89pt x 505.89pt>
+File: ../images/MLM31bOutLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bOutLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM31bOutLogScatter.pdf used on input line 5
+40.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bOutLogQQNorm.pdf, id=1266, 505.89pt x 505.89pt>
+File: ../images/MLM31bOutLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bOutLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM31bOutLogQQNorm.pdf used on input line 54
+1.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bOutLogCooksD.pdf, id=1267, 505.89pt x 505.89pt>
+File: ../images/MLM31bOutLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bOutLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM31bOutLogCooksD.pdf used on input line 54
+2.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [82 <../images/MLM31bOutLogHist.pdf> <../images/MLM31bOutLogScatter.pdf> <../i
+mages/MLM31bOutLogQQNorm.pdf> <../images/MLM31bOutLogCooksD.pdf>] [83] (../imag
+es/MLM32ateamPerfBondingTournament.tex)
+[84] (../images/MLM32ateamPerfBondingTournamentModelComparison.tex
+Overfull \hbox (26.24557pt too wide) in paragraph at lines 8--53
+ [][] 
+ []
+
+) [85] <../images/MLM32aHist.pdf, id=1310, 505.89pt x 505.89pt>
+File: ../images/MLM32aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aHist.pdf>
+Package pdftex.def Info: ../images/MLM32aHist.pdf used on input line 558.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aScatter.pdf, id=1311, 505.89pt x 505.89pt>
+File: ../images/MLM32aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aScatter.pdf>
+Package pdftex.def Info: ../images/MLM32aScatter.pdf used on input line 559.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aQQNorm.pdf, id=1312, 505.89pt x 505.89pt>
+File: ../images/MLM32aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM32aQQNorm.pdf used on input line 560.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aCooksD.pdf, id=1313, 505.89pt x 505.89pt>
+File: ../images/MLM32aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM32aCooksD.pdf used on input line 561.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [86 <../images/MLM32aHist.pdf> <../images/MLM32aScatter.pdf> <../images/MLM32a
+QQNorm.pdf> <../images/MLM32aCooksD.pdf>]
+<../images/MLM32aOutLogHist.pdf, id=1344, 505.89pt x 505.89pt>
+File: ../images/MLM32aOutLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aOutLogHist.pdf>
+Package pdftex.def Info: ../images/MLM32aOutLogHist.pdf used on input line 565.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aOutLogScatter.pdf, id=1345, 505.89pt x 505.89pt>
+File: ../images/MLM32aOutLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aOutLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM32aOutLogScatter.pdf used on input line 5
+66.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aOutLogQQNorm.pdf, id=1346, 505.89pt x 505.89pt>
+File: ../images/MLM32aOutLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aOutLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM32aOutLogQQNorm.pdf used on input line 56
+7.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aOutLogCooksD.pdf, id=1347, 505.89pt x 505.89pt>
+File: ../images/MLM32aOutLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aOutLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM32aOutLogCooksD.pdf used on input line 56
+8.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [87 <../images/MLM32aOutLogHist.pdf> <../images/MLM32aOutLogScatter.pdf> <../i
+mages/MLM32aOutLogQQNorm.pdf> <../images/MLM32aOutLogCooksD.pdf>]
+(../images/MLM33ateamPerfBondingTournamentInteraction.tex)
+<../images/MLM33aHist.pdf, id=1378, 505.89pt x 505.89pt>
+File: ../images/MLM33aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aHist.pdf>
+Package pdftex.def Info: ../images/MLM33aHist.pdf used on input line 576.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aScatter.pdf, id=1379, 505.89pt x 505.89pt>
+File: ../images/MLM33aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aScatter.pdf>
+Package pdftex.def Info: ../images/MLM33aScatter.pdf used on input line 577.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aQQNorm.pdf, id=1380, 505.89pt x 505.89pt>
+File: ../images/MLM33aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM33aQQNorm.pdf used on input line 578.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aCooksD.pdf, id=1381, 505.89pt x 505.89pt>
+File: ../images/MLM33aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM33aCooksD.pdf used on input line 579.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [88]
+<../images/MLM33aOutLogHist.pdf, id=1385, 505.89pt x 505.89pt>
+File: ../images/MLM33aOutLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aOutLogHist.pdf>
+Package pdftex.def Info: ../images/MLM33aOutLogHist.pdf used on input line 582.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aOutLogScatter.pdf, id=1386, 505.89pt x 505.89pt>
+File: ../images/MLM33aOutLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aOutLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM33aOutLogScatter.pdf used on input line 5
+83.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aOutLogQQNorm.pdf, id=1387, 505.89pt x 505.89pt>
+File: ../images/MLM33aOutLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aOutLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM33aOutLogQQNorm.pdf used on input line 58
+4.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aOutLogCooksD.pdf, id=1388, 505.89pt x 505.89pt>
+File: ../images/MLM33aOutLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aOutLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM33aOutLogCooksD.pdf used on input line 58
+5.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+ [89 <../images/MLM33aHist.pdf> <../images/MLM33aScatter.pdf> <../images/MLM33a
+QQNorm.pdf> <../images/MLM33aCooksD.pdf>] [90 <../images/MLM33aOutLogHist.pdf> 
+<../images/MLM33aOutLogScatter.pdf> <../images/MLM33aOutLogQQNorm.pdf> <../imag
+es/MLM33aOutLogCooksD.pdf>]
+<../images/MLM34aMediationAnalysis.pdf, id=1450, 505.89pt x 505.89pt>
+File: ../images/MLM34aMediationAnalysis.pdf Graphic file (type pdf)
+
+<use ../images/MLM34aMediationAnalysis.pdf>
+Package pdftex.def Info: ../images/MLM34aMediationAnalysis.pdf used on input li
+ne 591.
+(pdftex.def)             Requested size: 430.00462pt x 430.01624pt.
+ [91 <../images/MLM34aMediationAnalysis.pdf>] (./cosResultsDraftAppendix.aux)
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 5836 strings out of 493014
+ 97867 string characters out of 6133351
+ 173466 words of memory out of 5000000
+ 8993 multiletter control sequences out of 15000+600000
+ 9288 words of font info for 32 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 38i,9n,32p,812b,353s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></u
+sr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr
+/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/l
+ocal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loc
+al/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive
+/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/201
+6/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on cosResultsDraftAppendix.pdf (91 pages, 1092341 bytes).
+PDF statistics:
+ 1525 PDF objects out of 1728 (max. 8388607)
+ 1096 compressed objects within 11 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 771 words of extra memory for PDF output out of 10000 (max. 10000000)
+

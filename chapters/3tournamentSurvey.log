@@ -1,0 +1,3268 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.26)  28 JUN 2017 11:17
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**3tournamentSurvey.tex
+(./3tournamentSurvey.tex
+LaTeX2e <2016/03/31>
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/report.cls
+Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2015/03/17 v1.2c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/utf8.def
+File: utf8.def 2016/02/28 v1.1s UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/t1enc.dfu
+File: t1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0100 (decimal 256)
+   defining Unicode char U+0101 (decimal 257)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+0108 (decimal 264)
+   defining Unicode char U+0109 (decimal 265)
+   defining Unicode char U+010A (decimal 266)
+   defining Unicode char U+010B (decimal 267)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0112 (decimal 274)
+   defining Unicode char U+0113 (decimal 275)
+   defining Unicode char U+0114 (decimal 276)
+   defining Unicode char U+0115 (decimal 277)
+   defining Unicode char U+0116 (decimal 278)
+   defining Unicode char U+0117 (decimal 279)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011C (decimal 284)
+   defining Unicode char U+011D (decimal 285)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0120 (decimal 288)
+   defining Unicode char U+0121 (decimal 289)
+   defining Unicode char U+0122 (decimal 290)
+   defining Unicode char U+0123 (decimal 291)
+   defining Unicode char U+0124 (decimal 292)
+   defining Unicode char U+0125 (decimal 293)
+   defining Unicode char U+0128 (decimal 296)
+   defining Unicode char U+0129 (decimal 297)
+   defining Unicode char U+012A (decimal 298)
+   defining Unicode char U+012B (decimal 299)
+   defining Unicode char U+012C (decimal 300)
+   defining Unicode char U+012D (decimal 301)
+   defining Unicode char U+012E (decimal 302)
+   defining Unicode char U+012F (decimal 303)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0134 (decimal 308)
+   defining Unicode char U+0135 (decimal 309)
+   defining Unicode char U+0136 (decimal 310)
+   defining Unicode char U+0137 (decimal 311)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013B (decimal 315)
+   defining Unicode char U+013C (decimal 316)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0145 (decimal 325)
+   defining Unicode char U+0146 (decimal 326)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+014C (decimal 332)
+   defining Unicode char U+014D (decimal 333)
+   defining Unicode char U+014E (decimal 334)
+   defining Unicode char U+014F (decimal 335)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0156 (decimal 342)
+   defining Unicode char U+0157 (decimal 343)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015C (decimal 348)
+   defining Unicode char U+015D (decimal 349)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+0168 (decimal 360)
+   defining Unicode char U+0169 (decimal 361)
+   defining Unicode char U+016A (decimal 362)
+   defining Unicode char U+016B (decimal 363)
+   defining Unicode char U+016C (decimal 364)
+   defining Unicode char U+016D (decimal 365)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0172 (decimal 370)
+   defining Unicode char U+0173 (decimal 371)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+01CD (decimal 461)
+   defining Unicode char U+01CE (decimal 462)
+   defining Unicode char U+01CF (decimal 463)
+   defining Unicode char U+01D0 (decimal 464)
+   defining Unicode char U+01D1 (decimal 465)
+   defining Unicode char U+01D2 (decimal 466)
+   defining Unicode char U+01D3 (decimal 467)
+   defining Unicode char U+01D4 (decimal 468)
+   defining Unicode char U+01E2 (decimal 482)
+   defining Unicode char U+01E3 (decimal 483)
+   defining Unicode char U+01E6 (decimal 486)
+   defining Unicode char U+01E7 (decimal 487)
+   defining Unicode char U+01E8 (decimal 488)
+   defining Unicode char U+01E9 (decimal 489)
+   defining Unicode char U+01EA (decimal 490)
+   defining Unicode char U+01EB (decimal 491)
+   defining Unicode char U+01F0 (decimal 496)
+   defining Unicode char U+01F4 (decimal 500)
+   defining Unicode char U+01F5 (decimal 501)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+1E02 (decimal 7682)
+   defining Unicode char U+1E03 (decimal 7683)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2010 (decimal 8208)
+   defining Unicode char U+2011 (decimal 8209)
+   defining Unicode char U+2012 (decimal 8210)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2015 (decimal 8213)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ot1enc.dfu
+File: ot1enc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A0 (decimal 160)
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AD (decimal 173)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0174 (decimal 372)
+   defining Unicode char U+0175 (decimal 373)
+   defining Unicode char U+0176 (decimal 374)
+   defining Unicode char U+0177 (decimal 375)
+   defining Unicode char U+0218 (decimal 536)
+   defining Unicode char U+0219 (decimal 537)
+   defining Unicode char U+021A (decimal 538)
+   defining Unicode char U+021B (decimal 539)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/omsenc.dfu
+File: omsenc.dfu 2016/02/28 v1.1s UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/05/09 v1.0r Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/01/02 v1.10 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 96.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count88
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2016/04/19 v0.5f Insert pages of external PDF documents (AM)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count89
+\calc@Bcount=\count90
+\calc@Adimen=\dimen105
+\calc@Bdimen=\dimen106
+\calc@Askip=\skip43
+\calc@Bskip=\skip44
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count91
+\calc@Cskip=\skip45
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+Package: atbegshi 2016/05/16 v1.17 At begin shipout hook (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+))
+\AM@pagewidth=\dimen107
+\AM@pageheight=\dimen108
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2016/04/19 v0.5f Pdfpages driver for pdfTeX (AM)
+)
+\AM@pagebox=\box26
+\AM@global@opts=\toks17
+\AM@toc@title=\toks18
+\c@AM@survey=\count92
+\AM@templatesizebox=\box27
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
+\heavyrulewidth=\dimen109
+\lightrulewidth=\dimen110
+\cmidrulewidth=\dimen111
+\belowrulesep=\dimen112
+\belowbottomsep=\dimen113
+\aboverulesep=\dimen114
+\abovetopsep=\dimen115
+\cmidrulesep=\dimen116
+\cmidrulekern=\dimen117
+\defaultaddspace=\dimen118
+\@cmidla=\count93
+\@cmidlb=\count94
+\@aboverulesep=\dimen119
+\@belowrulesep=\dimen120
+\@thisruleclass=\count95
+\@lastruleclass=\count96
+\@thisrulewidth=\dimen121
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2016/04/23 3.9r The Babel package
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/babel-english/english.ldf
+Language: english 2012/08/20 v3.3p English support from the babel system
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count97
+\U@D=\dimen122
+)
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2016/01/31 v5.1g context-sensitive quotations (JAW)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/08/02 v2.2a e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count98
+)
+\csq@reset=\count99
+\csq@gtype=\count100
+\csq@glevel=\count101
+\csq@qlevel=\count102
+\csq@maxlvl=\count103
+\csq@tshold=\count104
+\csq@ltx@everypar=\toks19
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2016/01/31 v5.1g csquotes generic definitions (JAW)
+)
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/biblatex.sty
+Package: biblatex 2016/05/14 v3.4 programmable bibliographies (PK/JW/AB)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2013/04/04 v0.2 Provides if(tex) conditional for PDFTeX, XeTeX, 
+and LuaTeX
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/logreq/logreq.sty
+Package: logreq 2010/08/04 v1.0 xml request logger
+\lrq@indent=\count105
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/logreq/logreq.def
+File: logreq.def 2010/08/04 v1.0 logreq spec v1.0
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2016/texmf-dist/tex/generic/xstring/xstring.tex
+\@xs@message=\write3
+\integerpart=\count106
+\decimalpart=\count107
+)
+Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
+)
+\c@tabx@nest=\count108
+\c@listtotal=\count109
+\c@listcount=\count110
+\c@liststart=\count111
+\c@liststop=\count112
+\c@citecount=\count113
+\c@citetotal=\count114
+\c@multicitecount=\count115
+\c@multicitetotal=\count116
+\c@instcount=\count117
+\c@maxnames=\count118
+\c@minnames=\count119
+\c@maxitems=\count120
+\c@minitems=\count121
+\c@citecounter=\count122
+\c@savedcitecounter=\count123
+\c@uniquelist=\count124
+\c@uniquename=\count125
+\c@refsection=\count126
+\c@refsegment=\count127
+\c@maxextratitle=\count128
+\c@maxextratitleyear=\count129
+\c@maxextrayear=\count130
+\c@maxextraalpha=\count131
+\c@abbrvpenalty=\count132
+\c@highnamepenalty=\count133
+\c@lownamepenalty=\count134
+\c@maxparens=\count135
+\c@parenlevel=\count136
+\blx@tempcnta=\count137
+\blx@tempcntb=\count138
+\blx@tempcntc=\count139
+\blx@maxsection=\count140
+\blx@maxsegment@0=\count141
+\blx@notetype=\count142
+\blx@parenlevel@text=\count143
+\blx@parenlevel@foot=\count144
+\blx@sectionciteorder@0=\count145
+\labelnumberwidth=\skip46
+\labelalphawidth=\skip47
+\biblabelsep=\skip48
+\bibitemsep=\skip49
+\bibnamesep=\skip50
+\bibinitsep=\skip51
+\bibparsep=\skip52
+\bibhang=\skip53
+\blx@bcfin=\read1
+\blx@bcfout=\write4
+\c@mincomprange=\count146
+\c@maxcomprange=\count147
+\c@mincompwidth=\count148
+Package biblatex Info: Trying to load biblatex default data model...
+Package biblatex Info: ... file 'blx-dm.def' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/blx-dm.def)
+Package biblatex Info: Trying to load biblatex style data model...
+Package biblatex Info: ... file 'apa.dbx' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex-apa/apa.dbx
+File: apa.dbx 2016/05/13 v6.9 APA biblatex style data model
+)
+Package biblatex Info: Trying to load biblatex custom data model...
+Package biblatex Info: ... file 'biblatex-dm.cfg' not found.
+\c@afterword=\count149
+\c@savedafterword=\count150
+\c@annotator=\count151
+\c@savedannotator=\count152
+\c@author=\count153
+\c@savedauthor=\count154
+\c@bookauthor=\count155
+\c@savedbookauthor=\count156
+\c@commentator=\count157
+\c@savedcommentator=\count158
+\c@editor=\count159
+\c@savededitor=\count160
+\c@editora=\count161
+\c@savededitora=\count162
+\c@editorb=\count163
+\c@savededitorb=\count164
+\c@editorc=\count165
+\c@savededitorc=\count166
+\c@foreword=\count167
+\c@savedforeword=\count168
+\c@holder=\count169
+\c@savedholder=\count170
+\c@introduction=\count171
+\c@savedintroduction=\count172
+\c@namea=\count173
+\c@savednamea=\count174
+\c@nameb=\count175
+\c@savednameb=\count176
+\c@namec=\count177
+\c@savednamec=\count178
+\c@translator=\count179
+\c@savedtranslator=\count180
+\c@shortauthor=\count181
+\c@savedshortauthor=\count182
+\c@shorteditor=\count183
+\c@savedshorteditor=\count184
+\c@with=\count185
+\c@savedwith=\count186
+\c@writer=\count187
+\c@savedwriter=\count188
+\c@producer=\count189
+\c@savedproducer=\count190
+\c@execproducer=\count191
+\c@savedexecproducer=\count192
+\c@director=\count193
+\c@saveddirector=\count194
+\c@labelname=\count195
+\c@savedlabelname=\count196
+\c@institution=\count197
+\c@savedinstitution=\count198
+\c@lista=\count199
+\c@savedlista=\count266
+\c@listb=\count267
+\c@savedlistb=\count268
+\c@listc=\count269
+\c@savedlistc=\count270
+\c@listd=\count271
+\c@savedlistd=\count272
+\c@liste=\count273
+\c@savedliste=\count274
+\c@listf=\count275
+\c@savedlistf=\count276
+\c@location=\count277
+\c@savedlocation=\count278
+\c@organization=\count279
+\c@savedorganization=\count280
+\c@origlocation=\count281
+\c@savedoriglocation=\count282
+\c@origpublisher=\count283
+\c@savedorigpublisher=\count284
+\c@publisher=\count285
+\c@savedpublisher=\count286
+\c@language=\count287
+\c@savedlanguage=\count288
+\c@pageref=\count289
+\c@savedpageref=\count290
+\shorthandwidth=\skip54
+\shortjournalwidth=\skip55
+\shortserieswidth=\skip56
+\shorttitlewidth=\skip57
+\shortauthorwidth=\skip58
+\shorteditorwidth=\skip59
+Package biblatex Info: Trying to load compatibility code...
+Package biblatex Info: ... file 'blx-compat.def' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/blx-compat.def
+File: blx-compat.def 2016/05/14 v3.4 biblatex compatibility (PK/JW/AB)
+)
+Package biblatex Info: Trying to load generic definitions...
+Package biblatex Info: ... file 'biblatex.def' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/biblatex.def
+File: biblatex.def 2016/05/14 v3.4 biblatex compatibility (PK/JW/AB)
+\c@textcitecount=\count291
+\c@textcitetotal=\count292
+\c@textcitemaxnames=\count293
+\c@biburlnumpenalty=\count294
+\c@biburlucpenalty=\count295
+\c@biburllcpenalty=\count296
+\c@smartand=\count297
+)
+Package biblatex Info: Trying to load natbib compatibility...
+Package biblatex Info: ... file 'blx-natbib.def' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/blx-natbib.def
+File: blx-natbib.def 2016/05/14 v3.4 biblatex compatibility (PK/JW/AB)
+)
+Package biblatex Info: Trying to load bibliography style 'apa'...
+Package biblatex Info: ... file 'apa.bbx' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex-apa/apa.bbx
+File: apa.bbx 2016/05/13 v6.9 APA biblatex references style
+Package biblatex Info: Trying to load bibliography style 'standard'...
+Package biblatex Info: ... file 'standard.bbx' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/bbx/standard.bbx
+File: standard.bbx 2016/05/14 v3.4 biblatex bibliography style (PK/JW/AB)
+\c@bbx:relatedcount=\count298
+\c@bbx:relatedtotal=\count299
+))
+Package biblatex Info: Trying to load citation style 'apa'...
+Package biblatex Info: ... file 'apa.cbx' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex-apa/apa.cbx
+File: apa.cbx 2016/05/13 v6.9 APA biblatex citation style
+Package biblatex Info: Redefining '\parencite'.
+Package biblatex Info: Redefining '\fullcite'.
+Package biblatex Info: Redefining '\citeyear'.
+Package biblatex Info: Redefining '\cite'.
+Package biblatex Info: Redefining '\footcite'.
+Package biblatex Info: Redefining '\textcites'.
+Package biblatex Info: Redefining '\textcite'.
+Package biblatex Info: Redefining '\citeauthor'.
+)
+Package biblatex Info: Trying to load configuration file...
+Package biblatex Info: ... file 'biblatex.cfg' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/biblatex.cfg
+File: biblatex.cfg 
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2013/12/28 v0.19 Intelligent cross-referencing
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/enumitem/enumitem.sty
+Package: enumitem 2011/09/28 v3.5.2 Customized lists
+\labelindent=\skip60
+\enit@outerparindent=\dimen123
+\enit@toks=\toks20
+\enit@inbox=\box28
+\enitdp@description=\count300
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/ifvtex.sty
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count301
+\Gm@cntv=\count302
+\c@Gm@tempcnt=\count303
+\Gm@bindingoffset=\dimen124
+\Gm@wd@mp=\dimen125
+\Gm@odd@mp=\dimen126
+\Gm@even@mp=\dimen127
+\Gm@layoutwidth=\dimen128
+\Gm@layoutheight=\dimen129
+\Gm@layouthoffset=\dimen130
+\Gm@layoutvoffset=\dimen131
+\Gm@dimlist=\toks21
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/pdflscape.sty
+Package: pdflscape 2016/05/14 v0.11 Display of landscape pages in PDF (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2016/03/10 v2.15b AMS math features
+\@mathmargin=\skip61
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen132
+))
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen133
+)
+(/usr/local/texlive/2016/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count304
+LaTeX Info: Redefining \frac on input line 199.
+\uproot@=\count305
+\leftroot@=\count306
+LaTeX Info: Redefining \overline on input line 297.
+\classnum@=\count307
+\DOTSCASE@=\count308
+LaTeX Info: Redefining \ldots on input line 394.
+LaTeX Info: Redefining \dots on input line 397.
+LaTeX Info: Redefining \cdots on input line 518.
+\Mathstrutbox@=\box29
+\strutbox@=\box30
+\big@size=\dimen134
+LaTeX Font Info:    Redeclaring font encoding OML on input line 634.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 635.
+\macc@depth=\count309
+\c@MaxMatrixCols=\count310
+\dotsspace@=\muskip11
+\c@parentequation=\count311
+\dspbrk@lvl=\count312
+\tag@help=\toks23
+\row@=\count313
+\column@=\count314
+\maxfields@=\count315
+\andhelp@=\toks24
+\eqnshift@=\dimen135
+\alignsep@=\dimen136
+\tagshift@=\dimen137
+\tagwidth@=\dimen138
+\totwidth@=\dimen139
+\lineht@=\dimen140
+\@envbody=\toks25
+\multlinegap=\skip62
+\multlinetaggap=\skip63
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2739.
+LaTeX Info: Redefining \] on input line 2740.
+)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'british'.
+Package biblatex Info: Trying to load language 'british' -> 'british-apa'...
+Package biblatex Info: ... file 'british-apa.lbx' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex-apa/british-apa.lbx
+File: british-apa.lbx 2016/05/13 v6.9 APA biblatex localisation
+Package biblatex Info: Trying to load language 'british'...
+Package biblatex Info: ... file 'british.lbx' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/lbx/british.lbx
+File: british.lbx 2016/05/14 v3.4 biblatex localization (PK/JW/AB)
+Package biblatex Info: Trying to load language 'english'...
+Package biblatex Info: ... file 'english.lbx' found.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/biblatex/lbx/english.lbx
+File: english.lbx 2016/05/14 v3.4 biblatex localization (PK/JW/AB)
+)))
+(./3tournamentSurvey.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `@cref' multiply defined.
+
+
+LaTeX Warning: Label `tab:MLM23bcBondingteamPerfExp' multiply defined.
+
+
+LaTeX Warning: Label `tab:MLM23bcBondingteamPerfExp@cref' multiply defined.
+
+
+LaTeX Warning: Label `tab:MLM25acFusioncJointAction' multiply defined.
+
+
+LaTeX Warning: Label `tab:MLM25acFusioncJointAction@cref' multiply defined.
+
+
+LaTeX Warning: Label `tab:MLM31ateamPerfClickTournament' multiply defined.
+
+
+LaTeX Warning: Label `tab:MLM31ateamPerfClickTournament@cref' multiply defined.
+
+
+)
+\openout1 = `3tournamentSurvey.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 29.
+LaTeX Font Info:    ... okay on input line 29.
+ (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count316
+\scratchdimen=\dimen141
+\scratchbox=\box31
+\nofMPsegments=\count317
+\nofMParguments=\count318
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count319
+\MPscratchDim=\dimen142
+\MPnumerator=\count320
+\makeMPintoPDFobject=\count321
+\everyMPtoPDFconversion=\toks28
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box32
+Package biblatex Info: Input encoding 'utf8' detected.
+Package biblatex Info: Automatic encoding selection.
+(biblatex)             Assuming data encoding 'utf8'.
+\openout4 = `3tournamentSurvey.bcf'.
+
+Package biblatex Info: Trying to load bibliographic data...
+Package biblatex Info: ... file '3tournamentSurvey.bbl' found.
+
+(./3tournamentSurvey.bbl)
+Package biblatex Info: Reference section=0 on input line 29.
+Package biblatex Info: Reference segment=0 on input line 29.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(92.14519pt, 430.00462pt, 92.14519pt)
+* v-part:(T,H,B)=(95.39737pt, 556.47656pt, 143.09605pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=430.00462pt
+* \textheight=556.47656pt
+* \oddsidemargin=19.8752pt
+* \evensidemargin=19.8752pt
+* \topmargin=-13.87262pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+[1
+
+{/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+(./3tournamentSurvey.toc)
+\tf@toc=\write5
+\openout5 = `3tournamentSurvey.toc'.
+
+ [1
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 41--42
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--44
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--46
+
+ []
+
+[2
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--58
+
+ []
+
+[3] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 76--77
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 78--79
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 80--81
+
+ []
+
+./3tournamentSurvey.tex:91: Undefined control sequence.
+l.91 ...ong & Shanghai & Beijing & PLA\superscript
+                                                  {*} \\
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./3tournamentSurvey.tex:96: LaTeX Error: \begin{small} on input line 85 ended b
+y \end{center}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.96             \end{center}
+                             
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./3tournamentSurvey.tex:97: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.97           \\
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+./3tournamentSurvey.tex:101: LaTeX Error: \begin{center} on input line 84 ended
+ by \end{small}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.101       \end{small}
+                       
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 112--113
+
+ []
+
+[5
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 114--115
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--120
+
+ []
+
+[6]
+Underfull \hbox (badness 10000) in paragraph at lines 138--139
+
+ []
+
+
+Overfull \hbox (2.9484pt too wide) in paragraph at lines 155--156
+[]\OT1/cmr/m/n/12 - The team's over-all abil-ity, re-l-at-ive to other
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 158--159
+
+ []
+
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 162--163
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--165
+
+ []
+
+[8]
+Overfull \hbox (0.18906pt too wide) in paragraph at lines 182--184
+\OT1/cmr/m/n/12 team-mates and over-all team co-ordin-a-tion. In the ex-ten-ded
+ pre- and post-Tournament
+ []
+
+[9] <../images/teamClickPictorial.png, id=43, 664.4825pt x 153.57375pt>
+File: ../images/teamClickPictorial.png Graphic file (type png)
+
+<use ../images/teamClickPictorial.png>
+Package pdftex.def Info: ../images/teamClickPictorial.png used on input line 19
+3.
+(pdftex.def)             Requested size: 430.00462pt x 99.3812pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
+
+ []
+
+
+LaTeX Warning: Citation 'Mael1992' on page 10 undefined on input line 207.
+
+[10 <../images/teamClickPictorial.png>]
+
+LaTeX Warning: Citation 'Swann2009' on page 11 undefined on input line 216.
+
+
+LaTeX Warning: Citation 'Swann2012a' on page 11 undefined on input line 216.
+
+
+LaTeX Warning: Citation 'Swann2009' on page 11 undefined on input line 226.
+
+
+LaTeX Warning: Citation 'Whitehouse2014' on page 11 undefined on input line 227
+.
+
+
+<../images/Identity_Fusion_Pictorial_Scale.png, id=49, 1014.79124pt x 285.065pt
+>
+File: ../images/Identity_Fusion_Pictorial_Scale.png Graphic file (type png)
+ <use ../images/Identity_Fusion_Pictorial_Scale.png>
+Package pdftex.def Info: ../images/Identity_Fusion_Pictorial_Scale.png used on 
+input line 231.
+(pdftex.def)             Requested size: 430.00462pt x 120.79216pt.
+
+
+LaTeX Warning: Citation 'Borg1990' on page 11 undefined on input line 239.
+
+
+LaTeX Warning: Citation 'Noakes2012a' on page 11 undefined on input line 239.
+
+[11 <../images/Identity_Fusion_Pictorial_Scale.png>]
+
+LaTeX Warning: Citation 'Marsh2009a' on page 12 undefined on input line 243.
+
+
+LaTeX Warning: Citation 'Gosling2003' on page 12 undefined on input line 243.
+
+[12] [13]
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
+
+ []
+
+
+./3tournamentSurvey.tex:289: LaTeX Error: There's no line here to end.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.289 \bigskip
+              
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+LaTeX Warning: Citation 'Gosling2003' on page 14 undefined on input line 291.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 291--292
+
+ []
+
+[14
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 293--295
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 299--300
+
+ []
+
+[15]
+Underfull \hbox (badness 10000) in paragraph at lines 335--336
+
+ []
+
+[16] [17]
+Underfull \hbox (badness 10000) in paragraph at lines 378--379
+
+ []
+
+[18
+
+] (../images/1competenceDescriptives.tex)
+(../images/2performancePostDescriptives.tex)
+(../images/3clickPostDescriptives.tex) (../images/4bondingPostDescriptives.tex)
+(../images/5fatiguePostDescriptives.tex)
+(../images/6objectiveTournamentDescriptives.tex) [19] [20] [21]
+
+LaTeX Warning: Citation 'Yong2013' on page 22 undefined on input line 414.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 416--417
+
+ []
+
+
+LaTeX Warning: Citation 'Rummel1988' on page 22 undefined on input line 418.
+
+[22
+
+]
+<../images/orthogonalObliqueRotationExample.jpg, id=91, 640.3925pt x 480.79625p
+t>
+File: ../images/orthogonalObliqueRotationExample.jpg Graphic file (type jpg)
+ <use ../images/orthogonalObliqueRotationExample.jpg>
+Package pdftex.def Info: ../images/orthogonalObliqueRotationExample.jpg used on
+ input line 422.
+(pdftex.def)             Requested size: 320.19547pt x 240.39752pt.
+
+
+LaTeX Warning: Citation 'Field2012' on page 23 undefined on input line 429.
+
+
+LaTeX Warning: Citation 'Tabachnick2007' on page 23 undefined on input line 429
+.
+
+
+LaTeX Warning: Citation 'Dziuban1974' on page 23 undefined on input line 429.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 437--439
+
+ []
+
+[23] [24 <../images/orthogonalObliqueRotationExample.jpg>] [25]
+
+LaTeX Warning: Reference `tab:3clickPostCorr' on page 26 undefined on input lin
+e 459.
+
+
+LaTeX Warning: Reference `tab:4bondingPostCorr' on page 26 undefined on input l
+ine 478.
+
+[26]
+
+LaTeX Warning: Reference `tab:5fatiguePostCorr' on page 27 undefined on input l
+ine 481.
+
+[27]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(14.22636pt, 585.84227pt, 14.22636pt)
+* v-part:(T,H,B)=(14.22636pt, 766.51726pt, 14.22636pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=585.84227pt
+* \textheight=766.51726pt
+* \oddsidemargin=-58.04362pt
+* \evensidemargin=-58.04362pt
+* \topmargin=-95.04362pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ (../images/1competenceCorr.tex) (../images/22teamPerformancePostCorr.tex)
+(../images/21indPerformancePostCorr.tex) (../images/3clickPostCorr.tex)
+[28
+
+
+] (../images/4bondingPostCorr.tex) (../images/5fatiguePostCorr.tex)
+(../images/6tournamentPerformanceCorr.tex) [29
+
+]
+(../images/postTournamentFactorDescriptives.tex)
+(../images/postTournamentFactorCorr.tex
+Overfull \hbox (2.66374pt too wide) in paragraph at lines 8--24
+ [][] 
+ []
+
+) [30
+
+]
+
+LaTeX Warning: Citation 'Field2005a' on page 31 undefined on input line 514.
+
+
+LaTeX Warning: Citation 'Wolak2012' on page 31 undefined on input line 514.
+
+
+LaTeX Warning: Citation 'Lessells1987' on page 31 undefined on input line 514.
+
+
+LaTeX Warning: Citation 'Bailey2011' on page 31 undefined on input line 514.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 514--515
+
+ []
+
+[31
+
+
+]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 519.
+
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 519.
+
+Overfull \hbox (17.54976pt too wide) in paragraph at lines 527--528
+[]\OT1/cmr/m/n/12 There were also no sig-ni-fic-ant sex dif-fer-ences in team c
+lick (Team Click, $\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (1\OML/cmm/m/it/12 ; \OT1/
+cmr/m/n/12 116) =
+ []
+
+(../images/ICCsummaryTeam.tex
+Overfull \hbox (35.42497pt too wide) in paragraph at lines 8--22
+ [][] 
+ []
+
+) (../images/ICCsummarySex.tex) [32] [33] [34]
+
+LaTeX Warning: Citation 'Field2012' on page 35 undefined on input line 539.
+
+
+LaTeX Warning: Citation 'Quene2004' on page 35 undefined on input line 539.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 539--540
+
+ []
+
+
+./3tournamentSurvey.tex:547: Package amsmath Error: Erroneous nesting of equati
+on structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.547     \end{align*}
+                      
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+<../images/mediation_image.jpg, id=133, 325.96782pt x 249.18094pt>
+File: ../images/mediation_image.jpg Graphic file (type jpg)
+
+<use ../images/mediation_image.jpg>
+Package pdftex.def Info: ../images/mediation_image.jpg used on input line 560.
+(pdftex.def)             Requested size: 162.9835pt x 124.59015pt.
+ [35
+
+]
+
+LaTeX Warning: Citation 'Bauer2006' on page 36 undefined on input line 577.
+
+
+LaTeX Warning: Citation 'Raudenbush2002' on page 36 undefined on input line 579
+.
+
+
+LaTeX Warning: Citation 'Tofighi2014' on page 36 undefined on input line 581.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 579--582
+
+ []
+
+[36 <../images/mediation_image.jpg>] [37] [38]
+Underfull \hbox (badness 10000) in paragraph at lines 636--638
+
+ []
+
+
+Overfull \hbox (6.74286pt too wide) in paragraph at lines 639--640
+\OT1/cmr/m/n/12 pictorial meas-ure of fu-sion to \OT1/cmr/m/it/12 fam-ily\OT1/c
+mr/m/n/12 , which in-creased sig-ni-fic-antly, $\OML/cmm/m/it/12 M \OT1/cmr/m/n
+/12 = \OML/cmm/m/it/12 :\OT1/cmr/m/n/12 33(0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0
+3\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 0\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 64)$,
+ []
+
+[39
+
+]
+
+LaTeX Warning: Reference `tab:fatiguePrePostSummary' on page 40 undefined on in
+put line 641.
+
+
+Overfull \hbox (24.92911pt too wide) in paragraph at lines 641--642
+\OT1/cmr/m/n/12 antly between pre- and post-Tournament meas-ure-ments. Fa-tigue
+ ($\OML/cmm/m/it/12 M \OT1/cmr/m/n/12 = 21\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 61(
+15\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 0228\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 20)$,
+
+ []
+
+
+Overfull \hbox (5.52689pt too wide) in paragraph at lines 641--642
+\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 (116) = 6\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 49
+\OML/cmm/m/it/12 ; ; p < :\OT1/cmr/m/n/12 0001$), phys-ical per-ceived ex-er-ti
+on ($\OML/cmm/m/it/12 M \OT1/cmr/m/n/12 = 2\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 84
+(1\OML/cmm/m/it/12 :\OT1/cmr/m/n/12 89\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 3\OML/
+cmm/m/it/12 :\OT1/cmr/m/n/12 79)$, $\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 (116) =
+ []
+
+[40]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(14.22636pt, 585.84227pt, 14.22636pt)
+* v-part:(T,H,B)=(14.22636pt, 766.51726pt, 14.22636pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=585.84227pt
+* \textheight=766.51726pt
+* \oddsidemargin=-58.04362pt
+* \evensidemargin=-58.04362pt
+* \topmargin=-95.04362pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+ (../images/indPerformancePrePostSummary.tex)
+(../images/teamPerformancePrePostSummary.tex)
+(../images/clickPrePostSummary.tex) (../images/bondingPrePostSummary.tex)
+(../images/fatiguePrePostSummary.tex) (../images/factorsPrePostSummary.tex)
+[41
+
+
+] [42] [43
+
+
+] [44]
+Underfull \hbox (badness 10000) in paragraph at lines 692--693
+
+ []
+
+
+Overfull \hbox (0.19344pt too wide) in paragraph at lines 699--700
+[]$\OT1/cmr/m/n/12 ^^A$Joint Ac-tion Suc-cess $\OMS/cmsy/m/n/12 !$ $\OT1/cmr/m/
+n/12 ^^A$Team Click, mod-er-ated by $^^A$Team
+ []
+
+[45
+
+]
+Overfull \hbox (2.86134pt too wide) in paragraph at lines 718--719
+[]$\OT1/cmr/m/n/12 ^^A$Joint Ac-tion Suc-cess $\OMS/cmsy/m/n/12 !$ $\OT1/cmr/m/
+n/12 ^^A$Team Click
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 744--745
+
+ []
+
+(../images/performanceOverallSummary.tex
+Overfull \hbox (15.89558pt too wide) in paragraph at lines 8--19
+ [][] 
+ []
+
+) (../images/clickOverallSummary.tex) (../images/bondingOverallSummary.tex)
+(../images/fatigueOverallSummary.tex) [47
+
+] [48]
+<../images/distTeamPerformancePre.pdf, id=179, 505.89pt x 505.89pt>
+File: ../images/distTeamPerformancePre.pdf Graphic file (type pdf)
+
+<use ../images/distTeamPerformancePre.pdf>
+Package pdftex.def Info: ../images/distTeamPerformancePre.pdf used on input lin
+e 757.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distTeamPerfExpDay1.pdf, id=180, 505.89pt x 505.89pt>
+File: ../images/distTeamPerfExpDay1.pdf Graphic file (type pdf)
+
+<use ../images/distTeamPerfExpDay1.pdf>
+Package pdftex.def Info: ../images/distTeamPerfExpDay1.pdf used on input line 7
+58.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distTeamPerfExpDay2.pdf, id=181, 505.89pt x 505.89pt>
+File: ../images/distTeamPerfExpDay2.pdf Graphic file (type pdf)
+
+<use ../images/distTeamPerfExpDay2.pdf>
+Package pdftex.def Info: ../images/distTeamPerfExpDay2.pdf used on input line 7
+59.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distTeamPerfExpPost.pdf, id=182, 505.89pt x 505.89pt>
+File: ../images/distTeamPerfExpPost.pdf Graphic file (type pdf)
+
+<use ../images/distTeamPerfExpPost.pdf>
+Package pdftex.def Info: ../images/distTeamPerfExpPost.pdf used on input line 7
+60.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 757--761
+[][] []
+ []
+
+<../images/distIndPerformancePre.pdf, id=183, 505.89pt x 505.89pt>
+File: ../images/distIndPerformancePre.pdf Graphic file (type pdf)
+
+<use ../images/distIndPerformancePre.pdf>
+Package pdftex.def Info: ../images/distIndPerformancePre.pdf used on input line
+ 767.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distIndPerfExpDay1.pdf, id=184, 505.89pt x 505.89pt>
+File: ../images/distIndPerfExpDay1.pdf Graphic file (type pdf)
+
+<use ../images/distIndPerfExpDay1.pdf>
+Package pdftex.def Info: ../images/distIndPerfExpDay1.pdf used on input line 76
+8.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distIndPerfExpDay2.pdf, id=185, 505.89pt x 505.89pt>
+File: ../images/distIndPerfExpDay2.pdf Graphic file (type pdf)
+
+<use ../images/distIndPerfExpDay2.pdf>
+Package pdftex.def Info: ../images/distIndPerfExpDay2.pdf used on input line 76
+9.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distIndPerfExpPost.pdf, id=186, 505.89pt x 505.89pt>
+File: ../images/distIndPerfExpPost.pdf Graphic file (type pdf)
+
+<use ../images/distIndPerfExpPost.pdf>
+Package pdftex.def Info: ../images/distIndPerfExpPost.pdf used on input line 77
+0.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 767--771
+[][] []
+ []
+
+<../images/distUnspokenUnderstandingPre.pdf, id=187, 505.89pt x 505.89pt>
+File: ../images/distUnspokenUnderstandingPre.pdf Graphic file (type pdf)
+
+<use ../images/distUnspokenUnderstandingPre.pdf>
+Package pdftex.def Info: ../images/distUnspokenUnderstandingPre.pdf used on inp
+ut line 777.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distUnspokenUnderstandingDay1.pdf, id=188, 505.89pt x 505.89pt>
+File: ../images/distUnspokenUnderstandingDay1.pdf Graphic file (type pdf)
+
+<use ../images/distUnspokenUnderstandingDay1.pdf>
+Package pdftex.def Info: ../images/distUnspokenUnderstandingDay1.pdf used on in
+put line 778.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distUnspokenUnderstandingDay2.pdf, id=189, 505.89pt x 505.89pt>
+File: ../images/distUnspokenUnderstandingDay2.pdf Graphic file (type pdf)
+
+<use ../images/distUnspokenUnderstandingDay2.pdf>
+Package pdftex.def Info: ../images/distUnspokenUnderstandingDay2.pdf used on in
+put line 779.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distUnspokenUnderstandingPost.pdf, id=190, 505.89pt x 505.89pt>
+File: ../images/distUnspokenUnderstandingPost.pdf Graphic file (type pdf)
+
+<use ../images/distUnspokenUnderstandingPost.pdf>
+Package pdftex.def Info: ../images/distUnspokenUnderstandingPost.pdf used on in
+put line 780.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 777--781
+[][] []
+ []
+
+<../images/distGeneralAtmospherePre.pdf, id=191, 505.89pt x 505.89pt>
+File: ../images/distGeneralAtmospherePre.pdf Graphic file (type pdf)
+
+<use ../images/distGeneralAtmospherePre.pdf>
+Package pdftex.def Info: ../images/distGeneralAtmospherePre.pdf used on input l
+ine 788.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distGeneralAtmosphereDay1.pdf, id=192, 505.89pt x 505.89pt>
+File: ../images/distGeneralAtmosphereDay1.pdf Graphic file (type pdf)
+
+<use ../images/distGeneralAtmosphereDay1.pdf>
+Package pdftex.def Info: ../images/distGeneralAtmosphereDay1.pdf used on input 
+line 789.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distGeneralAtmosphereDay2.pdf, id=193, 505.89pt x 505.89pt>
+File: ../images/distGeneralAtmosphereDay2.pdf Graphic file (type pdf)
+
+<use ../images/distGeneralAtmosphereDay2.pdf>
+Package pdftex.def Info: ../images/distGeneralAtmosphereDay2.pdf used on input 
+line 790.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distGeneralAtmospherePost.pdf, id=194, 505.89pt x 505.89pt>
+File: ../images/distGeneralAtmospherePost.pdf Graphic file (type pdf)
+
+<use ../images/distGeneralAtmospherePost.pdf>
+Package pdftex.def Info: ../images/distGeneralAtmospherePost.pdf used on input 
+line 791.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 788--792
+[][] []
+ []
+
+<../images/distClickPictorialPre.pdf, id=195, 505.89pt x 505.89pt>
+File: ../images/distClickPictorialPre.pdf Graphic file (type pdf)
+
+<use ../images/distClickPictorialPre.pdf>
+Package pdftex.def Info: ../images/distClickPictorialPre.pdf used on input line
+ 799.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distClickPictorialDay1.pdf, id=196, 505.89pt x 505.89pt>
+File: ../images/distClickPictorialDay1.pdf Graphic file (type pdf)
+
+<use ../images/distClickPictorialDay1.pdf>
+Package pdftex.def Info: ../images/distClickPictorialDay1.pdf used on input lin
+e 800.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distClickPictorialDay2.pdf, id=197, 505.89pt x 505.89pt>
+File: ../images/distClickPictorialDay2.pdf Graphic file (type pdf)
+
+<use ../images/distClickPictorialDay2.pdf>
+Package pdftex.def Info: ../images/distClickPictorialDay2.pdf used on input lin
+e 801.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distClickPictorialPost.pdf, id=198, 505.89pt x 505.89pt>
+File: ../images/distClickPictorialPost.pdf Graphic file (type pdf)
+
+<use ../images/distClickPictorialPost.pdf>
+Package pdftex.def Info: ../images/distClickPictorialPost.pdf used on input lin
+e 802.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 799--803
+[][] []
+ []
+
+<../images/distEmotionalSupportPre.pdf, id=199, 505.89pt x 505.89pt>
+File: ../images/distEmotionalSupportPre.pdf Graphic file (type pdf)
+
+<use ../images/distEmotionalSupportPre.pdf>
+Package pdftex.def Info: ../images/distEmotionalSupportPre.pdf used on input li
+ne 812.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distEmotionalSupportDay1.pdf, id=200, 505.89pt x 505.89pt>
+File: ../images/distEmotionalSupportDay1.pdf Graphic file (type pdf)
+
+<use ../images/distEmotionalSupportDay1.pdf>
+Package pdftex.def Info: ../images/distEmotionalSupportDay1.pdf used on input l
+ine 813.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distEmotionalSupportDay2.pdf, id=201, 505.89pt x 505.89pt>
+File: ../images/distEmotionalSupportDay2.pdf Graphic file (type pdf)
+
+<use ../images/distEmotionalSupportDay2.pdf>
+Package pdftex.def Info: ../images/distEmotionalSupportDay2.pdf used on input l
+ine 814.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distEmotionalSupportPost.pdf, id=202, 505.89pt x 505.89pt>
+File: ../images/distEmotionalSupportPost.pdf Graphic file (type pdf)
+
+<use ../images/distEmotionalSupportPost.pdf>
+Package pdftex.def Info: ../images/distEmotionalSupportPost.pdf used on input l
+ine 815.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 812--816
+[][] []
+ []
+
+<../images/distSharedGoalPre.pdf, id=203, 505.89pt x 505.89pt>
+File: ../images/distSharedGoalPre.pdf Graphic file (type pdf)
+
+<use ../images/distSharedGoalPre.pdf>
+Package pdftex.def Info: ../images/distSharedGoalPre.pdf used on input line 824
+.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distSharedGoalDay1.pdf, id=204, 505.89pt x 505.89pt>
+File: ../images/distSharedGoalDay1.pdf Graphic file (type pdf)
+
+<use ../images/distSharedGoalDay1.pdf>
+Package pdftex.def Info: ../images/distSharedGoalDay1.pdf used on input line 82
+5.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distSharedGoalDay2.pdf, id=205, 505.89pt x 505.89pt>
+File: ../images/distSharedGoalDay2.pdf Graphic file (type pdf)
+
+<use ../images/distSharedGoalDay2.pdf>
+Package pdftex.def Info: ../images/distSharedGoalDay2.pdf used on input line 82
+6.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distSharedGoalPost.pdf, id=206, 505.89pt x 505.89pt>
+File: ../images/distSharedGoalPost.pdf Graphic file (type pdf)
+
+<use ../images/distSharedGoalPost.pdf>
+Package pdftex.def Info: ../images/distSharedGoalPost.pdf used on input line 82
+7.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 824--828
+[][] []
+ []
+
+<../images/distFusionPictorialTeamPre.pdf, id=207, 505.89pt x 505.89pt>
+File: ../images/distFusionPictorialTeamPre.pdf Graphic file (type pdf)
+
+<use ../images/distFusionPictorialTeamPre.pdf>
+Package pdftex.def Info: ../images/distFusionPictorialTeamPre.pdf used on input
+ line 835.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distFusionPictorialTeamDay1.pdf, id=208, 505.89pt x 505.89pt>
+File: ../images/distFusionPictorialTeamDay1.pdf Graphic file (type pdf)
+
+<use ../images/distFusionPictorialTeamDay1.pdf>
+Package pdftex.def Info: ../images/distFusionPictorialTeamDay1.pdf used on inpu
+t line 836.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distFusionPictorialTeamDay2.pdf, id=209, 505.89pt x 505.89pt>
+File: ../images/distFusionPictorialTeamDay2.pdf Graphic file (type pdf)
+
+<use ../images/distFusionPictorialTeamDay2.pdf>
+Package pdftex.def Info: ../images/distFusionPictorialTeamDay2.pdf used on inpu
+t line 837.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distFusionPictorialTeamPost.pdf, id=210, 505.89pt x 505.89pt>
+File: ../images/distFusionPictorialTeamPost.pdf Graphic file (type pdf)
+
+<use ../images/distFusionPictorialTeamPost.pdf>
+Package pdftex.def Info: ../images/distFusionPictorialTeamPost.pdf used on inpu
+t line 838.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 835--839
+[][] []
+ []
+
+<../images/distFatigueDay1.pdf, id=211, 505.89pt x 505.89pt>
+File: ../images/distFatigueDay1.pdf Graphic file (type pdf)
+
+<use ../images/distFatigueDay1.pdf>
+Package pdftex.def Info: ../images/distFatigueDay1.pdf used on input line 847.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distFatigueDay2.pdf, id=212, 505.89pt x 505.89pt>
+File: ../images/distFatigueDay2.pdf Graphic file (type pdf)
+
+<use ../images/distFatigueDay2.pdf>
+Package pdftex.def Info: ../images/distFatigueDay2.pdf used on input line 848.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distFatiguePost.pdf, id=213, 505.89pt x 505.89pt>
+File: ../images/distFatiguePost.pdf Graphic file (type pdf)
+
+<use ../images/distFatiguePost.pdf>
+Package pdftex.def Info: ../images/distFatiguePost.pdf used on input line 849.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 847--850
+[][] []
+ []
+
+<../images/distPrpeDay1.pdf, id=214, 505.89pt x 505.89pt>
+File: ../images/distPrpeDay1.pdf Graphic file (type pdf)
+
+<use ../images/distPrpeDay1.pdf>
+Package pdftex.def Info: ../images/distPrpeDay1.pdf used on input line 858.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distPrpeDay2.pdf, id=215, 505.89pt x 505.89pt>
+File: ../images/distPrpeDay2.pdf Graphic file (type pdf)
+
+<use ../images/distPrpeDay2.pdf>
+Package pdftex.def Info: ../images/distPrpeDay2.pdf used on input line 859.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distPrpePost.pdf, id=216, 505.89pt x 505.89pt>
+File: ../images/distPrpePost.pdf Graphic file (type pdf)
+
+<use ../images/distPrpePost.pdf>
+Package pdftex.def Info: ../images/distPrpePost.pdf used on input line 860.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 858--861
+[][] []
+ []
+
+<../images/distMentalDay1.pdf, id=217, 505.89pt x 505.89pt>
+File: ../images/distMentalDay1.pdf Graphic file (type pdf)
+
+<use ../images/distMentalDay1.pdf>
+Package pdftex.def Info: ../images/distMentalDay1.pdf used on input line 870.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distMentalDay2.pdf, id=218, 505.89pt x 505.89pt>
+File: ../images/distMentalDay2.pdf Graphic file (type pdf)
+
+<use ../images/distMentalDay2.pdf>
+Package pdftex.def Info: ../images/distMentalDay2.pdf used on input line 871.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/distMentalPost.pdf, id=219, 505.89pt x 505.89pt>
+File: ../images/distMentalPost.pdf Graphic file (type pdf)
+
+<use ../images/distMentalPost.pdf>
+Package pdftex.def Info: ../images/distMentalPost.pdf used on input line 872.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 870--873
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 880--881
+
+ []
+
+[49] [50 <../images/distTeamPerformancePre.pdf> <../images/distTeamPerfExpDay1.
+pdf> <../images/distTeamPerfExpDay2.pdf> <../images/distTeamPerfExpPost.pdf>]
+[51 <../images/distIndPerformancePre.pdf> <../images/distIndPerfExpDay1.pdf> <.
+./images/distIndPerfExpDay2.pdf> <../images/distIndPerfExpPost.pdf>] [52 <../im
+ages/distUnspokenUnderstandingPre.pdf> <../images/distUnspokenUnderstandingDay1
+.pdf> <../images/distUnspokenUnderstandingDay2.pdf> <../images/distUnspokenUnde
+rstandingPost.pdf>] [53 <../images/distGeneralAtmospherePre.pdf> <../images/dis
+tGeneralAtmosphereDay1.pdf> <../images/distGeneralAtmosphereDay2.pdf> <../image
+s/distGeneralAtmospherePost.pdf>] [54 <../images/distClickPictorialPre.pdf> <..
+/images/distClickPictorialDay1.pdf> <../images/distClickPictorialDay2.pdf> <../
+images/distClickPictorialPost.pdf>] [55 <../images/distEmotionalSupportPre.pdf>
+ <../images/distEmotionalSupportDay1.pdf> <../images/distEmotionalSupportDay2.p
+df> <../images/distEmotionalSupportPost.pdf>] [56 <../images/distSharedGoalPre.
+pdf> <../images/distSharedGoalDay1.pdf> <../images/distSharedGoalDay2.pdf> <../
+images/distSharedGoalPost.pdf>] [57 <../images/distFusionPictorialTeamPre.pdf> 
+<../images/distFusionPictorialTeamDay1.pdf> <../images/distFusionPictorialTeamD
+ay2.pdf> <../images/distFusionPictorialTeamPost.pdf>] [58 <../images/distFatigu
+eDay1.pdf> <../images/distFatigueDay2.pdf> <../images/distFatiguePost.pdf>]
+[59 <../images/distPrpeDay1.pdf> <../images/distPrpeDay2.pdf> <../images/distPr
+pePost.pdf>] [60 <../images/distMentalDay1.pdf> <../images/distMentalDay2.pdf> 
+<../images/distMentalPost.pdf>]
+Overfull \hbox (21.07472pt too wide) in paragraph at lines 885--886
+\OT1/cmr/m/n/12 peared to sig-ni-fic-antly cor-rel-ate with game res-ult im-me-
+di-ately prior to sur-vey, $\OML/cmm/m/it/12 F\OT1/cmr/m/n/12 (1\OML/cmm/m/it/1
+2 ; \OT1/cmr/m/n/12 159) =
+ []
+
+(../images/clickMidResultDay1.tex
+Overfull \hbox (23.10735pt too wide) in paragraph at lines 8--32
+ [][] 
+ []
+
+) (../images/clickMidResultDay2.tex
+Overfull \hbox (23.10735pt too wide) in paragraph at lines 8--32
+ [][] 
+ []
+
+) (../images/bondingMidResultDay1.tex) (../images/bondingMidResultDay2.tex)
+(../images/fatigueMidResultDay1.tex) (../images/fatigueMidResultDay2.tex)
+[61] [62] [63] [64]
+Overfull \hbox (9.37418pt too wide) in paragraph at lines 908--909
+[]\OT1/cmr/m/n/12 For Team Click, Un-spoken Un-der-stand-ing, Gen-eral At-mo-sp
+here, and Click Pictorial
+ []
+
+[65]
+./3tournamentSurvey.tex:930: Missing $ inserted.
+<inserted text> 
+                $
+l.930 ...ion 3.4.a] Team Performance Expectations^
+                                                  *Team Click Tournament -> ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+./3tournamentSurvey.tex:931: LaTeX Error: Command \item invalid in math mode.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.931 \item
+           [Prediction 3.4.b] Mediation Analysis: Team Performance Expectati...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./3tournamentSurvey.tex:931: LaTeX Error: Something's wrong--perhaps a missing 
+\item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.931 \item[Prediction 3.4.b]
+                              Mediation Analysis: Team Performance Expectati...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+
+./3tournamentSurvey.tex:931: LaTeX Error: Something's wrong--perhaps a missing 
+\item.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.931 \item[Prediction 3.4.b]
+                              Mediation Analysis: Team Performance Expectati...
+
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+./3tournamentSurvey.tex:931: Missing $ inserted.
+<inserted text> 
+                $
+l.931 ...eam Performance Expectations $\rightarrow
+                                                  $ Team Click Tournament $\...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (3.72786pt too wide) in paragraph at lines 930--932
+[]\OT1/cmr/m/n/12 Team Per-form-ance Expectations$[]\OML/cmm/m/it/12 TeamClickT
+ournament\OMS/cmsy/m/n/12 ^^@ \OML/cmm/m/it/12 >
+ []
+
+[66]
+Underfull \hbox (badness 10000) in paragraph at lines 955--956
+
+ []
+
+./3tournamentSurvey.tex:957: Misplaced alignment tab character &.
+l.957 ...on method using the lme4 package (Bates &
+                                                   Sarkar, 2006) in the R en...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+
+LaTeX Warning: Citation 'Pinheiro2000' on page 67 undefined on input line 957.
+
+
+LaTeX Warning: Citation 'Oberauer2006' on page 67 undefined on input line 957.
+
+
+./3tournamentSurvey.tex:974: Package amsmath Error: Erroneous nesting of equati
+on structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.974   \end{align*}
+                    
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[67
+
+] (../images/MLM1aJointActionSuccessClick.tex)
+<../images/MLM1aHist.pdf, id=530, 505.89pt x 505.89pt>
+File: ../images/MLM1aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM1aHist.pdf>
+Package pdftex.def Info: ../images/MLM1aHist.pdf used on input line 986.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1aScatter.pdf, id=531, 505.89pt x 505.89pt>
+File: ../images/MLM1aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM1aScatter.pdf>
+Package pdftex.def Info: ../images/MLM1aScatter.pdf used on input line 987.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1aQQPlot.pdf, id=532, 505.89pt x 505.89pt>
+File: ../images/MLM1aQQPlot.pdf Graphic file (type pdf)
+
+<use ../images/MLM1aQQPlot.pdf>
+Package pdftex.def Info: ../images/MLM1aQQPlot.pdf used on input line 988.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1aCooksD.pdf, id=533, 505.89pt x 505.89pt>
+File: ../images/MLM1aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM1aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM1aCooksD.pdf used on input line 989.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 986--990
+[][] []
+ []
+
+
+./3tournamentSurvey.tex:1006: Package amsmath Error: Erroneous nesting of equat
+ion structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1006   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[68] [69] [70 <../images/MLM1aHist.pdf> <../images/MLM1aScatter.pdf> <../images
+/MLM1aQQPlot.pdf> <../images/MLM1aCooksD.pdf>]
+(../images/MLM1bteamExpectationsClick.tex)
+<../images/MLM1bHist.pdf, id=570, 505.89pt x 505.89pt>
+File: ../images/MLM1bHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM1bHist.pdf>
+Package pdftex.def Info: ../images/MLM1bHist.pdf used on input line 1018.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1bScatter.pdf, id=571, 505.89pt x 505.89pt>
+File: ../images/MLM1bScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM1bScatter.pdf>
+Package pdftex.def Info: ../images/MLM1bScatter.pdf used on input line 1019.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1bQQNorm.pdf, id=572, 505.89pt x 505.89pt>
+File: ../images/MLM1bQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM1bQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM1bQQNorm.pdf used on input line 1020.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM1bCooksD.pdf, id=573, 505.89pt x 505.89pt>
+File: ../images/MLM1bCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM1bCooksD.pdf>
+Package pdftex.def Info: ../images/MLM1bCooksD.pdf used on input line 1021.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1018--1022
+[][] []
+ []
+
+./3tournamentSurvey.tex:1035: Missing $ inserted.
+<inserted text> 
+                $
+l.1035 ...action term (Joint Action Success \times
+                                                   Team Performance Expectat...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./3tournamentSurvey.tex:1036: Missing $ inserted.
+<inserted text> 
+                $
+l.1036 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (47.46593pt too wide) in paragraph at lines 1035--1036
+\OT1/cmr/m/n/12 (Joint Ac-tion Suc-cess $\OMS/cmsy/m/n/12 ^^B\OML/cmm/m/it/12 T
+eamPerformanceExpectations\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 wasincludedinmodel\
+OT1/cmr/m/n/12 1\OML/cmm/m/it/12 aasfollows \OT1/cmr/m/n/12 ::$ 
+ []
+
+
+./3tournamentSurvey.tex:1044: Package amsmath Error: Erroneous nesting of equat
+ion structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1044   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+[71] [72] [73 <../images/MLM1bHist.pdf> <../images/MLM1bScatter.pdf> <../images
+/MLM1bQQNorm.pdf> <../images/MLM1bCooksD.pdf>]
+(../images/MLM1cPerformanceClickInteraction.tex
+
+LaTeX Warning: Float too large for page by 0.29013pt on input line 59.
+
+)
+./3tournamentSurvey.tex:1064: Undefined control sequence.
+l.1064 ...ormance variables\nobreakdashperceptions
+                                                   of team component perform...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./3tournamentSurvey.tex:1064: Undefined control sequence.
+l.1064 ...or expectations\nobreakdashsignificantly
+                                                   predicted team click, whe...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+./3tournamentSurvey.tex:1076: Package amsmath Error: Erroneous nesting of equat
+ion structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1076   \end{align*}
+                     
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(../images/MLM2aTeamClickBonding.tex [74] [75])
+<../images/MLM2aHist.pdf, id=618, 505.89pt x 505.89pt>
+File: ../images/MLM2aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM2aHist.pdf>
+Package pdftex.def Info: ../images/MLM2aHist.pdf used on input line 1086.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM2aScatter.pdf, id=619, 505.89pt x 505.89pt>
+File: ../images/MLM2aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM2aScatter.pdf>
+Package pdftex.def Info: ../images/MLM2aScatter.pdf used on input line 1087.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM2aQQNorm.pdf, id=620, 505.89pt x 505.89pt>
+File: ../images/MLM2aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM2aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM2aQQNorm.pdf used on input line 1088.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM2aCooksD.pdf, id=621, 505.89pt x 505.89pt>
+File: ../images/MLM2aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM2aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM2aCooksD.pdf used on input line 1089.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1086--1090
+[][] []
+ []
+
+[76]
+
+LaTeX Warning: Citation 'Rousseeuw2011' on page 77 undefined on input line 1106
+.
+
+./3tournamentSurvey.tex:1108: Missing $ inserted.
+<inserted text> 
+                $
+l.1108 ...(observations above and below 1.5 \times
+                                                   Inter Quartile Range (IQR...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./3tournamentSurvey.tex:1108: You can't use `\spacefactor' in math mode.
+\blx@leavevmode ...\else \leavevmode \spacefactor 
+                                                  \blx@sf@par \fi 
+l.1108 ...tile Range (IQR), see \citep{Tukey1977})
+                                                   appeared to improve the m...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+LaTeX Warning: Citation 'Tukey1977' on page 77 undefined on input line 1108.
+
+./3tournamentSurvey.tex:1108: You can't use `\spacefactor' in math mode.
+\reserved@b ->\spacefactor 
+                           \@m 
+l.1108 ...tile Range (IQR), see \citep{Tukey1977})
+                                                   appeared to improve the m...
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+Missing character: There is no ò in font cmex10!
+Missing character: There is no è in font cmex10!
+./3tournamentSurvey.tex:1108: Missing $ inserted.
+<inserted text> 
+                $
+l.1108 ...ppeared to improve the model fit, $\beta
+                                                   = .26$ ($95\% CI =  .05, ...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+Overfull \hbox (21.88683pt too wide) in paragraph at lines 1108--1109
+\OT1/cmr/m/n/12 1.5 $\OMS/cmsy/m/n/12 ^^B\OML/cmm/m/it/12 InterQuartileRange\OT
+1/cmr/m/n/12 (\OML/cmm/m/it/12 IQR\OT1/cmr/m/n/12 )\OML/cmm/m/it/12 ; see\OT1/c
+mr/m/n/12 ([]))\OML/cmm/m/it/12 appearedtoimprovethemodelfit;$$^^L \OT1/cmr/m/n
+/12 =
+ []
+
+
+LaTeX Warning: Citation 'Howell2012' on page 77 undefined on input line 1110.
+
+
+LaTeX Warning: Citation 'Field2012' on page 77 undefined on input line 1110.
+
+[77] [78 <../images/MLM2aHist.pdf> <../images/MLM2aScatter.pdf> <../images/MLM2
+aQQNorm.pdf> <../images/MLM2aCooksD.pdf>]
+(../images/MLM3aJointActionSuccessBonding.tex
+Overfull \hbox (27.96854pt too wide) in paragraph at lines 8--52
+ [][] 
+ []
+
+) <../images/MLM3aHist.pdf, id=659, 505.89pt x 505.89pt>
+File: ../images/MLM3aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aHist.pdf>
+Package pdftex.def Info: ../images/MLM3aHist.pdf used on input line 1115.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aScatter.pdf, id=660, 505.89pt x 505.89pt>
+File: ../images/MLM3aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aScatter.pdf>
+Package pdftex.def Info: ../images/MLM3aScatter.pdf used on input line 1116.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aQQNorm.pdf, id=661, 505.89pt x 505.89pt>
+File: ../images/MLM3aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM3aQQNorm.pdf used on input line 1117.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aCooksD.pdf, id=662, 505.89pt x 505.89pt>
+File: ../images/MLM3aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM3aCooksD.pdf used on input line 1118.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1115--1119
+[][] []
+ []
+
+<../images/MLM3aOutHist.pdf, id=663, 505.89pt x 505.89pt>
+File: ../images/MLM3aOutHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aOutHist.pdf>
+Package pdftex.def Info: ../images/MLM3aOutHist.pdf used on input line 1124.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aOutScatter.pdf, id=664, 505.89pt x 505.89pt>
+File: ../images/MLM3aOutScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aOutScatter.pdf>
+Package pdftex.def Info: ../images/MLM3aOutScatter.pdf used on input line 1125.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aOutQQNorm.pdf, id=665, 505.89pt x 505.89pt>
+File: ../images/MLM3aOutQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aOutQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM3aOutQQNorm.pdf used on input line 1126.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aOutCooksD.pdf, id=666, 505.89pt x 505.89pt>
+File: ../images/MLM3aOutCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aOutCooksD.pdf>
+Package pdftex.def Info: ../images/MLM3aOutCooksD.pdf used on input line 1127.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1124--1128
+[][] []
+ []
+
+<../images/MLM3aLogHist.pdf, id=667, 505.89pt x 505.89pt>
+File: ../images/MLM3aLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aLogHist.pdf>
+Package pdftex.def Info: ../images/MLM3aLogHist.pdf used on input line 1133.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aLogScatter.pdf, id=668, 505.89pt x 505.89pt>
+File: ../images/MLM3aLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM3aLogScatter.pdf used on input line 1134.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aLogQQNorm.pdf, id=669, 505.89pt x 505.89pt>
+File: ../images/MLM3aLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM3aLogQQNorm.pdf used on input line 1135.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3aLogCooksD.pdf, id=670, 505.89pt x 505.89pt>
+File: ../images/MLM3aLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM3aLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM3aLogCooksD.pdf used on input line 1136.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1133--1137
+[][] []
+ []
+
+[79] [80] [81 <../images/MLM3aHist.pdf> <../images/MLM3aScatter.pdf> <../images
+/MLM3aQQNorm.pdf> <../images/MLM3aCooksD.pdf>] [82 <../images/MLM3aOutHist.pdf>
+ <../images/MLM3aOutScatter.pdf> <../images/MLM3aOutQQNorm.pdf> <../images/MLM3
+aOutCooksD.pdf>] [83 <../images/MLM3aLogHist.pdf> <../images/MLM3aLogScatter.pd
+f> <../images/MLM3aLogQQNorm.pdf> <../images/MLM3aLogCooksD.pdf>]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(14.22636pt, 585.84227pt, 14.22636pt)
+* v-part:(T,H,B)=(14.22636pt, 766.51726pt, 14.22636pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=585.84227pt
+* \textheight=766.51726pt
+* \oddsidemargin=-58.04362pt
+* \evensidemargin=-58.04362pt
+* \topmargin=-95.04362pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(../images/MLM3bExpectationsBonding.tex) [84
+
+]
+<../images/MLM3bHist.pdf, id=774, 505.89pt x 505.89pt>
+File: ../images/MLM3bHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bHist.pdf>
+Package pdftex.def Info: ../images/MLM3bHist.pdf used on input line 1162.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bScatter.pdf, id=775, 505.89pt x 505.89pt>
+File: ../images/MLM3bScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bScatter.pdf>
+Package pdftex.def Info: ../images/MLM3bScatter.pdf used on input line 1163.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bQQNorm.pdf, id=776, 505.89pt x 505.89pt>
+File: ../images/MLM3bQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM3bQQNorm.pdf used on input line 1164.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bCooksD.pdf, id=777, 505.89pt x 505.89pt>
+File: ../images/MLM3bCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bCooksD.pdf>
+Package pdftex.def Info: ../images/MLM3bCooksD.pdf used on input line 1165.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1162--1166
+[][] []
+ []
+
+<../images/MLM3bLogHist.pdf, id=778, 505.89pt x 505.89pt>
+File: ../images/MLM3bLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bLogHist.pdf>
+Package pdftex.def Info: ../images/MLM3bLogHist.pdf used on input line 1171.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bLogScatter.pdf, id=779, 505.89pt x 505.89pt>
+File: ../images/MLM3bLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM3bLogScatter.pdf used on input line 1172.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bLogQQNorm.pdf, id=780, 505.89pt x 505.89pt>
+File: ../images/MLM3bLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM3bLogQQNorm.pdf used on input line 1173.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM3bLogCooksD.pdf, id=781, 505.89pt x 505.89pt>
+File: ../images/MLM3bLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM3bLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM3bLogCooksD.pdf used on input line 1174.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1171--1175
+[][] []
+ []
+
+
+LaTeX Warning: Citation 'Tofighi2016a' on page 85 undefined on input line 1185.
+
+
+
+LaTeX Warning: Citation 'Imai2010' on page 85 undefined on input line 1185.
+
+
+LaTeX Warning: Citation 'Preacher2008' on page 85 undefined on input line 1185.
+
+
+
+LaTeX Warning: Reference `fig:MLM4aAssumptions' on page 85 undefined on input l
+ine 1187.
+
+
+Overfull \hbox (2.6085pt too wide) in paragraph at lines 1187--1188
+\OT1/cmr/m/n/12 Joint Ac-tion Suc-cess on So-cial Bond-ing at-trib-ut-able to T
+eam Click, $\OML/cmm/m/it/12 ^^L \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 :\OT1/cmr/m
+/n/12 37\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 95%\OML/cmm/m/it/12 CI \OT1/cmr/m/n/
+12 =
+ []
+
+<../images/MLM4aMediationEffects.pdf, id=782, 505.89pt x 505.89pt>
+File: ../images/MLM4aMediationEffects.pdf Graphic file (type pdf)
+
+<use ../images/MLM4aMediationEffects.pdf>
+Package pdftex.def Info: ../images/MLM4aMediationEffects.pdf used on input line
+ 1193.
+(pdftex.def)             Requested size: 252.94437pt x 252.94437pt.
+ [85
+
+] [86 <../images/MLM3bHist.pdf> <../images/MLM3bScatter.pdf> <../images/MLM3bQQ
+Norm.pdf> <../images/MLM3bCooksD.pdf>] [87 <../images/MLM3bLogHist.pdf> <../ima
+ges/MLM3bLogScatter.pdf> <../images/MLM3bLogQQNorm.pdf> <../images/MLM3bLogCook
+sD.pdf>] [88 <../images/MLM4aMediationEffects.pdf>] (../images/MLM21acJointActi
+onSuccesscClick.tex)
+<../images/MLM21aHist.pdf, id=856, 505.89pt x 505.89pt>
+File: ../images/MLM21aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM21aHist.pdf>
+Package pdftex.def Info: ../images/MLM21aHist.pdf used on input line 1228.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21aScatter.pdf, id=857, 505.89pt x 505.89pt>
+File: ../images/MLM21aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM21aScatter.pdf>
+Package pdftex.def Info: ../images/MLM21aScatter.pdf used on input line 1229.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21aQQNorm.pdf, id=858, 505.89pt x 505.89pt>
+File: ../images/MLM21aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM21aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM21aQQNorm.pdf used on input line 1230.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21aCooksD.pdf, id=859, 505.89pt x 505.89pt>
+File: ../images/MLM21aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM21aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM21aCooksD.pdf used on input line 1231.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1228--1232
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1240--1241
+
+ []
+
+[89
+
+] [90] [91 <../images/MLM21aHist.pdf> <../images/MLM21aScatter.pdf> <../images/
+MLM21aQQNorm.pdf> <../images/MLM21aCooksD.pdf>]
+(../images/MLM21bcTeamPerfExpcClick.tex
+
+LaTeX Warning: Float too large for page by 0.18929pt on input line 50.
+
+) (../images/MLM21bcTeamPerfExpcClickAdjusted.tex
+Overfull \hbox (10.16628pt too wide) in paragraph at lines 7--51
+ [][] 
+ []
+
+
+LaTeX Warning: Float too large for page by 16.02264pt on input line 51.
+
+) <../images/MLM21bHist.pdf, id=898, 505.89pt x 505.89pt>
+File: ../images/MLM21bHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bHist.pdf>
+Package pdftex.def Info: ../images/MLM21bHist.pdf used on input line 1248.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bScatter.pdf, id=899, 505.89pt x 505.89pt>
+File: ../images/MLM21bScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bScatter.pdf>
+Package pdftex.def Info: ../images/MLM21bScatter.pdf used on input line 1249.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bQQNorm.pdf, id=900, 505.89pt x 505.89pt>
+File: ../images/MLM21bQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM21bQQNorm.pdf used on input line 1250.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bCooksD.pdf, id=901, 505.89pt x 505.89pt>
+File: ../images/MLM21bCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bCooksD.pdf>
+Package pdftex.def Info: ../images/MLM21bCooksD.pdf used on input line 1251.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1248--1252
+[][] []
+ []
+
+<../images/MLM21bLogHist.pdf, id=902, 505.89pt x 505.89pt>
+File: ../images/MLM21bLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bLogHist.pdf>
+Package pdftex.def Info: ../images/MLM21bLogHist.pdf used on input line 1258.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bLogScatter.pdf, id=903, 505.89pt x 505.89pt>
+File: ../images/MLM21bLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM21bLogScatter.pdf used on input line 1259
+.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bLogQQNorm.pdf, id=904, 505.89pt x 505.89pt>
+File: ../images/MLM21bLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM21bLogQQNorm.pdf used on input line 1260.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bLogCooksD.pdf, id=905, 505.89pt x 505.89pt>
+File: ../images/MLM21bLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM21bLogCooksD.pdf used on input line 1261.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1258--1262
+[][] []
+ []
+
+<../images/MLM21bOutHist.pdf, id=906, 505.89pt x 505.89pt>
+File: ../images/MLM21bOutHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bOutHist.pdf>
+Package pdftex.def Info: ../images/MLM21bOutHist.pdf used on input line 1268.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bOutScatter.pdf, id=907, 505.89pt x 505.89pt>
+File: ../images/MLM21bOutScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bOutScatter.pdf>
+Package pdftex.def Info: ../images/MLM21bOutScatter.pdf used on input line 1269
+.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bOutQQNorm.pdf, id=908, 505.89pt x 505.89pt>
+File: ../images/MLM21bOutQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bOutQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM21bOutQQNorm.pdf used on input line 1270.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM21bOutCooksD.pdf, id=909, 505.89pt x 505.89pt>
+File: ../images/MLM21bOutCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM21bOutCooksD.pdf>
+Package pdftex.def Info: ../images/MLM21bOutCooksD.pdf used on input line 1271.
+
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1268--1272
+[][] []
+ []
+
+
+LaTeX Warning: Reference `tab:MLM21ccTeamPerfExpcClickInt' on page 92 undefined
+ on input line 1281.
+
+(../images/MLM22acClickcBonding.tex)
+<../images/MLM22aHist.pdf, id=910, 505.89pt x 505.89pt>
+File: ../images/MLM22aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM22aHist.pdf>
+Package pdftex.def Info: ../images/MLM22aHist.pdf used on input line 1292.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM22aScatter.pdf, id=911, 505.89pt x 505.89pt>
+File: ../images/MLM22aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM22aScatter.pdf>
+Package pdftex.def Info: ../images/MLM22aScatter.pdf used on input line 1293.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM22aQQNorm.pdf, id=912, 505.89pt x 505.89pt>
+File: ../images/MLM22aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM22aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM22aQQNorm.pdf used on input line 1294.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM22aCooksD.pdf, id=913, 505.89pt x 505.89pt>
+File: ../images/MLM22aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM22aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM22aCooksD.pdf used on input line 1295.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1292--1296
+[][] []
+ []
+
+[92] [93] [94] [95 <../images/MLM21bHist.pdf> <../images/MLM21bScatter.pdf> <..
+/images/MLM21bQQNorm.pdf> <../images/MLM21bCooksD.pdf>] [96 <../images/MLM21bLo
+gHist.pdf> <../images/MLM21bLogScatter.pdf> <../images/MLM21bLogQQNorm.pdf> <..
+/images/MLM21bLogCooksD.pdf>] [97 <../images/MLM21bOutHist.pdf> <../images/MLM2
+1bOutScatter.pdf> <../images/MLM21bOutQQNorm.pdf> <../images/MLM21bOutCooksD.pd
+f>] [98] [99 <../images/MLM22aHist.pdf> <../images/MLM22aScatter.pdf> <../image
+s/MLM22aQQNorm.pdf> <../images/MLM22aCooksD.pdf>]
+(../images/MLM23acJointActionSuccesscBonding.tex)
+<../images/MLM23aHist.pdf, id=1048, 505.89pt x 505.89pt>
+File: ../images/MLM23aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM23aHist.pdf>
+Package pdftex.def Info: ../images/MLM23aHist.pdf used on input line 1315.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23aScatter.pdf, id=1049, 505.89pt x 505.89pt>
+File: ../images/MLM23aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM23aScatter.pdf>
+Package pdftex.def Info: ../images/MLM23aScatter.pdf used on input line 1316.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23aQQNorm.pdf, id=1050, 505.89pt x 505.89pt>
+File: ../images/MLM23aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM23aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM23aQQNorm.pdf used on input line 1317.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM23aCooksD.pdf, id=1051, 505.89pt x 505.89pt>
+File: ../images/MLM23aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM23aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM23aCooksD.pdf used on input line 1318.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1315--1319
+[][] []
+ []
+
+[100] [101] [102 <../images/MLM23aHist.pdf> <../images/MLM23aScatter.pdf> <../i
+mages/MLM23aQQNorm.pdf> <../images/MLM23aCooksD.pdf>]
+*geometry* verbose mode - [ newgeometry ] result:
+* driver: pdftex
+* paper: <default>
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: 
+* h-part:(L,W,R)=(14.22636pt, 585.84227pt, 14.22636pt)
+* v-part:(T,H,B)=(14.22636pt, 766.51726pt, 14.22636pt)
+* \paperwidth=614.295pt
+* \paperheight=794.96999pt
+* \textwidth=585.84227pt
+* \textheight=766.51726pt
+* \oddsidemargin=-58.04362pt
+* \evensidemargin=-58.04362pt
+* \topmargin=-95.04362pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=12.0pt
+* \footskip=30.0pt
+* \marginparwidth=44.0pt
+* \marginparsep=10.0pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(../images/MLM23bcBondingteamPerfExp.tex) [103
+
+]
+Overfull \hbox (1.1159pt too wide) in paragraph at lines 1335--1336
+\OT1/cmr/m/n/12 Results from the mod-els re-por-ted above demon-strate sig-ni-f
+ic-ant re-la-tion-ships between
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1335--1336
+
+ []
+
+<../images/MLM24aMediationAnalysis.pdf, id=1092, 505.89pt x 505.89pt>
+File: ../images/MLM24aMediationAnalysis.pdf Graphic file (type pdf)
+
+<use ../images/MLM24aMediationAnalysis.pdf>
+Package pdftex.def Info: ../images/MLM24aMediationAnalysis.pdf used on input li
+ne 1342.
+(pdftex.def)             Requested size: 430.00462pt x 430.01624pt.
+
+
+LaTeX Warning: Reference `tab:factorsPrePostSummary' on page 104 undefined on i
+nput line 1350.
+
+[104
+
+] [105 <../images/MLM24aMediationAnalysis.pdf>]
+(../images/MLM25acFusioncJointAction.tex)
+Underfull \hbox (badness 10000) in paragraph at lines 1358--1359
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1362--1363
+
+ []
+
+[106] [107]
+
+./3tournamentSurvey.tex:1404: Package amsmath Error: Erroneous nesting of equat
+ion structures;
+(amsmath)                trying to recover with `aligned'.
+
+See the amsmath package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1404     \end{align*}
+                       
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+(../images/MLM31ateamPerfClickTournament.tex)
+<../images/MLM31aHist.pdf, id=1112, 505.89pt x 505.89pt>
+File: ../images/MLM31aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM31aHist.pdf>
+Package pdftex.def Info: ../images/MLM31aHist.pdf used on input line 1413.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31aScatter.pdf, id=1113, 505.89pt x 505.89pt>
+File: ../images/MLM31aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM31aScatter.pdf>
+Package pdftex.def Info: ../images/MLM31aScatter.pdf used on input line 1414.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31aQQNorm.pdf, id=1114, 505.89pt x 505.89pt>
+File: ../images/MLM31aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM31aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM31aQQNorm.pdf used on input line 1415.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31aCooksD.pdf, id=1115, 505.89pt x 505.89pt>
+File: ../images/MLM31aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM31aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM31aCooksD.pdf used on input line 1416.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1413--1417
+[][] []
+ []
+
+[108] [109] [110 <../images/MLM31aHist.pdf> <../images/MLM31aScatter.pdf> <../i
+mages/MLM31aQQNorm.pdf> <../images/MLM31aCooksD.pdf>]
+(../images/MLM31bclickBondingTournament.tex)
+(../images/MLM31bclickBondingTournamentModelComparison.tex)
+<../images/MLM31bHist.pdf, id=1153, 505.89pt x 505.89pt>
+File: ../images/MLM31bHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bHist.pdf>
+Package pdftex.def Info: ../images/MLM31bHist.pdf used on input line 1433.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bScatter.pdf, id=1154, 505.89pt x 505.89pt>
+File: ../images/MLM31bScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bScatter.pdf>
+Package pdftex.def Info: ../images/MLM31bScatter.pdf used on input line 1434.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bQQNorm.pdf, id=1155, 505.89pt x 505.89pt>
+File: ../images/MLM31bQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM31bQQNorm.pdf used on input line 1435.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bCooksD.pdf, id=1156, 505.89pt x 505.89pt>
+File: ../images/MLM31bCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bCooksD.pdf>
+Package pdftex.def Info: ../images/MLM31bCooksD.pdf used on input line 1436.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1433--1437
+[][] []
+ []
+
+<../images/MLM31bOutLogHist.pdf, id=1157, 505.89pt x 505.89pt>
+File: ../images/MLM31bOutLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bOutLogHist.pdf>
+Package pdftex.def Info: ../images/MLM31bOutLogHist.pdf used on input line 1443
+.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bOutLogScatter.pdf, id=1158, 505.89pt x 505.89pt>
+File: ../images/MLM31bOutLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bOutLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM31bOutLogScatter.pdf used on input line 1
+444.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bOutLogQQNorm.pdf, id=1159, 505.89pt x 505.89pt>
+File: ../images/MLM31bOutLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bOutLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM31bOutLogQQNorm.pdf used on input line 14
+45.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM31bOutLogCooksD.pdf, id=1160, 505.89pt x 505.89pt>
+File: ../images/MLM31bOutLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM31bOutLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM31bOutLogCooksD.pdf used on input line 14
+46.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1443--1447
+[][] []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1457--1458
+
+ []
+
+
+LaTeX Warning: Reference `MLM32ateamPerfBondingTournamentModelComparison' on pa
+ge 111 undefined on input line 1459.
+
+(../images/MLM32ateamPerfBondingTournament.tex)
+(../images/MLM32ateamPerfBondingTournamentModelComparison.tex)
+<../images/MLM32aHist.pdf, id=1161, 505.89pt x 505.89pt>
+File: ../images/MLM32aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aHist.pdf>
+Package pdftex.def Info: ../images/MLM32aHist.pdf used on input line 1467.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aScatter.pdf, id=1162, 505.89pt x 505.89pt>
+File: ../images/MLM32aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aScatter.pdf>
+Package pdftex.def Info: ../images/MLM32aScatter.pdf used on input line 1468.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aQQNorm.pdf, id=1163, 505.89pt x 505.89pt>
+File: ../images/MLM32aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM32aQQNorm.pdf used on input line 1469.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aCooksD.pdf, id=1164, 505.89pt x 505.89pt>
+File: ../images/MLM32aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM32aCooksD.pdf used on input line 1470.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1467--1471
+[][] []
+ []
+
+<../images/MLM32aOutLogHist.pdf, id=1165, 505.89pt x 505.89pt>
+File: ../images/MLM32aOutLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aOutLogHist.pdf>
+Package pdftex.def Info: ../images/MLM32aOutLogHist.pdf used on input line 1477
+.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aOutLogScatter.pdf, id=1166, 505.89pt x 505.89pt>
+File: ../images/MLM32aOutLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aOutLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM32aOutLogScatter.pdf used on input line 1
+478.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aOutLogQQNorm.pdf, id=1167, 505.89pt x 505.89pt>
+File: ../images/MLM32aOutLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aOutLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM32aOutLogQQNorm.pdf used on input line 14
+79.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM32aOutLogCooksD.pdf, id=1168, 505.89pt x 505.89pt>
+File: ../images/MLM32aOutLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM32aOutLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM32aOutLogCooksD.pdf used on input line 14
+80.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1477--1481
+[][] []
+ []
+
+
+LaTeX Warning: Reference `MLM33ateamPerfBondingTournamentInteractionComparison'
+ on page 111 undefined on input line 1492.
+
+[111] [112] [113] [114 <../images/MLM31bHist.pdf> <../images/MLM31bScatter.pdf>
+ <../images/MLM31bQQNorm.pdf> <../images/MLM31bCooksD.pdf>] [115 <../images/MLM
+31bOutLogHist.pdf> <../images/MLM31bOutLogScatter.pdf> <../images/MLM31bOutLogQ
+QNorm.pdf> <../images/MLM31bOutLogCooksD.pdf>] [116] [117] [118 <../images/MLM3
+2aHist.pdf> <../images/MLM32aScatter.pdf> <../images/MLM32aQQNorm.pdf> <../imag
+es/MLM32aCooksD.pdf>] [119 <../images/MLM32aOutLogHist.pdf> <../images/MLM32aOu
+tLogScatter.pdf> <../images/MLM32aOutLogQQNorm.pdf> <../images/MLM32aOutLogCook
+sD.pdf>] (../images/MLM33ateamPerfBondingTournamentInteractionComparison.tex)
+<../images/MLM33aHist.pdf, id=1310, 505.89pt x 505.89pt>
+File: ../images/MLM33aHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aHist.pdf>
+Package pdftex.def Info: ../images/MLM33aHist.pdf used on input line 1501.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aScatter.pdf, id=1311, 505.89pt x 505.89pt>
+File: ../images/MLM33aScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aScatter.pdf>
+Package pdftex.def Info: ../images/MLM33aScatter.pdf used on input line 1502.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aQQNorm.pdf, id=1312, 505.89pt x 505.89pt>
+File: ../images/MLM33aQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM33aQQNorm.pdf used on input line 1503.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aCooksD.pdf, id=1313, 505.89pt x 505.89pt>
+File: ../images/MLM33aCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aCooksD.pdf>
+Package pdftex.def Info: ../images/MLM33aCooksD.pdf used on input line 1504.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1501--1505
+[][] []
+ []
+
+<../images/MLM33aOutLogHist.pdf, id=1314, 505.89pt x 505.89pt>
+File: ../images/MLM33aOutLogHist.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aOutLogHist.pdf>
+Package pdftex.def Info: ../images/MLM33aOutLogHist.pdf used on input line 1510
+.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aOutLogScatter.pdf, id=1315, 505.89pt x 505.89pt>
+File: ../images/MLM33aOutLogScatter.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aOutLogScatter.pdf>
+Package pdftex.def Info: ../images/MLM33aOutLogScatter.pdf used on input line 1
+511.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aOutLogQQNorm.pdf, id=1316, 505.89pt x 505.89pt>
+File: ../images/MLM33aOutLogQQNorm.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aOutLogQQNorm.pdf>
+Package pdftex.def Info: ../images/MLM33aOutLogQQNorm.pdf used on input line 15
+12.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+<../images/MLM33aOutLogCooksD.pdf, id=1317, 505.89pt x 505.89pt>
+File: ../images/MLM33aOutLogCooksD.pdf Graphic file (type pdf)
+
+<use ../images/MLM33aOutLogCooksD.pdf>
+Package pdftex.def Info: ../images/MLM33aOutLogCooksD.pdf used on input line 15
+13.
+(pdftex.def)             Requested size: 202.3524pt x 202.3524pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 1510--1514
+[][] []
+ []
+
+[120] [121] [122 <../images/MLM33aHist.pdf> <../images/MLM33aScatter.pdf> <../i
+mages/MLM33aQQNorm.pdf> <../images/MLM33aCooksD.pdf>] [123 <../images/MLM33aOut
+LogHist.pdf> <../images/MLM33aOutLogScatter.pdf> <../images/MLM33aOutLogQQNorm.
+pdf> <../images/MLM33aOutLogCooksD.pdf>]
+<../images/MLM34aMediationAnalysis.pdf, id=1386, 505.89pt x 505.89pt>
+File: ../images/MLM34aMediationAnalysis.pdf Graphic file (type pdf)
+
+<use ../images/MLM34aMediationAnalysis.pdf>
+Package pdftex.def Info: ../images/MLM34aMediationAnalysis.pdf used on input li
+ne 1536.
+(pdftex.def)             Requested size: 430.00462pt x 430.01624pt.
+ [124] [125 <../images/MLM34aMediationAnalysis.pdf>] (./3tournamentSurvey.lof [
+126
+
+]
+Overfull \hbox (27.86708pt too wide) in paragraph at lines 71--71
+ [][] []\OT1/cmr/m/n/12 Model As-sump-tions: M3.1b Team Click pre-dicts So-cial
+ Bond-ing (log/outlier 
+ []
+
+)
+\tf@lof=\write6
+\openout6 = `3tournamentSurvey.lof'.
+
+ [127] (./3tournamentSurvey.lot [128
+
+]
+Overfull \hbox (5.5465pt too wide) in paragraph at lines 113--113
+ [][] []\OT1/cmr/m/n/12 M3.2a so-cial-Bond-ing-Tour-na-ment   teamPer-form-ance
+-Ex-pect-a-tion-s-Tour- 
+ []
+
+
+Overfull \hbox (5.5465pt too wide) in paragraph at lines 117--117
+ [][] []\OT1/cmr/m/n/12 M3.3a so-cial-Bond-ing-Tour-na-ment   teamPer-form-ance
+-Ex-pect-a-tion-s-Tour- 
+ []
+
+)
+\tf@lot=\write7
+\openout7 = `3tournamentSurvey.lot'.
+
+ [129] (./3tournamentSurvey.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                3tournamentSurvey
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to '3tournamentSurvey.run.xml'.
+\openout1 = `3tournamentSurvey.run.xml'.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 14221 strings out of 493014
+ 254727 string characters out of 6133351
+ 737757 words of memory out of 5000000
+ 17284 multiletter control sequences out of 15000+600000
+ 13916 words of font info for 49 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 37i,10n,39p,2067b,1663s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></
+usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></us
+r/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/
+local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/lo
+cal/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/loca
+l/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/
+texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/tex
+live/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texliv
+e/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2
+016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/20
+16/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2016
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2016/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2016/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2016/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2016/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/local/texlive/2016/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/2016/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmti8.pfb>
+Output written on 3tournamentSurvey.pdf (130 pages, 1229250 bytes).
+PDF statistics:
+ 1484 PDF objects out of 1728 (max. 8388607)
+ 1058 compressed objects within 11 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 661 words of extra memory for PDF output out of 10000 (max. 10000000)
+

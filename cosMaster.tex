@@ -1,0 +1,66 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+
+\usepackage[british]{babel}
+\usepackage{csquotes}
+\usepackage[backend=biber,style=apa,sorting=nyt,natbib=true]{biblatex}
+\DeclareLanguageMapping{british}{british-apa}
+\addbibresource{referencesBibtex.bib}
+
+
+\title{
+{Joint Action and Social Bonding in Chinese Professional Rugby Players}\\
+{\large University of Oxford}
+}
+\author{Jacob Taylor}
+
+
+
+%---------------------------------------------
+
+\begin{document}
+
+\maketitle{}
+
+\chapter*{Abstract}
+
+blah blah blah\cite{Davis2015}
+
+\tableofcontents
+
+\chapter*{Introduction}
+\input{chapters/1introduction}
+
+
+\chapter*{Ethnographic Setting}
+\input{chapters/2ethnographicSetting}
+
+\chapter*{Study 2: Tournament Survey}
+\input{chapters/3tournamentSurvey}
+
+\chapter*{Study 2: Tournament Analysis}
+\input{chapters/4analysis}
+
+\chapter*{Study 2: Tournament Results}
+\input{chapters/5results}
+
+\chapter*{Discussion}
+\input{chapters/6discussion}
+
+\chapter*{Thesis Overview}
+\input{chapters/7thesisOverview}
+
+\chapter*{References}
+
+\appendix
+\chapter*{Appendix}
+\input{chapters/5appendix}
+
+
+
+\printbibliography
+
+
+\end{document}

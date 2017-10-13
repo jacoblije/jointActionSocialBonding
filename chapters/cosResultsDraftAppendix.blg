@@ -1,0 +1,5 @@
+[0] Config.pm:343> INFO - This is Biber 2.5
+[0] Config.pm:346> INFO - Logfile is 'cosResultsDraftAppendix.blg'
+[61] biber-darwin:290> INFO - === Wed May 31, 2017, 10:51:07
+[88] Utils.pm:165> ERROR - cosResultsDraftAppendix.bcf is malformed, last biblatex run probably failed. Deleted cosResultsDraftAppendix.bbl
+[88] Biber.pm:112> INFO - ERRORS: 1

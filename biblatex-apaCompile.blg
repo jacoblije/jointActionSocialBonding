@@ -1,0 +1,25 @@
+[0] Config.pm:354> INFO - This is Biber 2.7
+[0] Config.pm:357> INFO - Logfile is 'biblatex-apaCompile.blg'
+[64] biber-darwin:303> INFO - === Wed Sep 27, 2017, 21:53:34
+[119] Biber.pm:359> INFO - Reading 'biblatex-apaCompile.bcf'
+[406] Biber.pm:835> INFO - Found 1 citekeys in bib section 0
+[439] Biber.pm:3670> INFO - Processing section 0
+[471] Biber.pm:3840> INFO - Looking for bibtex format file 'references.bib' for section 0
+[1313] bibtex.pm:1435> INFO - Decoding LaTeX character macros into UTF-8
+[2437] bibtex.pm:1292> INFO - Found BibTeX data source 'references.bib'
+[2471] Utils.pm:164> WARN - Possible typo (case mismatch) between datasource keys: 'MathWorks2016' and 'Mathworks2016' in file 'references.bib'
+[2798] Utils.pm:164> WARN - Duplicate entry key: 'Laurent2014' in file 'references.bib', skipping ...
+[2849] Utils.pm:164> WARN - Duplicate entry key: 'Boyer2013' in file 'references.bib', skipping ...
+[2851] Utils.pm:164> WARN - Duplicate entry key: 'Eastwood2012' in file 'references.bib', skipping ...
+[2921] Utils.pm:164> WARN - BibTeX subsystem: /var/folders/0p/39cmn5sj3355scsq_n6nq3440000gq/T/2V6L06_4z1/references.bib_2226.utf8, line 17287, warning: possible runaway string started at line 17281
+[2921] Utils.pm:164> WARN - BibTeX subsystem: /var/folders/0p/39cmn5sj3355scsq_n6nq3440000gq/T/2V6L06_4z1/references.bib_2226.utf8, line 31987, warning: possible runaway string started at line 31981
+[2921] Utils.pm:164> WARN - BibTeX subsystem: /var/folders/0p/39cmn5sj3355scsq_n6nq3440000gq/T/2V6L06_4z1/references.bib_2226.utf8, line 33282, warning: possible runaway string started at line 33275
+[2921] Utils.pm:164> WARN - BibTeX subsystem: /var/folders/0p/39cmn5sj3355scsq_n6nq3440000gq/T/2V6L06_4z1/references.bib_2226.utf8, line 33678, warning: possible runaway string started at line 33664
+[2921] Utils.pm:164> WARN - BibTeX subsystem: /var/folders/0p/39cmn5sj3355scsq_n6nq3440000gq/T/2V6L06_4z1/references.bib_2226.utf8, line 45142, warning: possible runaway string started at line 44973
+[2938] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[2938] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[2939] Biber.pm:3499> INFO - Sorting list 'nyt/global/' of type 'entry' with scheme 'nyt' and locale 'en-US'
+[2939] Biber.pm:3505> INFO - No sort tailoring available for locale 'en-US'
+[2942] bbl.pm:608> INFO - Writing 'biblatex-apaCompile.bbl' with encoding 'UTF-8'
+[2942] bbl.pm:712> INFO - Output to biblatex-apaCompile.bbl
+[2942] Biber.pm:109> INFO - WARNINGS: 9

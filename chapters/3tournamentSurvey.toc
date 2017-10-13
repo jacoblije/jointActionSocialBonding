@@ -1,0 +1,163 @@
+\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\select@language {british}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {0.1}Introduction}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.1.1}Re-cap of theoretical and ethnographic motivations for predictions}{2}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Predictions}{3}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Chapter Overview}{4}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {0.2}Methods}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.2.1}The Tournament}{5}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.2.2}Participants}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.2.3}Surveys}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.2.4}Survey Items}{6}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Technical Competence}{7}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Performance}{8}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Team Click}{9}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Social Bonding}{10}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Exertion, Fatigue, and Injury}{11}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Personality}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.2.5}Performance data and video data}{12}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.2.6}Procedure}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Pre-Tournament Survey}{14}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mid-Tournament Surveys}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Post-Tournament Survey}{15}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Tournament performance data}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.2.7}Data Structure}{16}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {0.3}Analysis}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.3.1}Overview of Analysis}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.3.2}Analysis of post-Tournament data}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{post-Tournament Descriptive Statistics}{18}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Data Reduction using Exploratory Factor Analysis}{22}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Assessment of EFA}{23}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{EFA of post-Tournament Variables}{25}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Technical Competence}{25}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Component Performance for Individual and Team}{25}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Team Click}{26}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Social Bonding}{26}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fatigue}{27}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Post-Tournament Data Structure}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Intra-Class Correlation}{31}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Model Selection}{35}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mediation Analysis}{35}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Roadmap of post-Tournament Analysis}{37}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.3.3}Analysis of pre-post Tournament data}{39}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Pre-post Tournament Descriptives}{39}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Data Reduction}{43}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Component Performance}{43}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Team Click}{43}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Social Bonding}{43}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{Fatigue}{43}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Pre-post differences in latent factors}{44}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.3.4}Model Selection}{45}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Roadmap of pre-post Tournament Analysis}{45}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.3.5}Analysis of overall Tournament data}{47}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Descriptive Statistics: ``Toys out of the Pram''}{47}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Data Reduction}{65}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Roadmap of Overall Tournament Analysis}{65}
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {0.4}Results}{67}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.4.1}Post-Tournament Results}{67}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{1.a: Joint Action Success predicts Team Click}{67}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{1.b Team Performance Expectations predict Team Click}{68}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{1.c Team Performance Expectations moderates the effect of Joint Action Success on team Click}{71}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{2.a Team Click predicts Social Bonding}{74}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{3.a Joint Action Success predicts Social Bonding}{77}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{3.b Team Performance Expectations -> Social Bonding}{79}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mediation analysis: Joint Action Success predicts Social Bonding, moderated by Team Click}{85}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.4.2}Summary of pre- to post-Tournament Results}{89}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{$\Delta $Team Click $\sim $ $\Delta $Joint Action Success}{89}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{$\Delta $Team Click $\sim $ Team Performance Expectations}{89}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{$\Delta $Team Click $\sim $ $\Delta $Joint Action Success$\times $ Team Performance Expectations}{92}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{$\Delta $Social Bonding$\sim $ $\Delta $Team Click}{92}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{$\Delta $Social Bonding $\sim $ $\Delta $Joint Action Success}{92}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{$\Delta $Social Bonding $\sim $ Team Performance Expectations}{100}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mediation Analysis: $\Delta $Joint Action Success $\rightarrow $ $\Delta $Team Click $\rightarrow $ $\Delta $Social Bonding}{104}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Additional Analysis: What predicts change in fusion to family?}{104}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{$\Delta $fusionFamily $\sim $ $\Delta $Joint Action Success}{106}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{$\Delta $fusionFamily $\sim $ $\Delta $Team Click}{106}
+\defcounter {refsection}{0}\relax 
+\contentsline {paragraph}{$\Delta $fusionFamily $\sim $ $\Delta $Joint Action Success $\times $ $\Delta $Team Click}{106}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {0.4.3}Overall Tournament Results}{106}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Team Click $\sim $ Team Performance Expectations}{108}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Social Bonding $\sim $ Team Click}{108}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Social Bonding $\sim $ Team Performance Expectations}{111}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Social Bonding $\sim $ Team Performance Expectations Tournament $\times $ Team Click Tournament}{120}
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Mediation Analysis: Team Performance Expectations -> Team Click -> Social Bonding}{120}

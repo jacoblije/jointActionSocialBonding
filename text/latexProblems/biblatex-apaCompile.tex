@@ -1,0 +1,30 @@
+
+% from class file: ociamthesis.cls
+%\usepackage{lmodern}
+%\usepackage[LGR,TS1,T1]{fontenc}
+%\usepackage[utf8]{inputenc}
+%\usepackage[english,american,british]{babel}
+%\usepackage{csquotes}
+%\hyphenpenalty=500
+%\def\longs{{\fontencoding{TS1}\selectfont s}}
+
+
+\documentclass[a4paper,nobind]{ociamthesis}
+
+\usepackage[style=apa, sorting=nyt, backend=biber, maxcitenames=2, useprefix=true, doi=false, isbn=false, natbib=true, language=american]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\newcommand*{\bibtitle}{Works Cited}
+
+\addbibresource{references.bib}
+
+
+\begin{document}
+
+Hristo talks about this guy Sergey all the time \citep{Gavrilets2015}.
+
+
+\setlength{\baselineskip}{0pt} % JEM: Single-space References
+{\renewcommand*\MakeUppercase[1]{#1}%
+\printbibliography[heading=bibintoc,title={\bibtitle}]}
+
+\end{document}

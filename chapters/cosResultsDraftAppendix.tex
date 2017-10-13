@@ -1,0 +1,615 @@
+\documentclass[12pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\graphicspath{{images/}}
+\usepackage{listings}
+\usepackage[british]{babel}
+\usepackage{csquotes}
+
+\usepackage{geometry}
+\usepackage{pdflscape}
+
+
+\title{Results Appendix}
+\author{Jacob Taylor}
+
+
+
+
+
+\begin{document}
+
+\includegraphics[scale =.4]{../images/mediation_image.jpg}
+
+
+\begin{center}
+\begin{tabular}{ c c c c }
+Women's Pool A & Women's Pool B & Men's Pool A & Men's Pool B \\
+\hline
+Jiangsu & Anhui & Shandong & Tianjin \\
+Shandong & Shanghai & Beijing & People's Liberation Army \\
+Tianjin & Beijing & Hebei & Anhui \\
+   & Fujian & Shanghai & Fujian \\
+\end{tabular}
+\end{center}
+
+
+
+
+\section{post-Tournament}
+
+
+
+
+\subsubsection{Data Structure}
+
+\input{../images/ICCsummarySex.tex}
+
+\input{../images/ICCsummaryTeam.tex}
+
+\subsection{Descriptives}
+
+\clearpage
+\input{../images/1competenceDescriptives.tex}
+\input{../images/2performancePostDescriptives.tex}
+\input{../images/3clickPostDescriptives.tex}
+\input{../images/4bondingPostDescriptives.tex}
+\input{../images/5fatiguePostDescriptives.tex}
+\input{../images/6objectiveTournamentDescriptives.tex}
+
+
+\newpage
+\newgeometry{margin=0.5cm} % modify this if you need even more space
+\begin{landscape}
+
+
+\subsection{Correlations}
+
+\includegraphics[scale = .5]{../images/orthogonalObliqueRotationExample.jpg}
+%https://image.slidesharecdn.com/factoranalysisfa-150330054449-conversion-gate01/95/factor-analysis-fa-37-638.jpg?cb=1427712397
+
+
+\input{../images/1competenceCorr.tex}
+\input{../images/21indPerformancePostCorr.tex}
+\input{../images/22teamPerformancePostCorr.tex}
+\input{../images/3clickPostCorr.tex}
+
+\clearpage
+\input{../images/4bondingPostCorr.tex}
+\input{../images/5fatiguePostCorr.tex}
+\input{../images/6tournamentPerformanceCorr.tex}
+
+\clearpage
+\input{../images/postTournamentFactorDescriptives.tex}
+\input{../images/postTournamentFactorDescriptives1.tex}
+\input{../images/postTournamentFactorCorr.tex}
+
+
+\clearpage
+\subsection{pre-Post Tournament Descriptives}
+
+\input{../images/indPerformancePrePostSummary.tex}
+\input{../images/teamPerformancePrePostSummary.tex}
+\input{../images/clickPrePostSummary.tex}
+\input{../images/bondingPrePostSummary.tex}
+\input{../images/fatiguePrePostSummary.tex}
+\clearpage
+\input{../images/factorsPrePostSummary.tex}
+
+
+
+
+\end{landscape}
+\restoregeometry
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\subsection{post-Tournament Models}
+
+\subsubsection{M1a teamClick $\sim$ jointActionSuccess}
+\input{../images/MLM1aJointActionSuccessClick.tex}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM1aHist.pdf}
+\includegraphics[scale =.4]{../images/MLM1aScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM1aQQPlot.pdf}
+\includegraphics[scale =.4]{../images/MLM1aCooksD.pdf}
+
+\newpage
+\subsubsection{M1b teamClick $\sim$ teamPerformanceExpectations}
+\input{../images/MLM1bteamExpectationsClick.tex}
+
+\centering
+\newpage
+\includegraphics[scale =.4]{../images/MLM1bHist.pdf}
+\includegraphics[scale =.4]{../images/MLM1bScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM1bQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM1bCooksD.pdf}
+
+\newpage
+\subsubsection{M1c teamClick $\sim$ jointActionSuccess $\times$ teamPerformanceExpectations}
+\input{../images/MLM1cPerformanceClickInteraction.tex}
+
+\centering
+\newpage
+\includegraphics[scale =.4]{../images/MLM1cHist.pdf}
+\includegraphics[scale =.4]{../images/MLM1cScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM1cQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM1cCooksD.pdf}
+
+\newpage
+\subsubsection{M2a socialBonding $\sim$ teamClick}
+
+\input{../images/MLM2aTeamClickBonding.tex}
+
+\centering
+\newpage
+\includegraphics[scale =.4]{../images/MLM2aHist.pdf}
+\includegraphics[scale =.4]{../images/MLM2aScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM2aQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM2aCooksD.pdf}
+
+\newpage
+\subsubsection{M3a socialBonding $\sim$ jointActionSuccess}
+
+\input{../images/MLM3aJointActionSuccessBonding.tex}
+
+\centering
+\newpage
+\includegraphics[scale =.4]{../images/MLM3aHist.pdf}
+\includegraphics[scale =.4]{../images/MLM3aScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM3aQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM3aCooksD.pdf}
+
+\centering
+\newpage
+\includegraphics[scale =.4]{../images/MLM3aOutHist.pdf}
+\includegraphics[scale =.4]{../images/MLM3aOutScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM3aOutQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM3aOutCooksD.pdf}
+
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM3aLogHist.pdf}
+\includegraphics[scale =.4]{../images/MLM3aLogScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM3aLogQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM3aLogCooksD.pdf}
+
+\newpage
+\subsubsection{M3b socialBonding $\sim$ teamPerformanceExpectations}
+
+
+\input{../images/MLM3bExpectationsBonding.tex}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM3bHist.pdf}
+\includegraphics[scale =.4]{../images/MLM3bScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM3bQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM3bCooksD.pdf}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM3bLogHist.pdf}
+\includegraphics[scale =.4]{../images/MLM3bLogScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM3bLogQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM3bLogCooksD.pdf}
+
+
+\newpage
+\subsubsection{M4a Mediation Analysis}
+
+
+
+\includegraphics[width = \columnwidth]{../images/mediationPT_plot}
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{pre-post Tournament Analysis}
+
+\subsubsection{$\Delta$teamClick $\sim$ $\Delta$jointActionSuccess}
+
+\newpage
+\centering
+\input{../images/MLM21acJointActionSuccesscClick.tex}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM21aHist.pdf}
+\includegraphics[scale =.4]{../images/MLM21aScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM21aQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM21aCooksD.pdf}
+
+\newpage
+\centering
+\input{../images/MLM21acJointActionSuccesscClick.tex}
+\subsubsection{$\Delta$teamClick $\sim$ $\Delta$teamPerformanceExpectations}
+
+\newpage
+\centering
+\input{../images/MLM21bcTeamPerfExpcClick.tex}
+
+\newpage
+\centering
+\input{../images/MLM21bcTeamPerfExpcClickAdjusted.tex}
+
+\centering
+\newpage
+\includegraphics[scale =.4]{../images/MLM21bHist.pdf}
+\includegraphics[scale =.4]{../images/MLM21bScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM21bQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM21bCooksD.pdf}
+
+\centering
+\newpage
+\includegraphics[scale =.4]{../images/MLM21bLogHist.pdf}
+\includegraphics[scale =.4]{../images/MLM21bLogScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM21bLogQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM21bLogCooksD.pdf}
+
+\centering
+
+\newpage
+\includegraphics[scale =.4]{../images/MLM21bOutHist.pdf}
+\includegraphics[scale =.4]{../images/MLM21bOutScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM21bOutQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM21bOutCooksD.pdf}
+
+\newpage
+\input{../images/MLM21acJointActionSuccesscClick.tex}
+\subsubsection{$\Delta$teamClick $\sim$ $\Delta$jointActionSuccess$\times$ teamPerformanceExpectations}
+\centering
+\input{../images/MLM21ccTeamPerfExpcClickInt.tex}
+
+
+\newpage
+\subsubsection{$\Delta$socialBonding$\sim$ $\Delta$teamCLick}
+
+\newpage
+\centering
+\input{../images/MLM22acClickcBonding.tex}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM22aHist.pdf}
+\includegraphics[scale =.4]{../images/MLM22aScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM22aQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM22aCooksD.pdf}
+
+
+\newpage
+\subsubsection{$\Delta$socialBonding $\sim$ $\Delta$jointActionSuccess}
+
+\newpage
+\centering
+\input{../images/MLM23acJointActionSuccesscBonding.tex}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM23aHist.pdf}
+\includegraphics[scale =.4]{../images/MLM23aScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM23aQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM23aCooksD.pdf}
+
+
+\newpage
+\subsubsection{$\Delta$socialBonding $\sim$ teamPerformanceExpectations}
+
+\newpage
+\centering
+\input{../images/MLM23bcBondingteamPerfExp.tex}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM23bHist.pdf}
+\includegraphics[scale =.4]{../images/MLM23bScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM23bQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM23bCooksD.pdf}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM23bLogHist.pdf}
+\includegraphics[scale =.4]{../images/MLM23bLogScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM23bLogQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM23bLogCooksD.pdf}
+
+
+
+\newpage
+\subsubsection{Mediation Analysis: $\Delta$jointActionSuccess $\rightarrow$ $\Delta$teamClick $\rightarrow$ $\Delta$socialBonding}
+
+\newpage
+\centering
+\includegraphics[width=\columnwidth]{../images/MLM24aMediationAnalysis.pdf}
+
+\newpage
+\centering
+\subsubsection{$\Delta$fusionFamily $\sim$ $\Delta$jointActionSuccess}
+
+\newpage
+\centering
+\input{../images/MLM25acFusioncJointAction.tex}
+
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM25aHist.pdf}
+\includegraphics[scale =.4]{../images/MLM25aScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM25aQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM25aCooksD.pdf}
+
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM25aOutHist.pdf}
+\includegraphics[scale =.4]{../images/MLM25aOutScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM25aOutQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM25aOutCooksD.pdf}
+
+\newpage
+\subsubsection{$\Delta$fusionFamily $\sim$ $\Delta$teamClick}
+
+
+
+\newpage
+\subsubsection{$\Delta$fusionFamily $\sim$  $\Delta$jointActionSuccess $\times$ $\Delta$teamClick}
+
+% problem with lmer with outlier-removed model
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM25cHist.pdf}
+\includegraphics[scale =.4]{../images/MLM25cScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM25cQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM25cCooksD.pdf}
+
+
+
+
+
+
+
+\newpage
+\subsection{Overall Tournament Analysis}
+
+
+\subsubsection{Overall Tournament Descriptive Statistics}
+
+\input{../images/performanceOverallSummary.tex}
+
+\input{../images/clickOverallSummary.tex}
+
+\input{../images/bondingOverallSummary.tex}
+
+\input{../images/fatigueOverallSummary.tex}
+
+
+%time series distriubtions of variables of interest
+\clearpage
+\paragraph{Time Series Distributions of Variables of Interest}
+% teamPerformance
+\includegraphics[scale =.4]{../images/distTeamPerformancePre.pdf}
+\includegraphics[scale =.4]{../images/distTeamPerfExpDay1.pdf}
+\includegraphics[scale =.4]{../images/distTeamPerfExpDay2.pdf}
+\includegraphics[scale =.4]{../images/distTeamPerfExpPost.pdf}
+%indPerformance
+\clearpage
+\includegraphics[scale =.4]{../images/distIndPerformancePre.pdf}
+\includegraphics[scale =.4]{../images/distIndPerfExpDay1.pdf}
+\includegraphics[scale =.4]{../images/distIndPerfExpDay2.pdf}
+\includegraphics[scale =.4]{../images/distIndPerfExpPost.pdf}
+
+%click:
+%unspokenUnderstanding
+\clearpage
+\includegraphics[scale =.4]{../images/distUnspokenUnderstandingPre.pdf}
+\includegraphics[scale =.4]{../images/distUnspokenUnderstandingDay1.pdf}
+\includegraphics[scale =.4]{../images/distUnspokenUnderstandingDay2.pdf}
+\includegraphics[scale =.4]{../images/distUnspokenUnderstandingPost.pdf}
+
+%generalAtmosphere
+\clearpage
+\includegraphics[scale =.4]{../images/distGeneralAtmospherePre.pdf}
+\includegraphics[scale =.4]{../images/distGeneralAtmosphereDay1.pdf}
+\includegraphics[scale =.4]{../images/distGeneralAtmosphereDay2.pdf}
+\includegraphics[scale =.4]{../images/distGeneralAtmospherePost.pdf}
+
+\clearpage
+\includegraphics[scale =.4]{../images/distClickPictorialPre.pdf}
+\includegraphics[scale =.4]{../images/distClickPictorialDay1.pdf}
+\includegraphics[scale =.4]{../images/distClickPictorialDay2.pdf}
+\includegraphics[scale =.4]{../images/distClickPictorialPost.pdf}
+
+%Bonding:
+%emotionalSupport
+\clearpage
+\includegraphics[scale =.4]{../images/distEmotionalSupportPre.pdf}
+\includegraphics[scale =.4]{../images/distEmotionalSupportDay1.pdf}
+\includegraphics[scale =.4]{../images/distEmotionalSupportDay2.pdf}
+\includegraphics[scale =.4]{../images/distEmotionalSupportPost.pdf}
+
+%sharedGoal
+\clearpage
+\includegraphics[scale =.4]{../images/distSharedGoalPre.pdf}
+\includegraphics[scale =.4]{../images/distSharedGoalDay1.pdf}
+\includegraphics[scale =.4]{../images/distSharedGoalDay2.pdf}
+\includegraphics[scale =.4]{../images/distSharedGoalPost.pdf}
+
+% fusionPictorial
+\clearpage
+\includegraphics[scale =.4]{../images/distFusionPictorialTeamPre.pdf}
+\includegraphics[scale =.4]{../images/distFusionPictorialTeamDay1.pdf}
+\includegraphics[scale =.4]{../images/distFusionPictorialTeamDay2.pdf}
+\includegraphics[scale =.4]{../images/distFusionPictorialTeamPost.pdf}
+
+
+%fatigue
+%fatigue
+
+\clearpage
+\includegraphics[scale =.4]{../images/distFatigueDay1.pdf}
+\includegraphics[scale =.4]{../images/distFatigueDay2.pdf}
+\includegraphics[scale =.4]{../images/distFatiguePost.pdf}
+
+
+%prpe
+\clearpage
+\includegraphics[scale =.4]{../images/distPrpeDay1.pdf}
+\includegraphics[scale =.4]{../images/distPrpeDay2.pdf}
+\includegraphics[scale =.4]{../images/distPrpePost.pdf}
+
+
+%mental
+\clearpage
+\includegraphics[scale =.4]{../images/distMentalDay1.pdf}
+\includegraphics[scale =.4]{../images/distMentalDay2.pdf}
+\includegraphics[scale =.4]{../images/distMentalPost.pdf}
+
+
+
+
+
+\input{../images/clickMidResultDay1.tex}
+\input{../images/clickMidResultDay2.tex}
+
+\input{../images/bondingMidResultDay1.tex}
+\input{../images/bondingMidResultDay2.tex}
+
+\input{../images/fatigueMidResultDay1.tex}
+\input{../images/fatigueMidResultDay2.tex}
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+\subsubsection{teamClickTournament $\sim$ teamPerformanceExpectationsTournament}
+
+\newpage
+\centering
+\input{../images/MLM31ateamPerfClickTournament.tex}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM31aHist.pdf}
+\includegraphics[scale =.4]{../images/MLM31aScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM31aQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM31aCooksD.pdf}
+
+\newpage
+\subsubsection{socialBondingTournament $\sim$ teamClickTournament}
+
+\newpage
+\centering
+\input{../images/MLM31bclickBondingTournament.tex}
+\newpage
+\centering
+\input{../images/MLM31bclickBondingTournamentModelComparison.tex}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM31bHist.pdf}
+\includegraphics[scale =.4]{../images/MLM31bScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM31bQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM31bCooksD.pdf}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM31bOutLogHist.pdf}
+\includegraphics[scale =.4]{../images/MLM31bOutLogScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM31bOutLogQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM31bOutLogCooksD.pdf}
+
+
+\newpage
+\subsubsection{socialBondingTournament $\sim$ teamPerformanceExpectationsTournament}
+
+\newpage
+\centering
+\input{../images/MLM32ateamPerfBondingTournament.tex}
+
+\newpage
+\centering
+\input{../images/MLM32ateamPerfBondingTournamentModelComparison.tex}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM32aHist.pdf}
+\includegraphics[scale =.4]{../images/MLM32aScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM32aQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM32aCooksD.pdf}
+
+\newpage
+\centering
+\includegraphics[scale =.4]{../images/MLM32aOutLogHist.pdf}
+\includegraphics[scale =.4]{../images/MLM32aOutLogScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM32aOutLogQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM32aOutLogCooksD.pdf}
+
+\newpage
+\subsubsection{socialBonding $\sim$ teamPerformanceExpectationsTournament $\times$ teamClickTournament}
+
+\input{../images/MLM33ateamPerfBondingTournamentInteraction.tex}
+
+\centering
+\includegraphics[scale =.4]{../images/MLM33aHist.pdf}
+\includegraphics[scale =.4]{../images/MLM33aScatter.pdf}
+\includegraphics[scale =.4]{../images/MLM33aQQNorm.pdf}
+\includegraphics[scale =.4]{../images/MLM33aCooksD.pdf}
+
+
+\includegraphics[scale =0.4]{../images/MLM33aOutLogHist.pdf}
+\includegraphics[scale =0.4]{../images/MLM33aOutLogScatter.pdf}
+\includegraphics[scale =0.4]{../images/MLM33aOutLogQQNorm.pdf}
+\includegraphics[scale =0.4]{../images/MLM33aOutLogCooksD.pdf}
+
+\newpage
+\subsubsection{Mediation Analysis: teamPerformanceExpectationsTournament $\rightarrow$ teamClickTournament $\rightarrow$ socialBondingTournament}
+
+
+\includegraphics[width =\columnwidth]{../images/MLM34aMediationAnalysis.pdf}
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
