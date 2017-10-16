@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.30)  13 OCT 2017 09:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.30)  16 OCT 2017 23:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -502,6 +502,9 @@ LaTeX Warning: Label `tab:indPerfTimeHighTraining' multiply defined.
 
 LaTeX Warning: Label `tab:indPerfTimeHighTraining' multiply defined.
 
+
+LaTeX Warning: Label `tab:ICCTable' multiply defined.
+
 )
 \openout1 = `tableTests.aux'.
 
@@ -612,7 +615,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 (/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/athleteDescriptivesTrainingOverall.tex
+ctionSocialBonding/images/surveyItemsByTime.tex
 LaTeX Font Info:    Try loading font information for U+msa on input line 5.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsa.fd
@@ -624,7 +627,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 5.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ))
 (/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/compPerfSubjTraining.tex)
+ctionSocialBonding/images/athleteDescriptivesTrainingOverall.tex)
 (/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/indPerfTimeLowTraining.tex)
 (/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
@@ -648,6 +651,8 @@ ctionSocialBonding/images/teamBondingTimeLowTraining.tex)
 (/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/teamBondingTimeHighTraining.tex)
 (/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/compPerfSubjTraining.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/teamDisciplineTimeLowTraining.tex)
 
 ! LaTeX Error: File `/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/f
@@ -657,10 +662,15 @@ inalDocuments/jointActionSocialBondingimages/arousalExertionTimeLowTraining.tex
 Type X to quit or <RETURN> to proceed,
 or enter new name. (Default extension: tex)
 
-Enter file name: 
-
+Enter file name: s
+(/usr/local/texlive/2017/texmf-dist/tex/latex/tools/s.tex File ignored
+)
 (/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/personalityTraining.tex) [1
+ctionSocialBonding/images/personalityTraining.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/ICCTable.tex)
+(/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
+ctionSocialBonding/images/fullOutcomeAvgSdSession.tex) [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
  [4] (./tableTests.aux)
@@ -669,15 +679,15 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 3702 strings out of 493004
- 52221 string characters out of 6133230
- 156070 words of memory out of 5000000
- 7150 multiletter control sequences out of 15000+600000
+ 3717 strings out of 493004
+ 53220 string characters out of 6133230
+ 155097 words of memory out of 5000000
+ 7152 multiletter control sequences out of 15000+600000
  5339 words of font info for 22 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  39i,7n,32p,265b,192s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb>
-Output written on tableTests.pdf (4 pages, 28277 bytes).
+Output written on tableTests.pdf (4 pages, 30411 bytes).
 PDF statistics:
  21 PDF objects out of 1000 (max. 8388607)
  13 compressed objects within 1 object stream

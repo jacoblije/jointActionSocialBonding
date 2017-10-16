@@ -1,11 +1,11 @@
 # Fdb version 3
-["biber biblatex-apaCompile"] 1506545610 "biblatex-apaCompile.bcf" "biblatex-apaCompile.bbl" "biblatex-apaCompile" 1507888458
+["biber biblatex-apaCompile"] 1506545610 "biblatex-apaCompile.bcf" "biblatex-apaCompile.bbl" "biblatex-apaCompile" 1508191189
   "biblatex-apaCompile.bcf" 1506545631 101868 78b88442db48177d05ca2e074a25e943 ""
   "references.bib" 1505207361 4244792 4565d10e1d38df9285fdf47596f26f40 ""
   (generated)
-  "biblatex-apaCompile.blg"
   "biblatex-apaCompile.bbl"
-["pdflatex"] 1506545630 "biblatex-apaCompile.tex" "biblatex-apaCompile.pdf" "biblatex-apaCompile" 1507888458
+  "biblatex-apaCompile.blg"
+["pdflatex"] 1506545630 "biblatex-apaCompile.tex" "biblatex-apaCompile.pdf" "biblatex-apaCompile" 1508191189
   "/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1480098668 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/map/fontname/texfonts.map" 1480098670 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2017/texmf-dist/fonts/tfm/adobe/utopia/putb8t.tfm" 1480098689 16484 d8293c90d3cd3b189daade0e12039eb7 ""
@@ -376,12 +376,12 @@
   "biblatex-apaCompile.tex" 1504142699 836 fa028def24f3bd3a1eb0144b6058990a ""
   "ociamthesis.cls" 1505299335 13145 4cfe4f38a85dfce527e550914a791543 ""
   (generated)
-  "biblatex-apaCompile.maf"
-  "biblatex-apaCompile.log"
   "biblatex-apaCompile.out"
-  "biblatex-apaCompile.aux"
-  "biblatex-apaCompile.run.xml"
   "biblatex-apaCompile.mtc"
-  "biblatex-apaCompile.mtc0"
-  "biblatex-apaCompile.pdf"
+  "biblatex-apaCompile.aux"
   "biblatex-apaCompile.bcf"
+  "biblatex-apaCompile.run.xml"
+  "biblatex-apaCompile.pdf"
+  "biblatex-apaCompile.log"
+  "biblatex-apaCompile.mtc0"
+  "biblatex-apaCompile.maf"
