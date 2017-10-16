@@ -263,6 +263,44 @@ DATA REDUCTION:
 
 RESULTS:
 
+ICC:
+
+
+\input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/ICCTable.tex}
+
+\input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/outcomeAvgSdSession.tex}
+
+
+ICC values for perceptions of group performance relative to prior expectations were very low for each grouping variables (all < .10), indicating that between-group variance in perceptions of group performance was minimal across categories of experiment session, sex, team, and experiment location (Beijing or Shandong).  ICC values for group click were also low, with the exception being the value for experimental session (ICC = .14).
+ICC values for social bonding to the training group did show some evidence of moderate between-group variance.  
+
+  ## create a variable list which we want in table one
+  listVars <- c("AverageOutcome", "StandardDeviation")
+
+  ## define categorical variables
+  catVars <- c("Session", "Team")
+
+
+  ## Create overall table:
+  table1 <- CreateTableOne(vars = listVars,
+                         data = outcomeDf,
+                         strata = "Session",
+                         factorVars = catVars,
+                         test = T
+                         )
+ ## create table which is printable
+ table1_overall <- print(table1,
+                             quote = FALSE,
+                             noSpaces = FALSE,
+                             printToggle = FALSE
+                             )
+ ##print table
+  print(xtable(table1_overall, type="latex",
+                         caption = "Mean and standard deviation of performance outcome according to experiment session",
+                         label = "tab:outcomeAvgSdSession"),
+                         file="outcomeAvgSdSession.tex")
+
+
 %\myparagraph{Prediction 1.a: higher perceptions of Joint Action Success will correlate with higher feelings of team click with the training group}
 
 %<<jASClickScatter, fig.cap='', results='hide'>>=
