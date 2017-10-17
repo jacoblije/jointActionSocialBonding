@@ -2354,36 +2354,36 @@ Figure ~\ref{fig:teamPerfExpClickScatter} shows a strong positive correlation be
 The model revealed a signigicant positive main effect of group performance expectation violation on feelings of ``team click'' with the training group, \Sexpr{}.  The main effect of condition, \Sexpr{}, and the interaction effect of group performance expectation violation and condition on click was also significant, \Sexpr{}.  In addition, average performance outcome of each invasion drill trial was also a significant positive predictor of team click, \Sexpr.  These results suggested that group performance expectation violations were a positive predictor of feelings of group click among athletes, and that this relationship was moderated by experiment condition, such that expectation violation had a greater effect on feelings of group click in the high difficulty condition than the low difficulty condition.  Model residuals were normally distributed around zero, ($W = 0.98, p = .77$), and an analysis of Cook's distances suggests that the model did not contain any overly influential observations (all < .8) ~\ref{fig:M1Assumptions}), suggesting that the model provided a robust basis for inference. In line with predictions, more positive violation of expectations concerning group performance predicted feelings of team click, and this result was, as predicted, moderated by condition such that the effect was stronger in the high difficulty condition.
 
 %ASSUMPTIONS:
-<<groupPerfExpClickAssumptionsHist, fig.cap='',echo=F,eval=T>>=
+<<groupPerfExpClickAssumptionsHist, echo=F,eval=T>>=
   #1.historgram with density line
   groupPerfExpClickResid <- resid(groupPerfExpClick.controls, type = "pearson")
-  hist(groupPerfExpClickResid , freq = FALSE, main = "Residuals: \n M1.a  Positive Team Performance Expectation Violation \n predicts Group Click", xlab = "Residuals")
+  hist(groupPerfExpClickResid , freq = FALSE, main = "Distribution of M1 residuals \n (standardised)", xlab = "Residuals")
   lines(density(groupPerfExpClickResid, na.rm = TRUE))
-  #dev.copy(pdf, "TE1aHist.pdf")
-  #dev.off()
+  dev.copy(pdf, "TEM1Hist.pdf")
+  dev.off()
   #non-normality
   shapiro.test(groupPerfExpClickResid)
   psych::describe(groupPerfExpClickResid)
 @
-<<groupPerfExpClickAssumptionsScatter, fig.cap='',echo=F,eval=T>>=
+<<groupPerfExpClickAssumptionsScatter, echo=F,eval=T>>=
   #2.scatterPlot
-  plot(groupPerfExpClick.controls, main = "Residuals: \n M1.a  Positive Team Performance \n Expectation Violation predicts \n Group Click")
-  #dev.copy(pdf, "MLM3bScatter.pdf")
-  #dev.off()
+  plot(groupPerfExpClick.controls, main = "Scatterplot of M1 Residuals \n (standardised)")
+  dev.copy(pdf, "TEM1Scatter.pdf")
+  dev.off()
 @
-<<groupPerfExpClickAssumptionsQQNorm, fig.cap='',echo=F,eval=T>>=
+<<groupPerfExpClickAssumptionsQQNorm, echo=F,eval=T>>=
   #3.qqNorm
-  qqnorm(residuals(groupPerfExpClick.controls), main = "Norm QQ Plot: \n M1.a Positive Team Performance \n Expectation Violation predicts \n Group Click")
+  qqnorm(residuals(groupPerfExpClick.controls), main = "Norm QQ Plot of M1 Residuals")
   qqline(residuals(groupPerfExpClick.controls))
-  #dev.copy(pdf, "MLM3bQQNorm.pdf")
-  #dev.off()
+  dev.copy(pdf, "TEM1QQNorm.pdf")
+  dev.off()
 @
-<<groupPerfExpClickAssumptionsCooksD, fig.cap='',echo=F,eval=T>>=
+<<groupPerfExpClickAssumptionsCooksD, echo=F,eval=T>>=
   #indluential cases
   #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
-  plot(cooks.distance(groupPerfExpClick.controls), main = "Cook's Distance: \n M1.a Joint Action Success \n predicts Group Click", ylab = "cooks.distance")
-  #dev.copy(pdf, "MLM3bCooksD.pdf")
-  #dev.off()
+  plot(cooks.distance(groupPerfExpClick.controls), main = "M1 Influential cases \n (Cook's Distance)", ylab = "cooks.distance")
+  dev.copy(pdf, "TEM1CooksD.pdf")
+  dev.off()
 @
 
 
@@ -2391,15 +2391,15 @@ The model revealed a signigicant positive main effect of group performance expec
 
 
 
-\myparagraph{Prediction 1.a: More positive violations of expectations around team performance moderate the relationship between perceptions of joint action success and team click training group}
+\myparagraph{Prediction 1.a: Violations of expectations around team performance moderate the relationship between perceptions of joint action success and team click training group}
 
-<<groupPerfExpJASClickScatter, fig.cap=''>>=
+<<jASgroupPerfExpClickScatterLM, eval=T,echo=F>>=
   #twc$groupPerformance_3Norm <- scale(twc$groupPerformance_3)
   jASPerfExpCLick <- lm(groupClickPostFactor ~ jointActionSuccessPost*groupPerformance_3Norm, data = twc)
   ## use vcov() to get parameter variances and covariances for Kris’s interaction utility
-  vcov(perfExpJASCLick)
+  vcov(jASPerfExpCLick)
   ## degrees of freedom for the model from the summary of the regression model
-  summary(perfExpJASCLick)
+  summary(jASPerfExpCLick)
   ## used the psych package’s describe function to get the mean and standard deviation of groupClick
   psych::describe(twc$groupClickPostFactor)
 
@@ -2422,9 +2422,9 @@ The model revealed a signigicant positive main effect of group performance expec
   #  simple slope     = 0.6259(0.12), t=5.2164, p=0
 
 
-  groupPerfExpJASClickScatter <- ggplot(twc, aes(x=jointActionSuccessPost,
+  groupPerfExpJASClickScatterLM <- ggplot(twc, aes(x=jointActionSuccessPost,
                                         y=groupClickPostFactor, size=groupPerformance_3Norm)) + geom_point(alpha = .10)
-  groupPerfExpJASClickScatter +
+  groupPerfExpJASClickScatterLM +
               ggtitle("Positive violation of Team Performance Expectations \n moderates effect of Joint Action Success on Group Click") +
               theme(plot.title = element_text(size=12)) +
               xlab("Joint Action Success") +
@@ -2436,17 +2436,19 @@ The model revealed a signigicant positive main effect of group performance expec
               scale_linetype_manual(values=c('dotted','dashed','solid'),
               breaks=c('-1SD ExpectationViolation','Mean Expectation Violation','+1SD Expectation Violation'),name='Simple\nSlope')+
               apatheme
+
 @
-<<groupPerfExpJASClickScatter, fig.cap=''>>=
+
+<<groupPerfExpJASClickScatterLMER, eval=T, echo=F, fig.cap="Positive violation of Group Performance Expectations \n moderates the relationship between perceived Joint Action Success and Group Click">>=
   #twc$groupPerformance_3Norm <- scale(twc$groupPerformance_3)
-  perfExpJASCLick <- lm(groupClickPostFactor ~
-                            groupPerformance_3Norm*jointActionSuccessPost, data = twc)
+  library(lmerTest)
+  summary(jASgroupPerfExpClick.int.controls)
   ## use vcov() to get parameter variances and covariances for Kris’s interaction utility
-  vcov(perfExpJASCLick)
+  vcov(jASgroupPerfExpClick.int.controls)
   ## degrees of freedom for the model from the summary of the regression model
-  summary(perfExpJASCLick)
-  ## used the psych package’s describe function to get the mean and standard deviation of groupClick
-  psych::describe(twc$groupClickPostFactor)
+  summary(jASgroupPerfExpClick.int.controls)
+  ## used the psych package’s describe function to get the mean and standard deviation of jAS
+  psych::describe(twc$jointActionSuccessPost)
   min(twc$groupPerformance_3Norm, na.rm=T)
   max(twc$groupPerformance_3Norm, na.rm=T)
 
@@ -2456,34 +2458,41 @@ The model revealed a signigicant positive main effect of group performance expec
 
   #Simple Intercepts and Slopes at Conditional Values of Z
   #=======================================================
-  #At Z = cv1... (-1SD)
-  #  simple intercept = 0.16(0.1267), t=1.2626, p=0.2123
-  #  simple slope     = 0.7371(0.0851), t=8.6581, p=0
-  #At Z = cv2... (Mean)
-  #  simple intercept = 0.2242(0.0737), t=3.0419, p=0.0037
-  #  simple slope     = 0.6815(0.0894), t=7.6199, p=0
-  #At Z = cv3... (+1SD)
-  #  simple intercept = 0.2885(0.0931), t=3.0988, p=0.0031
-  #  simple slope     = 0.6259(0.12), t=5.2164, p=0
+  #  At Z = cv1...
+  #    simple intercept = 0.0994(0.1914), t=0.5193, p=0.6072
+  #    simple slope     = 0.6809(0.0785), t=8.6759, p=0
+  #  At Z = cv2...
+  #    simple intercept = 0.0754(0.0974), t=0.7738, p=0.4443
+  #    simple slope     = 0.4945(0.0794), t=6.2289, p=0
+  #  At Z = cv3...
+  #    simple intercept = 0.0619(NaN), t=NaN, p=NaN
+  #    simple slope     = 0.3892(0.0949), t=4.1003, p=0.0001
 
 
-  jASGroupPerfExpClickScatter <- ggplot(twc, aes(x=jointActionSuccessPost,
+  jASGroupPerfExpClickScatterLMER <- ggplot(twc, aes(x=jointActionSuccessPost,
                                         y=groupClickPostFactor, size=groupPerformance_3Norm)) + geom_point(alpha = .10)
-  jASGroupPerfExpClickScatter +
-              ggtitle("Positive violation of Team Performance Expectations \n predicts Group Click") +
+  jASGroupPerfExpClickScatterLMER +
               theme(plot.title = element_text(size=12)) +
-              xlab("Joint Action Success") +
-              ylab("Group Click") +
-              scale_size_continuous(guide = FALSE)+
-              geom_abline(aes(intercept=0.16, slope=0.7371, linetype='-1SD TeamPerformanceExpectation'))+
-              geom_abline(aes(intercept=0.2242, slope=0.6815, linetype='Mean TeamPerformanceExpectation'))+
-              geom_abline(aes(intercept=0.2885, slope=0.6259, linetype='+1SDTeamPerformanceExpectation'))+
+              labs(x = 'Joint Action Success', y = "Group Click") +
+              scale_size_continuous(guide=FALSE)+
+              geom_abline(aes(intercept=0.0994, slope=0.6809, linetype= "-1SD Expect"))+
+              geom_abline(aes(intercept=0.0754, slope=0.4945, linetype= "Mean Expect"))+
+              geom_abline(aes(intercept=0.0619, slope=0.3892, linetype="+1SD Expect"))+
               scale_linetype_manual(values=c('dotted','dashed','solid'),
-              breaks=c('-1SD Gear','Mean Gear','+1SD Gear'),name='Simple\nSlope')+
+              breaks=c("-1SD Expect", "Mean Expect","+1SD Expect"),name="Group Performance \n Vs Expected") +
               apatheme
 @
 
-Figure ~\ref{fig:jASGroupPerfExpClickScatter} displays the relationship between perceptions of Joint Action Success and Group Click, moderated by perceptions of Team Performance expectations.  There does not appear to be a strong moderating effect of team performance expectation violation on the relationship between these two variables.
+
+Figure ~\ref{fig:jASGroupPerfExpClickScatter} displays the relationship between perceptions of Joint Action Success and Group Click, moderated by perceptions of Team Performance expectations.
+
+Figure ~\ref{fig:teamPerfExpClickScatter} shows a strong positive correlation between violations of prior expectations concerning team performance and feelings of ``click'' with the training group post-Experiment.  The slope of this relationship appears to vary according to condition, as indicated on the scatterplot by the two non-parallel lines of best fit.  A LMER was used to model this relationship: Group Performance Expectations, Condition, and their interaction were included as fixed effects, and experiment session was modelled as a random effect (intercept and slope).  The model also controlled for perceptions of individual performance relative to prior expectations, post-Experiment arousal, the average performance outcome of each invasion drill trial, and subjective and objective measures of athlete technical competence.
+
+The model revealed a signigicant positive main effect of group performance expectation violation on feelings of ``team click'' with the training group, \Sexpr{}.  The main effect of condition, \Sexpr{}, and the interaction effect of group performance expectation violation and condition on click was also significant, \Sexpr{}.  In addition, average performance outcome of each invasion drill trial was also a significant positive predictor of team click, \Sexpr.  These results suggested that group performance expectation violations were a positive predictor of feelings of group click among athletes, and that this relationship was moderated by experiment condition, such that expectation violation had a greater effect on feelings of group click in the high difficulty condition than the low difficulty condition.  Model residuals were normally distributed around zero, W = 0.99001, p-value = 0.9192
+($W = 0.98, p = .77$), and an analysis of Cook's distances suggests that the model did contain one influential observation (Cook's Distance > < 1.0) ~\ref{fig:M1Assumptions}).  Re-running the model with this value excluded led to an improvement of the model fit,
+
+ suggesting that the model provided a robust basis for inference. In line with predictions, more positive violation of expectations concerning group performance predicted feelings of team click, and this result was, as predicted, moderated by condition such that the effect was stronger in the high difficulty condition.
+
 
 %MODEL
 <<jASgroupPerfExpClickInt, echo=F,eval=T>>=
@@ -2498,45 +2507,58 @@ Figure ~\ref{fig:jASGroupPerfExpClickScatter} displays the relationship between 
   summary(jASgroupPerfExpClick.int.controls)
   #the effect of X2 on Y depends on the level of X1, or vice versa
 @
-<<groupPerfExpJASClick, eval=T,echo=F>>=
-  groupPerfExpJASClick.int.controls <- lmer(groupClickPostFactor ~
-                                              groupPerformance_3Norm*jointActionSuccessPost +
-                                              (groupPerformance_3Norm |sessionName),
+<<jASgroupPerfExpClickInt1, echo=F,eval=T>>=
+    jASgroupPerfExpClick.int.controls1 <- lmer(groupClickPostFactor ~
+                                              jointActionSuccessPost*groupPerformance_3Norm +
+                                              arousalFactorPost + fullOutcomeAvg +
+                                              (jointActionSuccessPost |sessionName),
                                               data = twc,
                                               REML = F)
-  summary(groupPerfExpJASClick.int.controls)
+  summary(jASgroupPerfExpClick.int.controls1)
+
+
 @
+
+<<groupPerfJASExpClick, eval=T,echo=F>>=
+  #  groupPerfExpJASClick.int.controls <- lmer(groupClickPostFactor ~
+  #                                              groupPerformance_3Norm*jointActionSuccessPost + indPerformancePost + arousalFactorPost +
+  #                                              (groupPerformance_3Norm |sessionName),
+  #                                              data = twc,
+  #                                              REML = F)
+  #  summary(groupPerfExpJASClick.int.controls)
+@
+
 %ASSUMPTIONS:
-<<groupPerfExpJASClickIntAssumptionsHist, fig.cap='',echo=F,eval=T>>=
+<<groupPerfJASExpClickHist, echo=F,eval=T>>=
   #1.historgram with density line
-  groupPerfExpJASClickIntResid <- resid(groupPerfExpJASClick.int.controls, type = "pearson")
-  hist(groupPerfExpJASClickIntResid, freq = FALSE, main = "Residuals: \n M2.a Click Bonding", xlab = "Residuals")
-  lines(density(groupPerfExpJASClickIntResid, na.rm = TRUE))
-  #dev.copy(pdf, "TE1aHist.pdf")
-  #dev.off()
+  jASgroupPerfExpClickIntResid <- resid(jASgroupPerfExpClick.int.controls, type = "pearson")
+  hist(jASgroupPerfExpClickIntResid, freq = FALSE, main = "Distribution of M1a Residuals", xlab = "Residuals")
+  lines(density(jASgroupPerfExpClickIntResid, na.rm = TRUE))
+  dev.copy(pdf, "TE1aHist.pdf")
+  dev.off()
   #non-normality
-  shapiro.test(groupPerfExpJASClickIntResid)
-  psych::describe(groupPerfExpJASClickIntResid)
+  shapiro.test(jASgroupPerfExpClickIntResid)
+  psych::describe(jASgroupPerfExpClickIntResid)
 @
-<<groupPerfExpJASClickIntAssumptionsScatter, fig.cap='',echo=F,eval=T>>=
+<<groupPerfJASExpClickScatter, echo=F,eval=T>>=
   #2.scatterPlot
-  plot(groupPerfExpJASClick.int.controls, main = "Residuals: \n M2.a Click Bonding")
-  #dev.copy(pdf, "MLM3bScatter.pdf")
-  #dev.off()
+  plot(jASgroupPerfExpClick.int.controls, main = "Scatterplot of M1a Residuals")
+  dev.copy(pdf, "TEM1aScatter.pdf")
+  dev.off()
 @
-<<groupPerfExpJASClickIntAssumptionsQQNorm, fig.cap='',echo=F,eval=T>>=
+<<groupPerfJASExpClickQQNorm, echo=F,eval=T>>=
   #3.qqNorm
-  qqnorm(residuals(groupPerfExpJASClick.int.controls), main = "Norm QQ Plot: \n M1.c")
-  qqline(residuals(groupPerfExpJASClick.int.controls))
-  #dev.copy(pdf, "MLM3bQQNorm.pdf")
-  #dev.off()
+  qqnorm(residuals(jASgroupPerfExpClick.int.controls), main = "Norm QQ Plot of M1a Residuals")
+  qqline(residuals(jASgroupPerfExpClick.int.controls))
+  dev.copy(pdf, "TEM1aQQNorm.pdf")
+  dev.off()
 @
-<<groupPerfExpJASClick.intAssumptionsCooksD, fig.cap='',echo=F,eval=T>>=
+<<jASgroupPerfExpClick.intAssumptionsCooksD, echo=F,eval=T>>=
   #indluential cases
   #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
-  plot(cooks.distance(groupPerfExpJASClick.int.controls), main = "Cook's Distance: \n M1.c", ylab = "cooks.distance")
-  #dev.copy(pdf, "MLM3bCooksD.pdf")
-  #dev.off()
+  plot(cooks.distance(jASgroupPerfExpClick.int.controls), main = "M1a Influential Cases \n (Cook's Distance)", ylab = "cooks.distance")
+  dev.copy(pdf, "TEM1aCooksD.pdf")
+  dev.off()
 @
 
 
@@ -2545,19 +2567,25 @@ Figure ~\ref{fig:jASGroupPerfExpClickScatter} displays the relationship between 
 
 \myparagraph{Prediction 2: Feelings of group click will positively correlate with feelings of social bonding to the group}
 
-<<groupClickBondScatter, fig.cap=''>>=
-  groupClickBondScatter <- ggplot(twc, aes(x=groupClickPostFactor, y=groupBondingFactorPost,
-                              color=condition)) + geom_point(shape = 1) +
-                              geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
+<<groupClickBondScatter, eval=F,echo=T>>=
+  groupClickBondScatter <- ggplot(twc, aes(x=groupClickPostFactor,
+                              y=groupBondingFactorPost, color=condition)) + geom_point(shape = 1) +
+                             geom_smooth(method=lm, se=F)   #  add shaded confidence region
   groupClickBondScatter +
-              ggtitle("Perceptions of Group Click \n predict feelings of Social Bonding to training group") +
+  #              guides(color = guide_legend(title="Condition"))+
               theme(plot.title = element_text(size=12)) +
-              xlab("Group Click") +
-              ylab("Social Bonding") +
+              labs(x = "Group Click", y = "Social Bonding", color = "Condition")+
               apatheme
+              #              scale_fill_
+              #"Perceptions of Group Click \n predict feelings of Social Bonding to training group"
+              #guides(fill=guide_legend("my awesome title"))
 @
 
 Figure ~\ref{fig:groupClickBondScatter} shows a clear relationship between Group Click and Social Bonding to the training group following the training group.  A linear mixed effects regression, controlling for arousal, group performance outcome, and technical competence (subjective and objective), revealed a strong positive relationship between feelings of group click and feelings of social bonding to the training group.
+
+
+Residuals:
+W = 0.98766, p-value = 0.8568
 
 <<clickBondingModel, eval=T,echo=F>>=
   clickBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionName),
@@ -2577,108 +2605,146 @@ Figure ~\ref{fig:groupClickBondScatter} shows a clear relationship between Group
                               REML = F)
 
   summary(clickBonding.controls)
+
+  #Check for interaction with condition:
+
+  clickBondingCondition.controls <- lmer(groupBondingFactorPost ~
+                                                    groupClickPostFactor*condition +
+                                          arousalFactorPost + fullOutcomeAvg +
+                                          subjectiveCompetenceFactor + objectiveCompetenceFactor +
+                                          (groupClickPostFactor|sessionName),
+                                          data = twc,
+                                          REML = F)
+
+  summary(clickBondingCondition.controls)  # interaction is not significant and so dropped from analysis
 @
 %ASSUMPTIONS:
-<<clickBondingAssumptionsHist, fig.cap='',echo=F,eval=T>>=
+<<clickBondingHist, echo=F,eval=T>>=
   #1.historgram with density line
   clickBondingResid <- resid(clickBonding.controls, type = "pearson")
-  hist(clickBondingResid, freq = FALSE, main = "Residuals: \n M2.a Click Bonding", xlab = "Residuals")
+  hist(clickBondingResid, freq = FALSE, main = "Distribution of M2 Residuals", xlab = "Residuals")
   lines(density(clickBondingResid, na.rm = TRUE))
-  #dev.copy(pdf, "TE1aHist.pdf")
-  #dev.off()
+  dev.copy(pdf, "TEM2Hist.pdf")
+  dev.off()
   #non-normality
   shapiro.test(clickBondingResid)
   psych::describe(clickBondingResid)
 @
-<<clickBondingAssumptionsScatter, fig.cap='',echo=F,eval=T>>=
+<<clickBondingScatter, echo=F,eval=T>>=
   #2.scatterPlot
-  plot(clickBonding.controls, main = "Residuals: \n M2.a Click Bonding")
-  #dev.copy(pdf, "MLM3bScatter.pdf")
-  #dev.off()
+  plot(clickBonding.controls, main = "Scatterplot of M2 Residuals")
+  dev.copy(pdf, "TEM2Scatter.pdf")
+  dev.off()
 @
-<<clickBondingAssumptionsQQNorm, fig.cap='',echo=F,eval=T>>=
+<<clickBondingQQNorm, echo=F,eval=T>>=
   #3.qqNorm
-  qqnorm(residuals(clickBonding.controls), main = "Norm QQ Plot: \n M2.a")
+  qqnorm(residuals(clickBonding.controls), main = "Norm QQ Plot of M2 Residuals")
   qqline(residuals(clickBonding.controls))
-  #dev.copy(pdf, "MLM3bQQNorm.pdf")
-  #dev.off()
+  dev.copy(pdf, "TEM2QQNorm.pdf")
+  dev.off()
 @
-<<clickBondingAssumptionsCooksD, fig.cap='',echo=F,eval=T>>=
+<<clickBondingCooksD, echo=F,eval=T>>=
   #indluential cases
   #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
-  plot(cooks.distance(clickBonding.controls), main = "Cook's Distance: \n M2.a", ylab = "cooks.distance")
-  #dev.copy(pdf, "MLM3bCooksD.pdf")
-  #dev.off()
+  plot(cooks.distance(clickBonding.controls), main = "M2 Influential Cases \n (Cook's Distance)", ylab = "cooks.distance")
+  dev.copy(pdf, "TEM2CooksD.pdf")
+  dev.off()
 @
+
+
+
+
+
 
 
 \myparagraph{Prediction 3: More positive violations of team performance expectations will predict higher levels of Social Bonding to the training group}
 
 
-<<teamPerfExpBondScatterCondition, fig.cap=''>>=
-  teamPerfExpBondScatter <- ggplot(twc, aes(x=groupPerformance_3Norm,
+<<groupPerfExpBondScatterCondition, eval=T,echo=F, fig.cap= 'Positive violation of group performance expectations \n predict feelings of Social Bonding to training group'>>=
+  groupPerfExpBondScatter <- ggplot(twc, aes(x=groupPerformance_3Norm,
                               y=groupBondingFactorPost, color=condition)) + geom_point(shape = 1) +
                               geom_smooth(method=lm, se=FALSE)
-  teamPerfExpBondScatter +
-              ggtitle("Perceptions of Team Performance (vs prior expectations) \n predict feelings of Social Bonding to training group") +
+  groupPerfExpBondScatter +
               theme(plot.title = element_text(size=12)) +
-              xlab("Team Performance vs Prior Expectations") +
+              xlab("Group Performance vs Prior Expectations") +
               ylab("Social Bonding") +
               apatheme
 @
-<<teamPerfExpBondScatter, fig.cap=''>>=
-  teamPerfExpBondScatter1 <- ggplot(twc, aes(x=groupPerformance_3Norm, y=groupBondingFactorPost)) + geom_point(shape = 1) +
-                              geom_smooth(method=lm, se=FALSE)
-  teamPerfExpBondScatter1 +
-              ggtitle("Perceptions of Team Performance (vs prior expectations) \n predict feelings of Social Bonding to training group") +
-              theme(plot.title = element_text(size=12)) +
-              xlab("Team Performance vs Prior Expectations") +
-              ylab("Social Bonding") +
-              apatheme
-@
+  %<<groupPerfExpBondScatter1, fig.cap=''>>=
+  %  teamPerfExpBondScatter1 <- ggplot(twc, aes(x=groupPerformance_3Norm, y=groupBondingFactorPost)) + geom_point(shape = 1) +
+  %                              geom_smooth(method=lm, se=FALSE)
+  %  teamPerfExpBondScatter1 +
+  %              ggtitle("Perceptions of Team Performance (vs prior expectations) \n %              theme(plot.title = element_text(size=12)) +
+  %              xlab("Team Performance vs Prior Expectations") +
+  %              ylab("Social Bonding") +
+  %              apatheme
+  %@
 
 
 Figure ~\ref{fig:teamPerfExpBondScatter} shows an overall positive correlation between perceptions of Joint Action Success and Social Bonding to the training group.  When this relationship is plotted according by condition, as shown in Figure ~\ref{fig:teamPerfExpBondScatterCondition}, it appears that the positive relationship is being driven by results in the high difficulty condition.
 
+Assumptions:
+W = 0.97457, p-value = 0.3152
 
+%%MODEL:
 <<groupPerfExpBondingModel, eval=T,echo=F>>=
+  twc$condition <- factor(twc$condition, levels = c("low", "high"),
+                                ordered = is.ordered(twc$condition))
 
   groupPerfExpBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionName),
                               data = twc,
                               REML = F)
-  groupPerfExpBonding.main <- lmer(groupBondingFactorPost ~ groupPerformance_3Norm +
-                              (groupPerformance_3Norm |sessionName),
-                              data = twc,
-                              control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
-                              REML = F)
+  groupPerfExpBondingCondition.main <- lmer(groupBondingFactorPost ~
+                                          groupPerformance_3Norm*condition +
+                                          (groupPerformance_3Norm |sessionName),
+                                          data = twc,
+                                          control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
+                                          REML = F)
 
-  summary(groupPerfExpBonding.main)
+  summary(groupPerfExpBondingCondition.main)
 
-  groupPerfExpBonding.controls <- lmer(groupBondingFactorPost ~ groupPerformance_3Norm  +
-                              indPerformance_3Norm + arousalFactorPost + fullOutcomeAvg +
-                              subjectiveCompetenceFactor + objectiveCompetenceFactor +
-                              (groupPerformance_3Norm |sessionName),
-                              control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
-                              data = twc,
-                              REML = F)
-
-  summary(groupPerfExpBonding.controls)
-
-  twc$condition <- factor(twc$condition, levels = c("low", "high"),
-                                  ordered = is.ordered(twc$condition))
-  groupPerfExpBonding.Condition.controls <- lmer(groupBondingFactorPost ~
-                                                  groupPerformance_3Norm*condition  +
-                                                  indPerformance_3Norm + arousalFactorPost + fullOutcomeAvg +
-                                                  subjectiveCompetenceFactor + objectiveCompetenceFactor +
-                                                  (groupPerformance_3Norm |sessionName),
-                                                  control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
-                                                  data = twc,
-                                                  REML = F)
-  summary(groupPerfExpBonding.Condition.controls)
+  groupPerfExpBondingCondition.controls <- lmer(groupBondingFactorPost ~
+                                            groupPerformance_3Norm*condition  +
+                                            indPerformance_3Norm + arousalFactorPost + fullOutcomeAvg +
+                                            subjectiveCompetenceFactor + objectiveCompetenceFactor +
+                                            (groupPerformance_3Norm |sessionName),
+                                            control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
+                                            data = twc,
+                                            REML = F)
+  summary(groupPerfExpBondingCondition.controls)
 @
-
-
-
+%ASSUMPTIONS:
+<<groupPerfExpBondingConditionHist, echo=F,eval=T>>=
+  #1.historgram with density line
+  groupPerfExpBondingConditionResid <- resid(groupPerfExpBondingCondition.controls, type = "pearson")
+  hist(groupPerfExpBondingConditionResid, freq = FALSE, main = "Distribution of M3 Residuals", xlab = "Residuals")
+  lines(density(groupPerfExpBondingConditionResid, na.rm = TRUE))
+  dev.copy(pdf, "TEM3Hist.pdf")
+  dev.off()
+  #non-normality
+  shapiro.test(groupPerfExpBondingConditionResid)
+  psych::describe(groupPerfExpBondingConditionResid)
+@
+<<groupPerfExpBondingConditionScatter, echo=F,eval=T>>=
+  #2.scatterPlot
+  plot(groupPerfExpBondingCondition.controls, main = "Scatterplot of M3 Residuals")
+  dev.copy(pdf, "TEM3Scatter.pdf")
+  dev.off()
+@
+<<groupPerfExpBondingConditionQQNorm, echo=F,eval=T>>=
+  #3.qqNorm
+  qqnorm(residuals(groupPerfExpBondingCondition.controls), main = "Norm QQ Plot of M3 Residuals")
+  qqline(residuals(groupPerfExpBondingCondition.controls))
+  dev.copy(pdf, "TEM3QQNorm.pdf")
+  dev.off()
+@
+<<groupPerfExpBondingConditionCooksD, echo=F,eval=T>>=
+  #indluential cases
+  #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+  plot(cooks.distance(groupPerfExpBondingCondition.controls), main = "M3 Influential Cases \n (Cook's Distance)", ylab = "cooks.distance")
+  dev.copy(pdf, "TEM3CooksD.pdf")
+  dev.off()
+@
 
 \myparagraph{Prediction 4: Feelings of group click will mediate a relationship between more positive violations of expectations around group performance and social bonding to the group}
 
@@ -2724,6 +2790,11 @@ Figure ~\ref{fig:teamPerfExpBondScatter} shows an overall positive correlation b
 Mediation analyses were conducted using linear mixed effects regressions in the Causal Mediation Analysis package in R (Version 4.4.5).  To make inferences concerning the average indirect and total effects, quasi-Bayesian Markov Chain Monte Carlo (MCMC) method based on normal approximation and 1000 simulations was used to estimate the 95\% Confidence Intervals \citep{Tofighi2016a,Imai2010}. MCMC estimation is a form of non-parametric bootstrapping whereby the sampling distribution for the effect of interest is not assumed to be normal but is instead simulated from the model estimates and their asymptotic variances and covariances \cite{Preacher2008}.
 
 Results of the mediation analysis revealed significant average indirect effect of Group Performance Expectation Violation on Social Bonding attributable to Team Click, \Sexpr{}RESULTS.  When controlling for the effect of team click on social bonding, the average direct effect between Joint Action Success and Social Bonding was no longer significant, \Sexpr{} (see Figure ~\ref{fig:MLM4aMediationAnalysis}). The direct effect diminished such that including Joint Action Success in the model produced a total effect that was marginally \textit{smaller} than the indirect effect alone, $\beta = .36, 95\% CI = .13 , .61, p = .01$. These results suggest that feelings of team click fully mediate the relationship between perceptions of joint-action success and social bonding.
+
+
+
+
+
 
 
 
