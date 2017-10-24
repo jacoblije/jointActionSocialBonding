@@ -3268,7 +3268,8 @@ PRE-POST ANALYSIS:
                                   )
           )
   ## interaction with condition? <- doesn't look like it
-  summary(groupPerfPrePostCondition.lmer <- lmer(groupPerfPPNorm ~ time*condition
+  summary(groupPerfPrePostCondition.lmer <- lmer(groupPerfPPNorm ~
+                                                time*condition
                                       + (1 | englishName)
                                       + (1 | sessionName)
                                       , data = tlc
@@ -3300,7 +3301,10 @@ PRE-POST ANALYSIS:
                                   )
           )
   ## interaction with condition? <- doesn't look like it
-  summary(clickPrePostCondition.lmer <- lmer(groupClickFactor1 ~ time*condition
+  summary(clickPrePostCondition.lmer <- lmer(groupClickFactor1 ~
+                                        time*condition*groupPerfPPNorm
+                                      + arousalFactor + fullOutcomeAvg
+                                      + subjectiveCompetenceFactor + objectiveCompetenceFactor
                                       + (1 | englishName)
                                       + (1 | sessionName)
                                       , data = tlc
