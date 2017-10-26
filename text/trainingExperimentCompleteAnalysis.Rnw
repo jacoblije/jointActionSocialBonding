@@ -42,6 +42,8 @@
 
 
 \begin{document}
+\maketitle
+
 
 <<standardSettings, echo=FALSE, results='hide'>>=
 
@@ -78,7 +80,6 @@
         text=element_text(family='Times'),
         legend.title=element_blank())
 @
-
 <<dataInput, eval=TRUE, echo=FALSE, results='hide'>>=
   setwd("/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images")
   # read in complete data from experiment:
@@ -87,14 +88,42 @@
 @
 
 
-\maketitle
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ABSTRACT%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Abstract}
 This study further tested the relationship, hypothesised in this dissertation, between joint action, team click, and social bonding in a controlled experimental environment.  An experiment was designed to test the prediction, partly confirmed in an in situ survey study, that athletes who experienced higher quality joint action would also experience higher levels of team click and social bonding.  58 Professional Chinese rugby players (Men = \Sexpr{length(which(twc$sex == 0))}) participated in a between-subjects design in which athletes' expectations for joint action training drill \citep[``Invasion drill''][]{Passos2011}) were manipulated in one of two conditions.  Athletes in the ``low difficulty'' condition were primed with information to suggest that the training drill would require minimal rugby-sepcific individual and joint-action competence (i.e., 2/10 difficulty rating).  By contrast, in the ``high difficulty'' condition, athletes were primed to expect the training drill to be relatively difficult (8/10 difficulty rating). Pre- and post-experiment surveys were conducted, measuring athletes' perceptions of main variables of interest (individual and group performance, team click, and social bonding (both to the training group and the team more generally)), as well as athlete personality type and states of athlete states of arousal, fatigue, and injury.  Video footage of each experimental session was also recorded to derive an objective measure of interpersonal coordination not reliant on self-report. It was predicted that athletes in the ``high-difficulty'' condition would experience higher levels of team click and social bonding due to higher positive violation of expectations around group performance.  Athletes in the ``low difficulty'' condition would on average experience less strongly the ``click'' of joint action and social bonding because they would not experience the same level of positive violations of expectations around group performance.
+
 %Video footage was analysed for evidence of dynamic coupling between co-actors as well as defenders \citep{Schmidt2011,Richardson2012,Passos2012}, and these data were compared to psychological measures in order to explore psychological correlates of effective  interpersonal movement coordination in joint action.
 
 %for two reasons: 1) athletes with expectations of higher difficulty would pay greater attention to coordinating action with others, and
 %
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INTRODUCTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
 
 \section{Introduction}
 When athletes coordinate their behaviours they do so by making predictions about the state of the world.  In the case of joint action, in which there are many moving parts, predictions rely on the behaviours of others for their accuracy. Annecdote and observation in team sport and other joint activities involving complex realtime coordination of behaviours around technically demanding tasks, suggests that the phenomenology associated with co-actors' predictions clicking into place is an extremely powerful social bonding agent.
@@ -104,7 +133,7 @@ The previous chapter presented empirical evidence of a relationship between perc
 The Lit Review:
 %begin by describing a phenomenon in a general way along with several studies that demonstrate it, then describing two or more competing theories of the phenomenon, and finally presenting a hypothesis to test one or more of the theories.
 1. Re-cap literature (Synchrony, joint action, pink noise, team click)
-2. Extend
+2. Extend to expectation violation:
 3.Priming literature: prime difficulty and uncertainty:
 - Challenge to skill ratio - Flow literature.
 By manipulating the level of uncertainty of information regarding the expectation
@@ -132,6 +161,37 @@ A between-subjects experimental design was used, in which expectations of techni
 %The closing of the introduction—typically the final paragraph or two—usually includes two important elements. The first is a clear statement of the main research question or hypothesis. This statement tends to be more formal and precise than in the opening and is often expressed in terms of operational definitions of the key variables. The second is a brief overview of the method and some comment on its appropriateness.
 
 %These considerations lead to the hypothesis that the more bystanders to an emergency, the less likely, or the more slowly, any one bystander will intervene to provide aid. To test this proposition it would be necessary to create a situation in which a realistic “emergency” could plausibly occur. Each subject should also be blocked from communicating with others to prevent his getting information about their behavior during the emergency. Finally, the experimental situation should allow for the assessment of the speed and frequency of the subjects’ reaction to the emergency. The experiment reported below attempted to fulfill these conditions (p. 378).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%METHOD%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \section{Method}
@@ -176,13 +236,15 @@ This study was approved by the University of Oxford’s Central University Resea
 \subsection{Materials}
 
 \begin{figure}[htbp]
-  \includegraphics[width = \linewidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/invasionDrill.png}
-  \caption{The Invasion Drill from Passos (2011)}
+  \includegraphics[width = \linewidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/invasionDrill.pdf}
+  \caption{The Invasion Drill, adapted from Passos (2011)}
   \label{fig:invasionDrill}
 \end{figure}
 
 \subsubsection{Experimental Paradigm: Invasion Drill}
-This study required athletes to participate in a common rugby training drill, which was preceeded by one of two experimental primes—--a ``high difficulty'' condition, or a ``low difficulty'' condition.   Replicating \textcite{Passos2011}, a common training drill known as ``invasion drill'' \citep{Biscombe1998} was selected as it was representative of a typical subphase of joint action in rugby union.  In this drill, a group of four rugby players form an attacking group and two pairs of opponents form a first and second defensive line.  There were two performance aims of this drill: (a) attackers were asked carry the ball into the try area, and (b) defenders were asked to stop the attacker’s progression toward the try line.  One trial consisted of one attempt by the attacking sub-group to penetrate two defending sub-groups, and carry the ball over the try line. The drill was conducted on a regulation multipurpose 110m x 70m grass or artificial turf training field within a 22m x 15m rectangle area marked by plastic cones (see Figure ~\ref{fig:invasionDrill}). The ball used was size 5, as recommended by World Rugby for this age group of athletes.
+This study required athletes to participate in a common rugby training drill, which was preceeded by one of two experimental primes—--a ``high difficulty'' condition, or a ``low difficulty'' condition.   Replicating \textcite{Passos2011}, a common training drill known as ``invasion drill'' \citep{Biscombe1998} was selected as it was representative of a typical subphase of joint action in rugby union.
+In this drill, a group of four rugby players form an attacking group and two pairs of opponents form a first and second defensive line.  There were two performance aims of this drill: (a) attackers were asked carry the ball into the try area, and (b) defenders were asked to stop the attacker’s progression toward the try line.
+One trial consisted of one attempt by the attacking sub-group to penetrate two defending sub-groups, and carry the ball over the try line. The drill was conducted on a regulation multipurpose 110m x 70m grass or artificial turf training field within a 22m x 15m rectangle area marked by plastic cones (see Figure ~\ref{fig:invasionDrill}). The ball used was size 5, as recommended by World Rugby for this age group of athletes.
 
 %The training drill, known as ``invasion drill,'' requires eight athletes, one sub-grouof four attackers and two sub-groups of two defenders.  The primary aim of the drill is for the sub-group of 4 attacking players to successfully penetrate two consecutive lines of two defenders (also commonly known as a ``4 on 2 + 2'' drill). The aim of the two defending sub-groups is to stop the attacking team from achieving the primary goal, by interfering with their coordination by halting the ball-carrier, or the ball in flight between attacking players.
 
@@ -214,7 +276,6 @@ At Baseline, athletes were asked about their impressions of recent individual pe
 @
 
 
-
 \subsubsection{Video analysis of training group performance in training drill}
 In order to produce quantitative measures of interpersonal coordination between co-actors, athletes’ motion was captured by a single digital video camera (Sony FDR-AX700 4K HDR Camcorder) mounted on a 1.2m high tripod. Digital video images of action were acquired by a computer, using a USB2.0 cable, and files were saved on an encrypted external hard disk in .AVI format. For image treatment, TACTO 8.0 software was used for digitizing at 25 frames per second.
 
@@ -240,12 +301,48 @@ The digital camera and tripod were positioned on a platform 2m above the level o
 %The procedure is how the study was carried out. It often works well to describe the procedure in terms of what the participants did rather than what the researchers did. For example, the participants gave their informed consent, read a set of instructions, completed a block of four practice trials, completed a block of 20 test trials, completed two questionnaires, and were debriefed and excused.
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%RESULTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 \section{Results}
 A total of \Sexpr{length(unique(twc$englishName))} athletes participated in \Sexpr{length(unique(twc$sessionNumber))} experimental sessions. In one session (Shandong men's high difficulty condition) a dummy participant stood in for an athlete could not participate due to injury.  In the two sessions with Beijing women's team, due to failure of athletes to take part due to injury (3) or illness (2) the training drill was modified to a ``3 on 2 + 1'' drill, requiring only 6 athletes to complete. In one of these experimental sessions, a female dummy participant was also required to fill in to make up a total of 6 athletes for the modified drill.  In both cases, dummy participants were competent ex-athletes naive to the predictions of the study who did not participate in the survey responses before or after the session.  The survey and video data of the remaining 58 athletes were analysed.
 
+
+
+
+
+
+
+
+
+
 \subsection{Descriptive Statistics}
 
-\subsubsection{Participant Sample}
+\subsubsection{Participants}
 
 <<dfAthleteSummary, echo=F,eval=T>>=
   twcAthleteInfo <- subset(twc, select = c(age, sex, condition, team, startingReserve,
@@ -1089,159 +1186,22 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 @
 
 
+
+
+
+
+
+
+
 \subsection{Data Reduction}
 Exploratory factor analysis was used to reduce multicolinearity between variables while retaining as much variance as possible in the observed data \citep{Yong2013}.
 %(EFA, appendix ~\ref{appendix:EFA})
 Data reduction was performed on the survey items related to the main outcome variables of interest, namely team click and social bonding directed at the training group. The procedure for data reduction followed the method outlined in the previous empirical chapter (tournamentSurveyChapter).  Moderator variables---technical competence (objective and subjective), components of individual and training group performance, arousal, exertion, and athlete perception of team discipline---were also reduced to factors (see APPENDIX for full method).  In addition, items relating to team click and social bonding directed at the provincial team as a whole (and not just the specific training group) were reduced to factors, in order to assess pre- to post-experiment variation in generalised bonding to the team.
 
-The main predictor variable of interest, perceptions of team performance relative to prior expectations, was a single item measure, and did not require data reduction.  Given that the outcome variables of interest were transformed to standardized z-scores (mean = 0, SD = 1), perceptions of team performance relative to prior expectation was also standardised (mean = 0, SD = 1) for the purposes of subsequent linear mixed effects modelling.
+\subsubsection{Group Performance relative to prior expectations}
+The main predictor variable of interest, perceptions of training group performance relative to prior expectations, was a single item measure, and did not require data reduction.  Given that the outcome variables of interest were transformed to standardized z-scores (mean = 0, SD = 1), perceptions of team performance relative to prior expectation was also standardised (mean = 0, SD = 1) for the purposes of subsequent linear mixed effects modelling.
 
-%DATA REDUCTION: only display click, bonding to group, the rest go in the appendix!
-
-%Not displayed:
-\subsubsection{Variables relevant to the specific training group}
-
-\myparagraph{Perceptions of Training Group Joint Action Success}
-<<dataReductionGroupPerformance, echo=F,eval=T>>=
-  #groupPerformanceVariablesSubset:
-  tlcGroupPerformance <- subset(tlc, select = c(groupDefensiveLine, groupAttackingLine,
-                                                    groupSupportPlay, groupOnfieldCommunication))
-  tlcGroupPerformance.pca <- princomp(na.omit(tlcGroupPerformance))
-  summary(tlcGroupPerformance.pca)
-  plot(tlcGroupPerformance.pca)
-
-  tlcGroupPerformance.fa <- factanal(~ groupDefensiveLine + groupAttackingLine +
-                                              groupSupportPlay + groupOnfieldCommunication, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
-
-  #-----------------------------SS Loadings----------------------#
-  SSLoadings.groupPerformanceFA <- round(sum(tlcGroupPerformance.fa$loadings[,1]^2), digits = 2)
-  #------------------Proportion of Variance----------------------#
-  prVar.GroupPerformanceFA <-  round((colSums(tlcGroupPerformance.fa$loadings*tlcGroupPerformance.fa$loadings)/dim(tlcGroupPerformance.fa$loadings)[1]*100), digits = 1)
-
-
-  head(tlcGroupPerformance.fa$scores)
-  tlc <- cbind(tlc, tlcGroupPerformance.fa$scores)
-  names(tlc)[names(tlc) == "Factor1"] <- "jointActionSuccess"
-  groupPerformanceMatrix <- cor(tlcGroupPerformance, use = "complete")
-
-  #---------suitability measures (KMO & Bartlett)----------------#
-  library(psych)
-  KMOgroupPerformanceMatrix <- KMO(groupPerformanceMatrix)
-  # KMOGroupPerformanceMatrix$MSA is the colum in which the overal KMO is stored
-  bartlettGroupPerformance <- cortest.bartlett(groupPerformanceMatrix, n = 116) # what is the sample size here?
-  # ls(BartlettGroupPerformance)
-  # BartlettGroupPerformance$chisq, BartlettGroupPerformance$df, BartlettGroupPerformance$p.value
-  # sample size? length(unique(tlc$englishName)*2)
-  groupPerformanceSampleSize <- length(unique(tlc$englishName))*2 # values for each participant measured attwo time points
-
-  #----------reliability measures--------------------------------#
-  # Cronbach's Alpha and Guttman's Lambda using psych::alpha()
-  #Cronbach's Alpha is located reliabilityObject$total[,2]
-  #Guttman's Lambda is located reliabilityObject$total[,3]
-  reliabilityGroupPerformance <- psych::alpha(groupPerformanceMatrix)
-  cronAlphaGroupPerformance <- reliabilityGroupPerformance$total[,2]
-  guttLambdaGroupPerformance <- reliabilityGroupPerformance$total[,3]
-
-
-  #-----------------------Correlation Table----------------------#
-  library(xtable)
-  corstarsl <- function(x){
-    require(Hmisc)
-    x <- as.matrix(x)
-    R <- rcorr(x)$r
-    p <- rcorr(x)$P
-
-    ## define notions for significance levels; spacing is important.
-    mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "* ", " ")))
-    ## trunctuate the matrix that holds the correlations to two decimal
-    R <- format(round(cbind(rep(-1.11, ncol(x)), R), 2))[,-1]
-    ## build a new matrix that includes the correlations with their apropriate stars
-    Rnew <- matrix(paste(R, mystars, sep=""), ncol=ncol(x))
-    diag(Rnew) <- paste(diag(R), " ", sep="")
-    rownames(Rnew) <- colnames(x)
-    colnames(Rnew) <- paste(colnames(x), "", sep="")
-    ## remove upper triangle
-    Rnew <- as.matrix(Rnew)
-    Rnew[upper.tri(Rnew, diag = TRUE)] <- ""
-    Rnew <- as.data.frame(Rnew)
-    ## remove last column and return the matrix (which is now a data frame)
-    Rnew <- cbind(Rnew[1:length(Rnew)-1])
-    return(Rnew)
-  }
-@
-<<groupPerformanceCor, echo=F,eval=T>>=
-  # be sure to import the variable subset data frame, not the correlation matrix
-  corstarsl(tlcGroupPerformance)
-  print(xtable(corstarsl(tlcGroupPerformance), type="latex",
-                      caption = "Correlations between components of group performance",
-                      label = "tab:jointActionSuccessCorrTable"),
-                      file = "jointActionSuccessCorrTable.tex")
-@
-
-Items concerning components of group performance in the invasion drill (defence, attack, support play, and on field communication) were subjected to EFA.
-Correlations between group component performance items was very high (all r's > \Sexpr{min(groupPerformanceMatrix)}), which suggested that one factor was appropriate (see Appendix Table ~\ref{tab:jointActionSuccessCorrTable}).
-The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOgroupPerformanceMatrix$MSA}, \chi^2(\Sexpr{bartlettGroupPerformance$df}, N = \Sexpr{groupPerformanceSampleSize}) = \Sexpr{bartlettGroupPerformance$chisq}, p = \Sexpr{bartlettGroupPerformance$p.value}. One factor, labelled ``Joint Action Success'' was imposed on the data, which explained \Sexpr{prVar.GroupPerformanceFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupPerformanceFA}).
-Guttmans \lambda = \Sexpr{reliabilityGroupPerformance$total[,3]} and Cronbachs \alpha = \Sexpr{(reliabilityGroupPerformance$total[,2]} indicated that the data reduction was appropriate and reliable.
-
-
-\myparagraph{Perceptions of Individual Component Performance}
-<<dataReductionIndPerformance, echo=F,eval=T>>=
-  #indPerformanceVariablesSubset: exclude effectivenessInContact (not relevant)
-  tlcIndPerformance <- subset(tlc, select = c(indDefense, passingTechnique, supportPlay,
-                                                    decisionMaking))
-  tlcIndPerformance.pca <- princomp(na.omit(tlcIndPerformance))
-  summary(tlcIndPerformance.pca)
-  plot(tlcIndPerformance.pca)
-
-  tlcIndPerformance.fa <- factanal(~ indDefense + passingTechnique + supportPlay +
-                                          decisionMaking, 1, data = tlc, rotation = "promax",
-                                          na.action = na.exclude, scores = "regression")
-  #<- this formula format allows preserving of NAs for later rebind to df
-
-  #-----------------------------SS Loadings----------------------#
-  SSLoadings.indPerformanceFA <- round(sum(tlcIndPerformance.fa$loadings[,1]^2), digits = 2)
-  #------------------Proportion of Variance----------------------#
-  prVar.indPerformanceFA <-  round((colSums(tlcIndPerformance.fa$loadings*tlcIndPerformance.fa$loadings)/dim(tlcIndPerformance.fa$loadings)[1]*100), digits = 1)
-
-
-  head(tlcIndPerformance.fa$scores)
-  tlc <- cbind(tlc, tlcIndPerformance.fa$scores)
-  names(tlc)[names(tlc) == "Factor1"] <- "indComponentsPerformance"
-  indPerformanceMatrix <- cor(tlcIndPerformance, use = "complete")
-
-  #---------suitability measures (KMO & Bartlett)----------------#
-  library(psych)
-  KMOindPerformanceMatrix <- KMO(indPerformanceMatrix)
-  # KMOIndPerformanceMatrix$MSA is the colum in which the overal KMO is stored
-  bartlettIndPerformance <- cortest.bartlett(indPerformanceMatrix, n = 116) # what is the sample size here?
-  # ls(BartlettIndPerformance)
-  # BartlettIndPerformance$chisq, BartlettIndPerformance$df, BartlettIndPerformance$p.value
-  # sample size? length(unique(tlc$englishName)*2)
-  indPerformanceSampleSize <- length(unique(tlc$englishName))*2 # values for each participant measured attwo time points
-
-  #----------reliability measures--------------------------------#
-  # Cronbach's Alpha and Guttman's Lambda using psych::alpha()
-  #Cronbach's Alpha is located reliabilityObject$total[,2]
-  #Guttman's Lambda is located reliabilityObject$total[,3]
-  reliabilityIndPerformance <- psych::alpha(indPerformanceMatrix)
-  cronAlphaIndPerformance <- reliabilityIndPerformance$total[,2]
-  guttLambdaIndPerformance <- reliabilityIndPerformance$total[,3]
-@
-
-Items concerning components of individual components of performance in the invasion drill (1-on-1 defence, passing technique, support play in attack, decision making in attack, and effectiveness in contact) were subjected to EFA.  The variable ``effectiveness in contact'' was removed from analysis as the invasion drill was predominantly a non-contact training drill, and so this item was not relevant to athletes' performance.  Correlations between individual component performance items was very high (all r's > \Sexpr{min(indPerformanceMatrix)}), which suggested that one factor was appropriate (see Table ~\ref{tab:indComponentPerfCorrTable}).
-The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{(KMOindPerformanceMatrix$MSA}, \chi^2(\Sexpr{bartlettIndPerformance$df}, N = \Sexpr{indPerformanceSampleSize}) = \Sexpr{bartlettIndPerformance$chisq}, p = \Sexpr{bartlettIndPerformance$p.value}. One factor, labelled ``Individual Performance Components'' was imposed on the data, which explained \Sexpr{prVar.indPerformanceFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.indPerformanceFA}).  Guttmans \lambda = \Sexpr{reliabilityIndPerformance$total[,3]}  and  Cronbachs \alpha = \Sexpr{reliabilityIndPerformance$total[,2]}  indicated that the data reduction was appropriate and reliable.
-
-<<indComponentsPerformanceCor, echo=F,eval=T>>=
-  # be sure to import the variable subset data frame, not the correlation matrix
-  corstarsl(tlcIndPerformance)
-  print(xtable(corstarsl(tlcIndPerformance), type="latex",
-                      caption = "Correlations between components of individual performance",
-                      label = "tab:indComponentPerfCorrTable"),
-                      file = "indComponengtPerfCorrTable.tex")
-  # label = tab:indComponentPerformanceCorrTable
-@
-
-\myparagraph{Feelings of team click within training group}
+\subsubsection{Feelings of team click within the training group}
 <<dataReductionGroupClick, echo=F,eval=T>>=
   #GroupClickVariablesSubset: exclude effectivenessInContact (not relvant)
   ## PROBLEM: groupReliabilityOfOthers, are only measured at t3, and so restrict the creation of a factor across two time points. need to remove for groupClickFactorgroupReliabilityForOthers
@@ -1347,7 +1307,7 @@ One factor, labelled ``Group Click'' was imposed on the data, which explained \S
 
 In addition to the four variables common to both pre- and post-experiment surveys, athletes were also asked in the post-experiment survey about their own reliability and the reliability of other athletes to perform their role on the field specifically. These two variables, ``Reliability For Others'' and ``Reliability Of Others'' were included in an EFA involving only the post-experiment measures.  The variable ``reliability for others'' was removed from the matrix because it did not significantly correlate with other variables (all r's <= .16).
 
-\myparagraph{Feelings of Social Bonding to the training group}
+\subsubsection{Feelings of Social Bonding to the training group}
 <<dataReductionGroupBonding, echo=F,eval=T>>=
   #GroupBondingVariablesSubset: exclude effectivenessInContact (not relvant)
   tlcGroupBonding <- subset(tlc, select = c(groupEmotionalSupport, groupSharedGoal,
@@ -1396,18 +1356,138 @@ In addition to the four variables common to both pre- and post-experiment survey
                       file = "groupBondingCorrTable.tex")
   # label = tab:groupBondingCorrTable
 @
-
 Items concerning bonding to the training group (emotional support, shared goal, fusion pictorial) were subjected to EFA.  Correlations between items were high (all r's > \Sexpr{min(groupBondingMatrix)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:groupBondingCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOgroupBondingMatrix$MSA}, \chi^2(\Sexpr{bartlettGroupBonding$df}, N = \Sexpr{groupBondingSampleSize}) = \Sexpr{bartlettGroupBonding$chisq}, p = \Sexpr{bartlettGroupBonding$p.value}).
 One factor, labelled ``Group Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.groupBondingFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupBondingFA}). Guttmans \lambda = \Sexpr{reliabilityGroupBonding$total[,3]} and Cronbachs \alpha = \Sexpr{reliabilityGroupBonding$total[,2]} indicated that the data reduction was appropriate and reliable.
 
+\subsubsection{Additional data reduction}
+In addition to athlete expectation violations concerning group and individual performance (predictor variable), group click (moderator and outcome variable), and group bonding (outcome variable), measures relating to athlete perceptions of components of group and individual performance, social bonding to the team as a whole, athlete arousal, technical competence (subjective and objective measures), and athlete perceptions of team discipline were subjected to data reduction (see Appendix Section ~\ref{} for full details).
+
+<<dataReductionGroupPerformance, echo=F,eval=T>>=
+    #groupPerformanceVariablesSubset:
+    tlcGroupPerformance <- subset(tlc, select = c(groupDefensiveLine, groupAttackingLine,
+                                                      groupSupportPlay, groupOnfieldCommunication))
+    tlcGroupPerformance.pca <- princomp(na.omit(tlcGroupPerformance))
+    summary(tlcGroupPerformance.pca)
+    plot(tlcGroupPerformance.pca)
+
+    tlcGroupPerformance.fa <- factanal(~ groupDefensiveLine + groupAttackingLine +
+                                                groupSupportPlay + groupOnfieldCommunication, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+
+    #-----------------------------SS Loadings----------------------#
+    SSLoadings.groupPerformanceFA <- round(sum(tlcGroupPerformance.fa$loadings[,1]^2), digits = 2)
+    #------------------Proportion of Variance----------------------#
+    prVar.GroupPerformanceFA <-  round((colSums(tlcGroupPerformance.fa$loadings*tlcGroupPerformance.fa$loadings)/dim(tlcGroupPerformance.fa$loadings)[1]*100), digits = 1)
 
 
-  %team click
-  % "teamClickPictorial_1"  # TEAM CLICK post not measured
-  % [94] "reliabilityForOthers_1" # TEAM RELIABILITY - i don't ask about the team as a whole post-experiment...
-  % [95] "reliabilityOfOthers_1"
-\subsubsection{Social Bonding to the team}
+    head(tlcGroupPerformance.fa$scores)
+    tlc <- cbind(tlc, tlcGroupPerformance.fa$scores)
+    names(tlc)[names(tlc) == "Factor1"] <- "jointActionSuccess"
+    groupPerformanceMatrix <- cor(tlcGroupPerformance, use = "complete")
 
+    #---------suitability measures (KMO & Bartlett)----------------#
+    library(psych)
+    KMOgroupPerformanceMatrix <- KMO(groupPerformanceMatrix)
+    # KMOGroupPerformanceMatrix$MSA is the colum in which the overal KMO is stored
+    bartlettGroupPerformance <- cortest.bartlett(groupPerformanceMatrix, n = 116) # what is the sample size here?
+    # ls(BartlettGroupPerformance)
+    # BartlettGroupPerformance$chisq, BartlettGroupPerformance$df, BartlettGroupPerformance$p.value
+    # sample size? length(unique(tlc$englishName)*2)
+    groupPerformanceSampleSize <- length(unique(tlc$englishName))*2 # values for each participant measured attwo time points
+
+    #----------reliability measures--------------------------------#
+    # Cronbach's Alpha and Guttman's Lambda using psych::alpha()
+    #Cronbach's Alpha is located reliabilityObject$total[,2]
+    #Guttman's Lambda is located reliabilityObject$total[,3]
+    reliabilityGroupPerformance <- psych::alpha(groupPerformanceMatrix)
+    cronAlphaGroupPerformance <- reliabilityGroupPerformance$total[,2]
+    guttLambdaGroupPerformance <- reliabilityGroupPerformance$total[,3]
+
+
+    #-----------------------Correlation Table----------------------#
+    library(xtable)
+    corstarsl <- function(x){
+      require(Hmisc)
+      x <- as.matrix(x)
+      R <- rcorr(x)$r
+      p <- rcorr(x)$P
+
+      ## define notions for significance levels; spacing is important.
+      mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "* ", " ")))
+      ## trunctuate the matrix that holds the correlations to two decimal
+      R <- format(round(cbind(rep(-1.11, ncol(x)), R), 2))[,-1]
+      ## build a new matrix that includes the correlations with their apropriate stars
+      Rnew <- matrix(paste(R, mystars, sep=""), ncol=ncol(x))
+      diag(Rnew) <- paste(diag(R), " ", sep="")
+      rownames(Rnew) <- colnames(x)
+      colnames(Rnew) <- paste(colnames(x), "", sep="")
+      ## remove upper triangle
+      Rnew <- as.matrix(Rnew)
+      Rnew[upper.tri(Rnew, diag = TRUE)] <- ""
+      Rnew <- as.data.frame(Rnew)
+      ## remove last column and return the matrix (which is now a data frame)
+      Rnew <- cbind(Rnew[1:length(Rnew)-1])
+      return(Rnew)
+    }
+@
+<<groupPerformanceCor, echo=F,eval=T>>=
+  # be sure to import the variable subset data frame, not the correlation matrix
+  corstarsl(tlcGroupPerformance)
+  print(xtable(corstarsl(tlcGroupPerformance), type="latex",
+                      caption = "Correlations between components of group performance",
+                      label = "tab:jointActionSuccessCorrTable"),
+                      file = "jointActionSuccessCorrTable.tex")
+@
+<<dataReductionIndPerformance, echo=F,eval=T>>=
+    #indPerformanceVariablesSubset: exclude effectivenessInContact (not relevant)
+    tlcIndPerformance <- subset(tlc, select = c(indDefense, passingTechnique, supportPlay,
+                                                      decisionMaking))
+    tlcIndPerformance.pca <- princomp(na.omit(tlcIndPerformance))
+    summary(tlcIndPerformance.pca)
+    plot(tlcIndPerformance.pca)
+
+    tlcIndPerformance.fa <- factanal(~ indDefense + passingTechnique + supportPlay +
+                                            decisionMaking, 1, data = tlc, rotation = "promax",
+                                            na.action = na.exclude, scores = "regression")
+    #<- this formula format allows preserving of NAs for later rebind to df
+
+    #-----------------------------SS Loadings----------------------#
+    SSLoadings.indPerformanceFA <- round(sum(tlcIndPerformance.fa$loadings[,1]^2), digits = 2)
+    #------------------Proportion of Variance----------------------#
+    prVar.indPerformanceFA <-  round((colSums(tlcIndPerformance.fa$loadings*tlcIndPerformance.fa$loadings)/dim(tlcIndPerformance.fa$loadings)[1]*100), digits = 1)
+
+
+    head(tlcIndPerformance.fa$scores)
+    tlc <- cbind(tlc, tlcIndPerformance.fa$scores)
+    names(tlc)[names(tlc) == "Factor1"] <- "indComponentsPerformance"
+    indPerformanceMatrix <- cor(tlcIndPerformance, use = "complete")
+
+    #---------suitability measures (KMO & Bartlett)----------------#
+    library(psych)
+    KMOindPerformanceMatrix <- KMO(indPerformanceMatrix)
+    # KMOIndPerformanceMatrix$MSA is the colum in which the overal KMO is stored
+    bartlettIndPerformance <- cortest.bartlett(indPerformanceMatrix, n = 116) # what is the sample size here?
+    # ls(BartlettIndPerformance)
+    # BartlettIndPerformance$chisq, BartlettIndPerformance$df, BartlettIndPerformance$p.value
+    # sample size? length(unique(tlc$englishName)*2)
+    indPerformanceSampleSize <- length(unique(tlc$englishName))*2 # values for each participant measured attwo time points
+
+    #----------reliability measures--------------------------------#
+    # Cronbach's Alpha and Guttman's Lambda using psych::alpha()
+    #Cronbach's Alpha is located reliabilityObject$total[,2]
+    #Guttman's Lambda is located reliabilityObject$total[,3]
+    reliabilityIndPerformance <- psych::alpha(indPerformanceMatrix)
+    cronAlphaIndPerformance <- reliabilityIndPerformance$total[,2]
+    guttLambdaIndPerformance <- reliabilityIndPerformance$total[,3]
+@
+<<indComponentsPerformanceCor, echo=F,eval=T>>=
+  # be sure to import the variable subset data frame, not the correlation matrix
+  corstarsl(tlcIndPerformance)
+  print(xtable(corstarsl(tlcIndPerformance), type="latex",
+                      caption = "Correlations between components of individual performance",
+                      label = "tab:indComponentPerfCorrTable"),
+                      file = "indComponengtPerfCorrTable.tex")
+  # label = tab:indComponentPerformanceCorrTable
+@
 <<dataReductionTeamBonding, eval=TRUE, echo=FALSE>>=
   #TeamBondingVariablesSubset: exclude effectivenessInContact (not relvant)
   tlcTeamBonding <- subset(tlc, select = c(emotionalSupport, sharedGoal,
@@ -1456,12 +1536,6 @@ One factor, labelled ``Group Social Bonding'' was imposed on the data, which exp
                       file = "teamBondingCorrTable.tex")
   # label = tab:teamBondingCorrTable
 @
-
-Items concerning bonding to the team (emotional support, shared goal, fusion pictorial, fusion verbal, and group identification) were subjected to EFA.  Correlations between items were all reasonably high (all r's > \Sexpr{min(teamBondingMatrix)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamBondingCorrTable}).
-The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOteamBondingMatrix$MSA}, \chi^2(\Sexpr{bartlettTeamBonding$df}, N = \Sexpr{teamBondingSampleSize}) = \Sexpr{bartlettTeamBonding$chisq}, p = \Sexpr{bartlettTeamBonding$p.value}).
-One factor, labelled ``Team Social Bonding'' was imposed on the data, which explained \Sexpr{prVar.teamBondingFA} \% of the overall variance (SS Loading = \Sexpr{SSLoadings.teamBondingFA}). Guttmans \lambda = \Sexpr{reliabilityTeamBonding$total[,3]} and Cronbachs \alpha = \Sexpr{reliabilityTeamBonding$total[,2]} indicated that the data reduction was appropriate and reliable.
-
-\myparagraph{Arousal}
 <<dataReductionArousal, echo=F,eval=T>>=
   #ArousalVariablesSubset: exclude effectivenessInContact (not relvant)
   tlcArousal <- subset(tlc, select = c(aroused, relaxed, excited))
@@ -1508,13 +1582,53 @@ One factor, labelled ``Team Social Bonding'' was imposed on the data, which expl
                       file = "arousalCorrTable.tex")
   # label = tab:arousalCorrTable
 @
+<<dataReductionTeamDiscipline, eval=T, echo=F>>=
+  #TeamDisciplineVariablesSubset: exclude effectivenessInContact (not relvant)
+  tlcTeamDiscipline <- subset(tlc, select = c(teamAttendanceMeals, teamCurfew, teamGeneralConduct, teamPunctuality))
+  tlcTeamDiscipline.pca <- princomp(na.omit(tlcTeamDiscipline))
+  summary(tlcTeamDiscipline.pca)
+  #plot(tlcTeamDiscipline.pca)
 
-Items associated with team discipline (punctuality, observing bed times and curfews, attendance at meals, general team conduct), measured at baseline and after the experiment, were subjected to EFA.
-Correlations between items were all reasonably high (all r's > \Sexpr{min(arousalMatrix)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:arousalCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOarousalMatrix$MSA}, \chi^2(\Sexpr{bartlettArousal$df}, N = \Sexpr{arousalSampleSize}) = \Sexpr{bartlettArousal$chisq}, p = \Sexpr{bartlettArousal$p.value}).
-One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.ArousalFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.ArousalFA}).  Guttmans \lambda = \Sexpr{reliabilityArousal$total[,3]}  and  Cronbachs \alpha = \Sexpr{reliabilityArousal$total[,2]}  indicated that the data reduction was appropriate and reliable.
+  tlcTeamDiscipline.fa <- factanal(~ teamAttendanceMeals + teamCurfew + teamGeneralConduct +
+                                        teamPunctuality, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
 
-\subsubsection{Athlete Technical Competence (objective and subjective measures)}
+  #-----------------------------SS Loadings----------------------#
+  SSLoadings.teamDisciplineFA <- round(sum(tlcTeamDiscipline.fa$loadings[,1]^2), digits = 2)
+  #------------------Proportion of Variance----------------------#
+  prVar.teamDisciplineFA <-  round((colSums(tlcTeamDiscipline.fa$loadings*tlcTeamDiscipline.fa$loadings)/dim(tlcTeamDiscipline.fa$loadings)[1]*100), digits = 1)
 
+  head(tlcTeamDiscipline.fa$scores)
+  tlc <- cbind(tlc, tlcTeamDiscipline.fa$scores)
+  names(tlc)[names(tlc) == "Factor1"] <- "teamDisciplineFactor"
+  teamDisciplineMatrix <- cor(tlcTeamDiscipline, use = "complete")
+
+  #---------suitability measures (KMO & Bartlett)----------------#
+  library(psych)
+  KMOteamDisciplineMatrix <- KMO(teamDisciplineMatrix)
+  # KMOTeamDisciplineMatrix$MSA is the colum in which the overal KMO is stored
+  bartlettTeamDiscipline <- cortest.bartlett(teamDisciplineMatrix, n = 116) # what is the sample size here?
+  # ls(BartlettTeamDiscipline)
+  # BartlettTeamDiscipline$chisq, BartlettTeamDiscipline$df, BartlettTeamDiscipline$p.value
+  # sample size? length(unique(tlc$englishName)*2)
+  teamDisciplineSampleSize <- length(unique(tlc$englishName))*2 # values for each participant measured attwo time points
+
+  #----------reliability measures--------------------------------#
+  # Cronbach's Alpha and Guttman's Lambda using psych::alpha()
+  #Cronbach's Alpha is located reliabilityObject$total[,2]
+  #Guttman's Lambda is located reliabilityObject$total[,3]
+  reliabilityTeamDiscipline <- psych::alpha(teamDisciplineMatrix)
+  cronAlphaTeamDiscipline <- reliabilityTeamDiscipline$total[,2]
+  guttLambdaTeamDiscipline <- reliabilityTeamDiscipline$total[,3]
+@
+<<teamDisciplineCor, echo=F,eval=T>>=
+  # be sure to import the variable subset data frame, not the correlation matrix
+  corstarsl(tlcTeamDiscipline)
+  print(xtable(corstarsl(tlcTeamDiscipline), type="latex",
+                      caption = "Correlations between variables measuring team discipline",
+                      label = "tab:teamDisciplineCorrTable"),
+                      file = "teamDisciplineCorrTable.tex")
+  # label = tab:teamDisciplineCorrTable
+@
 <<dataReductionTechnicalCompetence, eval=TRUE, echo=FALSE>>=
   #TechnicalCompetenceVariablesSubset:
   tlcTechnicalCompetence <- subset(tlc, select = c(yearsTeam, trainingAge, teamStatus,
@@ -1577,81 +1691,6 @@ One factor, labelled ``Team Discipline'' was imposed on the data, which explaine
   # label = tab:technicalCompetenceCorrTable
 @
 
-All eight items relevant to technical competence were analysed in a correlation matrix to assess relatedness (see Table ~\ref{tab:technicalCompetenceCorrTable}). All measures of objective competence were highly correlated all r's >= \Sexpr{min(objectiveCompetenceMatrix)}),  and among measures of subjective competence (all items except for the team competence measure correlated at $> \Sexpr{min(subjectiveCompetenceMatrix)})$) suggested that the data could be explained by two underlying factors. Team Ability Chinese Provinces was dropped from analysis due to low correlation with other competence variables, possibly because the item did not ask about an individual athlete’s competence (it referred instead to an athlete’s opinion of the competence of the team of which they were a member).
-
-An EFA of technical competence variables revealed that items of interest loaded on two factors. Measures of objective competence (Years Team, Training Age, Team Status, Athlete Status) loaded on the first factor, which was labelled ``Objective Competence'' because the measures were all objective markers of an athlete's competence.
-Objective Competence explained \Sexpr{prVar.objectiveCompetenceFA}\% of the total variance (\Sexpr{SSLoadings.objectiveCompetenceFA}). The remaining measures of subjective competence (Ability Teammates, Ability Chinese Pros, Ability International Pros) loaded on the remaining factor.  The second factor was labelled ``Subjective Competence'', due to the fact that all measures were the product of athlete self-report.  Subjective competence explained \Sexpr{prVar.objectiveCompetenceFA}\% of the variance (\Sexpr{SSLoadings.subjectiveCompetenceFA}).
-$Guttmans \lambda = \Sexpr{reliabilityTechnicalCompetence$total[,3]}$ and $Cronbachs \alpha = \Sexpr{reliabilityTechnicalCompetence$total[,2]}$ indicated that the data reduction was appropriate and reliable.
-
-
-\subsubsection{Team Discipline}
-<<dataReductionTeamDiscipline, eval=T, echo=F>>=
-  #TeamDisciplineVariablesSubset: exclude effectivenessInContact (not relvant)
-  tlcTeamDiscipline <- subset(tlc, select = c(teamAttendanceMeals, teamCurfew, teamGeneralConduct, teamPunctuality))
-  tlcTeamDiscipline.pca <- princomp(na.omit(tlcTeamDiscipline))
-  summary(tlcTeamDiscipline.pca)
-  #plot(tlcTeamDiscipline.pca)
-
-  tlcTeamDiscipline.fa <- factanal(~ teamAttendanceMeals + teamCurfew + teamGeneralConduct +
-                                        teamPunctuality, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
-
-  #-----------------------------SS Loadings----------------------#
-  SSLoadings.teamDisciplineFA <- round(sum(tlcTeamDiscipline.fa$loadings[,1]^2), digits = 2)
-  #------------------Proportion of Variance----------------------#
-  prVar.teamDisciplineFA <-  round((colSums(tlcTeamDiscipline.fa$loadings*tlcTeamDiscipline.fa$loadings)/dim(tlcTeamDiscipline.fa$loadings)[1]*100), digits = 1)
-
-  head(tlcTeamDiscipline.fa$scores)
-  tlc <- cbind(tlc, tlcTeamDiscipline.fa$scores)
-  names(tlc)[names(tlc) == "Factor1"] <- "teamDisciplineFactor"
-  teamDisciplineMatrix <- cor(tlcTeamDiscipline, use = "complete")
-
-  #---------suitability measures (KMO & Bartlett)----------------#
-  library(psych)
-  KMOteamDisciplineMatrix <- KMO(teamDisciplineMatrix)
-  # KMOTeamDisciplineMatrix$MSA is the colum in which the overal KMO is stored
-  bartlettTeamDiscipline <- cortest.bartlett(teamDisciplineMatrix, n = 116) # what is the sample size here?
-  # ls(BartlettTeamDiscipline)
-  # BartlettTeamDiscipline$chisq, BartlettTeamDiscipline$df, BartlettTeamDiscipline$p.value
-  # sample size? length(unique(tlc$englishName)*2)
-  teamDisciplineSampleSize <- length(unique(tlc$englishName))*2 # values for each participant measured attwo time points
-
-  #----------reliability measures--------------------------------#
-  # Cronbach's Alpha and Guttman's Lambda using psych::alpha()
-  #Cronbach's Alpha is located reliabilityObject$total[,2]
-  #Guttman's Lambda is located reliabilityObject$total[,3]
-  reliabilityTeamDiscipline <- psych::alpha(teamDisciplineMatrix)
-  cronAlphaTeamDiscipline <- reliabilityTeamDiscipline$total[,2]
-  guttLambdaTeamDiscipline <- reliabilityTeamDiscipline$total[,3]
-@
-<<teamDisciplineCor, echo=F,eval=T>>=
-  # be sure to import the variable subset data frame, not the correlation matrix
-  corstarsl(tlcTeamDiscipline)
-  print(xtable(corstarsl(tlcTeamDiscipline), type="latex",
-                      caption = "Correlations between variables measuring team discipline",
-                      label = "tab:teamDisciplineCorrTable"),
-                      file = "teamDisciplineCorrTable.tex")
-  # label = tab:teamDisciplineCorrTable
-@
-
-Items concerning team discipline (attendance at meals, team curfew, general team conduct, punctuality to team engagements), measured at baseline and after the experiment, were subjected to EFA.  Correlations between items were all reasonably high (all r's > \Sexpr{min(teamDisciplineMatrix)}), which suggested that one factor would be appropriate (see Table ee Table ~\ref{tab:teamDisciplineCorrTable}).
-The KMO index and Bartlett's test both suggested high sampling adequacy,
-(KMO
-  = \Sexpr{KMOteamDisciplineMatrix$MSA}
-  , \chi^2(\Sexpr{bartlettTeamDiscipline$df}
-  , N = \Sexpr{teamDisciplineSampleSize})
-  = \Sexpr{bartlettTeamDiscipline$chisq},
-  p = \Sexpr{bartlettTeamDiscipline$p.value}).
-One factor, labelled ``Team Discipline'' was imposed on the data, which explained \Sexpr{prVar.teamDisciplineFA} \% of the overall variance
-(SS Loading
-  = \Sexpr{SSLoadings.teamDisciplineFA}).
-Guttmans
-  \lambda = \Sexpr{reliabilityTeamDiscipline$total[,3]}
-  and  Cronbachs
-  \alpha = \Sexpr{reliabilityTeamDiscipline$total[,2]}
-indicated that the data reduction was appropriate and reliable.
-
-% \myparagraph{Fatigue} - fatigue is measured pre and post experiment, but mental and prpe are measured only post-experiment, so no need for EFA
-
 <<factorsAttachWideFormat, echo=F,eval=T>>=
   #attach factors to wide-format variable:
   # jointActionSuccess:
@@ -1680,6 +1719,8 @@ indicated that the data reduction was appropriate and reliable.
   #teamDisciplineFactor:
   twc$teamDisciplineFactor <- tlc$teamDisciplineFactor[tlc$time == 1]
 @
+
+
 
 
 
@@ -2181,6 +2222,15 @@ Table ~\ref{tab:factorsTime} shows that factors relating to group Joint Action S
 
 
 
+
+
+
+
+
+
+
+
+
 \subsection{Analysis of Study Predictions}
 
 
@@ -2328,6 +2378,9 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
   fullOutcomeAvgSdSessionBox
 @
 
+
+
+
 \myparagraph{Prediction 1: More positive violations of expectations around team performance will correlate with higer feelings of team click with the training group}
 
 <<teamPerfExpClickScatter, fig.cap=''>>=
@@ -2341,7 +2394,6 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
               ylab("Group Click") +
               apatheme
 @
-
 
 Figure ~\ref{fig:teamPerfExpClickScatter} shows a strong positive correlation between violations of prior expectations concerning team performance and feelings of ``click'' with the training group post-Experiment.  The slope of this relationship appears to vary according to condition, as indicated on the scatterplot by the two non-parallel lines of best fit.
 
@@ -2520,8 +2572,6 @@ Based on these assessments, the model provided a robust basis for the inference 
   dev.off()
 
 @
-
-
 
 
 \myparagraph{Prediction 1.a: Violations of expectations around team performance moderate the relationship between perceptions of joint action success and team click training group}
@@ -2758,12 +2808,6 @@ Re-running the model with this value excluded led to an improvement of the model
 
 
 
-
-
-
-
-
-
 \myparagraph{Prediction 2: Feelings of group click predict feelings of social bonding to the training group}
 
 <<groupClickBondScatter, eval=F,echo=T>>=
@@ -2908,20 +2952,20 @@ suggesting that athletes who felt stronger levels of group click also felt stron
 @
 
 Model residuals were normally distributed around zero
-  (
-    \resdist
-      \Sexpr{clickBondingCondition.controls.Wald$statistic},
-    \pvalue
-      \Sexpr{clickBondingCondition.controls.Wald$p.value}
-  )
-  and there were no unjustifiably influential cases
-  (
-  all
-  \cooksD
-  <
-    \Sexpr{max(clickBondingCondition.controls.cooksD)}, see model assumptions in Appendix  ~\ref{fig:M2Assumptions}
-  )
-  .
+(
+  \resdist
+    \Sexpr{clickBondingCondition.controls.Wald$statistic},
+  \pvalue
+    \Sexpr{clickBondingCondition.controls.Wald$p.value}
+)
+and there were no unjustifiably influential cases
+(
+all
+\cooksD
+<
+  \Sexpr{max(clickBondingCondition.controls.cooksD)}, see model assumptions in Appendix  ~\ref{fig:M2Assumptions}
+)
+.
 These results suggested that feelings of group click were a powerful predictor of feelings of social bonding in the study sample.
 
 
@@ -3016,7 +3060,7 @@ A LMER model with group performance expectation violation, condition, and their 
     \Sexpr{groupPerfExpBondingCondition.controls.R2[,6]}
   .
 The main effects of group performance expectation violation
-  (
+(
   \betaest
     \Sexpr{coef(summary(groupPerfExpBondingCondition.controls))["groupPerformance_3Norm","Estimate"]}
   \CIstart
@@ -3056,9 +3100,9 @@ The main effects of group performance expectation violation
   ,
   \pvalue
     \Sexpr{coef(summary(groupPerfExpBondingCondition.controls))["conditionhigh","Pr(>|t|)"]}
-  )
+)
 were not significant predictors of social bonding.  Average performance in each trial was, however, a significant predictor of social bonding
-  ,
+,
   \betaest
     \Sexpr{coef(summary(groupPerfExpBondingCondition.controls))["fullOutcomeAvg","Estimate"]}
   \CIstart
@@ -3077,8 +3121,7 @@ were not significant predictors of social bonding.  Average performance in each 
   ,
   \pvalue
     \Sexpr{coef(summary(groupPerfExpBondingCondition.controls))["fullOutcomeAvg","Pr(>|t|)"]}
-  .
-
+.
 
 %ASSUMPTIONS:
 <<groupPerfExpBondingConditionHist, echo=F,eval=T>>=
@@ -3129,7 +3172,6 @@ see model assumptions in Appendix  ~\ref{fig:M1aAssumptions}
 )
 .
 These results suggested that the relationship between positive violation of group performance expectations and social bonding was significant, only in the high difficulty condition, and not overall accoss conditions.
-
 
 
 \myparagraph{Prediction 4: Feelings of group click will mediate a relationship between more positive violations of expectations around group performance and social bonding to the group}
@@ -3190,14 +3232,12 @@ Results of the mediation analysis revealed significant average indirect effect o
     \Sexpr{coef(summary(med.out.groupPerfExp))["ACME (average)","p-value"]}
   ,
   .
-When controlling for the effect of team click on social bonding, the average direct effect between Joint Action Success and Social Bonding was no longer significant, \Sexpr{} (see Figure ~\ref{fig:groupPerfExpClickMediationPlot}).
-
-These results suggest that feelings of team click fully mediate the relationship between group performance expectation violation and and social bonding.
+When controlling for the effect of team click on social bonding, the average direct effect between Joint Action Success and Social Bonding was no longer significant, \Sexpr{} (see Figure ~\ref{fig:groupPerfExpClickMediationPlot}).  These results suggest that feelings of team click fully mediate the relationship between group performance expectation violation and and social bonding.
 
 
 
 
-
+\myparagraph{Discussion of post-Experiment results}
 
 
 
@@ -3224,7 +3264,7 @@ These results suggest that feelings of team click fully mediate the relationship
 
 
 
-
+\subsubsection{Analysis of pre- and post-Experiment survey data}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -3234,7 +3274,6 @@ PRE-POST ANALYSIS:
   i. performance expectations?
   ii. click?
   iii. bonding?
-
 
 
 
