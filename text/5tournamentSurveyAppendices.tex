@@ -426,6 +426,45 @@ An analysis of sex-differences revealed:
 
 
 
+\subsubsection{Mediation Analysis}
+The hypothesised path of relationships outlined in predictions above (specifically: Joint Action Success $\rightarrow$ Team Click $\rightarrow$ Social Bonding) suggests the possibility that Joint Action Success exerts its influence on Social Bonding indirectly, via feelings of ``team click.''  A formal mediation analysis can be used to test the prediction that the relationship between perceptions of joint-action success and social bonding is mediated by feelings of team click, by analysing if and how an intervening variable is causally significant to the relationship between a predictor and an outcome variable. A variable is a mediator if it carries the influence of the predictor variable to an outcome variable, if it serves to explain (either partially or fully) the variance in the outcome variable attributable to the predictor. In the case of this analysis, do perceptions of joint-action success have an indirect effect on feelings of social bonding that is transmitted through feelings associated with team click?
+
+\begin{figure}[htbp]
+  \begin{center}
+    \includegraphics[scale = .5]{images/mediation_image.jpg}
+    \caption{Mediation Analysis: direct and indirect effects}
+    \label{fig:mediationAnalysis}
+  \end{center}
+\end{figure}
+
+Mediation analysis works by testing the extent to which the variance in the outcome attributable to a predictor variable (the direct effect, or path ``c'': $Y_i \sim d_Y + cX_i + e_i$) can be explained \textit{indirectly} by the variance of two other relationships: that of the predictor variable and a third mediator (X $\rightarrow$ M, or path ``a'')  and M and the outcome variable (path ``b''), controlling for the direct relationship between X and Y (path ``'c'') (see Figure ~\ref{fig:mediationAnalysis}). The mediation model can thus be denoted by two equations:
+
+\begin{equation}
+  M_i \sim d_M + aX_i + e_Mi
+\end{equation}
+
+\begin{equation}
+  Y_i \sim d_Y + bM_i + c'X_i +  + e_{Yi}
+\end{equation}
+\bigskip
+
+When combined, these two equations enable the calculation of the ``indirect effect'' of the predictor on the outcome, by controlling for the relationship between the mediator's effect on the outcome variable as a function of its relationship to the predictor variable.  While the direct effect measures the extent to which the dependent variable changes when the independent variable increases by one unit and the mediator variable remains unaltered, the indirect effect measures the extent to which the dependent variable changes when the independent variable is held fixed and the mediator variable changes by the amount it would have changed had the independent variable increased by one unit \citep{Bauer2006}.
+
+The multilevel structure of the data in this study, i.e. the clustering of residuals according to team affiliation, violates the independence assumption of mediation analysis. As such, traditional multiple linear regression and path analysis will produce biased tests of the effects in the mediation model \citep{Raudenbush2002}.
+%(Hox, 2002; Kreft & de Leeuw, 1998; Raudenbush & Bryk, 2002).
+A multilevel mediation analysis must therefore additionally take into account variance attributable to the random effects of the model (team, in this case), and in so doing capture heterogeneity of variance in the indirect effect due to the level 2 variable \citep{Tofighi2014}.  To do this, each coefficient in the model must be random (denoted by subscript ``j''), so that the value of the coefficient varies across Level 2 units (team): \\
+
+\begin{equation}
+  M_{ij} \sim d_{Mj} + a_jX_{ij} + e_{Mij}
+\end{equation}
+
+\begin{equation}
+  Y_{ij} \sim d_{Yj} + b_jM_{ij} + 'c_jX_{ij} +  + e_{Yij}
+\end{equation}
+\bigskip
+
+Linear mixed effects regression models are fitted according to these equations, and estimates of mediation effects can be computed from these model parameters.  Subsequent mediation analyses were conducted using the ``mediation'' function of the Causal Mediation Analysis Package (version 4.4.5) in R.
+
 
 
 
@@ -449,6 +488,23 @@ An analysis of sex-differences revealed:
 
 \section{\label{app5:results}Results}
 \subsection{\label{app5:modelRobustness}Model Robustness Checks}
+
+
+\subsubsection{Prediction 1.a: Joint Action Success predicts Team Click}
+
+BASIC XY RELATIONSHIP? (Post-Tournament Data)
+
+In order to test the prediction that athlete perceptions of joint action are positively related to team click in the post-Tournament data, the following model was constructed:
+
+\begin{equation}
+  \begin{align*}
+    Team Click =  & Joint Action Success\\
+              & + Individual Performance Success \\
+              & + Objective Competence + Subjective Competence\\
+              & + TournamentPerformanceMeasures \\
+  \end{align*}
+\end{equation}
+\bigskip
 
 
 \begin{figure}[htbp]
@@ -615,3 +671,250 @@ An analysis of sex-differences revealed:
   \caption{Model Assumptions: M2.3a Change in Joint Action Success predicts change in Social Bonding}
   \label{fig:MLM23aAssumptions}
 \end{figure}
+
+
+
+
+
+
+\subsubsection{Additional Analysis: What predicts change in fusion to family?}
+Both verbal and pictorial measures of fusion to team did not vary significantly in pre-post Tournament measures (see descriptives Table ~\ref{tab:factorsPrePostSummary}).  Interestingly, the pictorial measure of fusion to family did increase significantly between pre- and post-Tournament measurements.  Exploratory analysis was performed to investigate the possible correlates of this increase. In line with the predictions of this study, we tested whether 1) changes in perceptions of Joint Action Success, 2) Team Click, and 3) their interaction (Joint Action Success x Team Click) predicted change in fusion to family.
+
+\myparagraph{$\Delta$Fusion Family $\sim$ $\Delta$Joint Action Success}
+The first model revealed a significant effect of change in perceptions of joint-action success and change in fusion to family, $\beta = .43$ ($95\% CI =  .07, .79$), $SE = .18$, $t(6.96) = 2.34$, $p = .$, $marginal R^2 = .11$, $conditional R^2 = .14$.  The distribution of residuals indicated a poor model fit, ($W = 0.90$, $p < .00001$), due to high kurtosis ($> 2$), but not skew (.30). Given that log-transformation was not appropriate for normalising kurtosis \citep{Glass1972}, the analysis was re-run after excluding influential outliers.  The adjusted model was a much better fit, with model residuals normally distributed around zero, ($W = 0.99$, $p-value < .60$), see Table ~\ref{tab:MLM25acFusioncJointAction}. The model confirmed a significant positive relationship between change in perceptions of joint-action success and change in fusion to family, $\beta = .36$ ($95\% CI =  .19, .52$), $SE = .08$, $t() = 4.36$, $p = .$, $marginal R^2 = .32$, $conditional R^2 = .32$.
+
+\input{images/MLM25acFusioncJointAction}
+
+%Need to do a multivariate regression here with family, country, team as outcomes?
+\myparagraph{$\Delta$fusionFamily $\sim$ $\Delta$Team Click}
+
+This model revealed that change in feelings of team-click was not a significant predictor of change in fusion to family, $\beta = .07$ ($95\% CI =  -.30, .44$), $SE = .19$, $t() = .38$, $p = .$, $marginal R^2 = .04$, $conditional R^2 = .07$. No other predictors in the model were statistically significant.
+
+\myparagraph{$\Delta$fusionFamily $\sim$  $\Delta$Joint Action Success $\times$ $\Delta$Team Click}
+
+The final model included an interaction between change in perceptions of joint-action success and change in feelings of team click as possible predictor of change in fusion to family.  Results of the model revealed that the interaction between change in perceptions of joint-action success and change in feelings of team-click was a significant positive predictor of change in fusion to family, $\beta = .22$ ($95\% CI =  .02, .41$), $SE = .10$, $t() = 2.22$, $p = .$, $marginal R^2 = .17$, $conditional R^2 = .23$. Model residuals were non-normally distributed, ($W = 0.93$, $p < .00001$).\\
+
+This result is consistent with ethnographic findings, whereby the family unit is elevated above the team and other priorities.  This results will be considered in more depth once ethnographic analysis has also been completed.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Analysis of post-Tournament data}
+%\subsubsection{Roadmap of post-Tournament Analysis}
+Analysis of the post-Tournament data proceeded by testing predictions associated with the overarching hypothesis, that higher perceptions of joint-action success would lead to higher levels of social bonding, mediated by feelings of ``team click''.
+
+The first step was to assess whether the two variables hypothesised to be relevant to perceived joint-action success, 1) perceptions of team performance (Joint Action Success) and 2) perceptions of team performance relative to prior expectations (Team Performance Expectations), predicted feelings of team click (Team Click). Controlling for athlete perceptions of individual performance success, subjective and objective technical competence, Tournament performance measures, and variation attributable to team membership (random effect), linear mixed-effect regression models were used to test the following predictions:
+
+\begin{description}
+  \item [Prediction 1.a] Joint Action Success  $\rightarrow$ Team Click
+  \item [Prediction 1.b] Team Performance Expectations $\rightarrow$ Team Click
+  \item [Prediction 1.c] Joint Action Success $\rightarrow$ Team Click, moderated by Team Performance Expectations
+\end{description}
+
+Next, the relationship between team click (Team Click) and social bonding (Social Bonding) was tested, controlling for subjective and objective technical competence, Tournament performance measures, and variation attributable to team membership (random effect):
+
+\begin{description}
+  \item [Prediction 2.a] Team Click $\rightarrow$ Social Bonding
+\end{description}
+
+Following this, the direct relationships between two predictor variables of interest (Joint Action Success and Team Performance Expectations) and social bonding was tested:
+
+\begin{description}
+  \item [Prediction 3.a] Joint Action Success $\rightarrow$ Social Bonding
+  \item [Prediction 3.b] Team Performance Expectations $\rightarrow$ Social Bonding
+\end{description}
+
+Finally, a mediation analysis was performed to formally test whether feelings of team click mediated a direct relationship between perceptions of joint-action success and social bonding.
+
+\begin{description}
+\item[Prediction 4.a Mediation Analysis] Joint Action Success $\rightarrow$ Team Click $\rightarrow$ Social Bonding
+\item[Prediction 4.b Mediation Analysis] Team Performance Expectations $\rightarrow$ Team Click $\rightarrow$ Social Bonding
+\end{description}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Post-Tournament Results}
+
+\subsubsection{1.a: Joint Action Success predicts Team Click}
+\subsubsection{1.b Team Performance Expectations predict Team Click}
+\subsubsection{1.c Team Performance Expectations moderates the effect of Joint Action Success on team Click}
+
+%Findings from the first collection of models generally supported predictions. Team performance factors\nobreakdashperceptions of team component performance success and team performance relative to prior expectations\nobreakdashbut not individual performance factors significantly predicted team click, when controlling for subjective and objective competence, and Tournament performance measures.  The interaction effect of joint-action success and team performance expectations violation on team click was not significant.  Additionally, the low coefficient value for the model in which teamPerformanceExpectations predicted team click was low, indicating that this result should be treated with some caution.  Taken together, however, these results provide evidence for the predictions that perceptions of joint-action success is linked to feelings of team click.  Team performance expectations do not interact with perceptions of joint action to enhance feelings of team click, but rather function independently to predict team click, with those athletes who were experienced more positive violations of expectations also reporting higher levels of team click.
+
+\subsubsection{2.a Team Click predicts Social Bonding}
+\subsubsection{3.a Joint Action Success predicts Social Bonding}
+\subsubsection{3.b Team Performance Expectations predicts Social Bonding} % very small effect
+\subsubsection{4.a Mediation analysis: Joint Action Success predicts Social Bonding, mediated by Team Click}
+\subsubsection{4.b Mediation analysis: Team Performance Expectations predicts Social Bonding, mediated by Team Click}
+
+%\begin{figure}[htbp]
+%  \includegraphics{finalDocuments/images/MLM4aResiduals.pdf}
+%  \includegraphics{finalDocuments/images/MLM4aQQNorm.pdf}
+%  \includegraphics{finalDocuments/images/MLM4aResiduals.pdf}
+%  \includegraphics{finalDocuments/images/MLM4aCooksD.pdf}
+%  \caption{M4a Mediation Analysis}
+%  \label{fig:MLM4aAssumptions}
+%\end{figure}
+
+% (Baer et al 2006: 147) One method for constructing CIs assumes normality for the sampling distributions of the estimates. Under this assumption, 95% CIs for the average indirect effect and average total effect are obtained as Alternatively, one could perform a null hypothesis test by forming the critical ratio of each estimate to its standard error and comparing the result with the critical value of the z distribution. In andthe as- sumption of normality for the sampling distributions will not hold exactly, given that aˆb ˆ is a product of normally distributed estimates (and hence will not be normal). The deviation from normality may be small enough, however, that the CIs or significance tests will still be reasonably accurate.
+
+%An alternative method for constructing CIs that may hold promise is the Monte Carlo (MC) method of MacKinnon et al. (2004). In this approach, the sampling distribution for the effect of interest is not assumed to be normal and is instead simulated from the model estimates and their asymptotic variances and covariances (a form of parametric bootstrap- ping). For instance, to simulate the sampling distribution of the average indirect effect, one would define a multinormal distribution with means equal to a ˆ, b ˆ, and ˆ aj ,bj and covariance matrix equal to the estimated covariance matrix of these estimates. One would then take random values from this multinormal distribution and plug them into Equation 5 to compute the average indirect effect. Collecting the results over many draws provides a simulated sampling distribution for the average indirect effect. One would then obtain conidence limits for the average indirect effect by taking the
+
+%Preacher, K. J., & Selig, J. P. (2010, July). Monte Carlo method for assessing multilevel Mediation: An interactive tool for creating confidence intervals for indirect effects in 1-1-1 multilevel models [Computer software]. Available from http://quantpsy.org/.
+
+
+\subsection{Discussion of Results: post-Tournament Analysis}
+The results of the post-Tournament survey responses generally support predictions concerning the relationships between perceptions of joint action success, team click and social bonding.  The relationship between team performance expectations, team click, and social bonding, however, is less convincing.  Model 1.b, in which Team Performance Expectations predicts Team Click, while statistically significant, generates a very small beta coefficient.  Model 3.b, in which the relationship between Team Performance Expectations and Social Bonding, is not robust to model assumptions, and thus compromises the validity of the mediation analysis (model 4.b).  These results could suggest that while more positive violations of team performance expectations do contribute to feelings of Team Click, they might not contribute as strongly to feelings of social bonding.
+
+Results show that, by contrast, perceived Joint Action Success is a strong predictor of both Team Click and Social bonding. Mediation analysis indicates that Team Click fully mediates the relationship between Joint Action Success and Social Bonding.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Roadmap of pre-post Tournament Analysis}
+Analysis of the pre-post Tournament data proceeded in the same manner as the post-Tournament data. The hypothesised relationship between joint-action success and social bonding was broken down into component relationships. \\
+
+First, changes in feelings of team click were analysed as a function of changes in 1) perceptions of team component performance (Joint Action Success Pre Post), 2) post-Tournament appraisal of team performance relative to prior expectations (Team Performance Expectations), and 3) the interaction between these two predictor variables.
+\bigskip
+\begin{description}
+  \item [Prediction 2.1.a] $\Delta$Joint Action Success  $\rightarrow$  $\Delta$Team Click
+  \item [Prediction 2.1.b] $\Delta$Team Performance Expectations $\rightarrow$ $\Delta$ Team Click
+  \item [Prediction 2.1.c] $\Delta$Joint Action Success $\rightarrow$ $\Delta$Team Click, moderated by $\Delta$Team Performance Expectations
+\end{description}
+
+Second, the change observed in social bonding (Social Bonding Pre Post) was analysed as a function of change in feelings of team click.
+\bigskip
+\begin{description}
+  \item [Prediction 2.2.a] $\Delta$Team Click $\rightarrow$ $\Delta$Social Bonding
+\end{description}
+
+Third, the direct relationships between predictor variables (change in perceptions of join-action success and appraisal of team performance relative to prior expectation) and change in social bonding was analysed:
+\bigskip
+\begin{description}
+  \item [Prediction 2.3.a] $\Delta$Joint Action Success $\rightarrow$ $\Delta$Social Bonding
+  \item [Prediction 2.3.b] $\Delta$Team Performance Expectations $\rightarrow$ $\Delta$Social Bonding
+\end{description}
+
+Finally, a mediation analysis was performed to formally test whether feelings of team click mediated a direct relationship between perceptions of joint-action success and social bonding.
+
+\begin{description}
+  \item[Prediction 2.4.a Mediation Analysis] $\Delta$Joint Action Success $\rightarrow$ $\Delta$Team Click $\rightarrow$ $\Delta$Social Bonding
+\end{description}
+
+\clearpage
+
+
+%\subsubsection{Pre-post Tournament Descriptive Analysis}
+
+
+
+
+\subsection{Analysis of pre to post-Tournament data}
+The predictions of the present study were further tested through an analysis of change in variables of interest between the pre- and post-Tournament surveys. By analysing pre- and post-Tournament responses, it was possible to investigate 1) to what extent variables of interest changed during the Tournament, and 2) whether pre-post changes in variables of interest were consistent with study predictions concerning the relationship between joint-action, team click, and social bonding.  When controlling for objective measures of success and feelings concerning individual performance, could change in social bonding be explained by changes in perceptions of joint-action success and/or changes in feelings of team click?
+
+
+
+
+\subsection{Model Selection}
+The statistics outlined above suggested that further analysis into the relationships between changing variables was appropriate. The number of observations available in the pre-post Tournament data were insufficient to construct a mixed-effects repeated measures design in which both the intercept and slope of observations could vary according to each individual athlete nested within their given team over time.\footnote{Allowing both the intercept and slope to vary requires twice the number of observations to estimate the random effects ($2x174 = 248$), whereas the available number of observations was only 198} Alternative models for suitable for repeated measures designs, such as RM-ANOVA or ANCOVA, are also incapable of allowing each fixed factor (the regression coefficient or slope) to vary randomly according to higher level factors (individual and team), and are also unable to handle unbalanced designs (in this case, due missing data for athletes across pre- and post-Tournament measurements). As a compromise, change scores in variables of interest (individual and team performance, team click, social bonding, and fatigue) were calculated by subtracting pre- from post-Tournament scores for each athlete. The calculation of change scores reduced the complexity of the data structure down to two levels of analysis, and meant that relationships between these change variables could be modelled using a linear mixed effects regression. Change scores of relevant factors were introduced to the model as fixed effects, and their slopes and intercepts were allowed to vary according to team.
+
+\subsection{Discussion of Results: pre- to post-Tournament Analysis}
+  The results of the pre-post Tournament analysis, like the post-Tournament analysis reported above, provide support for the predictions of this study.  Increases in positive perceptions of joint-action success correlated with a larger increase in feelings of team click pre-post Tournament: athletes who experienced a positive increase in perceptions of joint-action success also reported a positive increase in feelings of team click.  Likewise, those who experienced more positive violations of team performance expectations (measured following the Tournament) also experienced a higher increase in feelings of team click pre-post Tournament.  The interaction between Joint Action Success and Team Performance Expectations, however, was not significant. Further, increases in perception of joint action success (but not team performance expectations) significantly predicted increases in feelings of social bonding before and after the Tournament.  Mediation analysis revealed that variation in team click partially mediated a direct relationship between joint action success and social bonding, however this result was only a significant trend (p = .06).  Team Performance Expectations failed to satisfactorily predict social bonding, and so was not considered in a mediation analysis
+
+
+\subsection{Analysis \& results of overall Tournament data}
+In the final section of analysis, evidence for a relationship between joint-action success, team click, and social bonding was assessed across the entire data set. Given that the mid-Tournament survey was truncated to accord with athlete schedules and convenience following games, variables that could be analysed across the entire tournament were limited to those that appeared in the mid-Tournament surveys. Time constraints meant that component performance was not assessed in the mid-Tournament survey, and only appraisals of overall individual and team performance relative to prior expectations were included. The mid-Tournament survey contained three team click items (Unspoken Understanding, General Atmosphere, and Click Pictorial), three social bonding items (Emotional Support, Shared Goal, and Fusion Pictorial), and three fatigue items (Fatigue, Physical Exertion, Mental Exertion). These groups of variables were all subjected to data reduction (EFA) for the purposes of analysis.
+
+
+
+\subsubsection{Roadmap of Overall Tournament Analysis}
+Analysis of the overall Tournament data proceeded in the same step-wise fashion as analyses above. First, the relationship between Team Performance Expectations and team click Team Click was tested, controlling for Tournament performance, perceptions of individual performance, and competence.
+
+\begin{description}
+  \item [Prediction 3.1.b] Team Performance Expectations $\rightarrow$ Team Click
+\end{description}
+
+Next, the relationship between Team Click and Social Bonding was tested, followed by a test of the direct relationship between Team Performance Expectations and Social Bonding:
+
+\begin{description}
+  \item [Prediction 3.2.a] Team Click $\rightarrow$ Social Bonding
+  \item [Prediction 3.2.b] Team Performance Expectations $\rightarrow$ Social Bonding
+\end{description}
+\bigskip
+Finally, a mediation analysis was conducted, in which the interaction effect of Team Performance Expectations and team click on social bonding was tested.
+\bigskip
+\begin{description}
+\item[Prediction 3.4.a] Team Performance Expectations^*Team Click  $\rightarrow$ Social Bonding
+\item[Prediction 3.4.b] Mediation Analysis: Team Performance Expectations $\rightarrow$ Team Click $\rightarrow$ Social Bonding
+\end{description}
+\clearpage
+
+
+
+
+
+
+\subsection{Overall Tournament Results}
+In the final section, the entire data set was utilised to analyse a relationship between joint-action, team click, and social bonding. As described in the previous section, items relating to performance, team click, and social bonding that were consistent across the data set were reduced to factors in order to test study predictions. The repeated measures design of this analysis made it possible to statistically account for variation in responses due to repeated sampling of the same individual athlete throughout the Tournament, and due to the fact that each athlete was member of a specific team. The following models used a three-level structure, with responses across the four time points (level 1) nested within individual athletes (level 2), who were nested within individual teams (level 3). Both the slopes and intercepts were allowed to vary for every fixed effect of the model.
+
+
+
+
+
+
+
+
+
+
+
+
+
+%  plot() interaction
+
+
+
+
+
+
+\subsubsection{Discussion of overall Tournament results}
