@@ -454,23 +454,23 @@ This created difficulty when introducing covariates into the model, and subseque
 
 
 
-
-
-
-
-
-
-
-
-
 \subsection{Prediction 1.a: Joint Action Success predicts Team Click}
 
-BASIC XY RELATIONSHIP? (Post-Tournament Data)
+The prediction that more positive perceptions of Joint Action Success will correlate with Athletes' feelings of Team Click were analysed using the post-Tournament and pre- to post-Tournament subsets (Joint Action Success was only measured in the pre- and post-Tournament surveys).
 
+\subsubsection{Post-Tournament Survey}
+\myparagraph{Basic relationship}
+A scatterplot depicting the relationship between perceptions of components of team performance (Joint Action Success) and Team Click in the post-Tournament survey data is shown in Figure ~\ref{fig:jasClickBasicXY}. The plot indicates a strong positive relationship between Joint Action Success and Social Bonding.
 
+\begin{figure}[htbp]
+\includegraphics[width = \linewidth]{images/jasClickBasicXY.pdf}
+  \caption{Joint Action Success predicts Team Click (n = 118)}
+  \label{fig:jasClickBasicXY}
+\end{figure}
 
-\subsubsection{1.a Post-Tournament}
-In order to test the prediction that athlete perceptions of joint action are positively related to team click in the post-Tournament data, the following model was constructed:
+\myparagraph{Linear Model}
+In order to test the prediction that athlete perceptions of joint action are positively
+related to team click in the post-Tournament data, the following model was constructed:
 
 \begin{equation}
   \begin{align*}
@@ -482,28 +482,58 @@ In order to test the prediction that athlete perceptions of joint action are pos
 \end{equation}
 \bigskip
 
+Predictor variable (Joint Action Success), moderator variables (Objective Competence and Subjective Competence), and controls (Individual Performance Success and Tournament performance measures) were introduced incrementally as fixed effects.   Team was specified as a random effect, which allowed the slope and intercept of team click responses to vary by team.\footnote{To avoid issues of multicolinearity, Total Win Loss was excluded from the model, given the high pairwise correlation with Final Rank (.90). Pairwise correlation between all other predictor variables in the model was below .80}
 
-Did perceptions of success in joint-action predict feelings of team click?  The model revealed a significant positive effect of Joint Action Success on Team Click, $\beta = .69$ ($95\% CI =  0.46, 0.89$), $SE = 0.11$, $t(13.23) = 6.20$, $p < .01$, $marginal R^2 = .53$, $conditional R^2 = .60$\footnote{Team was specified as a random effect, which allowed the slope and intercept of team click responses to vary by team. The predictor variable (Joint Action Success), moderator variables (Objective Competence and Subjective Competence), and controls (Individual Performance Success and Tournament performance measures) were introduced incrementally as fixed effects. To avoid issues of multicolinearity, Total Win Loss was excluded from the model, given the high pairwise correlation with Final Rank (.90). Pairwise correlation between all other predictor variables in the model was below .80}  Perceptions of success in individual performance components ($\beta = -.03$, $SE = .09$, $t(97) = -.33$, $p = .74$), objective ($\beta = .05$, $SE = .08$, $t(84.41) = .61$, $p = .54$) and subjective competence ($\beta = .11$, $SE = .07$, $t(87.76) = 1.57$, $p = .12$), and Tournament performance measures (Final Rank: $\beta = .02$, $SE = .04$, $t(92.85) = .58$, $p = .57$; Total Minutes: $\beta = .01$, $SE = .003$, $t(88.68) = 1.84$, $p = .07$), and Total Points: $\beta = .004$, $SE = .005$, $t(88.39) = .89$, $p = .38$)) did not significantly predict team click.  The inclusion of these fixed effects in the model did, however, significantly improve the overall model fit, as indicated by a comparison of AIC/BIC values between interactions of the model (see Table ~\ref{tab:MLM1aJointActionSuccessClick}).  Model residuals were normally distributed around zero ($W = 0.97, p = .03$), and individual cases had low influence on the model (Cook's Distances all < .25, see Appendix Figure ~\ref{fig:MLM1aAssumptions}). Results of this model support the prediction that athletes' perceptions of joint-action success correlate positively with feelings of ``team click.''
+The model revealed a significant positive effect of Joint Action Success on Team Click, $\beta = .69$ ($95\% CI =  0.46, 0.89$), $SE = 0.11$, $t(13.23) = 6.20$, $p < .01$, $marginal R^2 = .53$, $conditional R^2 = .60$. All other fixed effects did not significantly predict team click, but the inclusion of these fixed effects in the model did significantly improve the overall model fit, as indicated by a comparison of AIC/BIC values between interactions of the model (see Table ~\ref{tab:MLM1aJointActionSuccessClick}).  Model residuals were normally distributed around zero ($W = 0.97, p = .03$), and individual cases had low influence on the model (Cook's Distances all < .25, see Appendix ~\ref{app5:tournamentSurvey} Figure ~\ref{fig:MLM1aAssumptions}). Results of this model support the prediction that athletes' perceptions of joint-action success correlate positively with feelings of team click.  The model-adjusted slope is included in scatterplot ~\ref{fig:jasClickModelSLope}.
+
+%Individual Performance Success ($\beta = -.03$, $SE = .09$, $t(97) = -.33$, $p = .74$), Objective ($\beta = .05$, $SE = .08$, $t(84.41) = .61$, $p = .54$) and Subjective competence ($\beta = .11$, $SE = .07$, $t(87.76) = 1.57$, $p = .12$), and Tournament performance measures (Final Rank: $\beta = .02$, $SE = .04$, $t(92.85) = .58$, $p = .57$; Total Minutes: $\beta = .01$, $SE = .003$, $t(88.68) = 1.84$, $p = .07$), and Total Points: $\beta = .004$, $SE = .005$, $t(88.39) = .89$, $p = .38$)) did not significantly predict team click.
 
 \input{images/MLM1aJointActionSuccessClick}
 
 
+\begin{figure}[htbp]
+\includegraphics[width = \linewidth]{images/jasClickModelSlope}
+  \caption{Joint Action Success predicts Team Click. The red slope is the adjusted slope of the Linear Model}
+  \label{fig:jasClickModelSLope}
+\end{figure}
 
-\subsubsection{1.a Pre- to Post-Tournament change}
 
-  2.1.a $\Delta$Team Click $\sim$ $\Delta$Joint Action Success:
- Controlling for Tournament performance, measures and objective and subjective competence (fixed effects), and team-level variance (random effect), the model revealed a significant positive relationship between change in perceptions of joint-action success and change in feelings of team click, $\beta = .52$ ($95\% CI =  .34, .71$), $SE = 0.09$, $t(11.32) = 5.55$, $p < .001$, $marginal R^2 = .40$, $conditional R^2 = .47$ (see Table ~\ref{tab:MLM21aJointActionSuccesscClick} for results of all iterations of the model).  Model residuals were normally distributed around zero ($W = 0.98228, p = .22$), and individual cases had low influence on the model (Cook's Distances all < .20, see Appendix Figure \ref{fig:MLM21aAssumptions}).  This model supported the prediction that more positive perceptions of joint-action success correlate with stronger feelings of team click, by showing that athletes who experienced a positive increase in perceptions of joint-action success also reported a positive increase in feelings of team click throughout the Tournament.
+
+
+\subsubsection{Pre- to Post-Tournament change}
+To further explore the hypothesised relationship between Joint Action Success and Team Click, pre- to post-Tournament change in perceptions of Joint Action Success and Team Click was analysed.
+
+\myparagraph{Basic relationship}
+Figure ~\ref{fig:jasClickDeltaBasicXY} displays a scatterplot depicting a positive relationship between change in perceptions of Joint Action Success and change in feelings of team click between the pre- and post-Tournament surveys.
+
+\begin{figure}[htbp]
+\includegraphics[width = \linewidth]{images/jasClickDeltaBasicXY}
+  \caption{Joint Action Success predicts Team Click. The red slope is the adjusted slope of the Linear Model}
+  \label{fig:jasClickDeltaBasicXY}
+\end{figure}
+
+
+\myparagraph{Linear Model}
+Controlling for Tournament performance, measures and objective and subjective competence (fixed effects), and team-level variance (random effect), the model revealed a significant positive relationship between change in perceptions of joint-action success and change in feelings of team click, $\beta = .52$ ($95\% CI =  .34, .71$), $SE = 0.09$, $t(11.32) = 5.55$, $p < .001$, $marginal R^2 = .40$, $conditional R^2 = .47$ (see Table ~\ref{tab:MLM21aJointActionSuccesscClick} for results of all iterations of the model).  Model residuals were normally distributed around zero ($W = 0.98228, p = .22$), and individual cases had low influence on the model (Cook's Distances all < .20, see Appendix Figure \ref{fig:MLM21aAssumptions}).  This model supported the prediction that more positive perceptions of Joint Action Success correlate with stronger feelings of team click, by showing that athletes who experienced a positive increase in perceptions of joint-action success also reported a positive increase in feelings of team click throughout the Tournament.
+The model-adjusted slope is included in scatterplot ~\ref{fig:jasClickDeltaModelSLope}.
 
 \input{images/MLM21acJointActionSuccesscClick}
 
+\begin{figure}[htbp]
+\includegraphics[width = \linewidth]{images/jasClickDeltaModelSlope}
+  \caption{Change in Joint Action Success predicts change in Team Click. The red slope is the adjusted slope of the Linear Model}
+  \label{fig:jasClickDeltaModelSLope}
+\end{figure}
 
 
 
 
 
 
-\subsubsection{1.a Overall Tournament}
-NA
+
+
+
+
 
 
 
@@ -512,9 +542,20 @@ NA
 
 \subsection{Prediction 1.b: Team Performance Expectations predicts Team Click}
 
-  \subsubsection{1.b Post-Tournament}
+The prediction that more positive violations of team performance expectations (Team Performance Expectations) will correlate with higher feelings of Team Click was analysed using the 1) post-Tournament, 2) pre- to post-Tournament, and 3) overall Tournament subsets (using the three-item Team Click Factor).
 
-  To assess the prediction that more positive violation of expectations around team performance correlates with higher levels of team click, the following model was constructed:
+\subsubsection{Post-Tournament}
+    \myparagraph{Basic relationship}
+A scatterplot depicting the relationship between Team Performance Expectations and Team Click in the post-Tournament survey data is shown in Figure ~\ref{fig:teamPerfClickBasicXY}. The plot indicates a strong positive relationship between Joint Action Success and Social Bonding.
+
+\begin{figure}[htbp]
+\includegraphics[width = \linewidth]{images/teamPerfClickBasicXY.pdf}
+  \caption{Team Performance Expectations predicts Team Click (n = 118)}
+  \label{fig:teamPerfClickBasicXY}
+\end{figure}
+
+  \myparagraph{Linear Model}
+To assess the prediction that more positive violation of expectations around team performance correlates with higher levels of team click, the following model was constructed:
 
   \begin{equation}
     \begin{align*}
@@ -525,33 +566,56 @@ NA
     \end{align*}
   \end{equation}
 
-  Expectations around individual performance, objective and subjective competence, and Tournament performance measures were introduced to the model as controls (fixed effects), while team was introduced as a random (level 2) effect.
+Expectations around individual performance, objective and subjective competence, and Tournament performance measures were introduced to the model as controls (fixed effects), while team was introduced as a random (level 2) effect.  Results of the model revealed a significant positive relationship between Team Performance Expectations and Team Click, $\beta = .52$ ($95\% CI =  0.28, 0.73$), $SE = 0.12$, $t(4.23) = 4.23$, $p < .001$, $marginal R^2 = .40$, $conditional R^2 = .56$.  All other fixed effects did not significantly predict team click, but did improve the model fit, as indicated by the reduced AIC and increased marginal $R^2$ value (see Appendix Table ~\ref{tab:MLM1bteamExpectationsClick} for the various iterations of the model).   Model residuals were normally distributed around zero ($W = 0.98, p = .30$), and individual cases had low influence on the model (Cook's Distances all < .25, see Appendix ~\ref{app5:tournamentSurvey} Figure ~\ref{fig:MLM1bAssumptions}).  These results provide support for the prediction that more positive violations of expectations around team performance predict higher feelings of team click.  The slope of the linear model is included in scatterplot ~\ref{}
 
-  Results of the model revealed a significant positive relationship between Team Performance Expectations and Team Click, $\beta = .52$ ($95\% CI =  0.28, 0.73$), $SE = 0.12$, $t(4.23) = 4.23$, $p < .001$, $marginal R^2 = .40$, $conditional R^2 = .56$.
-  Expectations around individual performance ($\beta = .04$, $SE = .08$, $t(86.26) = .46$, $p = .65$), objective ($\beta = .01$, $SE = .09$, $t(84.89) = .13$, $p = .89$) and subjective competence ($\beta = .12$, $SE = .07$, $t(91) = 1.62$, $p = .11$), and Tournament performance measures (Final Rank: $\beta = .08$, $SE = .05$, $t(44.33) = 1.72$, $p = .09$;
-  Total Minutes: $\beta = .004$, $SE = .003$, $t(87.05) = 1.00$, $p = .32$); Total Points: $\beta = .001$, $SE = .005$, $t(84.94) = .21$, $p = .84$)) did not significantly predict team click.  The inclusion of these effects did, however, improve the model fit, as indicated by the reduced AIC and increased marginal $R^2$ value (see Appendix Table ~\ref{tab:MLM1bteamExpectationsClick} for the various iterations of the model).  Model residuals were normally distributed around zero ($W = 0.98, p = .30$), and individual cases had low influence on the model (Cook's Distances all < .25, see Appendix Figure ~\ref{fig:MLM1bAssumptions}).  These results provide support for the prediction that more positive violations of expectations around team performance predict feelings of team click.
-
+%Expectations around individual performance ($\beta = .04$, $SE = .08$, $t(86.26) = .46$, $p = .65$), objective ($\beta = .01$, $SE = .09$, $t(84.89) = .13$, $p = .89$) and subjective competence ($\beta = .12$, $SE = .07$, $t(91) = 1.62$, $p = .11$), and Tournament performance measures (Final Rank: $\beta = .08$, $SE = .05$, $t(44.33) = 1.72$, $p = .09$; Total Minutes: $\beta = .004$, $SE = .003$, $t(87.05) = 1.00$, $p = .32$); Total Points: $\beta = .001$, $SE = .005$, $t(84.94) = .21$, $p = .84$)) did not significantly predict team click.
 
   \input{images/MLM1bteamExpectationsClick}
 
-  \subsubsection{1.b Pre- to Post-Tournament change}
+  \begin{figure}[htbp]
+  \includegraphics[width = \linewidth]{images/teamPerfClickModelSlope.pdf}
+    \caption{Team Performance Expectations predicts Team Click. The red slope is the adjusted slope of the Linear Model}
+    \label{fig:teamPerfClickModelSlope}
+  \end{figure}
 
+
+
+
+
+\subsubsection{Pre- to Post-Tournament change}
+
+    \myparagraph{Basic relationship}
+Given that the item measuring Athlete perceptions of overall team performance in the pre-Tournament survey was not framed in terms of expectation violation (but instead in terms of more or less ``good'' or ``poor''), it was not possible to directly compare the pre- and post-Tournament measures.  Instead, the post-Tournament measure of Team Performance Expectation violation was analysed in terms of its relationship to a change in feelings of team click between pre- and post-Tournament measurements. Did more positive violations of team performance expectations following the Tournament predict an increase in feelings of team click? A scatterplot depicting the relationship between Team Performance Expectations and change in Team Click is shown in Figure ~\ref{fig:teamPerfClickDeltaBasicXY}. The plot indicates a positive (albeit less pronounced) relationship between Team Performance Expectations and change in Team Click.
     %\subsubsection{2.1.b $\Delta$Team Click $\sim$ Team Performance Expectations}
 
-    The relationship between team performance relative to prior expectations (recorded following the Tournament) and Team Click was analysed. The model revealed a significant positive relationship between Team Performance Expectations and change in Team Click,  $\beta = .27$ ($95\% CI =  .05, .49$), $SE = 0.11$, $t(32.97) = 2.36$, $p = .02$, $marginal R^2 = .12$, $conditional R^2 = .22$, indicating that athletes who were more positive about their appraisals of team performance following the Tournament on average experienced an increase in feelings of team click.
 
-    Examination of model residuals revealed that they were not normally distributed around zero ($W = 0.95, p = .001$), due to positive skew ($.85$) (see Appendix Figure ~\ref{fig:MLM21bAssumptions}).  Log-transformation of the outcome variable did not markedly improve the non-normality of residuals, ($Shapiro-Wilk = 0.96, p = .008$).  Instead, exclusion of outliers according to Tukey's method improved the model fit such that residuals were normally distributed, ($Shapiro-Wilk = 0.99, p = .72$), and individual cases had low influence on the model (Cook's Distances all < .10, see Appendix Figure ~\ref{fig:MLM21bOutAssumptions}).
-    The adjusted model supported the original significant positive effect of Team Performance Expectations on Team Click, $\beta = .36$ ($95\% CI =  .16, .55$), $SE = 0.10$, $t(9.78) = 3.66$, $p < .01$, $marginal R^2 = .16$, $conditional R^2 = .55$.  See Table ~\ref{tab:MLM21bOutLogComparison} for a comparison of adjusted models. These results confirm the prediction that those who experience more positive violations around team performance also experience an higher levels of Team Click---shown in this case by an increase in feelings of Team Click between pre- and post-Tournament measurements.
+    \myparagraph{Linear Model}
+The relationship between team performance relative to prior expectations (recorded post-Tournament) and Team Click was analysed using a linear mixed effects model. The model revealed a significant positive relationship between Team Performance Expectations and change in Team Click,  $\beta = .27$ ($95\% CI =  .05, .49$), $SE = 0.11$, $t(32.97) = 2.36$, $p = .02$, $marginal R^2 = .12$, $conditional R^2 = .22$, indicating that athletes who were more positive about their appraisals of team performance following the Tournament on average experienced an increase in feelings of team click.
 
+Examination of model residuals revealed that they were not normally distributed around zero ($W = 0.95, p = .001$), due to positive skew ($.85$) (see Appendix Figure ~\ref{fig:MLM21bAssumptions}).  Log-transformation of the outcome variable did not markedly improve the non-normality of residuals, ($Shapiro-Wilk = 0.96, p = .008$).  Instead, exclusion of outliers according to Tukey's method improved the model fit such that residuals were normally distributed, ($Shapiro-Wilk = 0.99, p = .72$), and individual cases had low influence on the model (Cook's Distances all < .10, see Appendix Figure ~\ref{fig:MLM21bOutAssumptions}).
+The adjusted model supported the original significant positive effect of Team Performance Expectations on Team Click, $\beta = .36$ ($95\% CI =  .16, .55$), $SE = 0.10$, $t(9.78) = 3.66$, $p < .01$, $marginal R^2 = .16$, $conditional R^2 = .55$.
+See Appendix ~\ref{app5:tournamentSurvey} Table ~\ref{tab:MLM21bOutLogComparison} for a comparison of adjusted models. These results confirm the prediction that those who experience more positive violations around team performance also experience an higher levels of Team Click---shown in this case by an increase in feelings of Team Click between pre- and post-Tournament measurements.  The slope of the adjusted model is included in the scatterplot of figure ~\ref{fig:teamPerfClickDeltaModelSlope} purposes of comparison
 
-    %The adjusted model also revealed a significant negative effect of violations of expectations around \textit{individual} performance on team click, $\beta = -.008 (95\% CI =  -.01, .001), SE = 0.004, t(91.79) = -2.28, p = .03$,  which could suggest that athletes who experienced more positive violations about their own performance did not feel the team click as strongly.
+%The adjusted model also revealed a significant negative effect of violations of expectations around \textit{individual} performance on team click, $\beta = -.008 (95\% CI =  -.01, .001), SE = 0.004, t(91.79) = -2.28, p = .03$,  which could suggest that athletes who experienced more positive violations about their own performance did not feel the team click as strongly.
 
     \input{images/MLM21bcTeamPerfExpcClick}
     \input{images/MLM21bcTeamPerfExpcClickAdjusted}
 
 
+    \begin{figure}[htbp]
+    \includegraphics[width = \linewidth]{images/teamPerfClickDeltaModelSlope.pdf}
+      \caption{Team Performance Expectations predicts change in Team Click. The red slope is the outlier-adjusted slope of the Linear Model}
+      \label{fig:teamPerfClickDeltaModelSlope}
+    \end{figure}
+
+
+
+
+
+
+
     %Low values for both of these regression coefficients...
-  \subsubsection{1.b Overall Tournament}
+  \subsubsection{Overall Tournament}
 
   %\subsubsection{3.1.b Team Click $\sim$ Team Performance Expectations}
 
@@ -573,6 +637,15 @@ NA
    Results of the model suggest that, when controlling for individual performance, measures of objective and subjective competence, and Tournament performance, athletes whose expectations around team performance were more positively violated also experienced stronger feelings of team click. Overall, it also appears that more positive expectations about individual performance, and higher levels of self-reported technical competence predicted higher levels of team click.
 
    \input{images/MLM31ateamPerfClickTournament}
+
+
+
+
+
+
+
+
+
 
 
 
