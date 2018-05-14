@@ -1,6 +1,6 @@
 % File name: trainingExperimentFinalAnalysis.R
 % Author: Jacob Taylor
-% Date: 20/09/2017
+% Date Created: 20/09/2017
 % Description: A script for analysing complete data from trainingExperiment in Weihai and Beijing during August 2016.
 % This analysis incorporates performance data coded from video recordings of each experimental session.
 
@@ -21,7 +21,8 @@
 \addbibresource{references.bib}
 
 %%In-text \Sexpr{} setup for lmer:
-\newcommand{\betaest}{\beta = }
+\newcommand{\betavec}{\beta = }
+\newcommand{\betavec}{{\bm\beta}}
 \newcommand{\CIstart}{(95\% CI =}
 \newcommand{\CIfinish}{),}
 \newcommand{\SE}{SE =}
@@ -46,28 +47,43 @@
 
 
 <<standardSettings, echo=FALSE, results='hide'>>=
-
+#update.packages("knitr")
   library(knitr)
   opts_chunk$set(warnings = FALSE, messages = FALSE, results = "hide", fig.width=3.5, fig.height=3.5,fig.align='center')
   opts_knit$set(root.dir = "/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images")
 
+  #install.packages("tidyverse")
+  library(tidyverse)
+  # install.packages("xtable")
   library(xtable) # to make Latex tables
+  #install.packages("tableone")
   library(tableone)
+  #install.packages("apa")
   library(apa)
-  library(ggplot2)
   library(lme4)
+  #install.packages("optimx")
   library(optimx)
-  #library(lmerTest)
+  library(lmerTest)
+  #install.packages("mediation")
   library(mediation)
+  #install.packages("car")
   library(car)
+  install.packages("HLMdiag")
   library(HLMdiag)
-  library(dplyr)
-  library(plyr)
-  library(ICC)
+  #install.packages("influence.ME")
   library(influence.ME)
+  #install.packages("piecewiseSEM")
+  update.packages("piecewiseSEM")
   library(piecewiseSEM)
   library(mediation)
+  #install.packages("Hmisc")
+  library(stats)
+  #install.packages("ICC")
+  library(ICC)
+  #install.packages("broom")
+  library(broom)
 
+  
   ##papaja for APA format:
  devtools::install_github("crsh/papaja")
 
@@ -79,9 +95,37 @@
         axis.line=element_line(),
         text=element_text(family='Times'),
         legend.title=element_blank())
+
+
+            #-----------------------Correlation Table----------------------#
+            library(xtable)
+            corstarsl <- function(x){
+              require(Hmisc)
+              x <- as.matrix(x)
+              R <- rcorr(x)$r
+              p <- rcorr(x)$P
+
+              ## define notions for significance levels; spacing is important.
+              mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "* ", " ")))
+              ## trunctuate the matrix that holds the correlations to two decimal
+              R <- format(round(cbind(rep(-1.11, ncol(x)), R), 2))[,-1]
+              ## build a new matrix that includes the correlations with their apropriate stars
+              Rnew <- matrix(paste(R, mystars, sep=""), ncol=ncol(x))
+              diag(Rnew) <- paste(diag(R), " ", sep="")
+              rownames(Rnew) <- colnames(x)
+              colnames(Rnew) <- paste(colnames(x), "", sep="")
+              ## remove upper triangle
+              Rnew <- as.matrix(Rnew)
+              Rnew[upper.tri(Rnew, diag = TRUE)] <- ""
+              Rnew <- as.data.frame(Rnew)
+              ## remove last column and return the matrix (which is now a data frame)
+              Rnew <- cbind(Rnew[1:length(Rnew)-1])
+              return(Rnew)
+            }
+
 @
 <<dataInput, eval=TRUE, echo=FALSE, results='hide'>>=
-  setwd("/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images")
+  #setwd("/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images")
   # read in complete data from experiment:
   tlc <- read.csv("trainingLongComplete.csv", na.strings = c("", "NA", "n/a"))
   twc <- read.csv("trainingWideComplete.csv", na.strings = c("", "NA", "n/a"))
@@ -99,7 +143,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ABSTRACT%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Abstract}
-This study further tested the relationship, hypothesised in this dissertation, between joint action, team click, and social bonding in a controlled experimental environment.  An experiment was designed to test the prediction, partly confirmed in an in situ survey study, that athletes who experienced higher quality joint action would also experience higher levels of team click and social bonding.  58 Professional Chinese rugby players (Men = \Sexpr{length(which(twc$sex == 0))}) participated in a between-subjects design in which athletes' expectations for joint action training drill \citep[``Invasion drill''][]{Passos2011}) were manipulated in one of two conditions.  Athletes in the ``low difficulty'' condition were primed with information to suggest that the training drill would require minimal rugby-sepcific individual and joint-action competence (i.e., 2/10 difficulty rating).  By contrast, in the ``high difficulty'' condition, athletes were primed to expect the training drill to be relatively difficult (8/10 difficulty rating). Pre- and post-experiment surveys were conducted, measuring athletes' perceptions of main variables of interest (individual and group performance, team click, and social bonding (both to the training group and the team more generally)), as well as athlete personality type and states of athlete states of arousal, fatigue, and injury.  Video footage of each experimental session was also recorded to derive an objective measure of interpersonal coordination not reliant on self-report. It was predicted that athletes in the ``high-difficulty'' condition would experience higher levels of team click and social bonding due to higher positive violation of expectations around group performance.  Athletes in the ``low difficulty'' condition would on average experience less strongly the ``click'' of joint action and social bonding because they would not experience the same level of positive violations of expectations around group performance.
+This study further tested the hypothesised relationship between joint action, team click, and social bonding in a controlled experimental environment.  An experiment was designed to test the prediction, partly confirmed in an \textit{in situ} survey study (Chapter 8 HYPERLINK), that athletes who perceived higher quality team performance in joint action would also experience higher levels of team click and social bonding.  58 Professional Chinese rugby players (Men = \Sexpr{length(which(twc$sex == 0))}) participated in a between-subjects design in which athletes' expectations for joint action training drill \citep[``Invasion drill''][]{Passos2011}) were manipulated in one of two conditions.  Athletes in the ``low difficulty'' condition were primed with information to suggest that the training drill would require minimal rugby-sepcific individual and joint-action competence (i.e., 2/10 difficulty rating).  By contrast, in the ``high difficulty'' condition, athletes were primed to expect the training drill to be relatively difficult (8/10 difficulty rating). Pre- and post-experiment surveys were conducted, measuring athletes' perceptions of main variables of interest (individual and group performance, team click, and social bonding (both to the training group and the team more generally)), as well as athlete personality type and states of athlete states of arousal, fatigue, and injury.  Video footage of each experimental session was also recorded to derive an objective measure of interpersonal coordination not reliant on self-report. It was predicted that athletes in the ``high-difficulty'' condition would experience higher levels of team click and social bonding due to higher positive violation of expectations around group performance.  Athletes in the ``low difficulty'' condition would on average experience less strongly the ``click'' of joint action and social bonding because they would not experience the same level of positive violations of expectations around group performance.  Results provided some confirmation of these predictions.
 
 %Video footage was analysed for evidence of dynamic coupling between co-actors as well as defenders \citep{Schmidt2011,Richardson2012,Passos2012}, and these data were compared to psychological measures in order to explore psychological correlates of effective  interpersonal movement coordination in joint action.
 
@@ -126,9 +170,9 @@ This study further tested the relationship, hypothesised in this dissertation, b
 
 
 \section{Introduction}
-When athletes coordinate their behaviours they do so by making predictions about the state of the world.  In the case of joint action, in which there are many moving parts, predictions rely on the behaviours of others for their accuracy. Annecdote and observation in team sport and other joint activities involving complex realtime coordination of behaviours around technically demanding tasks, suggests that the phenomenology associated with co-actors' predictions clicking into place is an extremely powerful social bonding agent.  Perceptions of joint action
+When athletes coordinate their behaviours they do so by making predictions about the state of the world.  In the case of joint action, in which there are many moving parts, predictions rely on the behaviours of co-actors for their accuracy. Annecdote and observation in team sport and other joint activities involving complex realtime coordination of behaviours around technically demanding tasks suggests that the phenomenology associated with co-actors' predictions ``clicking'' into place is an extremely powerful social bonding agent.
 
-The previous chapter presented empirical evidence of a relationship between perceptions of joint action success and social bonding, fully mediated by the phenomenon of ``team click.'' A relationship between violation of expectations surrounding team performance and feelings of team click was also observed, but a model of the relationship between team performance expectation vioaltion and social bonding did not reliably fit the data.  The results of this naturalistic \textit{in situ} study are noteworthy as they provide evidence for the prediction that perceptions of joint action influence psychological processes of affiliation and connection with teammates, possibly via the mediating phenomenon of ``team click.''  Controlled experimental research is needed in order to more directly access causal mechanisms that underpin the relationship between joint action and social bonding.  If perceived joint action success and positive violation of expectation around team performance are the two candidate predictors of team click and social bonding, how is it possible to experimentally manipulate conditions conducive to maximising these two factors in joint action? In addition, how is it possible to isolate joint action from other potential sources of information regarding the team and its performance such as explicit feedback from coaches and other players surrounding performance and joint action outcome? This experimental study was designed with these considerations in mind.
+The previous chapter presented empirical evidence of a relationship between perceptions of joint action success and social bonding, fully mediated by the phenomenon of ``team click.'' A relationship between violation of expectations surrounding team performance and feelings of team click was also observed, but a model of the relationship between team performance expectation vioaltion and social bonding did not reliably fit the data.  The results of this naturalistic \textit{in situ} study are noteworthy as they provide evidence for the prediction that perceptions of joint action influence psychological processes of affiliation and connection with teammates, possibly via the mediating construct of ``team click.''  Controlled experimental research is needed in order to more directly access causal mechanisms that underpin the relationship between joint action and social bonding.  If perceived joint action success and positive violation of expectation around team performance are the two candidate predictors of team click and social bonding, how is it possible to experimentally manipulate conditions conducive to maximising these two factors in joint action? In addition, how is it possible to isolate joint action from other potential sources of information regarding the team and its performance such as explicit feedback from coaches and other players surrounding performance and joint action outcome? This experimental study was designed with these considerations in mind.
 
 The Lit Review:
 %begin by describing a phenomenon in a general way along with several studies that demonstrate it, then describing two or more competing theories of the phenomenon, and finally presenting a hypothesis to test one or more of the theories.
@@ -155,20 +199,11 @@ These considerations lead to the hypothesis that expectations of higher levels o
 \item[Prediction 4:] Feelings of group click will mediate a relationship between more positive violations of expectations around group performance and social bonding to the group
 \end{description}}
 
-
 A between-subjects experimental design was used, in which expectations of technical difficulty was manipulated in one of two conditions, ``high difficulty'' and ``low difficulty'' condition.  Surveys measuring athletes' perceptions of joint action success relative to prior expectations, team click, and feelings of social bonding to the specific training group were recorded both before and after the experiment.
 
 %The closing of the introduction—typically the final paragraph or two—usually includes two important elements. The first is a clear statement of the main research question or hypothesis. This statement tends to be more formal and precise than in the opening and is often expressed in terms of operational definitions of the key variables. The second is a brief overview of the method and some comment on its appropriateness.
 
 %These considerations lead to the hypothesis that the more bystanders to an emergency, the less likely, or the more slowly, any one bystander will intervene to provide aid. To test this proposition it would be necessary to create a situation in which a realistic “emergency” could plausibly occur. Each subject should also be blocked from communicating with others to prevent his getting information about their behavior during the emergency. Finally, the experimental situation should allow for the assessment of the speed and frequency of the subjects’ reaction to the emergency. The experiment reported below attempted to fulfill these conditions (p. 378).
-
-
-
-
-
-
-
-
 
 
 
@@ -233,6 +268,8 @@ M(age) =
 
 This study was approved by the University of Oxford’s Central University Research Ethics Committee (SAME/CUREC1A/15-059).
 
+
+
 \subsection{Materials}
 
 \begin{figure}[htbp]
@@ -250,23 +287,24 @@ One trial consisted of one attempt by the attacking sub-group to penetrate two d
 
 
 \subsubsection{Experimental Conditions: high and low difficulty}
-Two different pre-experiment introductions were developed for the same training drill in order to manipulate athletes’ expectations around the technical difficulty of the impending joint-action task.  Athletes in the ``high difficulty'' condition learned that the overall average difficulty rating for the training drill provided by World Rugby coaches and athletes was 77.5/100, or approximately 8 out of 10.  Athletes were told that the drill would require an extension of their abilities as individuals and as a training group (see appendix for full script).  Athletes in the ``low difficulty'' condition, by contrast, learned that they would be participating in an ostensibly different drill with an overall average difficulty rating (provided by World Rugby coaches and athletes) of 22.5/100, or approximately 2 out of 10.  In reality, the training drill was exactly the same for each experimental session, and the relative difficulty of this drill was estimated in a pilot study to be approximately 5/10, see APPENDIX).  By either over- or under-rating the difficulty of the impending training drill, it was hoped that athletes' expectations around certainty of performance would be altered, such that athletes in the high difficulty condition would experience on average higher positive violation of expectations around team performance, whereas athletes in the low difficulty condition would experience less positive violations of expectations around team performance. Surveys were designed and administered using Qualtrics software (Qualtrics version 9, Provo, UT). Survey data were processed and analysed using the R environment (R Development Core Team, 2006).
+Two different pre-experiment primes were developed for the same training drill in order to manipulate athletes’ expectations around the technical difficulty of the impending joint-action task.  Athletes in the ``high difficulty'' condition learned that the overall average difficulty rating for the training drill, provided by World Rugby coaches and athletes, was 77.5/100, or approximately 8 out of 10.  Athletes were told that the drill would require an extension of their abilities as individuals and as a training group (see appendix for full script).  Athletes in the ``low difficulty'' condition, by contrast, learned that they would be participating in an ostensibly different drill with an overall average difficulty rating (provided by World Rugby coaches and athletes) of 22.5/100, or approximately 2 out of 10.  In reality, the training drill was exactly the same for each experimental session, and the relative difficulty of this drill was estimated in a pilot study to be approximately 5/10, see APPENDIX).  By either over- or under-rating the difficulty of the impending training drill, athletes' expectations around certainty of performance would be altered, such that athletes in the high difficulty condition would experience on average higher (positive) violation of expectations around team performance, whereas athletes in the low difficulty condition would on average experience less positive violations of expectations around team performance. Surveys were designed and administered using Qualtrics software (Qualtrics version 9, Provo, UT). Survey data were processed and analysed using the R environment (R Development Core Team, 2006).
 
 
 \subsubsection{Measures}
 
-Surveys were administered at three time points: 1) one day before the experiment (Baseline), 2) immediately before the experiment after receiving the experimental prime (Pre-Experiment), and 3) once immediately following the completion of the experiment (Post-Experiment)(see ~\ref{tab:surveyItemsByTime}).
+\myparagraph{Surveys}
+Surveys were administered at three time points: 1) one day before the experiment (Baseline), 2) immediately before the experiment after receiving the experimental prime (Pre-Experiment), and 3) once immediately following the completion of the experiment (Post-Experiment)(see ~\ref{tab:surveyItemsByTime}).  Consistent with the previous study (Chapter 8), athletes responded to questions about 1) perceptions of components and overall individual and team performance in joint action, 2) feelings associated with ``team click'' in joint action, and feelings of social bonding and group membership.  In addition, athletes responded to survey items designed to measure possible moderators of the relationship between joint action and social bonding, namely: perceptions of arousal, fatigue, injury status, and personality type.
 
 At Baseline, athletes were asked about their impressions of recent individual performance and the performance of their province team as a whole.  Survey items included questions relating to specific components of on-field performance (e.g., team components: Attack, defence, onfield communication, and support play; individual components: Passing technique, one-on-one tackling, effectiveness in contact areas) as well as items relating to overall impressions of performance, for example: ``How well do you feel your team has been performing in training and competition over the past month?'' (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'').  Athletes also responded to questions about feelings of team click and social bonding with their team as a whole. In addition, the Baseline survey also included items concerning basic personal information, current injury status, subjective and objective measures of tehcnical competence, and personality type.
-For a full explanation of survey items measured at Baseline, see Appendix ~\ref{} Section ~\ref{} .
+For a full explanation of survey items measured at Baseline, see Chapter 6 (Introduction to Part B) and Appendix ~\ref{} Section ~\ref{} .
 
-At time 2, Pre-Experiment, athletes were asked questions about feelings and expectations concerning their individual performance and the performance of their specific training group in the impending training drill.
-For example,  athletes were asked ``How do you feel \textit{right now} about your individual performance (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'')''.  Athletes were also asked a series of questions about feelings of team click and social bonding to their specific training group. For team click, for example, athletes were asked questions like: ``How do you feel the unspoken understanding is between the training group today?'' (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'').  For social bonding, athletes were asked questions like: ``How emotionally supportive does your training group feel right now?'' (100 point scale, 0 = ``Extremely weak'', 100 = ``Extremely strong'').
+At time 2, immediately prior to the experiment (Pre-Experiment), athletes were asked questions about feelings and expectations concerning their individual performance and the performance of their specific training group in the impending training drill.
+For example,  athletes were asked ``How do you feel \textit{right now} about your individual performance (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'')''.  Athletes were also asked a series of questions about feelings of team click and social bonding to their specific training group. For team click, for example, athletes were asked questions like: ``How do you feel the tacit understanding is between the training group today?'' (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'').  For social bonding, athletes were asked questions like: ``How emotionally supportive does your training group feel right now?'' (100 point scale, 0 = ``Extremely weak'', 100 = ``Extremely strong'').
 For a full explanation of survey items measured at Pre-Experiment, see Appendix ~\ref{} Section ~\ref{}.
 
-At time 3, Post-Experiment, athletes completed questions concerning their impression of their own performance and the performance of their specific training group in the training drill, relative to their prior expectations. Athletes were also asked about their feelings of team click and social bonding to the training group as well as the provincial team as a whole (team-focussed questons mirrored the survey items that were asked one day earlier at Baseline).  For a full explanation of Pre-Experiment survey items, see Appendix ~\ref{} Section ~\ref{}.
+At time 3, immediately after the completion of the experiment (Post-Experiment), athletes completed questions concerning their impression of their own performance and the performance of their training group in the training drill, relative to their prior expectations.  Athletes were also asked about their feelings of team click and social bonding to the training group as well as the provincial team as a whole (team-focussed questons mirrored the survey items that were asked one day earlier at Baseline).  For a full explanation of Post-Experiment survey items, see Appendix ~\ref{} Section ~\ref{}.
 
-Surveys were generated in English by the researcher using Qualtrics software (Qualtrics version 9, Provo, UT). Surveys were translated into modern Chinese and back translated by two independent native Chinese speaking translators from Beijing Sports University to verify accuracy.  Athletes completed the modern Chinese version of each survey using WeChat on their personal mobile devices connected to the internet.
+Surveys were generated in English by the researcher using Qualtrics software (Qualtrics version 9, Provo, UT). Surveys were translated into modern Chinese and back translated by two independent native Chinese speaking translators from Beijing Sports University to verify accuracy.  Athletes completed the modern Chinese version of each survey using WeChat on their personal mobile devices connected remotely to the internet.
 
 
 <<surveyMeasureSummaryTable, eval=T, echo=F>>=
@@ -295,33 +333,24 @@ Video footage from all 8 experiment sessions was analysed by an hypothesis blind
 For each experiment session, an average performance outcome (``Trial Outcome Average'') and the standard deviation of this outcome (``Trial Outcome SD'') was calculated in order to capture the central tendency and variability of performance for each training group.
 
 \subsection{Procedure}
-Permission to run the study was sought from the head coach of each of the four teams (Beijing men's, Beijing women's, Shandong men's, Shandong women's).  These coaches nominated athletes who were fit and able to complete the session without compromising their existing training schedules.  Athletes were randomly assigned to one of two conditions, and athletes in each condition were matched as much as possible according to average training age. Once athletes were assigned to an experimental group, they were then added to a WeChat group populated by other training group members and the researcher.
+Permission to run the study was sought from the head coach of each of the four teams (Beijing men's, Beijing women's, Shandong men's, Shandong women's).  These coaches nominated athletes who were fit and able to complete the session without compromising their existing training schedules.  Athletes were randomly assigned to one of two conditions, and then athletes in each experimental group were subsequently adjusted subsequently so that each condition was matched as much as possible according to average training age. Once athletes were assigned to an experimental group, they were then added to a WeChat group populated by other training group members and the researcher.
 
-%\subsubsection{Cover Story}
-Athletes were notified (first via WeChat and then in a team meeting) that they were participating in a trial of a number of different rugby training drills selected from a recent report by World Rugby concerning training methods for rugby sevens.  Athletes were told that the training drills had been previously rated by a selection of international level coaches and players from all over the world (including Asia and China).  Athletes were informed that I planned to assess the ratings provided by World Rugby by replicating these drills with more rugby athletes in China.  Athletes were told that survey measures and video footage would be collected, which would be later analysed to assess individual performance of athletes in each training drill.  It was also explained to athletes that there would be a second round of drills also requiring groups of eight athletes, but the makeup of these groups may reshuffle depending on athletes preferences.  This detail allowed for the includion of a post-experiment bonding measure, in which athletes were asked to what extent they wished to continue to train with the same 8-athlete team in a subsequent round of drills.
+\subsubsection{Cover Story}
+Athletes were notified (first via WeChat and then in a team meeting) that they were participating in a trial of a number of different rugby training drills selected from a recent report by World Rugby concerning training methods for rugby sevens.  Athletes were told that the training drills had been previously rated by a selection of international level coaches and players from all over the world (including Asia and China).  Athletes were informed that the purpose of the exercise was for me to assess the ratings provided by World Rugby by replicating these drills with more rugby athletes in China.  Athletes were told that survey measures and video footage would be collected, which would be later analysed to assess individual performance of athletes in each training drill.  It was also explained to athletes that there would be a second round of drills also requiring groups of eight athletes, but the makeup of these groups may reshuffle depending on athletes preferences.  This detail allowed for the includion of a post-experiment bonding measure, in which athletes were asked to what extent they wished to continue to train with the same 8-athlete team in a subsequent round of drills.
 
-Approximately 24 hours before the experiment session, athletes were instructed to complete the baseline survey by opening a link provided in the WeChat group.  This survey included written consent for the study. Approximately 1 hour before the experiment was due to take place, athletes were administered with an experimental prime via WeChat.  In the ``high difficulty'' condition, athletes were primed to believe that they were about to participate in a very difficult training drill (on the upper end of their individual and group technical abilities), whereas athletes in the ``low difficulty'' condition were primed to believe that they were about to participate in an easy training drill well within their tehcnical abilities (see APPENDIX for full script). All athletes were lead to believe that athletes in the other experiemntal groups were performing different drills to their assigned drill. In reality, the training drill for each condition was identical, the only thing that varied was the pre-experiment prime.
+Approximately 24 hours before the experiment session, athletes were instructed to complete the baseline survey by opening a link provided in the WeChat group.  This survey included written consent for the study. Approximately 1 hour before the experiment was due to take place, athletes were administered with an experimental prime via WeChat.  In the ``high difficulty'' condition, athletes were primed to believe that they were about to participate in a very difficult training drill (on the upper end of their individual and group technical abilities), whereas athletes in the ``low difficulty'' condition were primed to believe that they were about to participate in a relatively easy training drill well within their technical abilities (see APPENDIX for full script). All athletes were lead to believe that athletes in the other experiemntal groups were performing different drills to their assigned drill. In reality, the training drill for each condition was identical, the only thing that varied was the pre-experiment prime.
 
-Once athletes were assembled at the designated training field, the difficulty prime that had been sent via WeChat an hour earlier was verbally re-administered to the athletes. In addition, athletes were told in more detail about the requirements of the Invasion Drill (see APPENDIX for full details).  Athletes were told that assessment of performance in the experiment would be based on video analysis of an individual's performance in attack and defense, including an athlete's ability to coordinate attack and defense with others. Athletes were provided with no other explicit information regarding performance goals, besides completing the experimental drill to the best of their ability within the rules of rugby union.
+Once athletes were assembled at the designated training field, I verbally re-administered the same prime that had been sent to athletes via WeChat an hour earlier.  In addition, athletes were told in more detail about the requirements of the Invasion Drill (see APPENDIX for full details).  Specifically, athletes were told that their performance in the experiment would be assessed based on subsequent video analysis.  I told athletes that they would be assessed based on their performance in attack, defense, and their ability to coordinate attack and defense with others.  Athletes were provided with no other explicit information regarding performance goals, besides completing the experimental drill to the best of their ability within the rules of rugby.
 
-Athletes were then administered with the time 2 survey (pre-experiment, post-manipulation), which took approximately 3-5 minutes to complete.  After every athlete had finished the survey, athletes participated in a ~10 minute standard warm up routine, including slow jogging and dynamic stretching.  Athletes were instructed not to use the rugby ball during this period.  Once athletes had completed the warm up, the researcher assembled the group within the training drill area, with one athlete randomly assigned to stand at one of 8 available plastic markers (6 in the case of the modified drills).  In this position, athletes were told once more about the structure and procedure for the training drill, in particular the way in which athletes were expected to rotate clockwise after every trial of the drill so that athletes did not habituate to certain positions or alliances in the drill.
+Athletes were then administered with the time 2 survey (Pre-experiment), which took approximately 3-5 minutes to complete.  After every athlete had finished the survey, athletes participated in a standard warm up routine lasting approximately 10 minutes, including slow jogging and dynamic stretching.  Athletes were instructed not to use the rugby ball during this period, which served to reduce the amount of incidental coordination and interaction between participants prior to the start of the experiment trials.  Once athletes had completed the warm up, the researcher assembled the group within the training drill area.  One athlete was randomly assigned to stand at each of 8 available plastic markers (6 in the case of the modified drills).  In this position, athletes were told once more about the structure and procedure for the training drill, in particular the way in which athletes were expected to rotate clockwise after every trial of the drill so that athletes did not habituate to certain positions or sub-units in the drill.
 
-To begin the drill, the ball-carrier at the front and centre of the attack sub-group was instructed to tap the ball with his / her foot, before initiating the attacking sub-phase by advancing forward towards the defence sub-units.  In the case that the ball was immediately fumbled during the initiation of the trial, the training group was instructed to restart that trial and the trial in which the mistake was made was not counted.  Following a block of 4 practice trials, athletes were told by the researcher that the formal test was beginning.  The group of athletes then completed 16 trials of the drill, which allowed each athlete to complete four trials of attack and four trials of defence, in different positions.  Following completion of all 16 test trials, athletes were assembled by the researcher and thanked for their participation, before being sent to the sideline of the training field to complete the final post-experiment survey using their mobile devices.  Following the completion of this final survey, athletes were told that they would be informed within two days about the next experiment trial (in fact no more experiments were taking place).
+To begin the drill, the ball-carrier at the front and centre of the attack sub-group was instructed to tap the ball with his / her foot, before initiating the attacking sub-phase by advancing forward towards the defence sub-units.  In the case that the ball was immediately fumbled during the initiation of the trial, the training group was instructed to restart that trial and the trial in which the mistake was made was not counted.  Following a block of 4 practice trials, athletes were told by the researcher that the formal test was beginning.  The group of athletes then completed 16 trials of the drill, which allowed each athlete to complete four trials of attack and four trials of defence, in different positions.  Following completion of all 16 test trials, athletes were assembled by the researcher and thanked for their participation, before being sent to the sideline of the training field to complete the final post-experiment survey using their mobile devices.  Following the completion of this final survey, athletes were told that they would be informed within two days about the next experiment trial (in fact, no more experiments were taking place).
 
 \myparagraph{Video Analysis Procedure}
-The digital camera and tripod were positioned on a platform 2m above the level of the playing field, approximately 10-15m from the bottom try-line corner of the Invasion Drill perimeter (see figure ~\ref{fig:invasionDrill}).  The experimenter began video recording before the athletes arrived, and ceased recording after all athletes had left the training field following the experiment.  Digital video images of action were acquired by a computer, using a USB2.0 cable, and files were saved on an encrypted external hard disk in .AVI format. For image treatment, TACTO 8.0 software was used for digitizing at 25 frames per second.
+The digital camera and tripod were positioned on a platform 2m above the level of the playing field, approximately 10-15m from the bottom try-line corner of the Invasion Drill perimeter (see figure ~\ref{fig:invasionDrill}).  The experimenter began video recording before the athletes arrived, and ceased recording after all athletes had left the training field following the experiment.  Digital video images of action were acquired by a computer, using a USB2.0 cable, and files were saved on an encrypted external hard disk in .AVI format.
 
+%For image treatment, TACTO 8.0 software was used for digitizing at 25 frames per second.
 %The procedure is how the study was carried out. It often works well to describe the procedure in terms of what the participants did rather than what the researchers did. For example, the participants gave their informed consent, read a set of instructions, completed a block of four practice trials, completed a block of 20 test trials, completed two questionnaires, and were debriefed and excused.
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -342,11 +371,7 @@ The digital camera and tripod were positioned on a platform 2m above the level o
 
 
 \section{Results}
-A total of \Sexpr{length(unique(twc$englishName))} athletes participated in \Sexpr{length(unique(twc$sessionNumber))} experimental sessions. In one session (Shandong men's high difficulty condition) a dummy participant stood in for an athlete could not participate due to injury.  In the two sessions with Beijing women's team, due to failure of athletes to take part due to injury (3) or illness (2) the training drill was modified to a ``3 on 2 + 1'' drill, requiring only 6 athletes to complete. In one of these experimental sessions, a female dummy participant was also required to fill in to make up a total of 6 athletes for the modified drill.  In both cases, dummy participants were competent ex-athletes naive to the predictions of the study who did not participate in the survey responses before or after the session.  The survey and video data of the remaining 58 athletes were analysed.
-
-
-
-
+A total of \Sexpr{length(unique(twc$englishName))} athletes participated in \Sexpr{length(unique(twc$sessionNumber))} experimental sessions. In one session (Shandong men's high difficulty condition) a research assistant stood in as a dummy participant for an athlete could not participate due to injury.  In the two sessions with Beijing women's team, due to failure of athletes to take part due to injury (3) or illness (2), the training drill was modified to a ``3 on 2 + 1'' drill, requiring only six athletes to complete instead of eight. In one of these experimental sessions, a female dummy participant was also required to fill in to make up a total of 6 athletes for the modified drill.  In both cases, dummy participants were competent ex-athletes who were naive to the predictions of the study.  Dummy participants did not participate in the survey responses before or after the session. Survey and video data of the remaining 58 participants was analysed.
 
 
 
@@ -400,8 +425,9 @@ A total of \Sexpr{length(unique(twc$englishName))} athletes participated in \Sex
                                           "bjm","Beijing Men", ifelse(!is.na(dfAthleteSummary$team) & dfAthleteSummary$team == "bjw", "Beijing Women", ifelse(!is.na(dfAthleteSummary$team) & dfAthleteSummary$team == "sdm", "Shandong Men", ifelse(!is.na(dfAthleteSummary$team) & dfAthleteSummary$team == "sdw", "Shandong Women", NA))))
 
   ##rename columns for tables:
-  dfAthleteSummary <- rename(dfAthleteSummary, Position = startingReserve,
-                                TrainingAge = trainingAge, YearsInTeam = yearsTeam, AthleteLevel = athleteStatus, ContractStatus = teamStatus, Team = team, Condition = condition, Sex = sex, Age = age)
+  dfAthleteSummary <- dplyr::rename(dfAthleteSummary, Position = startingReserve, TrainingAge = trainingAge, YearsInTeam = yearsTeam, AthleteLevel = athleteStatus, ContractStatus = teamStatus, Team = team, Condition = condition, Sex = sex, Age = age)
+
+
 
 
   ## create a variable list which we want in table one
@@ -435,6 +461,24 @@ A total of \Sexpr{length(unique(twc$englishName))} athletes participated in \Sex
 @
 
 \input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/athleteDescriptivesTrainingOverall.tex}
+
+<<manipulationChecksPrep1, echo=F,eval=T>>=
+  #condition differences in:
+  # 1. groupConfidentTechnicalChallenges,
+  # 2. indConfidenceChallenges,
+  # 3. arousal
+  #subset df according to condition:
+  low <- subset(twc, condition == "low")
+  high <- subset(twc, condition == "high")
+@
+
+<<standardise groupPerformance_3, eval=T, echo=F>>=
+  #standardise groupPerformance_3:
+  twc$groupPerformance_3Norm <- scale(twc$groupPerformance_3)
+  twc$indPerformance_3Norm <- scale(twc$indPerformance_3)
+@
+
+
 
 The attributes of the overall sample of athletes are displayed in Table ~\ref{tab:athleteDescriptivesTrainingOverall}. The average training age of athletes was \Sexpr{mean(twc$trainingAge,na.rm=T)} years (\Sexpr{sd(twc$trainingAge,na.rm=T)}), with athletes having spent on average over \Sexpr{mean(twc$years,na.rm=T)} years in the team. \Sexpr{round(length(which(twc$teamStatus == 5))/length(unique(twc$englishName))*100, digits = 0)}\% of the sample were full-time employees of their provincial team, with the rest either being employed on a full-time (but fixed term) contract
 (\Sexpr{round(length(which(twc$teamStatus == 4)/length(unique(twc$englishName)))*100, digits = 0)}\%)), a ``student contract'' ((\Sexpr{round(length(which(twc$teamStatus == 3)/length(unique(twc$englishName)))*100, digits = 0)}\%))), a short term training contract
@@ -475,8 +519,7 @@ Central tendencies of variables measuring athletes' perceptions of group click a
                                     "Post"), ordered = is.ordered(tlcGroupPerformance$time))
 
   ##rename columns for tables:
-  library(dplyr)
-  tlcGroupPerformance <- rename(tlcGroupPerformance, Name = englishName, Sex = sex,
+  tlcGroupPerformance <- dplyr::rename(tlcGroupPerformance, Name = englishName, Sex = sex,
                                   Team = team, Condition = condition, Time = time, PerformanceVsExpectations = groupPerformanceExp, ConfidenceInGroupAbility = groupConfidentTechnicalChallenges, GroupAttack = groupAttackingLine, GroupDefence = groupDefensiveLine, GroupCommunication = groupOnfieldCommunication, GroupSupportPlay = groupSupportPlay)
 
   # create high and low condition dfs:
@@ -556,8 +599,7 @@ Central tendencies of variables measuring athletes' perceptions of group click a
                                     "Post"), ordered = is.ordered(tlcIndPerformance$time))
 
   ##rename columns for tables:
-  library(dplyr)
-  tlcIndPerformance <- rename(tlcIndPerformance, Name = englishName, Sex = sex, Team = team,
+  tlcIndPerformance <- dplyr::rename(tlcIndPerformance, Name = englishName, Sex = sex, Team = team,
                                   Condition = condition, Time = time, OverallPerformance = indPerformance, ConfidenceInAbility = indConfidenceChallenges, PerformanceVsExpectations = indPerformanceExp, Defence = indDefense, Passing = passingTechnique, SupportPlay = supportPlay, DecisionMaking = decisionMaking, Contact = effectivenessInContact)
 
   # create high and low condition dfs:
@@ -644,7 +686,7 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ##rename columns for tables:
   library(dplyr)
-  tlcGroupClick <- rename(tlcGroupClick, Name = englishName, Sex = sex,
+  tlcGroupClick <- dplyr::rename(tlcGroupClick, Name = englishName, Sex = sex,
                                   Team = team, Condition = condition, Time = time,
                                   ClickPictorial = groupClickPictorial, UnspokenUnderstanding = groupUnspokenUnderstanding, GeneralAtmosphere = groupGeneralAtmosphere,
                                   AbilitiesExtended = groupAbilitiesExtended, ReliabilityForOthers = groupReliabilityForOthers,
@@ -728,8 +770,7 @@ Central tendencies of variables measuring athletes' perceptions of group click a
                                     "Post"), ordered = is.ordered(tlcGroupBonding$time))
 
   ##rename columns for tables:
-  library(dplyr)
-  tlcGroupBonding <- rename(tlcGroupBonding, Name = englishName, Sex = sex,
+  tlcGroupBonding <- dplyr::rename(tlcGroupBonding, Name = englishName, Sex = sex,
                                   Team = team, Condition = condition, Time = time,
                                   EmotionalSupport = groupEmotionalSupport, SharedGoal = groupSharedGoal, FusionPictorial = groupFusionPictorial,
                                   StayOrChange = groupStayChangeRev)
@@ -812,8 +853,7 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
 
   ##rename columns for tables:
-  library(dplyr)
-  tlcTeamBonding <- rename(tlcTeamBonding, Name = englishName, Sex = sex,
+  tlcTeamBonding <- dplyr::rename(tlcTeamBonding, Name = englishName, Sex = sex,
                                 Team = team, Condition = condition, Time = time,
                                 EmotionalSupport = emotionalSupport, SharedGoal = sharedGoal, FusionVerbalTeam = fusionVerbal, GroupIdentification = groupId,
                                 FusionPictorialTeam = fusionPictorialTeam,
@@ -899,7 +939,7 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ##rename columns for tables:
   #library(dplyr)
-  tlcCompPerfSubj <- rename(tlcCompPerfSubj, Name = englishName, Sex = sex, Team = team,
+  tlcCompPerfSubj <- dplyr::rename(tlcCompPerfSubj, Name = englishName, Sex = sex, Team = team,
                                   Condition = condition, Time = time, CompetenceVsTeammates = indAbilityTeammates_1, CompetenceVsChinesePros = indAbilityChina_1, CompetenceVsInternationalPros = indAbilityInternational_1, PerfomanceImpactOnConfidence =  indPerformanceOnConfidence, PerformanceImpactOnMood = indPerformanceOnMood)
 
 
@@ -940,9 +980,8 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ##rename columns for tables:
   #library(dplyr)
-  tlcObjOutcome <- rename(tlcObjOutcome, Name = englishName, Sex = sex, Team = team,
-                                  Condition = condition, Time = time, = AverageOutcome TrialOutcomeAvg = outcomeAvg, TrialOutcomeSD = outcomeSd)
-
+  tlcObjOutcome <- dplyr::rename(tlcObjOutcome, Name = englishName, Sex = sex, Team = team,
+                                  Condition = condition, Time = time, AverageOutcome = fullOutcomeAvg, TrialOutcomeAvg = outcomeAvg, TrialOutcomeSD = outcomeSD)
   ## create a variable list which we want in table one
   listVars <- c("TrialOutcomeAvg", "TrialOutcomeAvg")
 
@@ -990,10 +1029,9 @@ Central tendencies of variables measuring athletes' perceptions of group click a
                                     "Post"), ordered = is.ordered(tlcTeamDiscipline$time))
 
 
-  teamPunctuality, teamAttendanceMeals, teamGeneralConduct, teamCurfew
+  #teamPunctuality, teamAttendanceMeals, teamGeneralConduct, teamCurfew
   ##rename columns for tables:
-  library(dplyr)
-  tlcTeamDiscipline <- rename(tlcTeamDiscipline, Name = englishName, Sex = sex,
+  tlcTeamDiscipline <- dplyr::rename(tlcTeamDiscipline, Name = englishName, Sex = sex,
                                   Team = team, Condition = condition, Time = time,
                                   Punctuality = teamPunctuality, MealAttendance = teamAttendanceMeals,  GeneralConduct = teamGeneralConduct, Curfew = teamCurfew)
 
@@ -1077,8 +1115,7 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
 
   ##rename columns for tables:
-  library(dplyr)
-  tlcArousalExertion <- rename(tlcArousalExertion, Name = englishName, Sex = sex,
+  tlcArousalExertion <- dplyr::rename(tlcArousalExertion, Name = englishName, Sex = sex,
                                   Team = team, Condition = condition, Time = time,
                                   Aroused = aroused, Excited = excited, Relaxed = relaxed, Fatigue = fatigue, PhysicalExertion= prpe, MentalExertion = mental, InjuryStatus = injury)
 
@@ -1165,7 +1202,7 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   ##rename columns for tables:
 
   #library(dplyr)
-  tlcPersonality <- rename(tlcPersonality, Name = englishName, Sex = sex, Team = team,
+  tlcPersonality <- dplyr::rename(tlcPersonality, Name = englishName, Sex = sex, Team = team,
                                   Condition = condition, Time = time,
                                    Agreeableness = tipiAgreeableness, Conscientiousness =  tipiConscientiousness, EmotionalStability = tipiEmotionalStability, Extraverted = tipiExtraverted, Openness = tipiOpenness)
 
@@ -1209,10 +1246,10 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 \subsection{Data Reduction}
 Exploratory factor analysis was used to reduce multicolinearity between variables while retaining as much variance as possible in the observed data \citep{Yong2013}.
 %(EFA, appendix ~\ref{appendix:EFA})
-Data reduction was performed on the survey items related to the main outcome variables of interest, namely team click and social bonding directed at the training group. The procedure for data reduction followed the method outlined in the previous empirical chapter (tournamentSurveyChapter).  Moderator variables---technical competence (objective and subjective), components of individual and training group performance, arousal, exertion, and athlete perception of team discipline---were also reduced to factors (see APPENDIX for full method).  In addition, items relating to team click and social bonding directed at the provincial team as a whole (and not just the specific training group) were reduced to factors, in order to assess pre- to post-experiment variation in generalised bonding to the team.
+Data reduction was performed on the survey items related to the main outcome variables of interest, namely team click and social bonding directed at the training group. The procedure for data reduction followed the method outlined in the previous empirical chapter (Chapter 8).  Moderator variables---technical competence (objective and subjective), components of individual and training group performance, arousal, exertion, and athlete perception of team discipline---were also reduced to factors (see APPENDIX \ref{} HYPERLINK for full description of method).  In addition, items relating to team click and social bonding directed at the provincial team as a whole (and not just the specific training group) were reduced to factors, in order to assess pre- to post-experiment variation in generalised bonding to the team.
 
 \subsubsection{Group Performance relative to prior expectations}
-The main predictor variable of interest, perceptions of training group performance relative to prior expectations, was a single item measure, and did not require data reduction.  Given that the outcome variables of interest were transformed to standardized z-scores (mean = 0, SD = 1), perceptions of team performance relative to prior expectation was also standardised (mean = 0, SD = 1) for the purposes of subsequent linear mixed effects modelling.
+The main predictor variable of interest, perceptions of training group performance relative to prior expectations, was a single item measure, and did not require data reduction.  Considering that the outcome variables of interest (factors) were transformed to standardized z-scores (mean = 0, SD = 1),perceptions of team performance relative to prior expectation was also standardised (mean = 0, SD = 1) for the purposes of equivalence of predictor and outcome variables in subsequent linear mixed effects modelling.
 
 \subsubsection{Feelings of team click within the training group}
 <<dataReductionGroupClick, echo=F,eval=T>>=
@@ -1228,7 +1265,7 @@ The main predictor variable of interest, perceptions of training group performan
                                         groupUnspokenUnderstanding + groupGeneralAtmosphere, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
 
   #-----------------------------SS Loadings----------------------#
-  SSLoadings.groupClickFA <- round(sum(tlcGroupClick.fa$loadings[,1]^2)
+  SSLoadings.groupClickFA <- round(sum(tlcGroupClick.fa$loadings[,1]^2))
   #------------------Proportion of Variance----------------------#
   prVar.groupClickFA <-  round((colSums(tlcGroupClick.fa$loadings*tlcGroupClick.fa$loadings)/dim(tlcGroupClick.fa$loadings)[1]*100), digits = 1)
 
@@ -1246,10 +1283,9 @@ The main predictor variable of interest, perceptions of training group performan
   groupClickMatrix <- cor(tlcGroupClick, use = "complete")
 
   #---------suitability measures (KMO & Bartlett)----------------#
-  library(psych)
-  KMOgroupClickMatrix <- KMO(groupClickMatrix)
+  KMOgroupClickMatrix <- psych::KMO(groupClickMatrix)
   # KMOGroupClickMatrix$MSA is the colum in which the overal KMO is stored
-  bartlettGroupClick <- cortest.bartlett(groupClickMatrix, n = 116) # what is the sample size here?
+  bartlettGroupClick <- psych::cortest.bartlett(groupClickMatrix, n = 116) # what is the sample size here?
   # ls(BartlettGroupClick)
   # BartlettGroupClick$chisq, BartlettGroupClick$df, BartlettGroupClick$p.value
   # sample size? length(unique(tlc$englishName)*2)
@@ -1288,10 +1324,9 @@ The main predictor variable of interest, perceptions of training group performan
   groupClickPostMatrix <- cor(tlcGroupClickPost, use = "complete")
 
   #---------suitability measures (KMO & Bartlett)----------------#
-  library(psych)
-  KMOgroupClickPostMatrix <- KMO(groupClickPostMatrix)
+  KMOgroupClickPostMatrix <- psych::KMO(groupClickPostMatrix)
   # KMOGroupClickMatrix$MSA is the colum in which the overal KMO is stored
-  bartlettGroupClickPost <- cortest.bartlett(groupClickPostMatrix, n = 116) # what is the sample size here?
+  bartlettGroupClickPost <- psych::cortest.bartlett(groupClickPostMatrix, n = 116) # what is the sample size here?
   # ls(BartlettGroupClick)
   # BartlettGroupClick$chisq, BartlettGroupClick$df, BartlettGroupClick$p.value
   # sample size? length(unique(tlc$englishName)*2)
@@ -1315,7 +1350,7 @@ The main predictor variable of interest, perceptions of training group performan
   # label = tab:groupClickCorrTable
 @
 
-Items relating to training group team click (unspoken understanding, general atmosphere, click pictorial, and ability extended by the group) were subjected to EFA.    Correlations between the remaining were very high (all r's > \Sexpr{min(groupClickMatrix)}), which suggested that one factor was appropriate (see Table ee Table ~\ref{tab:groupClickCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOgroupClickMatrix$MSA}, \chi^2(\Sexpr{bartlettGroupClick$df}, N = \Sexpr{groupClickSampleSize}) = \Sexpr{bartlettGroupClick$chisq}, p = \Sexpr{bartlettGroupClick$p.value}).
+Items relating to training group team click (unspoken understanding, general atmosphere, click pictorial, and ability extended by the group) were subjected to EFA.   Correlations between the remaining were very high (all r's > \Sexpr{min(groupClickMatrix)}), which suggested that one factor was appropriate (see Table ee Table ~\ref{tab:groupClickCorrTable}). The KMO index and Bartlett's test both suggested high sampling adequacy, (KMO =  \Sexpr{KMOgroupClickMatrix$MSA}, \chi^2(\Sexpr{bartlettGroupClick$df}, N = \Sexpr{groupClickSampleSize}) = \Sexpr{bartlettGroupClick$chisq}, p = \Sexpr{bartlettGroupClick$p.value}).
 One factor, labelled ``Group Click'' was imposed on the data, which explained \Sexpr{prVar.groupClickFA}\% of the overall variance (SS Loading = \Sexpr{SSLoadings.groupClickFA}). Guttmans \lambda = \Sexpr{reliabilityGroupClick$total[,3]} and Cronbachs \alpha = \Sexpr{reliabilityGroupClick$total[,2]} indicated that the data reduction was appropriate and reliable.
 
 In addition to the four variables common to both pre- and post-experiment surveys, athletes were also asked in the post-experiment survey about their own reliability and the reliability of other athletes to perform their role on the field specifically. These two variables, ``Reliability For Others'' and ``Reliability Of Others'' were included in an EFA involving only the post-experiment measures.  The variable ``reliability for others'' was removed from the matrix because it did not significantly correlate with other variables (all r's <= .16).
@@ -1343,10 +1378,9 @@ In addition to the four variables common to both pre- and post-experiment survey
   groupBondingMatrix <- cor(tlcGroupBonding, use = "complete")
 
   #---------suitability measures (KMO & Bartlett)----------------#
-  library(psych)
-  KMOgroupBondingMatrix <- KMO(groupBondingMatrix)
+  KMOgroupBondingMatrix <- psych::KMO(groupBondingMatrix)
   # KMOGroupBondingMatrix$MSA is the colum in which the overal KMO is stored
-  bartlettGroupBonding <- cortest.bartlett(groupBondingMatrix, n = 116) # what is the sample size here?
+  bartlettGroupBonding <- psych::cortest.bartlett(groupBondingMatrix, n = 116) # what is the sample size here?
   # ls(BartlettGroupBonding)
   # BartlettGroupBonding$chisq, BartlettGroupBonding$df, BartlettGroupBonding$p.value
   # sample size? length(unique(tlc$englishName)*2)
@@ -1398,10 +1432,9 @@ In addition to athlete expectation violations concerning group and individual pe
     groupPerformanceMatrix <- cor(tlcGroupPerformance, use = "complete")
 
     #---------suitability measures (KMO & Bartlett)----------------#
-    library(psych)
-    KMOgroupPerformanceMatrix <- KMO(groupPerformanceMatrix)
+    KMOgroupPerformanceMatrix <- psych::KMO(groupPerformanceMatrix)
     # KMOGroupPerformanceMatrix$MSA is the colum in which the overal KMO is stored
-    bartlettGroupPerformance <- cortest.bartlett(groupPerformanceMatrix, n = 116) # what is the sample size here?
+    bartlettGroupPerformance <- psych::cortest.bartlett(groupPerformanceMatrix, n = 116) # what is the sample size here?
     # ls(BartlettGroupPerformance)
     # BartlettGroupPerformance$chisq, BartlettGroupPerformance$df, BartlettGroupPerformance$p.value
     # sample size? length(unique(tlc$englishName)*2)
@@ -1416,31 +1449,6 @@ In addition to athlete expectation violations concerning group and individual pe
     guttLambdaGroupPerformance <- reliabilityGroupPerformance$total[,3]
 
 
-    #-----------------------Correlation Table----------------------#
-    library(xtable)
-    corstarsl <- function(x){
-      require(Hmisc)
-      x <- as.matrix(x)
-      R <- rcorr(x)$r
-      p <- rcorr(x)$P
-
-      ## define notions for significance levels; spacing is important.
-      mystars <- ifelse(p < .001, "***", ifelse(p < .01, "** ", ifelse(p < .05, "* ", " ")))
-      ## trunctuate the matrix that holds the correlations to two decimal
-      R <- format(round(cbind(rep(-1.11, ncol(x)), R), 2))[,-1]
-      ## build a new matrix that includes the correlations with their apropriate stars
-      Rnew <- matrix(paste(R, mystars, sep=""), ncol=ncol(x))
-      diag(Rnew) <- paste(diag(R), " ", sep="")
-      rownames(Rnew) <- colnames(x)
-      colnames(Rnew) <- paste(colnames(x), "", sep="")
-      ## remove upper triangle
-      Rnew <- as.matrix(Rnew)
-      Rnew[upper.tri(Rnew, diag = TRUE)] <- ""
-      Rnew <- as.data.frame(Rnew)
-      ## remove last column and return the matrix (which is now a data frame)
-      Rnew <- cbind(Rnew[1:length(Rnew)-1])
-      return(Rnew)
-    }
 @
 <<groupPerformanceCor, echo=F,eval=T>>=
   # be sure to import the variable subset data frame, not the correlation matrix
@@ -1475,10 +1483,9 @@ In addition to athlete expectation violations concerning group and individual pe
     indPerformanceMatrix <- cor(tlcIndPerformance, use = "complete")
 
     #---------suitability measures (KMO & Bartlett)----------------#
-    library(psych)
-    KMOindPerformanceMatrix <- KMO(indPerformanceMatrix)
+    KMOindPerformanceMatrix <- psych::KMO(indPerformanceMatrix)
     # KMOIndPerformanceMatrix$MSA is the colum in which the overal KMO is stored
-    bartlettIndPerformance <- cortest.bartlett(indPerformanceMatrix, n = 116) # what is the sample size here?
+    bartlettIndPerformance <- psych::cortest.bartlett(indPerformanceMatrix, n = 116) # what is the sample size here?
     # ls(BartlettIndPerformance)
     # BartlettIndPerformance$chisq, BartlettIndPerformance$df, BartlettIndPerformance$p.value
     # sample size? length(unique(tlc$englishName)*2)
@@ -1523,10 +1530,9 @@ In addition to athlete expectation violations concerning group and individual pe
   teamBondingMatrix <- cor(tlcTeamBonding, use = "complete")
 
   #---------suitability measures (KMO & Bartlett)----------------#
-  library(psych)
-  KMOteamBondingMatrix <- KMO(teamBondingMatrix)
+  KMOteamBondingMatrix <- psych::KMO(teamBondingMatrix)
   # KMOTeamBondingMatrix$MSA is the colum in which the overal KMO is stored
-  bartlettTeamBonding <- cortest.bartlett(teamBondingMatrix, n = 116) # what is the sample size here?
+  bartlettTeamBonding <- psych::cortest.bartlett(teamBondingMatrix, n = 116) # what is the sample size here?
   # ls(BartlettTeamBonding)
   # BartlettTeamBonding$chisq, BartlettTeamBonding$df, BartlettTeamBonding$p.value
   # sample size? length(unique(tlc$englishName)*2)
@@ -1549,6 +1555,7 @@ In addition to athlete expectation violations concerning group and individual pe
                       file = "teamBondingCorrTable.tex")
   # label = tab:teamBondingCorrTable
 @
+
 <<dataReductionArousal, echo=F,eval=T>>=
   #ArousalVariablesSubset: exclude effectivenessInContact (not relvant)
   tlcArousal <- subset(tlc, select = c(aroused, relaxed, excited))
@@ -1569,10 +1576,9 @@ In addition to athlete expectation violations concerning group and individual pe
   arousalMatrix <- cor(tlcArousal, use = "complete")
 
   #---------suitability measures (KMO & Bartlett)----------------#
-  library(psych)
-  KMOarousalMatrix <- KMO(arousalMatrix)
+  KMOarousalMatrix <- psych::KMO(arousalMatrix)
   # KMOarousalMatrix$MSA is the colum in which the overal KMO is stored
-  bartlettArousal <- cortest.bartlett(arousalMatrix, n = 116) # what is the sample size here?
+  bartlettArousal <- psych::cortest.bartlett(arousalMatrix, n = 116) # what is the sample size here?
   # ls(BartlettArousal)
   # BartlettArousal$chisq, BartlettArousal$df, BartlettArousal$p.value
   # sample size? length(unique(tlc$englishName)*2)
@@ -1586,6 +1592,8 @@ In addition to athlete expectation violations concerning group and individual pe
   cronAlphaArousal <- reliabilityArousal$total[,2]
   guttLambdaArousal <- reliabilityArousal$total[,3]
 @
+
+
 <<arousalCor, echo=F,eval=T>>=
   # be sure to import the variable subset data frame, not the correlation matrix
   corstarsl(tlcArousal)
@@ -1595,6 +1603,7 @@ In addition to athlete expectation violations concerning group and individual pe
                       file = "arousalCorrTable.tex")
   # label = tab:arousalCorrTable
 @
+
 <<dataReductionTeamDiscipline, eval=T, echo=F>>=
   #TeamDisciplineVariablesSubset: exclude effectivenessInContact (not relvant)
   tlcTeamDiscipline <- subset(tlc, select = c(teamAttendanceMeals, teamCurfew, teamGeneralConduct, teamPunctuality))
@@ -1616,10 +1625,9 @@ In addition to athlete expectation violations concerning group and individual pe
   teamDisciplineMatrix <- cor(tlcTeamDiscipline, use = "complete")
 
   #---------suitability measures (KMO & Bartlett)----------------#
-  library(psych)
-  KMOteamDisciplineMatrix <- KMO(teamDisciplineMatrix)
+  KMOteamDisciplineMatrix <- psych::KMO(teamDisciplineMatrix)
   # KMOTeamDisciplineMatrix$MSA is the colum in which the overal KMO is stored
-  bartlettTeamDiscipline <- cortest.bartlett(teamDisciplineMatrix, n = 116) # what is the sample size here?
+  bartlettTeamDiscipline <- psych::cortest.bartlett(teamDisciplineMatrix, n = 116) # what is the sample size here?
   # ls(BartlettTeamDiscipline)
   # BartlettTeamDiscipline$chisq, BartlettTeamDiscipline$df, BartlettTeamDiscipline$p.value
   # sample size? length(unique(tlc$englishName)*2)
@@ -1678,9 +1686,9 @@ In addition to athlete expectation violations concerning group and individual pe
 
   #---------suitability measures (KMO & Bartlett)----------------#
   library(psych)
-  KMOtechnicalCompetenceMatrix <- KMO(technicalCompetenceMatrix)
+  KMOtechnicalCompetenceMatrix <- psych::KMO(technicalCompetenceMatrix)
   # KMOTechnicalCompetenceMatrix$MSA is the colum in which the overal KMO is stored
-  bartlettTechnicalCompetence <- cortest.bartlett(technicalCompetenceMatrix, n = 116) # what is the sample size here?
+  bartlettTechnicalCompetence <- psych::cortest.bartlett(technicalCompetenceMatrix, n = 116) # what is the sample size here?
   # ls(BartlettTechnicalCompetence)
   # BartlettTechnicalCompetence$chisq, BartlettTechnicalCompetence$df, BartlettTechnicalCompetence$p.value
   # sample size? length(unique(tlc$englishName)*2)
@@ -1747,7 +1755,7 @@ Due to the fact that athletes had been primed to expect either a difficult or si
 In addition to self-reported confidence, it was also predicted that athlete self-reports of arousal, measured measured at the same time as the previous questions regarding confidence, would also vary according to condition.
 It was predicted that that athletes in the high difficulty condition would be more aroused than athtletes in the low difficulty condition.  Meaningful variation in these variables could be used to check that the experimental manipulation was successful.
 
-<<manipulationChecksPrep1, echo=F,eval=T>>=
+<<manipulationChecksPrep2, echo=F,eval=T>>=
   #condition differences in:
   # 1. groupConfidentTechnicalChallenges,
   # 2. indConfidenceChallenges,
@@ -1756,6 +1764,14 @@ It was predicted that that athletes in the high difficulty condition would be mo
   low <- subset(twc, condition == "low")
   high <- subset(twc, condition == "high")
 @
+
+<<standardise groupPerformance_3_1, eval=T, echo=F>>=
+  #standardise groupPerformance_3:
+  #twc$groupPerformance_3Norm <- scale(twc$groupPerformance_3)
+  #twc$indPerformance_3Norm <- scale(twc$indPerformance_3)
+@
+
+
 <<manipulationCheckTable, echo=F,eval=T>>=
 
   ##subset data for table: groupConfidentTechnicalChallenges_2,indConfidenceChallenges_2, arousalFactorPre:
@@ -1763,7 +1779,7 @@ It was predicted that that athletes in the high difficulty condition would be mo
                                       groupConfidentTechnicalChallenges_2, indConfidenceChallenges_2, arousalFactorPre, groupPerformance_3Norm, indPerformance_3Norm, groupClickPostFactor, groupBondingFactorPost))
   ##rename columns for tables:
   library(dplyr)
-  twcManipulationCheck <- rename(twcManipulationCheck, Condition = condition,
+  twcManipulationCheck <- dplyr::rename(twcManipulationCheck, Condition = condition,
                                       ConfidenceInGroupAbility = groupConfidentTechnicalChallenges_2, ConfidenceIndividualAbility = indConfidenceChallenges_2, Arousal = arousalFactorPre, GroupPerformVsExpected = groupPerformance_3Norm, IndPerformVsExpected = indPerformance_3Norm, GroupClickPost = groupClickPostFactor, GroupBondingPost = groupBondingFactorPost)
 
 
@@ -1822,6 +1838,7 @@ It was predicted that that athletes in the high difficulty condition would be mo
                                         xlab = "Confidence",
                                         xlim = c(0, 100))
 @
+
 <<groupConfidenceVariance, echo=F,eval=T>>=
   library(car)
   groupConfPerfBartlett <- bartlett.test(groupConfidentTechnicalChallenges_2 ~ condition,
@@ -1830,9 +1847,11 @@ It was predicted that that athletes in the high difficulty condition would be mo
   #var.test(high$groupConfidentTechnicalChallenges_2,low$groupConfidentTechnicalChallenges_2)
                                           # variance does not appear to differ significantly
 @
+
 <<indConfChallengesTtest, echo=F,eval=T>>=
   indConfidenceCondition.ttest <- t.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
 @
+
 <<indConfChallengesBoxplot, echo=F,eval=T>>=
   indConfConditionBoxPlot <- boxplot(indConfidenceChallenges_2 ~ condition,
                                           varwidth = TRUE,
@@ -1843,6 +1862,7 @@ It was predicted that that athletes in the high difficulty condition would be mo
                                           ylab = "Confidence",
                                           data = twc)
 @
+
 <<histHighIndConfidence, echo=F,eval=T>>=
   histHighIndConfidence <- hist(high$indConfidenceChallenges_2,
                                           main =  "Histogram of confidence in individual \n ability to meet technical challenges \n (high difficulty)",
@@ -1850,6 +1870,7 @@ It was predicted that that athletes in the high difficulty condition would be mo
                                           xlim = c(0, 100),
                                           ylim = c(0, 20))
 @
+
 <<histLowIndConfidence, echo=F,eval=T>>=
   histLowIndConfidence <- hist(low$indConfidenceChallenges_2, main =
                                         "Histogram of condifence in in individual \n ability to meet technical challenges \n (low difficulty)",
@@ -1859,22 +1880,21 @@ It was predicted that that athletes in the high difficulty condition would be mo
   # t.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
 @
 <<indConfidenceVariance, echo=F,eval=T>>=
-  library(car)
-  leveneTest(indConfidenceChallenges_2 ~ condition, data = twc)
+  car::leveneTest(indConfidenceChallenges_2 ~ condition, data = twc)
   fligner.test(indConfidenceChallenges_2 ~ condition, data = twc)
   bartlett.test(indConfidenceChallenges_2 ~ condition, data = twc)
 
-  library(stats) # variance appears to differ significantly
-  indPerfBartlett <- var.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
+ # variance appears to differ significantly
+  indPerfBartlett <- stats::var.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
   # variance appears to differ significantly
-  cohens_d(indPerfBartlett, format = "latex")
-  apa(indPerfBartlett)
+  #cohens_d(indPerfBartlett, format = "latex")
+  #apa(indPerfBartlett)
 @
 
 %(\Sexpr{t_test(groupConfidenceCondition.ttest)})
  %(\Sexpr{t_test(indConfidenceCondition.ttest)})
 Results of manipulation checks indicate that there were no overall condition-wise differences in athlete confidence in group or individual ability to meet the technical challenges of the drill (see Table ~\ref{tab:manipulationCheckTable} and Figures ~\ref{fig:groupConfChallengesBoxplot} and ~\ref{fig:indConfChallengesBoxplot}).
-Although the central tendency of these variables was not significantly different, the box plots (Figures ~\ref{fig:groupConfChallengesBoxplot}) and histograms of both group and individual confidence variables by condition show that the variance in responses in the high difficulty condition appears to be larger than the low difficulty condition (see Figures ~\ref{fig:histHighGroupConfidence}\nobreakdash~\ref{fig:histLowIndConfidence}).
+Although the central tendency of these variables was not significantly different, the box plots (Figures ~\ref{fig:groupConfChallengesBoxplot}) and histograms of both group and individual confidence variables by condition show that the variance of responses in the high difficulty condition appears to be larger than the low difficulty condition (see Figures ~\ref{fig:histHighGroupConfidence}\nobreakdash~\ref{fig:histLowIndConfidence}).
 A Bartlett's test of homogeneity of variance revealed that there was no meaningful difference in variance of confidence in group ability (\Sexpr{groupConfPerfBartlett}). The same test applied to athlete confidence in individual ability according to condition did, however, reveal a significant difference, \Sexpr{indPerfBartlett}.
 
 <<arousalConditionttest, echo=F,eval=T>>=
@@ -1891,6 +1911,7 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
                                         ylab = "Arousal",
                                         data = twc)
 @
+
 <<histArousalFactorPreHigh, fig.cap=''>>=
   histArousalFactorPreHigh <- hist(high$arousalFactorPre,
                                         main =  "Histogram of athlete arousal \n prior to experiment (high difficulty)",
@@ -1898,6 +1919,7 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
                                         xlim = c(-3, 2),
                                         ylim = c(0,10))
 @
+
 <<histArousalFactorPreLow, fig.cap=''>>=
   hist(low$arousalFactorPre, main =  "Histogram of athlete arousal \n prior to experiment
                               (low difficulty)",
@@ -1929,9 +1951,9 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
 @
 
 %\Sexpr{t_apa(arousalCondition.ttest)}
-An analysis of arousal by condition also failed to reveal meaningful variation by condition, (see Table ~\ref{tab:manipulationCheckTable} and Figure ~\ref{fig:arousalFactorPreBoxPlot}). Judging by the boxplot and histogram of each condition (see Figures ~\ref{fig:histArousalFactorPreHigh} and ~\ref{fig:histArousalFactorPreLow} variance of arousal in the high difficulty condition did appear to be higher than the low difficulty condition, however a Bartlett's test for homogeneity of variance revealed that the difference was not significant, \Sexpr{arousalFactorPreBartlett}.
-These results suggested that the experimental prime was not successful in modulating athlete self-reported confidence in individuala and group ability to meet the technical challenges associated with the training drill. There was also no evidence that self-reported arousal differed significantly according to condition.
-It was still possible, however, that the experimental primes influenced dimensions of athlete behaviour dimensions inaccessible through self-report.
+An analysis of arousal by condition also failed to reveal meaningful variation by condition, (see Table ~\ref{tab:manipulationCheckTable} and Figure ~\ref{fig:arousalFactorPreBoxPlot}). Judging by the boxplot and histogram of each condition (see Figures ~\ref{fig:histArousalFactorPreHigh} and ~\ref{fig:histArousalFactorPreLow}), the variance of arousal in the high difficulty condition did appear to be higher than the low difficulty condition. A Bartlett's test for homogeneity of variance, however, revealed that the difference was not significant, \Sexpr{arousalFactorPreBartlett}.
+These results suggested that the experimental prime was explicitly successful in significantly manipulating athlete self-reported confidence in individuala and group ability to meet the technical challenges associated with the training drill.  There was also no evidence that self-reported arousal differed significantly according to condition.
+It was still possible, however, that the experimental primes influenced athletes implicitly, in ways that were not measured by surveys, which record explicit self-report.
 
 \subsection{Results by condition}
 Predictions of this study were first tested according to condition. It was predicted that the high difficulty prime would generate closer attention to the details of joint action between participants, and more positive violation of expectations around group performance.
@@ -1943,7 +1965,7 @@ Predictions of this study were first tested according to condition. It was predi
 
   ##rename columns for tables:
   library(dplyr)
-  twcPerformancePost <- rename(twcPerformancePost, Team = team, Condition = condition,
+  twcPerformancePost <- dplyr::rename(twcPerformancePost, Team = team, Condition = condition,
                                       Sex = sex, Age = age, JointActionSuccess = jointActionSuccessPost, IndividualComponentPerformance = indPerformancePost, GroupPerformVsExpected = groupPerformance_3, IndPerformVsExpected = indPerformance_3)
 
 
@@ -2018,7 +2040,7 @@ Predictions of this study were first tested according to condition. It was predi
 # t.test(high$indPerformance_3, low$indPerformance_3)
 @
 
-As Table ~\ref{tab:performanceConditionPost} shows, there were no observable significant differences between conditions in athlete perceptions of joint action success, individual component performance, group performance relative to prior expectations, or individual performance relative to prior expectations (see also box plots comparing these factors by condition, Figures ~\ref{fig:groupJointActionSuccessPostBoxPlot}\nobreakdash~\ref{fig:indPerfExpPostBoxPlot}).These results hold when controlling for an athlete's confidence in individual and group performance reported at time 2 prior to the experiment (see APPENDIX for detailed results).
+As Table ~\ref{tab:performanceConditionPost} shows, there were no observable significant differences between conditions in athlete perceptions of joint action success, individual component performance, group performance relative to prior expectations, or individual performance relative to prior expectations (see also box plots comparing these factors by condition, Figures ~\ref{fig:groupJointActionSuccessPostBoxPlot}\nobreakdash~\ref{fig:indPerfExpPostBoxPlot}). These results hold when controlling for an athlete's confidence in individual and group performance reported at time 2 prior to the experiment (see APPENDIX for detailed results).
 
 <<postExperimentPerformanceControls, echo=F, eval=T>>=
   summary(lm(twc$jointActionSuccessPost ~ twc$condition + twc$jointActionSuccessPre + twc$groupConfidentTechnicalChallenges_2))
@@ -2039,7 +2061,7 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
 
   ##rename columns for tables:
   library(dplyr)
-  twcClickBondPost <- rename(twcClickBondPost, Team = team, Condition = condition,
+  twcClickBondPost <- dplyr::rename(twcClickBondPost, Team = team, Condition = condition,
                                       Sex = sex, Age = age, GroupClickPost = groupClickPostFactor, GroupBondingPost =  groupBondingFactorPost, TeamBondingPost = teamBondingFactorPost)
 
   ## create a variable list which we want in table one
@@ -2120,7 +2142,7 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
 
   ##rename columns for tables:
   library(dplyr)
-  tlcFactors <- rename(tlcFactors, Team = team, Condition = condition, Sex = sex,
+  tlcFactors <- dplyr::rename(tlcFactors, Team = team, Condition = condition, Sex = sex,
                                       Time = time,
                                       Age = age, JointActionSuccess = jointActionSuccess,
                                       IndividualComponentPerformance = indPerformanceFactor, GroupPerformVsExpected = groupPerformanceExpectations, IndividualPerformanceExpectations = indPerformanceExpectations, GroupClick = groupClickFactor1, GroupClickPost = groupClickPostFactor, GroupBonding = groupBondingFactor, TeamBondingFactor = teamBondingFactor, Arousal = arousalFactor)
@@ -2230,7 +2252,8 @@ There were also no observable differences in group click, group bonding, or bond
 
 \input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/factorsTime.tex}
 
-Table ~\ref{tab:factorsTime} shows that factors relating to group Joint Action Success, Group Click reduced between pre- and post-Experiment measurements.  Group Bonding also appeared to reduce, but this change was not significant.  Athlete reports of arousal significantly increased following the experiment, as would be expected due to the moderate to high levels of physiological exertion associated with the training drill.  Athlete perceptions of components of individual performance and bonding to the team as a whole did not vary significantly acrross time points.
+Table ~\ref{tab:factorsTime} shows that the post-Experiment measures of Joint Action Success and Group Click were significantly lower than pre-Experiment measurements.  Group Bonding also appeared to reduce, between pre- and post-Experiment measures,  but this change was not significant.  Athlete reports of arousal significantly increased following the experiment, as would be expected due to the moderate to high levels of physiological exertion associated with the training drill.  Athlete perceptions of components of individual performance and bonding to the team as a whole did not vary significantly acrross time points.
+
 
 
 
@@ -2254,9 +2277,6 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 
 
 <<ICCestimatesSession, eval=T, echo=F>>=
-  #standardise groupPerformance_3:
-  twc$groupPerformance_3Norm <- scale(twc$groupPerformance_3)
-  twc$indPerformance_3Norm <- scale(twc$indPerformance_3)
   # performance
   performanceSessionICC <- ICCest(sessionName, groupPerformance_3Norm, data = twc, CI.type = "THD") #  0.06428764  / 7.102757 (k - unbalanced score)
   groupClickSessionICC <- ICCest(sessionName, groupClickPostFactor, data = twc, CI.type = "THD") #  0.1415473  / 7.102757 (k - unbalanced score)
@@ -2265,6 +2285,8 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
   fullOutcomeAvgSessionICC <- ICCest(sessionName, fullOutcomeAvg, data = twc, CI.type = "THD")
   #    1 / 7.226601(k - unbalanced score)
 @
+
+
 <<ICCestimatesSex, eval=T, echo=F>>=
   twc$sex <- as.factor(twc$sex)
   #performance
@@ -2329,7 +2351,7 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
   outcomeDf <- subset(twc, select = c(condition, team, sessionName, fullOutcomeAvg, fullOutcomeSd))
 
 
-  outcomeDf <- rename(outcomeDf, Condition = condition, Team = team,
+  outcomeDf <- dplyr::rename(outcomeDf, Condition = condition, Team = team,
                                   Session = sessionName,
                                   AverageOutcome = fullOutcomeAvg, StandardDeviation = fullOutcomeSd)
 
@@ -2348,6 +2370,7 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
                         outcomeDf$AverageOutcome[outcomeDf$Session == "bjwA"],
                         outcomeDf$AverageOutcome[outcomeDf$Session == "bjmA"])
                       )
+  
   AverageOutcomeSession <- AverageOutcome[c(1,9,17,25,32,40,48,54)]
   Mean <- AverageOutcomeSession
 
@@ -2426,6 +2449,7 @@ Figure ~\ref{fig:teamPerfExpClickScatter} shows a strong positive correlation be
                               REML = F)
   #summary(groupPerfExpClick.main)
 
+  library(lmerTest)
   groupPerfExpClick.controls <- lmer(groupClickPostFactor ~
                               groupPerformance_3Norm*condition +
                               indPerformance_3Norm + arousalFactorPost + fullOutcomeAvg +
@@ -2438,24 +2462,25 @@ Figure ~\ref{fig:teamPerfExpClickScatter} shows a strong positive correlation be
   #confint:
   groupPerfExpClick.controls.CIs <- confint.merMod(groupPerfExpClick.controls, method = "Wald")
   #calculate marginal (fixed) and conditional (random) R^2 for the model:
-  groupPerfExpClick.controls.R2 <- sem.model.fits(groupPerfExpClick.controls)
+  #groupPerfExpClick.controls.R2 <- sem.model.fits(groupPerfExpClick.controls)
+  
 @
 
-A LMER was used to model this relationship: Group Performance Expectations, Condition, and their interaction were included as fixed effects, and experiment session was modelled as a random effect (intercept and slope).  To control for perceptions of individual performance relative to prior expectations, post-Experiment arousal, the average performance outcome of each invasion drill trial, and subjective and objective measures of athlete technical competence, these factors were included as fixed effects.
+A LMER was used to model the relationship between group performance expectation violations and group click.  Group Performance Expectations, Condition, and their interaction were included as fixed effects, and experiment session was modelled as a random effect (intercept and slope).  To control for perceptions of individual performance relative to prior expectations, post-Experiment arousal, the average performance outcome of each invasion drill trial, and subjective and objective measures of athlete technical competence, these factors were included as fixed effects.
 
-The model revealed a significant positive main effect of group performance expectation violation on feelings of ``team click'' with the training group,
-  \betaest
-    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","Estimate"]}
+The model revealed a significant positive main effect of group performance expectation violation on feelings of team click with the training group,
+  \betavec
+    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm", "Estimate"]}
   \CIstart
     \Sexpr{groupPerfExpClick.controls.CIs["groupPerformance_3Norm", 1]}
   ,
     \Sexpr{groupPerfExpClick.controls.CIs["groupPerformance_3Norm", 2]}
   \CIfinish
   \SE
-    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","Std. Error"]}
+    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm",2]}
   ,
   t(
-    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","df"]}
+    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm", "df"]}
     )
   =
     \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","t value"]}
@@ -2464,15 +2489,15 @@ The model revealed a significant positive main effect of group performance expec
     \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","Pr(>|t|)"]}
   ,
   \MR2
-    \Sexpr{groupPerfExpClick.controls.R2[,5]}
+   % \Sexpr{groupPerfExpClick.controls.R2[,5]}
   ,
   \CR2
-    \Sexpr{groupPerfExpClick.controls.R2[,6]}
+   % \Sexpr{groupPerfExpClick.controls.R2[,6]}
 .
 The main effect of condition
 (
-  \betaest
-    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","Estimate"]}
+  \betavec
+    \Sexpr{coef(summary(groupPerfExpClick.controls))["conditionhigh","Estimate"]}
   \CIstart
     \Sexpr{groupPerfExpClick.controls.CIs["groupPerformance_3Norm", 1]}
   ,
@@ -2491,7 +2516,7 @@ The main effect of condition
 )
 and the interaction effect of group performance expectation violation and condition on click
 (
-  \betaest
+  \betavec
     \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","Estimate"]}
   \CIstart
     \Sexpr{groupPerfExpClick.controls.CIs["groupPerformance_3Norm", 1]}
@@ -2512,7 +2537,7 @@ and the interaction effect of group performance expectation violation and condit
 were also significant.
 The average performance outcome of each invasion drill trial was also a significant positive predictor of team click
 ,
-  \betaest
+  \betavec
     \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","Estimate"]}
   \CIstart
     \Sexpr{groupPerfExpClick.controls.CIs["groupPerformance_3Norm", 1]}
@@ -2534,22 +2559,9 @@ The average performance outcome of each invasion drill trial was also a signific
 ,
 suggesting a relationship between onfield performance and individual athlete perceptions of performance.
 
-These results suggested that group performance expectation violations were a positive predictor of feelings of group click among athletes, and that this relationship was moderated by experiment condition, such that expectation violation had a greater effect on feelings of group click in the high difficulty condition than the low difficulty condition.  Model residuals were normally distributed around zero
-(
-  \resdist
-    \Sexpr{groupPerfExpClickResid.Wald$statistic} 0.98,
-  \pvalue
-    \Sexpr{groupPerfExpClickResid.Wald$p.value}
-)
-and an analysis of Cook's distances suggests that the model did not contain any observations that unjustifiably influenced parameter estimates
-(all
-  \cooksD
-    \Sexpr{max(groupPerfExpClickCooksD)}
-  ,
-  for full presentation of model assumptions, see Appendix Figure ~\ref{fig:M1Assumptions}
+These results suggested that group performance expectation violations were a positive predictor of feelings of group click among athletes, and that this relationship was moderated by experiment condition, such that expectation violation had a greater effect on feelings of group click in the high difficulty condition than the low difficulty condition. 
 
-).
-Based on these assessments, the model provided a robust basis for the inference that---in line with predictions---more positive violation of expectations concerning group performance predicted stronger feelings of team click. Also as predicted, this result was moderated by experiment condition, such that the effect of group performance expectation violation on group click was stronger in the high difficulty condition.
+
 
 %ASSUMPTIONS:
 <<groupPerfExpClickAssumptionsHist, echo=F,eval=T>>=
@@ -2579,13 +2591,32 @@ Based on these assessments, the model provided a robust basis for the inference 
 <<groupPerfExpClickCooksD, echo=F,eval=T>>=
   #indluential cases
   #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+ library(HLMdiag)
   groupPerfExpClickCooksD <- cooks.distance(groupPerfExpClick.controls)
   plot(groupPerfExpClickCooksD, main = "M1 Influential cases \n (Cook's Distance)", ylab = "cooks.distance")
   dev.copy(pdf, "TEM1CooksD.pdf")
   dev.off()
 
 @
-
+ Model residuals were normally distributed around zero
+(
+  \resdist
+    \Sexpr{groupPerfExpClickResid.Wald$statistic} 0.98,
+  \pvalue
+    \Sexpr{groupPerfExpClickResid.Wald$p.value}
+)
+and an analysis of Cook's distances suggests that the model did not contain any observations that unjustifiably influenced parameter estimates
+(all
+  \cooksD
+    \Sexpr{max(groupPerfExpClickCooksD)}
+  ,
+  for full presentation of model assumptions, see Appendix Figure ~\ref{fig:M1Assumptions}).
+  
+Based on these assessments, the model provided a robust basis for the inference that---in line with predictions---more positive violation of expectations concerning group performance predicted stronger feelings of team click. Also as predicted, this result was moderated by experiment condition, such that the effect of group performance expectation violation on group click was stronger in the high difficulty condition.
+  
+  
+  
+  
 
 \myparagraph{Prediction 1.a: Violations of expectations around team performance moderate the relationship between perceptions of joint action success and team click training group}
 
@@ -2621,18 +2652,51 @@ Based on these assessments, the model provided a robust basis for the inference 
   groupPerfExpJASClickScatterLM <- ggplot(twc, aes(x=jointActionSuccessPost,
                                         y=groupClickPostFactor, size=groupPerformance_3Norm)) + geom_point(alpha = .10)
   groupPerfExpJASClickScatterLM +
-              ggtitle("Positive violation of Team Performance Expectations \n moderates effect of Joint Action Success on Group Click") +
+              ggtitle("Positive violation of Team Performance \n Expectations moderates effect of \n Joint Action Success on Group Click") +
               theme(plot.title = element_text(size=12)) +
               xlab("Joint Action Success") +
               ylab("Group Click") +
               scale_size_continuous(guide = FALSE)+
-              geom_abline(aes(intercept=0.16, slope=0.7371, linetype='-1SD Expectation Violation'))+
-              geom_abline(aes(intercept=0.2242, slope=0.6815, linetype='Mean Expectation Violation'))+
-              geom_abline(aes(intercept=0.2885, slope=0.6259, linetype='+1SD Expectation Violation'))+
+              geom_abline(aes(intercept=0.16, slope=0.7371, linetype='-1SD PerfExpect'))+
+              geom_abline(aes(intercept=0.2242, slope=0.6815, linetype='Mean PerfExpect'))+
+              geom_abline(aes(intercept=0.2885, slope=0.6259, linetype='+1SD PerfExpect'))+
               scale_linetype_manual(values=c('dotted','dashed','solid'),
-              breaks=c('-1SD ExpectationViolation','Mean Expectation Violation','+1SD Expectation Violation'),name='Simple\nSlope')+
+              breaks=c('-1SD PerfExpect','Mean PerfExpect','+1SD PerfExpect'),name='Simple\nSlope')+
               apatheme
 @
+
+
+
+MODELS
+<<jASgroupPerfExpClickInt, echo=F,eval=T>>=
+  jASgroupPerfExpClick.int.controls <- lmer(groupClickPostFactor ~
+                                            jointActionSuccessPost*groupPerformance_3Norm +
+                                            indPerformancePost + arousalFactorPost + fullOutcomeAvg +
+                                            (jointActionSuccessPost |sessionName),
+                                            data = twc,
+                                            REML = F)
+
+  # subjectiveCompetence objectiveCompetence
+  summary(jASgroupPerfExpClick.int.controls)
+  #the effect of X2 on Y depends on the level of X1, or vice versa
+  jASgroupPerfExpClick.int.controls.CIs <- confint.merMod(jASgroupPerfExpClick.int.controls, method = "Wald")
+  #calculate marginal (fixed) and conditional (random) R^2 for the model:
+  #jASgroupPerfExpClick.int.controls.R2 <- sem.model.fits(jASgroupPerfExpClick.int.controls)
+@
+
+<<jASgroupPerfExpClickInt1, echo=F,eval=T>>=
+    jASgroupPerfExpClick.int.controls1 <- lmer(groupClickPostFactor ~
+                                              jointActionSuccessPost*groupPerformance_3Norm +
+                                              arousalFactorPost + fullOutcomeAvg +
+                                              (jointActionSuccessPost |sessionName),
+                                              data = twc,
+                                              REML = F)
+  summary(jASgroupPerfExpClick.int.controls1)
+@
+
+
+
+
 
 <<jASgroupPerfExpClickScatterLMER, eval=T, echo=F, fig.cap="Positive violation of Group Performance Expectations \n moderates the relationship between perceived Joint Action Success and Group Click">>=
   #twc$groupPerformance_3Norm <- scale(twc$groupPerformance_3)
@@ -2677,37 +2741,13 @@ Based on these assessments, the model provided a robust basis for the inference 
               apatheme
 @
 
-Figure ~\ref{fig:teamPerfExpClickScatter} shows that the slope of the relationship between between perceptions of Joint Action Success and Group Click appears to be  moderated, such that higher levels (+1 standard deviation) of group performance expectation violation results in a reduction in steepness of the slope.
+Figure ~\ref{fig:teamPerfExpClickScatter} shows that the slope of the relationship between between perceptions of Joint Action Success and Group Click appears to be  moderated by perception of team performance relative to prior expectations, such that higher levels (+1 standard deviation) of group performance expectation violation results in an increase of the steepness of the slope.
 
-%MODELS
-<<jASgroupPerfExpClickInt, echo=F,eval=T>>=
-  jASgroupPerfExpClick.int.controls <- lmer(groupClickPostFactor ~
-                                            jointActionSuccessPost*groupPerformance_3Norm +
-                                            indPerformancePost + arousalFactorPost + fullOutcomeAvg +
-                                            (jointActionSuccessPost |sessionName),
-                                            data = twc,
-                                            REML = F)
-
-  # subjectiveCompetence objectiveCompetence
-  summary(jASgroupPerfExpClick.int.controls)
-  #the effect of X2 on Y depends on the level of X1, or vice versa
-  jASgroupPerfExpClick.int.controls.CIs <- confint.merMod(jASgroupPerfExpClick.int.controls, method = "Wald")
-  #calculate marginal (fixed) and conditional (random) R^2 for the model:
-  jASgroupPerfExpClick.int.controls.R2 <- sem.model.fits(jASgroupPerfExpClick.int.controls)
-@
-<<jASgroupPerfExpClickInt1, echo=F,eval=T>>=
-    jASgroupPerfExpClick.int.controls1 <- lmer(groupClickPostFactor ~
-                                              jointActionSuccessPost*groupPerformance_3Norm +
-                                              arousalFactorPost + fullOutcomeAvg +
-                                              (jointActionSuccessPost |sessionName),
-                                              data = twc,
-                                              REML = F)
-  summary(jASgroupPerfExpClick.int.controls1)
-@
+%
 
 A LMER model, with Joint Action Success, Group Performance Expectations, and their interaction included as fixed effects, and perceptions of individual component performance, post-Experiment arousal, and average performance outcome included as controls, confirmed that the negative interation effect of Group Performance Expectations and Joint Action Success on Group Click was significant
 ,
-  \betaest
+  \betavec
     \Sexpr{coef(summary(jASgroupPerfExpClick.int.controls))["jointActionSuccessPost:groupPerformance_3Norm","Estimate"]}
   \CIstart
     \Sexpr{jASgroupPerfExpClick.int.controls.CIs["jointActionSuccessPost:groupPerformance_3Norm", 1]}
@@ -2727,28 +2767,13 @@ A LMER model, with Joint Action Success, Group Performance Expectations, and the
     \Sexpr{coef(summary(jASgroupPerfExpClick.int.controls))["jointActionSuccessPost:groupPerformance_3Norm","Pr(>|t|)"]}
   ,
   \MR2
-    \Sexpr{jASgroupPerfExpClick.int.controls.R2[,5]}
+   % \Sexpr{jASgroupPerfExpClick.int.controls.R2[,5]}
   ,
   \CR2
-    \Sexpr{jASgroupPerfExpClick.int.controls.R2[,6]}
+    %\Sexpr{jASgroupPerfExpClick.int.controls.R2[,6]}
 ,
 suggesting that the relationship between joint action success an group click is more pronounced for \textit{less} positive violations of expectations around group performance.
 
-Model residuals were normally distributed around zero
-(
-  \resdist
-    \Sexpr{jASgroupPerfExpClickIntResid.Wald$statistic},
-  \pvalue
-    \Sexpr{jASgroupPerfExpClickIntResid.Wald$p.value}
-),
-however
-an analysis of Cook's distances suggested that the model did contain one influential observation
-(
-  \cooksD
-  =
-    \Sexpr{max(jASgroupPerfExpClickIntCooksD)}, see model assumptions in Appendix  ~\ref{fig:M1aAssumptions}
-).
-Re-running the model with this value excluded led to an improvement of the model fit.
 
 %%UNUSED MODEL:
 <<groupPerfJASExpClick, eval=T,echo=F>>=
@@ -2805,6 +2830,21 @@ Re-running the model with this value excluded led to an improvement of the model
 
 
 
+Model residuals were normally distributed around zero
+(
+  \resdist
+    \Sexpr{jASgroupPerfExpClickIntResid.Wald$statistic},
+  \pvalue
+    \Sexpr{jASgroupPerfExpClickIntResid.Wald$p.value}
+),
+however
+an analysis of Cook's distances suggested that the model did contain one influential observation
+(
+  \cooksD
+  =
+   % \Sexpr{max(jASgroupPerfExpClickIntCooksD)}, see model assumptions in Appendix  ~\ref{fig:M1aAssumptions}
+).
+Re-running the model with this value excluded led to an improvement of the model fit.
 
 
 
@@ -2861,7 +2901,7 @@ Figure ~\ref{fig:groupClickBondScatter} shows a clear relationship between Group
   #CIs:
   clickBonding.controls.CIs <- confint.merMod(clickBonding.controls, method = "Wald")
   #calculate marginal (fixed) and conditional (random) R^2 for the model:
-  clickBonding.controls.R2 <- sem.model.fits(clickBonding.controls)
+  #clickBonding.controls.R2 <- sem.model.fits(clickBonding.controls)
 
 
   #Check for interaction with condition:
@@ -2877,12 +2917,12 @@ Figure ~\ref{fig:groupClickBondScatter} shows a clear relationship between Group
   #CIs:
   clickBondingCondition.controls.CIs <- confint.merMod(clickBondingCondition.controls, method = "Wald")
   #calculate marginal (fixed) and conditional (random) R^2 for the model:
-  clickBondingCondition.controls.R2 <- sem.model.fits(clickBondingCondition.controls)
+  #clickBondingCondition.controls.R2 <- sem.model.fits(clickBondingCondition.controls)
 @
 
 A LMER model (controlling for arousal, average trial performance outcome, and technical competence (subjective and objective)) revealed a strong positive relationship between feelings of group click and feelings of social bonding to the training group,
 
-  \betaest
+  \betavec
     \Sexpr{coef(summary(clickBondingCondition.controls))["groupClickPostFactor","Estimate"]}
   \CIstart
     \Sexpr{clickBondingCondition.controls.CIs["groupClickPostFactor", 1]}
@@ -2902,14 +2942,14 @@ A LMER model (controlling for arousal, average trial performance outcome, and te
     \Sexpr{coef(summary(clickBondingCondition.controls))["groupClickPostFactor","Pr(>|t|)"]}
   ,
   \MR2
-    \Sexpr{clickBondingCondition.controls.R2[,5]}
+   % \Sexpr{clickBondingCondition.controls.R2[,5]}
   ,
   \CR2
-    \Sexpr{clickBondingCondition.controls.R2[,6]}
+   % \Sexpr{clickBondingCondition.controls.R2[,6]}
 .
 The interaction effect of group click and condition on social bonding was not significant
 ,
-  \betaest
+  \betavec
     \Sexpr{coef(summary(clickBondingCondition.controls))["groupClickPostFactor:conditionhigh","Estimate"]}
   \CIstart
     \Sexpr{clickBondingCondition.controls.CIs["groupClickPostFactor:conditionhigh", 1]}
@@ -2939,7 +2979,7 @@ suggesting that athletes who felt stronger levels of group click also felt stron
   dev.copy(pdf, "TEM2Hist.pdf")
   dev.off()
   #non-normality
-  clickBondingConditionResid.Wald <- shapiro.test(clickBondingConditionResid)
+  clickBondingCondition.controls.Wald <- shapiro.test(clickBondingConditionResid)
   psych::describe(clickBondingConditionResid)
 @
 <<clickBondingConditionScatter, echo=F,eval=T>>=
@@ -3011,7 +3051,7 @@ These results suggested that feelings of group click were a powerful predictor o
   %              ylab("Social Bonding") +
   %              apatheme
   %@
-
+@
 Figure ~\ref{fig:groupPerfExpBondConditionScatter} shows a positive relationship between violation of group performance expectations and Social Bonding to the training group.  The plot shows a pronounced difference in the slope of each experimental condition, suggesting that the relationship was stronger in the high difficulty condition.
 
 %%MODEL:
@@ -3043,11 +3083,11 @@ Figure ~\ref{fig:groupPerfExpBondConditionScatter} shows a positive relationship
   #CIs:
   groupPerfExpBondingCondition.controls.CIs <- confint.merMod(groupPerfExpBondingCondition.controls, method = "Wald")
   #R^2s:
-  groupPerfExpBondingCondition.controls.R2 <- sem.model.fits(groupPerfExpBondingCondition.controls)
+ # groupPerfExpBondingCondition.controls.R2 <- sem.model.fits(groupPerfExpBondingCondition.controls)
 @
 A LMER model with group performance expectation violation, condition, and their interaction as fixed effects, experiment session as random effect (correlated slope and intercept), and controls, revealed a significant positive relationship between the interaction of group performance expectation violation and condition on social bonding
   ,
-  \betaest
+  \betavec
     \Sexpr{coef(summary(groupPerfExpBondingCondition.controls))["groupPerformance_3Norm:conditionhigh","Estimate"]}
   \CIstart
     \Sexpr{groupPerfExpBondingCondition.controls.CIs["groupPerformance_3Norm:conditionhigh", 1]}
@@ -3067,14 +3107,14 @@ A LMER model with group performance expectation violation, condition, and their 
     \Sexpr{coef(summary(groupPerfExpBondingCondition.controls))["groupPerformance_3Norm:conditionhigh","Pr(>|t|)"]}
   ,
   \MR2
-    \Sexpr{groupPerfExpBondingCondition.controls.R2[,5]}
+   % \Sexpr{groupPerfExpBondingCondition.controls.R2[,5]}
   ,
   \CR2
-    \Sexpr{groupPerfExpBondingCondition.controls.R2[,6]}
+   % \Sexpr{groupPerfExpBondingCondition.controls.R2[,6]}
   .
 The main effects of group performance expectation violation
 (
-  \betaest
+  \betavec
     \Sexpr{coef(summary(groupPerfExpBondingCondition.controls))["groupPerformance_3Norm","Estimate"]}
   \CIstart
     \Sexpr{groupPerfExpBondingCondition.controls.CIs["groupPerformance_3Norm", 1]}
@@ -3095,7 +3135,7 @@ The main effects of group performance expectation violation
   )
   and experiment condition
   (
-  \betaest
+  \betavec
     \Sexpr{coef(summary(groupPerfExpBondingCondition.controls))["conditionhigh","Estimate"]}
   \CIstart
     \Sexpr{groupPerfExpBondingCondition.controls.CIs["conditionhigh", 1]}
@@ -3116,7 +3156,7 @@ The main effects of group performance expectation violation
 )
 were not significant predictors of social bonding.  Average performance in each trial was, however, a significant predictor of social bonding
 ,
-  \betaest
+  \betavec
     \Sexpr{coef(summary(groupPerfExpBondingCondition.controls))["fullOutcomeAvg","Estimate"]}
   \CIstart
     \Sexpr{groupPerfExpBondingCondition.controls.CIs["fullOutcomeAvg", 1]}
@@ -3179,7 +3219,7 @@ Model residuals were normally distributed around zero
     \Sexpr{jASgroupPerfExpClickIntResid.Wald$p.value}
 )
 and all \cooksD were less than
-  \Sexpr{max(jASgroupPerfExpClickIntCooksD)}
+  %\Sexpr{max(jASgroupPerfExpClickIntCooksD)}
 (
 see model assumptions in Appendix  ~\ref{fig:M1aAssumptions}
 )
@@ -3190,9 +3230,25 @@ These results suggested that the relationship between positive violation of grou
 \myparagraph{Prediction 4: Feelings of group click will mediate a relationship between more positive violations of expectations around group performance and social bonding to the group}
 
 <<groupPerfExpClickBondMediationModel, eval=T,echo=F>>=
+  
+  #detach_package function for lmerTest
+  detach_package <- function(pkg, character.only = FALSE)
+{
+  if(!character.only)
+  {
+    pkg <- deparse(substitute(pkg))
+  }
+  search_item <- paste("package", pkg, sep = ":")
+  while(search_item %in% search())
+  {
+    detach(search_item, unload = TRUE, character.only = TRUE)
+  }
+  }
+  detach_package("lmerTest", TRUE)
+  
   library(lme4)
-  library(optimx)
-  #library(lmerTest)
+ library(optimx)
+#  library(lmerTest)
   ## Direct relationship X->Y: fit model and show summary
   summary(m1 <- lmer(groupBondingFactorPost ~ groupPerformance_3Norm +
                                               indPerformancePost + arousalFactorPost + fullOutcomeAvg +
@@ -3217,32 +3273,35 @@ These results suggested that the relationship between positive violation of grou
                                       groupPerformance_3Norm*groupClickPostFactor +
                                       arousalFactorPost + fullOutcomeAvg +
                                       subjectiveCompetenceFactor + objectiveCompetenceFactor + (1 + groupPerformance_3Norm + groupClickPostFactor | sessionName),
-                                      data = twc, REML = FALSE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))))
+                                      data = twc, REML = FALSE, control = lmerControl(optimizer = "optimx", 
+                                      calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))))
 
-  library(mediation)
+  #library(mediation)
+
   med.out.groupPerfExp <- mediate(m2, m3, treat = "groupPerformance_3Norm",
                                           mediator = "groupClickPostFactor")
   summary(med.out.groupPerfExp)
-  med.out.groupPerfExp.unclass <- unclass(med.out.groupPerfExp)
+  #tidy(summary(med.out.groupPerfExp))
+  med.out.groupPerfExp.unclass <- unclass(summary(med.out.groupPerfExp))
+  summary(med.out.groupPerfExp.unclass)
 @
 <<groupPerfExpClickMediationPlot, eval=T,echo=F>>=
-  plot(med.out.groupPerfExp, main = "Group Click partially mediates the \n relationship
-                                    between team performance \n expectation violation and social bonding")
+  plot(med.out.groupPerfExp, main = "Group Click partially mediates relationship \n between team performance expectation \n violation and social bonding")
 @
 
 Mediation analyses were conducted using linear mixed effects regressions in the Causal Mediation Analysis package in R (Version 4.4.5).  To make inferences concerning the average indirect and total effects, quasi-Bayesian Markov Chain Monte Carlo (MCMC) method based on normal approximation and 1000 simulations was used to estimate the 95\% Confidence Intervals \citep{Tofighi2016a,Imai2010}. MCMC estimation is a form of non-parametric bootstrapping whereby the sampling distribution for the effect of interest is not assumed to be normal but is instead simulated from the model estimates and their asymptotic variances and covariances \cite{Preacher2008}.
 
 Results of the mediation analysis revealed significant average indirect effect of Group Performance Expectation Violation on Social Bonding attributable to Team Click,
-  \betaest
-    \Sexpr{coef(summary(med.out.groupPerfExp))["ACME (average)","Estimate"]}
+  \betavec
+   % \Sexpr{coef(summary(med.out.groupPerfExp))["ACME (average)", "Estimate"]}
   \CIstart
-    \Sexpr{coef(summary(med.out.groupPerfExp))["ACME (average)","95% CI Lower"]}
+   % \Sexpr{coef(summary(med.out.groupPerfExp))["ACME (average)","95% CI Lower"]}
   ,
-    \Sexpr{coef(summary(med.out.groupPerfExp))["ACME (average)","95% CI Upper"]}
+   % \Sexpr{coef(summary(med.out.groupPerfExp))["ACME (average)","95% CI Upper"]}
   \CIfinish
   ,
   \pvalue
-    \Sexpr{coef(summary(med.out.groupPerfExp))["ACME (average)","p-value"]}
+   % \Sexpr{coef(summary(med.out.groupPerfExp))["ACME (average)","p-value"]}
   ,
   .
 When controlling for the effect of team click on social bonding, the average direct effect between Joint Action Success and Social Bonding was no longer significant, \Sexpr{} (see Figure ~\ref{fig:groupPerfExpClickMediationPlot}).  These results suggest that feelings of team click fully mediate the relationship between group performance expectation violation and and social bonding.
@@ -3270,6 +3329,11 @@ When controlling for the effect of team click on social bonding, the average dir
 
 
 
+
+
+
+
+\end{document}
 
 
 
@@ -3632,4 +3696,4 @@ plot(tlc$athleteStatus, tlc$groupClickFactor)
 
 
 
-\end{document}
+

@@ -1,0 +1,93 @@
+\documentclass{article}
+
+
+\documentclass[english]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.8cm,a4paper]{geometry}
+\usepackage[english]{babel} % hyphenation
+\usepackage{csquotes}
+\usepackage{amsmath,amssymb,amsthm} % for mathematical
+\usepackage{graphicx} % to include graphics
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+
+%%Bib Setup:
+\usepackage[style=apa, sorting=nyt, backend=biber, maxcitenames=2, useprefix=true, doi=false, isbn=false, natbib=true, language=american]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\newcommand*{\bibtitle}{Works Cited}
+\addbibresource{references.bib}
+
+%%In-text \Sexpr{} setup for lmer:
+\newcommand{\betavec}{\beta = }
+\newcommand{\betavec}{{\bm\beta}}
+\newcommand{\CIstart}{(95\% CI =}
+\newcommand{\CIfinish}{),}
+\newcommand{\SE}{SE =}
+\newcommand{\pvalue}{p =}
+\newcommand{\MR2}{marginal R^2 =}
+\newcommand{\CR2}{conditional R^2 =}
+% Wald statistic for normality of residuals:
+\newcommand{\resdist}{W = }
+% Cook's Distances (influential cases)
+\newcommand{\cooksD}{Cook's Distances}
+
+% setting global settings and loading useful libraries
+\title{Field Experiment}
+\date{}
+\author{Jacob Taylor & Emma Cohen \\ Institute of Cognitive \and Evolutionary Anthropology, University of Oxford}
+
+
+
+
+\begin{document}
+
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: package 'tableone' was built under R version 3.3.2}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: package 'apa' was built under R version 3.3.2}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: package 'lme4' was built under R version 3.3.2}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: Matrix}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: package 'car' was built under R version 3.3.2}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: package 'dplyr' was built under R version 3.3.2}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'dplyr'}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:car':\\\#\# \\\#\#\ \ \ \  recode}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from 'package:stats':\\\#\# \\\#\#\ \ \ \  filter, lag}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following objects are masked from 'package:base':\\\#\# \\\#\#\ \ \ \  intersect, setdiff, setequal, union}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: package 'broom' was built under R version 3.3.2}}\end{kframe}
+\end{knitrout}
+
+
+
+
+
+%MODEL:
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'groupClickPostFactor' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'groupClickPostFactor' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'groupClickPostFactor' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in summary(groupPerfExpClick.controls): object 'groupPerfExpClick.controls' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in tidy(groupPerfExpClick.controls): object 'groupPerfExpClick.controls' not found}}\end{kframe}
+\end{knitrout}
+

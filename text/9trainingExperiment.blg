@@ -1,0 +1,5 @@
+[0] Config.pm:354> INFO - This is Biber 2.7
+[0] Config.pm:357> INFO - Logfile is '9trainingExperiment.blg'
+[62] biber-darwin:303> INFO - === Mon May 14, 2018, 21:59:49
+[100] Utils.pm:180> ERROR - 9trainingExperiment.bcf is malformed, last biblatex run probably failed. Deleted 9trainingExperiment.bbl
+[101] Biber.pm:113> INFO - ERRORS: 1
