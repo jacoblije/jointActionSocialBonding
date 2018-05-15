@@ -21,8 +21,7 @@
 \addbibresource{references.bib}
 
 %%In-text \Sexpr{} setup for lmer:
-\newcommand{\betavec}{\beta = }
-\newcommand{\betavec}{{\bm\beta}}
+\newcommand{\betavec}{{\bm\beta = }}
 \newcommand{\CIstart}{(95\% CI =}
 \newcommand{\CIfinish}{),}
 \newcommand{\SE}{SE =}
@@ -191,13 +190,13 @@ By manipulating the level of uncertainty of information regarding the expectatio
 
 The Closing:
 These considerations lead to the hypothesis that expectations of higher levels of technical challenge in joint action will lead to higher levels of social bonding, due to the likelihood that athletes will experience more positive violations of expectations around team performance in the high-difficulty prime than in a low difficulty prime.  As predicted in the previous study, it was predicted that the feeling of ``team click'' would mediate the relationship between positive violations of expectations and social bonding.  The predictions are outlined as follows:
-\begin{\begin{description}
+\begin{description}
 \item[Prediction 1:] More positive violations of expectations around team performance will correlate with higer feelings of team click with the training group
 \item[Prediction 1.a:] Violations of expectations around team performance moderate the relationship between perceptions of joint action success and team click training group
 \item[Prediction 2:] Feelings of group click will positively correlate with feelings of social bonding to the group
 \item[Prediction 3:] More positive violations of team performance expectations will predict higher levels of Social Bonding to the training group
 \item[Prediction 4:] Feelings of group click will mediate a relationship between more positive violations of expectations around group performance and social bonding to the group
-\end{description}}
+\end{description}
 
 A between-subjects experimental design was used, in which expectations of technical difficulty was manipulated in one of two conditions, ``high difficulty'' and ``low difficulty'' condition.  Surveys measuring athletes' perceptions of joint action success relative to prior expectations, team click, and feelings of social bonding to the specific training group were recorded both before and after the experiment.
 
@@ -296,8 +295,8 @@ Two different pre-experiment primes were developed for the same training drill i
 Surveys were administered at three time points: 1) one day before the experiment (Baseline), 2) immediately before the experiment after receiving the experimental prime (Pre-Experiment), and 3) once immediately following the completion of the experiment (Post-Experiment)(see ~\ref{tab:surveyItemsByTime}).  Consistent with the previous study (Chapter 8), athletes responded to questions about 1) perceptions of components and overall individual and team performance in joint action, 2) feelings associated with ``team click'' in joint action, and feelings of social bonding and group membership.  In addition, athletes responded to survey items designed to measure possible moderators of the relationship between joint action and social bonding, namely: perceptions of arousal, fatigue, injury status, and personality type.
 
 At Baseline, athletes were asked about their impressions of recent individual performance and the performance of their province team as a whole.  Survey items included questions relating to specific components of on-field performance (e.g., team components: Attack, defence, onfield communication, and support play; individual components: Passing technique, one-on-one tackling, effectiveness in contact areas) as well as items relating to overall impressions of performance, for example: ``How well do you feel your team has been performing in training and competition over the past month?'' (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'').  Athletes also responded to questions about feelings of team click and social bonding with their team as a whole. In addition, the Baseline survey also included items concerning basic personal information, current injury status, subjective and objective measures of tehcnical competence, and personality type.
-For a full explanation of survey items measured at Baseline, see Chapter 6 (Introduction to Part B) and Appendix ~\ref{} Section ~\ref{} .
-
+For a full explanation of survey items measured at Baseline, see Chapter 6 (Introduction to Part B) and Appendix ~\ref{} Section ~\ref{}.
+  
 At time 2, immediately prior to the experiment (Pre-Experiment), athletes were asked questions about feelings and expectations concerning their individual performance and the performance of their specific training group in the impending training drill.
 For example,  athletes were asked ``How do you feel \textit{right now} about your individual performance (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'')''.  Athletes were also asked a series of questions about feelings of team click and social bonding to their specific training group. For team click, for example, athletes were asked questions like: ``How do you feel the tacit understanding is between the training group today?'' (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'').  For social bonding, athletes were asked questions like: ``How emotionally supportive does your training group feel right now?'' (100 point scale, 0 = ``Extremely weak'', 100 = ``Extremely strong'').
 For a full explanation of survey items measured at Pre-Experiment, see Appendix ~\ref{} Section ~\ref{}.
@@ -504,7 +503,11 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   #tlcGroupPerformance$groupPerformance[tlcGroupPerformance$time == 3] <- NA
   #rescale groupPerformaneExp to (0,100)
   library(scales)
-  tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3], to = c(0, 100), from = c(-50, 50))
+  tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(
+                                                                                    tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3], 
+                                                                                    to = c(0, 100), 
+                                                                                    from = c(-50, 50)
+                                                                                    )
 
 
   ## rename values for factors:
@@ -528,7 +531,8 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   tlcGroupPerformanceLow <- subset(tlcGroupPerformance, Condition == "low")
 
   ## create a variable list which we want in table one
-  listVars <- c("GroupPerformVsExpected", "ConfidenceInGroupAbility", "GroupAttack", "GroupDefence", "GroupCommunication", "GroupSupportPlay")
+  listVars <- c("GroupPerformVsExpected", "ConfidenceInGroupAbility", "GroupAttack", 
+                "GroupDefence", "GroupCommunication", "GroupSupportPlay")
 
   ## define categorical variables
   catVars <- c("Sex", "Condition", "Time")
@@ -550,7 +554,9 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableGroupPerformHighTime, type="latex", caption = "Athlete perceptions of \n group performance (high difficulty condition)"), file="groupPerfTimeHighTraining.tex")
+  print(xtable(tableGroupPerformHighTime, type="latex", 
+               caption = "Athlete perceptions of \n group performance (high difficulty condition)"), 
+              file="groupPerfTimeHighTraining.tex")
 
 
   ## create table one (low difficulty condition)
@@ -570,14 +576,17 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableGroupPerformLowTime, type="latex", caption = "Athlete perceptions of \n group performance (low difficulty condition)"), file="groupPerfTimeLowTraining.tex")
+  print(xtable(tableGroupPerformLowTime, type="latex", 
+               caption = "Athlete perceptions of \n group performance (low difficulty condition)"), 
+                file="groupPerfTimeLowTraining.tex")
 @
 %%IND PERFORMANCE
 <<descriptivesIndividualPerformance, echo=F,eval=T>>=
 
   ##subset data for renaming
   tlcIndPerformance <- subset(tlc, select = c(englishName, condition, sex, time, team,
-                                  indPerformance, indConfidenceChallenges, indDefense, passingTechnique, supportPlay, decisionMaking, effectivenessInContact))
+                                              indPerformance, indConfidenceChallenges, indDefense, passingTechnique, 
+                                              supportPlay, decisionMaking, effectivenessInContact))
   ## Change indPerformance @ time = 3 to another variable, and delete values at time = 3
   tlcIndPerformance$indPerformanceExp <- tlcIndPerformance$indPerformance
   tlcIndPerformance$indPerformanceExp[tlcIndPerformance$time == 1] <- NA
@@ -585,11 +594,13 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   tlcIndPerformance$indPerformance[tlcIndPerformance$time == 3] <- NA
   #rescale indPerformaneExp to (0,100)
   library(scales)
-  tlcIndPerformance$indPerformanceExp[tlcIndPerformance$time == 3] <- rescale(tlcIndPerformance$indPerformanceExp[tlcIndPerformance$time == 3], to = c(0, 100), from = c(-50, 50))
+  tlcIndPerformance$indPerformanceExp[tlcIndPerformance$time == 3] <- rescale(tlcIndPerformance$indPerformanceExp[tlcIndPerformance$time == 3],
+                                                                                to = c(0, 100), from = c(-50, 50))
 
   ## rename values for factors:
   tlcIndPerformance$sex <- ifelse(!is.na(tlcIndPerformance$sex) &
-                                  tlcIndPerformance$sex == 0, "male", ifelse(!is.na(tlcIndPerformance$sex) & tlcIndPerformance$sex == 1, "female", NA))
+                                  tlcIndPerformance$sex == 0, "male", 
+                                  ifelse(!is.na(tlcIndPerformance$sex) & tlcIndPerformance$sex == 1, "female", NA))
 
   tlcIndPerformance$time <- ifelse(!is.na(tlcIndPerformance$time) &
                                     tlcIndPerformance$time == 3, "Post",
@@ -600,7 +611,10 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ##rename columns for tables:
   tlcIndPerformance <- dplyr::rename(tlcIndPerformance, Name = englishName, Sex = sex, Team = team,
-                                  Condition = condition, Time = time, OverallPerformance = indPerformance, ConfidenceInAbility = indConfidenceChallenges, PerformanceVsExpectations = indPerformanceExp, Defence = indDefense, Passing = passingTechnique, SupportPlay = supportPlay, DecisionMaking = decisionMaking, Contact = effectivenessInContact)
+                                  Condition = condition, Time = time, OverallPerformance = indPerformance, 
+                                  ConfidenceInAbility = indConfidenceChallenges, PerformanceVsExpectations = indPerformanceExp, 
+                                  Defence = indDefense, Passing = passingTechnique, SupportPlay = supportPlay, 
+                                  DecisionMaking = decisionMaking, Contact = effectivenessInContact)
 
   # create high and low condition dfs:
   tlcIndPerformanceHigh <- subset(tlcIndPerformance, Condition == "high")
@@ -608,7 +622,8 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   tlcIndPerformanceLow <- subset(tlcIndPerformance, Condition == "low")
 
   ## create a variable list which we want in table one
-  listVars <- c("PerformanceVsExpectations", "ConfidenceInAbility", "Defence", "Passing", "SupportPlay", "DecisionMaking", "OverallPerformance")
+  listVars <- c("PerformanceVsExpectations", "ConfidenceInAbility", "Defence", 
+                "Passing", "SupportPlay", "DecisionMaking", "OverallPerformance")
 
 
   ## define categorical variables
@@ -633,7 +648,8 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   ## this latex file will later be inputted
   print(xtable(tableIndPerformHighTime, type="latex",
                         label = "tab:indPerfTimeHighTraining",
-                        caption = "Athlete perceptions of \n individual performance (high difficulty condition)"), file="indPerfTimeHighTraining.tex")
+                        caption = "Athlete perceptions of \n individual performance (high difficulty condition)"), 
+                        file="indPerfTimeHighTraining.tex")
 
 
   ## create table one (low difficulty condition)
@@ -655,13 +671,15 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   ## this latex file will later be inputted
   print(xtable(tableIndPerformLowTime, type="latex",
                             label = "tab:indPerfTimeHighTraining",
-                            caption = "Athlete perceptions of \n individual performance (low difficulty condition)"), file="indPerfTimeLowTraining.tex")
+                            caption = "Athlete perceptions of \n individual performance (low difficulty condition)"), 
+                            file="indPerfTimeLowTraining.tex")
 @
 %GROUP CLICK:
 <<descriptivesGroupClick, echo=F,eval=T>>=
   ##subset data for renaming
   tlcGroupClick <- subset(tlc, select = c(englishName, condition, sex, time, team,
-                                  groupClickPictorial, groupUnspokenUnderstanding, groupGeneralAtmosphere, groupAbilitiesExtended, groupReliabilityForOthers,
+                                  groupClickPictorial, groupUnspokenUnderstanding, groupGeneralAtmosphere, 
+                                  groupAbilitiesExtended, groupReliabilityForOthers,
                                   groupReliabilityOfOthers))
   ## groupClick is only @ time = 3, and is in terms of expectations...rescale.
   #tlcGroupClick$groupClick <- tlcGroupClick$groupClick
@@ -688,8 +706,11 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   library(dplyr)
   tlcGroupClick <- dplyr::rename(tlcGroupClick, Name = englishName, Sex = sex,
                                   Team = team, Condition = condition, Time = time,
-                                  ClickPictorial = groupClickPictorial, UnspokenUnderstanding = groupUnspokenUnderstanding, GeneralAtmosphere = groupGeneralAtmosphere,
-                                  AbilitiesExtended = groupAbilitiesExtended, ReliabilityForOthers = groupReliabilityForOthers,
+                                  ClickPictorial = groupClickPictorial, 
+                                  UnspokenUnderstanding = groupUnspokenUnderstanding, 
+                                  GeneralAtmosphere = groupGeneralAtmosphere,
+                                  AbilitiesExtended = groupAbilitiesExtended, 
+                                  ReliabilityForOthers = groupReliabilityForOthers,
                                   ReliabilityOfOthers = groupReliabilityOfOthers)
 
 
@@ -699,7 +720,8 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   tlcGroupClickLow <- subset(tlcGroupClick, Condition == "low")
 
   ## create a variable list which we want in table one
-  listVars <- c("ClickPictorial", "UnspokenUnderstanding", "GeneralAtmosphere", "AbilitiesExtended", "ReliabilityForOthers", "ReliabilityOfOthers")
+  listVars <- c("ClickPictorial", "UnspokenUnderstanding", "GeneralAtmosphere", 
+                "AbilitiesExtended", "ReliabilityForOthers", "ReliabilityOfOthers")
 
 
   ## define categorical variables
@@ -722,7 +744,8 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableGroupClickHighTime, type= "latex", caption = "Athlete perceptions of \n group click (high difficulty condition)"), file="groupClickTimeHighTraining.tex")
+  print(xtable(tableGroupClickHighTime, type= "latex", 
+               caption = "Athlete perceptions of \n group click (high difficulty condition)"), file="groupClickTimeHighTraining.tex")
 
 
   ## create table one (low difficulty condition)
@@ -742,13 +765,15 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableGroupClickLowTime, type="latex", caption = "Athlete perceptions of \n group click (low difficulty condition)"), file="groupClickTimeLowTraining.tex")
+  print(xtable(tableGroupClickLowTime, type="latex", 
+               caption = "Athlete perceptions of \n group click (low difficulty condition)"), file="groupClickTimeLowTraining.tex")
 @
 %GROUP BONDING:
 <<descriptivesGroupBonding, echo=F,eval=T>>=
   ##subset data for renaming
   tlcGroupBonding <- subset(tlc, select = c(englishName, condition, sex, time, team,
-                                  groupEmotionalSupport, groupSharedGoal, groupFusionPictorial, groupStayChange))
+                                            groupEmotionalSupport, groupSharedGoal, 
+                                            groupFusionPictorial, groupStayChange))
 
 
   ## Need to reverse group Stay Change and locate it correctly at Post-Tournament:
@@ -760,11 +785,12 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## rename values for factors:
   tlcGroupBonding$sex <- ifelse(!is.na(tlcGroupBonding$sex) &
-                                  tlcGroupBonding$sex == 0, "male", ifelse(!is.na(tlcGroupBonding$sex) & tlcGroupBonding$sex == 1, "female", NA))
+                                  tlcGroupBonding$sex == 0, "male", 
+                                  ifelse(!is.na(tlcGroupBonding$sex) & tlcGroupBonding$sex == 1, "female", NA))
 
   tlcGroupBonding$time <- ifelse(!is.na(tlcGroupBonding$time) &
                                     tlcGroupBonding$time == 3, "Post",
-                                  ifelse(!is.na(tlcGroupBonding$time) &     tlcGroupBonding$time == 2, "Pre",
+                                  ifelse(!is.na(tlcGroupBonding$time) & tlcGroupBonding$time == 2, "Pre",
                                   ifelse(!is.na(tlcGroupBonding$time) & tlcGroupBonding$time == 1, "Baseline", NA)))
   tlcGroupBonding$time <- factor(tlcGroupBonding$time, levels = c("Baseline", "Pre",
                                     "Post"), ordered = is.ordered(tlcGroupBonding$time))
@@ -772,7 +798,8 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   ##rename columns for tables:
   tlcGroupBonding <- dplyr::rename(tlcGroupBonding, Name = englishName, Sex = sex,
                                   Team = team, Condition = condition, Time = time,
-                                  EmotionalSupport = groupEmotionalSupport, SharedGoal = groupSharedGoal, FusionPictorial = groupFusionPictorial,
+                                  EmotionalSupport = groupEmotionalSupport, SharedGoal = groupSharedGoal, 
+                                  FusionPictorial = groupFusionPictorial,
                                   StayOrChange = groupStayChangeRev)
 
   # create high and low condition dfs:
@@ -804,7 +831,9 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableGroupBondingHighTime, type= "latex", caption = "Athlete perceptions of \n group bonding (high difficulty condition)"), file="groupBondingTimeHighTraining.tex")
+  print(xtable(tableGroupBondingHighTime, type= "latex", 
+               caption = "Athlete perceptions of \n group bonding (high difficulty condition)"), 
+               file="groupBondingTimeHighTraining.tex")
 
 
   ## create table one (low difficulty condition)
@@ -824,13 +853,17 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableGroupBondingLowTime, type="latex", caption = "Athlete perceptions of \n group bonding (low difficulty condition)"), file="groupBondingTimeLowTraining.tex")
+  print(xtable(tableGroupBondingLowTime, type="latex", 
+                caption = "Athlete perceptions of \n group bonding (low difficulty condition)"), 
+                file="groupBondingTimeLowTraining.tex")
 @
 %TEAM BONDING
 <<descriptivesTeamBonding, echo=F,eval=T>>=
   ##subset data for renaming
   tlcTeamBonding <- subset(tlc, select = c(englishName, condition, sex, time, team,
-                                emotionalSupport, sharedGoal, fusionVerbal, groupId, fusionPictorialTeam, fusionPictorialFamily, fusionPictorialCountry, rankTeam, rankFamily, rankCountry))
+                                emotionalSupport, sharedGoal, fusionVerbal, groupId, 
+                                fusionPictorialTeam, fusionPictorialFamily, fusionPictorialCountry, 
+                                rankTeam, rankFamily, rankCountry))
 
 
   ## Need to reverse rank scores:
@@ -841,23 +874,25 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## rename values for factors:
   tlcTeamBonding$sex <- ifelse(!is.na(tlcTeamBonding$sex) &
-                                tlcTeamBonding$sex == 0, "male", ifelse(!is.na(tlcTeamBonding$sex) & tlcTeamBonding$sex == 1, "female", NA))
+                                tlcTeamBonding$sex == 0, "male", 
+                                ifelse(!is.na(tlcTeamBonding$sex) & tlcTeamBonding$sex == 1, "female", NA))
 
   tlcTeamBonding$time <- ifelse(!is.na(tlcTeamBonding$time) &
                                   tlcTeamBonding$time == 3, "Post",
-                                ifelse(!is.na(tlcTeamBonding$time) &     tlcTeamBonding$time == 2, "Pre",
+                                ifelse(!is.na(tlcTeamBonding$time) & tlcTeamBonding$time == 2, "Pre",
                                 ifelse(!is.na(tlcTeamBonding$time) & tlcTeamBonding$time == 1, "Baseline", NA)))
+  
   tlcTeamBonding$time <- factor(tlcTeamBonding$time, levels = c("Baseline", "Pre",
                                   "Post"), ordered = is.ordered(tlcTeamBonding$time))
-
-
 
   ##rename columns for tables:
   tlcTeamBonding <- dplyr::rename(tlcTeamBonding, Name = englishName, Sex = sex,
                                 Team = team, Condition = condition, Time = time,
-                                EmotionalSupport = emotionalSupport, SharedGoal = sharedGoal, FusionVerbalTeam = fusionVerbal, GroupIdentification = groupId,
+                                EmotionalSupport = emotionalSupport, SharedGoal = sharedGoal, 
+                                FusionVerbalTeam = fusionVerbal, GroupIdentification = groupId,
                                 FusionPictorialTeam = fusionPictorialTeam,
-                                FusionPictorialFamily = fusionPictorialFamily, FusionPictorialCountry = fusionPictorialCountry, TeamRank = rankTeamRev, FamilyRank = rankFamilyRev, CountryRank = rankCountryRev)
+                                FusionPictorialFamily = fusionPictorialFamily, FusionPictorialCountry = fusionPictorialCountry, 
+                                TeamRank = rankTeamRev, FamilyRank = rankFamilyRev, CountryRank = rankCountryRev)
 
   # create high and low condition dfs:
   tlcTeamBondingHigh <- subset(tlcTeamBonding, Condition == "high")
@@ -866,7 +901,8 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## create a variable list which we want in table one
   listVars <- c("EmotionalSupport", "SharedGoal", "FusionVerbalTeam",
-                "GroupIdentification", "FusionPictorialTeam", "FusionPictorialFamily", "FusionPictorialCountry", "TeamRank", "FamilyRank", "CountryRank")
+                "GroupIdentification", "FusionPictorialTeam", "FusionPictorialFamily", 
+                "FusionPictorialCountry", "TeamRank", "FamilyRank", "CountryRank")
 
 
   ## define categorical variables
@@ -889,7 +925,9 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableTeamBondingHighTime, type= "latex", caption = "Athlete perceptions of \n team bonding (high difficulty condition)"), file="teamBondingTimeHighTraining.tex")
+  print(xtable(tableTeamBondingHighTime, type= "latex", 
+                                         caption = "Athlete perceptions of \n team bonding (high difficulty condition)"), 
+                                         file="teamBondingTimeHighTraining.tex")
 
 
   ## create table one (low difficulty condition)
@@ -909,13 +947,17 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableTeamBondingLowTime, type="latex", caption = "Athlete perceptions of \n team bonding (low difficulty condition)"), file="teamBondingTimeLowTraining.tex")
+  print(xtable(tableTeamBondingLowTime, 
+               type="latex", 
+               caption = "Athlete perceptions of \n team bonding (low difficulty condition)"), 
+               file="teamBondingTimeLowTraining.tex")
 @
 %%IND PERFORMANCE SUBJECTIVE:
 <<descriptivesIndividualPerformanceSubjective, echo=F,eval=T>>=
 
   tlcCompPerfSubj <- subset(tlc, select = c(englishName, condition, sex, time, team,
-                                  indAbilityTeammates_1, indAbilityChina_1, indAbilityInternational_1, indPerformanceOnConfidence_1, indPerformanceOnMood_1))
+                                  indAbilityTeammates_1, indAbilityChina_1, indAbilityInternational_1, 
+                                  indPerformanceOnConfidence_1, indPerformanceOnMood_1))
 
   ## Need to remove values of confidence and mood from t 2 & 3:
 
@@ -928,11 +970,12 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   tlcCompPerfSubj$indPerformanceOnMood[tlcCompPerfSubj$time == 3] <- NA
 
   tlcCompPerfSubj$sex <- ifelse(!is.na(tlcCompPerfSubj$sex) &
-                                  tlcCompPerfSubj$sex == 0, "male", ifelse(!is.na(tlcCompPerfSubj$sex) & tlcCompPerfSubj$sex == 1, "female", NA))
+                                  tlcCompPerfSubj$sex == 0, "male", 
+                                  ifelse(!is.na(tlcCompPerfSubj$sex) & tlcCompPerfSubj$sex == 1, "female", NA))
 
   tlcCompPerfSubj$time <- ifelse(!is.na(tlcCompPerfSubj$time) &
                                     tlcCompPerfSubj$time == 3, "Post",
-                                  ifelse(!is.na(tlcCompPerfSubj$time) &     tlcCompPerfSubj$time == 2, "Pre",
+                                  ifelse(!is.na(tlcCompPerfSubj$time) & tlcCompPerfSubj$time == 2, "Pre",
                                   ifelse(!is.na(tlcCompPerfSubj$time) & tlcCompPerfSubj$time == 1, "Baseline", NA)))
   tlcCompPerfSubj$time <- factor(tlcCompPerfSubj$time, levels = c("Baseline", "Pre",
                                     "Post"), ordered = is.ordered(tlcCompPerfSubj$time))
@@ -940,7 +983,11 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   ##rename columns for tables:
   #library(dplyr)
   tlcCompPerfSubj <- dplyr::rename(tlcCompPerfSubj, Name = englishName, Sex = sex, Team = team,
-                                  Condition = condition, Time = time, CompetenceVsTeammates = indAbilityTeammates_1, CompetenceVsChinesePros = indAbilityChina_1, CompetenceVsInternationalPros = indAbilityInternational_1, PerfomanceImpactOnConfidence =  indPerformanceOnConfidence, PerformanceImpactOnMood = indPerformanceOnMood)
+                                  Condition = condition, Time = time, CompetenceVsTeammates = indAbilityTeammates_1, 
+                                  CompetenceVsChinesePros = indAbilityChina_1, 
+                                  CompetenceVsInternationalPros = indAbilityInternational_1, 
+                                  PerfomanceImpactOnConfidence =  indPerformanceOnConfidence, 
+                                  PerformanceImpactOnMood = indPerformanceOnMood)
 
 
   ## create a variable list which we want in table one
@@ -981,7 +1028,10 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   ##rename columns for tables:
   #library(dplyr)
   tlcObjOutcome <- dplyr::rename(tlcObjOutcome, Name = englishName, Sex = sex, Team = team,
-                                  Condition = condition, Time = time, AverageOutcome = fullOutcomeAvg, TrialOutcomeAvg = outcomeAvg, TrialOutcomeSD = outcomeSD)
+                                  Condition = condition, Time = time, 
+                                 AverageOutcome = fullOutcomeAvg, 
+                                 TrialOutcomeAvg = outcomeAvg, 
+                                 TrialOutcomeSD = outcomeSD)
   ## create a variable list which we want in table one
   listVars <- c("TrialOutcomeAvg", "TrialOutcomeAvg")
 
@@ -1019,11 +1069,12 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## rename values for factors:
   tlcTeamDiscipline$sex <- ifelse(!is.na(tlcTeamDiscipline$sex) &
-                                  tlcTeamDiscipline$sex == 0, "male", ifelse(!is.na(tlcTeamDiscipline$sex) & tlcTeamDiscipline$sex == 1, "female", NA))
+                                  tlcTeamDiscipline$sex == 0, "male", 
+                                  ifelse(!is.na(tlcTeamDiscipline$sex) & tlcTeamDiscipline$sex == 1, "female", NA))
 
   tlcTeamDiscipline$time <- ifelse(!is.na(tlcTeamDiscipline$time) &
                                     tlcTeamDiscipline$time == 3, "Post",
-                                  ifelse(!is.na(tlcTeamDiscipline$time) &     tlcTeamDiscipline$time == 2, "Pre",
+                                  ifelse(!is.na(tlcTeamDiscipline$time) & tlcTeamDiscipline$time == 2, "Pre",
                                   ifelse(!is.na(tlcTeamDiscipline$time) & tlcTeamDiscipline$time == 1, "Baseline", NA)))
   tlcTeamDiscipline$time <- factor(tlcTeamDiscipline$time, levels = c("Baseline", "Pre",
                                     "Post"), ordered = is.ordered(tlcTeamDiscipline$time))
@@ -1033,7 +1084,8 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   ##rename columns for tables:
   tlcTeamDiscipline <- dplyr::rename(tlcTeamDiscipline, Name = englishName, Sex = sex,
                                   Team = team, Condition = condition, Time = time,
-                                  Punctuality = teamPunctuality, MealAttendance = teamAttendanceMeals,  GeneralConduct = teamGeneralConduct, Curfew = teamCurfew)
+                                  Punctuality = teamPunctuality, MealAttendance = teamAttendanceMeals,  
+                                  GeneralConduct = teamGeneralConduct, Curfew = teamCurfew)
 
   # create high and low condition dfs:
   tlcTeamDisciplineHigh <- subset(tlcTeamDiscipline, Condition == "high")
@@ -1065,7 +1117,9 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableTeamDisciplineHighTime, type= "latex", caption = "Athlete perceptions of \n team discipline (high difficulty condition)"), file="teamDisciplineTimeHighTraining.tex")
+  print(xtable(tableTeamDisciplineHighTime, type= "latex", 
+               caption = "Athlete perceptions of \n team discipline (high difficulty condition)"), 
+               file="teamDisciplineTimeHighTraining.tex")
 
 
   ## create table one (low difficulty condition)
@@ -1085,7 +1139,9 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableTeamDisciplineLowTime, type="latex", caption = "Athlete perceptions of \n team discipine (low difficulty condition)"), file="teamDisciplineTimeLowTraining.tex")
+  print(xtable(tableTeamDisciplineLowTime, type="latex", 
+               caption = "Athlete perceptions of \n team discipine (low difficulty condition)"), 
+               file="teamDisciplineTimeLowTraining.tex")
 @
 %AROUSAL/EXERTION:
 <<descriptivesArousalExertion, echo=F,eval=T>>=
@@ -1104,11 +1160,13 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## rename values for factors:
   tlcArousalExertion$sex <- ifelse(!is.na(tlcArousalExertion$sex) &
-                                  tlcArousalExertion$sex == 0, "male", ifelse(!is.na(tlcArousalExertion$sex) & tlcArousalExertion$sex == 1, "female", NA))
+                                  tlcArousalExertion$sex == 0, "male", 
+                                  ifelse(!is.na(tlcArousalExertion$sex) & tlcArousalExertion$sex == 1, 
+                                         "female", NA))
 
   tlcArousalExertion$time <- ifelse(!is.na(tlcArousalExertion$time) &
                                     tlcArousalExertion$time == 3, "Post",
-                                  ifelse(!is.na(tlcArousalExertion$time) &     tlcArousalExertion$time == 2, "Pre",
+                                  ifelse(!is.na(tlcArousalExertion$time) & tlcArousalExertion$time == 2, "Pre",
                                   ifelse(!is.na(tlcArousalExertion$time) & tlcArousalExertion$time == 1, "Baseline", NA)))
   tlcArousalExertion$time <- factor(tlcArousalExertion$time, levels = c("Baseline", "Pre",
                                     "Post"), ordered = is.ordered(tlcArousalExertion$time))
@@ -1117,7 +1175,8 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   ##rename columns for tables:
   tlcArousalExertion <- dplyr::rename(tlcArousalExertion, Name = englishName, Sex = sex,
                                   Team = team, Condition = condition, Time = time,
-                                  Aroused = aroused, Excited = excited, Relaxed = relaxed, Fatigue = fatigue, PhysicalExertion= prpe, MentalExertion = mental, InjuryStatus = injury)
+                                  Aroused = aroused, Excited = excited, Relaxed = relaxed, Fatigue = fatigue, 
+                                  PhysicalExertion= prpe, MentalExertion = mental, InjuryStatus = injury)
 
   # create high and low condition dfs:
   tlcArousalExertionHigh <- subset(tlcArousalExertion, Condition == "high")
@@ -1149,7 +1208,9 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableArousalExertionHighTime, type= "latex", caption = "Athlete arousal \n (high difficulty condition)"), file="arousalExertionTimeHighTraining.tex")
+  print(xtable(tableArousalExertionHighTime, type= "latex", 
+               caption = "Athlete arousal \n (high difficulty condition)"), 
+               file="arousalExertionTimeHighTraining.tex")
 
 
   ## create table one (low difficulty condition)
@@ -1169,12 +1230,15 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableArousalExertionLowTime, type="latex", caption = "Athlete arousal and exertion \n (low difficulty condition)"), file="arousalExertionTimeLowTraining.tex")
+  print(xtable(tableArousalExertionLowTime, type="latex", 
+               caption = "Athlete arousal and exertion \n (low difficulty condition)"), 
+               file="arousalExertionTimeLowTraining.tex")
 @
 %PERSONALITY:
 <<descriptivesPersonality, echo=F,eval=T>>=
   tlcPersonality <- subset(tlc, select = c(englishName, condition, sex, time, team,
-                                  tipiAgreeableness, tipiConscientiousness, tipiEmotionalStability, tipiExtraverted, tipiOpenness))
+                                  tipiAgreeableness, tipiConscientiousness, 
+                                  tipiEmotionalStability, tipiExtraverted, tipiOpenness))
 
   ## Remove personality values from t 2 & 3:
   tlcPersonality$tipiAgreeableness[tlc$time == 2] <- NA
@@ -1190,11 +1254,12 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
 
   tlcPersonality$sex <- ifelse(!is.na(tlcPersonality$sex) &
-                                  tlcPersonality$sex == 0, "male", ifelse(!is.na(tlcPersonality$sex) & tlcPersonality$sex == 1, "female", NA))
+                                  tlcPersonality$sex == 0, "male", 
+                                  ifelse(!is.na(tlcPersonality$sex) & tlcPersonality$sex == 1, "female", NA))
 
   tlcPersonality$time <- ifelse(!is.na(tlcPersonality$time) &
                                     tlcPersonality$time == 3, "Post",
-                                  ifelse(!is.na(tlcPersonality$time) &     tlcPersonality$time == 2, "Pre",
+                                  ifelse(!is.na(tlcPersonality$time) & tlcPersonality$time == 2, "Pre",
                                   ifelse(!is.na(tlcPersonality$time) & tlcPersonality$time == 1, "Baseline", NA)))
   tlcPersonality$time <- factor(tlcPersonality$time, levels = c("Baseline", "Pre",
                                     "Post"), ordered = is.ordered(tlcPersonality$time))
@@ -1204,7 +1269,9 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   #library(dplyr)
   tlcPersonality <- dplyr::rename(tlcPersonality, Name = englishName, Sex = sex, Team = team,
                                   Condition = condition, Time = time,
-                                   Agreeableness = tipiAgreeableness, Conscientiousness =  tipiConscientiousness, EmotionalStability = tipiEmotionalStability, Extraverted = tipiExtraverted, Openness = tipiOpenness)
+                                   Agreeableness = tipiAgreeableness, Conscientiousness =  tipiConscientiousness, 
+                                  EmotionalStability = tipiEmotionalStability, Extraverted = tipiExtraverted, 
+                                  Openness = tipiOpenness)
 
 
 
@@ -1232,7 +1299,10 @@ Central tendencies of variables measuring athletes' perceptions of group click a
 
   ## print to latex file in wd
   ## this latex file will later be inputted
-  print(xtable(tableTlcPersonality.condition, type="latex", caption = "Athlete personality type by condition"), file="personalityTraining.tex")
+  print(xtable(tableTlcPersonality.condition, 
+               type="latex", 
+               caption = "Athlete personality type by condition"), 
+               file="personalityTraining.tex")
 @
 
 
@@ -1262,12 +1332,17 @@ The main predictor variable of interest, perceptions of training group performan
   plot(tlcGroupClick.pca)
 
   tlcGroupClick.fa <- factanal(~ groupAbilitiesExtended + groupClickPictorial +
-                                        groupUnspokenUnderstanding + groupGeneralAtmosphere, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+                                        groupUnspokenUnderstanding + groupGeneralAtmosphere, 1, 
+                                        data = tlc, 
+                                        rotation = "promax", 
+                                        na.action = na.exclude, 
+                                        scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
 
   #-----------------------------SS Loadings----------------------#
   SSLoadings.groupClickFA <- round(sum(tlcGroupClick.fa$loadings[,1]^2))
   #------------------Proportion of Variance----------------------#
-  prVar.groupClickFA <-  round((colSums(tlcGroupClick.fa$loadings*tlcGroupClick.fa$loadings)/dim(tlcGroupClick.fa$loadings)[1]*100), digits = 1)
+  prVar.groupClickFA <-  round((colSums(tlcGroupClick.fa$loadings*tlcGroupClick.fa$loadings)/dim(tlcGroupClick.fa$loadings)[1]*100), 
+                                digits = 1)
 
   head(tlcGroupClick.fa$scores)
   tlcGroupClick.fa$scores <- unclass(tlcGroupClick.fa$scores)
@@ -1304,13 +1379,18 @@ The main predictor variable of interest, perceptions of training group performan
   #GroupClickVariablesSubset: exclude effectivenessInContact (not relvant)
   ## PROBLEM: groupReliabilityOfOthers, are only measured at t3, and so restrict the creation of a factor across two time points. need to remove for groupClickFactorgroupReliabilityForOthers
   tlcGroupClickPost <- subset(tlc, select = c(groupReliabilityOfOthers,
-                                            groupReliabilityForOthers, groupAbilitiesExtended, groupClickPictorial, groupUnspokenUnderstanding, groupGeneralAtmosphere))
+                                            groupReliabilityForOthers, groupAbilitiesExtended, 
+                                            groupClickPictorial, groupUnspokenUnderstanding, groupGeneralAtmosphere))
   tlcGroupClickPost.pca <- princomp(na.omit(tlcGroupClickPost))
   summary(tlcGroupClickPost.pca)
   plot(tlcGroupClickPost.pca)
 
   tlcGroupClickPost.fa <- factanal(~ groupReliabilityForOthers + groupReliabilityOfOthers +
-                                            groupAbilitiesExtended + groupClickPictorial + groupUnspokenUnderstanding + groupGeneralAtmosphere, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+                                            groupAbilitiesExtended + groupClickPictorial + groupUnspokenUnderstanding + groupGeneralAtmosphere, 1, 
+                                            data = tlc, 
+                                            rotation = "promax", 
+                                            na.action = na.exclude, 
+                                            scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
 
   #-----------------------------SS Loadings----------------------#
   SSLoadings.groupClickPostFA <- round(sum(tlcGroupClickPost.fa$loadings[,1]^2), digits = 2)
@@ -1365,12 +1445,17 @@ In addition to the four variables common to both pre- and post-experiment survey
   plot(tlcGroupBonding.pca)
 
   tlcGroupBonding.fa <- factanal(~ groupEmotionalSupport + groupSharedGoal +
-                                        groupFusionPictorial, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+                                        groupFusionPictorial, 1, 
+                                        data = tlc, 
+                                        rotation = "promax", 
+                                        na.action = na.exclude, 
+                                        scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
 
   #-----------------------------SS Loadings----------------------#
   SSLoadings.groupBondingFA <- round(sum(tlcGroupBonding.fa$loadings[,1]^2), digits = 2)
   #------------------Proportion of Variance----------------------#
-  prVar.groupBondingFA <-  round((colSums(tlcGroupBonding.fa$loadings*tlcGroupBonding.fa$loadings)/dim(tlcGroupBonding.fa$loadings)[1]*100), digits = 1)
+  prVar.groupBondingFA <-  round((colSums(tlcGroupBonding.fa$loadings*tlcGroupBonding.fa$loadings)/dim(tlcGroupBonding.fa$loadings)[1]*100), 
+                                  digits = 1)
 
   head(tlcGroupBonding.fa$scores)
   tlc <- cbind(tlc, tlcGroupBonding.fa$scores)
@@ -1418,12 +1503,17 @@ In addition to athlete expectation violations concerning group and individual pe
     plot(tlcGroupPerformance.pca)
 
     tlcGroupPerformance.fa <- factanal(~ groupDefensiveLine + groupAttackingLine +
-                                                groupSupportPlay + groupOnfieldCommunication, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+                                                groupSupportPlay + groupOnfieldCommunication, 1, 
+                                                 data = tlc, 
+                                                 rotation = "promax", 
+                                                 na.action = na.exclude, 
+                                                 scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
 
     #-----------------------------SS Loadings----------------------#
     SSLoadings.groupPerformanceFA <- round(sum(tlcGroupPerformance.fa$loadings[,1]^2), digits = 2)
     #------------------Proportion of Variance----------------------#
-    prVar.GroupPerformanceFA <-  round((colSums(tlcGroupPerformance.fa$loadings*tlcGroupPerformance.fa$loadings)/dim(tlcGroupPerformance.fa$loadings)[1]*100), digits = 1)
+    prVar.GroupPerformanceFA <-  round((colSums(tlcGroupPerformance.fa$loadings*tlcGroupPerformance.fa$loadings)/dim(tlcGroupPerformance.fa$loadings)[1]*100), 
+                                       digits = 1)
 
 
     head(tlcGroupPerformance.fa$scores)
@@ -1474,7 +1564,8 @@ In addition to athlete expectation violations concerning group and individual pe
     #-----------------------------SS Loadings----------------------#
     SSLoadings.indPerformanceFA <- round(sum(tlcIndPerformance.fa$loadings[,1]^2), digits = 2)
     #------------------Proportion of Variance----------------------#
-    prVar.indPerformanceFA <-  round((colSums(tlcIndPerformance.fa$loadings*tlcIndPerformance.fa$loadings)/dim(tlcIndPerformance.fa$loadings)[1]*100), digits = 1)
+    prVar.indPerformanceFA <-  round((colSums(tlcIndPerformance.fa$loadings*tlcIndPerformance.fa$loadings)/dim(tlcIndPerformance.fa$loadings)[1]*100), 
+                                     digits = 1)
 
 
     head(tlcIndPerformance.fa$scores)
@@ -1517,12 +1608,17 @@ In addition to athlete expectation violations concerning group and individual pe
   #plot(tlcTeamBonding.pca)
 
   tlcTeamBonding.fa <- factanal(~ emotionalSupport + sharedGoal +
-                                        fusionPictorialTeam + fusionVerbal + groupId, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+                                        fusionPictorialTeam + fusionVerbal + groupId, 1, 
+                                        data = tlc, 
+                                        rotation = "promax", 
+                                        na.action = na.exclude, 
+                                        scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
 
   #-----------------------------SS Loadings----------------------#
   SSLoadings.teamBondingFA <- round(sum(tlcTeamBonding.fa$loadings[,1]^2), digits = 2)
   #------------------Proportion of Variance----------------------#
-  prVar.teamBondingFA <-  round((colSums(tlcTeamBonding.fa$loadings*tlcTeamBonding.fa$loadings)/dim(tlcTeamBonding.fa$loadings)[1]*100), digits = 1)
+  prVar.teamBondingFA <-  round((colSums(tlcTeamBonding.fa$loadings*tlcTeamBonding.fa$loadings)/dim(tlcTeamBonding.fa$loadings)[1]*100), 
+                                digits = 1)
 
   head(tlcTeamBonding.fa$scores)
   tlc <- cbind(tlc, tlcTeamBonding.fa$scores)
@@ -1563,12 +1659,17 @@ In addition to athlete expectation violations concerning group and individual pe
   summary(tlcArousal.pca)
   #plot(tlcArousal.pca)
 
-  tlcArousal.fa <- factanal(~ aroused + relaxed + excited, 1, data = tlc, rotation =        "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+  tlcArousal.fa <- factanal(~ aroused + relaxed + excited, 1, 
+                            data = tlc, 
+                            rotation = "promax", 
+                            na.action = na.exclude, 
+                            scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
 
   #-----------------------------SS Loadings----------------------#
   SSLoadings.ArousalFA <- round(sum(tlcArousal.fa$loadings[,1]^2), digits = 2)
   #------------------Proportion of Variance----------------------#
-  prVar.ArousalFA <-  round((colSums(tlcArousal.fa$loadings*tlcArousal.fa$loadings)/dim(tlcArousal.fa$loadings)[1]*100), digits = 1)
+  prVar.ArousalFA <-  round((colSums(tlcArousal.fa$loadings*tlcArousal.fa$loadings)/dim(tlcArousal.fa$loadings)[1]*100), 
+                            digits = 1)
 
   head(tlcArousal.fa$scores)
   tlc <- cbind(tlc, tlcArousal.fa$scores)
@@ -1612,7 +1713,11 @@ In addition to athlete expectation violations concerning group and individual pe
   #plot(tlcTeamDiscipline.pca)
 
   tlcTeamDiscipline.fa <- factanal(~ teamAttendanceMeals + teamCurfew + teamGeneralConduct +
-                                        teamPunctuality, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+                                        teamPunctuality, 1, 
+                                   data = tlc, 
+                                   rotation = "promax", 
+                                   na.action = na.exclude, 
+                                   scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
 
   #-----------------------------SS Loadings----------------------#
   SSLoadings.teamDisciplineFA <- round(sum(tlcTeamDiscipline.fa$loadings[,1]^2), digits = 2)
@@ -1653,13 +1758,18 @@ In addition to athlete expectation violations concerning group and individual pe
 <<dataReductionTechnicalCompetence, eval=TRUE, echo=FALSE>>=
   #TechnicalCompetenceVariablesSubset:
   tlcTechnicalCompetence <- subset(tlc, select = c(yearsTeam, trainingAge, teamStatus,
-                                            athleteStatus, indAbilityTeammates_1, indAbilityChina_1, indAbilityInternational_1, teamAbilityChina_1))
+                                            athleteStatus, indAbilityTeammates_1, indAbilityChina_1, 
+                                            indAbilityInternational_1, teamAbilityChina_1))
   tlcTechnicalCompetence.pca <- princomp(na.omit(tlcTechnicalCompetence))
   summary(tlcTechnicalCompetence.pca)
   #plot(tlcTechnicalCompetence.pca)
 
   tlcTechnicalCompetence.fa <- factanal(~ yearsTeam + trainingAge  + teamStatus +
-                                            athleteStatus + indAbilityTeammates_1 + indAbilityChina_1 + indAbilityInternational_1, 2, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+                                            athleteStatus + indAbilityTeammates_1 + indAbilityChina_1 + indAbilityInternational_1, 2, 
+                                            data = tlc, 
+                                        rotation = "promax", 
+                                        na.action = na.exclude, 
+                                        scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
 
   #-----------------------------SS Loadings----------------------#
   SSLoadings.objectiveCompetenceFA <- round(sum(tlcTechnicalCompetence.fa$loadings[,1]^2),
@@ -1668,7 +1778,8 @@ In addition to athlete expectation violations concerning group and individual pe
   SSLoadings.subjectiveCompetenceFA <- round(sum(tlcTechnicalCompetence.fa$loadings[,2]^2),
                                                 digits = 2)
   #------------------Proportion of Variance----------------------#
-  prVar.technicalCompetenceFA <-  round((colSums(tlcTechnicalCompetence.fa$loadings*tlcTechnicalCompetence.fa$loadings)/dim(tlcTechnicalCompetence.fa$loadings)[1]*100), digits = 1)
+  prVar.technicalCompetenceFA <-  round((colSums(tlcTechnicalCompetence.fa$loadings*tlcTechnicalCompetence.fa$loadings)/dim(tlcTechnicalCompetence.fa$loadings)[1]*100), 
+                                        digits = 1)
 
   unclass(prVar.technicalCompetenceFA)
   prVar.technicalCompetenceFA <- data.frame(prVar.technicalCompetenceFA)
@@ -1681,8 +1792,10 @@ In addition to athlete expectation violations concerning group and individual pe
   names(tlc)[names(tlc) == "Factor1"] <- "objectiveCompetenceFactor"
   names(tlc)[names(tlc) == "Factor2"] <- "subjectiveCompetenceFactor"
   technicalCompetenceMatrix <- cor(tlcTechnicalCompetence, use = "complete")
-  objectiveCompetenceMatrix <- cor(subset(tlcTechnicalCompetence, select = c(yearsTeam, trainingAge, teamStatus, athleteStatus)))
-  subjectiveCompetenceMatrix <- cor(subset(tlcTechnicalCompetence, select = c(indAbilityTeammates_1, indAbilityChina_1, indAbilityInternational_1)))
+  objectiveCompetenceMatrix <- cor(subset(tlcTechnicalCompetence, 
+                                          select = c(yearsTeam, trainingAge, teamStatus, athleteStatus)))
+  subjectiveCompetenceMatrix <- cor(subset(tlcTechnicalCompetence, 
+                                           select = c(indAbilityTeammates_1, indAbilityChina_1, indAbilityInternational_1)))
 
   #---------suitability measures (KMO & Bartlett)----------------#
   library(psych)
@@ -1776,11 +1889,16 @@ It was predicted that that athletes in the high difficulty condition would be mo
 
   ##subset data for table: groupConfidentTechnicalChallenges_2,indConfidenceChallenges_2, arousalFactorPre:
   twcManipulationCheck <- subset(twc, select = c(age, sex, condition, team,
-                                      groupConfidentTechnicalChallenges_2, indConfidenceChallenges_2, arousalFactorPre, groupPerformance_3Norm, indPerformance_3Norm, groupClickPostFactor, groupBondingFactorPost))
+                                      groupConfidentTechnicalChallenges_2, indConfidenceChallenges_2, arousalFactorPre, 
+                                      groupPerformance_3Norm, indPerformance_3Norm, groupClickPostFactor, groupBondingFactorPost))
   ##rename columns for tables:
   library(dplyr)
   twcManipulationCheck <- dplyr::rename(twcManipulationCheck, Condition = condition,
-                                      ConfidenceInGroupAbility = groupConfidentTechnicalChallenges_2, ConfidenceIndividualAbility = indConfidenceChallenges_2, Arousal = arousalFactorPre, GroupPerformVsExpected = groupPerformance_3Norm, IndPerformVsExpected = indPerformance_3Norm, GroupClickPost = groupClickPostFactor, GroupBondingPost = groupBondingFactorPost)
+                                      ConfidenceInGroupAbility = groupConfidentTechnicalChallenges_2, 
+                                      ConfidenceIndividualAbility = indConfidenceChallenges_2, 
+                                      Arousal = arousalFactorPre, GroupPerformVsExpected = groupPerformance_3Norm, 
+                                      IndPerformVsExpected = indPerformance_3Norm, GroupClickPost = groupClickPostFactor, 
+                                      GroupBondingPost = groupBondingFactorPost)
 
 
   ## create a variable list which we want in table one
@@ -1966,7 +2084,9 @@ Predictions of this study were first tested according to condition. It was predi
   ##rename columns for tables:
   library(dplyr)
   twcPerformancePost <- dplyr::rename(twcPerformancePost, Team = team, Condition = condition,
-                                      Sex = sex, Age = age, JointActionSuccess = jointActionSuccessPost, IndividualComponentPerformance = indPerformancePost, GroupPerformVsExpected = groupPerformance_3, IndPerformVsExpected = indPerformance_3)
+                                      Sex = sex, Age = age, JointActionSuccess = jointActionSuccessPost, 
+                                      IndividualComponentPerformance = indPerformancePost, GroupPerformVsExpected = groupPerformance_3, 
+                                      IndPerformVsExpected = indPerformance_3)
 
 
   ## create a variable list which we want in table one
@@ -2062,7 +2182,9 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
   ##rename columns for tables:
   library(dplyr)
   twcClickBondPost <- dplyr::rename(twcClickBondPost, Team = team, Condition = condition,
-                                      Sex = sex, Age = age, GroupClickPost = groupClickPostFactor, GroupBondingPost =  groupBondingFactorPost, TeamBondingPost = teamBondingFactorPost)
+                                      Sex = sex, Age = age, GroupClickPost = groupClickPostFactor, 
+                                      GroupBondingPost =  groupBondingFactorPost, 
+                                      TeamBondingPost = teamBondingFactorPost)
 
   ## create a variable list which we want in table one
   listVars <- c("GroupClickPost", "GroupBondingPost", "TeamBondingPost")
@@ -2115,15 +2237,20 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
   tlc$groupPerformanceExpectations <- tlc$groupPerformance
   #rescale ind and group performance expectations
   library(scales)
-  tlc$groupPerformanceExpectations[tlc$time == 3] <- scales::rescale(tlc$groupPerformanceExpectations[tlc$time == 3], to = c(0, 100),
-            from = c(-50, 50))
-  # tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3], to = c(0, 100), from = c(-50, 50))
-  tlc$indPerformanceExpectations[tlc$time == 3] <- scales::rescale(tlc$indPerformanceExpectations[tlc$time == 3], to = c(0, 100),
-            from = c(-50, 50))
+  tlc$groupPerformanceExpectations[tlc$time == 3] <- scales::rescale(tlc$groupPerformanceExpectations[tlc$time == 3], 
+                                                                     to = c(0, 100),
+                                                                     from = c(-50, 50))
+  # tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3],
+    #                                                                                    to = c(0, 100), 
+    #                                                                                    from = c(-50, 50))
+  tlc$indPerformanceExpectations[tlc$time == 3] <- scales::rescale(tlc$indPerformanceExpectations[tlc$time == 3], 
+                                                                   to = c(0, 100),
+                                                                   from = c(-50, 50))
   tlc$indPerformance[tlc$time == 3] <- NA
 
   tlcFactors <- subset(tlc, select = c(age, sex, condition, team, time, jointActionSuccess,
-                                          indPerformanceFactor, groupPerformanceExpectations, indPerformanceExpectations, groupClickFactor1, groupClickPostFactor, groupBondingFactor, teamBondingFactor, arousalFactor))
+                                        indPerformanceFactor, groupPerformanceExpectations, indPerformanceExpectations, 
+                                        groupClickFactor1, groupClickPostFactor, groupBondingFactor, teamBondingFactor, arousalFactor))
 
   ## rename values for factors:
   tlcFactors$sex <- ifelse(!is.na(tlcFactors$sex) & tlcFactors$sex == 0, "male",
@@ -2138,14 +2265,19 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
                                     "Post"), ordered = is.ordered(tlcFactors$time))
 
   tlcFactors$team <- ifelse(!is.na(tlcFactors$team) & tlcFactors$team ==
-                                          "bjm","Beijing Men", ifelse(!is.na(tlcFactors$team) & tlcFactors$team == "bjw", "Beijing Women", ifelse(!is.na(tlcFactors$team) & tlcFactors$team == "sdm", "Shandong Men", ifelse(!is.na(tlcFactors$team) & tlcFactors$team == "sdw", "Shandong Women", NA))))
+                                          "bjm","Beijing Men", ifelse(!is.na(tlcFactors$team) & tlcFactors$team == "bjw", "Beijing Women", 
+                                          ifelse(!is.na(tlcFactors$team) & tlcFactors$team == "sdm", "Shandong Men", 
+                                          ifelse(!is.na(tlcFactors$team) & tlcFactors$team == "sdw", "Shandong Women", NA))))
 
   ##rename columns for tables:
   library(dplyr)
   tlcFactors <- dplyr::rename(tlcFactors, Team = team, Condition = condition, Sex = sex,
-                                      Time = time,
-                                      Age = age, JointActionSuccess = jointActionSuccess,
-                                      IndividualComponentPerformance = indPerformanceFactor, GroupPerformVsExpected = groupPerformanceExpectations, IndividualPerformanceExpectations = indPerformanceExpectations, GroupClick = groupClickFactor1, GroupClickPost = groupClickPostFactor, GroupBonding = groupBondingFactor, TeamBondingFactor = teamBondingFactor, Arousal = arousalFactor)
+                                          Time = time,
+                                          Age = age, JointActionSuccess = jointActionSuccess,
+                                          IndividualComponentPerformance = indPerformanceFactor, GroupPerformVsExpected = groupPerformanceExpectations, 
+                                          IndividualPerformanceExpectations = indPerformanceExpectations, GroupClick = groupClickFactor1, 
+                                          GroupClickPost = groupClickPostFactor, GroupBonding = groupBondingFactor, 
+                                          TeamBondingFactor = teamBondingFactor, Arousal = arousalFactor)
   ## subset high and low conditions:
 
   tlcFactorsHigh <- subset(tlcFactors, Condition == "high")
@@ -2155,7 +2287,8 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
 
   ## create a variable list which we want in table one
   listVars <- c("JointActionSuccess", "IndividualComponentPerformance",
-                                      "GroupPerformVsExpected", "IndividualPerformanceExpectations", "GroupClick", "GroupBonding", "GroupClickPost", "TeamBondingFactor", "Arousal")
+                                      "GroupPerformVsExpected", "IndividualPerformanceExpectations", 
+                                      "GroupClick", "GroupBonding", "GroupClickPost", "TeamBondingFactor", "Arousal")
 
   ## define categorical variables
   catVars <- c("Sex", "Team", "Time")
@@ -2402,12 +2535,16 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 
   outcomeDf$Session <- plyr::revalue(outcomeDf$Session, c("sdwB" = "sdwH",
                                                     "sdmB" = "sdmH",
-                                                    "bjwB" = "bjwH", "bjmB" = "bjmH", "sdwA" = "sdwL",  "sdmA" = "sdmL", "bjwA" = "bjwL", "bjmA" = "bjmL"))
+                                                    "bjwB" = "bjwH", "bjmB" = "bjmH", 
+                                                    "sdwA" = "sdwL",  "sdmA" = "sdmL", 
+                                                    "bjwA" = "bjwL", "bjmA" = "bjmL"))
 
   fullOutcomeAvgSdSessionBox <- ggplot(outcomeDf,
                             aes(x=Session, y=AverageOutcome, size=StandardDeviation)) +
                             geom_boxplot() +
-                            labs(title = "Plot of avg.performance outcome \n by condition", x = "Experiment Session", y = "Average Performance Outcome") +
+                            labs(title = "Plot of avg.performance outcome \n by condition", 
+                                 x = "Experiment Session",
+                                 y = "Average Performance Outcome") +
                             ylab("Average Performance Outcome") +
                             scale_linetype_discrete(name='SD') +
                             apatheme
@@ -2567,7 +2704,10 @@ These results suggested that group performance expectation violations were a pos
 <<groupPerfExpClickAssumptionsHist, echo=F,eval=T>>=
   #1.historgram with density line
   groupPerfExpClickResid <- resid(groupPerfExpClick.controls, type = "pearson")
-  hist(groupPerfExpClickResid , freq = FALSE, main = "Distribution of M1 residuals \n (standardised)", xlab = "Residuals")
+  hist(groupPerfExpClickResid , 
+       freq = FALSE, 
+       main = "Distribution of M1 residuals \n (standardised)", 
+       xlab = "Residuals")
   lines(density(groupPerfExpClickResid, na.rm = TRUE))
   dev.copy(pdf, "TEM1Hist.pdf")
   dev.off()
@@ -3076,7 +3216,8 @@ Figure ~\ref{fig:groupPerfExpBondConditionScatter} shows a positive relationship
                                             indPerformance_3Norm + arousalFactorPost + fullOutcomeAvg +
                                             subjectiveCompetenceFactor + objectiveCompetenceFactor +
                                             (groupPerformance_3Norm |sessionName),
-                                            control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
+                                            control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, 
+                                                                  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
                                             data = twc,
                                             REML = F)
   summary(groupPerfExpBondingCondition.controls)
@@ -3205,7 +3346,9 @@ were not significant predictors of social bonding.  Average performance in each 
   #indluential cases
   #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
   groupPerfExpBondingCondition.controls.cooksD <- cooks.distance(groupPerfExpBondingCondition.controls)
-  plot(cooks.distance(groupPerfExpBondingCondition.controls), main = "M3 Influential Cases \n (Cook's Distance)", ylab = "cooks.distance")
+  plot(cooks.distance(groupPerfExpBondingCondition.controls), 
+       main = "M3 Influential Cases \n (Cook's Distance)", 
+       ylab = "cooks.distance")
   dev.copy(pdf, "TEM3CooksD.pdf")
   dev.off()
 @
@@ -3254,7 +3397,8 @@ These results suggested that the relationship between positive violation of grou
                                               indPerformancePost + arousalFactorPost + fullOutcomeAvg +
                                               subjectiveCompetenceFactor + objectiveCompetenceFactor +
                                               (jointActionSuccessPost|sessionName),
-                                              control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
+                                              control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, 
+                                                                    optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
                                               data = twc,
                                               REML = F))
 

@@ -1,7 +1,6 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.30)  14 MAY 2018 22:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.30)  15 MAY 2018 08:30
 entering extended mode
  restricted \write18 enabled.
- file:line:error style messages enabled.
  %&-line parsing enabled.
 **9trainingExperiment.tex
 (./9trainingExperiment.tex
@@ -793,7 +792,7 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 File: biblatex.cfg 
 ))
 
-./9trainingExperiment.tex:79: LaTeX Error: Missing \begin{document}.
+! LaTeX Error: Missing \begin{document}.
 
 See the LaTeX manual or LaTeX Companion for explanation.
 Type  H <return>  for immediate help.
@@ -801,9 +800,10 @@ Type  H <return>  for immediate help.
                                                   
 l.79 \newcommand{\MR2}{marginal R^2 =}
                                       
-? s
-OK, entering \scrollmode...
-./9trainingExperiment.tex:79: Missing $ inserted.
+You're in trouble here.  Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+! Missing $ inserted.
 <inserted text> 
                 $
 l.79 \newcommand{\MR2}{marginal R^2 =}
@@ -820,7 +820,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 79.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-./9trainingExperiment.tex:79: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 \@argdef ...definable #1{\@yargdef #1\@ne {#2}{#3}
                                                   }
 l.79 \newcommand{\MR2}{marginal R^2 =}
@@ -831,7 +831,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./9trainingExperiment.tex:79: Extra }, or forgotten $.
+! Extra }, or forgotten $.
 \@argdef ...efinable #1{\@yargdef #1\@ne {#2}{#3}}
                                                   
 l.79 \newcommand{\MR2}{marginal R^2 =}
@@ -842,7 +842,7 @@ you forgot something else, as in `\hbox{$x}'. In such cases
 the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
-./9trainingExperiment.tex:85: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.85 
@@ -864,7 +864,7 @@ Package biblatex Info: ... file 'english.lbx' found.
 (/usr/local/texlive/2017/texmf-dist/tex/latex/biblatex/lbx/english.lbx
 File: english.lbx 2016/12/05 v3.7 biblatex localization (PK/JW/AB)
 )
-(./9trainingExperiment.aux)
+No file 9trainingExperiment.aux.
 \openout1 = `9trainingExperiment.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 91.
@@ -879,7 +879,6 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 91.
 LaTeX Font Info:    ... okay on input line 91.
-
 (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count306
@@ -953,14 +952,14 @@ Package biblatex Info: Automatic encoding selection.
 \openout4 = `9trainingExperiment.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file '9trainingExperiment.bbl' not found.
-No file 9trainingExperiment.bbl.
+Package biblatex Info: ... file '9trainingExperiment.bbl' found.
+(./9trainingExperiment.bbl)
 Package biblatex Info: Reference section=0 on input line 91.
 Package biblatex Info: Reference segment=0 on input line 91.
-[1
+ [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-./9trainingExperiment.tex:92: Extra alignment tab has been changed to \cr.
+! Extra alignment tab has been changed to \cr.
 <recently read> \endtemplate 
                              
 l.92 \maketitle
@@ -978,8 +977,7 @@ Overfull \hbox (329.16502pt too wide) in paragraph at lines 99--100
  []
 
 
-./9trainingExperiment.tex:101: Package inputenc Error: Unicode char √ (U+221A
-)
+! Package inputenc Error: Unicode char √ (U+221A)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -994,8 +992,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./9trainingExperiment.tex:101: Package inputenc Error: Unicode char √ (U+221A
-)
+! Package inputenc Error: Unicode char √ (U+221A)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -1010,8 +1007,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./9trainingExperiment.tex:101: Package inputenc Error: Unicode char √ (U+221A
-)
+! Package inputenc Error: Unicode char √ (U+221A)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -1026,8 +1022,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./9trainingExperiment.tex:101: Package inputenc Error: Unicode char √ (U+221A
-)
+! Package inputenc Error: Unicode char √ (U+221A)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -1042,8 +1037,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./9trainingExperiment.tex:101: Package inputenc Error: Unicode char √ (U+221A
-)
+! Package inputenc Error: Unicode char √ (U+221A)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -1058,8 +1052,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./9trainingExperiment.tex:101: Package inputenc Error: Unicode char √ (U+221A
-)
+! Package inputenc Error: Unicode char √ (U+221A)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -1074,8 +1067,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./9trainingExperiment.tex:101: Package inputenc Error: Unicode char √ (U+221A
-)
+! Package inputenc Error: Unicode char √ (U+221A)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -1090,8 +1082,7 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-./9trainingExperiment.tex:101: Package inputenc Error: Unicode char √ (U+221A
-)
+! Package inputenc Error: Unicode char √ (U+221A)
 (inputenc)                not set up for use with LaTeX.
 
 See the inputenc package documentation for explanation.
@@ -1117,47 +1108,7 @@ LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
 
 LaTeX Warning: Citation 'Passos2011' on page 3 undefined on input line 165.
 
-./9trainingExperiment.tex:219: Missing \endcsname inserted.
-<to be read again> 
-                   \def 
-l.219 \end{description}}
-                        
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-./9trainingExperiment.tex:219: Missing \endcsname inserted.
-<to be read again> 
-                   \def 
-l.219 \end{description}}
-                        
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-./9trainingExperiment.tex:219: Missing \endcsname inserted.
-<to be read again> 
-                   \def 
-l.219 \end{description}}
-                        
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
-./9trainingExperiment.tex:219: Missing \endcsname inserted.
-<to be read again> 
-                   \def 
-l.219 \end{description}}
-                        
-The control sequence marked <to be read again> should
-not appear between \csname and \endcsname.
-
 [3]
-./9trainingExperiment.tex:219: Extra \endcsname.
-\reserved@a ...group \end {description}\endcsname 
-                                                  
-l.219 \end{description}}
-                        
-I'm ignoring this, since I wasn't doing a \csname.
-
-
 Overfull \hbox (61.78424pt too wide) in paragraph at lines 288--289
 []\OT1/cmr/m/n/10 This study was ap-proved by the Uni-ver-sity of Ox-ford's Cen
 -tral Uni-ver-sity Re-search Ethics Com-mit-tee (SAME/CUREC1A/15-
@@ -1183,6 +1134,10 @@ LaTeX Warning: Citation 'Passos2011' on page 4 undefined on input line 301.
 LaTeX Warning: Citation 'Biscombe1998' on page 4 undefined on input line 301.
 
 
+LaTeX Warning: Reference `fig:invasionDrill' on page 4 undefined on input line 
+303.
+
+
 LaTeX Warning: Reference `tab:surveyItemsByTime' on page 4 undefined on input l
 ine 315.
 
@@ -1206,11 +1161,24 @@ LaTeX Warning: Reference `' on page 6 undefined on input line 324.
 
 LaTeX Warning: Reference `' on page 6 undefined on input line 324.
 
-[6] [7]
+[6]
+
+LaTeX Warning: Reference `fig:invasionDrill' on page 7 undefined on input line 
+353.
+
+[7]
 Package color Info: Redefining color shadecolor on input line 389.
 
 (/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/athleteDescriptivesTrainingOverall.tex)
+
+LaTeX Warning: Reference `tab:athleteDescriptivesTrainingOverall' on page 8 und
+efined on input line 403.
+
+
+LaTeX Warning: Reference `tab:athleteDescriptivesTrainingOverall' on page 8 und
+efined on input line 407.
+
 
 LaTeX Warning: Reference `tab:indPerfTimeLowTraining' on page 8 undefined on in
 put line 411.
@@ -1772,7 +1740,7 @@ Package color Info: Redefining color shadecolor on input line 1027.
 LaTeX Warning: Reference `tab:groupClickCorrTable' on page 16 undefined on inpu
 t line 1047.
 
-./9trainingExperiment.tex:1047: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1047 ...mpling adequacy, (KMO =  0.7245786, \chi
@@ -1780,7 +1748,7 @@ l.1047 ...mpling adequacy, (KMO =  0.7245786, \chi
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./9trainingExperiment.tex:1049: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1049 
@@ -1818,7 +1786,7 @@ ine 1056.
 LaTeX Warning: Reference `tab:groupBondingCorrTable' on page 17 undefined on in
 put line 1064.
 
-./9trainingExperiment.tex:1064: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1064 ...mpling adequacy, (KMO =  0.6501553, \chi
@@ -1826,7 +1794,7 @@ l.1064 ...mpling adequacy, (KMO =  0.6501553, \chi
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./9trainingExperiment.tex:1066: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1066 
@@ -1957,7 +1925,7 @@ input line 1216.
 LaTeX Warning: Reference `fig:histLowIndConfidence' on page 21 undefined on inp
 ut line 1216.
 
-./9trainingExperiment.tex:1217: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1217 ...8935, groupConfidentTechnicalChallenges_
@@ -1965,7 +1933,7 @@ l.1217 ...8935, groupConfidentTechnicalChallenges_
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./9trainingExperiment.tex:1217: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1217 ...variances, high$indConfidenceChallenges_
@@ -1973,7 +1941,7 @@ l.1217 ...variances, high$indConfidenceChallenges_
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./9trainingExperiment.tex:1217: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1217 ...enges_2 and low$indConfidenceChallenges_
@@ -1981,7 +1949,7 @@ l.1217 ...enges_2 and low$indConfidenceChallenges_
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./9trainingExperiment.tex:1218: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1218 
@@ -2032,12 +2000,12 @@ Package color Info: Redefining color shadecolor on input line 1244.
 f>]
 LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 124
 7.
-LaTeX Font Info:    No file OMScmtt.fd. on input line 1247.
 
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbackslash' on input line 1247.
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/omscmtt.fd
+File: omscmtt.fd 
+)
+LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1247.
 
 
 Overfull \hbox (134.66678pt too wide) in paragraph at lines 1247--1247
@@ -2083,8 +2051,8 @@ Package color Info: Redefining color shadecolor on input line 1295.
 
 Overfull \hbox (186.91638pt too wide) in paragraph at lines 1301--1301
 []                                          []\OT1/cmtt/m/n/10 main[] []=[] []"
-Athlete post-experiment perceptions of \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n joi
-nt action success by condition \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n"[][],[][] 
+Athlete post-experiment perceptions of \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n joi
+nt action success by condition \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n"[][],[][] 
  []
 
 
@@ -2100,8 +2068,8 @@ Package color Info: Redefining color shadecolor on input line 1317.
 reHigh-1.pdf> <./figure/histArousalFactorPreLow-1.pdf>]
 Overfull \hbox (197.41629pt too wide) in paragraph at lines 1323--1323
 []                                          []\OT1/cmtt/m/n/10 main[] []=[] []"
-Athlete post-experiment perceptions of \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n ind
-ividual performance by condition \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n"[][],[][]
+Athlete post-experiment perceptions of \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n ind
+ividual performance by condition \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n"[][],[][]
  
  []
 
@@ -2117,8 +2085,8 @@ Package color Info: Redefining color shadecolor on input line 1339.
 
 Overfull \hbox (302.41537pt too wide) in paragraph at lines 1345--1345
 []                                          []\OT1/cmtt/m/n/10 main[] []=[] []"
-Athlete post-experiment perceptions of \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n gro
-up performance relative to expectations \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n by
+Athlete post-experiment perceptions of \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n gro
+up performance relative to expectations \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n by
  condition"[][],[][] 
  []
 
@@ -2133,8 +2101,8 @@ Package color Info: Redefining color shadecolor on input line 1361.
 
 Overfull \hbox (328.66515pt too wide) in paragraph at lines 1367--1367
 []                                          []\OT1/cmtt/m/n/10 main[] []=[] []"
-Athlete post-experiment perceptions of \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n ind
-ividual performance relative to expectations \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10
+Athlete post-experiment perceptions of \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n ind
+ividual performance relative to expectations \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10
  n by condition"[][],[][] 
  []
 
@@ -2319,6 +2287,10 @@ riable has only NA's in at least one
 (/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/factorsTime.tex)
 
+LaTeX Warning: Reference `tab:factorsTime' on page 28 undefined on input line 1
+585.
+
+
 LaTeX Warning: Reference `tab:ICCTable' on page 28 undefined on input line 1606
 .
 
@@ -2362,7 +2334,7 @@ onfidence region[][]
 
 Overfull \hbox (40.1676pt too wide) in paragraph at lines 1679--1679
 []              []\OT1/cmtt/m/n/10 ggtitle[][]([][]"Positive violation of Team 
-Performance Expectations \OMS/cmtt/m/n/10 n\OT1/cmtt/m/n/10 n predicts Group Cl
+Performance Expectations \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n predicts Group Cl
 ick"[][])[] []+[][] 
  []
 
@@ -2379,9 +2351,9 @@ LaTeX Warning: Reference `fig:teamPerfExpClickScatter' on page 29 undefined on
 input line 1700.
 
 [29 <./figure/fullOutcomeAvgSessionBoxplot-1.pdf>]
-./9trainingExperiment.tex:1708: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.1708   \betavec
                  
 The control sequence at the end of the top line
@@ -2390,7 +2362,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:1708: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1708   \betavec
@@ -2398,7 +2370,18 @@ l.1708   \betavec
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./9trainingExperiment.tex:1730: Undefined control sequence.
+! Extra }, or forgotten $.
+\betavec ->{\bm \beta = }
+                         
+l.1708   \betavec
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
 l.1730   \CR
             2
 The control sequence at the end of the top line
@@ -2407,9 +2390,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:1735: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.1735   \betavec
                  
 The control sequence at the end of the top line
@@ -2418,9 +2401,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:1755: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.1755   \betavec
                  
 The control sequence at the end of the top line
@@ -2429,9 +2412,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:1776: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.1776   \betavec
                  
 The control sequence at the end of the top line
@@ -2443,7 +2426,7 @@ and I'll forget about whatever was undefined.
 
 LaTeX Warning: Reference `tab:M1lmer' on page 30 undefined on input line 1794.
 
-./9trainingExperiment.tex:1797: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1797 
@@ -2452,36 +2435,36 @@ I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (105.90573pt too wide) in paragraph at lines 1707--1797
+Overfull \hbox (194.50447pt too wide) in paragraph at lines 1707--1797
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1312839\OML/cmm/m/it/10 ; t\
 OT1/cmr/m/n/10 (53) = 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 4078475\OML/cmm/m/it/1
 0 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0195595)\OML/cmm/m/i
 t/10 andtheinteractioneffectofgroupperformanceexpectationviolationandconditiono
-nclick\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 =
+nclick\OT1/cmr/m/n/10 ([]0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 3161116(95%\OML/cmm
+/m/it/10 CI \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (511.77966pt too wide) in paragraph at lines 1707--1797
-\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 3161116(95%\OML/cmm/m/it/10 
-CI \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0587999\OML/cmm/m/it/10
- ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5734233)\OML/cmm/m/it/10 
-; SE \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1312839\OML/cmm/m/it/
-10 ; t\OT1/cmr/m/n/10 (53) = 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 4078475\OML/cmm
-/m/it/10 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0195595)\OML/
-cmm/m/it/10 werealsosignificant:Theaverageperformanceoutcomeofeachinvasiondrill
-trialwasalsoasignificantpositivepredictorofteamclick; ^^L \OT1/cmr/m/n/10 =
+Overfull \hbox (509.00195pt too wide) in paragraph at lines 1707--1797
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0587999\OML/cmm/m/it/10 ; \O
+T1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5734233)\OML/cmm/m/it/10 ; SE 
+\OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1312839\OML/cmm/m/it/10 ; 
+t\OT1/cmr/m/n/10 (53) = 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 4078475\OML/cmm/m/it
+/10 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0195595)\OML/cmm/m
+/it/10 werealsosignificant:Theaverageperformanceoutcomeofeachinvasiondrilltrial
+wasalsoasignificantpositivepredictorofteamclick; []\OT1/cmr/m/n/10 0\OML/cmm/m/
+it/10 :\OT1/cmr/m/n/10 3161116(95%\OML/cmm/m/it/10 CI \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (430.09258pt too wide) in paragraph at lines 1707--1797
-\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 3161116(95%\OML/cmm/m/it/10 
-CI \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0587999\OML/cmm/m/it/10
- ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5734233)\OML/cmm/m/it/10 
-; SE \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1312839\OML/cmm/m/it/
-10 ; t\OT1/cmr/m/n/10 (53) = 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 4078475\OML/cmm
-/m/it/10 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0195595(\OML/
-cmm/m/it/10 seeTable []\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; suggestingarelations
-hipbetweenonfieldperformanceandindividualathleteperceptionsofperformance:$ 
+Overfull \hbox (338.71613pt too wide) in paragraph at lines 1707--1797
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0587999\OML/cmm/m/it/10 ; \O
+T1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5734233)\OML/cmm/m/it/10 ; SE 
+\OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1312839\OML/cmm/m/it/10 ; 
+t\OT1/cmr/m/n/10 (53) = 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 4078475\OML/cmm/m/it
+/10 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0195595(\OML/cmm/m
+/it/10 seeTable []\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; suggestingarelationshipbe
+tweenonfieldperformanceandindividualathleteperceptionsofperformance:$ 
  []
 
 Package color Info: Redefining color shadecolor on input line 1804.
@@ -2523,7 +2506,7 @@ e 1836.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
  [31 <./figure/groupPerfExpClickAssumptionsScatter-1.pdf> <./figure/groupPerfEx
 pClickQQNorm-1.pdf>]
-./9trainingExperiment.tex:1845: Undefined control sequence.
+! Undefined control sequence.
 l.1845   \resdist
                  
 The control sequence at the end of the top line
@@ -2532,7 +2515,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:1852: Undefined control sequence.
+! Undefined control sequence.
 l.1852   \cooksD
                 
 The control sequence at the end of the top line
@@ -2574,9 +2557,9 @@ input line 1908.
 
 [32 <./figure/groupPerfExpClickCooksD-1.pdf> <./figure/jASgroupPerfExpClickScat
 terLM-1.pdf>]
-./9trainingExperiment.tex:1914: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.1914   \betavec
                  
 The control sequence at the end of the top line
@@ -2585,7 +2568,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:1914: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1914   \betavec
@@ -2593,7 +2576,18 @@ l.1914   \betavec
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./9trainingExperiment.tex:1936: Undefined control sequence.
+! Extra }, or forgotten $.
+\betavec ->{\bm \beta = }
+                         
+l.1914   \betavec
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
 l.1936   \CR
             2
 The control sequence at the end of the top line
@@ -2602,7 +2596,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:1940: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.1940 
@@ -2612,11 +2606,11 @@ you left one out. Proceed, with fingers crossed.
 
 
 Overfull \hbox (594.76743pt too wide) in paragraph at lines 1912--1940
-\OMS/cmtt/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2905337\
-OML/cmm/m/it/10 ; \OMS/cmtt/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/c
+\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2905337\
+OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/c
 mr/m/n/10 0787319)\OML/cmm/m/it/10 ; SE \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\O
 T1/cmr/m/n/10 0540321\OML/cmm/m/it/10 ; t\OT1/cmr/m/n/10 (54\OML/cmm/m/it/10 :\
-OT1/cmr/m/n/10 4614072) = \OMS/cmtt/m/n/10 ^^@\OT1/cmr/m/n/10 3\OML/cmm/m/it/10
+OT1/cmr/m/n/10 4614072) = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 3\OML/cmm/m/it/10
  :\OT1/cmr/m/n/10 4170979\OML/cmm/m/it/10 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/
 10 :\OT1/cmr/m/n/10 0012041\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10
  ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 ; suggestingthattherelationshipbetweenjoin
@@ -2664,7 +2658,7 @@ Package pdftex.def Info: figure/jASgroupPerfExpClick_intAssumptionsCooksD-1.pdf
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
  [34 <./figure/jASgroupPerfExpClickIntScatter-1.pdf> <./figure/jASgroupPerfExpC
 lick_int_controlsQQNorm-1.pdf>]
-./9trainingExperiment.tex:1992: Undefined control sequence.
+! Undefined control sequence.
 l.1992   \resdist
                  
 The control sequence at the end of the top line
@@ -2673,7 +2667,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2000: Undefined control sequence.
+! Undefined control sequence.
 l.2000   \cooksD
                 
 The control sequence at the end of the top line
@@ -2695,14 +2689,12 @@ Overfull \hbox (24.66768pt too wide) in paragraph at lines 2027--2027
 [] []+[][] 
  []
 
-
-LaTeX Font Warning: Font shape `OMS/cmtt/m/it' undefined
-(Font)              using `OMS/cmtt/m/n' instead
-(Font)              for symbol `textbackslash' on input line 2035.
+LaTeX Font Info:    Font shape `OMS/cmtt/m/it' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2035.
 
 
 Overfull \hbox (26.15385pt too wide) in paragraph at lines 2035--2035
-[]              []\OT1/cmtt/m/it/10 #"Perceptions of Group Click \OMS/cmtt/m/n/
+[]              []\OT1/cmtt/m/it/10 #"Perceptions of Group Click \OMS/cmsy/m/n/
 10 n\OT1/cmtt/m/it/10 n predict feelings of Social Bonding to training group"[]
 [] 
  []
@@ -2711,9 +2703,9 @@ Overfull \hbox (26.15385pt too wide) in paragraph at lines 2035--2035
 LaTeX Warning: Reference `fig:groupClickBondScatter' on page 35 undefined on in
 put line 2041.
 
-./9trainingExperiment.tex:2048: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.2048   \betavec
                  
 The control sequence at the end of the top line
@@ -2722,7 +2714,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2048: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.2048   \betavec
@@ -2730,7 +2722,18 @@ l.2048   \betavec
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./9trainingExperiment.tex:2070: Undefined control sequence.
+! Extra }, or forgotten $.
+\betavec ->{\bm \beta = }
+                         
+l.2048   \betavec
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
 l.2070   \CR
             2
 The control sequence at the end of the top line
@@ -2739,9 +2742,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2075: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.2075   \betavec
                  
 The control sequence at the end of the top line
@@ -2750,7 +2753,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2095: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.2095 
@@ -2759,7 +2762,7 @@ I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (352.30759pt too wide) in paragraph at lines 2048--2095
+Overfull \hbox (440.90633pt too wide) in paragraph at lines 2048--2095
 []$\OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 44
 91274(95%\OML/cmm/m/it/10 CI \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/
 10 1695568\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10
@@ -2768,20 +2771,20 @@ Overfull \hbox (352.30759pt too wide) in paragraph at lines 2048--2095
 mr/m/n/10 1486625\OML/cmm/m/it/10 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1
 /cmr/m/n/10 0026936\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/
 cmr/m/n/10 2\OML/cmm/m/it/10 :Theinteractioneffectofgroupclickandconditiononsoc
-ialbondingwasnotsignificant; ^^L \OT1/cmr/m/n/10 =
+ialbondingwasnotsignificant; []\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/
+10 2442242(95%\OML/cmm/m/it/10 CI \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (613.14886pt too wide) in paragraph at lines 2048--2095
-\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2442242(95%\OML/cmm/m/it/10 
-CI \OT1/cmr/m/n/10 = \OMS/cmtt/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT
-1/cmr/m/n/10 0883137\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/
-cmr/m/n/10 5767621)\OML/cmm/m/it/10 ; SE \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\
-OT1/cmr/m/n/10 1696653\OML/cmm/m/it/10 ; t\OT1/cmr/m/n/10 (53) = 1\OML/cmm/m/it
-/10 :\OT1/cmr/m/n/10 4394471\OML/cmm/m/it/10 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/
-it/10 :\OT1/cmr/m/n/10 1559043\OML/cmm/m/it/10 ; suggestingthatathleteswhofelts
-trongerlevelsofgroupclickalsofeltstrongerlevelsofsocialbondingtotheirtraininggr
-oup; irrespectiveofexperimentcondition:$ 
+Overfull \hbox (521.77242pt too wide) in paragraph at lines 2048--2095
+\OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0883137\
+OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5767621)\O
+ML/cmm/m/it/10 ; SE \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 169665
+3\OML/cmm/m/it/10 ; t\OT1/cmr/m/n/10 (53) = 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 
+4394471\OML/cmm/m/it/10 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/1
+0 1559043\OML/cmm/m/it/10 ; suggestingthatathleteswhofeltstrongerlevelsofgroupc
+lickalsofeltstrongerlevelsofsocialbondingtotheirtraininggroup; irrespectiveofex
+perimentcondition:$ 
  []
 
 Package color Info: Redefining color shadecolor on input line 2098.
@@ -2821,7 +2824,7 @@ Package pdftex.def Info: figure/clickBondingConditionCooksD-1.pdf used on input
  line 2130.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
 
-./9trainingExperiment.tex:2140: Undefined control sequence.
+! Undefined control sequence.
 l.2140   \resdist
                  
 The control sequence at the end of the top line
@@ -2830,7 +2833,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2148: Undefined control sequence.
+! Undefined control sequence.
 l.2148 \cooksD
               
 The control sequence at the end of the top line
@@ -2858,9 +2861,13 @@ Package pdftex.def Info: figure/groupPerfExpBondConditionScatter-1.pdf used on
 input line 2173.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
 
-./9trainingExperiment.tex:2201: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+
+LaTeX Warning: Reference `fig:groupPerfExpBondConditionScatter' on page 37 unde
+fined on input line 2195.
+
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.2201   \betavec
                  
 The control sequence at the end of the top line
@@ -2869,7 +2876,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2201: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.2201   \betavec
@@ -2877,7 +2884,18 @@ l.2201   \betavec
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./9trainingExperiment.tex:2223: Undefined control sequence.
+! Extra }, or forgotten $.
+\betavec ->{\bm \beta = }
+                         
+l.2201   \betavec
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
 l.2223   \CR
             2
 The control sequence at the end of the top line
@@ -2886,9 +2904,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2228: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.2228   \betavec
                  
 The control sequence at the end of the top line
@@ -2897,9 +2915,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2249: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.2249   \betavec
                  
 The control sequence at the end of the top line
@@ -2908,9 +2926,9 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2270: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.2270   \betavec
                  
 The control sequence at the end of the top line
@@ -2919,7 +2937,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2289: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.2289 
@@ -2928,35 +2946,36 @@ I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (77.06847pt too wide) in paragraph at lines 2199--2289
+Overfull \hbox (74.29076pt too wide) in paragraph at lines 2199--2289
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0155768\OML/cmm/m/it/10 ; \O
 T1/cmr/m/n/10 0\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 :Themaineff
-ectsofgroupperformanceexpectationviolation\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^L
- \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0077975(95%\OML/cmm/m/it/
-10 CI \OT1/cmr/m/n/10 = \OMS/cmtt/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :
-\OT1/cmr/m/n/10 2663504\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\O
-T1/cmr/m/n/10 2819454)\OML/cmm/m/it/10 ; SE \OT1/cmr/m/n/10 =
+ectsofgroupperformanceexpectationviolation\OT1/cmr/m/n/10 ([]0\OML/cmm/m/it/10 
+:\OT1/cmr/m/n/10 0077975(95%\OML/cmm/m/it/10 CI \OT1/cmr/m/n/10 = \OMS/cmsy/m/n
+/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2663504\OML/cmm/m/it/
+10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2819454)\OML/cmm/m/it/1
+0 ; SE \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (49.80583pt too wide) in paragraph at lines 2199--2289
+Overfull \hbox (47.02812pt too wide) in paragraph at lines 2199--2289
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 139874\OML/cmm/m/it/10 ; t\O
 T1/cmr/m/n/10 (53) = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0557466\OML/cmm/m/it/10
  ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 9557533)\OML/cmm/m/it
-/10 andexperimentcondition\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10
- = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5615116(95%\OML/cmm/m/it/10 CI \OT1/cmr/m
-/n/10 = \OMS/cmtt/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 
-1223016\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 24
-53248)\OML/cmm/m/it/10 ; SE \OT1/cmr/m/n/10 =
+/10 andexperimentcondition\OT1/cmr/m/n/10 ([]0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10
+ 5615116(95%\OML/cmm/m/it/10 CI \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/
+m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1223016\OML/cmm/m/it/10 ; \OT1/cmr/m/
+n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2453248)\OML/cmm/m/it/10 ; SE \OT1/cmr/
+m/n/10 =
  []
 
 
-Overfull \hbox (305.41808pt too wide) in paragraph at lines 2199--2289
+Overfull \hbox (384.01678pt too wide) in paragraph at lines 2199--2289
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 3488907\OML/cmm/m/it/10 ; t\
 OT1/cmr/m/n/10 (53) = 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 6094197\OML/cmm/m/it/1
 0 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1134656)\OML/cmm/m/i
 t/10 werenotsignificantpredictorsofsocialbonding:Averageperformanceineachtrialw
-as; however; asignificantpredictorofsocialbonding; ^^L \OT1/cmr/m/n/10 =
+as; however; asignificantpredictorofsocialbonding; []\OT1/cmr/m/n/10 0\OML/cmm/
+m/it/10 :\OT1/cmr/m/n/10 64863(95%\OML/cmm/m/it/10 CI \OT1/cmr/m/n/10 =
  []
 
 [37 <./figure/clickBondingConditionQQNorm-1.pdf> <./figure/clickBondingConditio
@@ -3000,7 +3019,7 @@ n input line 2324.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
  [39 <./figure/groupPerfExpBondingConditionScatter-1.pdf> <./figure/groupPerfEx
 pBondingConditionQQNorm-1.pdf>]
-./9trainingExperiment.tex:2335: Undefined control sequence.
+! Undefined control sequence.
 l.2335   \resdist
                  
 The control sequence at the end of the top line
@@ -3009,7 +3028,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2340: Undefined control sequence.
+! Undefined control sequence.
 l.2340 and all \cooksD
                        were less than
 The control sequence at the end of the top line
@@ -3041,21 +3060,19 @@ ed.out.groupPerfExp.unclass' not found[]
  []
 
 Package color Info: Redefining color shadecolor on input line 2364.
-
-LaTeX Font Warning: Font shape `OMS/cmtt/bx/n' undefined
-(Font)              using `OMS/cmtt/m/n' instead
-(Font)              for symbol `textbackslash' on input line 2367.
+LaTeX Font Info:    Font shape `OMS/cmtt/bx/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/b/n' tried instead on input line 2367.
 
 
-Overfull \hbox (34.91765pt too wide) in paragraph at lines 2367--2367
+Overfull \hbox (35.6676pt too wide) in paragraph at lines 2367--2367
 []\OT1/cmtt/m/n/10 ## Error in plot(med.out.groupPerfExp, main = "Group Click p
-artially mediates relationship \OMS/cmtt/bx/n/10 n\OT1/cmtt/m/n/10 n between
+artially mediates relationship \OMS/cmsy/b/n/10 n\OT1/cmtt/m/n/10 n between
  []
 
 
-Overfull \hbox (19.16779pt too wide) in paragraph at lines 2367--2367
-\OT1/cmtt/m/n/10 team performance expectation \OMS/cmtt/bx/n/10 n\OT1/cmtt/m/n/
-10 n violation and social bonding"): object 'med.out.groupPerfExp' not
+Overfull \hbox (19.91774pt too wide) in paragraph at lines 2367--2367
+\OT1/cmtt/m/n/10 team performance expectation \OMS/cmsy/b/n/10 n\OT1/cmtt/m/n/1
+0 n violation and social bonding"): object 'med.out.groupPerfExp' not
  []
 
 
@@ -3069,9 +3086,9 @@ LaTeX Warning: Citation 'Imai2010' on page 40 undefined on input line 2370.
 LaTeX Warning: Citation 'Preacher2008' on page 40 undefined on input line 2370.
 
 
-./9trainingExperiment.tex:2373: Undefined control sequence.
-\betavec ->\bm 
-               \beta = 
+! Undefined control sequence.
+\betavec ->{\bm 
+                \beta = }
 l.2373   \betavec
                  
 The control sequence at the end of the top line
@@ -3080,7 +3097,7 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-./9trainingExperiment.tex:2373: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.2373   \betavec
@@ -3088,7 +3105,18 @@ l.2373   \betavec
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
-./9trainingExperiment.tex:2385: Undefined control sequence.
+! Extra }, or forgotten $.
+\betavec ->{\bm \beta = }
+                         
+l.2373   \betavec
+                 
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
 l.2385 ...onding was no longer significant, \Sexpr
                                                   {} (see Figure ~\ref{fig:g...
 The control sequence at the end of the top line
@@ -3101,7 +3129,7 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: Reference `fig:groupPerfExpClickMediationPlot' on page 40 undefi
 ned on input line 2385.
 
-./9trainingExperiment.tex:2386: Missing $ inserted.
+! Missing $ inserted.
 <inserted text> 
                 $
 l.2386 
@@ -3126,24 +3154,58 @@ Underfull \hbox (badness 10000) in paragraph at lines 2390--2391
 
  []
 
+[40 <./figure/groupPerfExpBondingConditionCooksD-1.pdf>]
+(./9trainingExperiment.aux)
 
-./9trainingExperiment.tex:2414: TeX capacity exceeded, sorry [input stack size=
-5000].
-\begin #1->\csuse {@beforebegin@#1
-                                  @hook}\@ifundefined {#1}{\def \reserved@a ...
-l.2414 \end{document}
-                     
-If you really absolutely need more capacity,
-you can ask a wizard to enlarge me.
+LaTeX Warning: There were undefined references.
 
- 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                9trainingExperiment
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to '9trainingExperiment.run.xml'.
+\openout1 = `9trainingExperiment.run.xml'.
+
+ )
+(\end occurred inside a group at level 7)
+
+### simple group (level 7) entered at line 2373 ({)
+### simple group (level 6) entered at line 2201 ({)
+### simple group (level 5) entered at line 2048 ({)
+### simple group (level 4) entered at line 1914 ({)
+### simple group (level 3) entered at line 1708 ({)
+### simple group (level 2) entered at line 79 ({)
+### simple group (level 1) entered at line 79 ({)
+### bottom level 
 Here is how much of TeX's memory you used:
- 11282 strings out of 493004
- 191563 string characters out of 6133230
- 685144 words of memory out of 5000000
- 14625 multiletter control sequences out of 15000+600000
- 13502 words of font info for 52 fonts, out of 8000000 for 9000
+ 11301 strings out of 493004
+ 191997 string characters out of 6133230
+ 684932 words of memory out of 5000000
+ 14637 multiletter control sequences out of 15000+600000
+ 13757 words of font info for 53 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 5000i,8n,3751p,2106b,2705s stack positions out of 5000i,500n,10000p,200000b,80000s
-./9trainingExperiment.tex:2414:  ==> Fatal error occurred, no output PDF file p
-roduced!
+ 35i,8n,32p,2106b,3174s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmitt10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/c
+mr12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+17.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.
+pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
+fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
+></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+</usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on 9trainingExperiment.pdf (40 pages, 491815 bytes).
+PDF statistics:
+ 523 PDF objects out of 1000 (max. 8388607)
+ 363 compressed objects within 4 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
+

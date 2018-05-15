@@ -1,165 +1,9 @@
-% File name: trainingExperimentFinalAnalysis.R
-% Author: Jacob Taylor
-% Date Created: 20/09/2017
-% Description: A script for analysing complete data from trainingExperiment in Weihai and Beijing during August 2016.
-% This analysis incorporates performance data coded from video recordings of each experimental session.
-
-\documentclass[english]{article}\usepackage[]{graphicx}\usepackage[]{color}
-%% maxwidth is the original width if it is less than linewidth
-%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
-\makeatletter
-\def\maxwidth{ %
-  \ifdim\Gin@nat@width>\linewidth
-    \linewidth
-  \else
-    \Gin@nat@width
-  \fi
-}
-\makeatother
-
-\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
-\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
-\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
-\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
-\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
-\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
-\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
-\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
-\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
-\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
-\let\hlipl\hlkwb
-
-\usepackage{framed}
-\makeatletter
-\newenvironment{kframe}{%
- \def\at@end@of@kframe{}%
- \ifinner\ifhmode%
-  \def\at@end@of@kframe{\end{minipage}}%
-  \begin{minipage}{\columnwidth}%
- \fi\fi%
- \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
- \colorbox{shadecolor}{##1}\hskip-\fboxsep
-     % There is no \\@totalrightmargin, so:
-     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
- \MakeFramed {\advance\hsize-\width
-   \@totalleftmargin\z@ \linewidth\hsize
-   \@setminipage}}%
- {\par\unskip\endMakeFramed%
- \at@end@of@kframe}
-\makeatother
-
-\definecolor{shadecolor}{rgb}{.97, .97, .97}
-\definecolor{messagecolor}{rgb}{0, 0, 0}
-\definecolor{warningcolor}{rgb}{1, 0, 1}
-\definecolor{errorcolor}{rgb}{1, 0, 0}
-\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
-
-\usepackage{alltt}
-\usepackage[utf8]{inputenc}
-\usepackage[margin=1.8cm,a4paper]{geometry}
-\usepackage[english]{babel} % hyphenation
-\usepackage{csquotes}
-\usepackage{amsmath,amssymb,amsthm} % for mathematical
-\usepackage{graphicx} % to include graphics
-\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
 
 
-%%Bib Setup:
-\usepackage[style=apa, sorting=nyt, backend=biber, maxcitenames=2, useprefix=true, doi=false, isbn=false, natbib=true, language=american]{biblatex}
-\DeclareLanguageMapping{american}{american-apa}
-\newcommand*{\bibtitle}{Works Cited}
-\addbibresource{references.bib}
+\chapter{\label{trainingExperiment}Training Experiment}
 
-%%In-text \Sexpr{} setup for lmer:
-\newcommand{\betavec}{{\bm\beta = }}
-\newcommand{\CIstart}{(95\% CI =}
-\newcommand{\CIfinish}{),}
-\newcommand{\SE}{SE =}
-\newcommand{\pvalue}{p =}
-\newcommand{\MR2}{marginal R^2 =}
-\newcommand{\CR2}{conditional R^2 =}
-% Wald statistic for normality of residuals:
-\newcommand{\resdist}{W = }
-% Cook's Distances (influential cases)
-\newcommand{\cooksD}{Cook's Distances}
+\minitoc
 
-% setting global settings and loading useful libraries
-\title{Field Experiment}
-\date{}
-\author{Jacob Taylor & Emma Cohen \\ Institute of Cognitive \and Evolutionary Anthropology, University of Oxford}
-\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
-\begin{document}
-\maketitle
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Attaching packages ------------------------------------------------------------------------------------------------------------------------------------ tidyverse 1.2.1 --}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# √ ggplot2 2.2.1\ \ \ \  √ purrr\ \  0.2.4\\\#\# √ tibble\ \ 1.4.2\ \ \ \  √ dplyr\ \  0.7.4\\\#\# √ tidyr\ \  0.8.0\ \ \ \  √ stringr 1.3.1\\\#\# √ readr\ \  1.1.1\ \ \ \  √ forcats 0.3.0}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Conflicts --------------------------------------------------------------------------------------------------------------------------------------- tidyverse\_conflicts() --\\\#\# x dplyr::filter() masks stats::filter()\\\#\# x dplyr::lag()\ \ \ \ masks stats::lag()}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: Matrix}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'Matrix'}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:tidyr':\\\#\# \\\#\#\ \ \ \  expand}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'lmerTest'}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:lme4':\\\#\# \\\#\#\ \ \ \  lmer}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:stats':\\\#\# \\\#\#\ \ \ \  step}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: MASS}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'MASS'}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:dplyr':\\\#\# \\\#\#\ \ \ \  select}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: mvtnorm}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: sandwich}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# mediation: Causal Mediation Analysis\\\#\# Version: 4.4.6}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: carData}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'car'}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:dplyr':\\\#\# \\\#\#\ \ \ \  recode}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:purrr':\\\#\# \\\#\#\ \ \ \  some}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in contrib.url(repos, "{}source"{}): trying to use CRAN without setting a mirror}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'HLMdiag'}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:stats':\\\#\# \\\#\#\ \ \ \  covratio}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'influence.ME'}}
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:stats':\\\#\# \\\#\#\ \ \ \  influence}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in contrib.url(repos, type): trying to use CRAN without setting a mirror}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in loadNamespace(name): there is no package called 'devtools'}}\end{kframe}
-\end{knitrout}
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ABSTRACT%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Abstract}
 This study further tested the hypothesised relationship between joint action, team click, and social bonding in a controlled experimental environment.  An experiment was designed to test the prediction, partly confirmed in an \textit{in situ} survey study (Chapter 8 HYPERLINK), that athletes who perceived higher quality team performance in joint action would also experience higher levels of team click and social bonding.  58 Professional Chinese rugby players (Men = 31) participated in a between-subjects design in which athletes' expectations for joint action training drill \citep[``Invasion drill''][]{Passos2011}) were manipulated in one of two conditions.  Athletes in the ``low difficulty'' condition were primed with information to suggest that the training drill would require minimal rugby-sepcific individual and joint-action competence (i.e., 2/10 difficulty rating).  By contrast, in the ``high difficulty'' condition, athletes were primed to expect the training drill to be relatively difficult (8/10 difficulty rating). Pre- and post-experiment surveys were conducted, measuring athletes' perceptions of main variables of interest (individual and group performance, team click, and social bonding (both to the training group and the team more generally)), as well as athlete personality type and states of athlete states of arousal, fatigue, and injury.  Video footage of each experimental session was also recorded to derive an objective measure of interpersonal coordination not reliant on self-report. It was predicted that athletes in the ``high-difficulty'' condition would experience higher levels of team click and social bonding due to higher positive violation of expectations around group performance.  Athletes in the ``low difficulty'' condition would on average experience less strongly the ``click'' of joint action and social bonding because they would not experience the same level of positive violations of expectations around group performance.  Results provided some confirmation of these predictions.
@@ -168,24 +12,6 @@ This study further tested the hypothesised relationship between joint action, te
 
 %for two reasons: 1) athletes with expectations of higher difficulty would pay greater attention to coordinating action with others, and
 %
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%INTRODUCTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 
 \section{Introduction}
@@ -225,71 +51,22 @@ A between-subjects experimental design was used, in which expectations of techni
 %These considerations lead to the hypothesis that the more bystanders to an emergency, the less likely, or the more slowly, any one bystander will intervene to provide aid. To test this proposition it would be necessary to create a situation in which a realistic “emergency” could plausibly occur. Each subject should also be blocked from communicating with others to prevent his getting information about their behavior during the emergency. Finally, the experimental situation should allow for the assessment of the speed and frequency of the subjects’ reaction to the emergency. The experiment reported below attempted to fulfill these conditions (p. 378).
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%METHOD%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \section{Method}
 
 %\subsection{Design}
 %The design of a study is its overall structure. What were the independent and dependent variables? Was the independent variable manipulated, and if so, was it manipulated between or within subjects? How were the variables operationally defined?
 
 \subsection{Participants}
-58 professional Chinese rugby players from two provincial programs participated in the study
-(
-men =
-  31
-M(age) =
-  21.3272727
-(
-SD =
-  3.3280767,
-range = 16-29
-)
-).
-Athletes were recruited from two provincial rugby programs,
-  31
-participants were athletes from Shandong province
-(
-men =
-  15,
-M(age) =
-  22.1
-)
-and the remaining
-  27
-athletes were from Beijing province
-(
-men =
-  16,
-M(age) =
-  20.4
-).
-
-This study was approved by the University of Oxford’s Central University Research Ethics Committee (SAME/CUREC1A/15-059).
-
+64 professional Chinese rugby players from two provincial programs were recruited for the study (men = 32, M(age) = 21.33 SD = 3.33, range = 16-29).  Athletes were recruited from two provincial rugby programs, 32
+participants were athletes from Shandong province (men = 15, M(age) = 22.1) and the remaining 32 athletes were from Beijing province (men = 16, M(age) = 20.4).  This study was approved by the University of Oxford’s Central University Research Ethics Committee (SAME/CUREC1A/15-059).
 
 
 \subsection{Materials}
+
+\subsubsection{Experimental Paradigm: Invasion Drill}
+This study required athletes to participate in a common rugby training drill, which was preceded by one of two experimental primes—--a ``high difficulty'' condition, or a ``low difficulty'' condition.   Replicating \textcite{Passos2011}, a common training drill known as ``invasion drill'' \citep{Biscombe1998} was selected as it was representative of a typical subphase of joint action in rugby union.
+In this drill, a group of four rugby players form an attacking group and two pairs of opponents form a first and second defensive line.  There were two performance aims of this drill: (a) attackers were asked carry the ball into the try area, and (b) defenders were asked to stop the attacker’s progression toward the try line.
+One trial consisted of one attempt by the attacking sub-group to penetrate two defending sub-groups, and carry the ball over the try line. The drill was conducted on a regulation multipurpose 110m x 70m grass or artificial turf training field within a 22m x 15m rectangle area marked by plastic cones (see Figure ~\ref{fig:invasionDrill}). The ball used was size 5, as recommended by World Rugby for this age group of athletes.
 
 \begin{figure}[htbp]
   \includegraphics[width = \linewidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/invasionDrill.pdf}
@@ -297,10 +74,6 @@ This study was approved by the University of Oxford’s Central University Resea
   \label{fig:invasionDrill}
 \end{figure}
 
-\subsubsection{Experimental Paradigm: Invasion Drill}
-This study required athletes to participate in a common rugby training drill, which was preceeded by one of two experimental primes—--a ``high difficulty'' condition, or a ``low difficulty'' condition.   Replicating \textcite{Passos2011}, a common training drill known as ``invasion drill'' \citep{Biscombe1998} was selected as it was representative of a typical subphase of joint action in rugby union.
-In this drill, a group of four rugby players form an attacking group and two pairs of opponents form a first and second defensive line.  There were two performance aims of this drill: (a) attackers were asked carry the ball into the try area, and (b) defenders were asked to stop the attacker’s progression toward the try line.
-One trial consisted of one attempt by the attacking sub-group to penetrate two defending sub-groups, and carry the ball over the try line. The drill was conducted on a regulation multipurpose 110m x 70m grass or artificial turf training field within a 22m x 15m rectangle area marked by plastic cones (see Figure ~\ref{fig:invasionDrill}). The ball used was size 5, as recommended by World Rugby for this age group of athletes.
 
 %The training drill, known as ``invasion drill,'' requires eight athletes, one sub-grouof four attackers and two sub-groups of two defenders.  The primary aim of the drill is for the sub-group of 4 attacking players to successfully penetrate two consecutive lines of two defenders (also commonly known as a ``4 on 2 + 2'' drill). The aim of the two defending sub-groups is to stop the attacking team from achieving the primary goal, by interfering with their coordination by halting the ball-carrier, or the ball in flight between attacking players.
 
@@ -316,7 +89,7 @@ Surveys were administered at three time points: 1) one day before the experiment
 
 At Baseline, athletes were asked about their impressions of recent individual performance and the performance of their province team as a whole.  Survey items included questions relating to specific components of on-field performance (e.g., team components: Attack, defence, onfield communication, and support play; individual components: Passing technique, one-on-one tackling, effectiveness in contact areas) as well as items relating to overall impressions of performance, for example: ``How well do you feel your team has been performing in training and competition over the past month?'' (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'').  Athletes also responded to questions about feelings of team click and social bonding with their team as a whole. In addition, the Baseline survey also included items concerning basic personal information, current injury status, subjective and objective measures of tehcnical competence, and personality type.
 For a full explanation of survey items measured at Baseline, see Chapter 6 (Introduction to Part B) and Appendix ~\ref{} Section ~\ref{}.
-  
+
 At time 2, immediately prior to the experiment (Pre-Experiment), athletes were asked questions about feelings and expectations concerning their individual performance and the performance of their specific training group in the impending training drill.
 For example,  athletes were asked ``How do you feel \textit{right now} about your individual performance (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'')''.  Athletes were also asked a series of questions about feelings of team click and social bonding to their specific training group. For team click, for example, athletes were asked questions like: ``How do you feel the tacit understanding is between the training group today?'' (100 point scale, 0 = ``Extremely bad'', 100 = ``Extremely good'').  For social bonding, athletes were asked questions like: ``How emotionally supportive does your training group feel right now?'' (100 point scale, 0 = ``Extremely weak'', 100 = ``Extremely strong'').
 For a full explanation of survey items measured at Pre-Experiment, see Appendix ~\ref{} Section ~\ref{}.
@@ -326,13 +99,11 @@ At time 3, immediately after the completion of the experiment (Post-Experiment),
 Surveys were generated in English by the researcher using Qualtrics software (Qualtrics version 9, Provo, UT). Surveys were translated into modern Chinese and back translated by two independent native Chinese speaking translators from Beijing Sports University to verify accuracy.  Athletes completed the modern Chinese version of each survey using WeChat on their personal mobile devices connected remotely to the internet.
 
 
-
-
-
 \subsubsection{Video analysis of training group performance in training drill}
-In order to produce quantitative measures of interpersonal coordination between co-actors, athletes’ motion was captured by a single digital video camera (Sony FDR-AX700 4K HDR Camcorder) mounted on a 1.2m high tripod. Digital video images of action were acquired by a computer, using a USB2.0 cable, and files were saved on an encrypted external hard disk in .AVI format. For image treatment, TACTO 8.0 software was used for digitizing at 25 frames per second.
+In order to produce quantitative measures of interpersonal coordination between co-actors, athletes’ motion was captured by a single digital video camera (Sony FDR-AX700 4K HDR Camcorder) mounted on a 1.2m high tripod. Digital video images of action were acquired by a computer, using a USB2.0 cable, and files were saved on an encrypted external hard disk in .AVI format.
+%For image treatment, TACTO 8.0 software was used for digitising at 25 frames per second.
 
-Video footage from all 8 experiment sessions was analysed by an hypothesis blind research assistant.  Each experimental trial of the Invasion Drill (16 in total) was coded according to the quality of performance relative to the primary (attacking) goal of the drill, i.e., scoring a try by carrying the ball over the try line.  A maximum value of 6 was awarded to a ``clear try'' (trials in which a clear unobstructed try was scored by the attacking sub-unit); 5 to a ``rough try'' (the ball-carrier crossed the try-line following some minimal level of physical contact or obstruction from the defence that did not halt the momentum of the attacking phase); 4 to an ``Obstructed try'' (a trial in which a try is scored, but the momentum of the attacking sub-unit was clearly interrupted); 3 to a ``no try - defence''  (a trial in which a ball carrier is completely obstructed by a defender, and the trial is unsuccessful largely due to the effecticeness of the defence); 2 to a ``no try - defence forced error'' (unsuccessful trial due to a combination of the defence and error in attack); 1 to a ``no try - unforced error'' (a failed trial due to an unforced error in attack).
+Video footage from all 8 experiment sessions was analysed by an hypothesis blind research assistant.  Each experimental trial of the Invasion Drill (16 in total) was coded according to the quality of performance relative to the primary (attacking) goal of the drill, i.e., scoring a try by carrying the ball over the try line.  A maximum value of 6 was awarded to a ``clear try'' (trials in which a clear unobstructed try was scored by the attacking sub-unit); 5 to a ``rough try'' (the ball-carrier crossed the try-line following some minimal level of physical contact or obstruction from the defence that did not halt the momentum of the attacking phase); 4 to an ``Obstructed try'' (a trial in which a try is scored, but the momentum of the attacking sub-unit was clearly interrupted); 3 to a ``no try - defence''  (a trial in which a ball carrier is completely obstructed by a defender, and the trial is unsuccessful largely due to the effectiveness of the defence); 2 to a ``no try - defence forced error'' (unsuccessful trial due to a combination of the defence and error in attack); 1 to a ``no try - unforced error'' (a failed trial due to an unforced error in attack).
 For each experiment session, an average performance outcome (``Trial Outcome Average'') and the standard deviation of this outcome (``Trial Outcome SD'') was calculated in order to capture the central tendency and variability of performance for each training group.
 
 \subsection{Procedure}
@@ -341,9 +112,9 @@ Permission to run the study was sought from the head coach of each of the four t
 \subsubsection{Cover Story}
 Athletes were notified (first via WeChat and then in a team meeting) that they were participating in a trial of a number of different rugby training drills selected from a recent report by World Rugby concerning training methods for rugby sevens.  Athletes were told that the training drills had been previously rated by a selection of international level coaches and players from all over the world (including Asia and China).  Athletes were informed that the purpose of the exercise was for me to assess the ratings provided by World Rugby by replicating these drills with more rugby athletes in China.  Athletes were told that survey measures and video footage would be collected, which would be later analysed to assess individual performance of athletes in each training drill.  It was also explained to athletes that there would be a second round of drills also requiring groups of eight athletes, but the makeup of these groups may reshuffle depending on athletes preferences.  This detail allowed for the includion of a post-experiment bonding measure, in which athletes were asked to what extent they wished to continue to train with the same 8-athlete team in a subsequent round of drills.
 
-Approximately 24 hours before the experiment session, athletes were instructed to complete the baseline survey by opening a link provided in the WeChat group.  This survey included written consent for the study. Approximately 1 hour before the experiment was due to take place, athletes were administered with an experimental prime via WeChat.  In the ``high difficulty'' condition, athletes were primed to believe that they were about to participate in a very difficult training drill (on the upper end of their individual and group technical abilities), whereas athletes in the ``low difficulty'' condition were primed to believe that they were about to participate in a relatively easy training drill well within their technical abilities (see APPENDIX for full script). All athletes were lead to believe that athletes in the other experiemntal groups were performing different drills to their assigned drill. In reality, the training drill for each condition was identical, the only thing that varied was the pre-experiment prime.
+Approximately 24 hours before the experiment session, athletes were instructed to complete the baseline survey by opening a link provided in the WeChat group.  This survey included written consent for the study. Approximately 1 hour before the experiment was due to take place, athletes were administered with an experimental prime via WeChat.  In the ``high difficulty'' condition, athletes were primed to believe that they were about to participate in a very difficult training drill (on the upper end of their individual and group technical abilities), whereas athletes in the ``low difficulty'' condition were primed to believe that they were about to participate in a relatively easy training drill well within their technical abilities (see APPENDIX for full script). All athletes were lead to believe that athletes in the other experiment groups were performing different drills to their assigned drill. In reality, the training drill for each condition was identical, the only thing that varied was the pre-experiment prime.
 
-Once athletes were assembled at the designated training field, I verbally re-administered the same prime that had been sent to athletes via WeChat an hour earlier.  In addition, athletes were told in more detail about the requirements of the Invasion Drill (see APPENDIX for full details).  Specifically, athletes were told that their performance in the experiment would be assessed based on subsequent video analysis.  I told athletes that they would be assessed based on their performance in attack, defense, and their ability to coordinate attack and defense with others.  Athletes were provided with no other explicit information regarding performance goals, besides completing the experimental drill to the best of their ability within the rules of rugby.
+Once athletes were assembled at the designated training field, I verbally re-administered the same prime that had been sent to athletes via WeChat an hour earlier.  In addition, athletes were told in more detail about the requirements of the Invasion Drill (see APPENDIX for full details).  Specifically, athletes were told that their performance in the experiment would be assessed based on subsequent video analysis.  I told athletes that they would be assessed based on their performance in attack, defence, and their ability to coordinate attack and defense with others.  Athletes were provided with no other explicit information regarding performance goals, besides completing the experimental drill to the best of their ability within the rules of rugby.
 
 Athletes were then administered with the time 2 survey (Pre-experiment), which took approximately 3-5 minutes to complete.  After every athlete had finished the survey, athletes participated in a standard warm up routine lasting approximately 10 minutes, including slow jogging and dynamic stretching.  Athletes were instructed not to use the rugby ball during this period, which served to reduce the amount of incidental coordination and interaction between participants prior to the start of the experiment trials.  Once athletes had completed the warm up, the researcher assembled the group within the training drill area.  One athlete was randomly assigned to stand at each of 8 available plastic markers (6 in the case of the modified drills).  In this position, athletes were told once more about the structure and procedure for the training drill, in particular the way in which athletes were expected to rotate clockwise after every trial of the drill so that athletes did not habituate to certain positions or sub-units in the drill.
 
@@ -357,50 +128,23 @@ The digital camera and tripod were positioned on a platform 2m above the level o
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%RESULTS%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%SECTION%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 \section{Results}
+A total of 58 professional Chinese rugby players from two provincial programs were recruited for the study (men = 31, M(age) = 21.33 SD = 3.33, range = 16-29).  Athletes were recruited from two provincial rugby programs, 31 participants were athletes from Shandong province (men = 15, M(age) = 22.1) and the remaining 27 athletes were from Beijing province (men = 16, M(age) = 20.4).
+
+
 A total of 58 athletes participated in 8 experimental sessions. In one session (Shandong men's high difficulty condition) a research assistant stood in as a dummy participant for an athlete could not participate due to injury.  In the two sessions with Beijing women's team, due to failure of athletes to take part due to injury (3) or illness (2), the training drill was modified to a ``3 on 2 + 1'' drill, requiring only six athletes to complete instead of eight. In one of these experimental sessions, a female dummy participant was also required to fill in to make up a total of 6 athletes for the modified drill.  In both cases, dummy participants were competent ex-athletes who were naive to the predictions of the study.  Dummy participants did not participate in the survey responses before or after the session. Survey and video data of the remaining 58 participants was analysed.
-
-
-
-
 
 
 \subsection{Descriptive Statistics}
 
 \subsubsection{Participants}
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mutate\_impl(.data, dots): Evaluation error: unused argument (high = "{}Overall"{}).}}\end{kframe}
-\end{knitrout}
 
 \input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/athleteDescriptivesTrainingOverall.tex}
 
 
 
-
-
-
-
-The attributes of the overall sample of athletes are displayed in Table ~\ref{tab:athleteDescriptivesTrainingOverall}. The average training age of athletes was 4.2181818 years (2.1142454), with athletes having spent on average over 5.6363636 years in the team. 36\% of the sample were full-time employees of their provincial team, with the rest either being employed on a full-time (but fixed term) contract
+The attributes of the overall sample of athletes are displayed in Table ~\ref{tab:athleteDescriptivesTrainingOverall}. The average training age of athletes was 4.22 years (SD = 2.11), with athletes having spent on average over 5.64 years in the team. 36\% of the sample were full-time employees of their provincial team, and the remaining athletes were either being employed on a full-time (but fixed term) contract
 (800\%)), a ``student contract'' ((1600\%))), a short term training contract
 ((800\%))), or on a short-term trial basis ((200\%))).
 Only 18 of 58 (31\%) of athletes declared that there were in the starting team of their respective provincial teams.
@@ -1005,7 +749,7 @@ The main predictor variable of interest, perceptions of training group performan
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/dataReductionGroupClick-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/dataReductionGroupClick-1}
 
 }
 
@@ -1016,7 +760,7 @@ The main predictor variable of interest, perceptions of training group performan
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/dataReductionGroupClickPost-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/dataReductionGroupClickPost-1}
 
 }
 
@@ -1053,7 +797,7 @@ In addition to the four variables common to both pre- and post-experiment survey
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/dataReductionGroupBonding-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/dataReductionGroupBonding-1}
 
 }
 
@@ -1070,7 +814,7 @@ In addition to athlete expectation violations concerning group and individual pe
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/dataReductionGroupPerformance-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/dataReductionGroupPerformance-1}
 
 }
 
@@ -1081,7 +825,7 @@ In addition to athlete expectation violations concerning group and individual pe
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/dataReductionIndPerformance-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/dataReductionIndPerformance-1}
 
 }
 
@@ -1144,7 +888,7 @@ It was predicted that that athletes in the high difficulty condition would be mo
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupConfChallengesBoxplot-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupConfChallengesBoxplot-1}
 
 }
 
@@ -1154,7 +898,7 @@ It was predicted that that athletes in the high difficulty condition would be mo
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/histHighGroupConfidence-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/histHighGroupConfidence-1}
 
 }
 
@@ -1164,7 +908,7 @@ It was predicted that that athletes in the high difficulty condition would be mo
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/histLowGroupConfidence-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/histLowGroupConfidence-1}
 
 }
 
@@ -1179,18 +923,7 @@ It was predicted that that athletes in the high difficulty condition would be mo
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/indConfChallengesBoxplot-1} 
-
-}
-
-
-
-\end{knitrout}
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=\maxwidth]{figure/histHighIndConfidence-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/indConfChallengesBoxplot-1}
 
 }
 
@@ -1201,7 +934,18 @@ It was predicted that that athletes in the high difficulty condition would be mo
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/histLowIndConfidence-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/histHighIndConfidence-1}
+
+}
+
+
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\maxwidth]{figure/histLowIndConfidence-1}
 
 }
 
@@ -1231,7 +975,7 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
 \end{alltt}
 \end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/arousalFactorPreBoxPlot-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/arousalFactorPreBoxPlot-1}
 
 }
 
@@ -1251,7 +995,7 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
 \end{alltt}
 \end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/histArousalFactorPreHigh-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/histArousalFactorPreHigh-1}
 
 }
 
@@ -1271,7 +1015,7 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
 \end{alltt}
 \end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/histArousalFactorPreLow-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/histArousalFactorPreLow-1}
 
 }
 
@@ -1305,7 +1049,7 @@ Predictions of this study were first tested according to condition. It was predi
 \end{alltt}
 \end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupJointActionSuccessPostBoxPlot-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupJointActionSuccessPostBoxPlot-1}
 
 }
 
@@ -1327,7 +1071,7 @@ Predictions of this study were first tested according to condition. It was predi
 \end{alltt}
 \end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/indComponentPerformancePostBoxPlot-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/indComponentPerformancePostBoxPlot-1}
 
 }
 
@@ -1349,7 +1093,7 @@ Predictions of this study were first tested according to condition. It was predi
 \end{alltt}
 \end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpPostBoxPlot-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpPostBoxPlot-1}
 
 }
 
@@ -1371,7 +1115,7 @@ Predictions of this study were first tested according to condition. It was predi
 \end{alltt}
 \end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/indPerfExpPostBoxPlot-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/indPerfExpPostBoxPlot-1}
 
 }
 
@@ -1655,7 +1399,7 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/fullOutcomeAvgSessionBoxplot-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/fullOutcomeAvgSessionBoxplot-1}
 
 }
 
@@ -1688,7 +1432,7 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/teamPerfExpClickScatter-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/teamPerfExpClickScatter-1}
 
 }
 
@@ -1795,7 +1539,7 @@ The average performance outcome of each invasion drill trial was also a signific
 ,
 suggesting a relationship between onfield performance and individual athlete perceptions of performance.
 
-These results suggested that group performance expectation violations were a positive predictor of feelings of group click among athletes, and that this relationship was moderated by experiment condition, such that expectation violation had a greater effect on feelings of group click in the high difficulty condition than the low difficulty condition. 
+These results suggested that group performance expectation violations were a positive predictor of feelings of group click among athletes, and that this relationship was moderated by experiment condition, such that expectation violation had a greater effect on feelings of group click in the high difficulty condition than the low difficulty condition.
 
 
 
@@ -1803,7 +1547,7 @@ These results suggested that group performance expectation violations were a pos
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpClickAssumptionsHist-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpClickAssumptionsHist-1}
 
 }
 
@@ -1813,7 +1557,7 @@ These results suggested that group performance expectation violations were a pos
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpClickAssumptionsScatter-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpClickAssumptionsScatter-1}
 
 }
 
@@ -1823,7 +1567,7 @@ These results suggested that group performance expectation violations were a pos
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpClickQQNorm-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpClickQQNorm-1}
 
 }
 
@@ -1833,7 +1577,7 @@ These results suggested that group performance expectation violations were a pos
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpClickCooksD-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpClickCooksD-1}
 
 }
 
@@ -1853,12 +1597,12 @@ and an analysis of Cook's distances suggests that the model did not contain any 
     0.7808414
   ,
   for full presentation of model assumptions, see Appendix Figure ~\ref{fig:M1Assumptions}).
-  
+
 Based on these assessments, the model provided a robust basis for the inference that---in line with predictions---more positive violation of expectations concerning group performance predicted stronger feelings of team click. Also as predicted, this result was moderated by experiment condition, such that the effect of group performance expectation violation on group click was stronger in the high difficulty condition.
-  
-  
-  
-  
+
+
+
+
 
 \myparagraph{Prediction 1.a: Violations of expectations around team performance moderate the relationship between perceptions of joint action success and team click training group}
 
@@ -1868,7 +1612,7 @@ Based on these assessments, the model provided a robust basis for the inference 
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
 
-{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClickScatterLM-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClickScatterLM-1}
 
 }
 
@@ -1893,12 +1637,12 @@ MODELS
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClickScatterLMER-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClickScatterLMER-1}
 
 }
 
-\caption[Positive violation of Group Performance Expectations 
- moderates the relationship between perceived Joint Action Success and Group Click]{Positive violation of Group Performance Expectations 
+\caption[Positive violation of Group Performance Expectations
+ moderates the relationship between perceived Joint Action Success and Group Click]{Positive violation of Group Performance Expectations
  moderates the relationship between perceived Joint Action Success and Group Click}\label{fig:jASgroupPerfExpClickScatterLMER}
 \end{figure}
 
@@ -1946,7 +1690,7 @@ suggesting that the relationship between joint action success an group click is 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClickIntHist-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClickIntHist-1}
 
 }
 
@@ -1956,7 +1700,7 @@ suggesting that the relationship between joint action success an group click is 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClickIntScatter-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClickIntScatter-1}
 
 }
 
@@ -1966,7 +1710,7 @@ suggesting that the relationship between joint action success an group click is 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClick_int_controlsQQNorm-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClick_int_controlsQQNorm-1}
 
 }
 
@@ -1976,7 +1720,7 @@ suggesting that the relationship between joint action success an group click is 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClick_intAssumptionsCooksD-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/jASgroupPerfExpClick_intAssumptionsCooksD-1}
 
 }
 
@@ -2097,7 +1841,7 @@ suggesting that athletes who felt stronger levels of group click also felt stron
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/clickBondingConditionHist-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/clickBondingConditionHist-1}
 
 }
 
@@ -2107,7 +1851,7 @@ suggesting that athletes who felt stronger levels of group click also felt stron
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/clickBondingConditionScatter-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/clickBondingConditionScatter-1}
 
 }
 
@@ -2117,7 +1861,7 @@ suggesting that athletes who felt stronger levels of group click also felt stron
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/clickBondingConditionQQNorm-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/clickBondingConditionQQNorm-1}
 
 }
 
@@ -2127,7 +1871,7 @@ suggesting that athletes who felt stronger levels of group click also felt stron
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/clickBondingConditionCooksD-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/clickBondingConditionCooksD-1}
 
 }
 
@@ -2170,12 +1914,12 @@ These results suggested that feelings of group click were a powerful predictor o
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpBondConditionScatter-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpBondConditionScatter-1}
 
 }
 
-\caption[Positive violation of group performance expectations 
- predict feelings of Social Bonding to training group]{Positive violation of group performance expectations 
+\caption[Positive violation of group performance expectations
+ predict feelings of Social Bonding to training group]{Positive violation of group performance expectations
  predict feelings of Social Bonding to training group}\label{fig:groupPerfExpBondConditionScatter}
 \end{figure}
 
@@ -2291,7 +2035,7 @@ were not significant predictors of social bonding.  Average performance in each 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpBondingConditionHist-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpBondingConditionHist-1}
 
 }
 
@@ -2301,7 +2045,7 @@ were not significant predictors of social bonding.  Average performance in each 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpBondingConditionScatter-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpBondingConditionScatter-1}
 
 }
 
@@ -2311,7 +2055,7 @@ were not significant predictors of social bonding.  Average performance in each 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpBondingConditionQQNorm-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpBondingConditionQQNorm-1}
 
 }
 
@@ -2321,7 +2065,7 @@ were not significant predictors of social bonding.  Average performance in each 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpBondingConditionCooksD-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfExpBondingConditionCooksD-1}
 
 }
 
@@ -2436,7 +2180,7 @@ PRE-POST ANALYSIS:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfPrePostVariable-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfPrePostVariable-1}
 
 }
 
@@ -2450,7 +2194,7 @@ PRE-POST ANALYSIS:
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 59 rows containing non-finite values (stat\_boxplot).}}\end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/groupPerfPrePostPlot-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/groupPerfPrePostPlot-1}
 
 }
 
@@ -2471,7 +2215,7 @@ PRE-POST ANALYSIS:
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 59 rows containing non-finite values (stat\_boxplot).}}\end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/prePostClickPlot-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/prePostClickPlot-1}
 
 }
 
@@ -2491,7 +2235,7 @@ PRE-POST ANALYSIS:
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 59 rows containing non-finite values (stat\_boxplot).}}\end{kframe}\begin{figure}
 
-{\centering \includegraphics[width=\maxwidth]{figure/prePostBondingPlot-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/prePostBondingPlot-1}
 
 }
 
@@ -2560,28 +2304,28 @@ PRE-POST ANALYSIS:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{figure/predictionsTest-1} 
+{\centering \includegraphics[width=\maxwidth]{figure/predictionsTest-1}
 
 }
 
 
 
 
-{\centering \includegraphics[width=\maxwidth]{figure/predictionsTest-2} 
+{\centering \includegraphics[width=\maxwidth]{figure/predictionsTest-2}
 
 }
 
 
 
 
-{\centering \includegraphics[width=\maxwidth]{figure/predictionsTest-3} 
+{\centering \includegraphics[width=\maxwidth]{figure/predictionsTest-3}
 
 }
 
 
 
 
-{\centering \includegraphics[width=\maxwidth]{figure/predictionsTest-4} 
+{\centering \includegraphics[width=\maxwidth]{figure/predictionsTest-4}
 
 }
 
@@ -2611,7 +2355,3 @@ PRE-POST ANALYSIS:
 
 {\renewcommand*\MakeUppercase[1]{#1}%
 \printbibliography[heading=bibintoc,title={\bibtitle}]}
-
-
-
-
