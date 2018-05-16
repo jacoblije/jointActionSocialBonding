@@ -96,11 +96,11 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Attaching packages --------------------------------------------------------------------------------------------------------------------------- tidyverse 1.2.1 --}}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Attaching packages ----------------------------------------------------------------------- tidyverse 1.2.1 --}}
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# √ ggplot2 2.2.1\ \ \ \  √ purrr\ \  0.2.4\\\#\# √ tibble\ \ 1.4.2\ \ \ \  √ dplyr\ \  0.7.4\\\#\# √ tidyr\ \  0.8.0\ \ \ \  √ stringr 1.3.1\\\#\# √ readr\ \  1.1.1\ \ \ \  √ forcats 0.3.0}}
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Conflicts ------------------------------------------------------------------------------------------------------------------------------ tidyverse\_conflicts() --\\\#\# x dplyr::filter() masks stats::filter()\\\#\# x dplyr::lag()\ \ \ \ masks stats::lag()}}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Conflicts -------------------------------------------------------------------------- tidyverse\_conflicts() --\\\#\# x dplyr::filter() masks stats::filter()\\\#\# x dplyr::lag()\ \ \ \ masks stats::lag()}}
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: Matrix}}
 
@@ -207,7 +207,7 @@ By manipulating the level of uncertainty of information regarding the expectatio
 
 
 The Closing:
-These considerations lead to the hypothesis that expectations of higher levels of technical challenge in joint action will lead to higher levels of social bonding, due to the likelihood that athletes will experience more positive violations of expectations around team performance in the high-difficulty prime than in a low difficulty prime.  As predicted in the previous study, it was predicted that the feeling of ``team click'' would mediate the relationship between positive violations of expectations and social bonding.  The predictions are outlined as follows:
+These considerations lead to the hypothesis that expectations of higher levels of technical challenge in joint action will lead to higher levels of social bonding, due to the likelihood that athletes will perceive team performance more positively relative to prior expectations in the high-difficulty prime than in a low difficulty prime.  As predicted in the previous study, it was predicted that the feeling of ``team click'' would mediate the relationship between positive violations of expectations and social bonding.  The predictions are outlined as follows:
 \begin{description}
 \item[Prediction 1:] More positive violations of expectations around team performance will correlate with higer feelings of team click with the training group
 \item[Prediction 1.a:] Violations of expectations around team performance moderate the relationship between perceptions of joint action success and team click training group
@@ -304,7 +304,7 @@ One trial consisted of one attempt by the attacking sub-group to penetrate two d
 
 
 \subsubsection{Experimental Conditions: high and low difficulty}
-Two different pre-experiment primes were developed for the same training drill in order to manipulate athletes’ expectations around the technical difficulty of the impending joint-action task.  Athletes in the ``high difficulty'' condition learned that the overall average difficulty rating for the training drill, provided by World Rugby coaches and athletes, was 77.5/100, or approximately 8 out of 10.  Athletes were told that the drill would require an extension of their abilities as individuals and as a training group (see appendix for full script).  Athletes in the ``low difficulty'' condition, by contrast, learned that they would be participating in an ostensibly different drill with an overall average difficulty rating (provided by World Rugby coaches and athletes) of 22.5/100, or approximately 2 out of 10.  In reality, the training drill was exactly the same for each experimental session, and the relative difficulty of this drill was estimated in a pilot study to be approximately 5/10, see APPENDIX).  By either over- or under-rating the difficulty of the impending training drill, athletes' expectations around certainty of performance would be altered, such that athletes in the high difficulty condition would experience on average higher (positive) violation of expectations around team performance, whereas athletes in the low difficulty condition would on average experience less positive violations of expectations around team performance. Surveys were designed and administered using Qualtrics software (Qualtrics version 9, Provo, UT). Survey data were processed and analysed using the R environment (R Development Core Team, 2006).
+Two different pre-experiment primes were developed for the same training drill in order to manipulate athletes’ expectations around the technical difficulty of the impending joint-action task.  Athletes in the ``high difficulty'' condition learned that the overall average difficulty rating for the training drill, provided by World Rugby coaches and athletes, was 77.5/100, or approximately 8 out of 10.  Athletes were told that the drill would require an extension of their abilities as individuals and as a training group (see appendix for full script).  Athletes in the ``low difficulty'' condition, by contrast, learned that they would be participating in an ostensibly different drill with an overall average difficulty rating (provided by World Rugby coaches and athletes) of 22.5/100, or approximately 2 out of 10.  In reality, the training drill was exactly the same for each experimental session, and the relative difficulty of this drill was estimated in a pilot study to be approximately 5/10, see APPENDIX).  By either over- or under-rating the difficulty of the impending training drill, athletes' expectations around certainty of performance would be altered, such that athletes in the high difficulty condition would experience on average higher (positive) violation of expectations around team performance, whereas athletes in the low difficulty condition would on average perceive team performance less positively relative to prior of expectations. Surveys were designed and administered using Qualtrics software (Qualtrics version 9, Provo, UT). Survey data were processed and analysed using the R environment (R Development Core Team, 2006).
 
 
 \subsubsection{Measures}
@@ -387,7 +387,11 @@ A total of 58 athletes participated in 8 experimental sessions. In one session (
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mutate\_impl(.data, dots): Evaluation error: unused argument (high = "{}Overall"{}).}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in bind\_rows\_(x, .id): Unequal factor levels: coercing to character}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in bind\_rows\_(x, .id): binding character and factor vector, coercing into character vector}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in bind\_rows\_(x, .id): binding character and factor vector, coercing into character vector}}\end{kframe}
 \end{knitrout}
 
 \input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/athleteDescriptivesTrainingOverall.tex}
@@ -1224,7 +1228,7 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
                                         \hlkwc{varwidth} \hlstd{=} \hlnum{TRUE}\hlstd{,}
                                         \hlkwc{width} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{.5}\hlstd{,}\hlnum{.5}\hlstd{),}
                                         \hlkwc{notch} \hlstd{= F,}
-                                        \hlkwc{main} \hlstd{=} \hlstr{"Athlete arousal prior to experiment"}\hlstd{,}
+                                        \hlkwc{main} \hlstd{=} \hlnum{NA}\hlstd{,}
                                         \hlkwc{xlab} \hlstd{=} \hlstr{"Condition"}\hlstd{,}
                                         \hlkwc{ylab} \hlstd{=} \hlstr{"Arousal"}\hlstd{,}
                                         \hlkwc{data} \hlstd{= twc)}
@@ -1244,7 +1248,7 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
   \hlstd{histArousalFactorPreHigh} \hlkwb{<-} \hlkwd{hist}\hlstd{(high}\hlopt{$}\hlstd{arousalFactorPre,}
-                                        \hlkwc{main} \hlstd{=}  \hlstr{"Histogram of athlete arousal \textbackslash{}n prior to experiment (high difficulty)"}\hlstd{,}
+                                        \hlkwc{main} \hlstd{=} \hlnum{NA}\hlstd{,}
                                         \hlkwc{xlab} \hlstd{=} \hlstr{"Arousal"}\hlstd{,}
                                         \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{3}\hlstd{,} \hlnum{2}\hlstd{),}
                                         \hlkwc{ylim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{10}\hlstd{))}
@@ -1263,8 +1267,8 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-  \hlkwd{hist}\hlstd{(low}\hlopt{$}\hlstd{arousalFactorPre,} \hlkwc{main} \hlstd{=}  \hlstr{"Histogram of athlete arousal \textbackslash{}n prior to experiment
-                              (low difficulty)"}\hlstd{,}
+  \hlkwd{hist}\hlstd{(low}\hlopt{$}\hlstd{arousalFactorPre,}
+                              \hlkwc{main} \hlstd{=} \hlnum{NA}\hlstd{,}
                               \hlkwc{xlab} \hlstd{=} \hlstr{"Arousal"}\hlstd{,}
                               \hlkwc{xlim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlopt{-}\hlnum{3}\hlstd{,} \hlnum{2}\hlstd{),}
                               \hlkwc{ylim} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{0}\hlstd{,}\hlnum{10}\hlstd{))}
@@ -1282,12 +1286,12 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
 
 
 %t_apa(arousalCondition.ttest)
-An analysis of arousal by condition also failed to reveal meaningful variation by condition, (see Table ~\ref{tab:manipulationCheckTable} and Figure ~\ref{fig:arousalFactorPreBoxPlot}). Judging by the boxplot and histogram of each condition (see Figures ~\ref{fig:histArousalFactorPreHigh} and ~\ref{fig:histArousalFactorPreLow}), the variance of arousal in the high difficulty condition did appear to be higher than the low difficulty condition. A Bartlett's test for homogeneity of variance, however, revealed that the difference was not significant, c(`Bartlett's K-squared` = 0.46014520291942), c(df = 1), 0.497556120225506, arousalFactorPre by condition, Bartlett test of homogeneity of variances.
-These results suggested that the experimental prime was explicitly successful in significantly manipulating athlete self-reported confidence in individuala and group ability to meet the technical challenges associated with the training drill.  There was also no evidence that self-reported arousal differed significantly according to condition.
+An analysis of arousal by condition also failed to reveal meaningful variation by condition, (see Table ~\ref{tab:manipulationCheckTable} and Figure ~\ref{fig:arousalFactorPreBoxPlot}). Judging by the boxplot and histogram of each condition (see Figures ~\ref{fig:histArousalFactorPreHigh} and ~\ref{fig:histArousalFactorPreLow}), the variance of arousal in the high difficulty condition did appear to be higher than the low difficulty condition. A Bartlett's test for homogeneity of variance, however, revealed that the difference was not significant, c(`Bartlett's K-squared` = 0.46014520291942), c(df = 1), 0.497556120225506, arousalFactorPre by condition, Bartlett test of homogeneity of variances. These results suggested that the experimental prime was explicitly successful in significantly manipulating athlete self-reported confidence in individuala and group ability to meet the technical challenges associated with the training drill.  There was also no evidence that self-reported arousal differed significantly according to condition.
 It was still possible, however, that the experimental primes influenced athletes implicitly, in ways that were not measured by surveys, which record explicit self-report.
 
 \subsection{Results by condition}
 Predictions of this study were first tested according to condition. It was predicted that the high difficulty prime would generate closer attention to the details of joint action between participants, and more positive violation of expectations around group performance.
+
 
 
 %% jointACtionSuccess & indPerformance:
@@ -1298,7 +1302,7 @@ Predictions of this study were first tested according to condition. It was predi
                                           \hlkwc{varwidth} \hlstd{=} \hlnum{TRUE}\hlstd{,}
                                           \hlkwc{width} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{.5}\hlstd{,}\hlnum{.5}\hlstd{),}
                                           \hlkwc{notch} \hlstd{= F,}
-                                          \hlkwc{main} \hlstd{=} \hlstr{"Athlete post-experiment perceptions of \textbackslash{}n joint action success by condition \textbackslash{}n"}\hlstd{,}
+                                          \hlkwc{main} \hlstd{=} \hlnum{NA}\hlstd{,}
                                           \hlkwc{xlab} \hlstd{=} \hlstr{"Condition"}\hlstd{,}
                                           \hlkwc{ylab} \hlstd{=} \hlstr{"Joint Action Success"}\hlstd{,}
                                           \hlkwc{data} \hlstd{= twc)}
@@ -1320,7 +1324,7 @@ Predictions of this study were first tested according to condition. It was predi
                                           \hlkwc{varwidth} \hlstd{=} \hlnum{TRUE}\hlstd{,}
                                           \hlkwc{width} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{.5}\hlstd{,}\hlnum{.5}\hlstd{),}
                                           \hlkwc{notch} \hlstd{= F,}
-                                          \hlkwc{main} \hlstd{=} \hlstr{"Athlete post-experiment perceptions of \textbackslash{}n individual performance by condition \textbackslash{}n"}\hlstd{,}
+                                          \hlkwc{main} \hlstd{=} \hlnum{NA}\hlstd{,}
                                           \hlkwc{xlab} \hlstd{=} \hlstr{"Condition"}\hlstd{,}
                                           \hlkwc{ylab} \hlstd{=} \hlstr{"Individual Performance"}\hlstd{,}
                                           \hlkwc{data} \hlstd{= twc)}
@@ -1338,11 +1342,10 @@ Predictions of this study were first tested according to condition. It was predi
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-  \hlstd{groupPerfExpPostBoxPlot} \hlkwb{<-} \hlkwd{boxplot}\hlstd{(groupPerformance_3} \hlopt{~} \hlstd{condition,}
+  \hlstd{groupPerfExpPostBoxPlot} \hlkwb{<-} \hlkwd{boxplot}\hlstd{(groupPerformance_3Norm} \hlopt{~} \hlstd{condition,}
                                           \hlkwc{varwidth} \hlstd{=} \hlnum{TRUE}\hlstd{,}
                                           \hlkwc{width} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{.5}\hlstd{,}\hlnum{.5}\hlstd{),}
                                           \hlkwc{notch} \hlstd{= F,}
-                                          \hlkwc{main} \hlstd{=} \hlstr{"Athlete post-experiment perceptions of \textbackslash{}n group performance relative to expectations \textbackslash{}n by condition"}\hlstd{,}
                                           \hlkwc{xlab} \hlstd{=} \hlstr{"Condition"}\hlstd{,}
                                           \hlkwc{ylab} \hlstd{=} \hlstr{"Group Performance vs. Expectations"}\hlstd{,}
                                           \hlkwc{data} \hlstd{= twc)}
@@ -1360,11 +1363,11 @@ Predictions of this study were first tested according to condition. It was predi
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-  \hlstd{indPerfExpPostBoxPlot} \hlkwb{<-} \hlkwd{boxplot}\hlstd{(indPerformance_3} \hlopt{~} \hlstd{condition,}
+  \hlstd{indPerfExpPostBoxPlot} \hlkwb{<-} \hlkwd{boxplot}\hlstd{(indPerformance_3Norm} \hlopt{~} \hlstd{condition,}
                                           \hlkwc{varwidth} \hlstd{=} \hlnum{TRUE}\hlstd{,}
                                           \hlkwc{width} \hlstd{=} \hlkwd{c}\hlstd{(}\hlnum{.5}\hlstd{,}\hlnum{.5}\hlstd{),}
                                           \hlkwc{notch} \hlstd{= F,}
-                                          \hlkwc{main} \hlstd{=} \hlstr{"Athlete post-experiment perceptions of \textbackslash{}n individual performance relative to expectations \textbackslash{}n by condition"}\hlstd{,}
+                                          \hlkwc{main} \hlstd{=} \hlnum{NA}\hlstd{,}
                                           \hlkwc{xlab} \hlstd{=} \hlstr{"Condition"}\hlstd{,}
                                           \hlkwc{ylab} \hlstd{=} \hlstr{"Individual Performance vs. Expectations"}\hlstd{,}
                                           \hlkwc{data} \hlstd{= twc)}
@@ -1672,17 +1675,23 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-  \hlstd{groupPerfExpClickScatter} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(twc,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=groupPerformance_3,} \hlkwc{y}\hlstd{=groupClickPostFactor,}
+\hlkwd{library}\hlstd{(tidyverse)}
+  \hlstd{groupPerfExpClickScatter} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(twc,} \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=groupPerformance_3Norm,} \hlkwc{y}\hlstd{=groupClickPostFactor,}
                               \hlkwc{color}\hlstd{=condition))} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwc{shape} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}
                               \hlkwd{geom_smooth}\hlstd{(}\hlkwc{method}\hlstd{=lm,} \hlkwc{se}\hlstd{=}\hlnum{FALSE}\hlstd{)}   \hlcom{# Don't add shaded confidence region}
   \hlstd{groupPerfExpClickScatter} \hlopt{+}
-              \hlkwd{ggtitle}\hlstd{(}\hlstr{"Positive violation of Team Performance Expectations \textbackslash{}n predicts Group Click"}\hlstd{)} \hlopt{+}
-              \hlkwd{theme}\hlstd{(}\hlkwc{plot.title} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size}\hlstd{=}\hlnum{12}\hlstd{))} \hlopt{+}
               \hlkwd{xlab}\hlstd{(}\hlstr{"Team Performance vs Expectations"}\hlstd{)} \hlopt{+}
               \hlkwd{ylab}\hlstd{(}\hlstr{"Group Click"}\hlstd{)} \hlopt{+}
+              \hlkwd{ggsave}\hlstd{(}\hlstr{"teamPerfExpClickScatter.pdf"}\hlstd{)} \hlopt{+}
               \hlstd{apatheme}
 \end{alltt}
 
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Saving 3.5 x 3.5 in image}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing non-finite values (stat\_smooth).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing non-finite values (stat\_smooth).}}
 
@@ -1694,16 +1703,7 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 
 \end{figure}
 
-\begin{kframe}\begin{alltt}
-              \hlkwd{ggsave}\hlstd{(}\hlstr{"teamPerfExpClickScatter.pdf"}\hlstd{)}
-\end{alltt}
 
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Saving 3.5 x 3.5 in image}}
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing non-finite values (stat\_smooth).}}
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
 \end{knitrout}
 
 
@@ -1785,23 +1785,23 @@ were also significant.
 The average performance outcome of each invasion drill trial was also a significant positive predictor of team click
 ,
   \betavec
-    0.3161116
+    0.7344113
   \CIstart
-    0.0587999
+    0.2303963
   ,
-    0.5734233
+    1.2384263
   \CIfinish
   \SE
-    0.1312839
+    0.2571552
   ,
   t(
     53
   )
   =
-    2.4078475
+    2.8559063
   ,
   \pvalue
-    0.0195595
+    0.0061153
   (see Table ~\ref{tab:M1lmer})
 ,
 suggesting a relationship between onfield performance and individual athlete perceptions of performance.
@@ -1887,6 +1887,10 @@ Based on these assessments, the model provided a robust basis for the inference 
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Saving 3.5 x 3.5 in image}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}
+
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
 
 {\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/jASgroupPerfExpClickScatterLM-1} 
@@ -1894,11 +1898,7 @@ Based on these assessments, the model provided a robust basis for the inference 
 }
 
 
-\begin{kframe}
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Saving 3.5 x 3.5 in image}}
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
 \end{knitrout}
 
 
@@ -1916,23 +1916,18 @@ MODELS
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}\begin{figure}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
 
 {\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/jASgroupPerfExpClickScatterLMER-1} 
 
 }
 
-\caption[Positive violation of Group Performance Expectations 
- moderates the relationship between perceived Joint Action Success and Group Click]{Positive violation of Group Performance Expectations 
- moderates the relationship between perceived Joint Action Success and Group Click}\label{fig:jASgroupPerfExpClickScatterLMER}
-\end{figure}
 
 
 \end{knitrout}
 
 Figure ~\ref{fig:teamPerfExpClickScatter} shows that the slope of the relationship between between perceptions of Joint Action Success and Group Click appears to be  moderated by perception of team performance relative to prior expectations, such that higher levels (+1 standard deviation) of group performance expectation violation results in an increase of the steepness of the slope.
 
-%
 
 A LMER model, with Joint Action Success, Group Performance Expectations, and their interaction included as fixed effects, and perceptions of individual component performance, post-Experiment arousal, and average performance outcome included as controls, confirmed that the negative interation effect of Group Performance Expectations and Joint Action Success on Group Click was significant
 ,
@@ -2056,7 +2051,7 @@ Re-running the model with this value excluded led to an improvement of the model
   \hlcom{#              guides(color = guide_legend(title="Condition"))+}
               \hlkwd{theme}\hlstd{(}\hlkwc{plot.title} \hlstd{=} \hlkwd{element_text}\hlstd{(}\hlkwc{size}\hlstd{=}\hlnum{12}\hlstd{))} \hlopt{+}
               \hlkwd{labs}\hlstd{(}\hlkwc{x} \hlstd{=} \hlstr{"Group Click"}\hlstd{,} \hlkwc{y} \hlstd{=} \hlstr{"Social Bonding"}\hlstd{,} \hlkwc{color} \hlstd{=} \hlstr{"Condition"}\hlstd{)}\hlopt{+}
-              \hlstd{apatheme}
+              \hlstd{apatheme} \hlopt{+}
               \hlkwd{ggsave}\hlstd{(}\hlstr{"groupClickBondScatter.pdf"}\hlstd{)}
               \hlcom{#              scale_fill_}
               \hlcom{#"Perceptions of Group Click \textbackslash{}n predict feelings of Social Bonding to training group"}
@@ -2185,12 +2180,18 @@ These results suggested that feelings of group click were a powerful predictor o
 
 
 
-\myparagraph{Prediction 3: More positive violations of team performance expectations will predict higher levels of Social Bonding to the training group}
+\myparagraph{Prediction 3: More positive perceptions of team performance relative to expectations will predict higher levels of Social Bonding to the training group}
 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Saving 3.5 x 3.5 in image}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing non-finite values (stat\_smooth).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing non-finite values (stat\_smooth).}}
 
@@ -2205,13 +2206,7 @@ These results suggested that feelings of group click were a powerful predictor o
  predict feelings of Social Bonding to training group}\label{fig:groupPerfExpBondConditionScatter}
 \end{figure}
 
-\begin{kframe}
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Saving 3.5 x 3.5 in image}}
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing non-finite values (stat\_smooth).}}
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
 \end{knitrout}
 
   %<<groupPerfExpBondScatter1, fig.cap=''>>=
@@ -2383,7 +2378,7 @@ see model assumptions in Appendix  ~\ref{fig:M1aAssumptions}
 These results suggested that the relationship between positive violation of group performance expectations and social bonding was significant, only in the high difficulty condition, and not overall accoss conditions.
 
 
-\myparagraph{Prediction 4: Feelings of group click will mediate a relationship between more positive violations of expectations around group performance and social bonding to the group}
+\myparagraph{Prediction 4: Feelings of group click will mediate a relationship between more positive perceptions of team performance relative to prior expectations around group performance and social bonding to the group}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -2397,6 +2392,7 @@ These results suggested that the relationship between positive violation of grou
 
 {\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in summary(med.out.groupPerfExp.unclass): object 'med.out.groupPerfExp.unclass' not found}}\end{kframe}
 \end{knitrout}
+
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 

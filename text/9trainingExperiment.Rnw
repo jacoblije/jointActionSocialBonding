@@ -192,7 +192,7 @@ By manipulating the level of uncertainty of information regarding the expectatio
 
 
 The Closing:
-These considerations lead to the hypothesis that expectations of higher levels of technical challenge in joint action will lead to higher levels of social bonding, due to the likelihood that athletes will experience more positive violations of expectations around team performance in the high-difficulty prime than in a low difficulty prime.  As predicted in the previous study, it was predicted that the feeling of ``team click'' would mediate the relationship between positive violations of expectations and social bonding.  The predictions are outlined as follows:
+These considerations lead to the hypothesis that expectations of higher levels of technical challenge in joint action will lead to higher levels of social bonding, due to the likelihood that athletes will perceive team performance more positively relative to prior expectations in the high-difficulty prime than in a low difficulty prime.  As predicted in the previous study, it was predicted that the feeling of ``team click'' would mediate the relationship between positive violations of expectations and social bonding.  The predictions are outlined as follows:
 \begin{description}
 \item[Prediction 1:] More positive violations of expectations around team performance will correlate with higer feelings of team click with the training group
 \item[Prediction 1.a:] Violations of expectations around team performance moderate the relationship between perceptions of joint action success and team click training group
@@ -289,7 +289,7 @@ One trial consisted of one attempt by the attacking sub-group to penetrate two d
 
 
 \subsubsection{Experimental Conditions: high and low difficulty}
-Two different pre-experiment primes were developed for the same training drill in order to manipulate athletes’ expectations around the technical difficulty of the impending joint-action task.  Athletes in the ``high difficulty'' condition learned that the overall average difficulty rating for the training drill, provided by World Rugby coaches and athletes, was 77.5/100, or approximately 8 out of 10.  Athletes were told that the drill would require an extension of their abilities as individuals and as a training group (see appendix for full script).  Athletes in the ``low difficulty'' condition, by contrast, learned that they would be participating in an ostensibly different drill with an overall average difficulty rating (provided by World Rugby coaches and athletes) of 22.5/100, or approximately 2 out of 10.  In reality, the training drill was exactly the same for each experimental session, and the relative difficulty of this drill was estimated in a pilot study to be approximately 5/10, see APPENDIX).  By either over- or under-rating the difficulty of the impending training drill, athletes' expectations around certainty of performance would be altered, such that athletes in the high difficulty condition would experience on average higher (positive) violation of expectations around team performance, whereas athletes in the low difficulty condition would on average experience less positive violations of expectations around team performance. Surveys were designed and administered using Qualtrics software (Qualtrics version 9, Provo, UT). Survey data were processed and analysed using the R environment (R Development Core Team, 2006).
+Two different pre-experiment primes were developed for the same training drill in order to manipulate athletes’ expectations around the technical difficulty of the impending joint-action task.  Athletes in the ``high difficulty'' condition learned that the overall average difficulty rating for the training drill, provided by World Rugby coaches and athletes, was 77.5/100, or approximately 8 out of 10.  Athletes were told that the drill would require an extension of their abilities as individuals and as a training group (see appendix for full script).  Athletes in the ``low difficulty'' condition, by contrast, learned that they would be participating in an ostensibly different drill with an overall average difficulty rating (provided by World Rugby coaches and athletes) of 22.5/100, or approximately 2 out of 10.  In reality, the training drill was exactly the same for each experimental session, and the relative difficulty of this drill was estimated in a pilot study to be approximately 5/10, see APPENDIX).  By either over- or under-rating the difficulty of the impending training drill, athletes' expectations around certainty of performance would be altered, such that athletes in the high difficulty condition would experience on average higher (positive) violation of expectations around team performance, whereas athletes in the low difficulty condition would on average perceive team performance less positively relative to prior of expectations. Surveys were designed and administered using Qualtrics software (Qualtrics version 9, Provo, UT). Survey data were processed and analysed using the R environment (R Development Core Team, 2006).
 
 
 \subsubsection{Measures}
@@ -311,11 +311,12 @@ Surveys were generated in English by the researcher using Qualtrics software (Qu
 
 <<surveyMeasureSummaryTable, eval=T, echo=F>>=
   #create all columns:
-  Items <- c("Performance(Ind)", "Performance(Group)", "Performance(Team)",
-             "TeamClick(Group)", "TeamClick(Team)", "SocialBonding(Group)", "SocialBonding(Team)", "Arousal", "Exertion")
-  Baseline <- c("*","","*","","*","","*","","")
-  Pre <- c("*","*","","*","","*","","*","")
-  Post <- c("*","*","","*","*","*","*","*","*")
+  Items <- c("Performance(Team)","TeamClick(Team)", "SocialBonding(Team)",
+                "Performance(Group)", "TeamClick(Group)", "SocialBonding(Group)",
+                    "Performance(Ind)", "Arousal", "Exertion")
+  Baseline <- c("*","*","*","","","","*","","")
+  Pre <- c("","","","*","*","*","*","*","")
+  Post <- c("","*","*","*","*","*","*","*","*")
 
   surveyMeasureSummary <- data.frame(Items, Baseline, Pre, Post, stringsAsFactors = FALSE)
 
@@ -324,7 +325,7 @@ Surveys were generated in English by the researcher using Qualtrics software (Qu
                                 label = "tab:surveyItemsByTime")
 
   align(summaryTable) <- "llccc"
-  #print(summaryTable, file="surveyItemsByTime.tex")
+  print(summaryTable, file="surveyItemsByTime.tex")
 @
 
 
@@ -392,9 +393,10 @@ A total of \Sexpr{length(unique(twc$englishName))} athletes participated in \Sex
   dfAthleteSummary <- twcAthleteInfo
   #df2:
   dfAthleteSummaryOverall <- dfAthleteSummary
+  library(dplyr)
   dfAthleteSummaryOverall <- dfAthleteSummaryOverall %>%
-                                mutate(condition = recode(condition, "high" = "Overall"),
-                                       condition = recode(condition, "low" = "Overall")
+                                mutate(condition = dplyr::recode(condition, "high" = "Overall"),
+                                       condition = dplyr::recode(condition, "low" = "Overall")
                                        )
 
   dfAthleteSummary <- bind_rows(dfAthleteSummary, dfAthleteSummaryOverall)
@@ -456,8 +458,9 @@ A total of \Sexpr{length(unique(twc$englishName))} athletes participated in \Sex
 
   ## print to latex file in wd
   ## this latex file will later be inputted
+  library(xtable)
   print(xtable(table1_overall, type="latex",
-                      caption = "Overview of experiment sample by condition",
+                      caption = "Overview of experiment sample overall and by condition",
                       label = "tab:athleteDescriptivesTrainingOverall"),
                       file="athleteDescriptivesTrainingOverall.tex")
 @
@@ -1944,20 +1947,20 @@ It was predicted that that athletes in the high difficulty condition would be mo
                                         varwidth = TRUE,
                                         width = c(.5,.5),
                                         notch = F,
-                                        main = "Confidence in group to \n meet technical challenges",
+                                        main = NA,
                                         xlab = "Condition",
                                         ylab = "Confidence",
                                         data = twc)
 @
 <<histHighGroupConfidence, echo=F,eval=T>>=
   hist(high$groupConfidentTechnicalChallenges_2,
-                                          main =  "Histogram of confidence in group to \n meet technical challenges (high difficulty)",
+                                          main = NA,
                                           xlab = "Confidence",
                                           xlim = c(0, 100))
 @
 <<histLowGroupConfidence,echo=F,eval=T>>=
   hist(low$groupConfidentTechnicalChallenges_2,
-                                        main =  "Histogram of confidence in group to \n meet technical challenges (low difficulty)",
+                                        main = NA,
                                         xlab = "Confidence",
                                         xlim = c(0, 100))
 @
@@ -1980,7 +1983,7 @@ It was predicted that that athletes in the high difficulty condition would be mo
                                           varwidth = TRUE,
                                           width = c(.5,.5),
                                           notch = F,
-                                          main = "Confidence in individual ability \n to meet technical challenges",
+                                          main = NA,
                                           xlab = "Condition",
                                           ylab = "Confidence",
                                           data = twc)
@@ -1988,15 +1991,15 @@ It was predicted that that athletes in the high difficulty condition would be mo
 
 <<histHighIndConfidence, echo=F,eval=T>>=
   histHighIndConfidence <- hist(high$indConfidenceChallenges_2,
-                                          main =  "Histogram of confidence in individual \n ability to meet technical challenges \n (high difficulty)",
+                                          main = NA,
                                           xlab = "Confidence",
                                           xlim = c(0, 100),
                                           ylim = c(0, 20))
 @
 
 <<histLowIndConfidence, echo=F,eval=T>>=
-  histLowIndConfidence <- hist(low$indConfidenceChallenges_2, main =
-                                        "Histogram of condifence in in individual \n ability to meet technical challenges \n (low difficulty)",
+  histLowIndConfidence <- hist(low$indConfidenceChallenges_2,
+                                        main = NA,
                                         xlab = "Confidence",
                                         xlim = c(0, 100),
                                         ylim = c(0, 20))
@@ -2029,7 +2032,7 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
                                         varwidth = TRUE,
                                         width = c(.5,.5),
                                         notch = F,
-                                        main = "Athlete arousal prior to experiment",
+                                        main = NA,
                                         xlab = "Condition",
                                         ylab = "Arousal",
                                         data = twc)
@@ -2037,15 +2040,15 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
 
 <<histArousalFactorPreHigh, fig.cap=''>>=
   histArousalFactorPreHigh <- hist(high$arousalFactorPre,
-                                        main =  "Histogram of athlete arousal \n prior to experiment (high difficulty)",
+                                        main = NA,
                                         xlab = "Arousal",
                                         xlim = c(-3, 2),
                                         ylim = c(0,10))
 @
 
 <<histArousalFactorPreLow, fig.cap=''>>=
-  hist(low$arousalFactorPre, main =  "Histogram of athlete arousal \n prior to experiment
-                              (low difficulty)",
+  hist(low$arousalFactorPre,
+                              main = NA,
                               xlab = "Arousal",
                               xlim = c(-3, 2),
                               ylim = c(0,10))
@@ -2074,8 +2077,7 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
 @
 
 %\Sexpr{t_apa(arousalCondition.ttest)}
-An analysis of arousal by condition also failed to reveal meaningful variation by condition, (see Table ~\ref{tab:manipulationCheckTable} and Figure ~\ref{fig:arousalFactorPreBoxPlot}). Judging by the boxplot and histogram of each condition (see Figures ~\ref{fig:histArousalFactorPreHigh} and ~\ref{fig:histArousalFactorPreLow}), the variance of arousal in the high difficulty condition did appear to be higher than the low difficulty condition. A Bartlett's test for homogeneity of variance, however, revealed that the difference was not significant, \Sexpr{arousalFactorPreBartlett}.
-These results suggested that the experimental prime was explicitly successful in significantly manipulating athlete self-reported confidence in individuala and group ability to meet the technical challenges associated with the training drill.  There was also no evidence that self-reported arousal differed significantly according to condition.
+An analysis of arousal by condition also failed to reveal meaningful variation by condition, (see Table ~\ref{tab:manipulationCheckTable} and Figure ~\ref{fig:arousalFactorPreBoxPlot}). Judging by the boxplot and histogram of each condition (see Figures ~\ref{fig:histArousalFactorPreHigh} and ~\ref{fig:histArousalFactorPreLow}), the variance of arousal in the high difficulty condition did appear to be higher than the low difficulty condition. A Bartlett's test for homogeneity of variance, however, revealed that the difference was not significant, \Sexpr{arousalFactorPreBartlett}. These results suggested that the experimental prime was explicitly successful in significantly manipulating athlete self-reported confidence in individuala and group ability to meet the technical challenges associated with the training drill.  There was also no evidence that self-reported arousal differed significantly according to condition.
 It was still possible, however, that the experimental primes influenced athletes implicitly, in ways that were not measured by surveys, which record explicit self-report.
 
 \subsection{Results by condition}
@@ -2084,15 +2086,17 @@ Predictions of this study were first tested according to condition. It was predi
 <<performanceConditionPostTable, echo=F,eval=T>>=
   ##subset data for renaming
   twcPerformancePost <- subset(twc, select = c(age, sex, condition, team,
-                                      jointActionSuccessPost, indPerformancePost, groupPerformance_3, indPerformance_3))
+                                      jointActionSuccessPost, indPerformancePost, groupPerformance_3Norm, indPerformance_3Norm))
 
   ##rename columns for tables:
   library(dplyr)
   twcPerformancePost <- dplyr::rename(twcPerformancePost, Team = team, Condition = condition,
                                       Sex = sex, Age = age, JointActionSuccess = jointActionSuccessPost,
-                                      IndividualComponentPerformance = indPerformancePost, GroupPerformVsExpected = groupPerformance_3,
-                                      IndPerformVsExpected = indPerformance_3)
+                                      IndividualComponentPerformance = indPerformancePost, GroupPerformVsExpected = groupPerformance_3Norm,
+                                      IndPerformVsExpected = indPerformance_3Norm)
 
+      twcPerformancePost$GroupPerformVsExpected <- as.numeric(twcPerformancePost$GroupPerformVsExpected)
+      twcPerformancePost$IndPerformVsExpected <- as.numeric(twcPerformancePost$IndPerformVsExpected)
 
   ## create a variable list which we want in table one
   listVars <- c("JointActionSuccess", "IndividualComponentPerformance", "GroupPerformVsExpected", "IndPerformVsExpected")
@@ -2118,17 +2122,18 @@ Predictions of this study were first tested according to condition. It was predi
   ## print to latex file in wd
   ## this latex file will later be inputted
   print(xtable(table1_overall, type="latex",
-                      caption = "Athlete perceptions of performance \n post-experiment",
+                      main = "Athlete perceptions of performance post-experiment",
                       label = "tab:performanceConditionPost"),
                       file="performanceConditionPost.tex")
 @
+
 %% jointACtionSuccess & indPerformance:
 <<groupJointActionSuccessPostBoxPlot, fig.cap=''>>=
   groupJointActionSuccessBoxPlot <- boxplot(jointActionSuccessPost ~ condition,
                                           varwidth = TRUE,
                                           width = c(.5,.5),
                                           notch = F,
-                                          main = "Athlete post-experiment perceptions of \n joint action success by condition \n",
+                                          main = NA,
                                           xlab = "Condition",
                                           ylab = "Joint Action Success",
                                           data = twc)
@@ -2138,27 +2143,26 @@ Predictions of this study were first tested according to condition. It was predi
                                           varwidth = TRUE,
                                           width = c(.5,.5),
                                           notch = F,
-                                          main = "Athlete post-experiment perceptions of \n individual performance by condition \n",
+                                          main = NA,
                                           xlab = "Condition",
                                           ylab = "Individual Performance",
                                           data = twc)
 @
 <<groupPerfExpPostBoxPlot, fig.cap=''>>=
-  groupPerfExpPostBoxPlot <- boxplot(groupPerformance_3 ~ condition,
+  groupPerfExpPostBoxPlot <- boxplot(groupPerformance_3Norm ~ condition,
                                           varwidth = TRUE,
                                           width = c(.5,.5),
                                           notch = F,
-                                          main = "Athlete post-experiment perceptions of \n group performance relative to expectations \n by condition",
                                           xlab = "Condition",
                                           ylab = "Group Performance vs. Expectations",
                                           data = twc)
 @
 <<indPerfExpPostBoxPlot, fig.cap=''>>=
-  indPerfExpPostBoxPlot <- boxplot(indPerformance_3 ~ condition,
+  indPerfExpPostBoxPlot <- boxplot(indPerformance_3Norm ~ condition,
                                           varwidth = TRUE,
                                           width = c(.5,.5),
                                           notch = F,
-                                          main = "Athlete post-experiment perceptions of \n individual performance relative to expectations \n by condition",
+                                          main = NA,
                                           xlab = "Condition",
                                           ylab = "Individual Performance vs. Expectations",
                                           data = twc)
@@ -2547,8 +2551,8 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
   fullOutcomeAvgSdSessionBox <- ggplot(outcomeDf,
                             aes(x=Session, y=AverageOutcome, size=StandardDeviation)) +
                             geom_boxplot() +
-                            labs(title = "Plot of avg.performance outcome \n by condition",
-                                 x = "Experiment Session",
+                            ggtitle(element_blank()) +
+                            labs(x = "Experiment Session",
                                  y = "Average Performance Outcome") +
                             ylab("Average Performance Outcome") +
                             scale_linetype_discrete(name='SD') +
@@ -2562,16 +2566,14 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 \myparagraph{Prediction 1: More positive violations of expectations around team performance will correlate with higer feelings of team click with the training group}
 
 <<teamPerfExpClickScatter, fig.cap=''>>=
-  groupPerfExpClickScatter <- ggplot(twc, aes(x=groupPerformance_3, y=groupClickPostFactor,
+library(tidyverse)
+  groupPerfExpClickScatter <- ggplot(twc, aes(x=groupPerformance_3Norm, y=groupClickPostFactor,
                               color=condition)) + geom_point(shape = 1) +
                               geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
   groupPerfExpClickScatter +
-              ggtitle("Positive violation of Team Performance Expectations \n predicts Group Click") +
-              theme(plot.title = element_text(size=12)) +
-              xlab("Team Performance vs Expectations") +
+              xlab("Group Performance vs Expectations") +
               ylab("Group Click") +
               apatheme
-              ggsave("teamPerfExpClickScatter.pdf")
 @
 
 
@@ -2605,7 +2607,7 @@ Figure ~\ref{fig:teamPerfExpClickScatter} shows a strong positive correlation be
 
   summary(groupPerfExpClick.controls)
   #confint:
-  groupPerfExpClick.controls.CIs <- confint.merMod(groupPerfExpClick.controls, method = "Wald")
+  groupPerfExpClick.controls.CIs <- confint.merMod(groupPerfExpClick.controls, method = "Wald", level = 0.95)
   #calculate marginal (fixed) and conditional (random) R^2 for the model:
   #groupPerfExpClick.controls.R2 <- sem.model.fits(groupPerfExpClick.controls)
 
@@ -2683,23 +2685,23 @@ were also significant.
 The average performance outcome of each invasion drill trial was also a significant positive predictor of team click
 ,
   \betavec
-    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","Estimate"]}
+    \Sexpr{coef(summary(groupPerfExpClick.controls))["fullOutcomeAvg","Estimate"]}
   \CIstart
-    \Sexpr{groupPerfExpClick.controls.CIs["groupPerformance_3Norm", 1]}
+    \Sexpr{groupPerfExpClick.controls.CIs["fullOutcomeAvg", 1]}
   ,
-    \Sexpr{groupPerfExpClick.controls.CIs["groupPerformance_3Norm", 2]}
+    \Sexpr{groupPerfExpClick.controls.CIs["fullOutcomeAvg", 2]}
   \CIfinish
   \SE
-    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","Std. Error"]}
+    \Sexpr{coef(summary(groupPerfExpClick.controls))["fullOutcomeAvg","Std. Error"]}
   ,
   t(
-    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","df"]}
+    \Sexpr{coef(summary(groupPerfExpClick.controls))["fullOutcomeAvg","df"]}
   )
   =
-    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","t value"]}
+    \Sexpr{coef(summary(groupPerfExpClick.controls))["fullOutcomeAvg","t value"]}
   ,
   \pvalue
-    \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm","Pr(>|t|)"]}
+    \Sexpr{coef(summary(groupPerfExpClick.controls))["fullOutcomeAvg","Pr(>|t|)"]}
   (see Table ~\ref{tab:M1lmer})
 ,
 suggesting a relationship between onfield performance and individual athlete perceptions of performance.
@@ -2712,7 +2714,7 @@ These results suggested that group performance expectation violations were a pos
 <<groupPerfExpClickAssumptionsHist, echo=F,eval=T>>=
   #1.historgram with density line
   groupPerfExpClickResid <- resid(groupPerfExpClick.controls, type = "pearson")
-  hist(groupPerfExpClickResid ,
+  hist(groupPerfExpClickResid,
        freq = FALSE,
        main = "Distribution of M1 residuals \n (standardised)",
        xlab = "Residuals")
@@ -2807,7 +2809,6 @@ Based on these assessments, the model provided a robust basis for the inference 
   groupPerfExpJASClickScatterLM <- ggplot(twc, aes(x=jointActionSuccessPost,
                                         y=groupClickPostFactor, size=groupPerformance_3Norm)) + geom_point(alpha = .10)
   groupPerfExpJASClickScatterLM +
-              ggtitle("Positive violation of Team Performance \n Expectations moderates effect of \n Joint Action Success on Group Click") +
               theme(plot.title = element_text(size=12)) +
               xlab("Joint Action Success") +
               ylab("Group Click") +
@@ -2816,8 +2817,8 @@ Based on these assessments, the model provided a robust basis for the inference 
               geom_abline(aes(intercept=0.2242, slope=0.6815, linetype='Mean PerfExpect'))+
               geom_abline(aes(intercept=0.2885, slope=0.6259, linetype='+1SD PerfExpect'))+
               scale_linetype_manual(values=c('dotted','dashed','solid'),
-              breaks=c('-1SD PerfExpect','Mean PerfExpect','+1SD PerfExpect'),name='Simple\nSlope')+
-              apatheme
+              breaks=c('-1SD \n PerfExpect','Mean \n PerfExpect','+1SD \n PerfExpect'),name='Simple\nSlope')  +
+              apatheme +
               ggsave("groupPerfExpJASClickScatterLM.pdf")
 
 @
@@ -2855,7 +2856,7 @@ MODELS
 
 
 
-<<jASgroupPerfExpClickScatterLMER, eval=T, echo=F, fig.cap="Positive violation of Group Performance Expectations \n moderates the relationship between perceived Joint Action Success and Group Click">>=
+<<jASgroupPerfExpClickScatterLMER, eval=T, echo=F>>=
   #twc$groupPerformance_3Norm <- scale(twc$groupPerformance_3)
   summary(jASgroupPerfExpClick.int.controls)
   ## use vcov() to get parameter variances and covariances for Kris’s interaction utility
@@ -2894,13 +2895,12 @@ MODELS
               geom_abline(aes(intercept=0.0754, slope=0.4945, linetype= "Mean Expect"))+
               geom_abline(aes(intercept=0.0619, slope=0.3892, linetype="+1SD Expect"))+
               scale_linetype_manual(values=c('dotted','dashed','solid'),
-              breaks=c("-1SD Expect", "Mean Expect","+1SD Expect"),name="Group Performance \n Vs Expected") +
+              breaks=c("-1SD \n Expect", "Mean \n Expect","+1SD \n Expect"),name="Group Performance \n Vs Expected") +
               apatheme
 @
 
 Figure ~\ref{fig:teamPerfExpClickScatter} shows that the slope of the relationship between between perceptions of Joint Action Success and Group Click appears to be  moderated by perception of team performance relative to prior expectations, such that higher levels (+1 standard deviation) of group performance expectation violation results in an increase of the steepness of the slope.
 
-%
 
 A LMER model, with Joint Action Success, Group Performance Expectations, and their interaction included as fixed effects, and perceptions of individual component performance, post-Experiment arousal, and average performance outcome included as controls, confirmed that the negative interation effect of Group Performance Expectations and Joint Action Success on Group Click was significant
 ,
@@ -2946,7 +2946,9 @@ suggesting that the relationship between joint action success an group click is 
 <<jASgroupPerfExpClickIntHist, echo=F,eval=T>>=
   #1.historgram with density line
   jASgroupPerfExpClickIntResid <- resid(jASgroupPerfExpClick.int.controls, type = "pearson")
-  hist(jASgroupPerfExpClickIntResid, freq = FALSE, main = "Distribution of M1a Residuals", xlab = "Residuals")
+  hist(jASgroupPerfExpClickIntResid, freq = FALSE,
+    main = "Distribution of M1a Residuals",
+    xlab = "Residuals")
   lines(density(jASgroupPerfExpClickIntResid, na.rm = TRUE))
   dev.copy(pdf, "TE1aHist.pdf")
   dev.off()
@@ -3039,7 +3041,7 @@ Re-running the model with this value excluded led to an improvement of the model
   #              guides(color = guide_legend(title="Condition"))+
               theme(plot.title = element_text(size=12)) +
               labs(x = "Group Click", y = "Social Bonding", color = "Condition")+
-              apatheme
+              apatheme +
               ggsave("groupClickBondScatter.pdf")
               #              scale_fill_
               #"Perceptions of Group Click \n predict feelings of Social Bonding to training group"
@@ -3204,7 +3206,7 @@ These results suggested that feelings of group click were a powerful predictor o
 
 
 
-\myparagraph{Prediction 3: More positive violations of team performance expectations will predict higher levels of Social Bonding to the training group}
+\myparagraph{Prediction 3: More positive perceptions of team performance relative to expectations will predict higher levels of Social Bonding to the training group}
 
 
 <<groupPerfExpBondConditionScatter, eval=T,echo=F, fig.cap= 'Positive violation of group performance expectations \n predict feelings of Social Bonding to training group'>>=
@@ -3215,7 +3217,7 @@ These results suggested that feelings of group click were a powerful predictor o
               theme(plot.title = element_text(size=12)) +
               xlab("Group Performance vs Prior Expectations") +
               ylab("Social Bonding") +
-              apatheme
+              apatheme +
               ggsave("groupPerfExpBondConditionScatter.pdf")
 @
 
@@ -3415,7 +3417,7 @@ see model assumptions in Appendix  ~\ref{fig:M1aAssumptions}
 These results suggested that the relationship between positive violation of group performance expectations and social bonding was significant, only in the high difficulty condition, and not overall accoss conditions.
 
 
-\myparagraph{Prediction 4: Feelings of group click will mediate a relationship between more positive violations of expectations around group performance and social bonding to the group}
+\myparagraph{Prediction 4: Feelings of group click will mediate a relationship between more positive perceptions of team performance relative to prior expectations around group performance and social bonding to the group}
 
 <<groupPerfExpClickBondMediationModel, eval=T,echo=F>>=
 
@@ -3748,8 +3750,8 @@ plot(twc$groupPerformance_3Norm, twc$groupClickPost)
 abline(lm(twc$groupClickPost ~ twc$groupPerformance_3Norm))
 summary(lm(twc$groupClickPost ~ twc$groupPerformance_3Norm))
 summary(clickPostTeamPerformanceExpectations.lmer <- lmer(groupClickPost ~ groupPerformance_3Norm + condition + indPerformance_3Norm +  ( groupPerformance_3Norm | team),
-                                                          data =  twc, REML = FALSE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
-                                                                                                                optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))))
+            data =  twc, REML = FALSE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+         optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))))
 
 #prediction 1c: jointActionSuccess*groupPerformanceExpectations:
 
@@ -3774,7 +3776,7 @@ abline(lm(twc$groupBondingPost ~ twc$groupClickPost))
 summary(lm(twc$groupBondingPost ~ twc$groupClickPost))
 
 
-summary(bondingPostTeamPerformanceExpectations.lmer <- lmer(groupBondingPost ~ groupPerformance_3Norm + condition + ( groupPerformance_3 | team),
+summary(bondingPostTeamPerformanceExpectations.lmer <- lmer(groupBondingPost ~ groupPerformance_3Norm + condition + ( groupPerformance_3Norm | team),
                                                             data =  twc, REML = FALSE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
                                                                                                                   optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))))
 
@@ -3816,7 +3818,7 @@ abline(lm(training$groupStayChange_3.reversed ~ training$groupClickPost))
 summary(lm(training$groupStayChange_3.reversed ~ training$groupClickPost))
 
 
-summary(bondingPostTeamPerformanceExpectations.lmer <- lmer(groupBondingPost ~ groupPerformance_3 + condition + ( groupPerformance_3 | team),
+summary(bondingPostTeamPerformanceExpectations.lmer <- lmer(groupBondingPost ~ groupPerformance_3Norm + condition + ( groupPerformance_3Norm | team),
                                                             data =  training, REML = FALSE, control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
                                                                                                                   optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))))
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.30)  15 MAY 2018 16:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.8.30)  16 MAY 2018 17:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -970,10 +970,9 @@ So I'll assume that you meant to type \cr instead.
 
 Package color Info: Redefining color shadecolor on input line 96.
 
-Overfull \hbox (281.91544pt too wide) in paragraph at lines 99--100
+Overfull \hbox (8.91782pt too wide) in paragraph at lines 99--100
 []\OT1/cmtt/m/it/10 ## -- Attaching packages ----------------------------------
--------------------------------------------------------------------------------
-----------
+-------------------------------------
  []
 
 
@@ -1096,10 +1095,9 @@ Type  I <command> <return>  to replace it with another command,
 or  <return>  to continue without it.
 
 
-Overfull \hbox (250.41571pt too wide) in paragraph at lines 103--104
+Overfull \hbox (91.44708pt too wide) in paragraph at lines 103--104
 []\OT1/cmtt/m/it/10 ## -- Conflicts -------------------------------------------
--------------------------------------------------------------------------------
-----
+------------------------------- tidyverse[]conflicts()
  []
 
 LaTeX Font Info:    Font shape `OT1/cmtt/bx/n' in size <10> not available
@@ -1169,77 +1167,77 @@ LaTeX Warning: Reference `fig:invasionDrill' on page 7 undefined on input line
 [7]
 Package color Info: Redefining color shadecolor on input line 387.
 
+Overfull \hbox (0.72786pt too wide) in paragraph at lines 392--393
+[]\OT1/cmtt/m/n/10 ## Warning in bind[]rows[](x, .id): binding character and fa
+ctor vector, coercing into character
+ []
+
+
+Overfull \hbox (0.72786pt too wide) in paragraph at lines 394--394
+[]\OT1/cmtt/m/n/10 ## Warning in bind[]rows[](x, .id): binding character and fa
+ctor vector, coercing into character
+ []
+
+
 (/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/athleteDescriptivesTrainingOverall.tex)
 
 LaTeX Warning: Reference `tab:athleteDescriptivesTrainingOverall' on page 8 und
-efined on input line 401.
+efined on input line 405.
 
 
 LaTeX Warning: Reference `tab:athleteDescriptivesTrainingOverall' on page 8 und
-efined on input line 406.
+efined on input line 410.
 
 
 LaTeX Warning: Reference `tab:indPerfTimeLowTraining' on page 8 undefined on in
-put line 410.
+put line 414.
 
 
 LaTeX Warning: Reference `tab:indPerfTimeHighTraining' on page 8 undefined on i
-nput line 410.
+nput line 414.
 
 
 LaTeX Warning: Reference `tab:groupPerfTimeLowTraining' on page 8 undefined on 
-input line 410.
+input line 414.
 
 
 LaTeX Warning: Reference `tab:groupPerfTimeHighTraining' on page 8 undefined on
- input line 410.
+ input line 414.
 
 
 LaTeX Warning: Reference `tab:teamPerfTimeBaselineTraining' on page 8 undefined
- on input line 410.
+ on input line 414.
 
 
 LaTeX Warning: Reference `tab:indPerfTimeLowTraining' on page 8 undefined on in
-put line 410.
+put line 414.
 
 
 LaTeX Warning: Reference `tab:teamPerfTimeBaselineTraining' on page 8 undefined
- on input line 410.
+ on input line 414.
 
 [8]
 
 LaTeX Warning: Reference `tab:groupClickTimeHighTraining' on page 9 undefined o
-n input line 412.
+n input line 416.
 
 
 LaTeX Warning: Reference `tab:teamBondingTimeHighTraining' on page 9 undefined 
-on input line 412.
+on input line 416.
 
 
 LaTeX Warning: Reference `tab:objectiveOutcomeCondition' on page 9 undefined on
- input line 412.
+ input line 416.
 
 
-LaTeX Warning: Reference `' on page 9 undefined on input line 412.
+LaTeX Warning: Reference `' on page 9 undefined on input line 416.
 
-Package color Info: Redefining color shadecolor on input line 416.
+Package color Info: Redefining color shadecolor on input line 420.
 
-Overfull \hbox (45.6675pt too wide) in paragraph at lines 425--426
+Overfull \hbox (45.6675pt too wide) in paragraph at lines 429--430
 []\OT1/cmtt/m/n/10 ## Warning in ModuleReturnVarsExist(vars, data): The data fr
 ame does not have: GroupPerformVsExpected
- []
-
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 451--452
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 453--454
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
  []
 
 
@@ -1261,21 +1259,21 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (45.6675pt too wide) in paragraph at lines 461--462
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 461--462
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 463--464
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (45.6675pt too wide) in paragraph at lines 465--466
 []\OT1/cmtt/m/n/10 ## Warning in ModuleReturnVarsExist(vars, data): The data fr
 ame does not have: GroupPerformVsExpected
- []
-
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 487--488
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 489--490
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
  []
 
 
@@ -1291,25 +1289,25 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 495--495
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 495--496
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 497--498
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 499--499
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 [9]
-Package color Info: Redefining color shadecolor on input line 499.
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 518--519
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 520--521
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
+Package color Info: Redefining color shadecolor on input line 503.
 
 Overfull \hbox (14.16777pt too wide) in paragraph at lines 522--523
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
@@ -1317,36 +1315,36 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 540--541
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 524--525
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 542--543
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 526--527
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 544--544
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
-Package color Info: Redefining color shadecolor on input line 548.
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 583--584
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 544--545
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 585--586
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 546--547
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 548--548
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+Package color Info: Redefining color shadecolor on input line 552.
 
 Overfull \hbox (14.16777pt too wide) in paragraph at lines 587--588
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
@@ -1372,13 +1370,13 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 627--628
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 595--596
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 629--630
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 597--598
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
@@ -1402,25 +1400,25 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 637--637
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 637--638
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 639--640
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 641--641
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 [10]
-Package color Info: Redefining color shadecolor on input line 641.
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 664--665
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 666--667
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
+Package color Info: Redefining color shadecolor on input line 645.
 
 Overfull \hbox (14.16777pt too wide) in paragraph at lines 668--669
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
@@ -1434,13 +1432,13 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 692--693
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 672--673
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 694--695
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 674--675
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
@@ -1452,25 +1450,25 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 698--698
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 698--699
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 700--701
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 702--702
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 [11]
-Package color Info: Redefining color shadecolor on input line 702.
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 745--746
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 747--748
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
+Package color Info: Redefining color shadecolor on input line 706.
 
 Overfull \hbox (14.16777pt too wide) in paragraph at lines 749--750
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
@@ -1520,13 +1518,13 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 805--806
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 765--766
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 807--808
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 767--768
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
@@ -1574,32 +1572,32 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 823--823
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 823--824
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 825--826
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 827--827
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 [12]
-Package color Info: Redefining color shadecolor on input line 829.
+Package color Info: Redefining color shadecolor on input line 833.
 
-Overfull \hbox (8.91782pt too wide) in paragraph at lines 834--835
+Overfull \hbox (8.91782pt too wide) in paragraph at lines 838--839
 []\OT1/cmtt/m/n/10 ## Warning in ModuleReturnVarsExist(vars, data): The data fr
 ame does not have: TrialOutcomeAvg
  []
 
-Package color Info: Redefining color shadecolor on input line 840.
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 859--860
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 861--862
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
+Package color Info: Redefining color shadecolor on input line 844.
 
 Overfull \hbox (14.16777pt too wide) in paragraph at lines 863--864
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
@@ -1613,13 +1611,13 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 883--884
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 867--868
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 885--886
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 869--870
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
@@ -1631,25 +1629,25 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 889--889
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 889--890
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 891--892
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 893--893
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 [13]
-Package color Info: Redefining color shadecolor on input line 893.
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 928--929
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
-
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 930--931
-[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
-riable has only NA's in at least one
- []
-
+Package color Info: Redefining color shadecolor on input line 897.
 
 Overfull \hbox (14.16777pt too wide) in paragraph at lines 932--933
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
@@ -1675,13 +1673,13 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 972--973
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 940--941
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 974--975
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 942--943
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
@@ -1705,19 +1703,31 @@ riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 982--982
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 982--983
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 984--985
+[]\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
+riable has only NA's in at least one
+ []
+
+
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 986--986
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 [14]
 
-LaTeX Warning: Citation 'Yong2013' on page 15 undefined on input line 996.
+LaTeX Warning: Citation 'Yong2013' on page 15 undefined on input line 1000.
 
 
-LaTeX Warning: Reference `' on page 15 undefined on input line 998.
+LaTeX Warning: Reference `' on page 15 undefined on input line 1002.
 
-Package color Info: Redefining color shadecolor on input line 1005.
+Package color Info: Redefining color shadecolor on input line 1009.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/dataReductionGroupClick-1.pdf, id=115, 252.945pt x 25
@@ -1730,9 +1740,9 @@ ointActionSocialBonding/images/dataReductionGroupClick-1.pdf Graphic file (type
 intActionSocialBonding/images/dataReductionGroupClick-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/dataReductionGroupClick-1.pdf
- used on input line 1007.
+ used on input line 1011.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1016.
+Package color Info: Redefining color shadecolor on input line 1020.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/dataReductionGroupClickPost-1.pdf, id=116, 252.945pt 
@@ -1745,19 +1755,19 @@ type pdf)
 intActionSocialBonding/images/dataReductionGroupClickPost-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/dataReductionGroupClickPost-1
-.pdf used on input line 1018.
+.pdf used on input line 1022.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1026.
+Package color Info: Redefining color shadecolor on input line 1030.
  [15 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/dataReductionGroupClick-1.pdf>]
 
 LaTeX Warning: Reference `tab:groupClickCorrTable' on page 16 undefined on inpu
-t line 1046.
+t line 1050.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1046 ...mpling adequacy, (KMO =  0.7245786, \chi
+l.1050 ...mpling adequacy, (KMO =  0.7245786, \chi
                                                   ^2(6, N = 116) = 127.85670...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1765,13 +1775,13 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1048 
+l.1052 
        
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (92.84387pt too wide) in paragraph at lines 1046--1048
+Overfull \hbox (92.84387pt too wide) in paragraph at lines 1050--1052
 \OT1/cmr/m/n/10 3\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 6325399 \OMS/cmsy/m/n/10 ^^B
  \OT1/cmr/m/n/10 10[])\OML/cmm/m/it/10 :Onefactor; labelled\OT1/cmr/m/n/10 \\OM
 L/cmm/m/it/10 GroupClick[]wasimposedonthedata; whichexplained\OT1/cmr/m/n/10 47
@@ -1780,14 +1790,14 @@ mr/m/n/10 (\OML/cmm/m/it/10 SSLoading \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (8.43275pt too wide) in paragraph at lines 1046--1048
+Overfull \hbox (8.43275pt too wide) in paragraph at lines 1050--1052
 \OT1/cmr/m/n/10 2)\OML/cmm/m/it/10 :Guttmans^^U \OT1/cmr/m/n/10 = 0\OML/cmm/m/i
 t/10 :\OT1/cmr/m/n/10 7338611\OML/cmm/m/it/10 andCronbachs \OT1/cmr/m/n/10 = 0
 \OML/cmm/m/it/10 :\OT1/cmr/m/n/10 7664883\OML/cmm/m/it/10 indicatedthatthedatar
 eductionwasappropriateandreliable:$ 
  []
 
-Package color Info: Redefining color shadecolor on input line 1053.
+Package color Info: Redefining color shadecolor on input line 1057.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/dataReductionGroupBonding-1.pdf, id=126, 252.945pt x 
@@ -1800,18 +1810,18 @@ pe pdf)
 intActionSocialBonding/images/dataReductionGroupBonding-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/dataReductionGroupBonding-1.p
-df used on input line 1055.
+df used on input line 1059.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
  [16 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/dataReductionGroupClickPost-1.pdf>]
 
 LaTeX Warning: Reference `tab:groupBondingCorrTable' on page 17 undefined on in
-put line 1063.
+put line 1067.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1063 ...mpling adequacy, (KMO =  0.6501553, \chi
+l.1067 ...mpling adequacy, (KMO =  0.6501553, \chi
                                                   ^2(3, N = 116) = 54.230569...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -1819,13 +1829,13 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1065 
+l.1069 
        
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (334.58505pt too wide) in paragraph at lines 1063--1065
+Overfull \hbox (334.58505pt too wide) in paragraph at lines 1067--1069
 \OT1/cmr/m/n/10 = 0.6501553, $\OML/cmm/m/it/10 ^^_[]\OT1/cmr/m/n/10 (3\OML/cmm/
 m/it/10 ; N \OT1/cmr/m/n/10 = 116) = 54\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 230569
 1\OML/cmm/m/it/10 ; p \OT1/cmr/m/n/10 = 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0019
@@ -1836,7 +1846,7 @@ m/n/10 (\OML/cmm/m/it/10 SSLoading \OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (21.21057pt too wide) in paragraph at lines 1063--1065
+Overfull \hbox (21.21057pt too wide) in paragraph at lines 1067--1069
 \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 26)\OML/cmm/m/it/10 :Guttman
 s^^U \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5877962\OML/cmm/m/it/
 10 andCronbachs \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 6760861\O
@@ -1844,9 +1854,9 @@ ML/cmm/m/it/10 indicatedthatthedatareductionwasappropriateandreliable:$
  []
 
 
-LaTeX Warning: Reference `' on page 17 undefined on input line 1067.
+LaTeX Warning: Reference `' on page 17 undefined on input line 1071.
 
-Package color Info: Redefining color shadecolor on input line 1070.
+Package color Info: Redefining color shadecolor on input line 1074.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/dataReductionGroupPerformance-1.pdf, id=138, 252.945p
@@ -1859,9 +1869,9 @@ ointActionSocialBonding/images/dataReductionGroupPerformance-1.pdf Graphic file
 intActionSocialBonding/images/dataReductionGroupPerformance-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/dataReductionGroupPerformance
--1.pdf used on input line 1072.
+-1.pdf used on input line 1076.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1081.
+Package color Info: Redefining color shadecolor on input line 1085.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/dataReductionIndPerformance-1.pdf, id=139, 252.945pt 
@@ -1874,14 +1884,14 @@ type pdf)
 intActionSocialBonding/images/dataReductionIndPerformance-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/dataReductionIndPerformance-1
-.pdf used on input line 1083.
+.pdf used on input line 1087.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1102.
+Package color Info: Redefining color shadecolor on input line 1106.
  [17 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/dataReductionGroupBonding-1.pdf> </Users/jacob1/
 Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBond
 ing/images/dataReductionGroupPerformance-1.pdf>]
-Package color Info: Redefining color shadecolor on input line 1145.
+Package color Info: Redefining color shadecolor on input line 1149.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/groupConfChallengesBoxplot-1.pdf, id=155, 252.945pt x
@@ -1894,9 +1904,9 @@ ype pdf)
 intActionSocialBonding/images/groupConfChallengesBoxplot-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/groupConfChallengesBoxplot-1.
-pdf used on input line 1147.
+pdf used on input line 1151.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1155.
+Package color Info: Redefining color shadecolor on input line 1159.
  [18 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/dataReductionIndPerformance-1.pdf>]
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
@@ -1910,9 +1920,9 @@ ointActionSocialBonding/images/histHighGroupConfidence-1.pdf Graphic file (type
 intActionSocialBonding/images/histHighGroupConfidence-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/histHighGroupConfidence-1.pdf
- used on input line 1157.
+ used on input line 1161.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1165.
+Package color Info: Redefining color shadecolor on input line 1169.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/histLowGroupConfidence-1.pdf, id=166, 252.945pt x 252
@@ -1925,15 +1935,15 @@ pdf)
 intActionSocialBonding/images/histLowGroupConfidence-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/histLowGroupConfidence-1.pdf 
-used on input line 1167.
+used on input line 1171.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1180.
+Package color Info: Redefining color shadecolor on input line 1184.
  [19 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupConfChallengesBoxplot-1.pdf> </Users/jacob1
 /Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBon
 ding/images/histHighGroupConfidence-1.pdf>]
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/indConfChallengesBoxplot-1.pdf, id=184, 252.945pt x 2
+ctionSocialBonding/images/indConfChallengesBoxplot-1.pdf, id=182, 252.945pt x 2
 52.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/indConfChallengesBoxplot-1.pdf Graphic file (typ
@@ -1943,12 +1953,12 @@ e pdf)
 intActionSocialBonding/images/indConfChallengesBoxplot-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/indConfChallengesBoxplot-1.pd
-f used on input line 1182.
+f used on input line 1186.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1191.
+Package color Info: Redefining color shadecolor on input line 1195.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/histHighIndConfidence-1.pdf, id=185, 252.945pt x 252.
+ctionSocialBonding/images/histHighIndConfidence-1.pdf, id=183, 252.945pt x 252.
 945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/histHighIndConfidence-1.pdf Graphic file (type p
@@ -1958,15 +1968,15 @@ df)
 intActionSocialBonding/images/histHighIndConfidence-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/histHighIndConfidence-1.pdf u
-sed on input line 1193.
+sed on input line 1197.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1202.
+Package color Info: Redefining color shadecolor on input line 1206.
  [20 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/histLowGroupConfidence-1.pdf> </Users/jacob1/Doc
 uments/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding
 /images/indConfChallengesBoxplot-1.pdf>]
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/histLowIndConfidence-1.pdf, id=201, 252.945pt x 252.9
+ctionSocialBonding/images/histLowIndConfidence-1.pdf, id=197, 252.945pt x 252.9
 45pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/histLowIndConfidence-1.pdf Graphic file (type pd
@@ -1976,37 +1986,37 @@ f)
 intActionSocialBonding/images/histLowIndConfidence-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/histLowIndConfidence-1.pdf us
-ed on input line 1204.
+ed on input line 1208.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
 
 
 LaTeX Warning: Reference `tab:manipulationCheckTable' on page 21 undefined on i
-nput line 1215.
+nput line 1219.
 
 
 LaTeX Warning: Reference `fig:groupConfChallengesBoxplot' on page 21 undefined 
-on input line 1215.
+on input line 1219.
 
 
 LaTeX Warning: Reference `fig:indConfChallengesBoxplot' on page 21 undefined on
- input line 1215.
+ input line 1219.
 
 
 LaTeX Warning: Reference `fig:groupConfChallengesBoxplot' on page 21 undefined 
-on input line 1216.
+on input line 1220.
 
 
 LaTeX Warning: Reference `fig:histHighGroupConfidence' on page 21 undefined on 
-input line 1216.
+input line 1220.
 
 
 LaTeX Warning: Reference `fig:histLowIndConfidence' on page 21 undefined on inp
-ut line 1216.
+ut line 1220.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1217 ...8935, groupConfidentTechnicalChallenges_
+l.1221 ...8935, groupConfidentTechnicalChallenges_
                                                   2 by condition, Bartlett t...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2014,7 +2024,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1217 ...variances, high$indConfidenceChallenges_
+l.1221 ...variances, high$indConfidenceChallenges_
                                                   2 and low$indConfidenceCha...
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2022,7 +2032,7 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1217 ...enges_2 and low$indConfidenceChallenges_
+l.1221 ...enges_2 and low$indConfidenceChallenges_
                                                   2.
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2030,13 +2040,13 @@ you left one out. Proceed, with fingers crossed.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1218 
+l.1222 
        
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (483.33952pt too wide) in paragraph at lines 1215--1218
+Overfull \hbox (483.33952pt too wide) in paragraph at lines 1219--1222
 \OT1/cmr/m/n/10 groupConfidentTechnicalChallenges$[]\OML/cmm/m/it/10 byconditio
 n; Bartletttestofhomogeneityofvariances\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 :Thesa
 metestappliedtoathleteconfidenceinindividualabilityaccordingtoconditiondid; how
@@ -2045,7 +2055,7 @@ mr/m/n/10 =
  []
 
 
-Overfull \hbox (108.40858pt too wide) in paragraph at lines 1215--1218
+Overfull \hbox (108.40858pt too wide) in paragraph at lines 1219--1222
 \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 17299490056626)\OML/cmm/m/it
 /10 ; c\OT1/cmr/m/n/10 (`\OML/cmm/m/it/10 numdf\OT1/cmr/m/n/10 ` = 28\OML/cmm/m
 /it/10 ; \OT1/cmr/m/n/10 `\OML/cmm/m/it/10 denomdf\OT1/cmr/m/n/10 ` = 28)\OML/c
@@ -2057,7 +2067,7 @@ iances\OT1/cmr/m/n/10 ` =
  []
 
 
-Overfull \hbox (169.41634pt too wide) in paragraph at lines 1215--1218
+Overfull \hbox (169.41634pt too wide) in paragraph at lines 1219--1222
 \OT1/cmr/m/n/10 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 17299490056626)\OML/cmm/m/it
 /10 ; c\OT1/cmr/m/n/10 (`\OML/cmm/m/it/10 ratioofvariances\OT1/cmr/m/n/10 ` = 1
 )\OML/cmm/m/it/10 ; two:sided; Ftesttocomparetwovariances; high$\OT1/cmr/m/n/10
@@ -2065,10 +2075,10 @@ Overfull \hbox (169.41634pt too wide) in paragraph at lines 1215--1218
 eChallenges$[]\OML/cmm/m/it/10 :$ 
  []
 
-Package color Info: Redefining color shadecolor on input line 1221.
+Package color Info: Redefining color shadecolor on input line 1225.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/arousalFactorPreBoxPlot-1.pdf, id=202, 252.945pt x 25
+ctionSocialBonding/images/arousalFactorPreBoxPlot-1.pdf, id=198, 252.945pt x 25
 2.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/arousalFactorPreBoxPlot-1.pdf Graphic file (type
@@ -2078,32 +2088,15 @@ ointActionSocialBonding/images/arousalFactorPreBoxPlot-1.pdf Graphic file (type
 intActionSocialBonding/images/arousalFactorPreBoxPlot-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/arousalFactorPreBoxPlot-1.pdf
- used on input line 1234.
+ used on input line 1238.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1244.
+Package color Info: Redefining color shadecolor on input line 1248.
  [21 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/histHighIndConfidence-1.pdf> </Users/jacob1/Docu
 ments/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/
 images/histLowIndConfidence-1.pdf>]
-LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 124
-7.
-
-(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/omscmtt.fd
-File: omscmtt.fd 
-)
-LaTeX Font Info:    Font shape `OMS/cmtt/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1247.
-
-
-Overfull \hbox (134.66678pt too wide) in paragraph at lines 1247--1247
-[]                                        []\OT1/cmtt/m/n/10 main[] []=[]  []"H
-istogram of athlete arousal \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n prior to exper
-iment (high difficulty)"[][],[][] 
- []
-
-
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/histArousalFactorPreHigh-1.pdf, id=218, 252.945pt x 2
+ctionSocialBonding/images/histArousalFactorPreHigh-1.pdf, id=212, 252.945pt x 2
 52.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/histArousalFactorPreHigh-1.pdf Graphic file (typ
@@ -2113,12 +2106,12 @@ e pdf)
 intActionSocialBonding/images/histArousalFactorPreHigh-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/histArousalFactorPreHigh-1.pd
-f used on input line 1254.
+f used on input line 1258.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1264.
+Package color Info: Redefining color shadecolor on input line 1268.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/histArousalFactorPreLow-1.pdf, id=219, 252.945pt x 25
+ctionSocialBonding/images/histArousalFactorPreLow-1.pdf, id=213, 252.945pt x 25
 2.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/histArousalFactorPreLow-1.pdf Graphic file (type
@@ -2128,36 +2121,29 @@ ointActionSocialBonding/images/histArousalFactorPreLow-1.pdf Graphic file (type
 intActionSocialBonding/images/histArousalFactorPreLow-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/histArousalFactorPreLow-1.pdf
- used on input line 1274.
+ used on input line 1278.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
 
 
 LaTeX Warning: Reference `tab:manipulationCheckTable' on page 22 undefined on i
-nput line 1285.
+nput line 1289.
 
 
 LaTeX Warning: Reference `fig:arousalFactorPreBoxPlot' on page 22 undefined on 
-input line 1285.
+input line 1289.
 
 
 LaTeX Warning: Reference `fig:histArousalFactorPreHigh' on page 22 undefined on
- input line 1285.
+ input line 1289.
 
 
 LaTeX Warning: Reference `fig:histArousalFactorPreLow' on page 22 undefined on 
-input line 1285.
+input line 1289.
 
-Package color Info: Redefining color shadecolor on input line 1295.
-
-Overfull \hbox (186.91638pt too wide) in paragraph at lines 1301--1301
-[]                                          []\OT1/cmtt/m/n/10 main[] []=[] []"
-Athlete post-experiment perceptions of \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n joi
-nt action success by condition \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n"[][],[][] 
- []
-
+Package color Info: Redefining color shadecolor on input line 1299.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/groupJointActionSuccessPostBoxPlot-1.pdf, id=220, 252
+ctionSocialBonding/images/groupJointActionSuccessPostBoxPlot-1.pdf, id=214, 252
 .945pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupJointActionSuccessPostBoxPlot-1.pdf Graphic
@@ -2167,9 +2153,9 @@ ointActionSocialBonding/images/groupJointActionSuccessPostBoxPlot-1.pdf Graphic
 intActionSocialBonding/images/groupJointActionSuccessPostBoxPlot-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/groupJointActionSuccessPostBo
-xPlot-1.pdf used on input line 1308.
+xPlot-1.pdf used on input line 1312.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1317.
+Package color Info: Redefining color shadecolor on input line 1321.
 
 [22 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jo
 intActionSocialBonding/images/arousalFactorPreBoxPlot-1.pdf>] [23 </Users/jacob
@@ -2177,16 +2163,8 @@ intActionSocialBonding/images/arousalFactorPreBoxPlot-1.pdf>] [23 </Users/jacob
 nding/images/histArousalFactorPreHigh-1.pdf> </Users/jacob1/Documents/2017/Rese
 arch/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/histArou
 salFactorPreLow-1.pdf>]
-Overfull \hbox (197.41629pt too wide) in paragraph at lines 1323--1323
-[]                                          []\OT1/cmtt/m/n/10 main[] []=[] []"
-Athlete post-experiment perceptions of \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n ind
-ividual performance by condition \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n"[][],[][]
- 
- []
-
-
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/indComponentPerformancePostBoxPlot-1.pdf, id=245, 252
+ctionSocialBonding/images/indComponentPerformancePostBoxPlot-1.pdf, id=236, 252
 .945pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/indComponentPerformancePostBoxPlot-1.pdf Graphic
@@ -2196,20 +2174,12 @@ ointActionSocialBonding/images/indComponentPerformancePostBoxPlot-1.pdf Graphic
 intActionSocialBonding/images/indComponentPerformancePostBoxPlot-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/indComponentPerformancePostBo
-xPlot-1.pdf used on input line 1330.
+xPlot-1.pdf used on input line 1334.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1339.
-
-Overfull \hbox (302.41537pt too wide) in paragraph at lines 1345--1345
-[]                                          []\OT1/cmtt/m/n/10 main[] []=[] []"
-Athlete post-experiment perceptions of \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n gro
-up performance relative to expectations \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n by
- condition"[][],[][] 
- []
-
+Package color Info: Redefining color shadecolor on input line 1343.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/groupPerfExpPostBoxPlot-1.pdf, id=246, 252.945pt x 25
+ctionSocialBonding/images/groupPerfExpPostBoxPlot-1.pdf, id=237, 252.945pt x 25
 2.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupPerfExpPostBoxPlot-1.pdf Graphic file (type
@@ -2219,20 +2189,12 @@ ointActionSocialBonding/images/groupPerfExpPostBoxPlot-1.pdf Graphic file (type
 intActionSocialBonding/images/groupPerfExpPostBoxPlot-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/groupPerfExpPostBoxPlot-1.pdf
- used on input line 1352.
+ used on input line 1355.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1361.
-
-Overfull \hbox (328.66515pt too wide) in paragraph at lines 1367--1367
-[]                                          []\OT1/cmtt/m/n/10 main[] []=[] []"
-Athlete post-experiment perceptions of \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n ind
-ividual performance relative to expectations \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10
- n by condition"[][],[][] 
- []
-
+Package color Info: Redefining color shadecolor on input line 1364.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/indPerfExpPostBoxPlot-1.pdf, id=247, 252.945pt x 252.
+ctionSocialBonding/images/indPerfExpPostBoxPlot-1.pdf, id=238, 252.945pt x 252.
 945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/indPerfExpPostBoxPlot-1.pdf Graphic file (type p
@@ -2242,114 +2204,114 @@ df)
 intActionSocialBonding/images/indPerfExpPostBoxPlot-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/indPerfExpPostBoxPlot-1.pdf u
-sed on input line 1374.
+sed on input line 1377.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
 
 
 LaTeX Warning: Reference `tab:performanceConditionPost' on page 24 undefined on
- input line 1386.
+ input line 1389.
 
 
 LaTeX Warning: Reference `fig:groupJointActionSuccessPostBoxPlot' on page 24 un
-defined on input line 1386.
+defined on input line 1389.
 
 
 LaTeX Warning: Reference `fig:indPerfExpPostBoxPlot' on page 24 undefined on in
-put line 1386.
+put line 1389.
 
-Package color Info: Redefining color shadecolor on input line 1392.
+Package color Info: Redefining color shadecolor on input line 1395.
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1439--1440
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1442--1443
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1441--1442
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1444--1445
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1443--1444
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1446--1447
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1445--1446
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1448--1449
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1447--1448
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1450--1451
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1449--1450
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1452--1453
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1451--1452
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1454--1455
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1453--1454
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1456--1457
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1499--1500
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1502--1503
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1501--1502
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1504--1505
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1503--1504
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1506--1507
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1505--1506
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1508--1509
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1507--1508
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1510--1511
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1509--1510
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1512--1513
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1511--1512
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1514--1515
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1513--1513
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1516--1516
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
@@ -2364,57 +2326,57 @@ cialBonding/images/groupPerfExpPostBoxPlot-1.pdf>] [26 </Users/jacob1/Documents
 s/indPerfExpPostBoxPlot-1.pdf>]
 
 LaTeX Warning: Reference `tab:clickBondConditionPost' on page 27 undefined on i
-nput line 1516.
+nput line 1519.
 
 
 LaTeX Warning: Reference `tab:factorsTimeLow' on page 27 undefined on input lin
-e 1516.
+e 1519.
 
-Package color Info: Redefining color shadecolor on input line 1519.
+Package color Info: Redefining color shadecolor on input line 1522.
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1566--1567
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1569--1570
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1568--1569
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1571--1572
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1570--1571
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1573--1574
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1572--1573
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1575--1576
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1574--1575
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1577--1578
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1576--1577
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1579--1580
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1578--1579
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1581--1582
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
 
 
-Overfull \hbox (14.16777pt too wide) in paragraph at lines 1580--1580
+Overfull \hbox (14.16777pt too wide) in paragraph at lines 1583--1583
 []\OT1/cmtt/m/n/10 ## Warning in StdDiff(variable = var, group = strataVar): Va
 riable has only NA's in at least one
  []
@@ -2424,31 +2386,31 @@ riable has only NA's in at least one
 ctionSocialBonding/images/factorsTime.tex)
 
 LaTeX Warning: Reference `tab:factorsTime' on page 28 undefined on input line 1
-585.
+588.
 
 
-LaTeX Warning: Reference `tab:ICCTable' on page 28 undefined on input line 1606
+LaTeX Warning: Reference `tab:ICCTable' on page 28 undefined on input line 1609
 .
 
 
 LaTeX Warning: Reference `fig:fullOutcomeAvgSessionBoxplot' on page 28 undefine
-d on input line 1606.
+d on input line 1609.
 
-Package color Info: Redefining color shadecolor on input line 1610.
+Package color Info: Redefining color shadecolor on input line 1613.
 
-Overfull \hbox (19.41772pt too wide) in paragraph at lines 1619--1619
+Overfull \hbox (19.41772pt too wide) in paragraph at lines 1622--1622
 []\OT1/cmtt/m/n/10 ## Warning in anova.lm(aov(y ~ x, data = tdata)): ANOVA F-te
 sts on an essentially perfect fit are
  []
 
 [28]
-Package color Info: Redefining color shadecolor on input line 1624.
-Package color Info: Redefining color shadecolor on input line 1634.
-Package color Info: Redefining color shadecolor on input line 1644.
-Package color Info: Redefining color shadecolor on input line 1656.
+Package color Info: Redefining color shadecolor on input line 1627.
+Package color Info: Redefining color shadecolor on input line 1637.
+Package color Info: Redefining color shadecolor on input line 1647.
+Package color Info: Redefining color shadecolor on input line 1659.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/fullOutcomeAvgSessionBoxplot-1.pdf, id=288, 252.945pt
+ctionSocialBonding/images/fullOutcomeAvgSessionBoxplot-1.pdf, id=275, 252.945pt
  x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/fullOutcomeAvgSessionBoxplot-1.pdf Graphic file 
@@ -2458,31 +2420,30 @@ ointActionSocialBonding/images/fullOutcomeAvgSessionBoxplot-1.pdf Graphic file
 intActionSocialBonding/images/fullOutcomeAvgSessionBoxplot-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/fullOutcomeAvgSessionBoxplot-
-1.pdf used on input line 1658.
+1.pdf used on input line 1661.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 1670--1671
+Underfull \hbox (badness 10000) in paragraph at lines 1673--1674
 
  []
 
-Package color Info: Redefining color shadecolor on input line 1673.
+Package color Info: Redefining color shadecolor on input line 1676.
 
-Overfull \hbox (36.9037pt too wide) in paragraph at lines 1677--1677
+Overfull \hbox (3.66786pt too wide) in paragraph at lines 1679--1679
+[]  []\OT1/cmtt/m/n/10 groupPerfExpClickScatter[] []<-[] []ggplot[][](twc,[] []
+aes[][]([][]x[][]=groupPerformance_3Norm,[] []y[][]=groupClickPostFactor,[][] 
+ []
+
+
+Overfull \hbox (36.9037pt too wide) in paragraph at lines 1681--1681
 []                              []\OT1/cmtt/m/n/10 geom_smooth[][]([][]method[]
 []=lm,[] []se[][]=[][]FALSE[][])[]   []\OT1/cmtt/m/it/10 # Don^^Mt add shaded c
 onfidence region[][] 
  []
 
 
-Overfull \hbox (40.1676pt too wide) in paragraph at lines 1679--1679
-[]              []\OT1/cmtt/m/n/10 ggtitle[][]([][]"Positive violation of Team 
-Performance Expectations \OMS/cmsy/m/n/10 n\OT1/cmtt/m/n/10 n predicts Group Cl
-ick"[][])[] []+[][] 
- []
-
-
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/teamPerfExpClickScatter-1.pdf, id=289, 252.945pt x 25
+ctionSocialBonding/images/teamPerfExpClickScatter-1.pdf, id=276, 252.945pt x 25
 2.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/teamPerfExpClickScatter-1.pdf Graphic file (type
@@ -2492,14 +2453,15 @@ ointActionSocialBonding/images/teamPerfExpClickScatter-1.pdf Graphic file (type
 intActionSocialBonding/images/teamPerfExpClickScatter-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/teamPerfExpClickScatter-1.pdf
- used on input line 1691.
+ used on input line 1700.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
- [29 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
-ointActionSocialBonding/images/fullOutcomeAvgSessionBoxplot-1.pdf>]
 
-LaTeX Warning: Reference `fig:teamPerfExpClickScatter' on page 30 undefined on 
+
+LaTeX Warning: Reference `fig:teamPerfExpClickScatter' on page 29 undefined on 
 input line 1711.
 
+[29 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jo
+intActionSocialBonding/images/fullOutcomeAvgSessionBoxplot-1.pdf>]
 ! Undefined control sequence.
 \betavec ->{\bm 
                 \beta = }
@@ -2602,16 +2564,16 @@ OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1724069\OML/cmm/m/it/10 ; t
 10 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0205428)\OML/cmm/m/
 it/10 werealsosignificant:Theaverageperformanceoutcomeofeachinvasiondrilltrialw
 asalsoasignificantpositivepredictorofteamclick; []\OT1/cmr/m/n/10 0\OML/cmm/m/i
-t/10 :\OT1/cmr/m/n/10 3161116(95%\OML/cmm/m/it/10 CI \OT1/cmr/m/n/10 =
+t/10 :\OT1/cmr/m/n/10 7344113(95%\OML/cmm/m/it/10 CI \OT1/cmr/m/n/10 =
  []
 
 
 Overfull \hbox (338.71613pt too wide) in paragraph at lines 1718--1808
-\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0587999\OML/cmm/m/it/10 ; \O
-T1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5734233)\OML/cmm/m/it/10 ; SE 
-\OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1312839\OML/cmm/m/it/10 ; 
-t\OT1/cmr/m/n/10 (53) = 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 4078475\OML/cmm/m/it
-/10 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0195595(\OML/cmm/m
+\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2303963\OML/cmm/m/it/10 ; \O
+T1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2384263)\OML/cmm/m/it/10 ; SE 
+\OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2571552\OML/cmm/m/it/10 ; 
+t\OT1/cmr/m/n/10 (53) = 2\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 8559063\OML/cmm/m/it
+/10 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0061153(\OML/cmm/m
 /it/10 seeTable []\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; suggestingarelationshipbe
 tweenonfieldperformanceandindividualathleteperceptionsofperformance:$ 
  []
@@ -2619,7 +2581,7 @@ tweenonfieldperformanceandindividualathleteperceptionsofperformance:$
 Package color Info: Redefining color shadecolor on input line 1815.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/groupPerfExpClickAssumptionsHist-1.pdf, id=298, 252.9
+ctionSocialBonding/images/groupPerfExpClickAssumptionsHist-1.pdf, id=285, 252.9
 45pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupPerfExpClickAssumptionsHist-1.pdf Graphic f
@@ -2635,7 +2597,7 @@ Package color Info: Redefining color shadecolor on input line 1825.
  [30 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/teamPerfExpClickScatter-1.pdf>]
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/groupPerfExpClickAssumptionsScatter-1.pdf, id=307, 25
+ctionSocialBonding/images/groupPerfExpClickAssumptionsScatter-1.pdf, id=294, 25
 2.945pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupPerfExpClickAssumptionsScatter-1.pdf Graphi
@@ -2650,7 +2612,7 @@ catter-1.pdf used on input line 1827.
 Package color Info: Redefining color shadecolor on input line 1835.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/groupPerfExpClickQQNorm-1.pdf, id=308, 252.945pt x 25
+ctionSocialBonding/images/groupPerfExpClickQQNorm-1.pdf, id=295, 252.945pt x 25
 2.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupPerfExpClickQQNorm-1.pdf Graphic file (type
@@ -2692,7 +2654,7 @@ Overfull \hbox (3.66786pt too wide) in paragraph at lines 1854--1854
 
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/groupPerfExpClickCooksD-1.pdf, id=326, 252.945pt x 25
+ctionSocialBonding/images/groupPerfExpClickCooksD-1.pdf, id=312, 252.945pt x 25
 2.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupPerfExpClickCooksD-1.pdf Graphic file (type
@@ -2738,7 +2700,7 @@ intActionSocialBonding/images/groupPerfExpClickQQNorm-1.pdf> </Users/jacob1/Doc
 uments/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding
 /images/groupPerfExpClickCooksD-1.pdf>]
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/jASgroupPerfExpClickScatterLM-1.pdf, id=342, 252.945p
+ctionSocialBonding/images/jASgroupPerfExpClickScatterLM-1.pdf, id=329, 252.945p
 t x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/jASgroupPerfExpClickScatterLM-1.pdf Graphic file
@@ -2748,12 +2710,12 @@ ointActionSocialBonding/images/jASgroupPerfExpClickScatterLM-1.pdf Graphic file
 intActionSocialBonding/images/jASgroupPerfExpClickScatterLM-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/jASgroupPerfExpClickScatterLM
--1.pdf used on input line 1892.
+-1.pdf used on input line 1896.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
 Package color Info: Redefining color shadecolor on input line 1916.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/jASgroupPerfExpClickScatterLMER-1.pdf, id=343, 252.94
+ctionSocialBonding/images/jASgroupPerfExpClickScatterLMER-1.pdf, id=330, 252.94
 5pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/jASgroupPerfExpClickScatterLMER-1.pdf Graphic fi
@@ -2768,12 +2730,12 @@ ER-1.pdf used on input line 1921.
 
 
 LaTeX Warning: Reference `fig:teamPerfExpClickScatter' on page 33 undefined on 
-input line 1933.
+input line 1929.
 
 ! Undefined control sequence.
 \betavec ->{\bm 
                 \beta = }
-l.1939   \betavec
+l.1934   \betavec
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2784,7 +2746,7 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1939   \betavec
+l.1934   \betavec
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2792,7 +2754,7 @@ you left one out. Proceed, with fingers crossed.
 ! Extra }, or forgotten $.
 \betavec ->{\bm \beta = }
                          
-l.1939   \betavec
+l.1934   \betavec
                  
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2801,7 +2763,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.1961   \CR
+l.1956   \CR
             2
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2812,13 +2774,13 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1965 
+l.1960 
        
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (590.32301pt too wide) in paragraph at lines 1937--1965
+Overfull \hbox (590.32301pt too wide) in paragraph at lines 1932--1960
 \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 2905337\
 OML/cmm/m/it/10 ; \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/c
 mr/m/n/10 0787319)\OML/cmm/m/it/10 ; SE \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\O
@@ -2830,14 +2792,10 @@ OT1/cmr/m/n/10 4614072) = \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 3\OML/cmm/m/it/10
 nouncedfor[]positiveviolationsofexpectationsaroundgroupperformance:$ 
  []
 
-[33 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jo
-intActionSocialBonding/images/jASgroupPerfExpClickScatterLMER-1.pdf> </Users/ja
-cob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocia
-lBonding/images/jASgroupPerfExpClickScatterLM-1.pdf>]
-Package color Info: Redefining color shadecolor on input line 1972.
+Package color Info: Redefining color shadecolor on input line 1967.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/jASgroupPerfExpClickIntHist-1.pdf, id=365, 252.945pt 
+ctionSocialBonding/images/jASgroupPerfExpClickIntHist-1.pdf, id=331, 252.945pt 
 x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/jASgroupPerfExpClickIntHist-1.pdf Graphic file (
@@ -2847,12 +2805,15 @@ type pdf)
 intActionSocialBonding/images/jASgroupPerfExpClickIntHist-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/jASgroupPerfExpClickIntHist-1
-.pdf used on input line 1974.
+.pdf used on input line 1969.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1982.
-
+Package color Info: Redefining color shadecolor on input line 1977.
+ [33 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
+ointActionSocialBonding/images/jASgroupPerfExpClickScatterLM-1.pdf> </Users/jac
+ob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocial
+Bonding/images/jASgroupPerfExpClickScatterLMER-1.pdf>]
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/jASgroupPerfExpClickIntScatter-1.pdf, id=366, 252.945
+ctionSocialBonding/images/jASgroupPerfExpClickIntScatter-1.pdf, id=353, 252.945
 pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/jASgroupPerfExpClickIntScatter-1.pdf Graphic fil
@@ -2862,12 +2823,12 @@ e (type pdf)
 intActionSocialBonding/images/jASgroupPerfExpClickIntScatter-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/jASgroupPerfExpClickIntScatte
-r-1.pdf used on input line 1984.
+r-1.pdf used on input line 1979.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 1992.
+Package color Info: Redefining color shadecolor on input line 1987.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/jASgroupPerfExpClick_int_controlsQQNorm-1.pdf, id=367
+ctionSocialBonding/images/jASgroupPerfExpClick_int_controlsQQNorm-1.pdf, id=354
 , 252.945pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/jASgroupPerfExpClick_int_controlsQQNorm-1.pdf Gr
@@ -2877,9 +2838,9 @@ aphic file (type pdf)
 intActionSocialBonding/images/jASgroupPerfExpClick_int_controlsQQNorm-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/jASgroupPerfExpClick_int_cont
-rolsQQNorm-1.pdf used on input line 1994.
+rolsQQNorm-1.pdf used on input line 1989.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 2002.
+Package color Info: Redefining color shadecolor on input line 1997.
 
 [34 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jo
 intActionSocialBonding/images/jASgroupPerfExpClickIntHist-1.pdf> </Users/jacob1
@@ -2887,7 +2848,7 @@ intActionSocialBonding/images/jASgroupPerfExpClickIntHist-1.pdf> </Users/jacob1
 ding/images/jASgroupPerfExpClickIntScatter-1.pdf>]
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
 ctionSocialBonding/images/jASgroupPerfExpClick_intAssumptionsCooksD-1.pdf, id=3
-83, 252.945pt x 252.945pt>
+70, 252.945pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/jASgroupPerfExpClick_intAssumptionsCooksD-1.pdf 
 Graphic file (type pdf)
@@ -2896,11 +2857,11 @@ Graphic file (type pdf)
 intActionSocialBonding/images/jASgroupPerfExpClick_intAssumptionsCooksD-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/jASgroupPerfExpClick_intAssum
-ptionsCooksD-1.pdf used on input line 2004.
+ptionsCooksD-1.pdf used on input line 1999.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
 
 ! Undefined control sequence.
-l.2017   \resdist
+l.2012   \resdist
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2909,7 +2870,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2025   \cooksD
+l.2020   \cooksD
                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2919,26 +2880,31 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:M1aAssumptions' on page 35 undefined on input lin
-e 2028.
+e 2023.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2047--2048
+Underfull \hbox (badness 10000) in paragraph at lines 2042--2043
 
  []
 
-Package color Info: Redefining color shadecolor on input line 2050.
+Package color Info: Redefining color shadecolor on input line 2045.
 
-Overfull \hbox (24.66768pt too wide) in paragraph at lines 2053--2053
+Overfull \hbox (24.66768pt too wide) in paragraph at lines 2048--2048
 []                              []\OT1/cmtt/m/n/10 y[][]=groupBondingFactorPost
 ,[] []color[][]=condition))[] []+[] []geom_point[][]([][]shape[] []=[] []1[][])
 [] []+[][] 
  []
 
+LaTeX Font Info:    Try loading font information for OMS+cmtt on input line 205
+7.
+(/Library/Frameworks/R.framework/Resources/share/texmf/tex/latex/omscmtt.fd
+File: omscmtt.fd 
+)
 LaTeX Font Info:    Font shape `OMS/cmtt/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2062.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 2057.
 
 
-Overfull \hbox (26.15385pt too wide) in paragraph at lines 2062--2062
+Overfull \hbox (26.15385pt too wide) in paragraph at lines 2057--2057
 []              []\OT1/cmtt/m/it/10 #"Perceptions of Group Click \OMS/cmsy/m/n/
 10 n\OT1/cmtt/m/it/10 n predict feelings of Social Bonding to training group"[]
 [] 
@@ -2946,7 +2912,7 @@ Overfull \hbox (26.15385pt too wide) in paragraph at lines 2062--2062
 
 
 LaTeX Warning: Reference `fig:groupClickBondScatter' on page 35 undefined on in
-put line 2068.
+put line 2063.
 
 [35 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jo
 intActionSocialBonding/images/jASgroupPerfExpClick_int_controlsQQNorm-1.pdf> </
@@ -2955,7 +2921,7 @@ ionSocialBonding/images/jASgroupPerfExpClick_intAssumptionsCooksD-1.pdf>]
 ! Undefined control sequence.
 \betavec ->{\bm 
                 \beta = }
-l.2075   \betavec
+l.2070   \betavec
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2966,7 +2932,7 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.2075   \betavec
+l.2070   \betavec
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -2974,7 +2940,7 @@ you left one out. Proceed, with fingers crossed.
 ! Extra }, or forgotten $.
 \betavec ->{\bm \beta = }
                          
-l.2075   \betavec
+l.2070   \betavec
                  
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -2983,7 +2949,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.2097   \CR
+l.2092   \CR
             2
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -2994,7 +2960,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \betavec ->{\bm 
                 \beta = }
-l.2102   \betavec
+l.2097   \betavec
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3005,13 +2971,13 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.2122 
+l.2117 
        
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (436.46191pt too wide) in paragraph at lines 2075--2122
+Overfull \hbox (436.46191pt too wide) in paragraph at lines 2070--2117
 []$\OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 44
 91274(95%\OML/cmm/m/it/10 CI \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/
 10 1695568\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10
@@ -3025,7 +2991,7 @@ OT1/cmr/m/n/10 =
  []
 
 
-Overfull \hbox (521.77242pt too wide) in paragraph at lines 2075--2122
+Overfull \hbox (521.77242pt too wide) in paragraph at lines 2070--2117
 \OMS/cmsy/m/n/10 ^^@\OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0883137\
 OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 5767621)\O
 ML/cmm/m/it/10 ; SE \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 169665
@@ -3036,10 +3002,10 @@ lickalsofeltstrongerlevelsofsocialbondingtotheirtraininggroup; irrespectiveofex
 perimentcondition:$ 
  []
 
-Package color Info: Redefining color shadecolor on input line 2125.
+Package color Info: Redefining color shadecolor on input line 2120.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/clickBondingConditionHist-1.pdf, id=399, 252.945pt x 
+ctionSocialBonding/images/clickBondingConditionHist-1.pdf, id=386, 252.945pt x 
 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/clickBondingConditionHist-1.pdf Graphic file (ty
@@ -3049,12 +3015,12 @@ pe pdf)
 intActionSocialBonding/images/clickBondingConditionHist-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/clickBondingConditionHist-1.p
-df used on input line 2127.
+df used on input line 2122.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 2135.
+Package color Info: Redefining color shadecolor on input line 2130.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/clickBondingConditionScatter-1.pdf, id=400, 252.945pt
+ctionSocialBonding/images/clickBondingConditionScatter-1.pdf, id=387, 252.945pt
  x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/clickBondingConditionScatter-1.pdf Graphic file 
@@ -3064,12 +3030,12 @@ ointActionSocialBonding/images/clickBondingConditionScatter-1.pdf Graphic file
 intActionSocialBonding/images/clickBondingConditionScatter-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/clickBondingConditionScatter-
-1.pdf used on input line 2137.
+1.pdf used on input line 2132.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 2145.
+Package color Info: Redefining color shadecolor on input line 2140.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/clickBondingConditionQQNorm-1.pdf, id=401, 252.945pt 
+ctionSocialBonding/images/clickBondingConditionQQNorm-1.pdf, id=388, 252.945pt 
 x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/clickBondingConditionQQNorm-1.pdf Graphic file (
@@ -3079,15 +3045,15 @@ type pdf)
 intActionSocialBonding/images/clickBondingConditionQQNorm-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/clickBondingConditionQQNorm-1
-.pdf used on input line 2147.
+.pdf used on input line 2142.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 2155.
+Package color Info: Redefining color shadecolor on input line 2150.
  [36 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/clickBondingConditionHist-1.pdf> </Users/jacob1/
 Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBond
 ing/images/clickBondingConditionScatter-1.pdf>]
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/clickBondingConditionCooksD-1.pdf, id=417, 252.945pt 
+ctionSocialBonding/images/clickBondingConditionCooksD-1.pdf, id=404, 252.945pt 
 x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/clickBondingConditionCooksD-1.pdf Graphic file (
@@ -3097,11 +3063,11 @@ type pdf)
 intActionSocialBonding/images/clickBondingConditionCooksD-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/clickBondingConditionCooksD-1
-.pdf used on input line 2157.
+.pdf used on input line 2152.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
 
 ! Undefined control sequence.
-l.2167   \resdist
+l.2162   \resdist
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3110,7 +3076,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2175 \cooksD
+l.2170 \cooksD
               
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3120,17 +3086,17 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:M2Assumptions' on page 37 undefined on input line
- 2176.
+ 2171.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2188--2189
+Underfull \hbox (badness 10000) in paragraph at lines 2183--2184
 
  []
 
-Package color Info: Redefining color shadecolor on input line 2192.
+Package color Info: Redefining color shadecolor on input line 2187.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/groupPerfExpBondConditionScatter-1.pdf, id=418, 252.9
+ctionSocialBonding/images/groupPerfExpBondConditionScatter-1.pdf, id=405, 252.9
 45pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupPerfExpBondConditionScatter-1.pdf Graphic f
@@ -3140,17 +3106,17 @@ ile (type pdf)
 intActionSocialBonding/images/groupPerfExpBondConditionScatter-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/groupPerfExpBondConditionScat
-ter-1.pdf used on input line 2199.
+ter-1.pdf used on input line 2200.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
 
 
 LaTeX Warning: Reference `fig:groupPerfExpBondConditionScatter' on page 37 unde
-fined on input line 2227.
+fined on input line 2222.
 
 ! Undefined control sequence.
 \betavec ->{\bm 
                 \beta = }
-l.2233   \betavec
+l.2228   \betavec
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3161,7 +3127,7 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.2233   \betavec
+l.2228   \betavec
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -3169,7 +3135,7 @@ you left one out. Proceed, with fingers crossed.
 ! Extra }, or forgotten $.
 \betavec ->{\bm \beta = }
                          
-l.2233   \betavec
+l.2228   \betavec
                  
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3178,7 +3144,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.2255   \CR
+l.2250   \CR
             2
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3189,7 +3155,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \betavec ->{\bm 
                 \beta = }
-l.2260   \betavec
+l.2255   \betavec
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3200,7 +3166,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \betavec ->{\bm 
                 \beta = }
-l.2281   \betavec
+l.2276   \betavec
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3211,7 +3177,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 \betavec ->{\bm 
                 \beta = }
-l.2302   \betavec
+l.2297   \betavec
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3222,13 +3188,13 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.2321 
+l.2316 
        
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (69.84634pt too wide) in paragraph at lines 2231--2321
+Overfull \hbox (69.84634pt too wide) in paragraph at lines 2226--2316
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0155768\OML/cmm/m/it/10 ; \O
 T1/cmr/m/n/10 02\OML/cmm/m/it/10 :Themaineffectsofgroupperformanceexpectationvi
 olation\OT1/cmr/m/n/10 ([]0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0077975(95%\OML/cm
@@ -3238,7 +3204,7 @@ it/10 :\OT1/cmr/m/n/10 2663504\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 0\OML/cmm/m/it
  []
 
 
-Overfull \hbox (47.02812pt too wide) in paragraph at lines 2231--2321
+Overfull \hbox (47.02812pt too wide) in paragraph at lines 2226--2316
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 139874\OML/cmm/m/it/10 ; t\O
 T1/cmr/m/n/10 (53) = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0557466\OML/cmm/m/it/10
  ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 9557533)\OML/cmm/m/it
@@ -3250,7 +3216,7 @@ m/n/10 =
  []
 
 
-Overfull \hbox (384.01678pt too wide) in paragraph at lines 2231--2321
+Overfull \hbox (384.01678pt too wide) in paragraph at lines 2226--2316
 \OT1/cmr/m/n/10 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 3488907\OML/cmm/m/it/10 ; t\
 OT1/cmr/m/n/10 (53) = 1\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 6094197\OML/cmm/m/it/1
 0 ; p \OT1/cmr/m/n/10 = 0\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 1134656)\OML/cmm/m/i
@@ -3263,10 +3229,10 @@ m/it/10 :\OT1/cmr/m/n/10 64863(95%\OML/cmm/m/it/10 CI \OT1/cmr/m/n/10 =
 intActionSocialBonding/images/clickBondingConditionQQNorm-1.pdf> </Users/jacob1
 /Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBon
 ding/images/clickBondingConditionCooksD-1.pdf>]
-Package color Info: Redefining color shadecolor on input line 2324.
+Package color Info: Redefining color shadecolor on input line 2319.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/groupPerfExpBondingConditionHist-1.pdf, id=435, 252.9
+ctionSocialBonding/images/groupPerfExpBondingConditionHist-1.pdf, id=422, 252.9
 45pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupPerfExpBondingConditionHist-1.pdf Graphic f
@@ -3276,12 +3242,12 @@ ile (type pdf)
 intActionSocialBonding/images/groupPerfExpBondingConditionHist-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/groupPerfExpBondingConditionH
-ist-1.pdf used on input line 2326.
+ist-1.pdf used on input line 2321.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 2334.
+Package color Info: Redefining color shadecolor on input line 2329.
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/groupPerfExpBondingConditionScatter-1.pdf, id=436, 25
+ctionSocialBonding/images/groupPerfExpBondingConditionScatter-1.pdf, id=423, 25
 2.945pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupPerfExpBondingConditionScatter-1.pdf Graphi
@@ -3291,16 +3257,16 @@ c file (type pdf)
 intActionSocialBonding/images/groupPerfExpBondingConditionScatter-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/groupPerfExpBondingConditionS
-catter-1.pdf used on input line 2336.
+catter-1.pdf used on input line 2331.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 2344.
+Package color Info: Redefining color shadecolor on input line 2339.
 
 [38 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jo
 intActionSocialBonding/images/groupPerfExpBondConditionScatter-1.pdf> </Users/j
 acob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSoci
 alBonding/images/groupPerfExpBondingConditionHist-1.pdf>]
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/groupPerfExpBondingConditionQQNorm-1.pdf, id=451, 252
+ctionSocialBonding/images/groupPerfExpBondingConditionQQNorm-1.pdf, id=438, 252
 .945pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupPerfExpBondingConditionQQNorm-1.pdf Graphic
@@ -3310,24 +3276,24 @@ ointActionSocialBonding/images/groupPerfExpBondingConditionQQNorm-1.pdf Graphic
 intActionSocialBonding/images/groupPerfExpBondingConditionQQNorm-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/groupPerfExpBondingConditionQ
-QNorm-1.pdf used on input line 2346.
+QNorm-1.pdf used on input line 2341.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
-Package color Info: Redefining color shadecolor on input line 2354.
+Package color Info: Redefining color shadecolor on input line 2349.
 
-Overfull \hbox (8.91782pt too wide) in paragraph at lines 2357--2358
+Overfull \hbox (8.91782pt too wide) in paragraph at lines 2352--2353
 []\OT1/cmtt/m/n/10 ## Warning in optwrap(optimizer, devfun, getStart(start, rho
 $lower, rho$pp), : convergence code
  []
 
 
-Overfull \hbox (8.91782pt too wide) in paragraph at lines 2359--2359
+Overfull \hbox (8.91782pt too wide) in paragraph at lines 2354--2354
 []\OT1/cmtt/m/n/10 ## Warning in optwrap(optimizer, devfun, getStart(start, rho
 $lower, rho$pp), : convergence code
  []
 
 
 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointA
-ctionSocialBonding/images/groupPerfExpBondingConditionCooksD-1.pdf, id=452, 252
+ctionSocialBonding/images/groupPerfExpBondingConditionCooksD-1.pdf, id=439, 252
 .945pt x 252.945pt>
 File: /Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/j
 ointActionSocialBonding/images/groupPerfExpBondingConditionCooksD-1.pdf Graphic
@@ -3337,7 +3303,7 @@ ointActionSocialBonding/images/groupPerfExpBondingConditionCooksD-1.pdf Graphic
 intActionSocialBonding/images/groupPerfExpBondingConditionCooksD-1.pdf>
 Package pdftex.def Info: /Users/jacob1/Documents/2017/Research/DPhil/Dissertati
 on/finalDocuments/jointActionSocialBonding/images/groupPerfExpBondingConditionC
-ooksD-1.pdf used on input line 2361.
+ooksD-1.pdf used on input line 2356.
 (pdftex.def)             Requested size: 252.94438pt x 252.94823pt.
 
 [39 </Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jo
@@ -3345,7 +3311,7 @@ intActionSocialBonding/images/groupPerfExpBondingConditionScatter-1.pdf> </User
 s/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionS
 ocialBonding/images/groupPerfExpBondingConditionQQNorm-1.pdf>]
 ! Undefined control sequence.
-l.2371   \resdist
+l.2366   \resdist
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3354,7 +3320,7 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-l.2376 and all \cooksD
+l.2371 and all \cooksD
                        were less than
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3364,48 +3330,48 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:M1aAssumptions' on page 40 undefined on input lin
-e 2379.
+e 2374.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2386--2387
+Underfull \hbox (badness 10000) in paragraph at lines 2381--2382
 
  []
 
-Package color Info: Redefining color shadecolor on input line 2389.
+Package color Info: Redefining color shadecolor on input line 2384.
 
-Overfull \hbox (12.69777pt too wide) in paragraph at lines 2392--2393
+Overfull \hbox (12.69777pt too wide) in paragraph at lines 2387--2388
 []\OT1/cmtt/m/n/10 ## Error in mediate(m2, m3, treat = "groupPerformance[]3Norm
 ", mediator = "groupClickPostFactor"):
  []
 
 
-Overfull \hbox (24.66768pt too wide) in paragraph at lines 2398--2398
+Overfull \hbox (24.66768pt too wide) in paragraph at lines 2393--2393
 []\OT1/cmtt/m/n/10 ## Error in summary(med.out.groupPerfExp.unclass): object 'm
 ed.out.groupPerfExp.unclass' not found[] 
  []
 
-Package color Info: Redefining color shadecolor on input line 2401.
+Package color Info: Redefining color shadecolor on input line 2397.
 
-Overfull \hbox (8.91782pt too wide) in paragraph at lines 2404--2404
+Overfull \hbox (8.91782pt too wide) in paragraph at lines 2400--2400
 []\OT1/cmtt/m/n/10 ## Error in plot(med.out.groupPerfExp, main = "Mediation Mod
 el"): object 'med.out.groupPerfExp'
  []
 
 
-LaTeX Warning: Citation 'Tofighi2016a' on page 40 undefined on input line 2407.
+LaTeX Warning: Citation 'Tofighi2016a' on page 40 undefined on input line 2403.
 
 
 
-LaTeX Warning: Citation 'Imai2010' on page 40 undefined on input line 2407.
+LaTeX Warning: Citation 'Imai2010' on page 40 undefined on input line 2403.
 
 
-LaTeX Warning: Citation 'Preacher2008' on page 40 undefined on input line 2407.
+LaTeX Warning: Citation 'Preacher2008' on page 40 undefined on input line 2403.
 
 
 ! Undefined control sequence.
 \betavec ->{\bm 
                 \beta = }
-l.2410   \betavec
+l.2406   \betavec
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3416,7 +3382,7 @@ and I'll forget about whatever was undefined.
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.2410   \betavec
+l.2406   \betavec
                  
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
@@ -3424,7 +3390,7 @@ you left one out. Proceed, with fingers crossed.
 ! Extra }, or forgotten $.
 \betavec ->{\bm \beta = }
                          
-l.2410   \betavec
+l.2406   \betavec
                  
 I've deleted a group-closing symbol because it seems to be
 spurious, as in `$x}$'. But perhaps the } is legitimate and
@@ -3433,7 +3399,7 @@ the way to recover is to insert both the forgotten and the
 deleted material, e.g., by typing `I$}'.
 
 ! Undefined control sequence.
-l.2422 ...onding was no longer significant, \Sexpr
+l.2418 ...onding was no longer significant, \Sexpr
                                                   {} (see Figure ~\ref{fig:g...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -3443,18 +3409,18 @@ and I'll forget about whatever was undefined.
 
 
 LaTeX Warning: Reference `fig:groupPerfExpClickMediationPlot' on page 40 undefi
-ned on input line 2422.
+ned on input line 2418.
 
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.2423 
+l.2419 
        
 I've inserted a begin-math/end-math symbol since I think
 you left one out. Proceed, with fingers crossed.
 
 
-Overfull \hbox (1248.00073pt too wide) in paragraph at lines 2409--2423
+Overfull \hbox (1248.00073pt too wide) in paragraph at lines 2405--2419
 \OT1/cmr/m/n/10 Vi-o-la-tion on So-cial Bond-ing at-tributable to Team Click, $
 \OML/cmm/m/it/10 ^^L \OT1/cmr/m/n/10 = (95%\OML/cmm/m/it/10 CI \OT1/cmr/m/n/10 
 =\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; ; p \OT1/cmr/m/n/10 =\O
@@ -3466,7 +3432,7 @@ eengroupperformanceexpectationviolationandandsocialbonding:$
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 2427--2428
+Underfull \hbox (badness 10000) in paragraph at lines 2423--2424
 
  []
 
@@ -3490,22 +3456,22 @@ Package logreq Info: Writing requests to '9trainingExperiment.run.xml'.
  )
 (\end occurred inside a group at level 7)
 
-### simple group (level 7) entered at line 2410 ({)
-### simple group (level 6) entered at line 2233 ({)
-### simple group (level 5) entered at line 2075 ({)
-### simple group (level 4) entered at line 1939 ({)
+### simple group (level 7) entered at line 2406 ({)
+### simple group (level 6) entered at line 2228 ({)
+### simple group (level 5) entered at line 2070 ({)
+### simple group (level 4) entered at line 1934 ({)
 ### simple group (level 3) entered at line 1719 ({)
 ### simple group (level 2) entered at line 79 ({)
 ### simple group (level 1) entered at line 79 ({)
 ### bottom level 
 Here is how much of TeX's memory you used:
- 11297 strings out of 493004
- 207084 string characters out of 6133230
- 684932 words of memory out of 5000000
- 14635 multiletter control sequences out of 15000+600000
+ 11295 strings out of 493004
+ 207032 string characters out of 6133230
+ 683932 words of memory out of 5000000
+ 14633 multiletter control sequences out of 15000+600000
  13502 words of font info for 52 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 35i,8n,32p,2106b,3174s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 35i,8n,32p,2106b,3173s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts
 /cm/cmbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/c
@@ -3518,10 +3484,10 @@ pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
 fb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 ></usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on 9trainingExperiment.pdf (40 pages, 493810 bytes).
+Output written on 9trainingExperiment.pdf (40 pages, 490575 bytes).
 PDF statistics:
- 519 PDF objects out of 1000 (max. 8388607)
- 360 compressed objects within 4 object streams
+ 506 PDF objects out of 1000 (max. 8388607)
+ 347 compressed objects within 4 object streams
  0 named destinations out of 1000 (max. 500000)
  201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
