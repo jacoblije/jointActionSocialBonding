@@ -96,11 +96,11 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Attaching packages ----------------------------------------------------------------------- tidyverse 1.2.1 --}}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Attaching packages --------------------------------------------------------------------------- tidyverse 1.2.1 --}}
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# √ ggplot2 2.2.1\ \ \ \  √ purrr\ \  0.2.4\\\#\# √ tibble\ \ 1.4.2\ \ \ \  √ dplyr\ \  0.7.4\\\#\# √ tidyr\ \  0.8.0\ \ \ \  √ stringr 1.3.1\\\#\# √ readr\ \  1.1.1\ \ \ \  √ forcats 0.3.0}}
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Conflicts -------------------------------------------------------------------------- tidyverse\_conflicts() --\\\#\# x dplyr::filter() masks stats::filter()\\\#\# x dplyr::lag()\ \ \ \ masks stats::lag()}}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Conflicts ------------------------------------------------------------------------------ tidyverse\_conflicts() --\\\#\# x dplyr::filter() masks stats::filter()\\\#\# x dplyr::lag()\ \ \ \ masks stats::lag()}}
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: Matrix}}
 
@@ -187,7 +187,6 @@ This study further tested the hypothesised relationship between joint action, te
 
 
 \section{Introduction}
-When athletes coordinate their behaviours they do so by making predictions about the state of the world.  In the case of joint action, in which there are many moving parts, predictions rely on the behaviours of co-actors for their accuracy. Annecdote and observation in team sport and other joint activities involving complex realtime coordination of behaviours around technically demanding tasks suggests that the phenomenology associated with co-actors' predictions ``clicking'' into place is an extremely powerful social bonding agent.
 
 The previous chapter presented empirical evidence of a relationship between perceptions of joint action success and social bonding, fully mediated by the phenomenon of ``team click.'' A relationship between violation of expectations surrounding team performance and feelings of team click was also observed, but a model of the relationship between team performance expectation vioaltion and social bonding did not reliably fit the data.  The results of this naturalistic \textit{in situ} study are noteworthy as they provide evidence for the prediction that perceptions of joint action influence psychological processes of affiliation and connection with teammates, possibly via the mediating construct of ``team click.''  Controlled experimental research is needed in order to more directly access causal mechanisms that underpin the relationship between joint action and social bonding.  If perceived joint action success and positive violation of expectation around team performance are the two candidate predictors of team click and social bonding, how is it possible to experimentally manipulate conditions conducive to maximising these two factors in joint action? In addition, how is it possible to isolate joint action from other potential sources of information regarding the team and its performance such as explicit feedback from coaches and other players surrounding performance and joint action outcome? This experimental study was designed with these considerations in mind.
 
@@ -1680,18 +1679,11 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
                               \hlkwc{color}\hlstd{=condition))} \hlopt{+} \hlkwd{geom_point}\hlstd{(}\hlkwc{shape} \hlstd{=} \hlnum{1}\hlstd{)} \hlopt{+}
                               \hlkwd{geom_smooth}\hlstd{(}\hlkwc{method}\hlstd{=lm,} \hlkwc{se}\hlstd{=}\hlnum{FALSE}\hlstd{)}   \hlcom{# Don't add shaded confidence region}
   \hlstd{groupPerfExpClickScatter} \hlopt{+}
-              \hlkwd{xlab}\hlstd{(}\hlstr{"Team Performance vs Expectations"}\hlstd{)} \hlopt{+}
+              \hlkwd{xlab}\hlstd{(}\hlstr{"Group Performance vs Expectations"}\hlstd{)} \hlopt{+}
               \hlkwd{ylab}\hlstd{(}\hlstr{"Group Click"}\hlstd{)} \hlopt{+}
-              \hlkwd{ggsave}\hlstd{(}\hlstr{"teamPerfExpClickScatter.pdf"}\hlstd{)} \hlopt{+}
               \hlstd{apatheme}
 \end{alltt}
 
-
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Saving 3.5 x 3.5 in image}}
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing non-finite values (stat\_smooth).}}
-
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing non-finite values (stat\_smooth).}}
 
@@ -2463,6 +2455,14 @@ PRE-POST ANALYSIS:
   ii. click?
   iii. bonding?
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in rescale(tlc\$groupPerformance, to = c(0, 100)): unused argument (to = c(0, 100))}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in rescale(tlc\$indPerformance[tlc\$time == 3], to = c(0, 100)): unused argument (to = c(0, 100))}}\end{kframe}
+\end{knitrout}
 
 
 
@@ -2477,24 +2477,25 @@ PRE-POST ANALYSIS:
 
 \end{knitrout}
 
+
+
+
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 59 rows containing non-finite values (stat\_boxplot).}}\end{kframe}\begin{figure}
-
-{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/groupPerfPrePostPlot-1} 
-
-}
-
-\caption[Pre-Experiment confidence in group performance and post-Experiment perceptions of group performance versus expectations]{Pre-Experiment confidence in group performance and post-Experiment perceptions of group performance versus expectations}\label{fig:groupPerfPrePostPlot}
-\end{figure}
-
-
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'groupPerfPPBox' not found}}\end{kframe}
 \end{knitrout}
 
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(predvars, data, env): object 'groupPerfPPNorm' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(predvars, data, env): object 'groupPerfPPNorm' not found}}\end{kframe}
+\end{knitrout}
 
 
 
@@ -2515,7 +2516,12 @@ PRE-POST ANALYSIS:
 \end{knitrout}
 
 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(predvars, data, env): object 'groupPerfPPNorm' not found}}\end{kframe}
+\end{knitrout}
 
 
 \begin{knitrout}
