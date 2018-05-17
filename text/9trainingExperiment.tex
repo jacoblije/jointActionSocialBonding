@@ -96,11 +96,11 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Attaching packages --------------------------------------------------------------------------- tidyverse 1.2.1 --}}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Attaching packages ------------------------------------------------------------------------------------------------------------------------- tidyverse 1.2.1 --}}
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# √ ggplot2 2.2.1\ \ \ \  √ purrr\ \  0.2.4\\\#\# √ tibble\ \ 1.4.2\ \ \ \  √ dplyr\ \  0.7.4\\\#\# √ tidyr\ \  0.8.0\ \ \ \  √ stringr 1.3.1\\\#\# √ readr\ \  1.1.1\ \ \ \  √ forcats 0.3.0}}
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Conflicts ------------------------------------------------------------------------------ tidyverse\_conflicts() --\\\#\# x dplyr::filter() masks stats::filter()\\\#\# x dplyr::lag()\ \ \ \ masks stats::lag()}}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Conflicts ---------------------------------------------------------------------------------------------------------------------------- tidyverse\_conflicts() --\\\#\# x dplyr::filter() masks stats::filter()\\\#\# x dplyr::lag()\ \ \ \ masks stats::lag()}}
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: Matrix}}
 
@@ -1603,7 +1603,7 @@ Table ~\ref{tab:factorsTime} shows that the post-Experiment measures of Joint Ac
 
 
 
-\subsubsection{post-Experiment Survey Data}
+\subsubsection{Post-Experiment Survey Data}
 
 Study predictions were tested using the post-Experiment survey data.  Intra-class correlation estimates were calculated in order to account for the possibility of clustering of model residuals according to groupings of athlete sex, team, experiment location and specific experiment session (see Table ~\ref{tab:ICCTable}). ICC values indicated that between-group variance was low to moderate, with highest values for feelings of group click and social bonding between teams and experimental sessions. Given the constraints on model complexity imposed by the relatively small sample size of the study, experimental session was chosen as a level 2 grouping variable. High variation in the mean and standard deviation of objective performance outcome (see Figure ~\ref{fig:fullOutcomeAvgSessionBoxplot}) further supported the decision to account for variation attributable to experiment session. Consistent with the previous study, a linear mixed effects regression (LMER) model (package ``lme4'' in the R environment) was used to test relationships between variables of interest (see Ch5 Section X).
 
@@ -1632,6 +1632,7 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning in ICCest(sex, groupBondingFactorPost, data = twc, CI.type = "{}THD"{}):}}\end{kframe}
 \end{knitrout}
+
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
@@ -1642,6 +1643,7 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning in ICCest(team, groupBondingFactorPost, data = twc, CI.type = "{}THD"{}):}}\end{kframe}
 \end{knitrout}
+
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
@@ -1652,6 +1654,8 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning in ICCest(sessionLocation, groupBondingFactorPost, data = twc, CI.type = "{}THD"{}):}}\end{kframe}
 \end{knitrout}
+
+
 
 
 \begin{knitrout}
@@ -1703,7 +1707,14 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 Figure ~\ref{fig:teamPerfExpClickScatter} shows a strong positive correlation between violations of prior expectations concerning team performance and feelings of ``click'' with the training group post-Experiment.  The slope of this relationship appears to vary according to condition, as indicated on the scatterplot by the two non-parallel lines of best fit.
 
 %MODEL:
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The 'lsmeans' package is being deprecated.\\\#\# Users are encouraged to switch to 'emmeans'.\\\#\# See help('transition') for more information, including how\\\#\# to convert 'lsmeans' objects and scripts to work with 'emmeans'.}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in lsmeans.character.ref.grid(object = new("{}ref.grid"{}, model.info = list(: No variable named groupPerformance\_3Norm in the reference grid}}\end{kframe}
+\end{knitrout}
 
 A LMER was used to model the relationship between group performance expectation violations and group click.  Group Performance Expectations, Condition, and their interaction were included as fixed effects, and experiment session was modelled as a random effect (intercept and slope).  To control for perceptions of individual performance relative to prior expectations, post-Experiment arousal, the average performance outcome of each invasion drill trial, and subjective and objective measures of athlete technical competence, these factors were included as fixed effects.
 
@@ -1908,6 +1919,10 @@ MODELS
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Saving 3.5 x 3.5 in image}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}
+
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
 
 {\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/jASgroupPerfExpClickScatterLMER-1} 
@@ -1924,23 +1939,23 @@ Figure ~\ref{fig:teamPerfExpClickScatter} shows that the slope of the relationsh
 A LMER model, with Joint Action Success, Group Performance Expectations, and their interaction included as fixed effects, and perceptions of individual component performance, post-Experiment arousal, and average performance outcome included as controls, confirmed that the negative interation effect of Group Performance Expectations and Joint Action Success on Group Click was significant
 ,
   \betavec
-    -0.1846328
+    -0.2424718
   \CIstart
-    -0.2905337
+    -0.3612487
   ,
-    -0.0787319
+    -0.123695
   \CIfinish
   \SE
-    0.0540321
+    0.0606015
   ,
   t(
-    54.4614072
+    45.4011883
     )
   =
-    -3.4170979
+    -4.0010832
   ,
   \pvalue
-    0.0012041
+    \ensuremath{2.3029093\times 10^{-4}}
   ,
   \MR
    % jASgroupPerfExpClick.int.controls.R2[,5]
@@ -1986,7 +2001,20 @@ suggesting that the relationship between joint action success an group click is 
 
 \end{knitrout}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in checkConv(attr(opt, "{}derivs"{}), opt\$par, ctrl = control\$checkConv, : unable to evaluate scaled gradient}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in checkConv(attr(opt, "{}derivs"{}), opt\$par, ctrl = control\$checkConv, : Model failed to converge: degenerate\ \ Hessian with 1 negative eigenvalues}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in checkConv(attr(opt, "{}derivs"{}), opt\$par, ctrl = control\$checkConv, : unable to evaluate scaled gradient}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in checkConv(attr(opt, "{}derivs"{}), opt\$par, ctrl = control\$checkConv, : Model failed to converge: degenerate\ \ Hessian with 1 negative eigenvalues}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in checkConv(attr(opt, "{}derivs"{}), opt\$par, ctrl = control\$checkConv, : unable to evaluate scaled gradient}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in checkConv(attr(opt, "{}derivs"{}), opt\$par, ctrl = control\$checkConv, : Model failed to converge: degenerate\ \ Hessian with 1 negative eigenvalues}}\end{kframe}
 
 {\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/jASgroupPerfExpClick_intAssumptionsCooksD-1} 
 
@@ -2002,16 +2030,16 @@ suggesting that the relationship between joint action success an group click is 
 Model residuals were normally distributed around zero
 (
   \resdist
-    0.9900081,
+    0.984615,
   \pvalue
-    0.9192235
+    0.7237464
 ),
 however
 an analysis of Cook's distances suggested that the model did contain one influential observation
 (
   \cooksD
   =
-   0.53,
+   2.62,
    see model assumptions in Appendix  ~\ref{fig:M1aAssumptions}
 ).
 Re-running the model with this value excluded led to an improvement of the model fit.
@@ -2060,23 +2088,23 @@ Figure ~\ref{fig:groupClickBondScatter} shows a clear relationship between Group
 A LMER model (controlling for arousal, average trial performance outcome, and technical competence (subjective and objective)) revealed a strong positive relationship between feelings of group click and feelings of social bonding to the training group,
 
   \betavec
-    0.4491274
+    0.4323209
   \CIstart
-    0.1695568
+    0.1458563
   ,
-    0.728698
+    0.7187856
   \CIfinish
   \SE
-    0.1426407
+    0.1461581
   ,
   t(
-    53
+    29.2159604
     )
   =
-    3.1486625
+    2.957899
   ,
   \pvalue
-    0.0026936
+    0.0060807
   ,
   \MR
    % clickBondingCondition.controls.R2[,5]
@@ -2087,23 +2115,23 @@ A LMER model (controlling for arousal, average trial performance outcome, and te
 The interaction effect of group click and condition on social bonding was not significant
 ,
   \betavec
-    0.2442242
+    0.2608971
   \CIstart
-    -0.0883137
+    -0.0784524
   ,
-    0.5767621
+    0.6002465
   \CIfinish
   \SE
-    0.1696653
+    0.1731407
   ,
   t(
-    53
+    30.4356925
     )
   =
-    1.4394471
+    1.5068503
   ,
   \pvalue
-    0.1559043
+    0.1421591
 ,
 suggesting that athletes who felt stronger levels of group click also felt stronger levels of social bonding to their training group, irrespective of experiment condition.
 
@@ -2139,7 +2167,12 @@ suggesting that athletes who felt stronger levels of group click also felt stron
 
 \end{knitrout}
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in checkConv(attr(opt, "{}derivs"{}), opt\$par, ctrl = control\$checkConv, : unable to evaluate scaled gradient}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in checkConv(attr(opt, "{}derivs"{}), opt\$par, ctrl = control\$checkConv, : Model failed to converge: degenerate\ \ Hessian with 1 negative eigenvalues}}\end{kframe}
 
 {\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/clickBondingConditionCooksD-1} 
 
@@ -2152,15 +2185,15 @@ suggesting that athletes who felt stronger levels of group click also felt stron
 Model residuals were normally distributed around zero
 (
   \resdist
-    0.9910391,
+    0.9879743,
   \pvalue
-    0.9600008
+    0.8688934
 )
 and there were no unjustifiably influential cases
 (
 all
 \cooksD
-  0.6, see model assumptions in Appendix  ~\ref{fig:M2Assumptions}
+  0.66, see model assumptions in Appendix  ~\ref{fig:M2Assumptions}
 )
 .
 These results suggested that feelings of group click were a powerful predictor of feelings of social bonding in the study sample.
@@ -2356,9 +2389,9 @@ were not significant predictors of social bonding.  Average performance in each 
 Model residuals were normally distributed around zero
 (
   \resdist
-    0.9900081,
+    0.984615,
   \pvalue
-    0.9192235
+    0.7237464
 )
 and all \cooksD were less than
   0.55
@@ -2372,18 +2405,8 @@ These results suggested that the relationship between positive violation of grou
 
 \myparagraph{Prediction 4: Feelings of group click will mediate a relationship between more positive perceptions of team performance relative to prior expectations around group performance and social bonding to the group}
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mediate(m2, m3, treat = "{}groupPerformance\_3Norm"{}, mediator = "{}groupClickPostFactor"{}): unused arguments (treat = "{}groupPerformance\_3Norm"{}, mediator = "{}groupClickPostFactor"{})}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in summary(med.out.groupPerfExp): object 'med.out.groupPerfExp' not found}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in summary(med.out.groupPerfExp): object 'med.out.groupPerfExp' not found}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in summary(med.out.groupPerfExp.unclass): object 'med.out.groupPerfExp.unclass' not found}}\end{kframe}
-\end{knitrout}
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
@@ -2391,6 +2414,36 @@ These results suggested that the relationship between positive violation of grou
 
 {\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in plot(med.out.groupPerfExp, main = "{}Mediation Model"{}): object 'med.out.groupPerfExp' not found}}\end{kframe}
 \end{knitrout}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mediate(m2, m3, treat = "{}groupPerformance\_3Norm"{}, mediator = "{}groupClickPostFactor"{}): unused arguments (treat = "{}groupPerformance\_3Norm"{}, mediator = "{}groupClickPostFactor"{})}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in summary(med.out.postExperiment): object 'med.out.postExperiment' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mediate(m2, m3, treat = "{}groupPerformance\_3Norm"{}, mediator = "{}groupClickPostFactor"{}, : unused arguments (treat = "{}groupPerformance\_3Norm"{}, mediator = "{}groupClickPostFactor"{}, covariates = list(condition = "{}high"{}))}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in summary(med.out.postExperiment.High): object 'med.out.postExperiment.High' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mediate(m2, m3, treat = "{}groupPerformance\_3Norm"{}, mediator = "{}groupClickPostFactor"{}, : unused arguments (treat = "{}groupPerformance\_3Norm"{}, mediator = "{}groupClickPostFactor"{}, covariates = list(condition = "{}low"{}))}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in summary(med.out.postExperiment.Low): object 'med.out.postExperiment.Low' not found}}\end{kframe}
+\end{knitrout}
+
+
+
+
+
+
+
+
+
+
+
+
 
 Mediation analyses were conducted using linear mixed effects regressions in the Causal Mediation Analysis package in R (Version 4.4.5).  To make inferences concerning the average indirect and total effects, quasi-Bayesian Markov Chain Monte Carlo (MCMC) method based on normal approximation and 1000 simulations was used to estimate the 95\% Confidence Intervals \citep{Tofighi2016a,Imai2010}. MCMC estimation is a form of non-parametric bootstrapping whereby the sampling distribution for the effect of interest is not assumed to be normal but is instead simulated from the model estimates and their asymptotic variances and covariances \cite{Preacher2008}.
 
@@ -2466,16 +2519,8 @@ PRE-POST ANALYSIS:
 
 
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
-
-{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/groupPerfPrePostVariable-1} 
-
-}
 
 
-
-\end{knitrout}
 
 
 
@@ -2484,24 +2529,23 @@ PRE-POST ANALYSIS:
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(expr, envir, enclos): object 'groupPerfPPBox' not found}}\end{kframe}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# Saving 3.5 x 3.5 in image}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Continuous x aesthetic -- did you forget aes(group=...)?}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 59 rows containing non-finite values (stat\_boxplot).}}\end{kframe}
 \end{knitrout}
+
+
+
+
 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(predvars, data, env): object 'groupPerfPPNorm' not found}}
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(predvars, data, env): object 'groupPerfPPNorm' not found}}\end{kframe}
-\end{knitrout}
-
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Continuous x aesthetic -- did you forget aes(group=...)?}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 59 rows containing non-finite values (stat\_boxplot).}}\end{kframe}\begin{figure}
 
@@ -2516,17 +2560,14 @@ PRE-POST ANALYSIS:
 \end{knitrout}
 
 
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
-
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in eval(predvars, data, env): object 'groupPerfPPNorm' not found}}\end{kframe}
-\end{knitrout}
 
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Continuous x aesthetic -- did you forget aes(group=...)?}}
 
 {\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 59 rows containing non-finite values (stat\_boxplot).}}\end{kframe}\begin{figure}
 
@@ -2545,87 +2586,176 @@ PRE-POST ANALYSIS:
 
 
 
-
-
-
-
-
-
-
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% performance, click, and bonding all drop over time: what (if anything) causes this drop?
-
-%1. Does a change in group performance predict a change in click?
 \begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-  \hlstd{perfClickTimeScatter} \hlkwb{<-} \hlkwd{ggplot}\hlstd{(tlc,}
-                            \hlkwd{aes}\hlstd{(}\hlkwc{x}\hlstd{=time,} \hlkwc{y}\hlstd{=groupClickFactor1,}
-                            \hlkwc{size}\hlstd{=groupPerfPPNorm))} \hlopt{+}
-                            \hlkwd{geom_point}\hlstd{(}\hlkwc{alpha}\hlstd{=}\hlnum{.1}\hlstd{)} \hlopt{+}
-                            \hlkwd{geom_smooth}\hlstd{(}\hlkwc{method}\hlstd{=lm,} \hlkwc{se}\hlstd{=}\hlnum{FALSE}\hlstd{)} \hlopt{+}
-                            \hlkwd{labs}\hlstd{(}\hlkwc{x}\hlstd{=} \hlstr{"Time"}\hlstd{,} \hlkwc{y}\hlstd{=} \hlstr{"Group Click"}\hlstd{)} \hlopt{+}  \hlcom{# Don't add shaded confidence region}
-                            \hlstd{apatheme}
-  \hlstd{perfClickTimeScatter}
-\end{alltt}
-\end{kframe}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+
+{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/prePostVariables-1} 
+
+}
+
+
+
+
+{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/prePostVariables-2} 
+
+}
+
+
+
+
+{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/prePostVariables-3} 
+
+}
+
+
+
+
+{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/prePostVariables-4} 
+
+}
+
+
+
+
+{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/prePostVariables-5} 
+
+}
+
+
+
 \end{knitrout}
-
-
-
-\begin{knitrout}
-\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
-\begin{alltt}
-\hlkwd{summary}\hlstd{(perfClickTime.lmer} \hlkwb{<-} \hlkwd{lmer}\hlstd{(groupClickFactor1} \hlopt{~} \hlstd{groupPerfPPNorm}\hlopt{*}\hlstd{time}
-                                    \hlopt{+} \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{englishName)}
-                                    \hlopt{+} \hlstd{(}\hlnum{1} \hlopt{|} \hlstd{sessionName)}
-                                    \hlstd{,} \hlkwc{data} \hlstd{= tlc}
-                                    \hlstd{,} \hlkwc{REML} \hlstd{=} \hlnum{FALSE}
-                                \hlstd{)}
-        \hlstd{)}
-\end{alltt}
-\end{kframe}
-\end{knitrout}
-
-
-
-
-
-
 
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
 
-{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/predictionsTest-1} 
+{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/exploreRelationshipsPrePost-1} 
 
 }
 
 
 
 
-{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/predictionsTest-2} 
+{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/exploreRelationshipsPrePost-2} 
 
 }
 
 
 
 
-{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/predictionsTest-3} 
+{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/exploreRelationshipsPrePost-3} 
 
 }
 
 
 
+\end{knitrout}
 
-{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/predictionsTest-4} 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing non-finite values (stat\_smooth).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/groupPerfClickChangeCondition-1} 
 
 }
 
 
 
+\end{knitrout}
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'lmerTest'}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:lme4':\\\#\# \\\#\#\ \ \ \  lmer}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:stats':\\\#\# \\\#\#\ \ \ \  step}}\end{kframe}
+\end{knitrout}
+
+
+
+
+
+
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing non-finite values (stat\_smooth).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/groupClickBondingChangeCondition-1} 
+
+}
+
+
+
+\end{knitrout}
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Model failed to converge with 1 negative eigenvalue: -2.1e-01}}\end{kframe}
+\end{knitrout}
+
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing non-finite values (stat\_smooth).}}
+
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning: Removed 1 rows containing missing values (geom\_point).}}\end{kframe}
+
+{\centering \includegraphics[width=\maxwidth]{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/groupPerfBondingChangeCondition-1} 
+
+}
+
+
+
+\end{knitrout}
+
+
+
+
+
+
+
+
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mediate(m2Change, m3Change, treat = "{}groupPerfChangePrePostNorm"{}, : unused arguments (treat = "{}groupPerfChangePrePostNorm"{}, mediator = "{}groupClickChangePrePost"{})}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in summary(med.out.groupPerfClickChange): object 'med.out.groupPerfClickChange' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mediate(m2Change, m3Change, treat = "{}groupPerfChangePrePostNorm"{}, : unused arguments (treat = "{}groupPerfChangePrePostNorm"{}, mediator = "{}groupClickChangePrePost"{}, covariates = list(condition = "{}high"{}))}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in summary(med.out.groupPerfClickChange.High): object 'med.out.groupPerfClickChange.High' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in mediate(m2Change, m3Change, treat = "{}groupPerfChangePrePostNorm"{}, : unused arguments (treat = "{}groupPerfChangePrePostNorm"{}, mediator = "{}groupClickChangePrePost"{}, covariates = list(condition = "{}low"{}))}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in summary(med.out.groupPerfClickChange.Low): object 'med.out.groupPerfClickChange.Low' not found}}
+
+{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in plot(med.out.groupPerfClickChange, main = "{}Mediation Model"{}): object 'med.out.groupPerfClickChange' not found}}\end{kframe}
 \end{knitrout}
 
 
@@ -2641,12 +2771,3 @@ PRE-POST ANALYSIS:
 
 
 \section{Discussion}
-
-
-
-
-
-
-
-{\renewcommand*\MakeUppercase[1]{#1}%
-\printbibliography[heading=bibintoc,title={\bibtitle}]}
