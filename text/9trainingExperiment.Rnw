@@ -2247,14 +2247,12 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
   #rescale ind and group performance expectations
   library(scales)
   tlc$groupPerformanceExpectations[tlc$time == 3] <- scales::rescale(tlc$groupPerformanceExpectations[tlc$time == 3],
-                                                                     to = c(0, 100),
-                                                                     from = c(-50, 50))
+                                                                     to = c(0, 100))
   # tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3],
     #                                                                                    to = c(0, 100),
     #                                                                                    from = c(-50, 50))
   tlc$indPerformanceExpectations[tlc$time == 3] <- scales::rescale(tlc$indPerformanceExpectations[tlc$time == 3],
-                                                                   to = c(0, 100),
-                                                                   from = c(-50, 50))
+                                                                   to = c(0, 100))
   tlc$indPerformance[tlc$time == 3] <- NA
 
   tlcFactors <- subset(tlc, select = c(age, sex, condition, team, time, jointActionSuccess,
@@ -2584,7 +2582,7 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 
 
 
-\myparagraph{Prediction 1: More positive violations of expectations around team performance will correlate with higer feelings of team click with the training group}
+\myparagraph{Prediction 1: More positive perceptions of team performance relative to prior expectations will correlate with higer feelings of team click with the training group}
 
 <<teamPerfExpClickScatter, fig.cap=''>>=
 library(tidyverse)
@@ -3542,8 +3540,17 @@ med.out.postExperiment.Low <- mediate(m2, m3, treat = "groupPerformance_3Norm",
 
 @
 
+<<groupPerfExpClickMediationPlotHigh, eval=T,echo=F>>=
+  plot(med.out.postExperiment.High, main = "Mediation Model: High ")
+  dev.copy(pdf, "groupPerfExpClickMediationPlotHigh.pdf")
+  dev.off()
+@
 
-
+<<groupPerfExpClickMediationPlotLow, eval=T,echo=F>>=
+  plot(med.out.postExperiment.Low, main = "Mediation Model: Low ")
+  dev.copy(pdf, "groupPerfExpClickMediationPlot.pdf")
+  dev.off()
+@
 
 
 
@@ -3621,8 +3628,8 @@ PRE-POST ANALYSIS:
 
   #groupPerformance needs to be re-sacled with min = 0, and then converted to a z-score with mean = 0:
  library(scales)
-  tlc$groupPerformance <- rescale(tlc$groupPerformance, to = c(0, 100))
-  tlc$indPerformance[tlc$time == 3] <- rescale(tlc$indPerformance[tlc$time == 3], to = c(0, 100))
+  tlc$groupPerformance <- scales::rescale(tlc$groupPerformance, to = c(0, 100))
+  tlc$indPerformance[tlc$time == 3] <- scales::rescale(tlc$indPerformance[tlc$time == 3], to = c(0, 100))
 
 #hist(tlc$groupPerformance)
     tlc$groupPerformanceNorm <- scale(tlc$groupPerformance)
@@ -3636,8 +3643,7 @@ PRE-POST ANALYSIS:
 
 <<groupPerfPrePostVariable, eval=T,echo=F>>=
   ## Create new variable containing groupPerformanceExpectations (t = 3) and confidence in group performance (t=2).  A discrepancy between these two will be calculated:
-  tlc$groupPerformanceExp[tlc$time == 3] <- tlc$groupPerformance[tlc$time == 3]
-  tlc$groupPerfConfExp[tlc$time == 3] <- tlc$groupPerformanceExp[tlc$time == 3]
+  tlc$groupPerfConfExp[tlc$time == 3] <-  tlc$groupPerformance[tlc$time == 3]
   tlc$groupPerfConfExp[tlc$time == 2] <- tlc$groupConfidentTechnicalChallenges[tlc$time == 2]
   ##standardise groupPerformancePrePost in order to align with other predictor variable factors:
   tlc$groupPerfConfExpNorm <- scale(tlc$groupPerfConfExp)
@@ -3656,16 +3662,17 @@ highLong <- subset(tlc, condition == "high")
 @
 
 
-<<groupPerfConfPlot, eval=T,echo=F, fig.cap= "Pre-Experiment confidence in group performance and post-Experiment perceptions of group performance versus expectations">>=
+<<groupPerfConfPlot, eval=T,echo=F>>=
 library(tidyverse)
+tlc$time <- as.factor(tlc$time)
 groupPerfConfExpBox <- ggplot(tlc,
                 aes(x=time, y=groupPerfConfExpNorm)) +
                 geom_boxplot() +
                 facet_wrap(~condition) +
                 labs(x = "Time", y = "Group Performance") +
-                apatheme
+                apatheme +
                 ggsave("groupPerfConfPlot.pdf")
-
+groupPerfConfExpBox
 @
 
 
@@ -3681,7 +3688,6 @@ groupPerfConfExpBox <- ggplot(tlc,
   ## interaction with condition? <- doesn't look like it
   summary(groupPerfPrePostCondition.lmer <- lmer(groupPerfConfExpNorm ~
                                                 time*condition
-                                      + (1 | englishName)
                                       + (1 | sessionName)
                                       , data = tlc
                                       , REML = FALSE
@@ -3699,7 +3705,8 @@ groupPerfConfExpBox <- ggplot(tlc,
                           geom_boxplot() +
                           facet_wrap(~condition) +
                           labs(x = "Time", y = "Group Click") +
-                          apatheme
+                          apatheme +
+                          ggsave("prePostClickPLot.pdf")
   clickPPBox
 @
 
@@ -3733,7 +3740,8 @@ groupPerfConfExpBox <- ggplot(tlc,
                           geom_boxplot() +
                           facet_wrap(~condition) +
                           labs(x = "Time", y = "Group Bonding") +
-                          apatheme
+                          apatheme +
+                          ggsave("prePostBondingPlot.pdf")
   bondingPPBox
 @
 
@@ -3742,7 +3750,6 @@ groupPerfConfExpBox <- ggplot(tlc,
   ##is there a change in this variable over time?
   summary(bondingPrePost.lmer <- lmer(groupBondingFactor ~ time
                                       + (1 | englishName)
-                                      + (1 | sessionName)
                                       , data = tlc
                                       , REML = FALSE
                                   )
@@ -3750,7 +3757,6 @@ groupPerfConfExpBox <- ggplot(tlc,
   ## interaction with condition? <- doesn't look like it
   summary(bondingPrePostCondition.lmer <- lmer(groupBondingFactor ~ time*condition
                                       + (1 | englishName)
-                                      + (1 | sessionName)
                                       , data = tlc
                                       , REML = FALSE
                                   )
@@ -3759,31 +3765,64 @@ groupPerfConfExpBox <- ggplot(tlc,
 
 
 
+
+
+
+
 <<prePostVariables, eval=T,echo=F>>=
 #create pre-post Variables:
 #groupPerformance
-tlc$groupPerfChangePrePost <- tlc$groupPerformanceExp[tlc$time == 3] - tlc$groupConfidentTechnicalChallenges[tlc$time == 2]
+tlc$groupPerfChangePrePost <- tlc$groupPerformanceExpectations[tlc$time == 3] - tlc$groupConfidentTechnicalChallenges[tlc$time == 2]
 #tlc$groupPerfChangePrePostNorm <- scale(tlc$groupPerfChangePrePost)
-hist(tlc$groupPerfChangePrePost[tlc$time == 3])
+hist(tlc$groupPerfChangePrePost[tlc$time == 3]
+                  , main = NA
+                  , xlab = "Change in group performance"
+              )
+              dev.copy(pdf, "groupPerfChangeHist.pdf")
+              dev.off()
 
 #indPerformance   tlc$indPerfConfExpNorm
-tlc$indPerfChangePrePost <- tlc$indPerfConfExp[tlc$time == 3] - tlc$indPerfConfExp[tlc$time == 2]
+tlc$indPerfChangePrePost <- tlc$indPerformanceExpectations[tlc$time == 3] - tlc$indPerformance[tlc$time == 2]
 #tlc$indPerfExpChangePrePostNorm <- scale(tlc$indPerfChangePrePost)
-hist(tlc$indPerfChangePrePost[tlc$time == 3])
+hist(tlc$indPerfChangePrePost[tlc$time == 3]
+                                        , main = NA
+                                        , xlab = "Change in individual performance"
+                                      )
+
+                                    dev.copy(pdf, "indPerfChangeHist.pdf")
+                                    dev.off()
 
 #groupClick groupClickFactor1
 tlc$groupClickChangePrePost <- tlc$groupClickFactor1[tlc$time == 3] - tlc$groupClickFactor1[tlc$time == 2]
 #tlc$groupClickChangePrePostNorm <- scale(tlc$groupClickChangePrePost)
-hist(tlc$groupClickChangePrePost[tlc$time == 3])
+hist(tlc$groupClickChangePrePost[tlc$time == 3]
+                                      , main = NA
+                                      , xlab = "Change in group click"
+                                    )
+
+                                    dev.copy(pdf, "groupClickChangeHist.pdf")
+                                    dev.off()
 
 #groupClick groupClickFactor1
 tlc$groupBondingChangePrePost <- tlc$groupBondingFactor[tlc$time == 3] - tlc$groupBondingFactor[tlc$time == 2]
 #tlc$groupBondingChangePrePostNorm <- scale(tlc$groupBondingChangePrePost)
-hist(tlc$groupBondingChangePrePost[tlc$time == 3])
+hist(tlc$groupBondingChangePrePost[tlc$time == 3]
+                                      , main = NA
+                                      , xlab = "Change in group bonding"
+                                    )
+
+                              dev.copy(pdf, "groupBondingChangeHist.pdf")
+                              dev.off()
 
 # teamBonding
 tlc$teamBondingChangePrePost <- tlc$teamBondingFactor[tlc$time == 3] - tlc$teamBondingFactor[tlc$time == 1]
-hist(tlc$teamBondingChangePrePost[tlc$time == 3])
+hist(tlc$teamBondingChangePrePost[tlc$time == 3]
+                                      , main = NA
+                                      , xlab = "Change in team bonding"
+                                    )
+
+                              dev.copy(pdf, "teamBondingChangeHist.pdf")
+                              dev.off()
 
 #attach variables to wide df (twc):
 twc$groupPerfChangePrePost <- tlc$groupPerfChangePrePost[tlc$time == 3]
@@ -3797,14 +3836,23 @@ twc$teamBondingChangePrePost <- tlc$teamBondingChangePrePost[tlc$time == 3]
 plot(twc$groupPerfChangePrePost, twc$groupClickChangePrePost)
 plot(twc$groupClickChangePrePost, twc$groupBondingChangePrePost)
 plot(twc$groupPerfChangePrePost, twc$groupBondingChangePrePost)
+@
 
+<<normalisePrePostMeasures, eval=T,echo=F>>=
 #normalise all variables:
 twc$groupPerfChangePrePostNorm <- scale(twc$groupPerfChangePrePost)
 twc$indPerfExpChangePrePostNorm <- scale(twc$indPerfChangePrePost)
 twc$groupClickChangePrePostNorm <- scale(twc$groupClickChangePrePost)
 twc$groupBondingChangePrePostNorm <- scale(twc$groupBondingChangePrePost)
 twc$teamBondingChangePrePostNorm <- scale(twc$teamBondingChangePrePost)
+
+
+twc$condition <- factor(twc$condition, levels = c("low", "high"))
 @
+
+
+
+\subsubsection{Prediction 2.1: perf -> click }
 
 <<groupPerfClickChangeCondition, eval=T, echo=F>>=
 # ggplot scatter with a slope for each condition
@@ -3816,16 +3864,21 @@ groupPerfClickChange <- ggplot(twc,
 groupPerfClickChange +
             xlab("Group Performance Change") +
             ylab("Group Click Change") +
-            apatheme
+            apatheme +
+            ggsave("groupPerfClickChangeCondition.pdf")
 
 @
 
 
 <<groupPerfClickChangeModel, eval=T, echo=F>>=
-library(lmerTest)
+library(lmerTest
+  library(optimx)
 summary(perfClickChange.lmer <- lmer(groupClickChangePrePostNorm ~ groupPerfChangePrePostNorm
-                                    + (groupPerfChangePrePostNorm | sessionName)
+                                    + indPerfExpChangePrePostNorm
                                     + fullOutcomeAvg + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                    + (groupPerfChangePrePostNorm | sessionName)
+                                    , control = lmerControl(optimizer = "optimx",
+                                      calc.derivs = FALSE,  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
                                     , data = twc
                                     , REML = FALSE
                                 )
@@ -3835,18 +3888,24 @@ summary(perfClickChange.lmer <- lmer(groupClickChangePrePostNorm ~ groupPerfChan
 <<groupPerfClickChangeConditionModel, eval=T, echo=F>>=
 library(lmerTest)
 summary(perfClickChangeCondition.lmer <- lmer(groupClickChangePrePostNorm ~ groupPerfChangePrePostNorm*condition
-                                    + (groupPerfChangePrePostNorm | sessionName)
                                     + indPerfExpChangePrePostNorm + fullOutcomeAvg + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                    + (groupPerfChangePrePostNorm + condition  | sessionName)
+                                    , control = lmerControl(optimizer = "optimx",
+                                      calc.derivs = FALSE,  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
                                     , data = twc
                                     , REML = FALSE
                                 )
         )
+
+  perfClickChangeCondition.lmer.CIs <- confint.merMod(perfClickChangeCondition.lmer, method = "Wald", level = 0.95)
+
+
 @
 
 
 
 
-
+\subsubsection{Prediciton 2.2: change click -> change bonding }
 
 
 <<groupClickBondingChangeCondition, eval=T, echo=F>>=
@@ -3859,9 +3918,13 @@ groupClickBondingChange <- ggplot(twc,
 groupClickBondingChange +
             xlab("Group Click Change") +
             ylab("Group Bonding Change") +
-            apatheme
-
+            apatheme +
+            ggsave("groupClickBondingChangeCondition.pdf")
+groupClickBondingChange
 @
+
+
+
 
 
 
@@ -3879,10 +3942,12 @@ summary(clickBondingChange.lmer <- lmer(groupBondingChangePrePostNorm ~ groupCli
         )
 @
 
+
+\subsubsection{Prediction 2.3: perf - bonding}
 <<groupClickBondingChangeConditionModel, eval=T, echo=F>>=
 # ggplot scatter with a slope for each condition
 summary(clickBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~ groupClickChangePrePostNorm*condition
-                                    + (groupPerfChangePrePostNorm | sessionName)
+                                    + (groupPerfChangePrePostNorm + condition | sessionName)
                                     + indPerfExpChangePrePostNorm + fullOutcomeAvg + subjectiveCompetenceFactor + objectiveCompetenceFactor
                                     , data = twc
                                     , REML = FALSE
@@ -3890,8 +3955,13 @@ summary(clickBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~
                                       calc.derivs = FALSE,  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
                                 )
         )
+
+
+          clickBondingChangeCondition.lmerCIs <- confint.merMod(clickBondingChangeCondition.lmer, method = "Wald", level = 0.95)
+
 @
 
+\subsubsection{Prediction 2.3: performance - bonding}
 
 <<groupPerfBondingChangeCondition, eval=T, echo=F>>=
 # ggplot scatter with a slope for each condition
@@ -3903,7 +3973,8 @@ groupPerfBondingChange <- ggplot(twc,
 groupPerfBondingChange +
             xlab("Group Perf Change") +
             ylab("Group Bonding Change") +
-            apatheme
+            apatheme +
+            ggsave("groupPerfBondingChangeCondition.pdf")
 
 @
 
@@ -3925,14 +3996,20 @@ summary(perfBondingChange.lmer <- lmer(groupBondingChangePrePostNorm ~ groupPerf
 <<groupPerfBondingChangeConditionModel, eval=T, echo=F>>=
 # ggplot scatter with a slope for each condition
 summary(perfBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~ groupPerfChangePrePostNorm*condition
-                                    + (groupPerfChangePrePostNorm | sessionName)
                                     + indPerfExpChangePrePostNorm + fullOutcomeAvg + subjectiveCompetenceFactor + objectiveCompetenceFactor
-                                    , data = twc
-                                    , REML = FALSE
+                                    + (groupPerfChangePrePostNorm + condition | sessionName)
                                     , control = lmerControl(optimizer = "optimx",
                                       calc.derivs = FALSE,  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                                    , data = twc
+                                    , REML = FALSE
+
                                 )
         )
+
+        perfBondingChangeCondition.lmer.CIs <- confint.merMod(perfBondingChangeCondition.lmer, method = "Wald", level = 0.95)
+
+
+
 @
 
 
@@ -3958,7 +4035,7 @@ summary(perfBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~ 
 
   library(lme4)
  library(optimx)
-#  library(lmerTest)
+ library(lmerTest)
   ## Direct relationship X->Y: fit model and show summary
   summary(m1Change <- lmer(groupBondingChangePrePost ~ groupPerfChangePrePostNorm*condition
                                               + indPerfExpChangePrePostNorm + fullOutcomeAvg + subjectiveCompetenceFactor + objectiveCompetenceFactor
@@ -3973,7 +4050,7 @@ summary(perfBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~ 
   ## X->M fit model and show summary
   summary(m2Change <- lmer(groupClickChangePrePost ~ groupPerfChangePrePostNorm*condition
                                             + indPerfExpChangePrePostNorm + fullOutcomeAvg + subjectiveCompetenceFactor + objectiveCompetenceFactor
-                                            + (groupPerfChangePrePostNorm|sessionName)
+                                            + (groupPerfChangePrePostNorm + condition |sessionName)
                                             , control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
                                                                   optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
                                             , data = twc
@@ -4023,12 +4100,23 @@ summary(perfBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~ 
   #                        covariates.2 = list(condition = "low"), sims = 100)
 
   plot(med.out.groupPerfClickChange, main = "Mediation Model")
-  dev.copy(pdf, "groupPerfClickChangeMediationPlot.pdf")
+  dev.copy(pdf, "groupPerfExpClickChangeMedPlot.pdf")
   dev.off()
 
 @
 
 
+<<groupPerfClickChangeMedPlotHigh, eval=T,echo=F>>=
+  plot(med.out.groupPerfClickChange.High, main = "Mediation Model: High ")
+  dev.copy(pdf, "groupPerfClickChangeMedPlotHigh.pdf")
+  dev.off()
+@
+
+<<groupPerfClickChangeMedPlotLow, eval=T,echo=F>>=
+  plot(med.out.groupPerfClickChange.Low, main = "Mediation Model: Low ")
+  dev.copy(pdf, "groupPerfClickChangeMedPlotLow.pdf")
+  dev.off()
+@
 
 
 
