@@ -511,7 +511,7 @@ Central tendencies of variables measuring athletes' perceptions of group click a
   #rescale groupPerformaneExp to (0,100)
   library(scales)
   tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- scales::rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3], to = c(0, 100))
-                                                                                   
+
 
 
   ## rename values for factors:
@@ -2004,10 +2004,10 @@ It was predicted that that athletes in the high difficulty condition would be mo
 <<indConfidenceVariance, echo=F,eval=T>>=
   car::leveneTest(indConfidenceChallenges_2 ~ condition, data = twc)
   fligner.test(indConfidenceChallenges_2 ~ condition, data = twc)
-  bartlett.test(indConfidenceChallenges_2 ~ condition, data = twc)
+indPerfBartlett <-  bartlett.test(indConfidenceChallenges_2 ~ condition, data = twc)
 
  # variance appears to differ significantly
-  indPerfBartlett <- stats::var.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
+  indPerfFTestVariance <- stats::var.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
   # variance appears to differ significantly
   #cohens_d(indPerfBartlett, format = "latex")
   #apa(indPerfBartlett)
@@ -2247,7 +2247,7 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
   # tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3] <- rescale(tlcGroupPerformance$groupPerformanceExp[tlcGroupPerformance$time == 3],
     #                                                                                    to = c(0, 100),
     #                                                                                    from = c(-50, 50))
-  
+
   tlc$indPerformanceExpectations[tlc$time == 3] <- scales::rescale(tlc$indPerformanceExpectations[tlc$time == 3],
                                                                    to = c(0, 100))
   tlc$indPerformance[tlc$time == 3] <- NA
@@ -3612,6 +3612,8 @@ PRE-POST ANALYSIS:
   ii. click?
   iii. bonding?
 
+
+
 <<prePostPrepareData, eval=T,echo=F>>=
 
   #groupPerformance needs to be re-sacled with min = 0, and then converted to a z-score with mean = 0:
@@ -3623,7 +3625,10 @@ PRE-POST ANALYSIS:
     tlc$groupPerformanceNorm <- scale(tlc$groupPerformance)
     tlc$indPerformanceNorm <- scale(tlc$indPerformance)
 
+
 #tlc$groupPerformanceFactor # this is component performance, measured at T2 and T3
+twc$condition <- factor(twc$condition, levels = c("low", "high"))
+
 
 @
 
@@ -3664,6 +3669,7 @@ groupPerfConfExpBox
 @
 
 
+
 <<groupPerfConfExpModel, eval=T,echo=F>>=
   ##is there a change in this variable over time?
   summary(groupPerfConfExpPrePost.lmer <- lmer(groupPerfConfExpNorm ~ time
@@ -3676,11 +3682,13 @@ groupPerfConfExpBox
   ## interaction with condition? <- doesn't look like it
   summary(groupPerfPrePostCondition.lmer <- lmer(groupPerfConfExpNorm ~
                                                 time*condition
+                                      + (1 | englishName)
                                       + (1 | sessionName)
                                       , data = tlc
                                       , REML = FALSE
                                   )
           )
+      groupPerfPrePostCondition.lmer.CIs <- confint.merMod(groupPerfPrePostCondition.lmer, method = "Wald", level = 0.95)
 @
 
 
@@ -3710,14 +3718,14 @@ groupPerfConfExpBox
           )
   ## interaction with condition? <- doesn't look like it
   summary(clickPrePostCondition.lmer <- lmer(groupClickFactor1 ~ time*condition
-                                      + arousalFactor + fullOutcomeAvg
-                                      + subjectiveCompetenceFactor + objectiveCompetenceFactor
                                       + (1 | englishName)
                                       + (1 | sessionName)
                                       , data = tlc
                                       , REML = FALSE
                                   )
           )
+
+clickPrePostCondition.lmer.CIs <- confint.merMod(clickPrePostCondition.lmer, method = "Wald", level = 0.95)
 @
 
 
@@ -3738,6 +3746,7 @@ groupPerfConfExpBox
   ##is there a change in this variable over time?
   summary(bondingPrePost.lmer <- lmer(groupBondingFactor ~ time
                                       + (1 | englishName)
+                                      + (1 | sessionName)
                                       , data = tlc
                                       , REML = FALSE
                                   )
@@ -3745,10 +3754,14 @@ groupPerfConfExpBox
   ## interaction with condition? <- doesn't look like it
   summary(bondingPrePostCondition.lmer <- lmer(groupBondingFactor ~ time*condition
                                       + (1 | englishName)
+                                      + (1 | sessionName)
                                       , data = tlc
                                       , REML = FALSE
                                   )
           )
+
+bondingPrePostCondition.lmer.CIs <- confint.merMod(bondingPrePostCondition.lmer, method = "Wald", level = 0.95)
+
 @
 
 
@@ -3834,12 +3847,112 @@ twc$groupClickChangePrePostNorm <- scale(twc$groupClickChangePrePost)
 twc$groupBondingChangePrePostNorm <- scale(twc$groupBondingChangePrePost)
 twc$teamBondingChangePrePostNorm <- scale(twc$teamBondingChangePrePost)
 
-
-twc$condition <- factor(twc$condition, levels = c("low", "high"))
-
-
-
 @
+
+
+
+<<ICCestimatesPrePostSession, eval=T, echo=F>>=
+  # performance
+  performanceSessionPrePostICC <- ICCest(sessionName, groupPerfChangePrePostNorm, data = twc, CI.type = "THD") #  0.06428764  / 7.102757 (k - unbalanced score)
+  groupClickSessionPrePostICC <- ICCest(sessionName, groupClickChangePrePostNorm, data = twc, CI.type = "THD") #  0.1415473  / 7.102757 (k - unbalanced score)
+  # there is only one observation per group for fullOutcomeAvg, so ICC will = 1 (F test is a ratio):
+  groupBondingSessionPrePostICC <- ICCest(sessionName, groupBondingChangePrePostNorm, data = twc, CI.type = "THD") #  0.2146226  / 7.102757(k - unbalanced score)
+  teamBondingSessionPrePostICC <- ICCest(sessionName, teamBondingChangePrePostNorm, data = twc, CI.type = "THD")
+  #fullOutcomeAvgSessionPrePostICC <- ICCest(sessionName, fullOutcomeAvg, data = twc, CI.type = "THD")
+  #    1 / 7.226601(k - unbalanced score)
+@
+
+
+<<ICCestimatesPrePostSex, eval=T, echo=F>>=
+  twc$sex <- as.factor(twc$sex)
+  #performance
+  # performance
+  performanceSexPrePostICC <- ICCest(sex, groupPerfChangePrePostNorm, data = twc, CI.type = "THD") #  0.06428764  / 7.102757 (k - unbalanced score)
+  groupClickSexPrePostICC <- ICCest(sex, groupClickChangePrePostNorm, data = twc, CI.type = "THD") #  0.1415473  / 7.102757 (k - unbalanced score)
+  # there is only one observation per group for fullOutcomeAvg, so ICC will = 1 (F test is a ratio):
+  groupBondingSexPrePostICC <- ICCest(sex, groupBondingChangePrePostNorm, data = twc, CI.type = "THD") #  0.2146226  / 7.102757(k - unbalanced score)
+  teamBondingSexPrePostICC <- ICCest(sex, teamBondingChangePrePostNorm, data = twc, CI.type = "THD")
+  #fullOutcomeAvgSessionPrePostICC <- ICCest(sex, fullOutcomeAvg, data = twc, CI.type = "THD")
+  #    1 / 7.226601(k - unbalanced score)
+
+  #fullOutcomeAvgSexPrePostICC <- ICCest(sex, fullOutcomeAvg, data = twc, CI.type = "THD")
+  #    -0.009384193 / 28.86207(k - unbalanced score)
+@
+
+<<ICCestimatesPrePostTeam, eval=T, echo=F>>=
+  #performance
+  performanceTeamPrePostICC <- ICCest(team, groupPerfChangePrePostNorm, data = twc, CI.type = "THD") #  0.06428764  / 7.102757 (k - unbalanced score)
+  groupClickTeamPrePostICC <- ICCest(team, groupClickChangePrePostNorm, data = twc, CI.type = "THD") #  0.1415473  / 7.102757 (k - unbalanced score)
+  # there is only one observation per group for fullOutcomeAvg, so ICC will = 1 (F test is a ratio):
+  groupBondingTeamPrePostICC <- ICCest(team, groupBondingChangePrePostNorm, data = twc, CI.type = "THD") #  0.2146226  / 7.102757(k - unbalanced score)
+  teamBondingTeamPrePostICC <- ICCest(team, teamBondingChangePrePostNorm, data = twc, CI.type = "THD")
+  #fullOutcomeAvgTeamPrePostICC <- ICCest(team, fullOutcomeAvg, data = twc, CI.type = "THD")
+  #    1 / 7.226601(k - unbalanced score)
+@
+
+<<ICCestimatesPrePostLocation, eval=T, echo=F>>=
+  twc$sessionLocation <- twc$team
+  twc$sessionLocation <- ifelse(twc$team == "bjm" | twc$team == "bjw", "beijing",
+                                "shandong")
+  twc$sessionLocation <- as.factor(twc$sessionLocation)
+  #performance:
+  performanceLocationPrePostICC <- ICCest(sessionLocation, groupPerfChangePrePostNorm, data = twc, CI.type = "THD") #  0.06428764  / 7.102757 (k - unbalanced score)
+  groupClickLocationPrePostICC <- ICCest(sessionLocation, groupClickChangePrePostNorm, data = twc, CI.type = "THD") #  0.1415473  / 7.102757 (k - unbalanced score)
+  # there is only one observation per group for fullOutcomeAvg, so ICC will = 1 (F test is a ratio):
+  groupBondingLocationPrePostICC <- ICCest(sessionLocation, groupBondingChangePrePostNorm, data = twc, CI.type = "THD") #  0.2146226  / 7.102757(k - unbalanced score)
+  teamBondingLocationPrePostICC <- ICCest(sessionLocation, teamBondingChangePrePostNorm, data = twc, CI.type = "THD")
+  #fullOutcomeAvgSessionPrePostICC <- ICCest(sessionLocation, fullOutcomeAvg, data = twc, CI.type = "THD")
+@
+
+<<ICCTablePrePost, eval=T, echo=F, fig.cap="">>=
+  ##create variables (columns):
+  variable <- c("ChangePerformExpected", "ChangeGroupClick", "ChangeGroupBonding", "ChangeTeamBonding")
+  session <- as.numeric(c(performanceSessionPrePostICC$ICC
+                                      , groupClickSessionPrePostICC$ICC
+                                      , groupBondingSessionPrePostICC$ICC
+                                      , teamBondingSessionPrePostICC$ICC
+                                    )
+                                  )
+  sex <- as.numeric(c(performanceSexPrePostICC$ICC
+                                      , groupClickSexPrePostICC$ICC
+                                      , groupBondingSexPrePostICC$ICC
+                                      , teamBondingSexPrePostICC$ICC
+                                    )
+                                  )
+  team <- as.numeric(c(performanceTeamPrePostICC$ICC
+                                      , groupClickTeamPrePostICC$ICC
+                                      , groupBondingTeamPrePostICC$ICC
+                                      , teamBondingTeamPrePostICC$ICC
+                                    )
+                                  )
+  location <- as.numeric(c(performanceLocationPrePostICC$ICC
+                                    , groupClickLocationPrePostICC$ICC
+                                    , groupBondingLocationPrePostICC$ICC
+                                    , teamBondingLocationPrePostICC$ICC
+                                  )
+                                )
+
+  ICCTablePrePost <- data.frame(variable, session, sex, team, location)
+  # round to 2dp
+  ICCTablePrePost[,-1] <- round(ICCTablePrePost[,-1],2)
+
+  ICCTable <- xtable(ICCTablePrePost,
+                        caption = "Pre-Post Tournament intra class correlations by group",
+                        label = "tab:ICCTablePrePost")
+  align(ICCTable) <- "rrcccc"
+  print(ICCTable, file="ICCTablePrePost.tex")
+
+
+
+
+
+
+
+
+
+
+
+
 
 <<groupPerfClickChangeCondition, eval=T, echo=F>>=
 # ggplot scatter with a slope for each condition
@@ -3888,6 +4001,58 @@ summary(perfClickChangeCondition.lmer <- lmer(groupClickChangePrePostNorm ~ grou
 
 
 @
+
+
+%ASSUMPTIONS:
+<<groupPerfClickChangeAssumptionsHist, echo=F,eval=T>>=
+  #1.historgram with density line
+  groupPerfClickChangeResid <- resid(perfClickChangeCondition.lmer, type = "pearson")
+  hist(groupPerfClickChangeResid,
+       freq = FALSE,
+       main = "Distribution of M2.1 residuals \n (standardised)",
+       xlab = "Residuals")
+  lines(density(groupPerfClickChangeResid, na.rm = TRUE))
+  dev.copy(pdf, "TEM21Hist.pdf")
+  dev.off()
+  #non-normality
+  groupPerfClickChangeResid.Wald <- shapiro.test(groupPerfClickChangeResid)
+  psych::describe(groupPerfClickChangeResid)
+@
+<<groupPerfClickChangeAssumptionsScatter, echo=F,eval=T>>=
+  #2.scatterPlot
+  plot(perfClickChangeCondition.lmer, main = "Scatterplot of M2.1 Residuals \n (standardised)")
+  dev.copy(pdf, "TEM21Scatter.pdf")
+  dev.off()
+@
+<<groupPerfClickChangeQQNorm, echo=F,eval=T>>=
+  #3.qqNorm
+  qqnorm(residuals(perfClickChangeCondition.lmer), main = "Norm QQ Plot of M2.1 Residuals")
+  qqline(residuals(perfClickChangeCondition.lmer))
+  dev.copy(pdf, "TEM21QQNorm.pdf")
+  dev.off()
+@
+<<groupPerfClickChangeCooksD, echo=F,eval=T>>=
+  #indluential cases
+  #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+ library(influence.ME)
+  groupPerfChangeClickInfl <- influence(perfClickChangeCondition.lmer, obs = TRUE)
+  groupPerfChangeClickCooksD <- cooks.distance(groupPerfChangeClickInfl)
+  groupPerfChangeClickCooksDMAX <- max(groupPerfChangeClickCooksD, na.rm = T)
+  plot(groupPerfChangeClickInfl,
+        which = "cook",
+        main = "M2.1 Influential cases \n (Cook's Distance)",
+        ylab = "participant",
+        xlab = "cooks.distance")
+  dev.copy(pdf, "TEM21CooksD.pdf")
+  dev.off()
+
+@
+
+
+
+
+
+
 
 
 

@@ -96,11 +96,11 @@
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Attaching packages -------------------------------------------------------------------------- tidyverse 1.2.1 --}}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Attaching packages ------------------------------------------------------------------------------- tidyverse 1.2.1 --}}
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# √ ggplot2 2.2.1\ \ \ \  √ purrr\ \  0.2.4\\\#\# √ tibble\ \ 1.4.2\ \ \ \  √ dplyr\ \  0.7.4\\\#\# √ tidyr\ \  0.8.0\ \ \ \  √ stringr 1.3.1\\\#\# √ readr\ \  1.1.1\ \ \ \  √ forcats 0.3.0}}
 
-{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Conflicts ----------------------------------------------------------------------------- tidyverse\_conflicts() --\\\#\# x dplyr::filter() masks stats::filter()\\\#\# x dplyr::lag()\ \ \ \ masks stats::lag()}}
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# -- Conflicts ---------------------------------------------------------------------------------- tidyverse\_conflicts() --\\\#\# x dplyr::filter() masks stats::filter()\\\#\# x dplyr::lag()\ \ \ \ masks stats::lag()}}
 
 {\ttfamily\noindent\itshape\color{messagecolor}{\#\# Loading required package: Matrix}}
 
@@ -1217,7 +1217,7 @@ It was predicted that that athletes in the high difficulty condition would be mo
  %(t_test(indConfidenceCondition.ttest))
 Results of manipulation checks indicate that there were no overall condition-wise differences in athlete confidence in group or individual ability to meet the technical challenges of the drill (see Table ~\ref{tab:manipulationCheckTable} and Figures ~\ref{fig:groupConfChallengesBoxplot} and ~\ref{fig:indConfChallengesBoxplot}).
 Although the central tendency of these variables was not significantly different, the box plots (Figures ~\ref{fig:groupConfChallengesBoxplot}) and histograms of both group and individual confidence variables by condition show that the variance of responses in the high difficulty condition appears to be larger than the low difficulty condition (see Figures ~\ref{fig:histHighGroupConfidence}\nobreakdash~\ref{fig:histLowIndConfidence}).
-A Bartlett's test of homogeneity of variance revealed that there was no meaningful difference in variance of confidence in group ability (c(`Bartlett's K-squared` = 2.39556133520555), c(df = 1), 0.12168006558935, groupConfidentTechnicalChallenges_2 by condition, Bartlett test of homogeneity of variances). The same test applied to athlete confidence in individual ability according to condition did, however, reveal a significant difference, c(F = 2.17299490056626), c(`num df` = 28, `denom df` = 28), 0.0443622290888093, c(1.02022166316948, 4.62831461862671), c(`ratio of variances` = 2.17299490056626), c(`ratio of variances` = 1), two.sided, F test to compare two variances, high$indConfidenceChallenges_2 and low$indConfidenceChallenges_2.
+A Bartlett's test of homogeneity of variance revealed that there was no meaningful difference in variance of confidence in group ability (c(`Bartlett's K-squared` = 2.39556133520555), c(df = 1), 0.12168006558935, groupConfidentTechnicalChallenges_2 by condition, Bartlett test of homogeneity of variances). The same test applied to athlete confidence in individual ability according to condition did, however, reveal a significant difference, c(`Bartlett's K-squared` = 4.042444164532), c(df = 1), 0.0443695168535268, indConfidenceChallenges_2 by condition, Bartlett test of homogeneity of variances.
 
 
 \begin{knitrout}
@@ -2512,9 +2512,9 @@ PRE-POST ANALYSIS:
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in rescale(tlc\$groupPerformance, to = c(0, 100)): unused argument (to = c(0, 100))}}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in min(x): no non-missing arguments to min; returning Inf}}
 
-{\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error in rescale(tlc\$indPerformance[tlc\$time == 3], to = c(0, 100)): unused argument (to = c(0, 100))}}\end{kframe}
+{\ttfamily\noindent\color{warningcolor}{\#\# Warning in max(x): no non-missing arguments to max; returning -Inf}}\end{kframe}
 \end{knitrout}
 
 
@@ -2814,6 +2814,12 @@ PRE-POST ANALYSIS:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# \\\#\# Attaching package: 'lmerTest'}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:lme4':\\\#\# \\\#\#\ \ \ \  lmer}}
+
+{\ttfamily\noindent\itshape\color{messagecolor}{\#\# The following object is masked from 'package:stats':\\\#\# \\\#\#\ \ \ \  step}}
 
 {\ttfamily\noindent\bfseries\color{errorcolor}{\#\# Error: Invalid grouping factor specification, sessionName}}
 
