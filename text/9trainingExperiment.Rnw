@@ -3622,8 +3622,8 @@ PRE-POST ANALYSIS:
   tlc$indPerformance[tlc$time == 3] <- scales::rescale(tlc$indPerformance[tlc$time == 3], to = c(0, 100))
 
 #hist(tlc$groupPerformance)
-    tlc$groupPerformanceNorm <- scale(tlc$groupPerformance)
-    tlc$indPerformanceNorm <- scale(tlc$indPerformance)
+  #  tlc$groupPerformanceNorm <- scale(tlc$groupPerformance)
+  #  tlc$indPerformanceNorm <- scale(tlc$indPerformance)
 
 
 #tlc$groupPerformanceFactor # this is component performance, measured at T2 and T3
@@ -3642,7 +3642,7 @@ twc$condition <- factor(twc$condition, levels = c("low", "high"))
   tlc$groupPerfConfExpNorm <- scale(tlc$groupPerfConfExp)
 
 # do the same for ind Performance confidence and expectations
-  tlc$indPerfConfExp[tlc$time == 3] <- tlc$indPerformance[tlc$time == 3]
+  tlc$indPerfConfExp[tlc$time == 3] <- tlc$indPerformanceExpectations[tlc$time == 3]
   tlc$indPerfConfExp[tlc$time == 2] <- tlc$indConfidenceChallenges[tlc$time == 2]
   ##standardise indPerformancePrePost in order to align with other predictor variable factors:
   tlc$indPerfConfExpNorm <- scale(tlc$indPerfConfExp)
@@ -3971,7 +3971,8 @@ groupPerfClickChange +
 
 
 <<groupPerfClickChangeModel, eval=T, echo=F>>=
-library(lmerTest
+library(lmerTest)
+library(lme4)
   library(optimx)
 summary(perfClickChange.lmer <- lmer(groupClickChangePrePostNorm ~ groupPerfChangePrePostNorm
                                     + indPerfExpChangePrePostNorm
@@ -4112,6 +4113,71 @@ summary(clickBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~
 
 @
 
+%ASSUMPTIONS:
+<<clickBondChangeAssumptionsHist, echo=F,eval=T>>=
+  #1.historgram with density line
+  clickBondChangeResid <- resid(clickBondingChangeCondition.lmer, type = "pearson")
+  hist(clickBondChangeResid,
+       freq = FALSE,
+       main = "Distribution of M2.2 residuals \n (standardised)",
+       xlab = "Residuals")
+  lines(density(clickBondChangeResid, na.rm = TRUE))
+  dev.copy(pdf, "TEM22Hist.pdf")
+  dev.off()
+  #non-normality
+  clickBondChangeResid.Wald <- shapiro.test(clickBondChangeResid)
+  psych::describe(clickBondChangeResid)
+@
+<<clickBondChangeAssumptionsScatter, echo=F,eval=T>>=
+  #2.scatterPlot
+  plot(clickBondingChangeCondition.lmer, main = "Scatterplot of M2.2 Residuals \n (standardised)")
+  dev.copy(pdf, "TEM22Scatter.pdf")
+  dev.off()
+@
+<<clickBondChangeQQNorm, echo=F,eval=T>>=
+  #3.qqNorm
+  qqnorm(residuals(clickBondingChangeCondition.lmer), main = "Norm QQ Plot of M2.2 Residuals")
+  qqline(residuals(clickBondingChangeCondition.lmer))
+  dev.copy(pdf, "TEM22QQNorm.pdf")
+  dev.off()
+@
+<<clickBondChangeCooksD, echo=F,eval=T>>=
+  #indluential cases
+  #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+ library(influence.ME)
+  clickBondingChangeInfl <- influence(clickBondingChangeCondition.lmer, obs = TRUE)
+  clickBondingChangeClickCooksD <- cooks.distance(clickBondingChangeInfl)
+  clickBondingChangeClickCooksDMAX <- max(groupPerfChangeClickCooksD, na.rm = T)
+  plot(clickBondingChangeInfl,
+        which = "cook",
+        main = "M2.2 Influential cases \n (Cook's Distance)",
+        ylab = "participant",
+        xlab = "cooks.distance")
+  dev.copy(pdf, "TEM22CooksD.pdf")
+  dev.off()
+
+@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <<groupPerfBondingChangeCondition, eval=T, echo=F>>=
 # ggplot scatter with a slope for each condition
@@ -4161,6 +4227,66 @@ summary(perfBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~ 
 
 
 @
+
+
+
+%ASSUMPTIONS:
+<<perfBondChangeAssumptionsHist, echo=F,eval=T>>=
+  #1.historgram with density line
+  perfBondChangeResid <- resid(perfBondingChangeCondition.lmer, type = "pearson")
+  hist(perfBondChangeResid,
+       freq = FALSE,
+       main = "Distribution of M2.3 residuals \n (standardised)",
+       xlab = "Residuals")
+  lines(density(perfBondChangeResid, na.rm = TRUE))
+  dev.copy(pdf, "TEM23Hist.pdf")
+  dev.off()
+  #non-normality
+  perfBondChangeResid.Wald <- shapiro.test(perfBondChangeResid)
+  psych::describe(perfBondChangeResid)
+@
+<<perfBondChangeAssumptionsScatter, echo=F,eval=T>>=
+  #2.scatterPlot
+  plot(perfBondingChangeCondition.lmer, main = "Scatterplot of M2.3 Residuals \n (standardised)")
+  dev.copy(pdf, "TEM23Scatter.pdf")
+  dev.off()
+@
+<<perfBondChangeQQNorm, echo=F,eval=T>>=
+  #3.qqNorm
+  qqnorm(residuals(perfBondingChangeCondition.lmer), main = "Norm QQ Plot of M2.3 Residuals")
+  qqline(residuals(perfBondingChangeCondition.lmer))
+  dev.copy(pdf, "TEM23QQNorm.pdf")
+  dev.off()
+@
+<<perfBondChangeCooksD, echo=F,eval=T>>=
+  #indluential cases
+  #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+ library(influence.ME)
+  perfBondingChangeInfl <- influence(perfBondingChangeCondition.lmer, obs = TRUE)
+  perfBondingChangeClickCooksD <- cooks.distance(perfBondingChangeInfl)
+  perfBondingChangeClickCooksDMAX <- max(perfBondingChangeClickCooksD, na.rm = T)
+  plot(perfBondingChangeInfl,
+        which = "cook",
+        main = "M2.3 Influential cases \n (Cook's Distance)",
+        ylab = "participant",
+        xlab = "cooks.distance")
+  dev.copy(pdf, "TEM23CooksD.pdf")
+  dev.off()
+
+@
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
