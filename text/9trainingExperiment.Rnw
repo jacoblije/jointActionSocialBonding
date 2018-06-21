@@ -516,8 +516,8 @@ library(xtable)
 
 
   ## rename values for factors:
-  tlcGroupPerformance$sex <- ifelse(!is.na(tlcGroupPerformance$sex) &
-                                  tlcGroupPerformance$sex == 0, "male", ifelse(!is.na(tlcGroupPerformance$sex) & tlcGroupPerformance$sex == 1, "female", NA))
+  tlcGroupPerformance$sex <- ifelse(!is.na(tlcGroupPerformance$sex) & tlcGroupPerformance$sex == 0, "male", 
+                                    ifelse(!is.na(tlcGroupPerformance$sex) & tlcGroupPerformance$sex == 1, "female", NA))
 
   tlcGroupPerformance$time <- ifelse(!is.na(tlcGroupPerformance$time) &
                                     tlcGroupPerformance$time == 3, "Post",
