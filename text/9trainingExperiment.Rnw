@@ -138,11 +138,6 @@
 
 
 
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%ABSTRACT%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Abstract}
@@ -326,6 +321,13 @@ Surveys were generated in English by the researcher using Qualtrics software (Qu
 
   align(summaryTable) <- "llccc"
   print(summaryTable, file="surveyItemsByTime.tex")
+  
+  
+t.test(tlc$age~tlc$condition)
+hist(tlc$age[tlc$condition == "high"])
+hist(tlc$age[tlc$condition == "low"])
+summary(tlc$age)
+  
 @
 
 
@@ -1750,6 +1752,8 @@ In addition to athlete expectation violations concerning group and individual pe
   cronAlphaTeamDiscipline <- reliabilityTeamDiscipline$total[,2]
   guttLambdaTeamDiscipline <- reliabilityTeamDiscipline$total[,3]
 @
+
+
 <<teamDisciplineCor, echo=F,eval=T>>=
   # be sure to import the variable subset data frame, not the correlation matrix
   corstarsl(tlcTeamDiscipline)
@@ -1948,6 +1952,7 @@ It was predicted that that athletes in the high difficulty condition would be mo
         label = "tab:manipulationCheckTable"),
         file="manipulationCheckTable.tex")
 @
+
 <<groupConfChallengesTtest, echo=F,eval=T>>=
   groupConfidenceCondition.ttest <- t.test(high$groupConfidentTechnicalChallenges_2, low$groupConfidentTechnicalChallenges_2)
 @
@@ -1984,6 +1989,26 @@ It was predicted that that athletes in the high difficulty condition would be mo
   #var.test(high$groupConfidentTechnicalChallenges_2,low$groupConfidentTechnicalChallenges_2)
                                           # variance does not appear to differ significantly
 @
+
+<<groupConfidenceConditionLMER, echo=F,eval=T>>=
+  
+  # normalise DV:
+   twc$groupConfidentTechnicalChallenges_2Norm <- scale(twc$groupConfidentTechnicalChallenges_2)
+  
+  
+  # model
+  summary(conditionGroupConf.main <- lmer(groupConfidentTechnicalChallenges_2 ~ condition
+                            + objectiveCompetenceFactor + subjectiveCompetenceFactor 
+                            + (1|sessionName)
+                            , data = twc
+                            , REML = F
+                          )
+          )
+  
+@
+
+
+
 
 <<indConfChallengesTtest, echo=F,eval=T>>=
   indConfidenceCondition.ttest <- t.test(high$indConfidenceChallenges_2, low$indConfidenceChallenges_2)
@@ -2028,6 +2053,24 @@ indPerfBartlett <-  bartlett.test(indConfidenceChallenges_2 ~ condition, data = 
   #apa(indPerfBartlett)
 @
 
+
+<<indConfChallengesLMER, echo=F,eval=T>>=
+  
+  
+summary(indConfChallenges.main <- lmer(indConfidenceChallenges_2 ~ condition
+                            + objectiveCompetenceFactor + subjectiveCompetenceFactor 
+                            + (1|sessionName)
+                            , data = twc
+                            , REML = F
+                          )
+          )
+  
+@
+
+
+
+
+
 %(\Sexpr{t_test(groupConfidenceCondition.ttest)})
  %(\Sexpr{t_test(indConfidenceCondition.ttest)})
 Results of manipulation checks indicate that there were no overall condition-wise differences in athlete confidence in group or individual ability to meet the technical challenges of the drill (see Table ~\ref{tab:manipulationCheckTable} and Figures ~\ref{fig:groupConfChallengesBoxplot} and ~\ref{fig:indConfChallengesBoxplot}).
@@ -2064,6 +2107,25 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
                               xlim = c(-3, 2),
                               ylim = c(0,10))
 @
+
+
+<<arousalFactorPreConditionLMER, echo=F,eval=T>>=
+  
+  
+summary(arousalFactorPreCondition.main <- lmer(arousalFactorPre ~ condition
+                            + objectiveCompetenceFactor + subjectiveCompetenceFactor 
+                            + (1|sessionName)
+                            , data = twc
+                            , REML = F
+                          )
+          )
+  
+@
+
+
+
+
+
 <<arousalVariance, echo=F,eval=T>>=
   ##leveneTest(arousalFactorPre ~ condition, data = twc)
   #fligner.test(arousalFactorPre ~ condition, data = twc)
@@ -2194,6 +2256,7 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
 <<manipulationChecks3, echo=F,eval=T>>=
   #check if there are any meaningful changes in post-Experiment click and bonding
 @
+
 <<clickBondConditionPostTable, echo=F,eval=T>>=
   ##subset data for renaming
   twcClickBondPost <- subset(twc, select = c(age, sex, condition, team,
@@ -2216,8 +2279,10 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
   table1 <- CreateTableOne(vars = listVars,
                            strata = "Condition",
                            data = twcClickBondPost,
-                           factorVars = catVars
+                           factorVars = catVars,
+                           test = FALSE
                            )
+  
   ## create table which is printable
   table1_overall <- print(table1,
                               quote = FALSE,
@@ -2231,6 +2296,8 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
                       label = "tab:clickBondConditionPost"),
                       file="clickBondConditionPost.tex")
 @
+
+
 <<factorsByCondition, eval=T,echo=F>>=
   ## Compile the following factors:
   ##PERFORMANCE(4):
@@ -2362,7 +2429,8 @@ As Table ~\ref{tab:performanceConditionPost} shows, there were no observable sig
   tableFactorsCondition <- CreateTableOne(vars = listVars,
                                  strata = "Condition",
                                  data = tlcFactors,
-                                 factorVars = catVars
+                                 factorVars = catVars,
+                                 test = FALSE
                                  )
 
   table1_overall <- print(tableFactorsCondition,
@@ -2446,6 +2514,17 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 
 
 <<ICCestimatesSession, eval=T, echo=F>>=
+library(ICC)
+  # groupConfidence
+   groupConfidenceICC <- ICCest(sessionName, groupConfidentTechnicalChallenges_2 , data = twc, CI.type = "THD")
+
+  #indConfidence
+  indConfidenceICC <- ICCest(sessionName, indConfidenceChallenges_2 , data = twc, CI.type = "THD")
+    
+  #arousal
+  
+    arousalICC <- ICCest(sessionName, arousalFactorPre , data = twc, CI.type = "THD")
+  
   # performance
   performanceSessionICC <- ICCest(sessionName, groupPerformance_3Norm, data = twc, CI.type = "THD") #  0.06428764  / 7.102757 (k - unbalanced score)
   groupClickSessionICC <- ICCest(sessionName, groupClickPostFactor, data = twc, CI.type = "THD") #  0.1415473  / 7.102757 (k - unbalanced score)
