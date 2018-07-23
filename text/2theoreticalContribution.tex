@@ -220,7 +220,7 @@ PC thus involves a radical inverse of traditional models of cognition, which rel
 
 Preemptively modelling the causes of a complex array of sensory inputs involves a process of competition between predictions in order to develop a the most suitable hypothesis.  Neurocomputational evidence suggests that hypothesis formulation is supported in the human brain by multilevel and hierarchical arrangement of cortical structures, which enable bi-directional and non-linear cascades of information between levels \citep{Feldman2010}.  Higher levels of the cortical hierarchy formulate models based on prior experience, which are employed to ``explain away'' sensory signals at lower levels.  Lower level signals unaccounted for by higher level predictions are incorporated into higher level structures and strengthen the robustness of the hypothesis \citep{Clark2013}.
 
-\myparagraph{Second-order Bayesian inference}
+\myparagraph{Second-order Bayesian inference\label{sect:precisionWeighting}}
 At any one moment, an individual has access to multiple hypotheses derived from priors, which compete for the best fit of the sensation, until that process leads to fixation on the best hypothesis for the sensory state.  To understand the process of competition between predictive hypotheses, consider the phenomenon of binocular rivalry---a situation in which there is insufficient sensory information available in order to reach fixation on one model over another \citep[for example, looking at a necker cube, see Figure ~\ref{fig:neckerCube}][]{Frith2007}.
 
 \begin{figure}[htbp]
@@ -266,7 +266,7 @@ In the case of motor systems, agents are able to move their sensors in ways that
 
 Consider an ``active'' revision of the wind vs. thief example.  Two key differences in the model become apparent.  First, the evidence considered is broadened to include both interoceptive and proprioceptive information, in addition to exteroceptive evidence.  Assume that before you went to bed you just watched a horror movie, and when you woke up to the sound of a window creaking your heart began to pound and you immediately fixated on the hypothesis that a thief was causing your window to creak.  Fixation on the thief hypothesis can be explained by the contribution of interoceptive information (e.g., autonomic stress response, heart beat, etc.) to sensory the evidence \citep{Pezzulo2014}.  In addition, the incorporation of proprioceptive information into the model (for example, the possibility of moving to turn on the bed-side lamp) creates additional cognitive affordances through which higher level predictions could be strengthened (or free energy can be minimised).  This difference in the model demonstrates how perception, emotion, and action are functionally integrated in human cognition.
 
-Second, broadening sensory inputs in the model also introduces the problem of differential reliability of sensory inputs.  The wind vs. thief example describes a situation in which exteroceptive information is relatively unreliable: it is dark, so visual inputs are restricted, and what you heard is unreliable because you just woke up and maybe it was part of a dream.  By contrast, interoceptive information is usually quite certain: you can be certain that your heart is pounding and that you feel unnerved.  In this particular case, interoceptive inputs may have a greater influence on the overall inference due to their reliability.  As explained above, evidence suggests that the brain deals with multiple sensory inputs via a process of ``Bayesian multisensory integration'' \citep{Ernst2004}, with the reliability of each sensory input proportional to the inverse of its variance.  In the wind vs. thief example, the interoceptive information from your body, precision-weighted as the most reliable source, will likely tip the model to favour the hypothesis that it is a thief, in which case you will move your body in ways that reconcile discrepancy between proprioceptive predictions that also correspond to the thief hypothesis, and therefore are tuned to a higher volume in the model. The result of this trajectory of action and perception may be that you act by turning on your bedside lamp \citep{Pezzulo2014}.
+Second, broadening sensory inputs in the model also introduces the problem of differential reliability of sensory inputs.  The wind vs. thief example describes a situation in which exteroceptive information is relatively unreliable: it is dark, so visual inputs are restricted, and what you heard is unreliable because you just woke up and maybe it was part of a dream.  By contrast, interoceptive information is usually quite certain: you can be certain that your heart is pounding and that you feel unnerved.  In this particular case, interoceptive inputs may have a greater influence on the overall inference due to their reliability.  As explained above, evidence suggests that the brain deals with multiple sensory inputs via a process of ``Bayesian multisensory integration'' \citep{Ernst2004}, with the reliability of each sensory input proportional to the inverse of its variance.  In the wind vs. thief example, the interoceptive information from your body will be precision-weighted as the most reliable source, and will likely tip the balance of the model to favour the hypothesis that it is a thief.  In this case, you will move your body in a way so as to reconcile the discrepancy between proprioceptive predictions that also correspond to the thief hypothesis (and therefore also tuned to a higher volume in the model).  The result of this trajectory of action and perception may be that you act by turning on your bedside lamp \citep{Pezzulo2014}.
 
 Thus, the combination of mutlisensory integration (of exteroceptive, proprioceptive, and interoceptive information) and Bayesian precision-weighting of prediction errors provides the necessary mechanics for a conception of human cognition that is both active and embodied.    In the following section, I introduce the concept of affordances as a necessary compliment to the PC paradigm and a core component of the AIF.
 
@@ -308,7 +308,7 @@ Team click is a powerful subjective experience in which many of these binaries a
 %\myparagraph{Auxiliary approaches to joint action}
 The AIF proposal offers a more integrative alternative to existing models of joint action, which rely on mechanisms of sensory prediction (of self, other, and joint actions) that are individually-bounded and auxiliary to joint action itself \citep{Pesquita2017}.   \textcite{Keller2016}, for example, presented a conceptual framework that applies an ``auxiliary forward model'' (AFM) approach to musical joint actions.  The AFM approach requires that agents produce predictive models responsible for individual action planning and control (self-internal models), prediction of others' actions (other-internal models), and representation of the shared goal (joint-internal models).  Of these three types of models, however, only self-internal models comprise the auxiliary predictive architecture (i.e., the forward model containing an efference copy of one's own action, and ``inverse models'' that are responsible for output of motor commands ~\ref{app2:theory}, Section ~\ref{app2:motorControl} for a more detailed explanation of these terms).  Thus, both anticipation and compensation in joint action depends on a control loop, whereby sensory information (error signals) are routed (fed-back) through self-internal models, which inform the production of auxiliary predictions---of self, other, and joint action---grounded in individual motor simulations.  Importantly, in this model,  error signals are fed-back only to the self-inverse model, as no inverse model for the joint action partner exists.
 
-The longstanding proposal that individuals only produce auxiliary predictive models of their own actions (as opposed to others' actions too) has served to explain how individuals effectively attend to others in joint action.  With privileged access to an efferent copy of impending individual action, an agent is able to preemptively attenuate sensitivity to their own action, in order to attend to the actions (and prediction errors) of others \citep{Wolpert1998}.  For example, the AFM approach provides an explanation for the phenomenon of tickling, or specifically why it is near impossible to tickle oneself \citep[due to sensory attenuation resulting from the self-generated predictions about the consequences of action][]{Blakemore2003}. However, while the AFM has proven adequate to explain individual motor control, and some instances of joint action (such as tickling), it also contains potential shortcomings when applied to dynamical joint action scenarios.
+The now longstanding proposal that individuals only produce auxiliary predictive models of their own actions (as opposed to others' actions too) has served to explain how individuals effectively attend to others in joint action.  With privileged access to an efferent copy of impending individual action, an agent is able to preemptively attenuate sensitivity to their own action, in order to attend to the actions (and prediction errors) of others \citep{Wolpert1998}.  For example, the AFM approach provides an explanation for the phenomenon of tickling, or specifically why it is near impossible to tickle oneself \citep[due to sensory attenuation resulting from the self-generated predictions about the consequences of action][]{Blakemore2003}. However, while the AFM has proven adequate to explain individual motor control, and some instances of joint action (such as tickling), it also contains potential shortcomings when applied to dynamical joint action scenarios.
 
 \textcite{Pesquita2017} summarise three shortcomings when applying AFM to joint action.  First, the AFM model assumes a static and unchanging representation of the shared goal and the other's goal, and provides no mechanism through which the shared goal representation can be dynamically updated (based on prediction error signals).  This issue limits the ability of AFM to account for the real-world flexibility and interchangeability of shared goals (for example, the adaptive switching between the shared goal of carrying a table or the bench depending on the location of both objects).  Second, the same rigidity applies to other-inverse models.  The inability to directly and dynamically update other-models suggests the practical possibility that self and other models may gradually diverge over time due to the lack of sufficient predictive information regarding the actions of others \citep{Pickering2014}. Third, the AFM approach does not specify how sensory input is differentially used to update self and other models, which limits the model's ability to account for learning and adaptation within joint action \citep{Pesquita2017}.  Thus, not only does the AFM approach appear to be computationally intensive (due to the recruitment of auxiliary inverse models and dual motor commands, discussed in Section ~\ref{sect:predictiveCoding}), it also appears to be unable to fully account for the dynamic flexibility of real-world joint action.
 
@@ -317,7 +317,7 @@ The AIF offers a thoroughly dynamical approach to joint action, whereby two (or 
 
 The recurrent predictions of both brains about one another threatens an infinite runaway regress that could preclude accurate modelling of either brain.  However, as Friston and Frith demonstrate formally (mathematically), this recursion dissolves if the models of the two brains are formally similar \citep{Friston2015}.  When grounded in computational similarity, each brain is able to generate predictions of the sensory outcomes caused by itself and the other in the same way.  The authors propose that this will lead to dynamical ``generalised synchronisation'' \citep{Barreto2003}, or dynamical coupling between the internal models of both brains (for a more detailed explanation of general synchronisation and its dynamical underpinnings, see Appendix ~\ref{app2:theory} Section ~\ref{sect:generalSync}).  In this way, two or more brains are able to accurately predict each other's behaviour based on feedback of exteroceptive (sensory information from the actions of others and the task environment) and proprioceptive (pertaining one's own contribution to joint action) prediction errors.  In essence, other agents exist as affordances to which individual brains couple, and upon which individual brains become dependent for ongoing (joint) processes of action, perception, and attention.
 
-In place of auxiliary processes of prediction, the AIF for joint action hinges instead on the function of precision weighting of prediction errors in order to facilitate and finesse joint action.  When performing action, the individual turns down the volume (reduce the precision weighting) on prediction errors relating to one's own action so that movement can occur unimpeded by over-attention to self-generated prediction errors \citep[an intuitive example of the opposite of this ideal scenario is when the flow of speech is interrupted due to the availability of exteroceptive auditory feedback in the case of a Skype call][]{Friston2015}.  Alternatively, when attending the the action of others, the attenuation of proprioceptive error signals can cease. In this way, precision weighting is used to flexibly adjust the volume of multi-modal prediction errors (exteroceptive, interoceptive, and proprioceptive) in order to finesse and sustain generalised synchronisation (the shared narrative on which joint action is sustained).
+In place of auxiliary processes of prediction, the AIF for joint action hinges instead on precision weighting of prediction errors in order to facilitate and finesse joint action \citep{Friston2015}.    When engaged in joint action, the individual turns down the volume (reduce the precision weighting) on prediction errors relating to one's own action so that movement can occur unimpeded by over-attention to self-generated prediction errors \citep[an intuitive example of the opposite of this ideal scenario is a Skype call in which the flow of an individual's speech is interrupted by auditory feedback from the other receiver's device (feedback that would otherwise be attenuated by the speaker), see][]{Friston2015}.  Alternatively, when attending the the action of others, the attenuation of proprioceptive error signals can cease. In this way, precision weighting is used to flexibly adjust the volume of multi-modal prediction errors (exteroceptive, interoceptive, and proprioceptive) in order to finesse and sustain generalised synchronisation---the shared narrative on which joint action is sustained).
 
 Heuristically, this suggests that active inference in joint action takes one of two modes; either 1) flexibly attending to sensations or
 2) acting during periods of sensory attenuation \citep{Friston2015}.  The active inference explanation for ticklishness, for example, is an inferential mode in which the volume on proprioceptive prediction error is ``dialled-up.''  The failure of self-tickling, by contrast, pertains to a mode of active inference in which the volume of proprioceptive prediction is ``dialled-down'' to enable smooth flow of action execution.
@@ -360,49 +360,95 @@ In sum, PJAM provides a framework for the function of active inference in joint 
 
 
 
-\subsubsection{AIF for team click and social bonding in joint action\label{}}
+\subsection{AIF for team click and social bonding in joint action\label{}}
 
 How can the AIF be used to account for team click and social bonding in joint action? In this section, I draw attention to evidence for mechanisms relevant to joint action that could generate
 
-As explained in Chapter ~\ref{chap:intro}, the link between joint action and social bonding has been addressed in the behavioural mimicry and synchrony literatures \citep[see Chapter ~\ref{chap:intro} Section ~\ref{sect:synchrony}. There is now strong evidence to suggest that a combination of 1) neuropharmacological reward arising from lower-cognitive affective mechanisms, 2) self-other merging resulting from neurocognitive alignment, and 3) reinforcement of cooperative relationships owing to experience of interpersonal association in joint action generates a psychophysiological environment conducive to generating social bonds.  Yet, almost all of these studies operationalise joint action as exact in-phase behavioural synchrony \citep[see][]{Mogan2017}, and there is much less substantive evidence of the bonding effects of complex and dynamic joint action scenarios \citep[but see][]{Marsh2009,Miles2009,Lumsden2012}.  More fundamentally, the research dedicated to the putative synchrony-bonding link focusses most of its attention on the proximate and affective mechanisms of joint action, and accounts less for how synchrony-induced lower-level physiological and affective mechanisms facilitate more elaborate (higher-order) cognitive and social processes that also form part of processes of bondedness, social cohesion, and cultural transmission \citep{Heyes2012}.
+As explained in Chapter ~\ref{chap:intro}, the link between joint action and social bonding has been addressed in the behavioural mimicry and synchrony literatures \citep[see Chapter ~\ref{chap:intro} Section ~\ref{sect:synchrony}.
+There is now strong evidence to suggest that a combination of 1) neuropharmacological reward arising from lower-cognitive affective mechanisms, 2) self-other merging resulting from neurocognitive alignment \citep{Rizzolatti2010}, and 3) reinforcement of cooperative relationships owing to experience of interpersonal association in joint action \citep{Reddish2013} generates a psychophysiological environment conducive to generating social bonds.  Yet, almost all of these studies operationalise joint action as exact in-phase behavioural synchrony \citep[see][]{Mogan2017}, and there is much less substantive evidence of the bonding effects of complex and dynamic joint action scenarios \citep[but see][]{Marsh2009,Miles2009,Lumsden2012}.  Secondly, and more fundamentally, research dedicated to the putative synchrony-bonding link focusses most of its attention on the proximate and affective mechanisms of joint action, and accounts less for how synchrony-induced lower-level physiological and affective mechanisms facilitate higher-order cognitive and social processes associated with bondedness, social cohesion, and cultural transmission \citep{Heyes2012}.
 
-As I argue in this dissertation, these dual shortcomings of the social cognition of joint action represent two sides of the same coin. On one side, how behaviourally complex joint actions generate social and physiological effects remains poorly theorised; on the other side, the causal role of physiological and social effects on complex cognitive and cultural processes (i.e., cultural transmission and evolution) is also poorly understood.  I suggest that adopting an integrative model of cognition (AIF) can help advance understandings of the interlocking physical, affective, cognitive, and cultural mechanisms of social connection in joint action and cognitive and evolutionary processes more generally \citep{Ramstead2018}. Indeed, the AIF serves to collapse the traditional distinction between physical, affective, cognitive, and cultural processes, under one overarching mandate of free energy minimisation.
+As I argue in this dissertation, these dual shortcomings of the social cognition of joint action represent two sides of the same coin. On one side, how behaviourally complex joint actions generate social and physiological effects remains poorly theorised; on the other side, the causal role of physiological and social effects on complex cognitive and cultural processes (i.e., cultural transmission and evolution) is also poorly understood.  I suggest that adopting an integrative model of cognition (the AIF) can help advance understandings of the interlocking physical, affective, cognitive, and cultural mechanisms of social connection in joint action and cognitive and evolutionary processes more generally \citep{Ramstead2018}. Indeed, the AIF serves to collapse the traditional proximate-level distinction between physical, affective, cognitive, and cultural processes, under one overarching mandate of free energy minimisation.
 
-\myparagraph{Team click}
+\subsubsection{Team click}
+As discussed above, the AIF for joint action, summarised in PJAM above, suggests that successful performance and social connection in joint action require not just exact behavioural synchrony, but generalised synchronisation of two or more free energy minimising systems \citep{Friston2015}.  Dynamical coupling of cognitive processes entails a continuum of generative models within brains tightly coupled to a spectrum of natural and conventional affordances---specifically the affordances of co-actors, but also other features of the neuro-external environment \citep{Clark2015}.
 
-As discussed above, the AIF for joint action suggests that successful performance in joint action will require a continuum of generative models tightly coupled to a spectrum of natural and conventional affordances \citep{Clark2015}.  In other words, a range of basic  The cognitive mechanisms that generate subjective perceptions of multimodal alignment between co-actors---what I term team click---could explain the relationship between joint action and social bonding in group exercise.
+Considered from the perspective of the AIF, the experience of team click and social connection in joint action will derive not simply from exact coupling of sensorimotor processes (as in the case of behaivoural synchrony), or else to more explicitly perceived alignment of shared expectations surrounding a joint task \citep[cf.][]{VanderWel2012}. Rather, the click of joint action will theoretically entail an entire double helix of interlocking predictions and affordances spanning the most basic correlational models of sensorimotor coupling, through to the most densely semantic and proposition forms of explicit knowledge and communication.
 
-Recap click components and reduce to dimensions (surprise, viscerality, agency); how these dimensions track to mechanisms of AIF (multisensory integration
-
-%\myparagraph{The social quirks arising from 2nd-order bayesian inference}
-
-
-
-
-\myparagraph{Surprise}
-Surprise (unanticipated error: less precision, higher reward)
-Friston,
-Chetverikov2016
-
-
-\myparagraph{Visceral}
-(due to inherent cognitive challenge of JA)
-
-Could be due to
-
-\myparagraph{Agency}
-
-Sensory tuning and agency: blurring boundaries between self and other agency
-
-
+In this section I reduce the components of team click outlined above to three core dimensions---surprise, viscerality, and agency---for which the mechanisms of the AIF can offer predictions (see Table ~\ref{tab:teamClickMechanismsAIF}).  The relevant mechanisms of the AIF are predominantly associated with processes of second-order Bayesian inference, specifically affective reward mechanisms associated with ``exploitation-exploration'' dynamics in free energy minimisation \citep{Friston2012,Schwartenbeck2013,FitzGerald2014,Chetverikov2016}, 2) reliability-based multi-modal sensory integration \citep{Ernst2004}, and 3) flexible attenuation ~\citep{Frith2007,Friston2015} of exteroceptive and proprioceptive inputs in dynamic joint action.  In brief, the affective, visceral, and agentic dimensions of team click suggest that team click sets the foundation for social bonding, which I propose here to include elements of emotional support and perceptions of common goal \citep[cf.][]{Dunbar2012,Wolf2015}, as well as shared social identity between co-actors \citep{Whitehouse2014}.  I review each dimension of team click below and propose relevant mechanisms of the AIF.
 
 \input{images/teamClickMechanismsAIF}
 
+\myparagraph{Positive violation of expectations in performance}
+
+As explained in Section ~\ref{sect:teamClickIntro}, team click in joint action is associated with strong positive affect: pleasurable, autotelic sensations of rush or flow.  While optimal performance in joint action is perhaps always the ultimate goal, particularly for elite practitioners such as athletes and music or dance performers, when team click occurs it also often appears to be unanticipated and surprising.  Thus, team click is experienced as a \textit{positive} violation of expectations around team performance.
+
+Surprise is a term with various connotations on different levels of analysis.  As an emotion, surprise can generally take one of two forms according to its affective valence, i.e., surprise that carries a positive valence (as in the case of team click, for example) or surprise that carries a negative valence  \citep[in the case of shock or fright][]{Chetverikov2014}.  The affective experience of surprise thus appear to be linked with cognitive processes of prediction, specifically the experiential manifestation of discrepancy between a predicted state and an actual state \citep{Foster2015}.  The precise details of this link, are yet to be fully understood, however \citep{Schwartenbeck2013}.
+
+Considered from the point of view of traditional predictive (forward) models of cognition (such as the AFM, see Section X), negatively valenced surprise makes sense, at least intuitively.  If the brain is
+in the business of reducing the discrepancy between predicted and actual states, then negative surprise will act as a signal to motivate a reduction in prediction errors.  However, this intuition leaves less room for an understanding of positive surprise.  If the goal is to reduce prediction error, why would surprise be rewarded with such powerful sensation?
+
+The puzzle of positive surprise relates to a more general paradox associated predictive forward model approaches to cognition, described as the ``dark room dilemma'' \citep{Mumford1992}.  As evocatively described by Mumford:
+
+      \begin{quote}
+        How can a neural imperative to minimise prediction error by enslaving perception, action, and attention accommodate the obvious fact that animals don’t simply seek a nice dark room and stay in it? Surely staying still inside a darkened room would afford easy and nigh-perfect prediction of our own unfolding neural states? Doesn’t the story thus leave out much that really matters for adaptive success: things like boredom, curiosity, play, exploration, foraging, and the thrill of the hunt? \citep[243]{Mumford1992}
+      \end{quote}
+
+Although it is readily observable that animals live in a changing and challenging world and deploy quite complex strategies to survive and thrive within diverse and dynamic environments, original forward models lacked a sufficient theoretical justification for why the predictive drive did not simply lead to dark room stasis \citep{Clark2013}.  Encased within traditional linear and passive stimulus-response models of cognition, an account of co-existing and competing drives for familiarity and novelty proved difficult \citep{Kelso2009}.
+
+However, when considered from within the unifying framework of free energy minimisation, the dark room dilemma dissolves, and the role of positive surprise becomes clearer.  As the free energy principle states, every system that maintains itself conforms to the imperative of minimising the surprise associated with the states it encounters \citep{Friston}.  Surprise is defined here in an information-theoretic sense as an approximation of average free energy, rather than necessarily an affective experience \citep[in fact, Tribus distinguished information-theoretic ``surprisal'' from surprise in an active attempt to separate the two concepts cf.][]{Tribus1961}.  Within the AIF, minimisation of surprisal exists on two scales: minimisation of long-term surprisal of the organism (i.e., entropy), as well as minimisation of surprisal in a given generative model \citep[i.e., free energy, see][2]{Schwartenbeck2013}.  Given the complex and hierarchical structure of generative models, which exist across multiple timescales and sensory modalities,  minimising surprisal in the context of one model may generate surprise in the context of another model.  The free energy principle thus explains why humans, far from being bound to seek out a dark room, are instead compelled to minimise free energy at multiple scales via co-existing strategies of ``exploitation'' (optimal free energy minimisation of a specific generative model), and ``exploration'' \citep[optimal free energy reduction of surprisal on broader scales, i.e., in the context of other generative models or the life of the organism more generally; see][]{Cohen2007}.  As Clark explains,
+
+      \begin{quote}
+        Change, motion, exploration, and search are themselves valuable for organisms living in worlds where resources are unevenly spread and new threats and opportunities continuously arise.  This means that change, motion, exploration, and search themselves become predicted and enacted accordingly \citep[193]{Clark2013}
+      \end{quote}
+
+Thus, while it is plausible that the emotion of surprise is somehow tethered to cognitive processes of prediction error minimisation, the AIF demonstrates that this relationship does not align in a 1:1 fashion, and instead is governed by the overarching mandate of free energy minimisation.  As such, the emotional experience of surprise could conceivably span a full spectrum of positive and negative of emotional valence, depending on the location of surprisal in various generative models.  In the case of team click, for example, positive surprise could arise form a scenario in which an individual is fixated on the exploitation of a specific generative model (for example, focus on individual movement), and this model is violated (surprisal) by the less anticipated successful joint action.
+
+Researchers have hypothesised that exploitation-exploration dynamics are supported by a relationship between second-order Bayesian inference (precision weighting) and affective reward  \citep{Friston2012,Chetverikov2016}.  First, precision (attention) will be assigned to error signals as an inverse function of the variance of their prior probability distribution.  In other words, if a prediction pertaining to a sensory input is highly likely (based on prior experiences), then the variance of its prior probability distribution will be low (positive kurtosis) and it will receive greater precision weighting.  Second, affective reward will be assigned to error signals as a direct (as opposed to inverse) function of the variance of their prior probability distribution. In essence, the less likely a prediction is to be correct, the more surprise (in an affective sense) it will entail.  Thus, while highly predictable inputs will receive a certain amount of affective reward, reward will diminish as unfolding action consumes the gradient of free energy, producing a spiky, less attractive reward.  Meanwhile, scenarios involving highly variable prior probability distributions, such as dynamic coordination of behaviour in joint action, promise powerful affective payoffs.
+
+Neurobiological evidence generally supports this proposal, however it is yet to be thoroughly tested empirically.  Cortical processes of prediction error management appear to be mediated by the activity of the dopaminergic system \citep{Kakade2002,Schultz2016}, while subcortical neuromodulatory systems, such as those responsible for producing norepinephrine, acetylcholine, and endogenous opioids, appear to be involved in attuning cortical processing to signals from the body and environment that are important for survival \citep{Lewis2005}.
+
+In sum, positive violation of expectation in joint action could pertain to the momentary transfer of attention away from more reliable inputs (such as the sensorium most proximate and controllable by an individual) towards sensory inputs deriving from dynamic general synchronisation.  
 
 
 
 
-\myparagraph{Social bonding}
+\myparagraph{Visceral}
+
+First, a Bayesian brain tasked with weighting precision errors in highly uncertain, on-line joint action would likely turn down the volume on exteroceptive precision errors.  Think back to the wind vs thief example used above (Section ~\ref{sect:windThief}). In some respects, waking up in a dark room in the middle of the night is not too dissimilar to taking the rugby field: the reliability of exteroceptive information will be less reliable than information generated internally, via interoceptive and proprioceptive inputs. As such, it could be predicted that the interoceptive and proprioceptive inputs to the total evidence will be weighted more reliable than exteroceptive inputs.
+
+ Interoceptive information could therefore provide an embodied grounding for the feeling of click.  This would make sense considering that often athlete descriptions of flow and team click involve pre-linguistic and pre-perceptual phenomenological description, accompanied by a lack of awareness of how click was achieved (i.e., due to a dearth of exteroceptive information about the experience).
+
+
+\myparagraph{Agency}
+
+
+Sensory tuning and agency: blurring boundaries between self and other agency
+
+equires constant execution of movement, contemporaneous with the movement of others. As discussed above, movement requires the attenuation of proprioceptive information (so as not to interrupt the flow of movement itself).  Thus, it can be predicted that the volume on proprioceptive error signals will at times be turned down low, at least while participants are executing movement.  There may need to be some optimal tradeoff here, in which the volume is not turned down too low, so as to keep track of the movements of others while moving.
+
+Attenuation of proprioception is strongly correlated with experiences of self agency, and inversely correlated with ascribing agency to sources external to the self \citep{Brown2013}.  The constant need to switch modes between perceiving and acting, or else find an optimal tradeoff in which precision weighting of proprioceptive information is set somewhere in the middle, could conceivably generate the blurring of agency between self and other.
+
+Discrepancy between prediction and sensory input can alter the experience of agency \citep{Sato2008}.  Unpredicted sensory input can lead to ascribing agency for that input to an external source, for example, other participants in joint action or the external environment \citep{Sato2005,Frith2007}.  As has been well documented in the case of schizophrenia, attribution of agency in social interaction may be modulated by individual variation in ``locus of control'' (the degree to which events are perceived to result from one’s own actions or not), and this may be related to improper function of the parietal cortex \citep{Frith2000}. In healthy adult populations of humans, meanwhile, it can be predicted that ascribing agency to sources external to the self will occur more in situations in which there is a larger discrepancy between predicted and actual sensory inputs.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsubsection{Social bonding}
 
 
 Shared narrative:
@@ -419,7 +465,9 @@ the content, and as such it was completely transformative of his capacity to eng
 
 
 
-The radical proposal of the AIF for joint action is that, unlike the AFM approach, the AIF formally theorises the way in which cognitive resources are shared between two or more brains, bodies, and the task-specific environment \citep{Clark2015}.  Therefore, social connection in joint action can be conceived as dynamic coupling between agents, which spans a continuum of basal sensorimotor processes, through to higher order beliefs facilitated by regimes of shared attention.  In this sense, social connection in joint action could arise in situations in which individuals perceive click between co-actors and other affordances contained within a certain field of activity.  In this dissertation, I develop the idea that in real world joint action scenarios such as interaction team sport, co-actors interact and rehearse their behaviours to produce a hierarchy of aligned representations, an implicit ``common ground'' \citep[cf.][]{Noy2017} on which joint action can unfold, and social connection may be found through team click.
+The radical proposal of the AIF for joint action is that, unlike the AFM approach, the AIF formally theorises the way in which physical, cognitive, and social resources are shared between two or more brains, bodies, and the task-specific environment \citep{Clark2015}.
+
+Therefore, social connection in joint action can be conceived as dynamic coupling between agents, which spans a continuum of basal sensorimotor processes, through to higher order beliefs facilitated by regimes of shared attention.  In this sense, social connection in joint action could arise in situations in which individuals perceive click between co-actors and other affordances contained within a certain field of activity.  In this dissertation, I develop the idea that in real world joint action scenarios such as interaction team sport, co-actors interact and rehearse their behaviours to produce a hierarchy of aligned representations, an implicit ``common ground'' \citep[cf.][]{Noy2017} on which joint action can unfold, and social connection may be found through team click.
 
 %we are already connected!! (China, fusion)
 %This ``shared narrative'' which supposedly transcends agency, is supported by the self-organising
@@ -427,29 +475,12 @@ The radical proposal of the AIF for joint action is that, unlike the AFM approac
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 \section{Active inference in group exercise \label{sect:activeInfGE}}
 
 In the previous section I reviewed evidence in support the AIF for joint action, and possible pathways between joint action, team click, and social bonding.  The AIF begins with the assumption that, on a basal level, joint action consists of two or more Bayesian inferential systems attempting to minimise free energy by modelling the hidden causes of sensory stimuli.  From sheer computational perspective, joint action is an inherently challenging task, but it appears that ``general synchronisation'' derived from the coupling of two or more agents facilitates a shared narrative (functionally equivalent models for joint action).  This perceptual common ground resembles a situation in which ``adjustments for ``Am I?'' and ``Are You?'' and ``Where Are We?'' and stuff like that...'' (see Section ~\ref{sect:teamClickIntro}) dissolve, and a transcendent ``we-mode'' of collective agency is glimpsed \citep[][]{Friston2015}.  Anecdote and observation of real-world joint action scenarios suggests that achieving the ``click'' of joint action---in spite of its uncertainty, and however momentarily it lasts---can be a deeply rewarding experience.  In the case of joint action in group exercise contexts, it appears that various features of group exercise serve to amplify both the challenges of joint action, as well as the psycho-social rewards derivable from adherence.
+
+\subsection{Group exercise spikes uncertainty of joint action}
+
 
 \myparagraph{Group exercise involves multi-agent (and not just dyadic) joint action}
 Above and beyond normal day-to-day instances of communication and exchange, joint action in group exercise contexts such as sport place extreme cognitive load on participants. The active inference approach to joint action outlined above is based on preliminary models of dyadic joint action involving turn taking \citep[i.e., in bird song exchanges][]{Friston2015}.  Group exercise contexts, particularly modern sport contexts, often involve large numbers of co-participants, in either ``inter-active'' or ``co-active'' modes of coordination.
@@ -461,7 +492,7 @@ Thus, achieving cognitive synchronisation in joint action of group exercise cont
 \myparagraph{Joint action in group exercise is ``on-line'' and ``in-the-moment''}
 Particularly in the case of interactive team sports, interpersonal movement coordination is often executed ``on-line'' and ``in the moment,'' as opposed to step-by-step turn taking.  This fact poses a challenge to Friston and Frith's proposal that active inference in joint action comprises two modes (either actively attending to sensory stimuli, or else moving while in a state of sensory attenuation, see Section ~\ref{sect:activeInfJA} above).  Exactly what occurs when actors need to concurrently move and sense others moving at the same is poorly understood.  What happens to the precision weightings---the volume gauges---on proprioceptive, interoceptive, and exteroceptive prediction errors In instances of dynamic interactive joint action involving co-occurence of movement between agents in joint action?   What is the impact of on-line and in the moment join action on the experiences of agency in group exercise?  Empirical research is yet to provide answers to these questions.
 
-\myparagraph{Group exercise involves competition}
+\myparagraph{Joint action in group exercise often involves competition}
 As if the cognitive load of multiple agents and on-line coordination of complex schemas for joint action was not enough for the humble human brain, interactional team sports also usually involves \textit{competition}.  While competition in sport is usually adorned with elaborate social meanings surrounding the ethics of winning and losing \citep{McNamee2008}, on a cognitive level, competition in joint action entails one individual or team of individuals actively attempting to foil or disrupt the predictive models of another individual or team of individuals \citep{Reimer2006}.  The competitive dimension of interactional team sports thus serves to further spike cognitive uncertainty between co-actors in joint action.  The uncertainty involved in competitive joint action scenarios could have further implications for the ability of second-order Bayesian inference concerning the reliability of sensory inputs \citep{Pezzulo2014}.
 
 \myparagraph{Group exercise involves metabolic tradeoffs in the brain}
@@ -481,28 +512,28 @@ extra-personal (rather than inter-personal) regulation processes in order to fac
 
 
 \subsection{Team click and the dark room dilemma}
-The evidence reviewed above demonstrates the human ability to flexibly deploy a range of cognitive strategies, seemingly towards the ultimate goal of free energy minimisation.  Inherent in the application of the free energy principle to group exercise is the paradox that group exercise is an activity that appears to deliberately amplify uncertainty.  In the active inference proposal outlined above, humans are depicted as free-energy minimising systems, driven by the ultimate goal of reducing surprise and maximising efficiency in their interactions with the environment \citep{Friston2010}.  Why do humans seek out and receive high rewards through activity in environments riddled with uncertainty?
-
-On the face of things, the free energy mandate suggests an ``ultimate stable state'' \citep{Mumford1992}, in which all surprise minimised.  As evocatively described by Mumford:
-
-\begin{quote}
-  How can a neural imperative to minimize prediction error by enslaving perception, action, and attention accommodate the obvious fact that animals don’t simply seek a nice dark room and stay in it? Surely staying still inside a darkened room would afford easy and nigh-perfect prediction of our own unfolding neural states? Doesn’t the story thus leave out much that really matters for adaptive success: things like boredom, curiosity, play, exploration, foraging, and the thrill of the hunt? \citep[243]{Mumford1992}
-\end{quote}
-
-The simple response is that animals (humans included) live and forage in a changing and challenging world, and hence ``expect'' to deploy quite complex strategies to stay within our species-specific window of viability \citep{Bruineberg2014}.  As Clark explains,
-
-\begin{quote}
-  Change, motion, exploration, and search are themselves valuable for organisms living in worlds where resources are unevenly spread and new threats and opportunities continuously arise.  This means that change, motion, exploration, and search themselves become predicted and enacted accordingly \citep[193]{Clark2013}
-\end{quote}
-
-
-Agents infer a policy that minimises surprise by minimising the difference (or relative entropy) between likely and desired outcomes, which involves both pursuing the goal-state that has the highest expected utility (often termed “exploitation”) and visiting a number of different goal-states (“exploration”). Crucially, the opportunity to visit new states increases the value of the current state. Casting decision-making problems within a variational framework, therefore, predicts that our behavior is governed by both the entropy and expected utility of future states. This dissolves any dialectic between minimizing surprise and exploration or novelty seeking.
-(Schwartenbeck2013)
-
-There is evidence to suggest that the tradeoff between free energy minimisation and the search for novelty, creativity, and play (i.e., uncertainty) appears to be supported by a regime of affective rewards calibrated to precision-weighting dynamics \citep{Chetverikov2016}.
+The evidence reviewed above demonstrates the human ability to flexibly deploy a range of cognitive strategies, seemingly towards the ultimate goal of free energy minimisation.  Inherent in the application of the free energy principle to group exercise is the paradox that group exercise is an activity that appears to deliberately amplify uncertainty.
 The details of these proximate mechanisms could shed light on the phenomenon of team click and its associated downstream psychosocial effects, including social bonding and social cohesion.  Joint action in group exercise, and the phenomenon of team click in particular thus offers a fascinating space in which to investigate the social cognition of active inference in joint action.  Active inference provides a theoretical frame through which the social cognition of joint action can be more clearly rendered and comprehended.
 
 %How, then, do we explain the widespread prevalence of group exercise contexts, which appear to be riddled with uncertainty owing to the overwhelming complexity of joint action requirements and extreme physiological demands?  The phenomenon of team click could lie at the heart of an explanation to this paradox.
+
+
+
+\subsection{Group exercise offers ready-made semantic inputs}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 \subsection{AIF for team click and social bonding in group exercise}
 
@@ -574,26 +605,6 @@ The components of team click outlined above indicate that this often observed ph
 
 How does joint action in group exercise generate the experience of team click?
 
-\subsubsection{Dialled-up interoception}
-Given these conditions, an active inference approach would predict the following.  First, a Bayesian brain tasked with weighting precision errors in highly uncertain, on-line joint action would likely turn down the volume on exteroceptive precision errors.  Think back to the wind vs thief example used above (Section ~\ref{sect:windThief}). In some respects, waking up in a dark room in the middle of the night is not too dissimilar to taking the rugby field: the reliability of exteroceptive information will be less reliable than information generated internally, via interoceptive and proprioceptive inputs. As such, it could be predicted that the interoceptive and proprioceptive inputs to the total evidence will be weighted more reliable than exteroceptive inputs.
-
-Second, consider that group exercise requires constant execution of movement, contemporaneous with the movement of others. As discussed above, movement requires the attenuation of proprioceptive information (so as not to interrupt the flow of movement itself).  Thus, it can be predicted that the volume on proprioceptive error signals will at times be turned down low, at least while participants are executing movement.  There may need to be some optimal tradeoff here, in which the volume is not turned down too low, so as to keep track of the movements of others while moving.
-
-In this situation, with the volume on exteroceptive information turned down, and proprioceptive inputs attenuated to allow for movement, it can be seen that interoceptive inputs could enjoy the most precision of all available sensory sources. This situation could conceivably explain the tacit ``feel'' of team click.  Interoceptive information could therefore provide an embodied grounding for the feeling of click.  This would make sense considering that often athlete descriptions of flow and team click involve pre-linguistic and pre-perceptual phenomenological description, accompanied by a lack of awareness of how click was achieved (i.e., due to a dearth of exteroceptive information about the experience).
-
-\subsubsection{Surprise}
-Recently, \textcite{Chetverikov2016} have suggested a model for explaining the function of ``surprise'' in joint action.  In line with prevailing active inference approach, authors propose that affect serves as feedback on predictions, reflecting their accuracy and regulating them so that confirmed predictions are more likely to be used again \citep{Chetverikov2014}. In this conception, if predictions are confirmed (low prediction error), the affective feedback is weighted with the inverse prior probability of the prediction.
- so that more probable predictions receive less positive feedback. In other words, confirmation of more probable predictions yields \textit{less} positive feedback than confirmed less probable predictions.
-
-In the wind vs thief example, in which $p(thief) = .2$ and $p(wind) = .8$, the level of surprise attributed to the confirmation of the thief hypothesis would be .8 (whereas the wind hypothesis would be only .2).  In this case, however, the surprise would not be pleasant. In the case of team click, by contrast, the reward associated with successful joint action appears to be positively valenced surprise.  It is possible that the combination of low prior probability associated with click in joint action could set up a situation in which successful joint action leads to relatively high levels of positive affective feedback.  This could explain why less technically competent and experienced athletes might experience more volatile surprise (both positively and negatively valenced), owing to the high variance of prior probability distributions owing to a poverty of experience and precision in their inferential models.
-
-Cortical processes of prediction error management appear to be mediated by the activity of the dopaminergic system \citep{Schultz2016}, while subcortical neuromodulatory systems, such as those responsible for producing norepinephrine, acetylcholine, and endogenous opioids, appear to be involved in attuning cortical processing to signals from the body and environment that are important for survival \citep{Lewis2005}.  There is now evidence to suggest that complex cognitive processes (traditionally understood to be confined to cortical regions) and subcortical neuromodulatory systems (traditionally understood to be responsible only for affective response and exogenous to the brain's inferential processes) work in a loop of reciprocal interaction in order to enhance processes of error management \citep{Damasio1994,Lewis2005,Miller2017,Barrett2017}.
-
-\subsubsection{Agency}
-The experience of blurring of agency between self and group could have something to do with ``in the moment'' joint action and the potential strain that these requirements put on proprioceptive predictions.  Attenuation of proprioception is strongly correlated with experiences of self agency, and inversely correlated with ascribing agency to sources external to the self \citep{Brown2013}.  The constant need to switch modes between perceiving and acting, or else find an optimal tradeoff in which precision weighting of proprioceptive information is set somewhere in the middle, could conceivably generate the blurring of agency between self and other.
-
-Discrepancy between prediction and sensory input can alter the experience of agency \citep{Sato2008}.  Unpredicted sensory input can lead to ascribing agency for that input to an external source, for example, other participants in joint action or the external environment \citep{Sato2005,Frith2007}.  As has been well documented in the case of schizophrenia, attribution of agency in social interaction may be modulated by individual variation in ``locus of control'' (the degree to which events are perceived to result from one’s own actions or not), and this may be related to improper function of the parietal cortex \citep{Frith2000}. In healthy adult populations of humans, meanwhile, it can be predicted that ascribing agency to sources external to the self will occur more in situations in which there is a larger discrepancy between predicted and actual sensory inputs. Presumably, according to Chetverikov's model connecting prediction and affect at least, the more a sensory input violates existing predictions, the more salient these experiences will be, and the more likely they will arouse the need for attributions of causal agency at the conscious level of experience \citep{Pesquita2017}.
-
 
 \subsection{Higher levels of team click predict higher levels of social bonding \label{sect:teamClickSocialBonding}}
 
@@ -646,7 +657,7 @@ High cognitive biases
 Apophenia: spontaneous perception of connections and meaningfulness of unrelated phenomen
 
 
-
+Grau-Moya, J., Ortega, P. A., & Braun, D. A. (2012). Risk-sensitivity in Bayesian sensorimotor integration. PLoSComputationalBiology, 8, e1002698. doi:10.1371/journal.pcbi.1002698
 
 
 
