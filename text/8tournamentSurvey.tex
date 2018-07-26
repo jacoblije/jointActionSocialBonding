@@ -261,27 +261,22 @@ Where $Y_{ij}$ denotes the $i^{th}$ observation for group $j$, $(\beta_{0} + u_{
 For the following analyses, multilevel linear models were fit with Maximum Likelihood parameter estimation method using the \textit{lme4} package (Bates and Sarkar, 2006) in the R environment (R Development Core Team, 2006).  Control and moderator variables were introduced into each model as fixed effects in a stepwise fashion, and model fit was judged by comparing the Akaike Information Criteria (AIC) and Bayesian Information Criteria (BIC) using a chi-squared test based on -2Log Likelihood score when possible.\footnote{The chi-squared test based on -2Log Likelihood scores was not possible when comparing models with different sample sizes owing to inclusion of covariates with missingness.} In addition, marginal and conditional $R^2$ values of equivalent models were compared and used as an indication of model effect size.\footnote{Nakagawa and Schielzeth (2013) have proposed a formula for calculating the proportion of variance explained by the fixed factor of the model (marginal $R^2$, compared to an intercept-only or null model), and the proportion of variance explained by the combination of the fixed factor plus the random factor, (conditional $R^2$, compared to the null).}
 
 
-\myparagraph{Pre- to Post-Tournament}
+\myparagraph{Mediation analysis}
+The hypothesised path of relationships outlined in predictions of this study (specifically: Team Performance Components $\rightarrow$ Team Click $\rightarrow$ Social Bonding) suggests the possibility that Team Performance Components exerts its influence on Social Bonding indirectly, via feelings of team click.
 
+Mediation analyses were conducted using linear mixed effects regressions in the Causal Mediation Analysis package in R (Version 4.4.5).  To make inferences concerning the average indirect and total effects, quasi-Bayesian Markov Chain Monte Carlo (MCMC) method based on normal approximation and 1000 simulations was used to estimate the 95\% Confidence Intervals \citep{Tofighi2016a,Imai2010}. MCMC estimation is a form of non-parametric bootstrapping whereby the sampling distribution for the effect of interest is not assumed to be normal but is instead simulated from the model estimates and their asymptotic variances and covariances \cite{Preacher2008}.  For a full justification of motivation and methods associated with mediation analysis, see Appendix ~\ref{app8:mediationAnalysis}.
+
+
+
+
+
+\myparagraph{Pre- to Post-Tournament}
  The number of observations available in the Pre-Post Tournament data were insufficient to construct a mixed-effects repeated measures design in which both the intercept and slope of observations could vary according to each individual athlete nested within their given team over time.
     \footnote{Allowing both the intercept and slope to vary requires twice the number of observations to estimate the random effects ($2x174 = 248$), whereas the available number of observations was only 198.}
   Alternative models for suitable for repeated measures designs, such as RM-ANOVA or ANCOVA, are also incapable of allowing each fixed factor (the regression coefficient or slope) to vary randomly according to higher level factors (individual and team), and are also unable to handle unbalanced designs (in this case, due missing data for athletes across pre- and post-Tournament measurements). As a compromise, change scores in variables of interest (individual and team performance, team click, social bonding, and fatigue) were calculated by subtracting pre- from post-Tournament scores for each athlete. The calculation of change scores reduced the complexity of the data structure down to two levels of analysis, and meant that relationships between these change variables could be modelled using a linear mixed effects regression. Change scores of relevant factors were introduced to the model as fixed effects, and their slopes and intercepts were allowed to vary according to team.
 
 \myparagraph{Overall Tournament}
-
-
-
-\subsection{Analysis \& results of overall Tournament data}
 Given that the items administered to athletes during the Mid-Tournament were reduced to accord with athlete schedules and convenience following games, variables available for analysis in the Overall Tournament data were limited to those that appeared in the Mid-Tournament surveys.  Time constraints meant that components of performance were not assessed in the Mid-Tournament survey, and only appraisals of overall individual and team performance relative to prior expectations were included.  The Mid-Tournament survey contained three Team Click items (Unspoken Understanding, General Atmosphere, and Click Pictorial), and three Social Bonding items (Emotional Support, Shared Goal, and Fusion Pictorial) among other items.
-
-
-
-
-
-
-
-
-
 
 
 
@@ -479,7 +474,7 @@ For the Overall Tournament analysis, neither team nor tournament were included a
 \subsection{Prediction 1: More positive perceptions of team performance predict higher levels of Team Click}
 
 
-\subsubsection{Prediction 1.a: More positive perceptions of components of joint action predicts higher levels of Team Click}
+\subsubsection{Prediction 1.a: More positive perceptions of components of joint action predicts higher levels of Team Click\label{sect:prediction1a}}
 
 This prediction was tested in the Post-Tournament and Pre- to Post-Tournament data (the Overall Tournament data did not contain consistent measures of component performance).
 
@@ -517,7 +512,7 @@ In sum, results suggest more positive perceptions of technical components of tea
 
 
 
-\subsubsection{Prediction 1.b: Team Performance Vs Expectations predict Team Click}
+\subsubsection{Prediction 1.b: Team Performance Vs Expectations predict Team Click\label{sect:prediction1b}}
 
 \myparagraph{Post-Tournament}
 Results of the model revealed a significant positive relationship between Team Performance Vs Expectations and Team Click, $\beta = .52$ ($95\% CI =  .28, .77$), $SE = .12$, $t(14.00) = 4.24$, $p < .0008$, $marginal R^2 = .40$, $conditional R^2 = .56$.  All other fixed effects did not significantly predict team click, but did improve the model fit, as indicated by the reduced AIC and increased marginal $R^2$ value (see Appendix Table ~\ref{tab:MLM1bteamExpectationsClick} for the various iterations of the model).
@@ -567,7 +562,7 @@ The model also indicated that individual performance expectation violation signi
 
 The residuals of the model were normally distributed around zero, ($W = .99, p = .11$), and individual cases had low influence on the model (Cook's Distances all $< .05$; see Appendix ~\ref{app8:tournamentSurvey} Figure ~\ref{fig:MLM31aAssumptions} for a full report of model assumptions).
 
-Results of the model suggest that athletes whose expectations around team performance were more positively violated also experienced stronger feelings of team click.  The model also revealed main effects of Individual Performance Vs Expectation and Subjective Competence, adding further evidence to the possibility that perceptions of individual performance also play a role in producing perceptions of team click.   also appears that more positive expectations about individual performance, and higher levels of self-reported technical competence predicted higher levels of team click.
+Results of the model suggest that athletes whose expectations around team performance were more positively violated also experienced stronger feelings of team click.  The model also revealed main effects of Individual Performance Vs Expectation and Subjective Competence, adding evidence to support the possibility that perceptions of individual performance also play a role in producing perceptions of team click.
 
 
    \begin{figure}[htbp]
@@ -586,7 +581,7 @@ opposite directions.
 
 
 
-\subsection{Prediction 1.c: Team Performance Components predicts Team Click, moderated by Team Performance Vs Expectations}
+\subsection{Prediction 1.c: Team Performance Components predicts Team Click, moderated by Team Performance Vs Expectations\label{sect:Prediction1c}}
 
 Did more positive violation of expectations surrounding team performance condition a direct relationship between perceptions of components of team performance and team click?  This prediction was tested in the Post-Tournament and Pre - to Post-Tournament data set.
 
@@ -731,10 +726,6 @@ Owing to non-normally distributed residuals, this model does not provide robust 
   The model also revealed a significant relationship between Individual Performance Vs Expectations and Social Bonding, $\beta = .005$ ($95\% CI =  .002, .009$), $SE = .002$, $t(303.4) = 2.80$, $p < .01$, as well as subjective competence and social bonding, $\beta = .01$ ($95\% CI =  .01, .18$), $SE = .04$, $t(265.3) = 2.24$, $p = .03$ (see Table ~\ref{tab:MLM32ateamPerfBondingTournament} in Appendix ~\ref{app8:tournamentSurvey} Section ~\ref{app8:MLM32a}for full description of model estimates).  Model residuals were non-normally distributed, ($W = .97, p < .00001$), with negative skew ($-.6$), and higher than normal kurtosis, see Appendix ~\ref{app8:tournamentSurvey} Figure ~\ref{fig:MLM32aAssumptions}.  A model in which the outcome was log-transformed following removal of outliers provided the best possible fit for the available data ~\ref{MLM32ateamPerfBondingTournamentModelComparison}. While the distribution of errors was still non-normal, ($W = .99, p = .03$),  error terms appear much more evenly distributed around zero than the original model, albeit with a slight negative skew ($-.1$).
   The adjusted model provided confirmation that the significant positive effect of team performance expectation violation on Social Bonding,  $\beta = .16$ ($95\% CI =  .12, .20$), $SE = .02$, $t(336.80) = 7.98$, $p < .0001$, $marginal R^2 = .36$, $conditional R^2 = .36$.
 
-   \input{images/MLM32ateamPerfBondingTournament}
-
-   \input{images/MLM32ateamPerfBondingTournamentModelComparison}
-
 
    \begin{figure}[htbp]
      \centering
@@ -750,12 +741,18 @@ Owing to non-normally distributed residuals, this model does not provide robust 
   \subsubsection{4.a: Team Click mediates the relationship between Team Performance Components and Social Bonding}
 
   \myparagraph{Post-Tournament}
-  Mediation analyses were conducted using linear mixed effects regressions in the Causal Mediation Analysis package in R (Version 4.4.5).  To make inferences concerning the average indirect and total effects, quasi-Bayesian Markov Chain Monte Carlo (MCMC) method based on normal approximation and 1000 simulations was used to estimate the 95\% Confidence Intervals \citep{Tofighi2016a,Imai2010}. MCMC estimation is a form of non-parametric bootstrapping whereby the sampling distribution for the effect of interest is not assumed to be normal but is instead simulated from the model estimates and their asymptotic variances and covariances \cite{Preacher2008}.
-
   Results of the mediation analysis revealed significant average indirect effect of Team Performance Components on Social Bonding attributable to Team Click, $\beta = .37, 95\% CI = .20 , .59, p < .001$.  When controlling for the effect of team click on Social Bonding, the average direct effect between Team Performance Components and Social Bonding was no longer significant, $\beta = -.006, 95\% CI = -.27 , .23, p = .96 $ (see Figure ~\ref{fig:MLM4aMediationAnalysis}). The direct effect diminished such that including Team Performance Components in the model produced a total effect that was marginally \textit{smaller} than the indirect effect alone, $\beta = .36, 95\% CI = .13 , .61, p = .01$. These results suggest that feelings of team click fully mediate the relationship between perceptions of Team Performance Components and social bonding.
 
 
   %Residuals of the mediation model were normally distributed around zero, ($W = .99, p < .28$, see Figure ~\ref{fig:MLM4aAssumptions} for model assumptions).
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth,keepaspectratio] {images/tournamentSurveyMediationFigure}
+    \caption{Mediation model: Team Click fully mediates the relationship between Team Performance Components and Social Bonding ($n = 98$).}
+    \label{fig:tournamentSurveyMediationFigure}
+  \end{figure}
+
 
   \begin{figure}[htbp]
     \centering
@@ -764,12 +761,27 @@ Owing to non-normally distributed residuals, this model does not provide robust 
     \label{fig:MLM4aMediationAnalysis}
   \end{figure}
 
-  \myparagraph{Pre- to Post-Tournament change}
+
+
+
+  \myparagraph{Pre- to Post-Tournament}
   %\subsubsection{2.4.a Mediation Analysis: $\Delta$Team Performance Components $\rightarrow$ $\Delta$Team Click $\rightarrow$ $\Delta$Social Bonding}
 
-  Results from the models reported above demonstrate significant relationships between 1) change in perceptions of Team Performance Components and changes in feelings of team click, 2) changes in feelings of team click and changes in feelings of social bonding, and a direct relationship between changes in Team Performance Components and changes in social bonding, but not a direct relationship between team performance expectations and changes in social bonding. As such, a mediation analysis was performed to formally test whether a change in feelings of team click over the course of the Tournament mediated a direct relationship between change in perceptions of Team Performance Components and changes in perception of social bonding.\\
+  Results from the models reported above demonstrate significant relationships between 1) change in perceptions of Team Performance Components and changes in feelings of team click, 2) changes in feelings of team click and changes in feelings of social bonding, and a direct relationship between changes in Team Performance Components and changes in social bonding, but not a direct relationship between team performance expectations and changes in social bonding. As such, a mediation analysis was performed to formally test whether a change in feelings of team click over the course of the Tournament mediated a direct relationship between change in perceptions of Team Performance Components and changes in perception of social bonding (Social Bonding Change).\\
 
-  Results of the mediation analysis revealed that the average indirect effect of change in Team Performance Components on change in Social Bonding attributable to change in Team Click was not significant, $\beta = .14, 95\% CI = -.004 , .30, p = .06$, but trended in the predicted direction (see Figure ~\ref{fig:MLM24aMediationAnalysis}).  When controlling for the effect of team click on Social Bonding, the average direct effect between Team Performance Components and Social Bonding was, however, significant, $\beta = .27, 95\% CI = .07 , .48, p < .001$.  The total effect of the meditation was also significant, $\beta = .41, 95\% CI = .21 , .63, p < .001$.  These results suggest a marginally-significant partial mediation effect of team click on the relationship between Team Performance Components and social bonding.  While the indirect effect of Team Performance Components on Social Bonding (mediated by Team Click) was only marginally significant, this result does provide some support for the indirect effect observed in the Post-Tournament data.  Considering the relatively small variation in change in team-click Pre-post Tournament, to observe a marginally significant indirect effect of Team Performance Components on Social Bonding (mediated by team-click) in the Pre-Post-Tournament data is noteworthy.
+  Results of the mediation analysis revealed that the average indirect effect of change in Team Performance Components on change in Social Bonding attributable to change in Team Click was not significant, $\beta = .14, 95\% CI = -.004 , .30, p = .06$, but trended in the predicted direction (see Figure ~\ref{fig:MLM24aMediationAnalysis}).  When controlling for the effect of team click on Social Bonding, the average direct effect between Team Performance Components and Social Bonding was, however, significant, $\beta = .27, 95\% CI = .07 , .48, p < .001$.  The total effect of the meditation was also significant ($\beta = .41, 95\% CI = .21 , .63, p < .001$; see Figure ~\ref{fig:tournamentSurveyMedPrePost}).
+
+  These results suggest a marginally-significant \textit{partial} mediation effect of team click on the relationship between Team Performance Components and social bonding.  While the indirect effect of Team Performance Components on Social Bonding (mediated by Team Click) was only marginally significant, this result does provide some support for the indirect effect observed in the Post-Tournament data.  Considering the relatively small variation in change in team-click Pre-post Tournament, to observe a marginally significant indirect effect of Team Performance Components on Social Bonding (mediated by team-click) in the Pre-Post-Tournament data is noteworthy.
+
+
+
+  \begin{figure}
+    \centering
+    \includegraphics[width=0.9\linewidth,keepaspectratio] {images/tournamentSurveyMedPrePost}
+    \caption{Mediation model: Team Click partially mediates the relationship between Team Performance Components and Social Bonding ($n = 97$).}
+    \label{fig:tournamentSurveyMedPrePost}
+  \end{figure}
+
 
 
     \begin{figure}[htbp]
@@ -784,46 +796,7 @@ Owing to non-normally distributed residuals, this model does not provide robust 
 
 \subsubsection{Prediction 4.b: Team Click mediates the relationship between Team Performance Vs Expectations and Social Bonding}
 
-    \myparagraph{Post-Tournament}
-  Results of the analyses above also demonstrate a significant positive relationship between Team Performance Vs Expectations and Team Click. The model generated for relationships between between Team Performance Vs Expectations and Social Bonding, however, was not robust to the demands of model assumptions.   Nonetheless, mediation analysis was used to test the possibility that Team Click mediated the effects of Team Performance Vs Expectations on Social Bonding.
-
-  Results of the mediation analysis revealed significant average indirect effect of Team Performance Vs Expectations on Social Bonding attributable to Team Click, $\beta = .36, 95\% CI = .17 , .62, p < .0001$.  When controlling for the effect of Team Click on Social Bonding, the average direct effect between Team Performance Vs Expectations and Social Bonding was no longer significant, $\beta = -.07, 95\% CI = -.27 , .12, p = .84 $ (see Figure ~\ref{fig:MLM4bMediationAnalysis}). The total effect of the model was significant $\beta = .29, 95\% CI = .02 , .57, p = .04$.  This model, as with model 4.a above, indicated that Team Click fully mediated the relationship between Team Performance Vs Expectations and Social Bonding.
-
-
-  Again, the results of this mediation model should be treated with caution, given the fact that the mediation model is composed of a non-robust statistical model (i.e., path ```'c'').
-
-  \begin{figure}[htbp]
-    \centering
-    \includegraphics[scale = .5]{images/MLM4bMediationEffects.pdf}
-    \caption{M4b Mediation Analysis}
-    \label{fig:MLM4bMediationAnalysis}
-  \end{figure}
-
-
-
-  \myparagraph{Overall Tournament}
-
-      %\subsubsection{3.4.b Social Bonding $\sim$ Team Performance Vs Expectations Tournament $\times$ Team Click Tournament}
-In order to assess the possibility of a mediating effect of Team Click on the overall relationship between Team Performance Vs Expectations and Social Bonding, the interaction of Team Performance Vs Expectations and Team Click was added to a model as a fixed effect to see if an increase in social bonding associated with more positive violations of team performance expectations was heightened when feelings of team-click increased. The model revealed a significant negative interaction between Team Performance Vs Expectations and Team Click,  $\beta = -.26$ ($95\% CI =  -.32, -.20$), $SE = .03$, $t(321.2) = -8.46$, $p < .0001$, $marginal R^2 = .69$, $conditional R^2 = .74$.  Model residuals were non-normal ($W = .94, p < .00001$), owing to high kurtosis ($.39$) and negative skew ($-.88$) (see Appendix Figure ~\ref{fig:MLM32aAssumptions}).
-
-A model in which the outcome variable was log transformed following exclusion of outliers provided the best adjustment: model residuals were normally distributed ($W = .99, p = .14$) and individual observations exerted low influence (Cook's Distances all < .10) (see Table ~\ref{MLM33ateamPerfBondingTournamentInteractionComparison} for full model comparison). The adjusted model revealed a significant positive interaction of Team Performance Vs Expectations and Team Click on Social Bonding, $\beta = -.06$ ($95\% CI =  .0004, .002$), $SE = .01$, $t(310.1) = -4.73$, $p < .001$, $marginal R^2 = .61$, $conditional R^2 = .65$. These results supported the prediction that feelings of team-click condition the relationship between perceptions of team performance (expectation violation, in this case) and feelings of social bonding.  Below, formal mediation analysis was conducted to further test this relationship.
-
-
-       \input{images/MLM33ateamPerfBondingTournamentInteractionComparison}
-
-A mediation analysis was performed to formally test whether feelings of team click over the course of the Tournament mediated a direct relationship between team performance expectation violations and social bonding.  Results outlined above demonstrate Tournament-wide significant positive relationships between team performance expectation violations and feelings of team click, as well as team click and social bonding. Models also demonstrate a direct relationship between expectations around team performance and social bonding.  Available statistical software can only support a 2-level structure for multilevel mediation analysis. The third team-level random effect was therefore dropped from the model, while the model controlled for the random effect of individual across each of the four time points.
-
-Results of the mediation analysis revealed that the average indirect effect of change in Team Performance Components on change in Social Bonding attributable to change in Team Click was highly significant albeit small, $\beta = .02, 95\% CI = .018 , .026, p < .001$.  When controlling for the effect of team click on Social Bonding, the average direct effect of Team Performance Vs Expectations and Social Bonding was also significant, $\beta = .01, 95\% CI = .001 , .017, p < .00001$.  The total effect of the meditation was also significant, $\beta = .03, 95\% CI = .027, .041, p < .0001$ (see Appendix Figure ~\ref{fig:MLM34aMediationAnalysis}).  These results suggest that Team Click \textit{partially} mediates the effect of Team Performance Vs Expectations and Social Bonding (average proportion mediated = .66 (.57, .77)).  This result should be treated with additional caution, as it did not account for team-level variation.
-
-    \begin{figure}[htbp]
-      \includegraphics[scale=.5]{images/MLM34aMediationAnalysis.pdf}
-      \caption{M3.4a Mediation Analysis}
-      \label{fig:MLM34aMediationAnalysis}
-    \end{figure}
-
-
-
-\clearpage
+\textit{This mediation analysis was not reported due to the unreliability of the models that constitute each path.}
 
 
 
@@ -845,46 +818,95 @@ Results of the mediation analysis revealed that the average indirect effect of c
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+XXX
+xxx
 
 
 \clearpage
 
 \section{Discussion of Results}
 
-Opening para:
-
-Recap of method / approach
+Tacit knowledge of the click of joint action appears to be a human universal, but scientific questions of how and via what specific pathways click is generated, and the role of joint action in social bonding and human sociality, remain to be clearly understood.  In this study I utilised a novel theory of social bonding through joint action to test mechanisms predicted underwrite team click and social bonding in joint action.  Specifically, this study tested the prediction that click would explain variation in social bonding produced through joint action in a high stakes professional rugby tournament. Main findings of this study generally support predictions.
 
 
-Main findings on the relationship between joint action, social bonding, and the mediating role of team click were the following:
+\subsection{Summary of results}
 
-%In a high stakes Tournament, athletes are provided with explicit feedback about joint action (in the form of winning and losing each game, for example), and there are many other dimensions to rugby that could have been driving social bonding effects, such as the extremely high levels of physiological exertion and body-on-body contact associated with rugby games.  Although some of these factors were addressed through statistical controls, these controls were based largely on athlete self-report and indirect measures of athlete experience (such as objective measures of performance).
+\myparagraph{Prediction 1: More positive perceptions of performance predict team click}
+First, there was a positive association between perceptions of performance and team click.  In the Post-Tournament data set, more positive perceptions of components of team performance (Prediction 1.a; see Section ~\ref{sect:prediction1a}) and perception of overall team performance relative to prior expectations (Prediction 1.b; see Section ~\ref{sect:prediction1b}) both significantly predicted team click (when controlling for clustering by team (random factor), as well as covariates of perceptions of individual performance, technical competence, objective performance measures, personality (extraversion), and fatigue).  These results were also replicated in the Pre- to Post-Tournament subset. The interaction between these two dimensions of performance (Team Performance Components and Team Performance Vs Expectations, Prediction 1.c; Section ~\ref{sect:prediction1c}) was not significant, suggesting that athletes experience of team click resulting from more positive perceptions of components of team performance was not enhanced if   team performance was experienced as more positive relative to prior expectations (or vice versa).  These results suggested that both predictors of team click operated independently.
+
+\myparagraph{Prediction 2: More positive perceptions team click predict higher levels of social bonding}
+
+Second, results supported the predicted relationship between higher levels of team click and higher levels of social bonding.  Evidence for this relationship was found in all three subsets: after the Tournament, as a function of change between Pre- and Post-Tournament measures, and consistently across repeated measures of individual athletes over four time points, including immediately after games.  These results suggested that on average athletes who felt the click of joint action also reported higher levels of social bonding.
+
+\myparagraph{Prediction 3: Perceptions of team performance will directly predict social bonding}
+
+Third, results suggested that athlete perceptions of components of team performance (but not athlete perceptions of team performance relative to prior expectations) significantly predicted social bonding.
+
+\myparagraph{Prediction 4: Team click mediates a relationship between perceptions of team performance and social bonding}
+
+Finally, results of mediation analyses showed that team click statistically mediated a relationship between athlete perceptions of components of performance and social bonding. In the Post-Tournament data team click fully mediated the relationship; In the Pre-Post Tournament data the mediation effect was partial, and only marginally significant ($p = .06$).
+
+\myparagraph{Individual performance}
+In addition to these results, on two occasions athlete perceptions of individual performance relative to prior expectations predicted variance in team click and social bonding. However, these results are difficult to interpret.  In the Pre- to Post- Tournament analysis, a log-adjusted model revealed a ~\textit{negative} main effect of Individual Performance Vs Expectations on team click (see Section ~\ref{sect:prediction1b}), which suggested that the more positive individuals felt about their own performance, the less they felt team click. Meanwhile, the Overall Tournament analysis revealed an opposite effect: a significant positive relationship between Individual Performance Vs Expectations and team click (see Overall Tournament results in Section ~\ref{sect:prediction1b}). These results suggest the co-presence of two opposing tendencies or modes of joint action evaluation \citep{Friston2015a}. It is possible to imagine real world scenarios in which athletes feel satisfied or surprised about their individual contributions to joint action, but nonetheless do not perceive that the team clicked.  Consider Beijing senior player Lu Peng, for example, who in almost every instance constantly preserved his individual face, often at the expense of the team or specific others.  Likewise, it is also imaginable that more positive perceptions of individual performance relative to expectations could have an additive effect on experience of team click and social bonding.  Dynamic interactive joint action can involve a blurring of boundaries between self and others and, thus cognitions and perceptions attributed to individual performance and team variance could share common variance.  The results of this study showed that in general, perceptions of team performance were more powerful as predictors of team click and social bonding.
 
 
 
-21b: %The adjusted model also revealed a significant negative effect of violations of expectations around \textit{individual} performance on team click, $\beta = -.008 (95\% CI =  -.01, .001), SE = .004, t(91.79) = -2.28, p = .03$,  which could suggest that athletes who experienced more positive violations about their own performance did not feel the team click as strongly.
+\myparagraph{Individual differences}
+It was predicted that technical competence may condition the relationship between perceptions of joint action, team click, and social bonding, owing to the possibility that more expert athletes could be more likely experience less pronounced discrepancy between expected and actual performance \cite{Tomeo2012}.  In this specific study, there was no evidence that technical competence---objective competence (training age, years in team, age) and self-reported competence (ability versus teammates, Chinese opponents, or international professionals)---significantly influenced variables of interest.  It is possible, as noted above, that these measures failed to access the (largely Pre-perceptual) mechanisms of prediction error management hypothesised to underpin cognition and affective dispositions in joint action.  It is also possible that the nature of the intensity and consequentiality of the Tournament in which athletes were participating was high enough that no one---experts athletes included---was immune to the uncertainty and stress of this experience. Indeed, the ability of competitive group exercise contests to consistently arouse high levels of psychological stress and uncertainty could be an important reason for their cultural evolutionary success over recent centuries.
+
+In addition to technical competence of individual athletes, preexisting dispositional tendencies in dimensions of personality (e.g., extroversion, agreeableness) and physical endowment could impact on processes of social bonding \citep{Marsh2009,VonRueden2015}.
+
+I used the personality data collected in the Pre-Tournament survey to test the relationship between personality types and team click. Interestingly, none of the big five personality types (extraversion, agreeableness, openness, conscientiousness, and neuroticism) significantly predicted feelings of team click in the Post-Tournament survey.
 
 
-  The results presented above generally support the central hypothesis of this dissertation, namely that relationship the relationship between joint action and social bonding is mediated by the feeling of ``team click.''  Results of analyses concerning both the Post-Tournament survey and change between and Pre- and Post -Tournament surveys display a clear relationship between perceptions of Team Performance Components and Team Click, Team Click and Social Bonding, and a direct relationship between Team Performance Components and Social Bonding.  In the Post-Tournament analysis, Team Click fully mediates the relationship between Team Performance Components and Social Bonding. In the Pre-post analysis, Team Click partially mediates this relationship (this statistic was not significant, but was trending in the predicted direction, $p = .06$).
 
-  Results of models designed to test the predicted relationships between Team Performance Vs Expectations, Team Click, and Social Bonding also provided support for some but not all predictions. A relationship was confirmed between team performance expectation violation and team click, but not between expectation violation and social bonding. In addition, the predicted interaction between Team Performance Components, Team Performance Vs Expectations, and Team Click was not significant, nor was the interaction between these same two predictor variables and social bonding.  Team click did not mediate the predicted relationship between violations of expectations around team performance and social bonding. The model of this direct relationship was not statistically robust using the data collected in this study.
 
-  These results suggests that while expectation violation in joint action might be an important factor in generating feelings of team click, it might not be a strong enough mechanism to drive social bonding directly.  In contrast to the single-item measure of Team Performance Expectations, Team Performance Components is a factor made up of four items that require detailed reflection on the experience of four different aspects of team coordination.  This item may have more powerfully tapped into the implicit mechanisms involved in coordinated joint action, encouraging athletes to reflect on coordination with specific co-actors, and as such the opportunity to rehearse and reinforce feelings of trust, reliability, and cooperation \citep{Reddish2013a}.  It is also possible that expectation violation in joint action might not be immediately available to athlete reflection.
-  As Frith and colleagues point out \textcite{Frith2007,Frith2010,Clark2013}, the generation of interoceptive predictive models for action implicates cognitive processes that exist largely below the surface of conscious awareness, and the relationship between these unconscious informational transfer in movement coordination and the small fraction of information that does make its way to consciousness in the form of higher order symbolic and linguistic representations is still not clearly understood \citep{Semin2008}. Team click might be supported by various subtle, implicit, and Pre-perceptual processes involved in ``active inference'' \citep{Schmidt2011}.
+\subsection{Limitations}
 
-  Evidence presented here does however support the interpretations that perceptions of joint action success predict social bonding, mediated by the experience of ``team click.'' It was predicted that technical competence may condition the relationship between perceptions of joint action, team click, and social bonding, owing to the possibility that more expert athletes could be more likely experience less pronounced discrepancy between expected and actual performance \cite{Tomeo2012}.  In this specific study, there was no evidence that technical competence---objective competence (training age, years in team, age) and self-reported competence (ability versus teammates, Chinese opponents, or international professionals)---significantly influenced variables of interest.  It is possible, as noted above, that these measures failed to access the (largely Pre-perceptual) mechanisms of prediction error management hypothesised to underpin cognition and affective dispositions in joint action.  It is also possible that the nature of the intensity and consequentiality of the Tournament in which athletes were participating was high enough that no one---experts athletes included---was immune to the uncertainty and stress of this experience. Indeed, the ability of competitive group exercise contests to consistently arouse high levels of psychological stress and uncertainty could be an important reason for their cultural evolutionary success over recent centuries.
+P: The relationship between dimensions of experience in joint action that produce feelings of team click require more detailed theorisation and analysis
 
-  In addition to technical competence of individual athletes, preexisting dispositional tendencies in dimensions of personality (e.g., extroversion, agreeableness) and physical endowment could impact on processes of social bonding \citep{Marsh2009,VonRueden2015}.   It has been documented that personality types correspond with basal tendencies for movement and movement coordination. In a joint action task involving two people of different heights moving wooden planks of different lengths, for example, Richardson and colleagues \textcite{Richardson2007} found that individuals’ levels of agreeableness and extroversion were positively correlated with the level of persistence of cooperation (hyteresis).  In particular, in the condition in which wooden planks increased in length (therefore increasing in demand for cooperative action), the degree of cooperation was positively correlated with the taller of the pair’s extroversion; the degree of cooperation in the random condition (where planks were received in no ordinal sequence of sizing) was correlated with the agreeableness of the shorter (i.e., more constraining) of the individuals.  I used the personality data collected in the Pre-Tournament survey to test the relationship between personality types and team click. Interestingly, none of the big five personality types (extraversion, agreeableness, openness, conscientiousness, and neuroticism) significantly predicted feelings of team click in the Post-Tournament survey.
+These results suggests that while expectation violation in joint action might be an important factor in generating feelings of team click, it might not be a strong enough mechanism to drive social bonding directly. The reasons for this result may be in part due to study design.  Team Performance Components is a factor made up of four items, each of which require detailed reflection on the experience of four different aspects of team coordination.  This factor may have more powerfully tapped into the implicit mechanisms involved in coordinated joint action, encouraging athletes to reflect on coordination with specific co-actors, and as such the opportunity to rehearse and reinforce feelings of trust, reliability, and cooperation \citep{Reddish2013a}. By contrast, Team Performance Vs Expectations was only a single-item measure, the central tendency for which was well above the mid-point of the scale (i.e., on average athletes reported team performance that was better, rather than worse than expected).
 
-  The impact of inter-individual psychophysiological variation on joint action can also be seen in the case of social dysfunctions such as autism spectrum disorder \citep{Isenhower2012} and schizophrenia \citep{Varlet2012}.  Generally speaking,  while autism spectrum disorder appears to be associated with deficits in anticipatory timing adjustments in intra- and inter-individual coordination of physical movement \citep{Martineau2010}, schizophrenia appears linked to a lack of prediction error management, due to failure in the neurological mechanisms through which predictions about the consequences of an action are derived \citep{Frith2000}.  Delusions of control owing to misattribution of agency are well-documented in schizophrenic patients---either delusions of self-control over external actions and events, or, alternatively, delusions involving the control of others over the individual (in the case of split personality and associated hallucinations) \citep{Frith2007}. It is quite possible that the experience of ``team click'' is an analogue, albeit a much more socially functional one, to the pathological over-activity of agency-attribution mechanisms observed in schizophrenic patients.  The question of individual variation in sociability and movement tendencies should be further assessed in future studies.
+In a high stakes Tournament, athletes are provided with explicit feedback about joint action (in the form of winning and losing each game, for example), and there are many other dimensions to rugby that could have been driving social bonding effects, such as the extremely high levels of physiological exertion and body-on-body contact associated with rugby games.  Although some of these factors were addressed through statistical controls, these controls were based largely on athlete self-report and indirect measures of athlete experience (such as objective measures of performance).
 
-  The fact that the hypothesised mechanisms of joint action and social bonding have been shown to exist Pre-declaratively and predominantly below the surface of conscious experience presents a methodological challenge for psychological research which relies heavily on self-report.  Further exploring the relationship between Pre-perceptual regulatory mechanisms of joint action and their psychosocial effects will require the use of other methods of data collection and analysis in order to triangulate the reliability of self-report data \citep{Newell2014}.  In this specific example, video footage showing athlete performance and coordination could be assessed using already established methods of motion capture and analysis to provide pseudo-objective measures of interpersonal and team-level synchrony in joint action \citep[e.g.][]{Passos2011}.
-  Importantly, video footage analysis allows for the testing between different proposed mechanisms associated with joint action and social bonding,  For example, motion capture from video footage allows for measuring synchrony between co-actors could using both traditional methods of dimension reduction and principal component analysis \citep[see for example][]{Riley2011} as well as emerging methods borrowed from dynamic systems theory including fractal-like 1/f scaling (``pink noise'') \citep[see for example][]{Holden2013}. It is quite possible that these different measurements of synchrony could access different psychophysiological dimensions of the relationship between joint action and social bonding.  Other physiological markers of social interaction such as heart rate variability \citep{Konvalinka2011,Fischer2014a} and pain threshold \citep{Cohen2009,Tarr2015}) are beginning to be developed and tested in both experimental and real-world settings.
-  These novel methodological approaches help complement existing behavioural measures, such as such as economic games \citep{Xygalatas2013} and spontaneous helping tasks \citep{Kirschner2010}, designed to access psychological mechanisms related to social bonding and cooperation.
-  Together, these measures could then be compared to self-report measures derived from athlete self-report to more fully understand the ways in which component mechanisms and system dynamics of joint action generate social cohesion \citep{Marsh2009}.
+In addition, it is also possible that expectation violation in joint action might not be immediately available to athlete reflection.  As \textcite{VanderWel2012} point out, there is significant evidence to suggest that sensorimotor prediction errors are functionally de-coupled from higher-order processes of awareness in action and perception. In essence, dynamic joint action implicates cognitive processes that exist largely below the surface of conscious awareness, and the relationship between these unconscious informational transfer in movement coordination and the small fraction of information that does make its way to consciousness in the form of higher order symbolic and linguistic representations is still not clearly understood \citep{Semin2008,Frith2007,Frith2010,Clark2013}.  Single-item self report of perceptions of expectation violation may not have captured the multidimensionality of the experience of surprise, agency, and viscerality in joint action.  The four item factor of Team Performance Components may have more effectively preserved the variance relevant to social bonding, even though athletes were not required to reflect on expectation violation specifically.
 
-  In sum, the results reported in this study provide novel evidence that feelings of team click mediate a relationship between perceived joint action success and social bonding, substantiating the claim that under certain circumstances joint action and interpersonal coordination processes can generate feelings of social connection \citep{Marsh2009}. Relationships between expectation violation, team click, and social bonding
-  also confirmed, but these models are less robust, and should be treated with caution. All reported results hold when statistically controlling for measures relating to individual performance, objective competence, and actual Tournament performance outcomes in the Tournament, including Tournament rank, points scored, minutes played, and so on.  Of course, the uncontrolled and \textit{in-situ} design of this study means that results are correlational, and as such the predictions of this dissertation, only partially confirmed in this study, require further attention via a controlled experimental design.  An experiment in which joint action success and expectation violation were manipulated, and explicit feedback around performance was eliminated, could allow for the assessment of the role of the cognitive processes of movement coordination in joint action in generating team click and social bonding.  In addition, a controlled experiment offers the opportunity to utilise other measurements of synchrony, such as those derived from motion capture from video recordings.
+In sum, the results reported in this study provide novel evidence that feelings of team click mediate a relationship between perceived joint action success and social bonding, substantiating the claim that under certain circumstances dynamical and complex joint action can generate feelings of social connection \citep{Marsh2009}.
+
+The uncontrolled and \textit{in-situ} design of this study means that results should be treated as preliminary and suggestive only.  Predictions of the novel theory of social bonding through joint action require further attention via a controlled experimental designs.  An experiment in which joint action success and expectation violation were manipulated, and explicit feedback around performance was eliminated, could allow for the assessment of the role of the cognitive processes of movement coordination in joint action in generating team click and social bonding.  In addition, a controlled experiment offers the opportunity to utilise other measurements of synchrony, such as those derived from motion capture from video recordings.  These considerations were factored into the design of experimental study, which is presented in the next chapter.
 
 
 %    [ ] what inferences can we make from these results?
