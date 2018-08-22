@@ -125,8 +125,9 @@
               Rnew <- cbind(Rnew[1:length(Rnew)-1])
               return(Rnew)
             }
-
 @
+
+
 <<dataInput, eval=TRUE, echo=FALSE, results='hide'>>=
   setwd("/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images")
   # read in complete data from experiment:
@@ -134,7 +135,12 @@
   twc <- read.csv("trainingWideComplete.csv", na.strings = c("", "NA", "n/a"))
 @
 
+<<dataExclude, eval=TRUE, echo=FALSE, results='hide'>>=
 
+twc <- subset(twc, successTotals > 4)
+tlc <- subset(tlc, successTotals > 4)
+
+@
 
 
 
@@ -333,8 +339,15 @@ The digital camera and tripod were positioned on a platform 2m above the level o
 
 <<excludePoorPerformance, echo=F,eval=T>>=
 
-#twcEx <- subset(twc, successTotals > 4)
-#tlcEx <- subset(tlc, successTotals > 4)
+twcEx <- subset(twc, successTotals > 4)
+tlcEx <- subset(tlc, successTotals > 4)
+
+
+
+
+
+
+
 
 
 
@@ -1974,17 +1987,17 @@ library(lmerTest)
   # normalise DV:
    twc$groupConfidentTechnicalChallenges_2Norm <- scale(twc$groupConfidentTechnicalChallenges_2)
 
-  #twc$condition <- factor(twc$condition, levels = c("low", "high"), ordered = TRUE)
+  twc$condition <- factor(twc$condition, levels = c("low", "high"), ordered = TRUE)
   # model
   summary(conditionGroupConf.main <- lmer(groupConfidentTechnicalChallenges_2Norm ~ condition
                             + objectiveCompetenceFactor + subjectiveCompetenceFactor
-                            + (1 |sessionName)
+                            + (1 + condition|sessionName)
                             , data = twc
                             , REML = F
                           )
           )
   #CIs
-  conditionGroupConf.main.CIs <- confint.merMod(conditionGroupConf.main, method = "Wald", level = 0.95)
+  summary(conditionGroupConf.main.CIs <- confint.merMod(conditionGroupConf.main, method = "Wald", level = 0.95))
 
 @
 
@@ -2041,7 +2054,7 @@ twc$indConfidenceChallenges_2Norm <- scale(twc$indConfidenceChallenges_2)
 
 summary(indConfChallenges.main <- lmer(indConfidenceChallenges_2Norm ~ condition
                             + objectiveCompetenceFactor + subjectiveCompetenceFactor
-                            + (1 |sessionName)
+                            + (1 + condition |sessionName)
                             , data = twc
                             , REML = F
                           )
@@ -2098,7 +2111,7 @@ A Bartlett's test of homogeneity of variance revealed that there was no meaningf
 
 <<arousalFactorPreConditionLMER, echo=F,eval=T>>=
 
-  #twc$condition <- factor(twc$condition, levels = c("low", "high"), ordered = TRUE)
+  twc$condition <- factor(twc$condition, levels = c("low", "high"), ordered = F)
 summary(arousalFactorPreCondition.main <- lmer(arousalFactorPre ~ condition
                             + objectiveCompetenceFactor + subjectiveCompetenceFactor
                             + (1|sessionName)
@@ -2473,14 +2486,14 @@ Table ~\ref{tab:factorsTime} shows that the post-Experiment measures of Joint Ac
 
 
 <<conditionGroupPerf, eval=T, echo=F>>=
-summary(conditionGroupPerf.main <- lmer(groupPerformance_3 ~ condition
+summary(conditionGroupPerf.main <- lmer(groupPerformance_3Norm ~ condition
                             + (1|sessionName)
                             , data = twc
                             , REML = F
                           )
                         )
 
-summary(conditionGroupPerf.controls <- lmer(groupPerformance_3 ~ condition
+summary(conditionGroupPerf.controls <- lmer(groupPerformance_3Norm ~ condition
                             + indPerformance_3Norm + arousalFactorPost + fullOutcomeAvg
                             + subjectiveCompetenceFactor + objectiveCompetenceFactor
                             + (1 |sessionName)
@@ -2490,6 +2503,11 @@ summary(conditionGroupPerf.controls <- lmer(groupPerformance_3 ~ condition
                       )
 
 @
+
+
+
+
+
 
 
 
@@ -2708,14 +2726,14 @@ library(ICC)
 #indComponentsPerformance/indvidualComponentSuccess
 
 #summary(conditionIndPerfComponentsPost <- lmer(indPerformanceComponentsPost ~ condition
-  #                                + arousalFactorPost
-  #                                + fullOutcomeAvg
-  #                                + subjectiveCompetenceFactor + objectiveCompetenceFactor
-  #                                + tipiExtraverted
-  #                                + ( 1|sessionName),
-  #                                  data = twc,
-  #                                  REML = F)
-  #                                )
+                                  + arousalFactorPost
+                                  + fullOutcomeAvg
+                                  + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                  + tipiExtraverted
+                                  + ( 1|sessionName),
+                                    data = twc,
+                                    REML = F)
+                                  )
 
 #conditionIndPerfComponentsPost.CIs <- confint.merMod(conditionIndPerfComponentsPost, method = "Wald", level = 0.95)
 
@@ -2777,7 +2795,6 @@ summary(conditionBondingPost <- lmer(teamBondingFactorPost ~ condition
   #lsmip(groupPerfExpClick.controls, groupPerformance_3Norm ~ condition)
 
 @
-
 
 
 
@@ -3243,10 +3260,9 @@ twc$teamBondingChangePrePostNorm <- scale(twc$teamBondingChangePrePost)
 \myparagraph{Prediction 1: More positive perceptions of team performance relative to prior expectations will correlate with higer feelings of team click with the training group}
 
 <<teamPerfExpClickScatter, fig.cap=''>>=
-library(ggplot2)
 library(tidyverse)
-  groupPerfExpClickScatter <- ggplot(twc, aes(x=groupPerformance_3Norm, y=groupClickPostFactor)) +
-                              geom_point(shape = 1) +
+  groupPerfExpClickScatter <- ggplot(twc, aes(x=groupPerformance_3Norm, y=groupClickPostFactor,
+                              color=condition)) + geom_point(shape = 1) +
                               geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
   groupPerfExpClickScatter +
               xlab("Group Performance vs Expectations") +
