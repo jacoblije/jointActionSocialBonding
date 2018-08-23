@@ -3338,7 +3338,7 @@ Figure ~\ref{fig:teamPerfExpClickScatter} shows a strong positive correlation be
 %ASSUMPTIONS:
 <<groupPerfExpClickAssumptionsHist, echo=F,eval=T>>=
   #1.historgram with density line
-  groupPerfExpClickResid <- resid(groupPerfExpClick.Int.controls, type = "pearson")
+  groupPerfExpClickResid <- resid(groupPerfExpClick.main.controls, type = "pearson")
   hist(groupPerfExpClickResid,
        freq = FALSE,
        main = "Distribution of residuals \n (standardised)",
@@ -3352,14 +3352,14 @@ Figure ~\ref{fig:teamPerfExpClickScatter} shows a strong positive correlation be
 @
 <<groupPerfExpClickAssumptionsScatter, echo=F,eval=T>>=
   #2.scatterPlot
-  plot(groupPerfExpClick.Int.controls, main = "Scatterplot of Residuals \n (standardised)")
+  plot(groupPerfExpClick.main.controls, main = "Scatterplot of Residuals \n (standardised)")
   dev.copy(pdf, "TEM1Scatter.pdf")
   dev.off()
 @
 <<groupPerfExpClickQQNorm, echo=F,eval=T>>=
   #3.qqNorm
-  qqnorm(residuals(groupPerfExpClick.Int.controls), main = "Norm QQ Plot of Residuals")
-  qqline(residuals(groupPerfExpClick.Int.controls))
+  qqnorm(residuals(groupPerfExpClick.main.controls), main = "Norm QQ Plot of Residuals")
+  qqline(residuals(groupPerfExpClick.main.controls))
   dev.copy(pdf, "TEM1QQNorm.pdf")
   dev.off()
 @
@@ -3367,7 +3367,7 @@ Figure ~\ref{fig:teamPerfExpClickScatter} shows a strong positive correlation be
   #indluential cases
   #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
  library(influence.ME)
- groupPerfExpClickInfl <- influence(groupPerfExpClick.Int.controls, obs = TRUE)
+ groupPerfExpClickInfl <- influence(groupPerfExpClick.main.controls, obs = TRUE)
   groupPerfExpClickCooksD <- cooks.distance(groupPerfExpClickInfl)
   groupPerfExpClickCooksDMAX <- max(groupPerfExpClickCooksD, na.rm = T)
   plot(groupPerfExpClickInfl,
@@ -3619,13 +3619,13 @@ suggesting that the relationship between joint action success an group click is 
 \myparagraph{Prediction 2: Feelings of group click predict feelings of social bonding to the training group}
 
 <<groupClickBondScatter, eval=F,echo=T>>=
-  groupClickBondScatter <- ggplot(twc, aes(x=groupClickPostFactor,
-                              y=groupBondingFactorPost, color=condition)) + geom_point(shape = 1) +
-                             geom_smooth(method=lm, se=F)   #  add shaded confidence region
+  groupClickBondScatter <- ggplot(twc, aes(x=groupClickPostFactor, y=groupBondingFactorPost)) +
+                              geom_point(shape = 1) +
+                              geom_smooth(method=lm, se=F)   #  add shaded confidence region
   groupClickBondScatter +
   #              guides(color = guide_legend(title="Condition"))+
               theme(plot.title = element_text(size=12)) +
-              labs(x = "Team Click", y = "Social Bonding", color = "Condition")+
+              labs(x = "Team Click", y = "Social Bonding")+
               apatheme +
               ggsave("groupClickBondScatter.pdf")
               #              scale_fill_
@@ -3658,10 +3658,7 @@ Figure ~\ref{fig:groupClickBondScatter} shows a clear relationship between Team 
                                           + (groupClickPostFactor|sessionName),
                                             data = twc,
                                             REML = F)
-                            )
-
-
-
+                                          )
 
 
   #CIs:
@@ -3759,8 +3756,8 @@ A LMER model (controlling for arousal, average trial performance outcome, and te
 
 
 <<groupPerfExpBondConditionScatter, eval=T,echo=F, fig.cap= 'Positive violation of group performance expectations \n predict feelings of Social Bonding to training group'>>=
-  groupPerfExpBondScatter <- ggplot(twc, aes(x=groupPerformance_3Norm,
-                              y=groupBondingFactorPost, color=condition)) + geom_point(shape = 1) +
+  groupPerfExpBondScatter <- ggplot(twc, aes(x=groupPerformance_3Norm, y=groupBondingFactorPost)) +
+                              geom_point(shape = 1) +
                               geom_smooth(method=lm, se=FALSE)
   groupPerfExpBondScatter +
               theme(plot.title = element_text(size=12)) +
@@ -3785,7 +3782,7 @@ Figure ~\ref{fig:groupPerfExpBondConditionScatter} shows a positive relationship
 %%MODEL:
 <<groupPerfExpBondingModel, eval=T,echo=F>>=
 library(optimx)
-  twc$condition <- factor(twc$condition, levels = c("low", "high"),
+  #twc$condition <- factor(twc$condition, levels = c("low", "high"),
                                 ordered = is.ordered(twc$condition))
 
   groupPerfExpBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionName),
@@ -3848,38 +3845,37 @@ A LMER model with group performance expectation violation, condition, and their 
 %ASSUMPTIONS:
 <<groupPerfExpBondingConditionHist, echo=F,eval=T>>=
   #1.historgram with density line
-  groupPerfExpBondingConditionResid <- resid(groupPerfExpBondingCondition.controls, type = "pearson")
-  hist(groupPerfExpBondingConditionResid, freq = FALSE, main = "Distribution of residuals", xlab = "Residuals")
-  lines(density(groupPerfExpBondingConditionResid, na.rm = TRUE))
+  groupPerfExpBonding.controlsResid <- resid(groupPerfExpBonding.controls, type = "pearson")
+  hist(groupPerfExpBonding.controlsResid, freq = FALSE, main = "Distribution of residuals", xlab = "Residuals")
+  lines(density(groupPerfExpBonding.controlsResid, na.rm = TRUE))
   dev.copy(pdf, "TEM3Hist.pdf")
   dev.off()
   #non-normality
-  groupPerfExpBondingConditionResid.Wald <- shapiro.test(groupPerfExpBondingConditionResid)
-  psych::describe(groupPerfExpBondingConditionResid)
+  groupPerfExpBonding.controlsResid.Wald <- shapiro.test(groupPerfExpBonding.controlsResid)
+  psych::describe(groupPerfExpBonding.controlsResid)
 @
 <<groupPerfExpBondingConditionScatter, echo=F,eval=T>>=
   #2.scatterPlot
-  plot(groupPerfExpBondingCondition.controls, main = "Scatterplot of residuals")
+  plot(groupPerfExpBonding.controls, main = "Scatterplot of residuals")
   dev.copy(pdf, "TEM3Scatter.pdf")
   dev.off()
 @
 <<groupPerfExpBondingConditionQQNorm, echo=F,eval=T>>=
   #3.qqNorm
-  qqnorm(residuals(groupPerfExpBondingCondition.controls), main = "Norm QQ Plot of residuals")
-  qqline(residuals(groupPerfExpBondingCondition.controls))
+  qqnorm(residuals(groupPerfExpBonding.controls), main = "Norm QQ Plot of residuals")
+  qqline(residuals(groupPerfExpBonding.controls))
   dev.copy(pdf, "TEM3QQNorm.pdf")
   dev.off()
 @
 <<groupPerfExpBondingConditionCooksD, echo=F,eval=T>>=
   #indluential cases
   #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
-  groupPerfExpBondingCondition.controls.Infl <- influence(groupPerfExpBondingCondition.controls, obs = T)
-  groupPerfExpBondingCondition.controlsCooksD <- cooks.distance(
-                                                      groupPerfExpBondingCondition.controls.Infl)
-  groupPerfExpBondingCondition.controls.CooksDMAX <- max(
-                                                      groupPerfExpBondingCondition.controlsCooksD,
+  groupPerfExpBonding.controls.Infl <- influence(groupPerfExpBonding.controls, obs = T)
+  groupPerfExpBonding.controlsCooksD <- cooks.distance(
+                                                      groupPerfExpBonding.controls.Infl)
+  groupPerfExpBonding.controls.CooksDMAX <- max(groupPerfExpBonding.controlsCooksD,
                                                       na.rm = T) # 1.382886e+00 (row 28)
-  plot(groupPerfExpBondingCondition.controls.Infl,
+  plot(groupPerfExpBonding.controls.Infl,
         which = "cook",
         main = "Influential Cases \n (Cook's Distance)",
         ylab = "participants",
@@ -3928,8 +3924,7 @@ library(lme4)
  library(optimx)
 #  library(lmerTest)
   ## Direct relationship X->Y: fit model and show summary
-  summary(m1 <- lmer(groupBondingFactorPost ~ groupPerformance_3Norm*condition
-                                              + indPerformancePost
+  summary(m1 <- lmer(groupBondingFactorPost ~ groupPerformance_3Norm
                                               + arousalFactorPost
                                               + fullOutcomeAvg
                                               + subjectiveCompetenceFactor
@@ -3949,7 +3944,7 @@ library(lme4)
 
 
   ## X->M fit model and show summary
-  summary(m2 <- lmer(groupClickPostFactor ~ groupPerformance_3Norm*condition
+  summary(m2 <- lmer(groupClickPostFactor ~ groupPerformance_3Norm
                                             + indPerformance_3Norm
                                             + arousalFactorPost
                                             + fullOutcomeAvg
@@ -3964,7 +3959,7 @@ library(lme4)
   #install.packages("optimx")
   #library("optimx")
   ## M->Y fit model and show summary
-  summary(m3 <- lmer(groupBondingFactorPost ~  groupPerformance_3Norm + groupClickPostFactor + groupPerformance_3Norm*condition
+  summary(m3 <- lmer(groupBondingFactorPost ~  groupPerformance_3Norm + groupClickPostFactor + groupPerformance_3Norm
                                       + arousalFactorPost
                                       + fullOutcomeAvg
                                       + subjectiveCompetenceFactor + objectiveCompetenceFactor
@@ -3987,16 +3982,17 @@ med.out.postExperiment <- mediate(m2, m3, treat = "groupPerformance_3Norm",
                                         mediator = "groupClickPostFactor")
   summary(med.out.postExperiment)
 
-med.out.postExperiment.High <- mediate(m2, m3, treat = "groupPerformance_3Norm",
-                                        mediator = "groupClickPostFactor",
+
+#med.out.postExperiment.High <- mediate(m2, m3, treat = "groupPerformance_3Norm",
+#                                        mediator = "groupClickPostFactor",
                                       covariates = list(condition = "high"))
-  summary(med.out.postExperiment.High)
+#  summary(med.out.postExperiment.High)
 
 
-med.out.postExperiment.Low <- mediate(m2, m3, treat = "groupPerformance_3Norm",
-                                        mediator = "groupClickPostFactor",
-                                      covariates = list(condition = "low"))
-  summary(med.out.postExperiment.Low)
+#med.out.postExperiment.Low <- mediate(m2, m3, treat = "groupPerformance_3Norm",
+#                                        mediator = "groupClickPostFactor",
+#                                      covariates = list(condition = "low"))
+#  summary(med.out.postExperiment.Low)
 
 
 @
@@ -4009,15 +4005,15 @@ med.out.postExperiment.Low <- mediate(m2, m3, treat = "groupPerformance_3Norm",
 @
 
 <<groupPerfExpClickMediationPlotHigh, eval=T,echo=F>>=
-  plot(med.out.postExperiment.High, main = "High difficulty")
-  dev.copy(pdf, "groupPerfExpClickMediationPlotHigh.pdf")
-  dev.off()
+#  plot(med.out.postExperiment.High, main = "High difficulty")
+#  dev.copy(pdf, "groupPerfExpClickMediationPlotHigh.pdf")
+#  dev.off()
 @
 
 <<groupPerfExpClickMediationPlotLow, eval=T,echo=F>>=
-  plot(med.out.postExperiment.Low, main = "Low difficulty")
-  dev.copy(pdf, "groupPerfExpClickMediationPlotLow.pdf")
-  dev.off()
+#  plot(med.out.postExperiment.Low, main = "Low difficulty")
+#  dev.copy(pdf, "groupPerfExpClickMediationPlotLow.pdf")
+#  dev.off()
 @
 
 
@@ -4069,8 +4065,9 @@ Results of the mediation analysis revealed significant average indirect effect o
 
 
 
+XXXX
 
-
+\section{Pre- to Post Experiemnt Results}
 
 
 
@@ -4079,7 +4076,7 @@ Results of the mediation analysis revealed significant average indirect effect o
 # ggplot scatter with a slope for each condition
 
 groupPerfClickChange <- ggplot(twc,
-                            aes(x=groupPerfChangePrePostNorm, y=groupClickChangePrePostNorm, color=condition)) +
+                            aes(x=groupPerfChangePrePostNorm, y=groupClickChangePrePostNorm)) +
                             geom_point(shape = 1) +
                             geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
 groupPerfClickChange +
@@ -4114,7 +4111,7 @@ summary(perfClickChange.lmer <- lmer(groupClickChangePrePostNorm ~ groupPerfChan
 
 @
 
-<<groupPerfClickChangeConditionModel, eval=T, echo=F>>=
+<<groupperfClickChangeConditionModel, eval=T, echo=F>>=
 library(lmerTest)
 summary(perfClickChangeCondition.lmer <- lmer(groupClickChangePrePostNorm ~ groupPerfChangePrePostNorm*condition
                                     + indPerfChangePrePostNorm
@@ -4139,7 +4136,7 @@ anova(perfClickChange.lmer, perfClickChangeCondition.lmer)
 %ASSUMPTIONS:
 <<groupPerfClickChangeAssumptionsHist, echo=F,eval=T>>=
   #1.historgram with density line
-  groupPerfClickChangeResid <- resid(perfClickChangeCondition.lmer, type = "pearson")
+  groupPerfClickChangeResid <- resid(perfClickChange.lmer, type = "pearson")
   hist(groupPerfClickChangeResid,
        freq = FALSE,
        main = "Distribution of residuals \n (standardised)",
@@ -4153,14 +4150,14 @@ anova(perfClickChange.lmer, perfClickChangeCondition.lmer)
 @
 <<groupPerfClickChangeAssumptionsScatter, echo=F,eval=T>>=
   #2.scatterPlot
-  plot(perfClickChangeCondition.lmer, main = "Scatterplot of residuals \n (standardised)")
+  plot(perfClickChange.lmer, main = "Scatterplot of residuals \n (standardised)")
   dev.copy(pdf, "TEM21Scatter.pdf")
   dev.off()
 @
 <<groupPerfClickChangeQQNorm, echo=F,eval=T>>=
   #3.qqNorm
-  qqnorm(residuals(perfClickChangeCondition.lmer), main = "Norm QQ Plot of residuals")
-  qqline(residuals(perfClickChangeCondition.lmer))
+  qqnorm(residuals(perfClickChange.lmer), main = "Norm QQ Plot of residuals")
+  qqline(residuals(perfClickChange.lmer))
   dev.copy(pdf, "TEM21QQNorm.pdf")
   dev.off()
 @
@@ -4168,7 +4165,7 @@ anova(perfClickChange.lmer, perfClickChangeCondition.lmer)
   #indluential cases
   #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
  library(influence.ME)
-  groupPerfChangeClickInfl <- influence(perfClickChangeCondition.lmer, obs = TRUE)
+  groupPerfChangeClickInfl <- influence(perfClickChange.lmer, obs = TRUE)
   groupPerfChangeClickCooksD <- cooks.distance(groupPerfChangeClickInfl)
   groupPerfChangeClickCooksDMAX <- max(groupPerfChangeClickCooksD, na.rm = T)
   plot(groupPerfChangeClickInfl,
@@ -4197,7 +4194,7 @@ anova(perfClickChange.lmer, perfClickChangeCondition.lmer)
 # ggplot scatter with a slope for each condition
 
 groupClickBondingChange <- ggplot(twc,
-                            aes(x=groupClickChangePrePostNorm, y=groupBondingChangePrePostNorm, color=condition)) +
+                            aes(x=groupClickChangePrePostNorm, y=groupBondingChangePrePostNorm)) +
                             geom_point(shape = 1) +
                             geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
 groupClickBondingChange +
@@ -4206,7 +4203,7 @@ groupClickBondingChange +
             apatheme +
             ggsave("groupClickBondingChangeCondition.pdf")
 
-groupClickBondingChange
+#groupClickBondingChange
 @
 
 
@@ -4252,7 +4249,6 @@ summary(clickBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~
 
 
           clickBondingChangeCondition.lmerCIs <- confint.merMod(clickBondingChangeCondition.lmer, method = "Wald", level = 0.95)
-
 anova(clickBondingChange.lmer, clickBondingChangeCondition.lmer)
 
 @
@@ -4260,7 +4256,7 @@ anova(clickBondingChange.lmer, clickBondingChangeCondition.lmer)
 %ASSUMPTIONS:
 <<clickBondChangeAssumptionsHist, echo=F,eval=T>>=
   #1.historgram with density line
-  clickBondChangeResid <- resid(clickBondingChangeCondition.lmer, type = "pearson")
+  clickBondChangeResid <- resid(clickBondingChange.lmer, type = "pearson")
   hist(clickBondChangeResid,
        freq = FALSE,
        main = "Distribution of residuals \n (standardised)",
@@ -4274,14 +4270,14 @@ anova(clickBondingChange.lmer, clickBondingChangeCondition.lmer)
 @
 <<clickBondChangeAssumptionsScatter, echo=F,eval=T>>=
   #2.scatterPlot
-  plot(clickBondingChangeCondition.lmer, main = "Scatterplot of residuals \n (standardised)")
+  plot(clickBondingChange.lmer, main = "Scatterplot of residuals \n (standardised)")
   dev.copy(pdf, "TEM22Scatter.pdf")
   dev.off()
 @
 <<clickBondChangeQQNorm, echo=F,eval=T>>=
   #3.qqNorm
-  qqnorm(residuals(clickBondingChangeCondition.lmer), main = "Norm QQ Plot of residuals")
-  qqline(residuals(clickBondingChangeCondition.lmer))
+  qqnorm(residuals(clickBondingChange.lmer), main = "Norm QQ Plot of residuals")
+  qqline(residuals(clickBondingChange.lmer))
   dev.copy(pdf, "TEM22QQNorm.pdf")
   dev.off()
 @
@@ -4289,7 +4285,7 @@ anova(clickBondingChange.lmer, clickBondingChangeCondition.lmer)
   #indluential cases
   #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
  library(influence.ME)
-  clickBondingChangeInfl <- influence(clickBondingChangeCondition.lmer, obs = TRUE)
+  clickBondingChangeInfl <- influence(clickBondingChange.lmer, obs = TRUE)
   clickBondingChangeClickCooksD <- cooks.distance(clickBondingChangeInfl)
   clickBondingChangeClickCooksDMAX <- max(clickBondingChangeClickCooksD, na.rm = T)
   plot(clickBondingChangeInfl,
@@ -4327,7 +4323,7 @@ anova(clickBondingChange.lmer, clickBondingChangeCondition.lmer)
 # ggplot scatter with a slope for each condition
 
 groupPerfBondingChange <- ggplot(twc,
-                            aes(x=groupPerfChangePrePostNorm, y=groupBondingChangePrePostNorm, color=condition)) +
+                            aes(x=groupPerfChangePrePostNorm, y=groupBondingChangePrePostNorm)) +
                             geom_point(shape = 1) +
                             geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
 groupPerfBondingChange +
@@ -4379,7 +4375,7 @@ summary(perfBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~ 
 
   perfBondingChangeCondition.lmer.CIs <- confint.merMod(perfBondingChangeCondition.lmer, method = "Wald", level = 0.95)
 
-anova(perfBondingChange.lmer, perfBondingChangeCondition.lmer)
+anova(perfBondingChange.lmer, perfBondingConditionChange.lmer)
 
 @
 
@@ -4388,7 +4384,7 @@ anova(perfBondingChange.lmer, perfBondingChangeCondition.lmer)
 %ASSUMPTIONS:
 <<perfBondChangeAssumptionsHist, echo=F,eval=T>>=
   #1.historgram with density line
-  perfBondChangeResid <- resid(perfBondingChangeCondition.lmer, type = "pearson")
+  perfBondChangeResid <- resid(perfBondingChange.lmer, type = "pearson")
   hist(perfBondChangeResid,
        freq = FALSE,
        main = "Distribution of residuals \n (standardised)",
@@ -4402,14 +4398,14 @@ anova(perfBondingChange.lmer, perfBondingChangeCondition.lmer)
 @
 <<perfBondChangeAssumptionsScatter, echo=F,eval=T>>=
   #2.scatterPlot
-  plot(perfBondingChangeCondition.lmer, main = "Scatterplot of residuals \n (standardised)")
+  plot(perfBondingChange.lmer, main = "Scatterplot of residuals \n (standardised)")
   dev.copy(pdf, "TEM23Scatter.pdf")
   dev.off()
 @
 <<perfBondChangeQQNorm, echo=F,eval=T>>=
   #3.qqNorm
-  qqnorm(residuals(perfBondingChangeCondition.lmer), main = "Norm QQ Plot of residuals")
-  qqline(residuals(perfBondingChangeCondition.lmer))
+  qqnorm(residuals(perfBondingChange.lmer), main = "Norm QQ Plot of residuals")
+  qqline(residuals(perfBondingChange.lmer))
   dev.copy(pdf, "TEM23QQNorm.pdf")
   dev.off()
 @
@@ -4417,7 +4413,7 @@ anova(perfBondingChange.lmer, perfBondingChangeCondition.lmer)
   #indluential cases
   #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
  library(influence.ME)
-  perfBondingChangeInfl <- influence(perfBondingChangeCondition.lmer, obs = TRUE)
+  perfBondingChangeInfl <- influence(perfBondingChange.lmer, obs = TRUE)
   perfBondingChangeClickCooksD <- cooks.distance(perfBondingChangeInfl)
   perfBondingChangeClickCooksDMAX <- max(perfBondingChangeClickCooksD, na.rm = T)
   plot(perfBondingChangeInfl,
@@ -4468,7 +4464,7 @@ anova(perfBondingChange.lmer, perfBondingChangeCondition.lmer)
  library(optimx)
  #library(lmerTest)
   ## Direct relationship X->Y: fit model and show summary
-  summary(m1Change <- lmer(groupBondingChangePrePost ~ groupPerfChangePrePostNorm*condition
+  summary(m1Change <- lmer(groupBondingChangePrePost ~ groupPerfChangePrePostNorm
                                               + indPerfChangePrePostNorm
                                               + fullOutcomeAvg
                                               + subjectiveCompetenceFactor + objectiveCompetenceFactor
@@ -4482,7 +4478,7 @@ anova(perfBondingChange.lmer, perfBondingChangeCondition.lmer)
                         )
 
   ## X->M fit model and show summary
-  summary(m2Change <- lmer(groupClickChangePrePost ~ groupPerfChangePrePostNorm*condition
+  summary(m2Change <- lmer(groupClickChangePrePost ~ groupPerfChangePrePostNorm
                                             + indPerfChangePrePostNorm
                                             + fullOutcomeAvg
                                             + subjectiveCompetenceFactor + objectiveCompetenceFactor
@@ -4499,8 +4495,8 @@ anova(perfBondingChange.lmer, perfBondingChangeCondition.lmer)
   #library("optimx")
   ## M->Y fit model and show summary
 
-  summary(m3Change <- lmer(groupBondingChangePrePost ~  groupClickChangePrePost*condition
-                                          + groupPerfChangePrePostNorm*condition
+  summary(m3Change <- lmer(groupBondingChangePrePost ~  groupClickChangePrePost
+                                          + groupPerfChangePrePostNorm
                                           + indPerfChangePrePostNorm
                                           + fullOutcomeAvg
                                           + subjectiveCompetenceFactor + objectiveCompetenceFactor
@@ -4520,16 +4516,16 @@ anova(perfBondingChange.lmer, perfBondingChangeCondition.lmer)
                                           mediator = "groupClickChangePrePost")
     summary(med.out.groupPerfClickChange)
 
-  med.out.groupPerfClickChange.High <- mediate(m2Change, m3Change, treat = "groupPerfChangePrePostNorm",
-                                          mediator = "groupClickChangePrePost",
-                                        covariates = list(condition = "high"))
-    summary(med.out.groupPerfClickChange.High)
+  #med.out.groupPerfClickChange.High <- mediate(m2Change, m3Change, treat = "groupPerfChangePrePostNorm",
+  #                                        mediator = "groupClickChangePrePost",
+  #                                      covariates = list(condition = "high"))
+  #  summary(med.out.groupPerfClickChange.High)
 
 
-  med.out.groupPerfClickChange.Low <- mediate(m2Change, m3Change, treat = "groupPerfChangePrePostNorm",
-                                          mediator = "groupClickChangePrePost",
-                                        covariates = list(condition = "low"))
-    summary(med.out.groupPerfClickChange.Low)
+  #med.out.groupPerfClickChange.Low <- mediate(m2Change, m3Change, treat = "groupPerfChangePrePostNorm",
+  #                                        mediator = "groupClickChangePrePost",
+  #                                      covariates = list(condition = "low"))
+  #  summary(med.out.groupPerfClickChange.Low)
 
 
   #Moderated mediation aprroach 2: t-test (RPackage for Causal Mediation Analysis pg 12)
@@ -4548,16 +4544,382 @@ dev.off()
 
 
 <<>>=
-plot(med.out.groupPerfClickChange.High, main = "High difficulty")
-dev.copy(pdf, "groupPerfExpClickChangeMedPlotHigh.pdf")
-dev.off()
+#plot(med.out.groupPerfClickChange.High, main = "High difficulty")
+#dev.copy(pdf, "groupPerfExpClickChangeMedPlotHigh.pdf")
+#dev.off()
 @
 
 <<groupPerfExpClickChangeMedPlotLow, eval=T,echo=F>>=
-plot(med.out.groupPerfClickChange.Low, main = "Low difficulty")
-dev.copy(pdf, "groupPerfExpClickChangeMedPlotLow.pdf")
-dev.off()
+#plot(med.out.groupPerfClickChange.Low, main = "Low difficulty")
+#dev.copy(pdf, "groupPerfExpClickChangeMedPlotLow.pdf")
+#dev.off()
 @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\section{Appendix results: group performance components predict click and bonding}
+
+
+
+\myparagraph{Prediction 1.A: More positive perceptions of components of team performance predict higher feelings of team click with the training group}
+
+<<jointActionSuccessClickScatter, fig.cap=''>>=
+library(ggplot2)
+library(tidyverse)
+  jointActionSuccessClickScatter <- ggplot(twc, aes(x=jointActionSuccessPost, y=groupClickPostFactor)) +
+                              geom_point(shape = 1) +
+                              geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
+  jointActionSuccessClickScatter +
+              xlab("Group Performance Components") +
+              ylab("Team Click") +
+              apatheme
+@
+
+
+
+%MODEL:
+<<jointActionSuccessClickModel, echo=F,eval=T>>=
+
+
+
+  jointActionSuccessClick.intercept <- lmer(groupClickPostFactor ~ 1 + ( 1 |sessionName),
+                              data = twc,
+                              REML = F)
+  jointActionSuccessClick.main <- lmer(groupClickPostFactor ~ jointActionSuccessPost +
+                              ( 1 |sessionName),
+                              data = twc,
+                              REML = F)
+  #summary(jointActionSuccessClick.main)
+
+  ##MAIN EFFECTS
+  library(lmerTest)
+  summary(jointActionSuccessClick.main.controls <- lmer(groupClickPostFactor ~ jointActionSuccessPost
+                              + indPerformance_3Norm
+                              + arousalFactorPost
+                              + fullOutcomeAvg
+                              + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                              + tipiExtraverted
+                              + (groupPerformance_3Norm|sessionName),
+                              data = twc,
+                              REML = F)
+                            )
+
+  jointActionSuccessClick.main.controlsCIs <- confint.merMod(jointActionSuccessClick.main.controls, method = "Wald", level = 0.95)
+  #calculate marginal (fixed) and conditional (random) R^2 for the model:
+  #library(piecewiseSEM)
+  #jointActionSuccessClick.main.controls.R2 <- sem.model.fits(groupPerfExpClick.main.controls)
+
+
+
+
+@
+
+
+
+
+
+%ASSUMPTIONS:
+<<jointActionSuccessClickAssumptionsHist, echo=F,eval=T>>=
+  #1.historgram with density line
+  jointActionSuccessClickResid <- resid(jointActionSuccessClick.main.controls, type = "pearson")
+  hist(jointActionSuccessClickResid,
+       freq = FALSE,
+       main = "Distribution of residuals \n (standardised)",
+       xlab = "Residuals")
+  lines(density(jointActionSuccessClickResid, na.rm = TRUE))
+  dev.copy(pdf, "JAS1Hist.pdf")
+  dev.off()
+  #non-normality
+  jointActionSuccessClickResid.Wald <- shapiro.test(jointActionSuccessClickResid)
+  psych::describe(jointActionSuccessClickResid)
+@
+<<jointActionSuccessClickAssumptionsScatter, echo=F,eval=T>>=
+  #2.scatterPlot
+  plot(jointActionSuccessClick.main.controls, main = "Scatterplot of Residuals \n (standardised)")
+  dev.copy(pdf, "JAS1Scatter.pdf")
+  dev.off()
+@
+<<jointActionSuccessClickQQNorm, echo=F,eval=T>>=
+  #3.qqNorm
+  qqnorm(residuals(jointActionSuccessClick.main.controls), main = "Norm QQ Plot of Residuals")
+  qqline(residuals(jointActionSuccessClick.main.controls))
+  dev.copy(pdf, "JAS1QQNorm.pdf")
+  dev.off()
+@
+<<jointActionSuccessClickCooksD, echo=F,eval=T>>=
+  #indluential cases
+  #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+ library(influence.ME)
+ jointActionSuccessClickInfl <- influence(jointActionSuccessClick.main.controls, obs = TRUE)
+  jointActionSuccessClickCooksD <- cooks.distance(jointActionSuccessClickInfl)
+  jointActionSuccessClickCooksDMAX <- max(jointActionSuccessClickCooksD, na.rm = T)
+  plot(jointActionSuccessClickInfl,
+        which = "cook",
+        main = "Influential cases \n (Cook's Distance)",
+        ylab = "participant",
+        xlab = "cooks.distance")
+  dev.copy(pdf, "JAS1CooksD.pdf")
+  dev.off()
+
+@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\myparagraph{Prediction 3: More positive perceptions of components of team performance predict higher levels of Social Bonding to the training group}
+
+
+<<jointActionSuccessBondConditionScatter, eval=T,echo=F, fig.cap=''>>=
+  groupPerfExpBondScatter <- ggplot(twc, aes(x=jointActionSuccessPost, y=groupBondingFactorPost)) +
+                              geom_point(shape = 1) +
+                              geom_smooth(method=lm, se=FALSE)
+  groupPerfExpBondScatter +
+              theme(plot.title = element_text(size=12)) +
+              xlab("Group Performance Components") +
+              ylab("Social Bonding") +
+              apatheme +
+              ggsave("jointActionSuccessBondingScatter.pdf")
+@
+
+  %<<groupPerfExpBondScatter1, fig.cap=''>>=
+  %  teamPerfExpBondScatter1 <- ggplot(twc, aes(x=groupPerformance_3Norm, y=groupBondingFactorPost)) + geom_point(shape = 1) +
+  %                              geom_smooth(method=lm, se=FALSE)
+  %  teamPerfExpBondScatter1 +
+  %              ggtitle("Perceptions of Team Performance (vs prior expectations) \n %              theme(plot.title = element_text(size=12)) +
+  %              xlab("Team Performance vs Prior Expectations") +
+  %              ylab("Social Bonding") +
+  %              apatheme
+  %@
+
+%%MODEL:
+<<groupPerfExpBondingModel, eval=T,echo=F>>=
+library(optimx)
+  #twc$condition <- factor(twc$condition, levels = c("low", "high"),
+                        #        ordered = is.ordered(twc$condition))
+
+  jointActionSuccessBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionName),
+                              data = twc,
+                              REML = F)
+  summary(jointActionSuccessBondingCondition.main <- lmer(groupBondingFactorPost ~ jointActionSuccessPost
+                                                  + (jointActionSuccessPost |sessionName),
+                                          data = twc,
+                                          control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
+                                          REML = F)
+                                        )
+
+  summary(jointActionSuccessBondingCondition.main)
+
+
+#MAIN EFFECT:
+
+  summary(jointActionSuccessBonding.controls <- lmer(groupBondingFactorPost ~  jointActionSuccessPost
+                                                        + indPerformance_3Norm
+                                                        + arousalFactorPost
+                                                        + fullOutcomeAvg
+                                                        + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                                        + tipiExtraverted
+                                                        + (jointActionSuccessPost |sessionName)
+                                          , control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                                          , data = twc
+                                          , REML = F
+                                        )
+                                    )
+
+  jointActionSuccessBonding.controls.CIs <- confint.merMod(jointActionSuccessBonding.controls, method = "Wald")
+#CONDITION INTERACTION:
+@
+
+
+
+
+%ASSUMPTIONS:
+<<jointActionSuccessBondingConditionHist, echo=F,eval=T>>=
+  #1.historgram with density line
+  jointActionSuccessBonding.controlsResid <- resid(jointActionSuccessBonding.controls, type = "pearson")
+  hist(jointActionSuccessBonding.controlsResid, freq = FALSE, main = "Distribution of residuals", xlab = "Residuals")
+  lines(density(jointActionSuccessBonding.controlsResid, na.rm = TRUE))
+  dev.copy(pdf, "JAS3Hist.pdf")
+  dev.off()
+  #non-normality
+  jointActionSuccessBonding.controlsResid.Wald <- shapiro.test(jointActionSuccessBonding.controlsResid)
+  psych::describe(jointActionSuccessBonding.controlsResid)
+@
+<<jointActionSuccessBondingConditionScatter, echo=F,eval=T>>=
+  #2.scatterPlot
+  plot(jointActionSuccessBonding.controls, main = "Scatterplot of residuals")
+  dev.copy(pdf, "JAS3Scatter.pdf")
+  dev.off()
+@
+<<jointActionSuccessBondingConditionQQNorm, echo=F,eval=T>>=
+  #3.qqNorm
+  qqnorm(residuals(jointActionSuccessBonding.controls), main = "Norm QQ Plot of residuals")
+  qqline(residuals(jointActionSuccessBonding.controls))
+  dev.copy(pdf, "JAS3QQNorm.pdf")
+  dev.off()
+@
+<<jointActionSuccessBondingConditionCooksD, echo=F,eval=T>>=
+  #indluential cases
+  #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+  jointActionSuccessBonding.controls.Infl <- influence(jointActionSuccessBonding.controls, obs = T)
+  jointActionSuccessBonding.controlsCooksD <- cooks.distance(
+                                                      jointActionSuccessBonding.controls.Infl)
+  jointActionSuccessBonding.controls.CooksDMAX <- max(jointActionSuccessBonding.controlsCooksD,
+                                                      na.rm = T) # 1.382886e+00 (row 28)
+  plot(jointActionSuccessBonding.controls.Infl,
+        which = "cook",
+        main = "Influential Cases \n (Cook's Distance)",
+        ylab = "participants",
+        xlab = "cooks.distance")
+        dev.copy(pdf, "JAS3CooksD.pdf")
+        dev.off()
+@
+
+
+
+
+
+
+
+
+
+\myparagraph{Prediction 4: Feelings of group click will mediate a relationship between more positive perceptions of team performance components and social bonding to the group}
+
+<<jointActionSuccessClickBondMediationModel, eval=T,echo=F>>=
+
+  #detach_package function for lmerTest
+  detach_package <- function(pkg, character.only = FALSE)
+{
+  if(!character.only)
+  {
+    pkg <- deparse(substitute(pkg))
+  }
+  search_item <- paste("package", pkg, sep = ":")
+  while(search_item %in% search())
+  {
+    detach(search_item, unload = TRUE, character.only = TRUE)
+  }
+  }
+  detach_package("lmerTest", TRUE)
+
+library(lme4)
+ library(optimx)
+#  library(lmerTest)
+  ## Direct relationship X->Y: fit model and show summary
+  summary(m1 <- lmer(groupBondingFactorPost ~ jointActionSuccessPost
+                                              + arousalFactorPost
+                                              + fullOutcomeAvg
+                                              + subjectiveCompetenceFactor
+                                              + objectiveCompetenceFactor
+                                              + tipiExtraverted
+                                              + (jointActionSuccessPost|sessionName)
+                                              ,
+                                              control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                    optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                                              , data = twc
+                                              , REML = F
+                                            )
+                                          )
+
+
+
+
+
+  ## X->M fit model and show summary
+  summary(m2 <- lmer(groupClickPostFactor ~ jointActionSuccessPost
+                                            + indPerformance_3Norm
+                                            + arousalFactorPost
+                                            + fullOutcomeAvg
+                                            + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                            + (jointActionSuccessPost |sessionName)
+                                            , data = twc
+                                            , REML = F
+                                          )
+                            )
+
+
+  #install.packages("optimx")
+  #library("optimx")
+  ## M->Y fit model and show summary
+  summary(m3 <- lmer(groupBondingFactorPost ~  jointActionSuccessPost + groupClickPostFactor
+                                      + arousalFactorPost
+                                      + fullOutcomeAvg
+                                      + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                      + tipiExtraverted
+                                      + (jointActionSuccessPost + groupClickPostFactor | sessionName)
+                                      , data = twc
+                                      , REML = FALSE
+                                      , control = lmerControl(optimizer = "optimx",
+                                      calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                                    )
+                                  )
+@
+
+m1
+m2
+
+
+<<jointACtionSuccessMediationPostExperimentTest, eval=T, echo=F>>=
+library(mediation)
+med.out.postExperimentJAS <- mediate(m2, m3, treat = "jointActionSuccessPost", mediator = "groupClickPostFactor")
+  summary(med.out.postExperimentJAS)
+
+
+#med.out.postExperiment.High <- mediate(m2, m3, treat = "groupPerformance_3Norm",
+#                                        mediator = "groupClickPostFactor",
+#                                      covariates = list(condition = "high"))
+#  summary(med.out.postExperiment.High)
+
+
+#med.out.postExperiment.Low <- mediate(m2, m3, treat = "groupPerformance_3Norm",
+#                                        mediator = "groupClickPostFactor",
+#                                      covariates = list(condition = "low"))
+#  summary(med.out.postExperiment.Low)
+
+
+@
+
+
+<<jointActionSuccessClickMediationPlot, eval=T,echo=F>>=
+  plot(med.out.postExperimentJAS, main = "Mediation model")
+  dev.copy(pdf, "jointActionSuccessClickMediationPlot.pdf")
+  dev.off()
+@
+
 
 
 
