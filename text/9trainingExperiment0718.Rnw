@@ -3807,6 +3807,144 @@ A LMER model (controlling for arousal, average trial performance outcome, and te
 
 
 
+
+
+
+\myparagraph{Prediction 2.a: Feelings of group click predict feelings of social bonding to provincial team}
+
+<<groupClickTeamBondScatter, eval=F,echo=T>>=
+  groupClickTeamBondScatter <- ggplot(twc, aes(x=groupClickPostFactor, y=teamBondingFactorPost)) +
+                              geom_point(shape = 1) +
+                              geom_smooth(method=lm, se=F)   #  add shaded confidence region
+  groupClickTeamBondScatter +
+  #              guides(color = guide_legend(title="Condition"))+
+              theme(plot.title = element_text(size=12)) +
+              labs(x = "Team Click", y = "Social Bonding (Province)")+
+              apatheme +
+              ggsave("groupClickTeamBondScatter.pdf")
+              #              scale_fill_
+              #"Perceptions of Team Click \n predict feelings of Social Bonding to training group"
+              #guides(fill=guide_legend("my awesome title"))
+@
+
+Figure ~\ref{fig:groupClickTeamBondScatter} shows a clear relationship between Team Click and Social Bonding to provincial team following the training group, with the slope for the high difficulty condition appearing slightly steeper than the low difficulty condition.
+
+%%MODEL:
+<<clickTeamBondingModel, eval=T,echo=F>>=
+
+
+
+  clickTeamBonding.intercept <- lmer(teamBondingFactorPost ~ 1 + ( 1 |sessionName),
+                              data = twc,
+                              REML = F)
+  clickTeamBonding.main <- lmer(teamBondingFactorPost ~ groupClickPostFactor*condition +
+                              ( groupClickPostFactor |sessionName),
+                              data = twc,
+                              REML = F)
+  summary(clickTeamBonding.main)
+
+  summary(clickTeamBonding.controls <- lmer(teamBondingFactorPost ~ groupClickPostFactor
+                                          + arousalFactorPost
+                                          + fullOutcomeAvg
+                                          + subjectiveCompetenceFactor
+                                          + objectiveCompetenceFactor
+                                          + tipiExtraverted
+                                          + (groupClickPostFactor|sessionName),
+                                            data = twc,
+                                            REML = F)
+                                          )
+
+
+  #CIs:
+  clickTeamBonding.controls.CIs <- confint.merMod(clickTeamBonding.controls, method = "Wald")
+  #calculate marginal (fixed) and conditional (random) R^2 for the model:
+  #clickBonding.controls.R2 <- sem.model.fits(clickBonding.controls)
+
+
+  #Check for interaction with condition:
+  summary(clickTeamBondingCondition.controls <- lmer(teamBondingFactorPost  ~ groupClickPostFactor*condition
+                                            + arousalFactorPost
+                                            + fullOutcomeAvg
+                                            + subjectiveCompetenceFactor
+                                            + objectiveCompetenceFactor
+                                            + tipiExtraverted
+                                            + (groupClickPostFactor + condition |sessionName),
+                                          data = twc,
+                                          REML = F)
+                                        )
+
+ # interaction is not significant and so dropped from analysis
+  #CIs:
+  clickTeamBondingCondition.controls.CIs <- confint.merMod(clickTeamBondingCondition.controls, method = "Wald")
+  #calculate marginal (fixed) and conditional (random) R^2 for the model:
+  #clickTeamBondingCondition.controls.R2 <- sem.model.fits(clickTeamBondingCondition.controls)
+
+anova(clickTeamBonding.controls, clickTeamBondingCondition.controls)
+
+@
+
+A LMER model (controlling for arousal, average trial performance outcome, and technical competence (subjective and objective)) revealed a strong positive relationship between feelings of group click and feelings of social bonding to provincial team,
+
+%ASSUMPTIONS:
+<<clickTeamBondingHist, echo=F,eval=T>>=
+  #1.historgram with density line
+  clickTeamBondingResid <- resid(clickTeamBonding.controls, type = "pearson")
+  hist(clickTeamBondingResid, freq = FALSE, main = "Distribution of residuals", xlab = "Residuals")
+  lines(density(clickTeamBondingResid, na.rm = TRUE))
+  dev.copy(pdf, "TEM2TeamHist.pdf")
+  dev.off()
+  #non-normality
+  clickTeamBonding.controls.Wald <- shapiro.test(clickTeamBondingResid)
+  psych::describe(clickTeamBondingResid)
+@
+<<clickTeamBondingScatter, echo=F,eval=T>>=
+  #2.scatterPlot
+  plot(clickTeamBonding.controls, main = "Scatterplot of residuals")
+  dev.copy(pdf, "TEM2TeamScatter.pdf")
+  dev.off()
+@
+<<clickTeamBondingQQNorm, echo=F,eval=T>>=
+  #3.qqNorm
+  qqnorm(residuals(clickTeamBonding.controls), main = "Norm QQ Plot of residuals")
+  qqline(residuals(clickTeamBonding.controls))
+  dev.copy(pdf, "TEM2TeamQQNorm.pdf")
+  dev.off()
+@
+<<clickTeamBondingCooksD, echo=F,eval=T>>=
+  #indluential cases
+  #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+
+  library(influence.ME)
+  clickTeamBonding.controls.Infl <- influence(clickTeamBonding.controls, obs = T)
+  clickTeamBonding.controls.CooksD <- cooks.distance(clickTeamBonding.controls.Infl)
+  clickTeamBonding.controls.CooksDMAX <- max(clickTeamBonding.controls.CooksD, na.rm = T) # 1.382886e+00 (row 28)
+  plot(clickTeamBonding.controls.Infl,
+          which = "cook",
+          main = "Influential Cases \n (Cook's Distance)",
+          ylab = "participants",
+          xlab = "cooks.distance")
+  dev.copy(pdf, "TEM2TeamCooksD.pdf")
+  dev.off()
+@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \myparagraph{Prediction 3: More positive perceptions of team performance relative to expectations will predict higher levels of Social Bonding to the training group}
 
 
