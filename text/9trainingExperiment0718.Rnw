@@ -1509,6 +1509,7 @@ One factor, labelled ``Group Social Bonding'' was imposed on the data, which exp
 \subsubsection{Additional data reduction}
 In addition to athlete expectation violations concerning group and individual performance (predictor variable), group click (moderator and outcome variable), and group bonding (outcome variable), measures relating to athlete perceptions of components of group and individual performance, social bonding to the team as a whole, athlete arousal, technical competence (subjective and objective measures), and athlete perceptions of team discipline were subjected to data reduction (see Appendix Section ~\ref{} for full details).
 
+XXXX
 <<dataReductionGroupPerformance, echo=F,eval=T>>=
     #groupPerformanceVariablesSubset:
     tlcGroupPerformance <- subset(tlc, select = c(groupDefensiveLine, groupAttackingLine,
@@ -4973,6 +4974,73 @@ med.out.postExperimentJAS <- mediate(m2, m3, treat = "jointActionSuccessPost", m
   dev.copy(pdf, "jointActionSuccessClickMediationPlot.pdf")
   dev.off()
 @
+
+
+
+
+\section{Team Bonding}
+
+
+<<jointActionSuccessClickMediationPlot, eval=T,echo=F>>=
+summary(conditionGroupPerfPost <- lmer(groupPerformance_3Norm ~ condition
+                                        + arousalFactorPost
+                                        + fullOutcomeAvg
+                                        + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                        + tipiExtraverted
+                                        + ( 1 |sessionName),
+                                          data = twc,
+                                          REML = F)
+      )
+conditionGroupPerfPost.CIs <- confint.merMod(conditionGroupPerfPost, method = "Wald", level = 0.95)
+
+@
+
+
+
+
+
+
+
+
+\section{Objective performance outcome predicts perceptions of performance relative to prior expectations}
+
+
+<<objectivePerformancePerfExpectations, eval=T,echo=F>>=
+#groupComponentsSuccess (jAS):
+library(lmerTest)
+        summary(objPerfGroupPerfExpect <- lmer(groupPerformance_3Norm ~ fullOutcomeAvg
+                                          + arousalFactorPost
+                                          + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                          + tipiExtraverted
+                                          + ( 1 |sessionName),
+                                            data = twc,
+                                            REML = F)
+                                  )
+  objPerfGroupPerfExpect.CIs <- confint.merMod(objPerfGroupPerfExpect, method = "Wald", level = 0.95)
+
+
+  summary(objPerfGroupPerfExpect.tries <- lmer(groupPerformance_3Norm ~ successTotals
+                                    + arousalFactorPost
+                                    + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                    + tipiExtraverted
+                                    + ( 1 |sessionName),
+                                      data = twc,
+                                      REML = F)
+                            )
+objPerfGroupPerfExpect.tries.CIs <- confint.merMod(objPerfGroupPerfExpect.tries, method = "Wald", level = 0.95)
+
+
+
+
+
+@
+
+
+
+
+
+
+
 
 
 
