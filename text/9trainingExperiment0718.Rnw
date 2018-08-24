@@ -1,4 +1,4 @@
- Team Click% File name: trainingExperimentFinalAnalysis.R
+% File name: trainingExperimentFinalAnalysis.R
 % Author: Jacob Taylor
 % Date Created: 20/09/2017
 % Description: A script for analysing complete data from trainingExperiment in Weihai and Beijing during August 2016.
@@ -149,6 +149,37 @@ This study further tested the hypothesised relationship between joint action, te
 %
 
 
+<<interRaterReliability, eval=T, echo=F>>=
+
+videoData <- read.csv("codedVideoData.csv", na.strings = c("n/a", ""))
+
+#1. Clean video data and add new variables:
+# 1.1 exlcude warm-up trials from each "clip"
+videoDataLean <- videoData[ ! videoData$trial %in% c(1:4), ]
+videoDataLean$trial
+
+# 1.2 exclude additional trials:  clip1 trial 13 (immediate dropped ball fail), last two trials from final clip (BJM High uncertainty)
+videoDataLean <- videoDataLean[ !(videoDataLean$clip == 1 & videoDataLean$trial == 13), ]
+
+
+#videoDataLean$fullOutcomeJT <- videoDataLean$fullOutcome
+#videoDataLean$sucessJT <- videoDataLean$sucess
+
+
+#install.packages("fmsb")
+library(fmsb)
+Kappa.test(videoDataLean$fullOutcomeJT, videoDataLean$fullOutcome)
+Kappa.test(videoDataLean$successJT, videoDataLean$success)
+library(ICC)
+  # groupConfidence
+reliabilityICC <- ICCbare(fullOutcomeJT, fullOutcome, data = videoDataLean)
+
+
+
+
+
+
+@
 
 
 
@@ -2509,6 +2540,29 @@ Study predictions were tested using the post-Experiment survey data.  Intra-clas
 
 
 <<ICCestimatesSession, eval=T, echo=F>>=
+
+t.test(twc$trainingAge[twc$condition == "high"], twc$trainingAge[twc$condition == "low"], na=T)
+sd(twc$trainingAge[twc$condition == "high"], na=T)
+sd(twc$trainingAge[twc$condition == "low"], na=T)
+
+mean(twc$groupPerformance_3[twc$condition == "high"], na.rm=T)
+sd(twc$groupPerformance_3[twc$condition == "high"], na.rm=T)
+mean(twc$groupPerformance_3[twc$condition == "low"], na.rm=T)
+sd(twc$groupPerformance_3[twc$condition == "low"], na.rm=T)
+
+#success total
+mean(twc$successTotals[twc$condition == "high"], na.rm=T)
+sd(twc$successTotals[twc$condition == "high"], na.rm=T)
+mean(twc$successTotals[twc$condition == "low"], na.rm=T)
+sd(twc$successTotals[twc$condition == "low"], na.rm=T)
+
+#outcome avg
+mean(twc$fullOutcomeAvg[twc$condition == "high"], na.rm=T)
+sd(twc$fullOutcomeAvg[twc$condition == "high"], na.rm=T)
+mean(twc$fullOutcomeAvg[twc$condition == "low"], na.rm=T)
+sd(twc$fullOutcomeAvg[twc$condition == "low"], na.rm=T)
+
+
 library(ICC)
   # groupConfidence
    groupConfidenceICC <- ICCest(sessionName, groupConfidentTechnicalChallenges_2 , data = twc, CI.type = "THD")
