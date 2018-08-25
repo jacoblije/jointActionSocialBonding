@@ -3810,7 +3810,11 @@ A LMER model (controlling for arousal, average trial performance outcome, and te
 
 
 
-\myparagraph{Prediction 2.a: Feelings of group click predict feelings of social bonding to provincial team}
+\myparagraph{Prediction 2.2: Feelings of group click predict feelings of social bonding to provincial team}
+
+
+
+\myparagraph{Post-Drill}
 
 <<groupClickTeamBondScatter, eval=F,echo=T>>=
   groupClickTeamBondScatter <- ggplot(twc, aes(x=groupClickPostFactor, y=teamBondingFactorPost)) +
@@ -3883,7 +3887,6 @@ anova(clickTeamBonding.controls, clickTeamBondingCondition.controls)
 
 @
 
-A LMER model (controlling for arousal, average trial performance outcome, and technical competence (subjective and objective)) revealed a strong positive relationship between feelings of group click and feelings of social bonding to provincial team,
 
 %ASSUMPTIONS:
 <<clickTeamBondingHist, echo=F,eval=T>>=
@@ -3926,6 +3929,135 @@ A LMER model (controlling for arousal, average trial performance outcome, and te
   dev.copy(pdf, "TEM2TeamCooksD.pdf")
   dev.off()
 @
+
+
+
+
+
+
+\myparagraph{Prediction 2.2 (Pre- to Post-Drill)}
+
+<<groupClickTeamBondingChangeCondition, eval=T, echo=F>>=
+# ggplot scatter with a slope for each condition
+
+groupClickTeamBondingChange <- ggplot(twc,
+                            aes(x=groupClickChangePrePostNorm, y=teamBondingChangePrePostNorm)) +
+                            geom_point(shape = 1) +
+                            geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
+groupClickTeamBondingChange +
+            xlab("Team Click Change") +
+            ylab("Social Bonding (Province) Change") +
+            apatheme +
+            ggsave("groupClickTeamBondingChangeCondition.pdf")
+
+#groupClickTeamBondingChange
+@
+
+
+
+
+
+
+<<groupClickTeamBondingChangeModel, eval=T, echo=F>>=
+# ggplot scatter with a slope for each condition
+library(optimx)
+summary(clickTeamBondingChange.lmer <- lmer(teamBondingChangePrePostNorm ~ groupClickChangePrePostNorm
+                                    + (groupPerfChangePrePostNorm | sessionName)
+                                    + indPerfChangePrePostNorm
+                                    + fullOutcomeAvg
+                                    + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                    + tipiExtraverted
+                                    , data = twc
+                                    , REML = FALSE
+                                    , control = lmerControl(optimizer = "optimx",
+                                      calc.derivs = FALSE,  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                                )
+        )
+
+clickTeamBondingChange.lmer.lmerCIs <- confint.merMod(clickTeamBondingChange.lmer, method = "Wald", level = 0.95)
+
+@
+
+
+<<groupClickTeamBondingChangeConditionModel, eval=T, echo=F>>=
+# ggplot scatter with a slope for each condition
+#summary(clickTeamBondingChangeCondition.lmer <- lmer(groupTeamBondingChangePrePostNorm ~ groupClickChangePrePostNorm*condition
+  #                                  + (groupPerfChangePrePostNorm + condition | sessionName)
+    #                                + indPerfChangePrePostNorm
+        #                            + fullOutcomeAvg
+          #                          + subjectiveCompetenceFactor + objectiveCompetenceFactor
+            #                        + tipiExtraverted
+              #                      , data = twc
+              #                      , REML = FALSE
+                #                    , control = lmerControl(optimizer = "optimx",
+                  #                    calc.derivs = FALSE,  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                #                )
+        #)
+
+
+    #    clickTeamBondingChangeCondition.lmerCIs <- confint.merMod(teamChangeCondition.lmer, method = "Wald", level = 0.95)
+#anova(teamChange.lmer, teamChangeCondition.lmer)
+
+@
+
+%ASSUMPTIONS:
+<<clickTeamBondChangeAssumptionsHist, echo=F,eval=T>>=
+  #1.historgram with density line
+  clickTeamBondChangeResid <- resid(clickTeamBondingChange.lmer, type = "pearson")
+  hist(clickTeamBondChangeResid,
+       freq = FALSE,
+       main = "Distribution of residuals \n (standardised)",
+       xlab = "Residuals")
+  lines(density(clickTeamBondChangeResid, na.rm = TRUE))
+  dev.copy(pdf, "TEM22TeamHist.pdf")
+  dev.off()
+  #non-normality
+  clickTeamBondChangeResid.Wald <- shapiro.test(clickTeamBondChangeResid)
+  psych::describe(clickTeamBondChangeResid)
+@
+<<clickTeamBondChangeAssumptionsScatter, echo=F,eval=T>>=
+  #2.scatterPlot
+  plot(clickTeamBondingChange.lmer, main = "Scatterplot of residuals \n (standardised)")
+  dev.copy(pdf, "TEM22TeamScatter.pdf")
+  dev.off()
+@
+<<clickTeamBondChangeQQNorm, echo=F,eval=T>>=
+  #3.qqNorm
+  qqnorm(residuals(clickTeamBondingChange.lmer), main = "Norm QQ Plot of residuals")
+  qqline(residuals(clickTeamBondingChange.lmer))
+  dev.copy(pdf, "TEM22TeamQQNorm.pdf")
+  dev.off()
+@
+<<clickTeamBondChangeCooksD, echo=F,eval=T>>=
+  #indluential cases
+  #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+ library(influence.ME)
+  clickTeamBondingChangeInfl <- influence(clickTeamBondingChange.lmer, obs = TRUE)
+  clickTeamBondingChangeClickCooksD <- cooks.distance(clickTeamBondingChangeInfl)
+  clickTeamBondingChangeClickCooksDMAX <- max(clickTeamBondingChangeClickCooksD, na.rm = T)
+  plot(clickTeamBondingChangeInfl,
+        which = "cook",
+        main = "Influential cases \n (Cook's Distance)",
+        ylab = "participant",
+        xlab = "cooks.distance")
+  dev.copy(pdf, "TEM22TeamCooksD.pdf")
+  dev.off()
+
+@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4076,6 +4208,162 @@ A LMER model with group performance expectation violation, condition, and their 
         dev.copy(pdf, "TEM3CooksD.pdf")
         dev.off()
 @
+
+
+
+
+
+
+\myparagraph{Prediction 3.2: More positive perceptions of team performance relative to expectations will predict higher levels of Social Bonding to the Provincial team}
+
+
+<<groupPerfExpTeamBondConditionScatter, eval=T,echo=F, fig.cap= 'Positive violation of group performance expectations \n predict feelings of Social Bonding to training group'>>=
+  groupPerfExpTeamBondScatter <- ggplot(twc, aes(x=groupPerformance_3Norm, y=groupBondingFactorPost)) +
+                              geom_point(shape = 1) +
+                              geom_smooth(method=lm, se=FALSE)
+  groupPerfExpTeamBondScatter +
+              theme(plot.title = element_text(size=12)) +
+              xlab("Group Performance vs Prior Expectations") +
+              ylab("Social Bonding") +
+              apatheme +
+              ggsave("groupPerfExpTeamBondConditionScatter.pdf")
+@
+
+  %<<groupPerfExpTeamBondScatter1, fig.cap=''>>=
+  %  teamPerfExpBondScatter1 <- ggplot(twc, aes(x=groupPerformance_3Norm, y=groupBondingFactorPost)) + geom_point(shape = 1) +
+  %                              geom_smooth(method=lm, se=FALSE)
+  %  teamPerfExpBondScatter1 +
+  %              ggtitle("Perceptions of Team Performance (vs prior expectations) \n %              theme(plot.title = element_text(size=12)) +
+  %              xlab("Team Performance vs Prior Expectations") +
+  %              ylab("Social Bonding") +
+  %              apatheme
+  %@
+@
+Figure ~\ref{fig:groupPerfExpTeamBondConditionScatter} shows a positive relationship between violation of group performance expectations and Social Bonding to the training group.  The plot shows a pronounced difference in the slope of each experimental condition, suggesting that the relationship was stronger in the high difficulty condition.
+
+%%MODEL:
+<<groupPerfExpTeamBondingModel, eval=T,echo=F>>=
+library(optimx)
+  #twc$condition <- factor(twc$condition, levels = c("low", "high"),
+                                ordered = is.ordered(twc$condition))
+
+  groupPerfExpTeamBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionName),
+                              data = twc,
+                              REML = F)
+  summary(groupPerfExpTeamBondingCondition.main <- lmer(groupBondingFactorPost ~ groupPerformance_3Norm*condition
+                                                  + (groupPerformance_3Norm |sessionName),
+                                          data = twc,
+                                          control = lmerControl(optimizer = "optimx", calc.derivs = FALSE, optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE)),
+                                          REML = F)
+                                        )
+
+  summary(groupPerfExpTeamBondingCondition.main)
+
+
+#MAIN EFFECT:
+
+  summary(groupPerfExpTeamBonding.controls <- lmer(teamBondingFactorPost ~  groupPerformance_3Norm
+                                                        + indPerformance_3Norm
+                                                        + arousalFactorPost
+                                                        + fullOutcomeAvg
+                                                        + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                                        + tipiExtraverted
+                                                        + (groupPerformance_3Norm |sessionName)
+                                          , control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                                          , data = twc
+                                          , REML = F
+                                        )
+                                    )
+
+  groupPerfExpTeamBonding.controls.CIs <- confint.merMod(groupPerfExpTeamBonding.controls, method = "Wald")
+#CONDITION INTERACTION:
+
+    summary(groupPerfExpTeamBondingCondition.controls <- lmer(groupBondingFactorPost ~  groupPerformance_3Norm*condition
+                                                          + indPerformance_3Norm
+                                                          + arousalFactorPost
+                                                          + fullOutcomeAvg
+                                                          + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                                          + tipiExtraverted
+                                                          + (groupPerformance_3Norm |sessionName)
+                                            , control = lmerControl(optimizer = "optimx", calc.derivs = FALSE,
+                                                                  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                                            , data = twc
+                                            , REML = F
+                                          )
+                                      )
+
+  #CIs:
+  groupPerfExpTeamBondingCondition.controls.CIs <- confint.merMod(groupPerfExpTeamBondingCondition.controls, method = "Wald")
+  #R^2s:
+ # groupPerfExpTeamBondingCondition.controls.R2 <- sem.model.fits(groupPerfExpTeamBondingCondition.controls)
+
+anova(groupPerfExpTeamBonding.controls,groupPerfExpTeamBondingCondition.controls)
+
+@
+A LMER model with group performance expectation violation, condition, and their interaction as fixed effects, experiment session as random effect (correlated slope and intercept), and controls, revealed a significant positive relationship between the interaction of group performance expectation violation and condition on social bonding
+
+
+%ASSUMPTIONS:
+<<groupPerfExpTeamBondingConditionHist, echo=F,eval=T>>=
+  #1.historgram with density line
+  groupPerfExpTeamBonding.controlsResid <- resid(groupPerfExpTeamBonding.controls, type = "pearson")
+  hist(groupPerfExpTeamBonding.controlsResid, freq = FALSE, main = "Distribution of residuals", xlab = "Residuals")
+  lines(density(groupPerfExpTeamBonding.controlsResid, na.rm = TRUE))
+  dev.copy(pdf, "TEM3Hist.pdf")
+  dev.off()
+  #non-normality
+  groupPerfExpTeamBonding.controlsResid.Wald <- shapiro.test(groupPerfExpTeamBonding.controlsResid)
+  psych::describe(groupPerfExpTeamBonding.controlsResid)
+@
+<<groupPerfExpTeamBondingConditionScatter, echo=F,eval=T>>=
+  #2.scatterPlot
+  plot(groupPerfExpTeamBonding.controls, main = "Scatterplot of residuals")
+  dev.copy(pdf, "TEM3Scatter.pdf")
+  dev.off()
+@
+<<groupPerfExpTeamBondingConditionQQNorm, echo=F,eval=T>>=
+  #3.qqNorm
+  qqnorm(residuals(groupPerfExpTeamBonding.controls), main = "Norm QQ Plot of residuals")
+  qqline(residuals(groupPerfExpTeamBonding.controls))
+  dev.copy(pdf, "TEM3QQNorm.pdf")
+  dev.off()
+@
+<<groupPerfExpTeamBondingConditionCooksD, echo=F,eval=T>>=
+  #indluential cases
+  #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+  groupPerfExpTeamBonding.controls.Infl <- influence(groupPerfExpTeamBonding.controls, obs = T)
+  groupPerfExpTeamBonding.controlsCooksD <- cooks.distance(
+                                                      groupPerfExpTeamBonding.controls.Infl)
+  groupPerfExpTeamBonding.controls.CooksDMAX <- max(groupPerfExpTeamBonding.controlsCooksD,
+                                                      na.rm = T) # 1.382886e+00 (row 28)
+  plot(groupPerfExpTeamBonding.controls.Infl,
+        which = "cook",
+        main = "Influential Cases \n (Cook's Distance)",
+        ylab = "participants",
+        xlab = "cooks.distance")
+        dev.copy(pdf, "TEM3CooksD.pdf")
+        dev.off()
+@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Model residuals were normally distributed around zero
 (
@@ -4264,6 +4552,7 @@ XXXX
 
 
 
+\subsection{Prediction 1 (Pre- to Post)}
 
 <<groupPerfClickChangeCondition, eval=T, echo=F>>=
 # ggplot scatter with a slope for each condition
@@ -4380,7 +4669,7 @@ anova(perfClickChange.lmer, perfClickChangeCondition.lmer)
 
 
 
-
+\subsection{Prediction 2.1 groupClickChange (Pre- to Post-Drill)}
 
 
 <<groupClickBondingChangeCondition, eval=T, echo=F>>=
@@ -4509,9 +4798,9 @@ anova(clickBondingChange.lmer, clickBondingChangeCondition.lmer)
 
 
 
+\subsection{Prediction 3 (Pre- to Post-Drill)}
 
-
-
+\subsection{Prediction 3.1 (Pre- to Post-Drill)}
 <<groupPerfBondingChangeCondition, eval=T, echo=F>>=
 # ggplot scatter with a slope for each condition
 
@@ -4630,8 +4919,160 @@ anova(perfBondingChange.lmer, perfBondingConditionChange.lmer)
 
 
 
+\subsection{Prediction 3.2 (Pre- to Post-Drill) Province}
 
 
+<<groupPerfTeamBondingChangeCondition, eval=T, echo=F>>=
+# ggplot scatter with a slope for each condition
+
+groupPerfTeamBondingChange <- ggplot(twc,
+                            aes(x=groupPerfChangePrePostNorm, y=teamBondingChangePrePostNorm)) +
+                            geom_point(shape = 1) +
+                            geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
+groupPerfTeamBondingChange +
+            xlab("Group Perf Change") +
+            ylab("Social Bonding (Province) Change") +
+            apatheme +
+            ggsave("groupPerfTeamBondingChangeCondition.pdf")
+
+@
+
+
+<<groupPerfTeamBondingChangeModel, eval=T, echo=F>>=
+# ggplot scatter with a slope for each condition
+library(optimx)
+summary(perfTeamBondingChange.lmer <- lmer(teamBondingChangePrePostNorm ~ groupPerfChangePrePostNorm
+                                    + (groupPerfChangePrePostNorm | sessionName)
+                                    + indPerfChangePrePostNorm
+                                    + fullOutcomeAvg
+                                    + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                    + tipiExtraverted
+                                    , data = twc
+                                    , REML = FALSE
+                                    , control = lmerControl(optimizer = "optimx",
+                                      calc.derivs = FALSE,  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                                )
+        )
+
+    perfTeamBondingChange.lmer.CIs <- confint.merMod(perfTeamBondingChange.lmer, method = "Wald", level = 0.95)
+
+
+
+@
+
+<<groupPerfTeamBondingChangeConditionModel, eval=T, echo=F>>=
+# ggplot scatter with a slope for each condition
+summary(perfTeamBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~ groupPerfChangePrePostNorm*condition
+                                    + indPerfChangePrePostNorm
+                                    + fullOutcomeAvg
+                                    + subjectiveCompetenceFactor + objectiveCompetenceFactor
+                                    + tipiExtraverted
+                                    + (groupPerfChangePrePostNorm + condition | sessionName)
+                                    , control = lmerControl(optimizer = "optimx",
+                                      calc.derivs = FALSE,  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                                    , data = twc
+                                    , REML = FALSE
+
+                                )
+        )
+
+  perfTeamBondingChangeCondition.lmer.CIs <- confint.merMod(perfTeamBondingChangeCondition.lmer, method = "Wald", level = 0.95)
+
+anova(perfTeamBondingChange.lmer, perfTeamBondingConditionChange.lmer)
+
+@
+
+
+
+%ASSUMPTIONS:
+<<perfTeamBondChangeAssumptionsHist, echo=F,eval=T>>=
+  #1.historgram with density line
+  perfTeamBondChangeResid <- resid(perfTeamBondingChange.lmer, type = "pearson")
+  hist(perfTeamBondChangeResid,
+       freq = FALSE,
+       main = "Distribution of residuals \n (standardised)",
+       xlab = "Residuals")
+  lines(density(perfTeamBondChangeResid, na.rm = TRUE))
+  dev.copy(pdf, "TEM23Hist.pdf")
+  dev.off()
+  #non-normality
+  perfTeamBondChangeResid.Wald <- shapiro.test(perfTeamBondChangeResid)
+  psych::describe(perfTeamBondChangeResid)
+@
+<<perfTeamBondChangeAssumptionsScatter, echo=F,eval=T>>=
+  #2.scatterPlot
+  plot(perfTeamBondingChange.lmer, main = "Scatterplot of residuals \n (standardised)")
+  dev.copy(pdf, "TEM23Scatter.pdf")
+  dev.off()
+@
+<<perfTeamBondChangeQQNorm, echo=F,eval=T>>=
+  #3.qqNorm
+  qqnorm(residuals(perfTeamBondingChange.lmer), main = "Norm QQ Plot of residuals")
+  qqline(residuals(perfTeamBondingChange.lmer))
+  dev.copy(pdf, "TEM23QQNorm.pdf")
+  dev.off()
+@
+<<perfTeamBondChangeCooksD, echo=F,eval=T>>=
+  #indluential cases
+  #cook's distances all < 1, so no cause for concern, (Field 2012: 271)
+ library(influence.ME)
+  perfTeamBondingChangeInfl <- influence(perfTeamBondingChange.lmer, obs = TRUE)
+  perfTeamBondingChangeClickCooksD <- cooks.distance(perfTeamBondingChangeInfl)
+  perfTeamBondingChangeClickCooksDMAX <- max(perfTeamBondingChangeClickCooksD, na.rm = T)
+  plot(perfTeamBondingChangeInfl,
+        which = "cook",
+        main = "Influential cases \n (Cook's Distance)",
+        ylab = "participant",
+        xlab = "cooks.distance")
+  dev.copy(pdf, "TEM23CooksD.pdf")
+  dev.off()
+
+@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\subsection{Prediction 4 (Pre- to Post Drill)}
 
 
 
@@ -5001,6 +5442,48 @@ library(optimx)
         dev.copy(pdf, "JAS3CooksD.pdf")
         dev.off()
 @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
