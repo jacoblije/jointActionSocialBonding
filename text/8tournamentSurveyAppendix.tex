@@ -230,7 +230,7 @@ Cronbach's $\alpha$ is a function of the number of items in a test, the average 
 Due to the dependencies in the data and missingness throughout, both traditional ANCOVA (analysis of co-variance) models linear mixed-effects regression models (LMER) are capable of incorporating both fixed and random effects into analysis of variance, however ANCOVA designs only allow the intercept (and not the regression slope) to vary according to level-2 variance, whereas LMER can model the variability of both intercept and slope across different groups of the predictor variable \citep{Field2012}. In addition, the ability of LMERs to deal with unbalanced designs (due to missing values) meant that a LMER was the most suitable modelling strategy for the present study.
 
 \subsubsection{Judging robustness: normality of residuals\label{app8:normality}}
-Non-normally distributed residuals are problematic as they may influence the model's ability to generate accurate parameter estimates . Two data manipulation techniques were considered in order to normalise residuals and therefore preserve the estimates of the model: 1) exclusion of outliers and 2) transformation of the outcome variable.  Transformation of the outcome variables was the preferred method over outlier exclusion, due to the cost involved in removing observations that may be of potential theoretical relevance to the scientific investigation \citep{Rousseeuw2011}.
+Non-normally distributed residuals are problematic as they may influence the model's ability to generate accurate parameter estimates . Two data manipulation techniques were considered in order to normalise residuals and therefore preserve the estimates of the model: 1) exclusion of outliers \citep[according to Tukey's method; observations above and below 1.5x the Inter Quartile Range (IQR); see][]{Tukey1977}) and 2) transformation of the outcome variable.  Transformation of the outcome variables was the preferred method over outlier exclusion, due to the cost involved in removing observations that may be of potential theoretical relevance to the scientific investigation \citep{Rousseeuw2011}.
 
 \subsubsection{Intra-class correlation\label{app8:ICC}}
 To assess the need for a statistical model capable of accounting for correlation of residuals, dependency in the data a was quantified using a ratio measure comparing within- and between-group variance, known as the intra-class correlation (ICC). Clustering in the data according to team or sex (the separate men's and women's Tournament) was considered.
@@ -770,36 +770,36 @@ Fatigue items consisted of fatigue, physical exertion and mental exertion. Corre
 
 
 
-      \subsection{Prediction 3.b: More positive perceptions of Team Performance Components will predict higher levels of social bonding}
-
-      \subsubsection{Post-Tournament}
-
-      \myparagraph{LMER model}
-          \myparagraph{Model comparisons}
-          \newgeometry{margin=0.5cm}
-          \input{images/MLM3bExpectationsBonding}
-          \restoregeometry
-
-      \myparagraph{Model robustness checks}
+      \subsection{Prediction 5.2: More positive perceptions of Team Performance Components will predict higher levels of social bonding}
 
 
-      \begin{figure}[htbp]
-        \includegraphics[scale =.4]{images/MLM3bHist.pdf}
-        \includegraphics[scale =.4]{images/MLM3bScatter.pdf}
-        \includegraphics[scale =.4]{images/MLM3bQQNorm.pdf}
-        \includegraphics[scale =.4]{images/MLM3bCooksD.pdf}
-        \caption{Model assumptions: Team Performance Components predicts Social Bonding }
-        \label{fig:MLM3bAssumptions}
-      \end{figure}
 
-      \begin{figure}[htbp]
-        \includegraphics[scale =.4]{images/MLM3bLogHist.pdf}
-        \includegraphics[scale =.4]{images/MLM3bLogScatter.pdf}
-        \includegraphics[scale =.4]{images/MLM3bLogQQNorm.pdf}
-        \includegraphics[scale =.4]{images/MLM3bLogCooksD.pdf}
-        \caption{Log-transformed model assumptions: Team Performance Components predicts Social Bonding}
-        \label{fig:MLM3bLogAssumptions}
-      \end{figure}
+    %  \myparagraph{LMER model}
+    %      \myparagraph{Model comparisons}
+    %      \newgeometry{margin=0.5cm}
+    %      \input{images/MLM3bExpectationsBonding}
+    %      \restoregeometry
+
+    %  \myparagraph{Model robustness checks}
+
+
+    %  \begin{figure}[htbp]
+    %    \includegraphics[scale =.4]{images/MLM3bHist.pdf}
+    %    \includegraphics[scale =.4]{images/MLM3bScatter.pdf}
+    %    \includegraphics[scale =.4]{images/MLM3bQQNorm.pdf}
+    %    \includegraphics[scale =.4]{images/MLM3bCooksD.pdf}
+    %    \caption{Model assumptions: Team Performance Components predicts Social Bonding }
+    %    \label{fig:MLM3bAssumptions}
+    %  \end{figure}
+
+    %  \begin{figure}[htbp]
+    %    \includegraphics[scale =.4]{images/MLM3bLogHist.pdf}
+    %    \includegraphics[scale =.4]{images/MLM3bLogScatter.pdf}
+    %    \includegraphics[scale =.4]{images/MLM3bLogQQNorm.pdf}
+    %    \includegraphics[scale =.4]{images/MLM3bLogCooksD.pdf}
+    %    \caption{Log-transformed model assumptions: Team Performance Components predicts Social Bonding}
+    %    \label{fig:MLM3bLogAssumptions}
+    %  \end{figure}
 
 
 
