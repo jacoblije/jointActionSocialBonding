@@ -22,15 +22,17 @@ Evidence for this set up from active inference:
 Interoceptive preference,
 load on sensory attenuation processes
 
-These considerations lead to the hypothesis that expectations of higher levels of technical challenge in joint action will lead to higher levels of social bonding, due to the likelihood that athletes will experience more positive violations of expectations around team performance in the high-difficulty prime than in a low difficulty prime.  predicted that the feeling of team click would mediate a relationship between positive violations of expectations and social bonding.
-
-In addition, how is it possible to isolate joint action from other potential sources of information regarding the team and its performance such as explicit feedback from coaches and other players surrounding performance and joint action outcome?  This experimental study was designed with these considerations in mind.
-
 In Ch5 I investigated team click in a high stakes tournament involving extreme levels of uncertainty.  and found a positive relationship between perceptions of performance and social bonding, mediated by the agentic and visceral dimensions of team click.
 
-In the previous study, the level of uncertainty was presumed to be constant.  But what if it were possible to vary the level of uncertainty in joint action to see if uncertainty drives a relationship between expectation violation and team click?
+In the previous study, the level of uncertainty was presumed to be constant. Vary the level of uncertainty in joint action would enable an opportunity to test the relationship between uncertainty in joint action on expectation violation, to see if expectation violation can account for a relationship between perceptions of performance in joint action and team click.
+
+These considerations lead to the hypothesis that expectations of higher levels of technical challenge in joint action will lead to higher levels of social bonding, due to the likelihood that athletes will experience more positive violations of expectations around team performance in the high-difficulty prime than in a low difficulty prime.  It was also predicted that the feeling of team click would mediate a relationship between positive violations of expectations and social bonding.
+
+%In addition, how is it possible to isolate joint action from other potential sources of information regarding the team and its performance such as explicit feedback from coaches and other players surrounding performance and joint action outcome?  This experimental study was designed with these considerations in mind.
 
 
+
+%\myparagraph{Prediction 3.1: Perceptions of team click predict perceptions of social bonding to the training group}
 %In light of the literature reviewed in Chapter 4, the current study will examine children’s helping behaviour in a peer-play context after the children actively perform some clapping and tapping movements synchronously with the rhythms that they hear.
 
 %To date, however, there has been no test of the hypothesised causal link between movement synchrony and pro-social behaviour in early childhood. To investigate this question in detail, the second study of this thesis examines whether performing movements synchronously with a peer facilitates pro-social behaviour, including spontaneous helping behaviour in young children.
@@ -46,7 +48,7 @@ Specifically, in this study I formulate and test the following predictions:
 \item[Prediction 2:] More positive perceptions of team performance relative to prior expectations will predict higher levels of team click
 \item[Prediction 3:] Higher levels of team click will predict higher levels of social bonding
 \item[Prediction 4:] More positive perceptions of team performance relative to prior expectations will predict higher levels of social bonding
-\item[Prediction 4:] Team click will mediate a relationship between more positive perceptions of team performance relative to prior expectations and social bonding
+\item[Prediction 5:] Team click will mediate a relationship between more positive perceptions of team performance relative to prior expectations and social bonding
 \end{description}
 
 
@@ -67,6 +69,7 @@ The experiment reported below attempted to fulfil these conditions (p. 378).
 A between-subjects experimental design was used, in which athletes participated in a typically encountered rugby training drill preceded by one of two experimental primes designed to manipulate athlete expectations concerning joint action.  In the "high difficulty" condition, athletes were primed to believe that they would be assessed on their ability to perform a technically challenging training drill; athletes in the low difficulty condition were primed to believe that they would be assessed on their ability to perform a technically straightforward rugby training drill. In fact, all athletes performed the exact same drill, only the prime differed between groups.  Surveys measuring athletes' perceptions of performance in joint action relative to prior expectations, perceptions of team click, and perceptions of social bonding were recorded both before and after the experiment, and objective measures of performance in joint action were derived from video footage.
 
 The experimental manipulation was designed to encourage athletes in the high difficulty condition to generate lower expectations for successful individual and group performance in joint action than athletes in the low difficulty condition.  Assuming that performance in the subsequent training drill (pre-rated by athletes as moderate difficulty drill), athletes in the high difficulty drill should on average experience more positive violations of expectations than athletes in the low difficulty drill.  To check the effectiveness of this experimental manipulation, athletes were asked to report their confidence their own and their group’s ability to meet the technical challenges of the impending training drill.  It was expected that athletes in the high difficulty condition would be less confident about their own and their group's ability to meet the technical challenges of the training session.
+
 
 
 %The closing of the introduction—typically the final paragraph or two—usually includes two important elements. The first is a clear statement of the main research question or hypothesis. This statement tends to be more formal and precise than in the opening and is often expressed in terms of operational definitions of the key variables. The second is a brief overview of the method and some comment on its appropriateness.
@@ -165,7 +168,7 @@ Video footage from all 8 experiment sessions was analysed by the researcher as w
 
 %In addition, the the standard deviation of this mean outcome (``Trial Outcome SD'') was calculated in order to capture the variance of performance for each training group.
 
-The researcher briefed the hypothesis blind research assistant using 10 trials randomly selected from the warm-up trials of each experiment session. Owing this detailed briefing and the research assistant's familiarity, inter-rater reliability, measured using Cohen's (1960) kappa \citep[suitable for two coders, see][]{DiEugenio2004} was high for both the Try ($\kappa = .96, Z(128) = 10.60, p < .001$) and Trial Outcome ($\kappa = .90, Z(128) = 18.96, p < .001$), suggesting almost perfect agreement.
+The researcher briefed the hypothesis blind research assistant using 10 trials randomly selected from the warm-up trials of each experiment session. Owing this detailed briefing and the research assistant's familiarity, inter-rater reliability, measured using Cohen's (1960) kappa \citep[suitable for two coders, see][]{DiEugenio2004} was high for both the Try ($\kappa = .98, Z(128) = 12.60, p < .001$) and Trial Outcome ($\kappa = .96, Z(128) = 19.96, p < .001$), suggesting almost perfect agreement.
 
 \subsection{Procedure}
 Permission to run the study was sought from the head coach of each of the four teams (Beijing men's, Beijing women's, Shandong men's, Shandong women's).  These coaches nominated athletes who were fit and able to complete the session without compromising their existing training schedules.  Athletes were randomly assigned to one of two conditions, and then to a particular experimental group, with some subsequent adjustments to assignments to ensure that each condition was matched as much as possible according to average training age.  Once athletes were assigned to an experiment group, they were then added to a WeChat group populated by other training group members and the researcher.
@@ -210,6 +213,12 @@ Study predictions were tested by analysing two data sets: 1) Post-Drill survey d
 \subsection{Data structure}
 The \textit{in situ} and psuedo- or field experimental nature of this study meant that the collected data contained multiple levels of dependency: observations were nested within individuals (collected at Baseline, Pre-, and Post-Drill), location (Beijing or Shandong), team (Shandong men, Shandong women, Beijing men or Beijing women), sex, and experiment session.  To aid statistical controls of potential dependencies, To test relationships between variables of interest, linear mixed effects regression (LMER) models (package \textit{lme4} in the R environment) were used for their ability to model the random structure of the data (see Chapter~\ref{tournamentSurvey} Section ~\ref{survey:survey:dataStructureModelSelection} for full explanation).  Intra-class correlation (ICC) estimates were calculated to account for clustering of model residuals according to groupings of athlete sex, team, and specific experiment session. ICC values of $>.10-20$ were considered meaningful, and informed which random structure to specify in LMER models.   Unless otherwise stated, all models controlled for the average performance outcome of each trial (Trial Outcome Average), subjective and objective measures of athlete technical competence, personality (extraversion), and arousal measured Post-Drill.
 
+\myparagraph{Data manipulation for Pre- to Post-Tournament analysis}
+In order to account for variation over time between Pre- and Post-Drill surveys, variables of interest (individual and team performance relative to prior expectations, team click, social bonding, and fatigue) were calculated by subtracting pre- from post-Drill scores for each athlete. The calculation of change scores reduced the complexity of the data structure down to two levels of analysis, and meant that relationships between these change variables could be modelled using a linear mixed effects regression. Change scores of relevant factors were introduced to the model as fixed effects, so their intercepts were allowed to vary according to the random structure of each model.
+
+In regards to analysis of Prediction 5.1, given that the item measuring Athlete perceptions of overall team performance in the Pre-Tournament survey was not framed in terms of expectation violation (but instead in terms of more or less ``good'' or ``poor''), it was not possible to directly compare the Pre- and Post-Tournament measures of Team Performance Vs Expectations.  Instead, the Post-Tournament measure of Team Performance Vs Expectation was used to predict change in feelings of team click between Pre- and Post-Tournament measurements.
+
+
 %Results from models of each data set are reported according to study predictions in Section ~\ref{sect:resultsStudyPredictions}.
 
 
@@ -225,7 +234,6 @@ EFAs were performed on clusters of survey items pertaining to performance, team 
 
 \myparagraph{Perceptions of group and individual performance relative to prior expectations}
 The main predictor variable of interest, perceptions of training group performance relative to prior expectations, was a single item measure, and did not require data reduction.  Given that most outcome variables of interest were factors standardised as z-scores (with $mean = 0, SD = 1$), perceptions of group performance relative to prior expectations was also transformed to a standardised z-score so as to accord with explanatory variables in subsequent subsequent linear mixed effects modelling \citep[for an explanation, see, for example, ][1058]{Beckmann2003}.
-
 
 
 \myparagraph{Mediation analyses}
@@ -306,9 +314,9 @@ Athletes were on average more critical in regards to perceptions of individual p
 
 Objective performance outcome did appear to vary, with the low difficulty experiment sessions averaging 11.83 ($SD = .85$) tries and the high condition only 8 ($SD = 2.20$) tries (the most successful tries scored in an experiment session was 13, while the lowest amount of tries scored in an experiment session was 4).  For the more fine grained performance score, ``Trial Outcome Average'' the average for the low difficulty condition was 4.68 ($SD = .25$), while the average for the high difficulty condition was 3.52 ($SD = .49$). A more detailed report of performance outcome by experiment session is shown in Table ~\ref{tab:trainingObjPerformanceSession}.  For a description of additional variables, including moderator variables, see Appendix~\ref{app9:descriptives}.
 
-\input{images/trainingDescriptivesRawPerformance.tex}
-\input{images/trainingDescriptivesRawClickBond.tex}
-\input{images/trainingObjPerformanceSession.tex}
+\input{images/trainingDescriptivesRawPerformance}
+\input{images/trainingDescriptivesRawClickBond}
+\input{images/trainingObjPerformanceOutcomeTable}
 
  %(see Tables ~\ref{tab:indPerfTimeLowTraining}\nobreakdash~\ref{tab:teamPerfTimeBaselineTraining} in Appendix ~\ref{app9:trainingExperiment} Section ~\ref{app9:descriptives}).
 
@@ -360,15 +368,22 @@ Correlations between items were all reasonably high (all $r's  .41$), which sugg
 
 
 
+\subsubsection{Correlations between key factors of interest}
+\myparagraph{Post-Drill}
+Table ~ref{} displays correlation values of key factors of interest for the Pre- to Post-Drill data.  All values were low- to moderate; except for Team Performance Components and Team Performance Vs Expectations ($.64$), and Team Click Change and Social Bonding Change ($.79$).
 
+\myparagraph{Pre- to Post-Drill}
 
-
+Table ~\ref{} displays correlation values of key factors of interest for the Pre- to Post-Drill data.  All values were low- to moderate; except for Team Performance Components and Team Performance Vs Expectations ($.64$).  The correlation between key outcome variables, Team Click Change and Social Bonding Change, was moderate ($.37$).
+%\input{images/trainingDrillFactorsCorrMatrixPrePost}
 
 
 
 \subsection{ICC values}
 
 \myparagraph{Post-Drill data}
+
+%\input{images/trainingDrillFactorsCorrMatrixPost}
 
 ICC values for variables of interest (shown in Table ~\ref{tab:trainingICC}) indicated meaningful clustering (i.e. $ICC <.10$) in the data according to experimental session (8 in total), provincial team (Beijing men's, Beijing women's, Shandong men's, Shandong women's).  Given the constraints on model complexity imposed by the relatively small sample size of the study, experiment session was chosen as a level 2 grouping variable (owing to marginally higher ICC values).  To account for clustering within each experiment session, Experiment session was modelled as a random effect using the intercept only (models that modelled both the intercept and the slope failed to converge due the large number of groups relative to sample size).  High variation in objective performance outcomes further supported the decision to account for variation attributable to experiment session (see Appendix ~\ref{app9:objPerformance}).
 
@@ -390,11 +405,12 @@ ICC values for variables of interest (shown in Table ~\ref{tab:trainingICC}) ind
 
   %One exception was physiological arousal, which significantly increased following the experiment, as would be expected due to the moderate to high levels of physiological exertion associated with the training drill.
 
+
 Table ~\ref{tab:factorsTime} shows that the Post-Drill measures of group component performance, individual component performance, training group Team Click, and training group social bonding, were all considerably lower than Pre-Drill measurements. The differential between athlete perceptions of confidence in group and individual ability to meet the challenges of the drill and perceptions of group and individual performance relative to expectations was also striking: the mean of questions relating to group ($63.37, SD = 21.23$) versus individual ($49.23, SD = 26.42$) performance vs expectations were much lower than initial confidence in individual (77.33(19.19)) and group (77.33(15.04)) ability.  Thus, key variables of interest appeared to reduce in value between Pre- and Post-Drill measures.
 
 \input{/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images/factorsTime190718.tex}
 
-New variables were created which expressed each individual athlete's change in variables of performance, team click, and social bonding between two time points.  Values at time Pre-Drill (or Baseline in the case of the Team Bonding variable) were subtracted from values at time Post-Drill to create a new variable.  Relationships between these new variables (Group Performance Expectations Change, Team Click Change, Group Bonding Change, Team Bonding Change) were used to analyse study predictions.
+New variables were created which expressed each individual athlete's change in variables of team click, and social bonding between two time points.  Values at time Pre-Drill (or Baseline in the case of the Social Bonding (Province) variable) were subtracted from values at time Post-Drill to create a new variable.  Relationships between these new variables (Team Click Change, Group Bonding Change, Team Bonding Change) were used to analyse study predictions. Measures of performance relative to prior expectation were not suitable for this transformation, as the pre- training drill measures of performance were not phrased in terms of prior expectation.  Instead, the Post-Drill measure of performance was used to predict change in outcome variables.
 
 %(See Appendix ~\ref{app9:trainingExperiment} Section ~\ref{sect:prePostDrillFactors})
 %\myparagraph{Construction of new variables expressing change in variables over time (Pre- to Post-Drill)}
@@ -492,6 +508,31 @@ Results indicated that there were no clear observable effects of condition on va
 
 These results provided no justification for a relationship between objective performance outcome and perceptions of group performance relative to prior expectations.  As such, no cases were excluded from the data.
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Analysis of Study Predictions\label{sect:resultsStudyPredictions}}
 
 
@@ -502,10 +543,10 @@ Results reported above failed to support the prediction that higher levels of un
 
 
 
-\subsubsection{Prediction 1: More positive perceptions of team performance relative to prior expectations predict higher perceptions of team click with the training group}
+\subsubsection{Prediction 2: More positive perceptions of team performance relative to prior expectations predict higher perceptions of team click with the training group}
 
 \myparagraph{Post-Drill}
-Results of the Post-Drill data supported this prediction. There was a significant main effect of Group performance Vs Expectations on Team Click ($\betavec .57 \CIstart .23, .90 \CIfinish \SE .17, t(5.40) = 3.21, \pvalue .02$), indicating that more positive perceptions of group performance relative to prior expectations predicts perceptions of team click (see Figure ~\ref{fig:teamPerfExpClickScatter}).  All other main effects were not significant.
+Results of the Post-Drill data supported this prediction. There was a significant main effect of Group performance Vs Expectations on Team Click ($\betavec .57 \CIstart .23, .90 \CIfinish \SE .17, t(5.40) = 3.21, \pvalue .02$), indicating that more positive perceptions of group performance relative to prior expectations predicts perceptions of team click (see Figure ~\ref{fig:teamPerfExpClickScatter}).  All other main effects were not significant (see Table~\ref{tab:TEM1groupPerfExpClick} in Appendix~\ref{app9:trainingExperiment}).
 
 %Condition was included in the model as an interaction.  Results of the new model revealed a significant positive interaction effect of group performance expectation violation and condition on team click ($\betavec .41 \CIstart .07, .75 \CIfinish \SE .17, t(53) = 2.39, \pvalue .02 $).  A chi-squared test of model fit (based on assessment of AIC value for each nested model) was significant ($\chi^2 (2, N = 53) = 9.42, p = .009$), suggesting that the model in which the interaction effect featured offered a more appropriate fit of the data (for a visualisation of the results, see Figure ~\ref{fig:teamPerfExpClickScatter}).
 
@@ -516,14 +557,16 @@ Results of the Post-Drill data supported this prediction. There was a significan
     \label{fig:teamPerfExpClickScatter}
 \end{figure}
 
-Model residuals were normally distributed around zero ($\resdist .99, \pvalue .97 $) and an analysis of Cook's distances suggests that the model did not contain any observations that unjustifiably influenced parameter estimates (all $\cooksD < .49$), for full presentation of model assumptions, see Appendix Figure ~\ref{fig:M1Assumptions}).  These results suggest that more positive perceptions of group performance relative to prior expectations predicted stronger perceptions of team click.
+Model residuals were normally distributed around zero ($\resdist .99, \pvalue .97$) and an analysis of Cook's distances suggests that the model did not contain any observations that unjustifiably influenced parameter estimates (all $\cooksD < .49$), for full presentation of model assumptions, see Appendix Figure ~\ref{fig:M1Assumptions}).  These results suggest that more positive perceptions of group performance relative to prior expectations predicted stronger perceptions of team click.
 
 %Results were in line with predictions that more positive perceptions of group performance relative to prior expectations predicted stronger perceptions of team click, an effect observed to be strongest in the high difficulty condition.
 %The main effect of condition ($\betavec .76 \CIstart .12, 1.4 \CIfinish \SE .33, t(53) = 2.32, \pvalue .02 $) and group performance expectation violation on perceptions of team click with the training group ($\betavec .32 \CIstart .06, .57 \CIfinish, \SE .13, t(53)= 2.41, \pvalue .02$) were also significant.
 %The average performance outcome of each Invasion Drill trial was also a significant positive predictor of team click ($\betavec .73 \CIstart .23, 1.24 \CIfinish \SE .26, t(53)= 2.86, \pvalue .006$ (see Table ~\ref{tab:M1lmer}). This result suggested that on-field performance influenced athlete perceptions of performance and team click.
 
 \myparagraph{Pre- to Post-Drill}
-Results of the Pre- to Post-Drill survey also supported this prediction.  There was a significant main effect of change in perceptions of group performance on change in team click ($\betavec .54 \CIstart .30, .78 \CIfinish \SE .12, t(53) = 4.371, \pvalue .00006$), indicating that greater positive change in perceptions of group performance relative to prior expectations predicts positive change in perceptions of team click.  All other main effects were not significant.
+Results of the Pre- to Post-Drill survey also supported this prediction.  There was a significant main effect of Group Performance Vs Expectations on  Team Click Change ($\betavec .54 \CIstart .30, .78 \CIfinish \SE .12, t(53) = 4.37, p < .001$), indicating that greater positive change in perceptions of group performance relative to prior expectations predicts positive change in perceptions of team click.  All other main effects were not significant (see Table~\ref{tab:TEM1groupPerfExpClick} in Appendix~\ref{app9:trainingExperiment}).
+
+
 
 %Results of a nested model---with condition included as an interaction---revealed a significant positive interaction effect of changes in group performance and condition on team click ($\betavec .47 \CIstart .04, .90 \CIfinish \SE .22, t(53) = 2.16, \pvalue .04 $).  While the interaction effect is clearly identifiable visually (see Figure ~\ref{fig:teamPerfExpClickScatter}),a chi-squared test of model fit was not significant ($\chi^2 (5, N = 53) = 4.49, p = .48$), suggesting that the model in which the interaction effect featured did not offer a more appropriate fit of the data.
 
@@ -545,12 +588,14 @@ Model residuals were normally distributed around zero ($\resdist .98, \pvalue .4
 %Model residuals were normally distributed around zero ($\resdist .98, \pvalue .45$) and an analysis of Cook's distances suggests that the model did not contain any observations that unjustifiably influenced parameter estimates (all $\cooksD < .34$), for full presentation of model assumptions, see Appendix Figure ~\ref{fig:M1PrePostAssumptions}).
 
 
-\subsubsection{Prediction 2: Perceptions of team click predict perceptions of social bonding to the training group}
+\subsubsection{Prediction 3: Perceptions of team click predict perceptions of social bonding to the training group}
 
-\myparagraph{Prediction 2.1: Perceptions of team click predict perceptions of social bonding to the training group}
+
+\myparagraph{Prediction 3.1: Perceptions of team click predict perceptions of social bonding to the training group}
 
 \myparagraph{Post-Drill}
 Results of the Post-Drill survey supported this prediction. The model revealed a significant main effect of Team Click perceptions of Social Bonding to the training group ($\betavec .63 \CIstart .46, .79 \CIfinish \SE .09, t(53) = 7.28, p < .0001$), indicating that stronger perceptions of team click predict stronger perceptions of social bonding.  All other main effects of the model were not significant.  Model residuals were normally distributed around zero ($\resdist .99, \pvalue .80$) and there were no unjustifiably influential cases (all $\cooksD < .6$, see model assumptions in Figure ~\ref{fig:M2Assumptions} in Appendix~\ref{app9:postExperimentModelAssumptions}).
+
 
 
 
@@ -575,7 +620,7 @@ Results of the Post-Drill survey supported this prediction. The model revealed a
 %The main effect of condition ($\betavec .13 \CIstart .15, .72 \CIfinish \SE .29, t(18.7) = 3.15, \pvalue .006$) and the interaction effect of team click and condition on social bonding ($\betavec .26 \CIstart -0.08, .60 \CIfinish \SE .17, t(30.43) = 1.51, \pvalue .14$) were not significant.  These results did, however, appear to be trending in the predicted direction, whereby the relationship between click and bonding appeared stronger in the high difficulty condition.
 
 \myparagraph{Pre- to Post-Drill}
-Results of the Pre- to Post-Drill survey also offered support for this prediction.  A LMER revealed a significant main effect of change in perceptions of team click on change in perceptions of social bonding to the training group ($\betavec .27 \CIstart .01, .54 \CIfinish \SE .13, t(53) = 2.05, p < .05$), such that an increased change in team click predicted an increased change in social bonding.  All other main effects of the model were not significant. Model residuals were normally distributed around zero ($\resdist .96, \pvalue .08$), and Cook's Distances were less than $.5$, indicating that the model did not to contain any observations that unjustifiably influenced parameter estimates (see Figure ~\ref{fig:M22Assumptions} in Appendix~\ref{app9:prePostExperimentModelAssumptions} for model assumptions).
+Results of the Pre- to Post-Drill survey also offered support for this prediction.  A LMER revealed a significant main effect of Team Click Change on Social Bonding Change to the training group ($\betavec .27 \CIstart .01, .54 \CIfinish \SE .13, t(53) = 2.05, p < .05$), such that an increased change in team click predicted an increased change in social bonding.  All other main effects of the model were not significant. Model residuals were normally distributed around zero ($\resdist .96, \pvalue .08$), and Cook's Distances were less than $.5$, indicating that the model did not to contain any observations that unjustifiably influenced parameter estimates (see Figure ~\ref{fig:M22Assumptions} in Appendix~\ref{app9:prePostExperimentModelAssumptions} for model assumptions).
 
 
 
@@ -600,10 +645,10 @@ Results of the Pre- to Post-Drill survey also offered support for this predictio
 
 
 
-\myparagraph{Prediction 2.2: Perceptions of team click predict perceptions of social bonding to the Provincial team}
+\myparagraph{Prediction 3.2: Perceptions of team click predict perceptions of social bonding to the Provincial team}
 
 \myparagraph{Post-Drill}
-Results of the Post-Drill survey supported this prediction. The model revealed a significant main effect of Team Click perceptions of Social Bonding to the training group ($\betavec .50 \CIstart .21, .79 \CIfinish \SE .15, t(5.13) = 3.442, p = .02$), indicating that stronger perceptions of team click predicted stronger perceptions of social bonding to the Provincial team.  All other main effects of the model were not significant.  Model residuals were normally distributed around zero ($\resdist .96, \pvalue .10$) and there were no unjustifiably influential cases (all $\cooksD < .7$, see model assumptions in Figure ~\ref{fig:M2TeamAssumptions} in Appendix~\ref{app9:postExperimentModelAssumptions}).
+Results of the Post-Drill survey supported this prediction. The model revealed a significant main effect of Team Click on Social Bonding ($\betavec .50 \CIstart .21, .79 \CIfinish \SE .15, t(5.13) = 3.442, p = .02$), indicating that stronger perceptions of team click predicted stronger perceptions of social bonding to the Provincial team.  All other main effects of the model were not significant.  Model residuals were normally distributed around zero ($\resdist .96, \pvalue .10$) and there were no unjustifiably influential cases (all $\cooksD < .7$, see model assumptions in Figure ~\ref{fig:M2TeamAssumptions} in Appendix~\ref{app9:postExperimentModelAssumptions}).
 
 
 
@@ -619,7 +664,7 @@ Results of the Post-Drill survey supported this prediction. The model revealed a
 
 
 \myparagraph{Pre- to Post-Drill}
-The main effect of change in perceptions of team click on change in perceptions of social bonding to the Provincial team was not significant, ($\betavec .19 \CIstart -.11, .48 \CIfinish \SE .14, t(47.51) = 1.25, p < .05$).  All other main effects of the model were not significant. This result suggested that change in perceptions of team click did not predict change in perceptions of social bonding to the Provincial team.
+The main effect of Team Click Change Social Bonding (Province) was not significant, ($\betavec .19 \CIstart -.11, .48 \CIfinish \SE .14, t(47.51) = 1.25, p < .05$).  All other main effects of the model were not significant. This result suggested that change in perceptions of team click did not predict change in perceptions of social bonding to the Provincial team.
 
 
 
@@ -630,11 +675,10 @@ The main effect of change in perceptions of team click on change in perceptions 
 
 
 
-\subsubsection{Prediction 3: More positive violations of team performance expectations will predict higher levels of social bonding}
+\subsubsection{Prediction 4: More positive violations of team performance expectations will predict higher levels of social bonding}
 
 
-
-\myparagraph{Prediction 3.1: More positive violations of team performance expectations will predict higher levels of social bonding to the training group}
+\myparagraph{Prediction 4.1: More positive violations of team performance expectations will predict higher levels of social bonding to the training group}
 
 \myparagraph{Post-Drill survey}
 A LMER model revealed that the main effect of Group Performance Vs Expectations on Social Bonding was not significant, ($\betavec .25 \CIstart -.10, .59 \CIfinish \SE .18, t(5.21) = 1.39, \pvalue .22$).  The only significant main effect of the model was arousal, ($\betavec .23 \CIstart .01, .44 \CIfinish \SE .11, t(39.37) = 2.10, \pvalue .04$), suggesting that reports of higher arousal at the end of the drill were significantly associated with higher levels of social bonding.  These results did not directly support the prediction that more positive violations of expectations around group performance would also predict higher levels of social bonding.
@@ -656,8 +700,7 @@ A LMER model revealed that the main effect of Group Performance Vs Expectations 
 
 
 \myparagraph{Pre- to Post-Drill survey}
-
-Models of the Pre- to Post-Drill data also produced similar results.  A LMER model revealed that the main effect of change in group performance on change in social bonding was not significant, ($\betavec -0.03 \CIstart -.44, .39 \CIfinish \SE .21, t(7.57) = -.12, \pvalue .91$). The model did reveal a signifiant main effect of change in individual performance on change in social bonding, ($\betavec .28 \CIstart .02, .55 \CIfinish \SE .13, t(49.39) = 2.13, \pvalue .04$), suggesting that more positive increase in perceptions of individual performance predicted more positive increase in social bonding between Pre- and Post-Drill surveys.  However, these results did not directly support the prediction that more positive violations of expectations concerning group performance would predict higher levels of social bonding.
+Models of the Pre- to Post-Drill data also produced similar results.  A LMER model revealed that the main effect of Group Performance Vs Expectations on Social Bonding Change was not significant, ($\betavec -0.03 \CIstart -.44, .39 \CIfinish \SE .21, t(7.57) = -.12, \pvalue .91$). The model did reveal a signifiant main effect of Performance Vs Expectation on Social Bonding Change, ($\betavec .28 \CIstart .02, .55 \CIfinish \SE .13, t(49.39) = 2.13, \pvalue .04$), suggesting that more positive increase in perceptions of individual performance predicted more positive increase in social bonding between Pre- and Post-Drill surveys.  However, these results did not directly support the prediction that more positive violations of expectations concerning group performance would predict higher levels of social bonding.
 
 Taken together, results did not support the prediction that perceptions of group performance relative to prior expectations directly predict social bonding.
 
@@ -682,21 +725,49 @@ Taken together, results did not support the prediction that perceptions of group
 
 
 
-\myparagraph{{Prediction 3.2: More positive violations of team performance expectations will predict higher levels of social bonding to the Provincial team}
+\myparagraph{Prediction 4.2: More positive violations of team performance expectations will predict higher levels of social bonding to the Provincial team}
 
 \myparagraph{Post-Drill survey}
 A LMER model revealed that the main effect of Group Performance Vs Expectations on Social Bonding (Province) was not significant, ($\betavec .24 \CIstart -.02, .49 \CIfinish \SE .13, t(8.62) = 1.83, \pvalue .10$). No other main effects in the model were significant.
 
 \myparagraph{Pre- to Post-Drill survey}
- A LMER model revealed that the main effect of Group Performance Change on Social Bonding (Province) Change was not significant, ($\betavec .16 \CIstart -.44, .39 \CIfinish \SE .21, t(8.97) = .714, \pvalue .49$).
+ A LMER model revealed that the main effect of Group Performance Vs Expectations on Social Bonding (Province) Change was not significant, ($\betavec .16 \CIstart -.44, .39 \CIfinish \SE .21, t(8.97) = .714, \pvalue .49$).
 
 Results of both models did not support the prediction that perceptions of group performance relative to prior expectations directly predict social bonding to the Provincial team.
 
 
 
-\subsubsection{Prediction 4: Perceptions of team click will mediate a relationship between more positive violations of expectations around group performance and social bonding to the group}
+\subsubsection{Prediction 5: Perceptions of team click will mediate a relationship between more positive violations of expectations around group performance and social bonding to the group}
 
 Due to the fact that the direct path between Group Performance Vs Expectations did not significantly predict Social Bonding (to the training group or to Provincial team), a mediation analysis was not appropriate.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -708,11 +779,11 @@ Due to the fact that the direct path between Group Performance Vs Expectations d
 \clearpage
 \section{Discussion}
 %study:
-This study failed to find evidence for the primary prediction that higher levels of uncertainty in joint action will generate more positive perceptions of team performance relative to prior expectations.  The study did, however, confirm the prediction---substantiated in the previous study---of a relationship between more positive perceptions of team performance relative to prior expectations and perceptions of team click.  Higher levels of team click also significantly predicted higher levels of social bonding.  The direct relationship between perceptions of performance relative to prior expectations and social bonding was not significant, and thus the prediction that team click mediates a relationship between positive expectation violation and social bonding was not supported.  In sum, these findings extend the empirical substantiation of a general theory of team click in group exercise settings, while also leaving many important theoretical and empirical questions to be considered.
+This study was designed to investigate the phenomenon of team click in a controlled field experiment. Results did not show evidence for the primary prediction that higher levels of uncertainty in joint action will generate more positive perceptions of team performance relative to prior expectations.  The study did, however, confirm predicted relationships between more positive perceptions of team performance relative to prior expectations and perceptions of team click (Prediction 2).  Higher levels of team click also significantly predicted higher levels of social bonding (Prediction 3).  The direct relationship between perceptions of performance relative to prior expectations and social bonding was not significant, and thus the prediction that team click mediates a relationship between positive expectation violation and social bonding was not supported (Prediction 5). These findings extend the empirical substantiation of a general theory of team click in group exercise settings, while also leaving many important theoretical and empirical questions to be considered.
 
-Extends previous research
+%Extends previous research
 
-This study was designed to investigate the phenomenon of team click in a controlled field experiment.  Athletes participated in a training drill paradigm in which overt feedback concerning performance was restricted to athletes' perceptions of each phase of the Invasion Drill.  Athletes were not overtly declared as winners or losers, and there was nothing explicit to gain from the experiment---unlike in the high stakes national tournament that was the focus of the previous study (Chapter~\ref{tournamentSurvey}).  Unlike a high stakes rugby tournament, the training drill did not entail high levels of physiological cost, in fact only required low-to-medium level exertion and ``grab'' as opposed to full-contact.
+%Athletes participated in a training drill paradigm in which overt feedback concerning performance was restricted to athletes' perceptions of each phase of the Invasion Drill.  Athletes were not overtly declared as winners or losers, and there was nothing explicit to gain from the experiment---unlike in the high stakes national tournament that was the focus of the previous study (Chapter~\ref{tournamentSurvey}).  Unlike a high stakes rugby tournament, the training drill did not entail high levels of physiological cost, in fact only required low-to-medium level exertion and ``grab'' as opposed to full-contact.
 
 
 
@@ -743,27 +814,25 @@ This study was designed to investigate the phenomenon of team click in a control
 
 
 
-\myparagraph{Summary of results}
+%\myparagraph{Summary of results}
 
-Post-Drill generally confirmed predictions by demonstrating positive significant associations between perceptions of performance (relative to prior expectations), team click, and social bonding.  The mediation effect also confirmed that the experience of high quality coordination in joint action (team click) mediated a relationship between joint action and social bonding.  The fact that this result was further moderated by experiment condition suggests that (positive) expectation violation in joint action could be an important explanatory mechanism.  The moderation effect of condition was only significant in the relationship between group performance vs. expectations and team click, however.
+%Post-Drill generally confirmed predictions by demonstrating positive significant associations between perceptions of performance (relative to prior expectations), team click, and social bonding.  The mediation effect also confirmed that the experience of high quality coordination in joint action (team click) mediated a relationship between joint action and social bonding.  The fact that this result was further moderated by experiment condition suggests that (positive) expectation violation in joint action could be an important explanatory mechanism.  The moderation effect of condition was only significant in the relationship between group performance vs. expectations and team click, however.
 
 %results:
-Significant positive relationships between 1) perceptions of performance in joint action relative to prior expectation and team click, 2) team click and social bonding,  and 3) performance in joint action and social bonding were moderated by experiment condition, such that these relationships were strongest in athletes who participated in the high difficulty condition.  Mediation models supported these findings, showing evidence of a moderated mediation effect of team click on the relationship between group performance vs expectations and social bonding.  In both the Post-Drill and pre- to Post-Drill analyses, the mediation effect was moderated by experiment condition: the relationship was either strongest or only present in the high difficulty condition on not in the low difficulty condition.  Despite an overall trend in which scores decreased between pre- and Post-Drill measures, athletes who on average experienced more positive perceptions of performance following the Experiment also reported higher average levels of team click and social bonding (a statistical relationship that was against the overall trend in the data).  The results described here held when statistically controlling for athlete perceptions of individual performance, technical competence, objective performance outcome in the experiment session, and physiological arousal.
+%Significant positive relationships between 1) perceptions of performance in joint action relative to prior expectation and team click, 2) team click and social bonding,  and 3) performance in joint action and social bonding were moderated by experiment condition, such that these relationships were strongest in athletes who participated in the high difficulty condition.  Mediation models supported these findings, showing evidence of a moderated mediation effect of team click on the relationship between group performance vs expectations and social bonding.  In both the Post-Drill and pre- to Post-Drill analyses, the mediation effect was moderated by experiment condition: the relationship was either strongest or only present in the high difficulty condition on not in the low difficulty condition.  Despite an overall trend in which scores decreased between pre- and Post-Drill measures, athletes who on average experienced more positive perceptions of performance following the Experiment also reported higher average levels of team click and social bonding (a statistical relationship that was against the overall trend in the data).  The results described here held when statistically controlling for athlete perceptions of individual performance, technical competence, objective performance outcome in the experiment session, and physiological arousal.
 
-\myparagraph{Inferences}
-From these results it is possible to infer that perceptions of joint action feature strongly in athletes' formulation of social attitudes, for example perceptions of social bonding and group membership.  The experience of higher levels of click in joint action may also be a particularly powerful phenomenon in the formation of positive associations with teammates and team identity.  In addition, results of this study provide some support for the theory, outlined in this dissertations, that the formulation and violation of expectations around joint action is a mechanism of central importance to the social cognition of joint action.  The exhilarating phenomenon of team click in joint action could be associated with positive violations of athletes expectations, which are implicitly formulated and calibrated over time with their teammates in training and competition.  Interactive team sports such as rugby provide a situation in which optimising quality of joint action is the explicit shared goal of the group---the group's reason for being----and so it is understandable that joint action would feature strongly in athlete inferences about group membership.
+%\myparagraph{Inferences}
+%From these results it is possible to infer that perceptions of joint action feature strongly in athletes' formulation of social attitudes, for example perceptions of social bonding and group membership.  The experience of higher levels of click in joint action may also be a particularly powerful phenomenon in the formation of positive associations with teammates and team identity.  In addition, results of this study provide some support for the theory, outlined in this dissertations, that the formulation and violation of expectations around joint action is a mechanism of central importance to the social cognition of joint action.  The exhilarating phenomenon of team click in joint action could be associated with positive violations of athletes expectations, which are implicitly formulated and calibrated over time with their teammates in training and competition.  Interactive team sports such as rugby provide a situation in which optimising quality of joint action is the explicit shared goal of the group---the group's reason for being----and so it is understandable that joint action would feature strongly in athlete inferences about group membership.
 
 
-\myparagraph{Limitations}
-The failure of the manipulation
+%\myparagraph{Limitations}
+%The failure of the manipulation
 
 Sampling
-
 Demand characteristics
 
 
-
- The design and execution of the experiment was such that the possibility that the significant moderating effect of condition was the artefact of low sample size and limited randomisation of athlete sampling. The experiment manipulation was subtle, and was delivered by a researcher who spoke Chinese as a second language, perhaps unable to manufacture a sufficient performance Pre-Drill to alter the expectations of athletes. In addition, the limitations of research context, namely time constraints and access to athletes, were such that pilot phase was not exhaustive as it could have been (2 trials per condition).
+The design and execution of the experiment was such that the possibility that the significant moderating effect of condition was the artefact of low sample size and limited randomisation of athlete sampling. The experiment manipulation was subtle, and was delivered by a researcher who spoke Chinese as a second language, perhaps unable to manufacture a sufficient performance Pre-Drill to alter the expectations of athletes. In addition, the limitations of research context, namely time constraints and access to athletes, were such that pilot phase was not exhaustive as it could have been (2 trials per condition).
 
 The experiment sought to isolate expectation violation as a mechanism of central importance to the social cognition of joint action.  While results show evidence for condition-wise effects, in which the high difficulty condition was responsible for moderating the relationship between joint action, team click, and social bonding, it is not sufficiently clear precisely what mechanism drove these results.
 The fact that the hypothesised mechanisms of joint action and social bonding have been shown to exist pre-declaratively and predominantly below the surface of conscious experience presents a methodological challenge for psychological research which relies heavily on self-report.
