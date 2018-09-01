@@ -1,21 +1,15 @@
 \chapter{\label{app2:theory}Appendix: Click and connection through joint action}
 
-\section{Active inference}
-Current research in joint action suggest that interoceptive predictive processes are at the core of successful human social interactions \citep{Graziano2013,Manera2013,Sparenberg2012,Springer2012}.  The essence of this proposal is that we use our own cognitive resources to build mental models of other people’s cognitions and the shared tasks that we share with others \citep{Tomasello2005a}.  Simulation of other people’s cognitive states (e.g., what they are feeling, thinking, and attending, a.k.a. a theory of mind) guide our expectations about their future behaviour, and in this way contribute to the viability of social interactions.
-
-\subsection{Core tenets of AIF}
-
-\subsubsection{Thermodynamic cognition}
 
 
-\subsubsection{Predictive Coding\label{app2:predictiveCoding}}
+\section{Active inference framework}
 
+\subsection{Predictive Coding\label{app2:predictiveCoding}}
 PC first emerged as a data processing and compression strategy in computer science \citep{Rao1999}.  Researchers programmed a multi-layer artificial neural network to use downwards connections to match samples of .JPEG images with successful predictions. Visual signals were processed via a hierarchical system in which each level tried to predict activity at the level below it using recurrent feedback connections. If the feedback successfully predicted the lower-level activity, no further action was required. Failure of the model to predict the visual signal resulted in tuning and revision of the model using ``residual errors'' derived from the discrepancy between top-down predictions and lower-level activity.  Predictive coding offered a much more computationally efficient mechanism for data processing, because prediction errors were the only informational novelties in the system \citep{Clark2015}.
 
 
 
 
-\subsubsection{Affordances}
 
 
 
@@ -29,30 +23,12 @@ PC first emerged as a data processing and compression strategy in computer scien
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-\section{Motor control\label{app2:motorControl}}
+\subsection{Motor control\label{app2:motorControl}}
 Successful regulation with the environment depends on an organism's capacity to move from its current state to a desired state.  In the case of the human evolutionary niche, organismic regulation hinges largely on movement, be it physical or simulated \citep{Wolpert1995}.
 
 Theories of motor control generally agree the brain generates ``forward models'' that anticipate perceptual inputs and desired motor states \citep{Pickering2014}. The first paradigmatic theory of motor control suggested that forward models for action relied on special-purpose mechanism auxiliary to core mechanisms of perception of action \citep{Wolpert1997}.  This hypothesis, now known as the Auxiliary Forward Models \citep[AFM, see][]{Pickering2014}, relies on a dual mechanism of motor control.  First, a motor command is estimated in the brain by an ``inverse model,'' which contains as its inputs both the desired state and the actual state of the organism (e.g., the position of the body, see Figure ~\ref{fig:AFM}).  When the motor command is generated, an auxiliary copy (i.e., an ``efference copy'') is also generated, and is sent to a forward model which then generates predictions about action and perception by simulating the musculoskeletal system and contextual environment \citep{Wolpert1995,Blakemore1998,Flanagan2003}.  Prediction error arising from a discrepancy between predicted and resultant sensory inputs are then used as feedback to inform the generation of the next motor command in the inverse model, and so on in a loop, until the fit between sensory prediction and input is sharpened.
 
 A more recent alternative proposal to the AFM suggests that forward models, instead of being auxiliary to, may instead lie at the heart of all forms of perception and action \citep{Friston2010}.  In contrast to AFM, the ``Integrative Forward Models'' account of motor control \citep[IFM, see][]{Pickering2014} posits that predictions from forward models act directly as action commands.  There is no dedicated mechanism used to predict the outcomes of our own (or others’) actions in addition to the action commands themselves.  Instead, generative action-oriented models are treated as the actual state of affairs, and cause a cascade of downward predictions about what should be the state of the models in the levels below (see Figure ~\ref{fig:IFM}).  In the IFM approach, there is no need for a motor command or efference copy at each level of action prediction, and prediction errors directly update the action models themselves.
-
 
 
 \begin{figure}[htbp]
@@ -74,18 +50,6 @@ A more recent alternative proposal to the AFM suggests that forward models, inst
 
 Both the AFM and IFM approaches agree that prediction, error minimisation, and hierarchical modelling are core processes in human cognition. From a thermodynamic standpoint, however, IFM appears to offer a more efficient model for free energy minimisation.  By replacing motor commands with direct predictions about proprioceptive and exteroceptive consequences, the need for a distinct optimal control calculation (i.e. an inverse model) disappears and along with it the need for an efference copy of the motor command, thus implicitly minimising various energetic costs \citep{Pickering2014,Friston2010}.   In place of the auxiliary mechanisms of the AFM, IFM posit a more complex (distributed) forward model mapping prior beliefs about desired trajectories to sensory consequences.  Whereas the ``heavy lifting'' in AFM required the use of an efference copy and inverse models, in IFM this work is done by the acquisition and use of a more complex predictive (generative) model \citep{Pickering2014}.
 
-%According to the AFM account, the forward model is distinct from the inverse model, because it involves apparatus that computes the motor commands used to drive online action. Such a model is thus free to depart considerably in form from whatever governs the true kinematics of the agent.  Furthermore (in AFMs) the outputs of the forward model (i.e., the corollary discharge) do not cause movements – they are just used to finesse and predict outcomes and in learning.
-
-%Comparisons between downward sweeps of prediction and upward sweeps of sensory input lead to a cascade of error signals throughout the hierarchy. These error signals are used to adjust the forward models that are guiding action execution (Clark, 2013). Importantly, actions are aimed at minimising prediction errors, by matching sensory inputs to predictions— a process termed active inference (Friston, 2008;Friston & Frith, 2015a, b). Eventually, active inference leads iteratively to a solution that will take the organism from its current motor state to the desired one.
-
-
-
-
-
-
-\subsection{AIF in place of AFM}
-
-
 %, which appear to be maximised in team click.
 
 \subsubsection{AFM approach to joint action\label{app2:AFMapproachJA}}
@@ -95,18 +59,66 @@ The now longstanding proposal that individuals only produce auxiliary predictive
 
 \textcite{Pesquita2017} summarise three shortcomings of an AFM approach to joint action.  First, the AFM model assumes a static and unchanging representation of the shared goal and the other's goal, and provides no mechanism through which the shared goal representation can be dynamically updated (based on prediction error signals).  This issue limits the ability of AFM to account for the real-world flexibility and interchangeability of shared goals (for example, the adaptive switching between the shared goal of carrying a table or the bench depending on the location of both objects).  Second, the same rigidity applies to other-inverse models.  The inability to directly and dynamically update other-models suggests the practical possibility that self and other models may gradually diverge over time due to the lack of sufficient predictive information regarding the actions of others \citep{Pickering2014}. Third, the AFM approach does not specify how sensory input is differentially used to update self and other models, which limits the model's ability to account for learning and adaptation within joint action \citep{Pesquita2017}.  Thus, not only does the AFM approach appear to be computationally intensive (due to the recruitment of auxiliary inverse models and dual motor commands, discussed in Section~\ref{sect:predictiveCoding}), it also appears to be unable to fully account for the dynamic interactive flexibility required of agents in real-world joint action.
 
-
-
-
-
 %\myparagraph{Generalised synchronisation as a dynamical foundation for joint action}
 
 \myparagraph{Precision-weighting self- and others}
-In place of auxiliary processes of prediction, the AIF for joint action hinges instead on precision weighting of prediction errors in order to facilitate and finesse joint action \citep{Moutoussis2014,Friston2015}.  When engaged in joint action, the individual turns down the volume (reduce the precision weighting) on prediction errors relating to one's own action so that movement can occur unimpeded by over-attention to self-generated prediction errors \citep[an intuitive example of the opposite of this ideal scenario is a Skype call in which the flow of an individual's speech is interrupted by auditory feedback from the other receiver's device (feedback that would otherwise be attenuated by the speaker), see][]{Friston2015}.  Alternatively, when attending the the action of others, the attenuation of proprioceptive error signals can cease. In this way, precision weighting is used to flexibly adjust the volume of multi-modal prediction errors (exteroceptive, interoceptive, and proprioceptive) in order to finesse and sustain generalised synchronisation---the shared narrative on which joint action is sustained).
+In place of auxiliary processes of prediction, the AIF for joint action hinges instead on precision weighting of prediction errors in order to facilitate and finesse joint action \citep{Friston2015,Friston2015a}.  When engaged in joint action, the individual turns down the volume (reduce the precision weighting) on prediction errors relating to one's own action so that movement can occur unimpeded by over-attention to self-generated prediction errors \citep[an intuitive example of the opposite of this ideal scenario is a Skype call in which the flow of an individual's speech is interrupted by auditory feedback from the other receiver's device (feedback that would otherwise be attenuated by the speaker), see][]{Friston2015}.  Alternatively, when attending the the action of others, the attenuation of proprioceptive error signals can cease. In this way, precision weighting is used to flexibly adjust the volume of multi-modal prediction errors (exteroceptive, interoceptive, and proprioceptive) in order to finesse and sustain generalised synchronisation---the shared narrative on which joint action is sustained).
 
 Heuristically, this suggests that active inference in joint action takes one of two modes; a ``sensory'' mode in which an agent flexibly attends to sensory inputs, or an ``active'' mode in which agents act and attenuate proprioception accordingly \citep{Friston2015}. To explain ticklishness, for example, the AIF can appeal to the ``sensory'' inferential mode in which the volume on proprioceptive prediction error is ``dialled-up.''  The failure of self-tickling, by contrast, can be explained as the product of an active mode of inference in joint action, in which the volume of proprioceptive prediction is ``dialled-down'' to enable smooth flow of action execution.
   \footnote{Recall also that instances of tickling commonly involve a stationary victim. While it indeed appears almost impossible to tickle oneself, it is also rare to be tickled while moving, i.e., acting during periods of sensory attenuation.}
 Thus, the AIF approach to joint action depicts two or more brains constrained by dynamic coupling (general synchronisation), which model the sensory and perceptual predictions pertaining to the movement of self and others \citep{Pesquita2017}.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \subsection{Predictive Joint Action Model (PJAM)\label{sect:PJAM}}
@@ -124,9 +136,6 @@ In contrast to the AFM approach, which posits a shared goal representation deriv
 
 \subsubsection{Evidence in support of PJAM}
 PJAM (and the AIF which it extends) predicts that joint action will be established and maintained through generalised synchronisation between two or more predictive brains driven by an overarching mandate of free energy minimisation \citep{Friston2015}.  In particular, PJAM predicts that co-actors in joint action will generate predictive models that reflect 1) a shared goal, 2) action plans for self and other, and 3) routing instructions for sensory inputs.  Consistent with the modelling view of the AIF (see Section~\ref{sect:thermoCog}), these three layers of generative models will reflect an hierarchy of complexity, and will be coupled to a continuum of natural and conventional affordances.  Below I outline existing experimental evidence in support of these predictions.
-
-
-
 
 
 \myparagraph{Evidence for self and other action plans}
