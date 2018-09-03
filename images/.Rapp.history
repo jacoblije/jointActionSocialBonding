@@ -1,0 +1,160 @@
+1 + 1
+1+1
+1-1
+1*2
+1/2
+3*5-1
+3*(5-1)
+3^2
+sqrt9
+sqrt(9)
+log(10)
+exp(-2)
+1:100
+letters
+LETTERS
+x<-2
+x
+x+3
+x-x
+x^2
+y <-x/x
+y
+5 -> x
+x<-10+20
+x
+x<-10+20; x
+(x<-10+20)
+FALSE<-1
+x <- c(-3,-2,-1,0,1,2,3)
+x
+x+3
+x^2
+y<- -x
+y
+x+y
+x*y
+z <- 1:6
+z
+z*c(1,2,3)
+z*c(1,2)
+z*c(1,2,3,4)
+weight <- c(66,89,63,69,92,90,68,78,93,85)
+weight
+height <- c(1.69,1.88,1.95,1.72,1.66,1.74,1.64,1.78,1.86,1.62)
+height
+BMI <- weight/height^2;BMI
+weight <- weight.pre
+weight.pre <- weight
+BMI <- BMI.pre
+BMI.pre <- BMI
+weight.post <- c(65,92,59,64,91,87,59,71,92,81)
+weight.post
+weight.loss <- weight.pre-weight.post
+weight.pre-weight.post
+BMI.post <- weight.post/height.post
+BMI.post <- weight.post/height
+BMI.post
+plot(height,weight)
+plot(height,weight,pch=0)
+?pch
+plot(height, weight)
+plot(height,weight,pch=0)
+plot(weight.pre,height)
+plot(weight.post,height)
+plot(weight.pre, height)
+plot(weight.post,height, pch=0)
+plot(weight.pre,height,pch=0) and plot(weight.post,height,pch=1)
+plot(weight.pre,height,pch=0)
+plot(weight.post,height,pch=1)
+weight.loss <- weight.pre-weight.post
+plot(weight.loss, height)
+plot(x=height,y=weight)
+plot(y=weight,x=height)
+plot(height,weight,pch=0,xlab="Height (m)",ylab="Weight(kg)")
+plot(height,weight,pch=0,xlab="Height (m)",ylab="Weight (kg)")
+1s()
+1s
+Is
+1s prints
+class(c(1,2,3))
+class(c("1","2""3"))
+class(c("1","2","3"))
+0,1
+0<1
+0 <=1
+0 > 1
+0>=1
+0=1
+0 == 1
+1 != 1
+1 != 0
+letters
+x <- == "a"
+x <- letters == "a"
+x
+class(x)
+x <- 1:15
+x
+dim(x)
+nrow(x)
+ncol(x)
+dim(x) <- c(3,5)
+x
+class(x)
+dim(x)
+nrow(x)
+ncol(x)
+rownames(x) <- c("RowAng", "RowBee", "RowSee"")
+colnames(x) <- c("col1", "col2","col3","col4","col5")
+colnames(x) <- c("col1","col2","col3","col4","col5")
+x
+rownames(x) <- c("RowAng","RowBee","RowSee"")
+rownames(x) <- c("RowAng","RowBee","RowSee")
+x
+matrix(1:15,nrow=3,ncol=5)
+matrix(1:15,3,5)
+matrix(1:15,3)
+matrix(1:15,3,byrow = TRUE)
+matrix(1:9,3,5)
+<<standardSettings, echo=FALSE, results='hide'>>=#
+#
+  library(knitr)#
+  opts_chunk$set(warnings = FALSE, messages = FALSE, results = "hide", fig.width=3.5, fig.height=3.5,fig.align='center')#
+  opts_knit$set(root.dir = "/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images")#
+#
+  library(xtable) # to make Latex tables#
+  library(tableone)#
+  library(apa)#
+  library(ggplot2)#
+  library(lme4)#
+  library(optimx)#
+  #library(lmerTest)#
+  library(mediation)#
+  library(car)#
+  library(HLMdiag)#
+  library(dplyr)#
+  library(plyr)#
+  library(ICC)#
+  library(influence.ME)#
+  library(piecewiseSEM)#
+  library(mediation)#
+#
+  ##papaja for APA format:#
+ devtools::install_github("crsh/papaja")#
+#
+  ##https://sakaluk.wordpress.com/2015/04/13/2-the-ggplot2-package-your-gateway-drug-to-becoming-an-r-user/#
+  apatheme=theme_bw()+#
+  theme(panel.grid.major=element_blank(),#
+        panel.grid.minor=element_blank(),#
+        panel.border=element_blank(),#
+        axis.line=element_line(),#
+        text=element_text(family='Times'),#
+        legend.title=element_blank())#
+@#
+<<dataInput, eval=TRUE, echo=FALSE, results='hide'>>=#
+  setwd("/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images")#
+  # read in complete data from experiment:#
+  tlc <- read.csv("trainingLongComplete.csv", na.strings = c("", "NA", "n/a"))#
+  twc <- read.csv("trainingWideComplete.csv", na.strings = c("", "NA", "n/a"))#
+@

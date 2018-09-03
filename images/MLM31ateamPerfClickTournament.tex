@@ -1,65 +1,39 @@
 
-% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Thu, Sep 14, 2017 - 09:28:54
-\begin{table}[!htbp] \centering 
-  \caption{teamClickTournament ~ teamPerformanceExpectationsTournament} 
-  \label{tab:MLM31ateamPerfClickTournament} 
-\footnotesize 
-\begin{tabular}{@{\extracolsep{5pt}}lccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-4} 
-\\[-1.8ex] & \multicolumn{3}{c}{teamClick} \\ 
-\\[-1.8ex] & (1) & (2) & (3)\\ 
-\hline \\[-1.8ex] 
- (constant) & $-$0.00 & $-$1.46$^{***}$ & $-$1.59$^{***}$ \\ 
-  & (0.04) & (0.08) & (0.15) \\ 
-  & & & \\ 
- teamPerformanceExpectations &  & 0.02$^{***}$ & 0.02$^{***}$ \\ 
-  &  & (0.001) & (0.001) \\ 
-  & & & \\ 
- indPerformanceExpectations &  &  & 0.004$^{***}$ \\ 
-  &  &  & (0.002) \\ 
-  & & & \\ 
- objectiveCompetence &  &  & 0.02 \\ 
-  &  &  & (0.04) \\ 
-  & & & \\ 
- subjectiveCompetence &  &  & 0.08$^{**}$ \\ 
-  &  &  & (0.04) \\ 
-  & & & \\ 
- finalRank &  &  & $-$0.0002 \\ 
-  &  &  & (0.02) \\ 
-  & & & \\ 
- minutesTotal &  &  & $-$0.001 \\ 
-  &  &  & (0.002) \\ 
-  & & & \\ 
- pointsTotal &  &  & 0.003 \\ 
-  &  &  & (0.003) \\ 
-  & & & \\ 
-\hline \\[-1.8ex] 
-Marginal R-squared & .58 & .65 &  \\ 
-Conditional R-squared & .67 & .72 &  \\ 
-Observations & 564 & 444 & 331 \\ 
-Log Likelihood & $-$772.35 & $-$412.33 & $-$303.82 \\ 
-Akaike Inf. Crit. & 1,552.70 & 842.67 & 637.65 \\ 
-Bayesian Inf. Crit. & 1,570.04 & 879.53 & 694.68 \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.1; $^{**}$p$<$0.05; $^{***}$p$<$0.01} \\ 
-\end{tabular} 
-\end{table} 
-
-% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Thu, Sep 14, 2017 - 09:28:54
-\begin{table}[!htbp] \centering 
-  \caption{teamClickTournament ~ teamPerformanceExpectationsTournament} 
-  \label{tab:MLM31ateamPerfClickTournament} 
-\footnotesize 
-\begin{tabular}{@{\extracolsep{5pt}} ccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
-$0.05$ & $0.01$ & $0.001$ \\ 
-\hline \\[-1.8ex] 
-\end{tabular} 
-\end{table} 
+\begin{table}
+\begin{center}
+\begin{tabular}{l c c c }
+\toprule
+ & Intercept & Main effect & Controls \\
+\midrule
+(constant)                                                        & $-0.00$  & $-0.06$               & $-0.12$               \\
+                                                                  & $(0.04)$ & $(0.03)$              & $(0.21)$              \\
+Team Performance Vs Expectations                                  &          & $\mathbf{0.74}^{***}$ & $\mathbf{0.72}^{***}$ \\
+                                                                  &          & $(0.03)$              & $(0.05)$              \\
+Ind Performance Vs Expectations                                   &          &                       & $\mathbf{0.12}^{**}$  \\
+                                                                  &          &                       & $(0.04)$              \\
+Objective Competence                                              &          &                       & $0.04$                \\
+                                                                  &          &                       & $(0.04)$              \\
+Subjective Competence                                             &          &                       & $0.07$                \\
+                                                                  &          &                       & $(0.04)$              \\
+Final Rank                                                        &          &                       & $-0.00$               \\
+                                                                  &          &                       & $(0.02)$              \\
+Minutes Total                                                     &          &                       & $-0.00$               \\
+                                                                  &          &                       & $(0.00)$              \\
+Points Total                                                      &          &                       & $0.00$                \\
+                                                                  &          &                       & $(0.00)$              \\
+Fatigue                                                           &          &                       & $0.00$                \\
+                                                                  &          &                       & $(0.00)$              \\
+Extraverted                                                       &          &                       & $0.01$                \\
+                                                                  &          &                       & $(0.03)$              \\
+\midrule
+AIC                                                               & 1552.70  & 842.67                & 602.59                \\
+BIC                                                               & 1570.04  & 879.53                & 665.89                \\
+Log Likelihood                                                    & -772.35  & -412.33               & -284.30               \\
+Num. obs.                                                         & 564      & 444                   & 306                   \\
+\bottomrule
+\multicolumn{4}{l}{\scriptsize{Coefficients with $p < 0.05$ in \textbf{bold}. Marginal $R^2 = .63$, Conditional $R^2 = .69$}}
+\end{tabular}
+\caption{Prediction 1: Team Performance Vs Expectations predicts Team Click in the Overall Tournament survey data (n = 90).}
+\label{tab:MLM31ateamPerfClickTournament}
+\end{center}
+\end{table}

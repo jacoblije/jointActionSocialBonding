@@ -1,0 +1,41 @@
+
+\begin{table}
+\begin{center}
+\begin{tabular}{l c c c }
+\toprule
+ & Intercept & Main effect & Controls \\
+\midrule
+(constant)                                               & $0.10$   & $0.10$                & $0.01$                \\
+                                                         & $(0.13)$ & $(0.08)$              & $(0.40)$              \\
+Team Performance Components Change                       &          & $\mathbf{0.47}^{***}$ & $\mathbf{0.51}^{***}$ \\
+                                                         &          & $(0.08)$              & $(0.11)$              \\
+Ind Performance Components Change                        &          &                       & $-0.00$               \\
+                                                         &          &                       & $(0.10)$              \\
+Objective Competence                                     &          &                       & $0.02$                \\
+                                                         &          &                       & $(0.10)$              \\
+Subjective Competence                                    &          &                       & $-0.01$               \\
+                                                         &          &                       & $(0.08)$              \\
+Final Rank                                               &          &                       & $-0.03$               \\
+                                                         &          &                       & $(0.04)$              \\
+Minutes Total                                            &          &                       & $0.01$                \\
+                                                         &          &                       & $(0.00)$              \\
+Points Total                                             &          &                       & $0.01$                \\
+                                                         &          &                       & $(0.01)$              \\
+Fatigue                                                  &          &                       & $-0.12$               \\
+                                                         &          &                       & $(0.09)$              \\
+Extraverted                                              &          &                       & $-0.01$               \\
+                                                         &          &                       & $(0.05)$              \\
+\midrule
+AIC                                                      & 267.19   & 227.50                & 218.66                \\
+BIC                                                      & 274.97   & 243.07                & 253.66                \\
+Log Likelihood                                           & -130.59  & -107.75               & -95.33                \\
+Num. obs.                                                & 99       & 99                    & 90                    \\
+Num. groups: team                                        & 14       & 14                    & 13                    \\
+
+\bottomrule
+\multicolumn{4}{l}{\scriptsize{Coefficients with $p < 0.05$ in \textbf{bold}. Marginal $R^2 = .40$, Conditional $R^2 = .47$}}
+\end{tabular}
+\caption{Prediction 1: Team Performance Components Change predicts Team Click Change in the Pre- to Post-Tournament survey data (n = 90).}
+\label{tab:MLM21aJointActionSuccessClick}
+\end{center}
+\end{table}

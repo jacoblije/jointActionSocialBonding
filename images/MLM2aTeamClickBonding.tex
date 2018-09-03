@@ -1,47 +1,38 @@
 
-% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Mon, Jun 26, 2017 - 20:48:41
-\begin{table}[!htbp] \centering 
-  \caption{socialBonding = teamClick} 
-  \label{tab:MLM2aTeamClickBonding} 
-\begin{tabular}{@{\extracolsep{5pt}}lccc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{3}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-4} 
-\\[-1.8ex] & \multicolumn{3}{c}{socialBonding} \\ 
-\\[-1.8ex] & (1) & (2) & (3)\\ 
-\hline \\[-1.8ex] 
- (constant) & $-$0.01 & $-$0.0002 & 0.21 \\ 
-  & (0.10) & (0.07) & (0.27) \\ 
-  & & & \\ 
- teamClick &  & 0.64$^{***}$ & 0.67$^{***}$ \\ 
-  &  & (0.08) & (0.08) \\ 
-  & & & \\ 
- objectiveCompetence &  &  & 0.04 \\ 
-  &  &  & (0.08) \\ 
-  & & & \\ 
- subjectiveCompetence &  &  & 0.12 \\ 
-  &  &  & (0.07) \\ 
-  & & & \\ 
- finalRank &  &  & $-$0.01 \\ 
-  &  &  & (0.04) \\ 
-  & & & \\ 
- minutesTotal &  &  & $-$0.003 \\ 
-  &  &  & (0.004) \\ 
-  & & & \\ 
- pointsTotal &  &  & $-$0.002 \\ 
-  &  &  & (0.01) \\ 
-  & & & \\ 
-\hline \\[-1.8ex] 
-Marginal R-squared &  &  & .49 \\ 
-Conditional R-squared &  &  & .51 \\ 
-Observations & 118 & 118 & 97 \\ 
-Log Likelihood & $-$151.95 & $-$118.76 & $-$97.75 \\ 
-Akaike Inf. Crit. & 309.90 & 249.53 & 217.50 \\ 
-Bayesian Inf. Crit. & 318.21 & 266.15 & 245.82 \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{3}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\ 
-\end{tabular} 
-\end{table} 
+\begin{table}
+\begin{center}
+\begin{tabular}{l c c c }
+\toprule
+ & Intercept & Main effect & Controls \\
+\midrule
+(constant)                            & $-0.01$  & $-0.00$               & $0.03$                \\
+                                      & $(0.10)$ & $(0.07)$              & $(0.39)$              \\
+Team Click                            &          & $\mathbf{0.64}^{***}$ & $\mathbf{0.64}^{***}$ \\
+                                      &          & $(0.08)$              & $(0.09)$              \\
+Objective Competence                  &          &                       & $0.04$                \\
+                                      &          &                       & $(0.08)$              \\
+Subjective Competence                 &          &                       & $0.12$                \\
+                                      &          &                       & $(0.07)$              \\
+Final Rank                            &          &                       & $0.00$                \\
+                                      &          &                       & $(0.04)$              \\
+Minutes Total                         &          &                       & $-0.01$               \\
+                                      &          &                       & $(0.00)$              \\
+Points Total                          &          &                       & $-0.00$               \\
+                                      &          &                       & $(0.01)$              \\
+Fatigue                               &          &                       & $0.12$                \\
+                                      &          &                       & $(0.09)$              \\
+Extraverted                           &          &                       & $0.05$                \\
+                                      &          &                       & $(0.05)$              \\
+\midrule
+AIC                                   & 309.90   & 249.53                & 219.38                \\
+BIC                                   & 318.21   & 266.15                & 252.85                \\
+Log Likelihood                        & -151.95  & -118.76               & -96.69                \\
+Num. obs.                             & 118      & 118                   & 97                    \\
+Num. groups: team                     & 15       & 15                    & 14                    \\
+\bottomrule
+\multicolumn{4}{l}{\scriptsize{Coefficients with $p < 0.05$ in \textbf{bold}. Marginal $R^2 = .49$, Conditional $R^2 = .51$}}
+\end{tabular}
+\caption{Prediction 2: Team Click predicts Social Bonding in the Post-Tournament survey data (n = 97).}
+\label{tab:MLM2aTeamClickBonding}
+\end{center}
+\end{table}

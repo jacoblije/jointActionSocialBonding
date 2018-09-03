@@ -1,0 +1,42 @@
+
+\begin{table}
+\begin{center}
+\begin{tabular}{l c c c }
+\toprule
+ & Intercept & Main effect & Controls \\
+\midrule
+(constant)                                        & $-0.15$  & $-0.09$               & $0.22$                \\
+                                                  & $(0.16)$ & $(0.13)$              & $(0.72)$              \\
+Team Click                                        &          & $\mathbf{0.50}^{***}$ & $\mathbf{0.63}^{***}$ \\
+                                                  &          & $(0.14)$              & $(0.09)$              \\
+Arousal                                           &          & $-0.05$               &                       \\
+                                                  &          & $(0.18)$              &                       \\
+Trial Outcome Avg.                                &          & $0.23$                &                       \\
+                                                  &          & $(0.18)$              &                       \\
+Subjective Competence                             &          &                       & $0.14$                \\
+                                                  &          &                       & $(0.09)$              \\
+Objective Competence                              &          &                       & $0.02$                \\
+                                                  &          &                       & $(0.13)$              \\
+Extraverted                                       &          &                       & $0.02$                \\
+                                                  &          &                       & $(0.09)$              \\
+a                                                 &          &                       & $-0.03$               \\
+                                                  &          &                       & $(0.09)$              \\
+b                                                 &          &                       & $-0.09$               \\
+                                                  &          &                       & $(0.06)$              \\
+\midrule
+AIC                                               & 145.09   & 113.19                & 106.51                \\
+BIC                                               & 151.22   & 129.54                & 128.18                \\
+Log Likelihood                                    & -69.55   & -48.60                & -42.25                \\
+Num. obs.                                         & 57       & 57                    & 53                    \\
+Num. groups: sessionName                          & 8        & 8                     & 8                     \\
+Var: sessionName (Intercept)                      & 0.13     & 0.02                  & 0.00                  \\
+Var: Residual                                     & 0.59     & 0.30                  & 0.29                  \\
+Var: sessionName groupClickPostFactor             &          & 0.00                  & 0.00                  \\
+Cov: sessionName (Intercept) groupClickPostFactor &          & -0.01                 & 0.00                  \\
+\bottomrule
+\multicolumn{4}{l}{\scriptsize{Coefficients with $p < 0.05$ in \textbf{bold}.}}
+\end{tabular}
+\caption{Prediction 3: Team Click predicts Social Bonding the Post-Drill survey data (n = 53).}
+\label{tab:TEM2clickBonding}
+\end{center}
+\end{table}

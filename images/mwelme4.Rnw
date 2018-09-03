@@ -1,0 +1,161 @@
+\documentclass{article}
+
+
+\documentclass[english]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.8cm,a4paper]{geometry}
+\usepackage[english]{babel} % hyphenation
+\usepackage{csquotes}
+\usepackage{amsmath,amssymb,amsthm} % for mathematical
+\usepackage{graphicx} % to include graphics
+\newcommand{\myparagraph}[1]{\paragraph{#1}\mbox{}\\}
+
+
+%%Bib Setup:
+\usepackage[style=apa, sorting=nyt, backend=biber, maxcitenames=2, useprefix=true, doi=false, isbn=false, natbib=true, language=american]{biblatex}
+\DeclareLanguageMapping{american}{american-apa}
+\newcommand*{\bibtitle}{Works Cited}
+\addbibresource{references.bib}
+
+%%In-text \Sexpr{} setup for lmer:
+\newcommand{\betavec}{\beta = }
+\newcommand{\betavec}{{\bm\beta}}
+\newcommand{\CIstart}{(95\% CI =}
+\newcommand{\CIfinish}{),}
+\newcommand{\SE}{SE =}
+\newcommand{\pvalue}{p =}
+\newcommand{\MR2}{marginal R^2 =}
+\newcommand{\CR2}{conditional R^2 =}
+% Wald statistic for normality of residuals:
+\newcommand{\resdist}{W = }
+% Cook's Distances (influential cases)
+\newcommand{\cooksD}{Cook's Distances}
+
+% setting global settings and loading useful libraries
+\title{Field Experiment}
+\date{}
+\author{Jacob Taylor & Emma Cohen \\ Institute of Cognitive \and Evolutionary Anthropology, University of Oxford}
+
+
+
+
+\begin{document}
+\maketitle
+<<standardSettings, echo=FALSE, results='hide'>>=
+#install.packages("knitr")
+#update.packages("knitr")
+  library(knitr)
+  opts_chunk$set(warnings = FALSE, messages = FALSE, results = "hide", fig.width=3.5, fig.height=3.5,fig.align='center')
+  opts_knit$set(root.dir = "/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images")
+  
+  install.packages("lme4")
+  library(lme4)
+  install.packages("broom")
+  library(broom)
+  #library(lmerTest)
+  #library(mediation)
+ # library(car)
+ # library(HLMdiag)
+ # library(dplyr)
+ # library(plyr)
+ # library(ICC)
+ # library(influence.ME)
+#  library(piecewiseSEM)
+
+@
+
+
+<<dataInput, echo=FALSE, results='hide'>>=
+ # setwd("/Users/jacob1/Documents/2017/Research/DPhil/Dissertation/finalDocuments/jointActionSocialBonding/images")
+  # read in complete data from experiment:
+  tlc <- read.csv("trainingLongComplete.csv", na.strings = c("", "NA", "n/a"))
+  twc <- read.csv("trainingWideComplete.csv", na.strings = c("", "NA", "n/a"))
+@
+
+
+
+
+
+
+<<dataReductionGroupClickPost, echo=F,eval=T>>=
+  #GroupClickVariablesSubset: exclude effectivenessInContact (not relvant)
+  ## PROBLEM: groupReliabilityOfOthers, are only measured at t3, and so restrict the creation of a factor across two time points. need to remove for groupClickFactorgroupReliabilityForOthers
+  tlcGroupClickPost <- subset(tlc, select = c(groupReliabilityOfOthers,
+                                            groupReliabilityForOthers, groupAbilitiesExtended, groupClickPictorial, groupUnspokenUnderstanding, groupGeneralAtmosphere))
+  tlcGroupClickPost.pca <- princomp(na.omit(tlcGroupClickPost))
+  summary(tlcGroupClickPost.pca)
+  plot(tlcGroupClickPost.pca)
+
+  tlcGroupClickPost.fa <- factanal(~ groupReliabilityForOthers + groupReliabilityOfOthers +
+                                            groupAbilitiesExtended + groupClickPictorial + groupUnspokenUnderstanding + groupGeneralAtmosphere, 1, data = tlc, rotation = "promax", na.action = na.exclude, scores = "regression")  #<- this formula format allows preserving of NAs for later rebind to df
+
+  #-----------------------------SS Loadings----------------------#
+  SSLoadings.groupClickPostFA <- round(sum(tlcGroupClickPost.fa$loadings[,1]^2), digits = 2)
+  #------------------Proportion of Variance----------------------#
+  prVar.groupClickPostFA <-  round((colSums(tlcGroupClickPost.fa$loadings*tlcGroupClickPost.fa$loadings)/dim(tlcGroupClickPost.fa$loadings)[1]*100), digits = 1)
+
+
+  head(tlcGroupClickPost.fa$scores)
+  tlc <- cbind(tlc, tlcGroupClickPost.fa$scores)
+  names(tlc)[names(tlc) == "Factor1"] <- "groupClickPostFactor"
+  
+    # groupClick
+  twc$groupClickFactorPost <- tlc$groupClickFactor1[tlc$time == 3]
+  twc$groupClickFactorPre <- tlc$groupClickFactor1[tlc$time == 2]
+  twc$groupClickPostFactor <- tlc$groupClickPost[tlc$time == 3]
+  
+@
+
+
+
+%MODEL:
+<<groupPerfExpClickModel, echo=F,eval=T>>=
+  
+  twc$condition <- factor(twc$condition, levels = c("low", "high"),
+                                ordered = is.ordered(twc$condition))
+  twc$groupPerformance_3Norm <- scale(twc$groupPerformance_3)
+  twc$indPerformance_3Norm <- scale(twc$indPerformance_3)
+
+  
+  
+  groupPerfExpClick.intercept <- lmer(groupClickPostFactor ~ 1 + ( 1 |sessionName),
+                              data = twc,
+                              REML = F)
+  groupPerfExpClick.main <- lmer(groupClickPostFactor ~ groupPerformance_3Norm*condition +
+                              ( 1 |sessionName),
+                              data = twc,
+                              REML = F)
+  #summary(groupPerfExpClick.main)
+
+  #library(lmerTest)
+  groupPerfExpClick.controls <- lmer(groupClickPostFactor ~
+                              groupPerformance_3Norm*condition +
+                              indPerformance_3Norm +
+                              (groupPerformance_3Norm|sessionName),
+                              data = twc,
+                              REML = F)
+
+  summary(groupPerfExpClick.controls)
+  #use broom to tidy lmer output:
+  groupPerfExpClick.controls.tidy <- tidy(groupPerfExpClick.controls)
+
+@
+
+
+
+
+
+A LMER was used to model the relationship between group performance expectation violations and group click.  Group Performance Expectations, Condition, and their interaction were included as fixed effects, and experiment session was modelled as a random effect (intercept and slope).  To control for perceptions of individual performance relative to prior expectations, post-Experiment arousal, the average performance outcome of each invasion drill trial, and subjective and objective measures of athlete technical competence, these factors were included as fixed effects.
+
+The model revealed a significant positive main effect of group performance expectation violation on feelings of team click with the training group,
+  \betavec
+  
+  \Sexpr{coef(summary(groupPerfExpClick.controls))["groupPerformance_3Norm", "Estimate"]}
+  %\Sexpr{groupPerfExpClick.controls.tidy[2,2]}.
+
+\end{document}
+
+
+
+
+

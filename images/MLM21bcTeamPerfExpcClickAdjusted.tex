@@ -1,51 +1,41 @@
 
-% Table created by stargazer v.5.2 by Marek Hlavac, Harvard University. E-mail: hlavac at fas.harvard.edu
-% Date and time: Tue, Jun 27, 2017 - 09:21:15
-\begin{table}[!htbp] \centering 
-  \caption{M2.1b cTeamClick ~ cPerformanceExpectations (adjusted models)} 
-  \label{tab:MLM21bOutLogComparison} 
-\begin{tabular}{@{\extracolsep{5pt}}lcc} 
-\\[-1.8ex]\hline 
-\hline \\[-1.8ex] 
- & \multicolumn{2}{c}{\textit{Dependent variable:}} \\ 
-\cline{2-3} 
-\\[-1.8ex] & cTeamClick & clickFactorChangePrePostOut \\ 
- & log-transformed & outliers removed \\ 
-\\[-1.8ex] & (1) & (2)\\ 
-\hline \\[-1.8ex] 
- (constant) & 0.91$^{***}$ & $-$0.14 \\ 
-  & (0.15) & (0.34) \\ 
-  & & \\ 
- cTeamPerformanceExpectations & 0.004$^{*}$ & 0.02$^{***}$ \\ 
-  & (0.002) & (0.004) \\ 
-  & & \\ 
- cIndPerformanceExpectations & $-$0.001 & $-$0.01$^{*}$ \\ 
-  & (0.001) & (0.004) \\ 
-  & & \\ 
- objectiveCompetence & $-$0.04 & 0.07 \\ 
-  & (0.04) & (0.09) \\ 
-  & & \\ 
- subjectiveCompetence & $-$0.05 & $-$0.02 \\ 
-  & (0.03) & (0.08) \\ 
-  & & \\ 
- finalRank & 0.003 & $-$0.08 \\ 
-  & (0.02) & (0.04) \\ 
-  & & \\ 
- minutesTotal & 0.001 & 0.001 \\ 
-  & (0.002) & (0.004) \\ 
-  & & \\ 
- pointsTotal & 0.001 & 0.003 \\ 
-  & (0.002) & (0.01) \\ 
-  & & \\ 
-\hline \\[-1.8ex] 
-Marginal R-squared & .14 & .17 \\ 
-Conditional R-squared & .25 & .20 \\ 
-Observations & 97 & 93 \\ 
-Log Likelihood & $-$12.38 & $-$98.81 \\ 
-Akaike Inf. Crit. & 48.75 & 221.62 \\ 
-Bayesian Inf. Crit. & 79.65 & 252.01 \\ 
-\hline 
-\hline \\[-1.8ex] 
-\textit{Note:}  & \multicolumn{2}{r}{$^{*}$p$<$0.05; $^{**}$p$<$0.01; $^{***}$p$<$0.001} \\ 
-\end{tabular} 
-\end{table} 
+\begin{table}
+\begin{center}
+\begin{tabular}{l c c c }
+\toprule
+ & Controls & Log-adjusted & Outliers removed \\
+\midrule
+(constant)                                 & $0.33$               & $\mathbf{1.27}^{***}$ & $0.40$                \\
+                                           & $(0.51)$             & $(0.16)$              & $(0.39)$              \\
+Team Performance Vs Expectations           & $\mathbf{0.30}^{**}$ & $\mathbf{0.09}^{*}$   & $\mathbf{0.32}^{***}$ \\
+                                           & $(0.11)$             & $(0.04)$              & $(0.08)$              \\
+Ind Performance Vs Expectations            & $-0.10$              & $-0.03$               & $\mathbf{-0.22}^{**}$ \\
+                                           & $(0.10)$             & $(0.03)$              & $(0.08)$              \\
+Objective Competence                       & $-0.15$              & $-0.05$               & $0.03$                \\
+                                           & $(0.12)$             & $(0.04)$              & $(0.10)$              \\
+Subjective Competence                      & $-0.15$              & $-0.05$               & $-0.03$               \\
+                                           & $(0.09)$             & $(0.03)$              & $(0.08)$              \\
+Final Rank                                 & $-0.01$              & $-0.00$               & $-0.08$               \\
+                                           & $(0.06)$             & $(0.02)$              & $(0.04)$              \\
+Minutes Total                              & $0.00$               & $0.00$                & $-0.00$               \\
+                                           & $(0.01)$             & $(0.00)$              & $(0.00)$              \\
+Points Total                               & $0.00$               & $0.00$                & $0.01$                \\
+                                           & $(0.01)$             & $(0.00)$              & $(0.01)$              \\
+Fatigue                                    & $-0.08$              & $-0.00$               & $-0.07$               \\
+                                           & $(0.11)$             & $(0.04)$              & $(0.09)$              \\
+Extraverted                                & $-0.06$              & $-0.02$               & $0.01$                \\
+                                           & $(0.07)$             & $(0.02)$              & $(0.05)$              \\
+\midrule
+AIC                                        & 253.92               & 50.47                 & 200.30                \\
+BIC                                        & 288.92               & 85.47                 & 234.66                \\
+Log Likelihood                             & -112.96              & -11.23                & -86.15                \\
+Num. obs.                                  & 90                   & 90                    & 86                    \\
+Num. groups: team                          & 13                   & 13                    & 13                    \\
+
+\bottomrule
+\multicolumn{4}{l}{\scriptsize{Coefficients with $p < 0.05$ in \textbf{bold}. Effect size of model excluding outliers: Marginal $R^2 = .17$, Conditional $R^2 = .20$}}
+\end{tabular}
+\caption{Prediction 2: Team Click Change predicts Social Bonding Change in the Post-Tournament survey data (n = 90).}
+\label{tab:MLM21bOutLogComparison}
+\end{center}
+\end{table}
