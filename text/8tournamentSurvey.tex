@@ -37,7 +37,7 @@ The key predictor variable of this study was athlete perceptions of \textit{team
 
  Based on ethnographic evidence suggesting that athletes reflected on and scrutinised technical components of team performance (see Chapter~\ref{}), athletes were asked about both team and individual components of performance.  Team components of performance included coordination in defence, attack, support play, communication; while individual components of performance included passing technique, tackling, decision making, effectiveness in contact.  In addition to components of performance, athletes were also asked to report their perceptions of overall team and individual performance relative to prior expectations.  Athlete perceptions of team and individual performance relative to prior expectations were also measured, in order to investigate the predicted role of positive expectation violations of team performance as a preceding mechanism to team click and social bonding.
 
-Team click was measured using a number of novel items designed to measure the phenomenon’s visceral and socially agentic dimensions (as outlined in Chapter~\ref{}).  Viscerality was measured by asking athletes about perceptions of ~\textit{moqi} (a Chinese term specifically denoting tacit understanding, but also used to describe more general ``click'' in joint action), team aura (\textit{qichang} 气场；distinguished from atmosphere to denote atmosphere specific to the team), and a novel visual item designed to reflect perceptions of coherence in joint action.  Social agency was measured by asking athletes to report perceptions of their own abilities being extended by the abilities of their teammates, and the perceived reliability of others (and self) to perform prescribed roles in joint action.
+Team click was measured using a number of novel items designed to measure the phenomenon’s visceral and socially agentic dimensions (as outlined in Chapter~\ref{}).  Viscerality was measured by asking athletes about perceptions of \textit{moqi} (a Chinese term specifically denoting tacit understanding, but also used to describe more general ``click'' in joint action), team aura (\textit{qichang} 气场；distinguished from atmosphere to denote atmosphere specific to the team), and a novel visual item designed to reflect perceptions of coherence in joint action.  Social agency was measured by asking athletes to report perceptions of their own abilities being extended by the abilities of their teammates, and the perceived reliability of others (and self) to perform prescribed roles in joint action.
 
 Social bonding is known to entail a continuum of affective and more explicit or declarative processes, ranging from emotional connection to specific others, to more general attachment to and cultural affordances such as group identity \citep{Dunbar2010,Whitehouse2014}.  Thus, athletes were asked a range of questions designed to traverse this continuum. Novel measures were used to assess: 1) athlete perceptions of emotional support from teammates and 2) common goal with teammates (both more tacit, affective measures of social bonding).  Athlete perceptions of (more explicit) identification with the team was measured using a scale validated to measure identification of self with the prototypical features of the group \citep[Group Identification, see][]{Turner1987}, as well as a scale validated to measure an individual’s ``visceral sense of oneness'' or fusion with the group \citep[Identity Fusion; see][]{Swann2009}).
 
@@ -232,10 +232,10 @@ The predictions of this study were analysed using three subsets of the collected
 \subsubsection{Data structure and model selection\label{survey:dataStructureModelSelection}}
 The \textit{in situ} nature of this study meant that the collected data contained multiple levels of dependency: observations from multiple time points were nested within the same individual athlete; athletes were nested within their respective teams; teams were nested within the men’s and women’s competitions (i.e. according to sex).  In addition, the data were unbalanced, meaning that an uneven number of observations were recorded for each of the 15 teams over eight separate time points at which data were collected.  Linear mixed-effects regression (LMER) models were thus used in order to avoid the violation of the assumptions of independence and equality of variance due to dependencies, and at the same time deal with the problem of missing data \citep{Quene2004,Field2012}.  The LMER can be expressed in notation form as follows:
 
-    \begin{align }
+    \begin{align}
       Y_{ij} & \sim  (\beta_{0} + u_{0j}) + (\beta_{1} + u_{1j})X_{ij} + \varepsilon_{ij}\\
            & \varepsilon_{ij} \sim \mathcal{N}(0,\sigma^{2})
-    \end{align }
+    \end{align}
 
 Where $Y_{ij}$ denotes the $i^{th}$ observation for group $j$, $(\beta_{0} + u_{0j})$ denotes the fixed and random intercept, $(\beta_{1} + u_{1j})$ the random and fixed slope, and $\varepsilon_{ij}$ denotes the error term.  Errors are assumed to be normally distributed with mean of zero.
 The random structure of the model (j) was determined by assessing Intra Class Correlation (ICC) values for main group-level variables of interest: team, competition (men's or women's), or individual athlete (in the case of repeated measures analyses).
@@ -425,9 +425,9 @@ Data reduction on survey items pertaining to perceptions of fatigue and exertion
 \subsubsection{Correlations between key factors of interest}
 Correlations values of factors of interest are shown in Tables ~\ref{tab:tournamentFactorsMatrixPost} \nobreakdash ~\ref{tab:tournamentFactorsMatrixOverall}.  In the Post-Tournament and Pre- to Post-Tournament subsets, correlation values for outcome variables of team click and social bonding were moderate to high, but less than a generally accepted threshold of .70 \citep{Field2012}.  In the Overall Tournament subset, the correlation value between team click and social bonding was $.75$, suggesting that models in which team click predicts social bonding in the Overall Tournament subset should be treated with caution.
 
-\input{images/tournamentSurveyFactorsCorrMatrixPost}
-\input{images/tournamentSurveyFactorsCorrMatrixPrePost}
-\input{images/tournamentSurveyFactorsCorrMatrixOverall}
+\input{images/tournamentSurveyCorrMatrixPost}
+\input{images/tournamentSurveyCorrMatrixPrePost}
+\input{images/tournamentSurveyCorrMatrixOverall}
 
 
 

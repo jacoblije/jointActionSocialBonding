@@ -1415,7 +1415,7 @@ The main predictor variable of interest, perceptions of training group performan
 
   head(tlcGroupClickPost.fa$scores)
   tlc <- cbind(tlc, tlcGroupClickPost.fa$scores)
-  names(tlc)[names(tlc) == "Factor1"] <- "groupClickPostFactor"
+  names(tlc)[names(tlc) == "Factor1"] <- "groupClickPost"
   groupClickPostMatrix <- cor(tlcGroupClickPost, use = "complete")
 
   #---------suitability measures (KMO & Bartlett)----------------#
@@ -3328,6 +3328,10 @@ library(tidyverse)
               xlab("Group Performance vs Expectations") +
               ylab("Team Click") +
               apatheme
+    
+  dev.copy(pdf, "teamPerfExpClickScatter.pdf")
+  dev.off()
+  
 @
 
 
@@ -4685,7 +4689,7 @@ groupPerfClickChange <- ggplot(twc,
                             geom_point(shape = 1) +
                             geom_smooth(method=lm, se=FALSE)   # Don't add shaded confidence region
 groupPerfClickChange +
-            xlab("Group Performance Change") +
+            xlab("Group Performance Vs Expectations") +
             ylab("Team Click Change") +
             apatheme +
             ggsave("groupPerfClickChangeCondition.pdf")
