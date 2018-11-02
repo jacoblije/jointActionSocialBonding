@@ -1,4 +1,4 @@
- Team Click% File name: trainingExperimentFinalAnalysis.R
+% File name: trainingExperimentFinalAnalysis.R
 % Author: Jacob Taylor
 % Date Created: 20/09/2017
 % Description: A script for analysing complete data from trainingExperiment in Weihai and Beijing during August 2016.

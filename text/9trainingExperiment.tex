@@ -281,7 +281,7 @@ Objective performance outcome did not noticeably vary across experiment sessions
 \input{images/trainingDescriptivesRawPerformanceIND}
 \input{images/trainingDescriptivesRawClickBond}
 \input{images/trainingObjPerformanceOutcomeTable}
-    
+
 
  %(see Tables ~\ref{tab:indPerfTimeLowTraining}\nobreakdash~\ref{tab:teamPerfTimeBaselineTraining} in Appendix ~\ref{app9:trainingExperiment} Section ~\ref{app9:descriptives}).
 
@@ -347,7 +347,7 @@ Table ~\ref{tab:expcorr_prepost} displays correlation values of key factors of i
 \subsection{ICC values}
 
 \myparagraph{Post-Drill data}
-ICC values for variables of interest (shown in Table ~\ref{tab:trainingICC}) indicated meaningful clustering (i.e. $ICC <.10$) in the data according to experimental session (8 in total), provincial team (Beijing men's, Beijing women's, Shandong men's, Shandong women's).  Given the constraints on model complexity imposed by the relatively small sample size of the study, experiment session was chosen as a level 2 grouping variable (owing to marginally higher ICC values).  To account for clustering within each experiment session, Experiment session was modelled as a random effect using the intercept only (models that included both the intercept and the slope failed to converge due the large number of groups relative to sample size).  High variation in objective performance outcomes further supported the decision to account for variation attributable to experiment session (see Appendix~\ref{app9:objPerformance}).
+ICC values for variables of interest (shown in Table ~\ref{tab:trainingICC}) indicated meaningful clustering (i.e. $ICC <.10$) in the data according to experimental session (8 in total), provincial team (Beijing men's, Beijing women's, Shandong men's, Shandong women's).  Given the constraints on model complexity imposed by the relatively small sample size of the study, experiment session was chosen as a level 2 grouping variable (owing to marginally higher ICC values).  To account for clustering within each experiment session, Experiment session was modelled as a random effect using the intercept only (models that included both the intercept and the slope failed to converge due the large number of groups relative to sample size).  High variation in objective performance outcomes further supported the decision to account for variation attributable to experiment session (see Appendix~\ref{tab:trainingObjPerformanceSession}).
 
 \input{images/trainingICCValuesTable.tex}
 
@@ -365,7 +365,7 @@ ICC values for variables of interest (shown in Table ~\ref{tab:trainingICC}) ind
 
 \subsection{Change in factors over time}
   %One exception was physiological arousal, which significantly increased following the experiment, as would be expected due to the moderate to high levels of physiological exertion associated with the training drill.
-Table ~\ref{tab:factorsTime} shows that the Post-Drill measures of group component performance, individual component performance, training group Team Click, and training group social bonding, were all considerably lower than Pre-Drill measurements. The differential between athlete perceptions of confidence in group and individual ability to meet the challenges of the drill and perceptions of group and individual performance relative to expectations was also striking: the mean of questions relating to group ($63.37, SD = 21.23$) compared to individual ($49.23, SD = 26.42$) performance relative to prior expectations were much lower than initial confidence in individual ($77.33, SD = 19.19$) and group ($77.33, SD = 15.04$) ability.  Thus, key variables of interest appeared to reduce in value between Pre- and Post-Drill measures.
+Table~\ref{tab:factorsTime} shows that the Post-Drill measures of group component performance, individual component performance, training group Team Click, and training group social bonding, were all considerably lower than Pre-Drill measurements. The differential between athlete perceptions of confidence in group and individual ability to meet the challenges of the drill and perceptions of group and individual performance relative to expectations was also striking: the mean of questions relating to group ($63.37, SD = 21.23$) compared to individual ($49.23, SD = 26.42$) performance relative to prior expectations were much lower than initial confidence in individual ($77.33, SD = 19.19$) and group ($77.33, SD = 15.04$) ability.  Thus, key variables of interest appeared to reduce in value between Pre- and Post-Drill measures.
 
 \input{images/factorsTime190718}
 
@@ -512,7 +512,7 @@ Model residuals were normally distributed around zero ($\resdist .99, \pvalue .9
 %The average performance outcome of each Invasion Drill trial was also a significant positive predictor of team click ($\betavec .73 \CIstart .23, 1.24 \CIfinish \SE .26, t(53)= 2.86, \pvalue .006$ (see Table ~\ref{tab:M1lmer}). This result suggested that on-field performance influenced athlete perceptions of performance and team click.
 
 \myparagraph{Pre- to Post-Drill}
-Results of the Pre- to Post-Drill survey also supported this prediction.  There was a significant main effect of Team Performance Vs Expectations on Team Click Change ($\betavec .54 \CIstart .30, .78 \CIfinish \SE .12, t(53) = 4.37, p < .001$), indicating that greater positive change in perceptions of team performance relative to prior expectations predicts positive change in perceptions of team click (see Figure~\ref{fig:groupPerfClickChangeCondition}).  All other main effects were not significant (see Appendix~\ref{app9:analysisStudyPredictions} Table~\ref{tab:TEM1groupPerfExpClick}).
+Results of the Pre- to Post-Drill survey also supported this prediction.  There was a significant main effect of Team Performance Vs Expectations on Team Click Change ($\betavec .54 \CIstart .30, .78 \CIfinish \SE .12, t(53) = 4.37, p < .001$), indicating that greater positive change in perceptions of team performance relative to prior expectations predicts positive change in perceptions of team click (see Figure~\ref{fig:groupPerfClickChangeCondition}).  All other main effects were not significant (see Appendix~\ref{app9:analysisStudyPredictions} Table~\ref{fig:M21Assumptions}).
 
 
 
@@ -520,7 +520,7 @@ Results of the Pre- to Post-Drill survey also supported this prediction.  There 
 
  \begin{figure}
      \centering
-     \includegraphics[width=0.5\linewidth,keepaspectratio] {images/groupPerfClickChangeCondition}
+     \includegraphics[width=0.5\linewidth,keepaspectratio] {images/groupPerfClickChangeOffline}
      \caption{Prediction 2 (Pre- to Post-Drill): Team Performance Vs Expectations predicts Team Click Change ($n = 53$).  Both variables are normalised as z-scores.}
      \label{fig:groupPerfClickChangeCondition}
  \end{figure}
@@ -540,8 +540,17 @@ Model residuals were normally distributed around zero ($\resdist .98, \pvalue .4
 
 \myparagraph{Prediction 3.a: Perceptions of team click predict perceptions of social bonding to the training group}
 
+
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\linewidth,keepaspectratio] {images/groupClickBondScatter}
+    \caption{Prediction 3.a (Post-Drill): Team Click predicts Social Bonding ($n = 53$).  Both variables are standardised factors ($mean = 0, SD = 1$).}
+    \label{fig:groupClickBondScatter}
+\end{figure}
+
+
 \myparagraph{Post-Drill}
-Results of the Post-Drill survey supported this prediction. The model revealed a significant main effect of Team Click on Social Bonding ($\betavec .63 \CIstart .46, .79 \CIfinish \SE .09, t(53) = 7.28, p < .01$), indicating that stronger perceptions of team click predict stronger perceptions of social bonding to the training group (see Figure~\ref{fig:groupClickBondScatter}).  All other main effects of the model were not significant.  Model residuals were normally distributed around zero ($\resdist .99, \pvalue .80$) and there were no unjustifiably influential cases (all $\cooksD < .6$, see model assumptions in Appendix~\ref{app9:analysisStudyPredictions} Figure~\ref{fig:M2Assumptions}).
+Results of the Post-Drill survey supported this prediction. The model revealed a significant main effect of Team Click on Social Bonding ($\betavec .63 \CIstart .46, .79 \CIfinish \SE .09, t(53) = 7.28, p < .01$), indicating that stronger perceptions of team click predict stronger perceptions of social bonding to the training group (see Figure~\ref{fig:groupClickBondScatter}).  All other main effects of the model were not significant.  Model residuals were normally distributed around zero ($\resdist .99, \pvalue .80$) and there were no unjustifiably influential cases (all $\cooksD < .6$, see model assumptions in Appendix~\ref{app9:analysisStudyPredictions} Figure~\ref{fig:M2aAssumptions}).
 
 
 
@@ -551,12 +560,6 @@ Results of the Post-Drill survey supported this prediction. The model revealed a
 %Results of a model in which condition was included as an interaction revealed that the interaction effect of team click and condition on social bonding was not significant, ($\betavec .23 \CIstart -.08, .60 \CIfinish \SE .17, t(23.33) = 1.35, \pvalue .19$).  A chi-squared test of model fit also indicated that the model did not explain the variance with any more precision as the initial model, ($\chi^2 (5, N = 53) = 1.78, p = .88$). These results were confirmed by their visual representation, in which an interaction effect is not obvious (see Figure ~\ref{fig:groupClickBondScatter}).  Thus, the initial model was adopted as the best fit for the data.
 
 
-\begin{figure}
-  \centering
-    \includegraphics[width=0.5\linewidth,keepaspectratio] {images/groupClickBondScatter}
-    \label{fig:groupClickBondScatter}
-    \caption{Team Click predicts Social Bonding in the Post-Drill data ($n = 53$).  Both variables are standardised factors ($mean = 0, SD = 1$).}
-\end{figure}
 
 
 %a significant positive interaction effect of team performance expectation violation and condition on team click ($\betavec .41 \CIstart .07, .75 \CIfinish \SE .17, t(53) = 2.39, \pvalue .02 $).  A chi-squared test of model fit (based on assessment of AIC value for each nested model) was significant ($\chi^2 (2, N = 53) = 9.42, p = .009$), suggesting that the model in which the interaction effect featured offered a more appropriate fit of the data (for a visualisation of the results, see Figure ~\ref{fig:teamPerfExpClickScatter}).
@@ -564,8 +567,17 @@ Results of the Post-Drill survey supported this prediction. The model revealed a
 %A LMER model in which team click, condition, and their interaction were included as fixed effects, revealed a strong positive relationship between perceptions of team click and perceptions of social bonding to the training group, $\betavec .43 \CIstart .15, .72 \CIfinish \SE .14, t(29.22) = 2.96, \pvalue .006, \MR , \CR $.
 %The main effect of condition ($\betavec .13 \CIstart .15, .72 \CIfinish \SE .29, t(18.7) = 3.15, \pvalue .006$) and the interaction effect of team click and condition on social bonding ($\betavec .26 \CIstart -0.08, .60 \CIfinish \SE .17, t(30.43) = 1.51, \pvalue .14$) were not significant.  These results did, however, appear to be trending in the predicted direction, whereby the relationship between click and bonding appeared stronger in the high difficulty condition.
 
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\linewidth,keepaspectratio] {images/groupClickBondingChangeOffline}
+      \caption{Prediction 3.a (Pre- to Post-Drill): Team Click Change predicts Social Bonding Change ($n = 53$).}
+    \label{fig:groupClickBondingChangeOffline}
+
+\end{figure}
+
+
 \myparagraph{Pre- to Post-Drill}
-Results of the Pre- to Post-Drill survey also offered support for this prediction.  A LMER revealed a significant main effect of Team Click Change on Social Bonding Change ($\betavec .27 \CIstart .01, .54 \CIfinish \SE .13, t(53) = 2.05, p < .05$), such that an increased change in team click predicted an increased change in social bonding (see Figure~\ref{fig:groupClickBondingChangeCondition}).  All other main effects of the model were not significant. Model residuals were normally distributed around zero ($\resdist .96, \pvalue .08$), and Cook's Distances were less than $.5$, indicating that the model did not to contain any observations that unjustifiably influenced parameter estimates (see Appendix~\ref{app9:analysisStudyPredictions} Figure~\ref{fig:M22Assumptions} for model assumptions).
+Results of the Pre- to Post-Drill survey also offered support for this prediction.  A LMER revealed a significant main effect of Team Click Change on Social Bonding Change ($\betavec .27 \CIstart .01, .50 \CIfinish \SE .13, t(53) = 2.05, p < .05$), such that an increased change in team click predicted an increased change in social bonding (see Figure~\ref{fig:groupClickBondingChangeOffline}).  All other main effects of the model were not significant (see Appendix~\ref{app9:analysisStudyPredictions} Table~\ref{tab:groupClickBondingChange}).  Model residuals were normally distributed around zero ($\resdist .96, \pvalue .08$), and Cook's Distances were less than $.5$, indicating that the model did not to contain any observations that unjustifiably influenced parameter estimates (see Appendix~\ref{app9:analysisStudyPredictions} Figure~\ref{fig:M22aAssumptions} for model assumptions).
 
 
 
@@ -573,12 +585,6 @@ Results of the Pre- to Post-Drill survey also offered support for this predictio
 
 
 
-\begin{figure}
-  \centering
-    \includegraphics[width=0.5\linewidth,keepaspectratio] {images/groupClickBondingChangeCondition}
-    \label{fig:groupClickBondingChangeCondition}
-    \caption{Team Click Change predicts Social Bonding Change in the Pre- to Post-Drill data ($n = 53$)}
-\end{figure}
 
 %In contrast to the Post-Drill data, the Pre-Post Data revealed not  only a main effect of (change in) team click on (change in) social bonding, but also an interaction effect with condition; the effect of team click on social bonding was more pronounced in the high difficulty condition than the low difficulty condition.
 
@@ -590,24 +596,32 @@ Results of the Pre- to Post-Drill survey also offered support for this predictio
 
 \myparagraph{Prediction 3.b: Perceptions of team click predict perceptions of social bonding to the provincial team}
 
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\linewidth,keepaspectratio] {images/groupClickTeamBondScatter}
+    \caption{Prediction 3.b (Post-Drill): Team Click predicts Social Bonding (Province)($n = 53$).}
+      \label{fig:groupClickTeamBondScatter}
+\end{figure}
+
+
+
 \myparagraph{Post-Drill}
-Results of the Post-Drill survey supported this prediction. The model revealed a significant main effect of Team Click on Social Bonding (Province) ($\betavec .50 \CIstart .21, .79 \CIfinish \SE .15, t(5.13) = 3.442, p = .02$), indicating that stronger perceptions of team click predicted stronger perceptions of social bonding to the provincial team (see Figure~\ref{fig:groupClickTeamBondScatter}).  All other main effects of the model were not significant.  Model residuals were normally distributed around zero ($\resdist .96, \pvalue .10$) and there were no unjustifiably influential cases (all $\cooksD < .7$, see Appendix~\ref{app9:analysisStudyPredictions} Figure~\ref{fig:M2TeamAssumptions} for model assumptions).
+Results of the Post-Drill survey supported this prediction. The model revealed a significant main effect of Team Click on Social Bonding (Province) ($\betavec .50 \CIstart .21, .79 \CIfinish \SE .15, t(5.13) = 3.442, p = .02$), indicating that stronger perceptions of team click predicted stronger perceptions of social bonding to the provincial team (see Figure~\ref{fig:groupClickTeamBondScatter}).  All other main effects of the model were not significant (Appendix~\ref{app9:analysisStudyPredictions} Table~\ref{tab:clickBondTeamTable}.  Model residuals were normally distributed around zero ($\resdist .96, \pvalue .10$) and there were no unjustifiably influential cases (all $\cooksD < .7$, see Appendix~\ref{app9:analysisStudyPredictions} Figure~\ref{fig:M2bTeamAssumptions} for model assumptions).
 
 
 
  %These results suggest that athletes who felt stronger levels of team click also felt stronger levels of social bonding to their training group.
 %Results of a model in which condition was included as an interaction revealed that the interaction effect of team click and condition on social bonding was not significant, ($\betavec .23 \CIstart -.08, .60 \CIfinish \SE .17, t(23.33) = 1.35, \pvalue .19$).  A chi-squared test of model fit also indicated that the model did not explain the variance with any more precision as the initial model, ($\chi^2 (5, N = 53) = 1.78, p = .88$). These results were confirmed by their visual representation, in which an interaction effect is not obvious (see Figure ~\ref{fig:groupClickBondScatter}).  Thus, the initial model was adopted as the best fit for the data.
 
-\begin{figure}
-  \centering
-    \includegraphics[width=0.5\linewidth,keepaspectratio] {images/groupClickTeamBondScatter}
-    \label{fig:groupClickTeamBondScatter}
-    \caption{Team Click predicts Social Bonding (Province) in the Post-Drill data ($n = 53$).}
-\end{figure}
+
 
 
 \myparagraph{Pre- to Post-Drill}
 The main effect of Team Click Change Social Bonding (Province) was not significant, ($\betavec .19 \CIstart -.11, .48 \CIfinish \SE .14, t(47.51) = 1.25, p < .05$).  All other main effects of the model were not significant. This result suggested that change in perceptions of team click did not predict change in perceptions of social bonding to the provincial team.
+
+
+
+
 
 
 

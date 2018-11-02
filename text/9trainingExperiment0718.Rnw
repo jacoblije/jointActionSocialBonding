@@ -3328,10 +3328,10 @@ library(tidyverse)
               xlab("Group Performance vs Expectations") +
               ylab("Team Click") +
               apatheme
-    
+
   dev.copy(pdf, "teamPerfExpClickScatter.pdf")
   dev.off()
-  
+
 @
 
 
@@ -3786,14 +3786,14 @@ Figure ~\ref{fig:groupClickBondScatter} shows a clear relationship between Team 
   clickBonding.intercept <- lmer(groupBondingFactorPost ~ 1 + ( 1 |sessionName),
                               data = twc,
                               REML = F)
-  clickBonding.main <- lmer(groupBondingFactorPost ~ groupClickPostFactor*condition +
-                              ( groupClickPostFactor |sessionName),
+  clickBonding.main <- lmer(groupBondingFactorPost ~ groupClickPostFactor +
+                              ( 1 |sessionName),
                               data = twc,
                               REML = F)
   summary(clickBonding.main)
 
 library(lmerTest)
-  summary(clickBonding.controls <- lmer(groupBondingFactorPost ~ groupClickPostFactor
+  summary(clickBonding.controls <- lmer(groupBondingFactorPost ~  groupClickPostFactor
                                           + arousalFactorPost
                                           + fullOutcomeAvg
                                           + subjectiveCompetenceFactor
@@ -3808,7 +3808,15 @@ library(lmerTest)
   #CIs:
   clickBonding.controls.CIs <- confint.merMod(clickBonding.controls, method = "Wald")
   #calculate marginal (fixed) and conditional (random) R^2 for the model:
-  #clickBonding.controls.R2 <- sem.model.fits(clickBonding.controls)
+  #clickBonding.controls.R2 <-
+  rsquared(clickBonding.controls)
+
+
+
+
+
+
+
 
 
   #Check for interaction with condition:
@@ -3880,8 +3888,7 @@ A LMER model (controlling for arousal, average trial performance outcome, and te
 
 
     texreg(list(clickBonding.intercept, clickBonding.main, clickBonding.controls)
-           , custom.coef.names = c("(constant)", "Team Click", "Arousal", "Trial Outcome Avg.",
-                                    "Subjective Competence", "Objective Competence", "Extraverted", "a", "b")
+           , custom.coef.names = c("(constant)", "Team Click", "Arousal", "Trial Outcome Avg.", "Subjective Competence", "Objective Competence", "Extraverted")
            , custom.model.names = c("Intercept", "Main effect", "Controls")
            , booktabs = TRUE
            , use.packages = FALSE
@@ -3890,7 +3897,7 @@ A LMER model (controlling for arousal, average trial performance outcome, and te
            , single.row = FALSE
            , bold = 0.05
            , ci.force = FALSE
-           , custom.note = "Coefficients with $p < 0.05$ in \\textbf{bold}."
+           , custom.note = "Coefficients with $p < 0.05$ in \\textbf{bold}. Marginal $R^2 = .59$, Conditional $R^2 = .59$"
            , scriptsize = TRUE
            , table = TRUE
            , file = "TEM2clickBonding.tex")
@@ -3968,7 +3975,7 @@ Figure ~\ref{fig:groupClickTeamBondScatter} shows a clear relationship between T
   clickTeamBonding.intercept <- lmer(teamBondingFactorPost ~ 1 + ( 1 |sessionName),
                               data = twc,
                               REML = F)
-  clickTeamBonding.main <- lmer(teamBondingFactorPost ~ groupClickPostFactor*condition +
+  clickTeamBonding.main <- lmer(teamBondingFactorPost ~ groupClickPostFactor +
                               ( groupClickPostFactor |sessionName),
                               data = twc,
                               REML = F)
@@ -3989,7 +3996,8 @@ Figure ~\ref{fig:groupClickTeamBondScatter} shows a clear relationship between T
   #CIs:
   clickTeamBonding.controls.CIs <- confint.merMod(clickTeamBonding.controls, method = "Wald")
   #calculate marginal (fixed) and conditional (random) R^2 for the model:
-  #clickBonding.controls.R2 <- sem.model.fits(clickBonding.controls)
+  #clickBonding.controls.R2 <-
+rsquared(clickBonding.controls)
 
 
   #Check for interaction with condition:
@@ -4008,9 +4016,35 @@ Figure ~\ref{fig:groupClickTeamBondScatter} shows a clear relationship between T
   #CIs:
   clickTeamBondingCondition.controls.CIs <- confint.merMod(clickTeamBondingCondition.controls, method = "Wald")
   #calculate marginal (fixed) and conditional (random) R^2 for the model:
-  #clickTeamBondingCondition.controls.R2 <- sem.model.fits(clickTeamBondingCondition.controls)
+  #clickTeamBondingCondition.controls.R2 <-
+  rsquared(clickTeamBondingCondition.controls)
 
 anova(clickTeamBonding.controls, clickTeamBondingCondition.controls)
+
+
+texreg(list(clickTeamBonding.intercept
+                      ,  clickTeamBonding.controls
+                      , clickTeamBonding.controls)
+       , custom.coef.names = c("(constant)"
+                                , "Team Click"
+                                , "Arousal"
+                                , "Trial Outcome Avg."
+                                , "Subjective Competence"
+                                , "Objective Competence"
+                                , "Extraverted")
+       , custom.model.names = c("Intercept", "Main effect", "Controls")
+       , booktabs = TRUE
+       , use.packages = FALSE
+       , label = "tab:clickBondTeamTable"
+       , caption = "Prediction 3.b (Post-Drill): Team Click predicts Social Bonding (Province) (n = 53)."
+       , single.row = FALSE
+       , bold = 0.05
+       , ci.force = FALSE
+       , custom.note = "Coefficients with $p < 0.05$ in \\textbf{bold}."
+       , scriptsize = TRUE
+       , table = TRUE
+       , file = "clickTeamBondingTable.tex"
+     )
 
 @
 
@@ -4056,6 +4090,20 @@ anova(clickTeamBonding.controls, clickTeamBondingCondition.controls)
   dev.copy(pdf, "TEM2TeamCooksD.pdf")
   dev.off()
 @
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -4683,7 +4731,7 @@ XXXX
 
 <<groupPerfClickChangeCondition, eval=T, echo=F>>=
 # ggplot scatter with a slope for each condition
-
+library(ggplot2)
 groupPerfClickChange <- ggplot(twc,
                             aes(x=groupPerfChangePrePostNorm, y=groupClickChangePrePostNorm)) +
                             geom_point(shape = 1) +
@@ -4722,7 +4770,7 @@ summary(perfClickChange.lmer <- lmer(groupClickChangePrePostNorm ~ groupPerfChan
 
 
 
-<<groupperfClickChangeConditionModel, eval=T, echo=F>>=
+<<groupPerfClickChangeConditionModel, eval=T, echo=F>>=
 library(lmerTest)
 library(optimx)
 twc$sessionName
@@ -4816,7 +4864,7 @@ anova(perfClickChange.lmer, perfClickChangeCondition.lmer)
                                   , "Group Performance Vs Expectations Change"
                                   , "Ind Performance Vs Expectations Change"
                                   , "Arousal"
-                                  , "Trial Ootcome Avg."
+                                  , "Trial Outcome Avg."
                                   , "Subjective Competence"
                                   , "Objective Competence"
                                   , "Extraverted")
@@ -4877,12 +4925,36 @@ groupClickBondingChange +
 <<groupClickBondingChangeModel, eval=T, echo=F>>=
 # ggplot scatter with a slope for each condition
 library(optimx)
+
+#intercept
+summary(clickBondingChangeIntercept.lmer <- lmer(groupBondingChangePrePostNorm ~ 1
+                                    + (1 | sessionName)
+                                    , data = twc
+                                    , REML = FALSE
+                                    , control = lmerControl(optimizer = "optimx",
+                                      calc.derivs = FALSE,  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                                )
+        )
+
+
+
+#main effect:
+summary(clickBondingChangeMain.lmer <- lmer(groupBondingChangePrePostNorm ~ groupClickChangePrePostNorm
+                                    + (groupClickChangePrePostNorm | sessionName)
+                                    , data = twc
+                                    , REML = FALSE
+                                    , control = lmerControl(optimizer = "optimx",
+                                      calc.derivs = FALSE,  optCtrl = list(method = "nlminb", starttests = FALSE, kkt = FALSE))
+                                )
+        )
+
+#controls:
 summary(clickBondingChange.lmer <- lmer(groupBondingChangePrePostNorm ~ groupClickChangePrePostNorm
-                                    + (groupPerfChangePrePostNorm | sessionName)
                                     + indPerfChangePrePostNorm
                                     + fullOutcomeAvg
                                     + subjectiveCompetenceFactor + objectiveCompetenceFactor
                                     + tipiExtraverted
+                                    + (groupClickChangePrePostNorm | sessionName)
                                     , data = twc
                                     , REML = FALSE
                                     , control = lmerControl(optimizer = "optimx",
@@ -4892,7 +4964,35 @@ summary(clickBondingChange.lmer <- lmer(groupBondingChangePrePostNorm ~ groupCli
 
 clickBondingChange.lmer.lmerCIs <- confint.merMod(clickBondingChange.lmer, method = "Wald", level = 0.95)
 
+#install.packages("piecewiseSEM")
+library(piecewiseSEM)
+rsquared(clickBondingChange.lmer)
+
 @
+
+<<groupClickBondingChangeModelTable, eval=T, echo=F>>=
+library(texreg)
+
+texreg(list(clickBondingChangeIntercept.lmer, clickBondingChangeMain.lmer, clickBondingChange.lmer)
+       , custom.coef.names = c("(constant)", "Team Click Change", "Ind Performance Change", "Trial Outcome Avg.", "Subjective Competence", "Objective Competence",
+                               "Extraverted")
+       , custom.model.names = c("Intercept", "Main effect", "Controls")
+       #, dcolumn = TRUE
+       , booktabs = TRUE
+       , use.packages = FALSE
+       , label = "tab:groupClickBondingChange"
+       , caption = "Prediction 3.a (Post-Drill): Team Click Change predicts Social Bonding Change (n = 53)."
+       , single.row = FALSE
+       , bold = 0.05
+       , ci.force = FALSE
+       , custom.note = "Coefficients with $p < 0.05$ in \\textbf{bold}. Marginal $R^2 = .23$, Conditional $R^2 = .24$"
+       , scriptsize = TRUE
+       , table = TRUE
+       , file = "groupClickBondingChange.tex")
+@
+%Marginal $R^2 = .56$, Conditional $R^2 = .61$"
+
+
 
 
 <<groupClickBondingChangeConditionModel, eval=T, echo=F>>=
@@ -4915,6 +5015,11 @@ summary(clickBondingChangeCondition.lmer <- lmer(groupBondingChangePrePostNorm ~
 anova(clickBondingChange.lmer, clickBondingChangeCondition.lmer)
 
 @
+
+
+
+
+
 
 %ASSUMPTIONS:
 <<clickBondChangeAssumptionsHist, echo=F,eval=T>>=
